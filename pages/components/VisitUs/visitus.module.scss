@@ -1,0 +1,238 @@
+.visitus_main_component1 {
+    display: flex;
+}
+.visitus_main_component2 {
+    display: flex;
+}
+.visitus_co_common{
+    margin-top: 5%;
+}
+
+.visitus_main_image2 {
+    padding-left: 5%;
+}
+
+
+.visitus_co_tagline {
+    font-family: 'Montserrat';
+    font-size: 40px;
+    font-weight: 500;
+    color: #FFFFFF;
+    position: absolute;
+    z-index: auto;
+    margin-top: -20%;
+    width:42%;
+    text-align: center;
+    left:30%;
+}
+
+.visitus_office1_image {
+    border-radius: 15px;
+    width:90%;
+    height:95%;
+   float:right;
+
+}
+.visitus_main_content1{
+    margin-top:3%;
+    padding-right: 5%;
+    // padding-left: 1%;
+
+
+}
+.visitus_main_content1_header {
+font-family:"Montserrat";
+font-size: 26px;
+font-weight: 700;
+line-height: 39px;
+letter-spacing: 0em;
+color: #EF5350;
+}
+.visitus_content1{
+font-family: "Montserrat";
+font-size: 14px;
+font-weight: 500;
+line-height: 29px;
+letter-spacing: 0em;
+color:#737373;
+// width:60%;
+// padding-right: 40px;
+}
+
+.visitus_arrow1{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top:3%;
+}
+.visitus_office2_image {
+    border-radius: 15px;
+    width:90%;
+    height:95%;
+//    float:right;
+    
+}
+.visitus_main_content2_header {
+    font-family:"Montserrat";
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 39px;
+    letter-spacing: 0em;
+    color: #EF5350;
+
+}
+.visitus_content2{
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0em;
+    color:#737373;
+    
+}
+.visitus_arrow2{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width:1490px) and (min-width:950px){
+    .visitus_co_tagline {
+        font-size: 30px;
+        margin-top: -30%;   
+        left:30%;
+    }
+}
+@media (max-width:950px) and (min-width:700px){
+    .visitus_co_tagline {
+        font-size: 28px;
+        margin-top: -33%;
+        left:30%;
+        width:50%;
+    }
+}
+@media (max-width:700px) and (min-width:500px){
+    .visitus_co_tagline {
+        font-size: 25px;
+        margin-top: -38%;
+        width:65%;
+        left:15%;
+    }
+}
+@media (max-width:500px) and (min-width:400px){
+    .visitus_co_tagline {
+         font-size: 16px;
+         margin-top: -40%;
+         width:50%;
+    }
+}
+@media (max-width:400px) and (min-width:300px){
+    .visitus_co_tagline {
+        font-size: 14px;
+        margin-top: -38%;
+        width:50%;
+    }
+}
+@media screen and  (max-width:4000px) and  (min-width:3500px) {
+
+    .visitus_main_content1_header {
+       
+        font-size: 52px;
+        line-height: 42px;
+     
+        }
+        .visitus_content1{
+      
+        font-size: 48px;
+        line-height: 59px;
+       
+        }
+        .visitus_main_content2_header {
+          
+            font-size: 52px;
+        line-height: 42px;
+        }
+        .visitus_content2{
+           
+            font-size: 48px;
+            line-height: 59px;
+        }
+  }
+  
+  @media only screen and (max-width:3500px) and (min-width:3000px) {
+  
+  
+    .visitus_main_content1_header {
+       
+        font-size: 40px;
+        line-height: 36px;
+     
+        }
+        .visitus_content1{
+      
+        font-size: 36px;
+        line-height: 49px;
+       
+        }
+        .visitus_main_content2_header {
+          
+            font-size: 40px;
+        line-height: 36px;
+        }
+        .visitus_content2{
+           
+            font-size: 36px;
+            line-height: 49px;
+        }
+  }
+  
+  @media only screen and (max-width:3000px) and (min-width:2500px) {
+   
+    .visitus_main_content1_header {
+       
+        font-size: 40px;
+        line-height: 36px;
+     
+        }
+        .visitus_content1{
+      
+        font-size: 30px;
+        line-height: 42px;
+       
+        }
+        .visitus_main_content2_header {
+          
+            font-size: 40px;
+        line-height: 36px;
+        }
+        .visitus_content2{
+           
+            font-size: 30px;
+            line-height: 42px;
+        }
+  }
+  
+  @media only screen and (max-width:2500px) and (min-width:1800px) {
+    .visitus_main_content1_header {
+       
+        font-size: 40px;
+        line-height: 36px;
+     
+        }
+        .visitus_content1{
+      
+        font-size: 22px;
+        line-height: 32px;
+       
+        }
+        .visitus_main_content2_header {
+          
+            font-size: 40px;
+        line-height: 36px;
+        }
+        .visitus_content2{
+           
+            font-size: 22px;
+            line-height: 32px;
+        }
+  }

@@ -1,0 +1,490 @@
+{
+  "FAQs": {
+    "designgallery": [
+      {
+        "id": 1,
+        "question": "What Is Home Interior Design?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 2,
+        "question": "Why Is An Interior Designer Important?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 3,
+        "question": "What are the most important factors to keep in mind while designing a room?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 4,
+        "question": "Which Cities Is Lhome Operational In?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      }
+    ],
+    "modularKitchen": [
+      {
+        "id": 5,
+        "question": "What Is a Modular Kitchen?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 6,
+        "question": "What Does a Modular Kitchen Include?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 7,
+        "question": "Which Type of Modular Kitchen Is the Best?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 8,
+        "question": "Why are Modular Kitchens Becoming Popular?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 9,
+        "question": "What Are the Advantages of a Modular Kitchen?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 10,
+        "question": "Which Cities Is LHome Operational In?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      }
+    ],
+    "wardrope": [
+      {
+        "id": 11,
+        "question": "What’s the Best Kind of Wardrobe Design?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 12,
+        "question": "What Are the Different Types of Wardrobe Design?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 13,
+        "question": "What’s the Best Colour for Wardrobes?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 14,
+        "question": "Are Sliding Wardrobes Good?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 15,
+        "question": "What Is the Perfect Size for a Wardrobe?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 16,
+        "question": "What Is the Difference between a Closet and a Wardrobe?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 17,
+        "question": "Why Is Designing Your Wardrobe Essential?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 18,
+        "question": "Which Wood Is Best for Wardrobes?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 19,
+        "question": "Which Type of Wardrobe Is Best for Bedrooms?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      }
+    ],
+    "bedroom": [
+      {
+        "id": 11,
+        "question": "What’s the Best Kind of Bedroom Design?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 12,
+        "question": "What Are the Different Types of Wardrobe Design?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 13,
+        "question": "What’s the Best Colour for Wardrobes?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 14,
+        "question": "Are Sliding Wardrobes Good?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 15,
+        "question": "What Is the Perfect Size for a Wardrobe?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 16,
+        "question": "What Is the Difference between a Closet and a Wardrobe?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 17,
+        "question": "Why Is Designing Your Wardrobe Essential?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 18,
+        "question": "Which Wood Is Best for Wardrobes?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 19,
+        "question": "Which Type of Wardrobe Is Best for Bedrooms?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      }
+    ],
+    "livingRoom": [
+      {
+        "id": 20,
+        "question": "What Are the Services Provided in Living Room Interior Design?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 21,
+        "question": "How Do I Select a Living Room Design?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 22,
+        "question": "What are the Best Color Combinations for Living Room Interiors?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 23,
+        "question": "Which Cities Is HomeLane Operational In?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      }
+    ],
+    "spaceFurniture": [
+      {
+        "id": 24,
+        "question": "What Are the Types of Space-Saving Furniture?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 25,
+        "question": "What Creative Space-Saving Ideas Can I Use at Home?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 26,
+        "question": "What Kind of Space-Saving Furniture Can I Buy at LHome?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 27,
+        "question": "Why Should You Buy Your Space-Saving Furniture from LHome?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      }
+    ],
+    "homeOffice": [
+      {
+        "id": 28,
+        "question": "What Is the Best Way to Design a Home Office?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 29,
+        "question": "How Can I Make My Home Office Design Look Good?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 30,
+        "question": "Where to Get the Best Home Office Furniture?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 31,
+        "question": "What Are the Materials Available in Work-from-Home Furniture?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 32,
+        "question": "What’s the Best Colour for My Home Office Design?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 33,
+        "question": "How Can HomeLane Help Me with My Home Office Interior Design?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      }
+    ],
+    "customerStories": [
+      {
+        "id": 24,
+        "question": "What Are the Types of Space-Saving Furniture?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 25,
+        "question": "What Creative Space-Saving Ideas Can I Use at Home?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 26,
+        "question": "What Kind of Space-Saving Furniture Can I Buy at LHome?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 27,
+        "question": "Why Should You Buy Your Space-Saving Furniture from LHome?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      }
+    ],
+    "bathroom": [
+      {
+        "id": 28,
+        "question": "What Are Some of the Trending Bathroom Designs?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 29,
+        "question": "How Can I Make My Home Office Design Look Good?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 30,
+        "question": "Where to Get the Best Home Office Furniture?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 31,
+        "question": "What Are the Materials Available in Work-from-Home Furniture?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 32,
+        "question": "What’s the Best Colour for My Home Office Design?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 33,
+        "question": "What’s the Best Colour for My Home Office Design?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      }
+    ],
+    "partnership": [
+      {
+        "id": 28,
+        "question": "How many years is the franchise contract drawn for?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 29,
+        "question": "When can my business break-even?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 30,
+        "question": "What kind of returns on investment can I expect?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 31,
+        "question": "What kind of support do I get from HomeLane before the Launch of Studio?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      }
+    ],
+    "customerfaq": [
+      {
+        "id": 1,
+        "question": "What is home interior design?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 2,
+        "question": "Why Is An Interior Designer Important?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 3,
+        "question": "What are the most important factors to keep in mind while designing a room?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 4,
+        "question": "Which Cities Is Lhome Operational In?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+          "id": 5,
+          "question": "What Is a Modular Kitchen?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 6,
+          "question": "What Does a Modular Kitchen Include?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 7,
+          "question": "Which Type of Modular Kitchen Is the Best?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 8,
+          "question": "Why are Modular Kitchens Becoming Popular?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 9,
+          "question": "What Are the Advantages of a Modular Kitchen?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 10,
+          "question": "Which Cities Is LHome Operational In?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },{
+          "id": 11,
+          "question": "What’s the Best Kind of Wardrobe Design?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 12,
+          "question": "What Are the Different Types of Wardrobe Design?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 13,
+          "question": "What’s the Best Colour for Wardrobes?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 14,
+          "question": "Are Sliding Wardrobes Good?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 15,
+          "question": "What Is the Perfect Size for a Wardrobe?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 16,
+          "question": "What Is the Difference between a Closet and a Wardrobe?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 17,
+          "question": "Why Is Designing Your Wardrobe Essential?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 18,
+          "question": "Which Wood Is Best for Wardrobes?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 19,
+          "question": "Which Type of Wardrobe Is Best for Bedrooms?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 20,
+          "question": "What Are the Services Provided in Living Room Interior Design?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 21,
+          "question": "How Do I Select a Living Room Design?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 22,
+          "question": "What are the Best Color Combinations for Living Room Interiors?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 23,
+          "question": "Which Cities Is HomeLane Operational In?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 24,
+          "question": "What Are the Types of Space-Saving Furniture?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 25,
+          "question": "What Creative Space-Saving Ideas Can I Use at Home?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 26,
+          "question": "What Kind of Space-Saving Furniture Can I Buy at LHome?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 27,
+          "question": "Why Should You Buy Your Space-Saving Furniture from LHome?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 28,
+          "question": "What Is the Best Way to Design a Home Office?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 29,
+          "question": "How Can I Make My Home Office Design Look Good?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 30,
+          "question": "Where to Get the Best Home Office Furniture?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 31,
+          "question": "What Are the Materials Available in Work-from-Home Furniture?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 32,
+          "question": "What’s the Best Colour for My Home Office Design?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 33,
+          "question": "How Can HomeLane Help Me with My Home Office Interior Design?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 24,
+          "question": "What Are the Types of Space-Saving Furniture?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 25,
+          "question": "What Creative Space-Saving Ideas Can I Use at Home?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 26,
+          "question": "What Kind of Space-Saving Furniture Can I Buy at LHome?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        },
+        {
+          "id": 27,
+          "question": "Why Should You Buy Your Space-Saving Furniture from LHome?",
+          "answer": "React is a JavaScript library for building user interfaces."
+        }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+import React from "react";
+import css from "../MeetDesigner/MeetDesigner.module.scss";
+import { useRef } from "react";
+import * as config from "../../../next.config.js";
+import { simpleCallInitAPI } from '../../../services/ApicallInit';
+interface ModularkitchenProps{
+    colour:string;
+    container:string;
+    prop:string;
+}
+const MeetDesigner: React.FC<ModularkitchenProps> = ({colour,container,prop}) => {
+    let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
+    const [MeetDesigner,setMeetDesigner] = React.useState([]);
+    const [Kitchencontent, setKitchencontent] = React.useState([]);
+
+    React.useEffect(() => {
+        let api = simpleCallInitAPI(`${assetpath}/assets/meetdesign.json`);
+        api.then((data: any) => {
+            let MeetDesigner = [];
+            data.data.meetdesign.forEach((meets: any) => {
+               let lc: any = {};
+               lc.meetimage = `${assetpath}${meets.image}`;
+               lc.meettext = meets.text;
+               lc.meetbutton = meets.button;
+               MeetDesigner.push(lc);
+            });
+            setMeetDesigner(MeetDesigner);
+            let sectionOne = [];
+            data.data.values.forEach((ideas: any) => {
+                let idea: any = {};
+                idea.text = ideas.text;
+                sectionOne.push(idea);
+            });
+            setKitchencontent(sectionOne);
+        })
+    })
+    
+
+return(
+    <React.Fragment>
+            <div className={colour ==="red" ?`${css.red}`: `${css.blue}`}>
+            <div className="container">
+                {
+                    MeetDesigner.map((datas: any, index: number) =>
+                    <div key={`${datas.meettext}_${index}_${index}`} className={container ==="meetContainer1" ?`${css.meetContainer1}`: `${css.meetContainer2}`}>
+                    <div className={css.meetImageBox}>                    
+                        <img src={datas.meetimage} className={css.meetImage} alt="" />
+                    </div>
+                      <div className={css.meetContent}>
+                      <h1 className={css.meetHead}>{datas.meettext}</h1>
+                      <button className={colour === "red"?`${css.meetButton}`:`${css.meetButtonBlue}`}>{datas.meetbutton}</button>
+                  </div>
+                  </div>
+                    )
+                }
+                <div>
+                <div className={css.Wholecontainer}>
+                <div className={css.Container}>
+                    <h1 className={css.Head}>4 Ideas {prop}</h1>
+                    <div className={css.InnerLayer}>
+                        {Kitchencontent.map((idea, index) => (
+                            <div key={index}>
+                                <div className={css.Box }>
+                                    <p className={css.content}>{idea.text}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+                </div>
+                </div>              
+        </div>
+    </React.Fragment>
+)
+}
+export default MeetDesigner;

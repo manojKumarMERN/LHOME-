@@ -1,0 +1,183 @@
+.bedroomimageContainer {
+  position: relative;
+}
+
+.bedroomimage {
+  width: 100%;
+}
+
+.bedroom_tagline {
+  font-family: "Montserrat";
+  color: #FFFFFF;
+  font-weight: 100 !important;
+  font-size: 4em;
+}
+
+.bedroom_tagline1 {
+
+  // width: 60%;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-family: "Montserrat";
+  font-size: 4em;
+  line-height: 100%;
+}
+
+.bedroombannercontent {
+  position: absolute;
+  right: 10%;
+  top: 25%;
+  transform: translateY(-50%);
+}
+
+.bedroombannerform {
+  position: absolute;
+  right:10%;
+  top: 45%;
+}
+
+@media only screen and (max-width:4000px) and (min-width:2000px) {
+  .bedroom_tagline {
+    font-size: 4.7em;
+  }
+
+  .bedroom_tagline1 {
+    font-size: 4.7em;
+  }
+
+  .bedroombannercontent {
+    top: 25%;
+  }
+
+  .bedroombannerform {
+    top: 40%;
+  }
+}
+
+@media only screen and (max-width:2000px) and (min-width:1600px) {
+  .bedroom_tagline {
+    font-size: 4em;
+  }
+
+  .bedroom_tagline1 {
+    font-size: 4em;
+  }
+
+  .bedroombannercontent {
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width:1600px) and (min-width:1200px) {
+  .bedroom_tagline {
+    font-size: 4em;
+  }
+
+  .bedroom_tagline1 {
+    font-size: 4em;
+  }
+
+  .bedroombannercontent {
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width:1200px) and (min-width:1000px) {
+  .bedroom_tagline {
+    font-size: 2.5em;
+  }
+
+  .bedroom_tagline1 {
+    font-weight: 500;
+    font-size: 2.5em;
+
+  }
+
+  .bedroombannercontent {
+    top: 15%;
+  }
+
+  .bedroombannerform {
+    top: 35%;
+  }
+
+}
+
+@media only screen and (max-width:1000px) and (min-width:900px) {
+  .bedroom_tagline {
+    font-size: 2em;
+  }
+
+  .bedroom_tagline1 {
+    font-weight: 400;
+    font-size: 2em;
+  }
+
+  .bedroombannercontent {
+    white-space: nowrap;
+    top: 10%;
+}
+
+  .bedroombannerform {
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width:900px) and (min-width:600px) {
+  .bedroombannerform {
+    position: relative;
+    top: 0;
+    transform: none;
+    padding: 20px;
+    background-color: #2552A4;
+    padding-top: 20%;
+  }
+
+  .bedroom_tagline {
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    font-weight: 100 !important;
+    font-size: 3em;
+  }
+
+  .bedroom_tagline1 {
+    font-weight: 400;
+    font-size: 3em;
+  }
+
+  .bedroombannercontent {
+    top: 15%;
+  }
+  .bedroombannerform {
+    right:0%;
+}
+}
+
+@media only screen and (max-width:600px) and (min-width:350px) {
+  .bedroombannerform {
+    position: relative;
+    top: 0;
+    transform: none;
+    padding: 20px;
+    background-color: #2552A4;
+    padding-top: 20%;
+
+  }
+
+  .bedroom_tagline {
+    font-size: 1.75em;
+  }
+
+  .bedroom_tagline1 {
+    font-weight: 400;
+    font-size: 1.75em;
+  }
+  .bedroombannercontent {
+    top: 15%;
+
+  }
+  .bedroombannerform {
+    right:0%;
+}
+}
+

@@ -1,0 +1,90 @@
+.warranty {
+   background-color: #fff;
+ }
+ .warrantyInnerLayer {                                                  
+    margin:0 auto;
+    padding: 2% 15% 2% 15%;
+    background-color: #F5F5F5;
+    margin: 4% 2% 4% 2%;
+    border-radius: 14px;
+ }
+ .warrantyInnerTopContent,.warrantyInnerBottomContent {
+    display: flex;
+ }
+ .warrantyInnerBottomContent {
+    padding-top: 4%;
+ }
+ 
+ .warrantyInnerLeftContent {
+   width: 50%;
+   text-align: center;
+   margin:2% 2%;
+ }
+ 
+ .warrantyInnerRightContent {
+    width: 50%;
+    text-align: center;
+    margin-top:2.1%; //Changed style
+ }
+ 
+ .warrantyHeader {
+   font-family: "Montserrat";
+    font-size: 21px;
+    font-weight: 510;
+    color: #222;
+    margin: 1% 0%;
+ }
+ 
+ .warrantySubText {
+   font-family: "Montserrat";
+    font-size: 13px;
+    font-weight: 100;
+    color:#737373;
+    // padding-left: 5%;   //Changed Style
+    // padding-right: 5%;   // changed style
+ }
+ 
+ .warrantyTextIcons {
+    text-align: -webkit-center;
+ }
+ 
+ .warrantyiconChanges {
+    background: #F44336;
+     padding: 2%;
+     border-radius: 14px;
+     width: 50px;
+ }
+ 
+ .flatWarrantyiconChangesImg {
+    background: #F44336;
+     padding: 2%;
+     border-radius: 14px;
+     width:50px;
+ }
+ 
+ @media only screen and (min-width:320px) and (max-width: 724px){
+    .warrantyInnerTopContent,.warrantyInnerBottomContent {
+       display: block;
+       margin:2%;
+    }
+    .warrantyInnerLeftContent {
+       width: 100%;
+       text-align: center;
+       margin:10% 2%;
+     }
+     
+     .warrantyInnerRightContent {
+        width: 100%;
+        text-align: center;
+     }
+ }
+ 
+ @media only screen and (min-width:725px) and (max-width: 1024px){ 
+    .warranty {
+       margin-top: 3%;
+    }
+    .warrantyInnerLayer {
+       margin:unset;
+       padding: 1% !important;
+    }
+ }

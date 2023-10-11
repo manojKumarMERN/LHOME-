@@ -1,0 +1,86 @@
+.partnerContainer{
+    background-color: #FFE175;
+}
+.partnerRow{
+    display: flex;
+}
+.partnerLeft{
+    width: 50%;
+    position: relative;
+}
+.partnerRight{
+    width: 50%;
+}
+.partnertop{
+    color: #222222;
+    font-style:"Montserrat";
+    font-weight:700;
+    font-size: 45px;
+    width: 90%;
+    line-height: 68.26px;
+    padding: 70px 0px 0px 90px;
+}
+.partnerbottom{
+    color: #FFFFFF;
+    background-color: #2552A4;
+    margin-left: 10px;
+}
+.partnerImg{
+    width: 750px;
+    height: 740px;
+}
+.partnerForm{
+    position: absolute;
+    left: 25px;
+    top: 60%;
+    transform: translateY(-50%);
+    color: white;
+}
+@media only screen and (min-width:320px) and (max-width: 724px){
+    .partnerRow{
+        display: block;
+    }
+    .partnerLeft, .partnerRight{
+        width: 100%;
+    }
+    .partnertop{
+        font-size: 35px;
+        padding: 20px 0px 0px 20px;
+        width: 100%;
+    }
+    .partnerImg{
+        width: 100%;
+        height: 100%;
+    }
+    .partnerForm{
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        padding: 20px;
+    }
+}
+@media only screen and (min-width:724px) and (max-width: 1024px){
+    .partnertop{
+        font-size: 35px;
+        padding: 20px 0px 0px 20px;
+        width: 100%;
+    }
+    // .partnerImg{
+    //     width: 100%;
+    //     height: 100%;
+    // }
+    .partnerForm{
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        padding: 20px;
+    }
+}
+@media only screen and (min-width:1024px) and (max-width: 1920px){
+    .partnertop{
+        padding: 40px 0px 0px 80px;
+        width: 100%;
+    }
+}

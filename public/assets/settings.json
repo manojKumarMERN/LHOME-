@@ -1,0 +1,450 @@
+{
+  "settings": {
+    "menuoptions": [
+      "Home",
+      "Design Gallery",
+      "Modular Kitchen",
+      "Wardrobe",
+      "Bedroom",
+      "Living Room",
+      "Bath Room",
+      "Space Saving Furniture",
+      "Home Office",
+      "Customer stories",
+      "Design journal"
+    ],
+    "": "",
+    "other": [
+      "Customer stories",
+      "Design journal"
+    ],
+    "smallmenuoptions": [
+      "Partner With LHome",
+      "Refer and Earn",
+      "Join Us",
+      "Cities",
+      "Visit Us",
+      "Customer Support"
+    ],
+    "cities": [
+      "Coimbatore",
+      "Rajapalayam"
+    ],
+    "menuGaps": [
+      "42",
+      "84",
+      "98",
+      "56",
+      "84",
+      "70",
+      "42",
+      "98",
+      "42",
+      "42",
+      "42"
+    ],
+    "smallmenuGaps": [
+      122,
+      102,
+      51,
+      77,
+      51,
+      128
+    ],
+    "sliderimages": [
+      "/assets/sliderimages/image-1.jpg",
+      "/assets/sliderimages/image-2.jpg",
+      "/assets/sliderimages/image-3.jpg"
+    ],
+    "homeofficebaner": [
+      {
+        "image": "/assets/Homeoffice/homeoffice.png",
+        "name": "Copy Design your own Kitchen with our experts!"
+      }
+    ],
+    "bathroombaner": [
+      {
+        "image": "/assets/Bathroom/bathroombanner.svg",
+        "name": "Copy Design your own Kitchen with our experts!"
+      }
+    ],
+    "sliderimagesalt": [
+      "Image  1",
+      "Image 2",
+      "Image 3"
+    ],
+    "infoicons": {
+      "calendarimage": "/assets/icons/calendaricon.png",
+      "happyhomeimage": "/assets/icons/happycustomericon.png",
+      "expertimage": "/assets/icons/experticon.png",
+      "warrantyimage": "/assets/icons/warrenty.png",
+      "deliveryimage": "/assets/icons/delivery.png",
+      "priceimage": "/assets/icons/price.png",
+      "safetyimage": "/assets/icons/safety.png",
+      "maskgroupimage": "/assets/icons/maskgroup.png",
+      "whitecalendarimage": "/assets/icons/Calendar.png",
+      "whitewarrantyimage": "/assets/icons/warranty.png",
+      "whiteexpertimage": "/assets/icons/designexperts.png",
+      "caresupport": "/assets/icons/cd.png"
+    },
+    "categories": [
+      {
+        "image": "/assets/listingimages/modularkitchen.jpg",
+        "category": "Modular Kitchen",
+        "text": "100+ designs"
+      },
+      {
+        "image": "/assets/listingimages/wardrobe.jpg",
+        "category": "Warddrobe",
+        "text": "100+ designs"
+      },
+      {
+        "image": "/assets/listingimages/bedroom.jpg",
+        "category": "Bed Room",
+        "text": "100+ designs"
+      }
+    ],
+    "trendings": [
+      {
+        "image": "/assets/listingimages/trendings/officeimages/officeimage-1.jpg",
+        "name": "Star-Dusty Pink Home Office Design",
+        "subname": "Trendings",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/listingimages/trendings/officeimages/officeimage-2.jpg",
+        "name": "Coastal Chic Modern Kitchen Design",
+        "subname": "Trendings",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/listingimages/trendings/officeimages/officeimage-3.jpg",
+        "name": "Coastal Chic Modern Kitchen Design",
+        "subname": "Trendings",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/listingimages/trendings/officeimages/officeimage-1.jpg",
+        "name": "Star-Dusty Pink Home Office Design",
+        "subname": "Trendings",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/listingimages/trendings/officeimages/officeimage-2.jpg",
+        "name": "Coastal Chic Modern Kitchen Design",
+        "subname": "Trendings",
+        "size": "Size | 13' X 12'"
+      }
+    ],
+    "toppicks": [
+      {
+        "image": "/assets/listingimages/toppicks/kitchenimage-1.jpg",
+        "name": "Star-Dusty Pink Home Office Design",
+        "subname": "Trendings",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/listingimages/toppicks/kitchenimage-2.jpg",
+        "name": "Coastal Chic Modern Kitchen Design",
+        "subname": "Trendings",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/listingimages/toppicks/kitchenimage-3.jpg",
+        "name": "Star-Dusty Pink Home Office Design",
+        "subname": "Trendings",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/listingimages/toppicks/kitchenimage-1.jpg",
+        "name": "Star-Dusty Pink Home Office Design",
+        "subname": "Trendings",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/listingimages/toppicks/kitchenimage-2.jpg",
+        "name": "Coastal Chic Modern Kitchen Design",
+        "subname": "Trendings",
+        "size": "Size | 13' X 12'"
+      }
+    ],
+    "warddrobefly": [
+      {
+        "image": "/assets/listingimages/wardrobes/wardrobe-1.jpg",
+        "name": "Star-Dusty Pink Home Office Design",
+        "subname": "Trendings",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/listingimages/wardrobes/wardrobe-2.jpg",
+        "name": "Coastal Chic Modern Kitchen Design",
+        "subname": "Trendings",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/listingimages/wardrobes/wardrobe-3.jpg",
+        "name": "Star-Dusty Pink Home Office Design",
+        "subname": "Trendings",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/listingimages/wardrobes/wardrobe-1.jpg",
+        "name": "Star-Dusty Pink Home Office Design",
+        "subname": "Trendings",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/listingimages/wardrobes/wardrobe-2.jpg",
+        "name": "Coastal Chic Modern Kitchen Design",
+        "subname": "Trendings",
+        "size": "Size | 13' X 12'"
+      }
+    ],
+    "referboyimage": "/assets/icons/recommendboyicon.png",
+    "referboyalt": "Refer us",
+    "refergirlImage": "/assets/icons/nri.png",
+    "refergirlAlt": "Refer us",
+    "wishlistimage": "/assets/icons/wishlist.png",
+    "wishlistalt": "Wish List",
+    "shareiconimage": "/assets/icons/shareicon.png",
+    "sharealt": "Share",
+    "socialMediaIcons": [
+      {
+        "iconsList1": "/assets/icons/new_social_media_icon.png"
+      }
+    ],
+    "mobile": "/assets/icons/mobile.svg",
+    "location": "/assets/icons/location.svg",
+    "mail": "/assets/icons/mail.svg",
+    "coimbatore": "/assets/guranted/coimbatore.jpg",
+    "rajapalayam": "/assets/guranted/rajapalayam.png",
+    "google": "/assets/icons/google.svg",
+    "nrifriendlyicon": "/assets/icons/nririendlyicon.svg",
+    "interior": [
+      {
+        "toptext": "Study Tables",
+        "image": "/assets/inerior/StudyTablesIcon.svg"
+      },
+      {
+        "toptext": "False Ceiling",
+        "image": "/assets/inerior/False Ceiling.svg"
+      },
+      {
+        "toptext": "Pooja Unit",
+        "image": "/assets/inerior/Pooja Unit.svg"
+      },
+      {
+        "toptext": "Wallpaper",
+        "image": "/assets/inerior/Wallpaper.svg"
+      },
+      {
+        "toptext": "TV Units",
+        "image": "/assets/inerior/TV Units.svg"
+      },
+      {
+        "toptext": "Movable furniture",
+        "image": "/assets/inerior/Movable furniture.svg"
+      },
+      {
+        "toptext": "bathroom",
+        "image": "/assets/inerior/bathroom.svg"
+      }
+    ],
+    "banerkitchen": [
+      {
+        "image": "/assets/modularkitchen/kitchenbaner.png",
+        "name": "Copy Design your own Kitchen with our experts!"
+      }
+    ],
+    "wardrobebaner": [
+      {
+        "image": "/assets/wardrobe/wardrobebaner.png",
+        "name": "Copy Design your own Kitchen with our experts!"
+      }
+    ],
+    "interiorBottom": [
+      {
+        "bottomtext": "Modular Kitchen",
+        "image": "/assets/inerior/StudyTablesIcon.svg"
+      },
+      {
+        "bottomtext": "Storage & wardrobe",
+        "image": "/assets/inerior/Storage & wardrobe.svg"
+      },
+      {
+        "bottomtext": "Crockery Units",
+        "image": "/assets/inerior/Crockery Units.svg"
+      },
+      {
+        "bottomtext": "Space Saving Furniture",
+        "image": "/assets/inerior/Space Saving Furniture.svg"
+      },
+      {
+        "bottomtext": "Wall Paint",
+        "image": "/assets/inerior/Wall Paint.svg"
+      },
+      {
+        "bottomtext": "Foyer Designs",
+        "image": "/assets/inerior/Foyer Designs.svg"
+      },
+      {
+        "bottomtext": "Kids Bedroom",
+        "image": "/assets/inerior/Kids Bedroom.svg"
+      },
+      {
+        "bottomtext": "Lights",
+        "image": "/assets/inerior/Lights.svg"
+      }
+    ],
+    "compactFurniture": [
+      {
+        "image": "/assets/StylishHomeProducts/CompactFurniture01.png",
+        "name": "Star-Dusty Pink Home Office Design",
+        "subname": "compactFurniture",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/StylishHomeProducts/CompactFurniture02.png",
+        "name": "Coastal Chic Modern Kitchen Design",
+        "subname": "compactFurniture",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/StylishHomeProducts/CompactFurniture03.png",
+        "name": "Coastal Chic Modern Kitchen Design",
+        "subname": "compactFurniture",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/StylishHomeProducts/CompactFurniture02.png",
+        "name": "Star-Dusty Pink Home Office Design",
+        "subname": "compactFurniture",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/StylishHomeProducts/CompactFurniture01.png",
+        "name": "Coastal Chic Modern Kitchen Design",
+        "subname": "compactFurniture",
+        "size": "Size | 13' X 12'"
+      }
+    ],
+    "designGalleryBanner": {
+      "modularText": "Modular Kitchen makes your home Modular",
+      "modularIcon": "/assets/modular/kitche.svg",
+      "modularImage": "/assets/modular/bannerpic.png"
+    },
+    "stylishHomeProducts": [
+      {
+        "image": "/assets/StylishHomeProducts/StylishHomeProducts01.png",
+        "name": "Star-Dusty Pink Home Office Design",
+        "subname": "stylishHomeProducts",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/StylishHomeProducts/StylishHomeProducts02.png",
+        "name": "Coastal Chic Modern Kitchen Design",
+        "subname": "stylishHomeProducts",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/StylishHomeProducts/StylishHomeProducts03.png",
+        "name": "Coastal Chic Modern Kitchen Design",
+        "subname": "stylishHomeProducts",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/StylishHomeProducts/StylishHomeProducts02.png",
+        "name": "Star-Dusty Pink Home Office Design",
+        "subname": "stylishHomeProducts",
+        "size": "Size | 13' X 12'"
+      },
+      {
+        "image": "/assets/StylishHomeProducts/StylishHomeProducts01.png",
+        "name": "Coastal Chic Modern Kitchen Design",
+        "subname": "stylishHomeProducts",
+        "size": "Size | 13' X 12'"
+      }
+    ],
+    "bedroombanner": [
+      {
+        "image": "/assets/Bedroom/bedroombanner.jpg",
+        "name": " Design your own Bedroom with our experts!"
+      }
+    ],
+    "livingRoomBanner": [
+      {
+        "image": "/assets/LivingRoom/LivingroomBanner.jpg",
+        "name": "Copy Design your own Kitchen with our experts!"
+      }
+    ],
+    "banerfurniture": [
+      {
+        "image": "/assets/Spacefurniture/spacebanner.jpg",
+        "name": "Copy Design your own Spacesaving Furniture with our experts!"
+      }
+    ],
+    "connectedclient": [
+      {
+        "id": 1,
+        "image": "/assets/bottomcarousel/image66.jpg",
+        "name": "connected client",
+        "head": "John and family",
+        "text": "Transform your kitchen to the heart of your home with the help of LHome. From coffee dates to dinner parties, our end-to-end design and installation services will turn your kitchen into a stylish ,",
+        "btn": "read more.."
+      }
+    ],
+    "recentproject": [
+      {
+        "image": "/assets/listingimages/Recentproject/repairtools.png",
+        "name": "repairtools",
+        "count": "200",
+        "para": "Currently Working Projects",
+        "line": "/assets/listingimages/Recentproject/Line19.png"
+      },
+      {
+        "image": "/assets/listingimages/Recentproject/Projectscompleted.png",
+        "name": "Projectcompleted",
+        "count": "25000",
+        "para": "Projects completed"
+      },
+      {
+        "image": "/assets/listingimages/Recentproject/Homescompleted.png",
+        "name": "Homescompleted",
+        "count": "300+",
+        "para": "Homes completed last month"
+      }
+    ],
+    "referearnbaner": [
+      {
+        "image1": "/assets/referandearn/referman1.png",
+        "image2": "/assets/referandearn/referman2.png",
+        "toptext1": "Loved us?",
+        "toptext2": "Now refer us!",
+        "topcontent": "Refer and earn ₹ 10,000 every time your friends try Lhome."
+      }
+    ],
+    "joinusBanner": [
+      {
+        "image": "/assets/Joinus/joinusBanner.png"
+      }
+    ],
+    "visitusbaner": [
+      {
+        "image": "/assets/visitus/visitbaner.png"
+      }
+    ],
+    "citiesbanner": [
+      {
+        "image": "/assets/listingimages/Citiesbanner.png",
+        "name": "Cities Banner"
+      }
+    ],
+    "partnershipBanner": [
+      {
+        "image": "/assets/partnership/partnership.png",
+        "name1": "Become the proud owner of a LHome",
+        "name2": "Franchise studio"
+      }
+    ]
+  }
+}

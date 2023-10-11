@@ -1,0 +1,188 @@
+.kitchenimageContainer {
+  position: relative;
+}
+
+.kitchenimage {
+  width: 100%;
+}
+
+.kitchen_tagline {
+  font-family: "Montserrat";
+  color: #FFFFFF;
+  font-weight: 100 !important;
+  font-size: 4em;
+}
+
+.kitchen_tagline1 {
+
+  width: 60%;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-family: "Montserrat";
+  font-size: 4em;
+  line-height: 100%;
+}
+
+.kitchenbanercontent {
+  position: absolute;
+  left: 10%;
+  top: 25%;
+  transform: translateY(-50%);
+}
+
+.kitchenbanerform {
+  position: absolute;
+  left: 4%;
+  top: 45%;
+}
+
+@media only screen and (max-width:4000px) and (min-width:2000px) {
+  .kitchen_tagline {
+    font-size: 4.7em;
+  }
+
+  .kitchen_tagline1 {
+    font-size: 4.7em;
+  }
+
+  .kitchenbanercontent {
+    left: 10%;
+    top: 25%;
+  }
+
+  .kitchenbanerform {
+    left: 7%;
+    top: 40%;
+  }
+}
+
+@media only screen and (max-width:2000px) and (min-width:1600px) {
+  .kitchen_tagline {
+    font-size: 4em;
+  }
+
+  .kitchen_tagline1 {
+    font-size: 4em;
+  }
+
+  .kitchenbanercontent {
+    left: 10%;
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width:1600px) and (min-width:1200px) {
+  .kitchen_tagline {
+    font-size: 4em;
+  }
+
+  .kitchen_tagline1 {
+    font-size: 4em;
+  }
+
+  .kitchenbanercontent {
+    left: 10%;
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width:1200px) and (min-width:1000px) {
+  .kitchen_tagline {
+    font-size: 2.5em;
+  }
+
+  .kitchen_tagline1 {
+    font-weight: 500;
+    font-size: 2.5em;
+
+  }
+
+  .kitchenbanercontent {
+    left: 10%;
+    top: 15%;
+  }
+
+  .kitchenbanerform {
+    top: 30%;
+  }
+
+}
+
+@media only screen and (max-width:1000px) and (min-width:900px) {
+  .kitchen_tagline {
+    font-size: 2em;
+  }
+
+  .kitchen_tagline1 {
+    font-weight: 400;
+    font-size: 2em;
+  }
+
+  .kitchenbanercontent {
+    white-space: nowrap;
+
+    left: 10%;
+    top: 10%;
+
+  }
+
+  .kitchenbanerform {
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width:900px) and (min-width:600px) {
+  .kitchenbanerform {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    padding: 20px;
+    background-color: #2552A4;
+    padding-top: 20%;
+  }
+
+  .kitchen_tagline {
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    font-weight: 100 !important;
+    font-size: 3em;
+  }
+
+  .kitchen_tagline1 {
+    font-weight: 400;
+    font-size: 3em;
+  }
+
+  .kitchenbanercontent {
+    left: 10%;
+    top: 15%;
+  }
+}
+
+@media only screen and (max-width:600px) and (min-width:350px) {
+  .kitchenbanerform {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    padding: 20px;
+    background-color: #2552A4;
+    padding-top: 20%;
+
+  }
+
+  .kitchen_tagline {
+    font-size: 1.75em;
+  }
+
+  .kitchen_tagline1 {
+    font-weight: 400;
+    font-size: 1.75em;
+  }
+  .kitchenbanercontent {
+    left: 10%;
+    top: 12%;
+
+  }
+}

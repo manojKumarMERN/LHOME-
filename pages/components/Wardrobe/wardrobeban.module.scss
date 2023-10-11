@@ -1,0 +1,188 @@
+.wardrobeimageContainer {
+  position: relative;
+}
+
+.wardrobeimage {
+  width: 100%;
+}
+
+.wardrobe_tagline {
+  font-family: "Montserrat";
+  color: #FFFFFF;
+  font-weight: 100 !important;
+  font-size: 4em;
+}
+
+.wardrobe_tagline1 {
+
+  width: 60%;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-family: "Montserrat";
+  font-size: 4em;
+  line-height: 100%;
+}
+
+.wardrobebanercontent {
+  position: absolute;
+  left: 10%;
+  top: 25%;
+  transform: translateY(-50%);
+}
+
+.wardrobebanerform {
+  position: absolute;
+  left: 4%;
+  top: 45%;
+}
+
+@media only screen and (max-width:4000px) and (min-width:2000px) {
+  .wardrobe_tagline {
+    font-size: 4.7em;
+  }
+
+  .wardrobe_tagline1 {
+    font-size: 4.7em;
+  }
+
+  .wardrobebanercontent {
+    left: 10%;
+    top: 25%;
+  }
+
+  .wardrobebanerform {
+    left: 7%;
+    top: 40%;
+  }
+}
+
+@media only screen and (max-width:2000px) and (min-width:1600px) {
+  .wardrobe_tagline {
+    font-size: 4em;
+  }
+
+  .wardrobe_tagline1 {
+    font-size: 4em;
+  }
+
+  .wardrobebanercontent {
+    left: 10%;
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width:1600px) and (min-width:1200px) {
+  .wardrobe_tagline {
+    font-size: 4em;
+  }
+
+  .wardrobe_tagline1 {
+    font-size: 4em;
+  }
+
+  .wardrobebanercontent {
+    left: 10%;
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width:1200px) and (min-width:1000px) {
+  .wardrobe_tagline {
+    font-size: 2.5em;
+  }
+
+  .wardrobe_tagline1 {
+    font-weight: 500;
+    font-size: 2.5em;
+
+  }
+
+  .wardrobebanercontent {
+    left: 10%;
+    top: 15%;
+  }
+
+  .wardrobebanerform {
+    top: 35%;
+  }
+
+}
+
+@media only screen and (max-width:1000px) and (min-width:900px) {
+  .wardrobe_tagline {
+    font-size: 2em;
+  }
+
+  .wardrobe_tagline1 {
+    font-weight: 400;
+    font-size: 2em;
+  }
+
+  .wardrobebanercontent {
+    white-space: nowrap;
+
+    left: 10%;
+    top: 10%;
+
+  }
+
+  .wardrobebanerform {
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width:900px) and (min-width:600px) {
+  .wardrobebanerform {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    padding: 20px;
+    background-color: #2552A4;
+    padding-top: 20%;
+  }
+
+  .wardrobe_tagline {
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    font-weight: 100 !important;
+    font-size: 3em;
+  }
+
+  .wardrobe_tagline1 {
+    font-weight: 400;
+    font-size: 3em;
+  }
+
+  .wardrobebanercontent {
+    left: 10%;
+    top: 15%;
+  }
+}
+
+@media only screen and (max-width:600px) and (min-width:350px) {
+  .wardrobebanerform {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    padding: 20px;
+    background-color: #2552A4;
+    padding-top: 20%;
+
+  }
+
+  .wardrobe_tagline {
+    font-size: 1.75em;
+  }
+
+  .wardrobe_tagline1 {
+    font-weight: 400;
+    font-size: 1.75em;
+  }
+  .wardrobebanercontent {
+    left: 10%;
+    top: 15%;
+
+  }
+}

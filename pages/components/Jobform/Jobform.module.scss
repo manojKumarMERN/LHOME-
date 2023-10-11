@@ -1,0 +1,233 @@
+.formhead {
+    color: #2552A4;
+    font-family: 'Montserrat';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+}
+
+.bgclrwhite{
+    padding: 70px 30px 70px 60px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.overallContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.jobHead{
+    font-size: 60px;
+    color: #F44336;
+    font-family: "Montserrat";
+    text-align: center;
+}
+.jobpara{
+    color: #737373;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+
+.LeftarrowIcon {
+    font-size: 25px;
+}
+
+
+.jobApplybtn{
+    background-color: #F44336;
+    width: 250px;
+    height: 42px;
+    color: #fff;
+    align-items: center;
+    font-size: 16px;
+    font-family:  "Montserrat";
+    border-radius: 10px;
+}
+.jobApplybtn2{
+    margin-top: 50px;
+}
+
+.flex_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex_box button {
+    background-color: #F44336;
+    border-color: #F44336;
+    width: 250px;
+    height: 42px;
+    color: #fff;
+    align-items: center;
+    font-size: 16px;
+    font-family: "Montserrat";
+    border-radius: 10px;
+}
+.jobLeftarrow{
+    display: flex;
+}
+
+.jobLeftarrow p{
+    color: #2552A4;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 16px;
+}
+.flex_box{
+    display: flex;
+    justify-content: center;
+}
+.flex_box  button:hover{
+    border-color: #F44336;
+    background-color: #F44336;
+}
+
+
+.jobLeftarrow a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.flex_box{
+    display: flex;
+    justify-content: center;
+}
+
+.formtxt {
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.formtxt Button {
+    margin-left: 20px;
+}
+
+.formbtn {
+    font-weight: 700;
+    left: 20px;
+}
+
+.para {
+    color: #222;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Montserrat';
+    font-size: 8px;
+    padding-right: '1.5rem';
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+}
+
+.formlabel {
+    color: #4E4E4E;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.forminput {
+    background-color: #F5F5F5;
+    width: 95%;
+
+}
+
+.formselect {
+    background-color: #fafafa;
+    position: relative;
+    width: 95%;
+}
+
+#Select svg {
+    position: absolute;
+}
+
+.formhead1 {
+    color: #222;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.formhead1 Button {
+    margin-left: 25px;
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+.btncontrol {
+    width: 20%;
+    height: 45px;
+    background: #F44336;
+    border: none;
+    margin-left: 480px;
+}
+
+.btncontrol:hover {
+    background-color: #F44336 !important;
+}
+#form-check{
+    margin-left: 55px;
+}
+
+#current{
+    height: 120px;
+}
+#portfol{
+    padding-right:6.5rem;
+}
+@media screen and (max-width:768px) {
+    .formhead1 {
+        font-size: 7px;
+        padding-top: 15px;
+        // display: flex;
+    }
+    #secondformlabel {
+        font-size: 7px;
+    }
+    .forminput1 {
+        margin-left:0% !important;
+    }
+   
+    .formbtn{
+        font-size: 10px;
+        margin-left: 0 !important;
+    }
+    #portfol{
+        padding-right: 0px;
+        // display: flex;
+    }
+    #form-check{
+        margin-left:0px;
+        padding-left: 0.5em;
+    }
+    #rightside{
+        display: flex !important;
+    }
+    .para{
+        font-size: 7px;
+    }
+}
+

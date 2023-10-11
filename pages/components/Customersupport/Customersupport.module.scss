@@ -1,0 +1,179 @@
+.Customerpage {
+    margin-left: 250px;
+}
+
+.pagehead {
+    text-align: center;
+    color: #B7B7B7;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.content {
+    color: #737373;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.time {
+    color: #B7B7B7;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.Customersupportpage {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.customlogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texthere {
+    width: 700px;
+    height: 300px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: #F5F5F5;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.Customersupportpage:focus {
+    outline: none !important;
+}
+
+.btncontrol {
+    width: 30%;
+    height: 45px;
+    background: #F44336;
+    border: none;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btncontrol:hover {
+    background-color: #F44336 !important;
+}
+
+.dummycontainer {
+    width: 56%;
+    height: 900px;
+    margin: 0% auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Box {
+    width: 100%;
+    flex-direction: column;
+}
+
+.tablist {
+    width: 70%;
+    margin: 0% auto;
+}
+
+.category {
+    margin: 2%;
+    padding: 3%;
+}
+
+.divisionchild {
+    display: flex;
+    width: 75%;
+    height: 20%;
+    margin: 5% auto;
+    border-radius: 16px;
+    background: #F5F5F5;
+}
+
+.division {
+    background-color: #F5F5F5;
+    border-radius: 20px;
+}
+
+.interiorname {
+    color: #222;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-left: 5px;
+}
+
+.interiortext {
+    color: #737373;
+    font-family: 'Montserrat';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding: 5px;
+}
+
+.interioriframe {
+    border-radius: 20px;
+    height: 100%;
+    width: 70%;
+}
+
+.interiorimage {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+@media screen and (max-width:380px) {
+    .divisionchild {
+        width: 100%;
+        height: 10%;
+    }
+
+}
+
+
+@media screen and (max-width:420px) {
+    .Customerpage {
+        margin-left: 0px;
+    }
+
+    .teaxhere {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .customersupport_button {
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (max-width:750px) {
+    .Customerpage {
+        margin-left: 0px;
+    }
+
+    .texthere {
+        width: 100%;
+        height: 70vh;
+    }
+
+    .customersupport_button {
+        font-size: 10px;
+    }
+
+}

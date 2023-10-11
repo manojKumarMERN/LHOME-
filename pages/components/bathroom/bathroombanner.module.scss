@@ -1,0 +1,183 @@
+.bathroomimageContainer {
+  position: relative;
+}
+
+.bathroomimage {
+  width: 100%;
+}
+
+.bathroom_tagline {
+  font-family: "Montserrat";
+  color: #FFFFFF;
+  font-weight: 100 !important;
+  font-size: 4em;
+}
+
+.bathroom_tagline1 {
+
+  // width: 60%;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-family: "Montserrat";
+  font-size: 4em;
+  line-height: 100%;
+}
+
+.bathroombannercontent {
+  position: absolute;
+  right: 10%;
+  top: 25%;
+  transform: translateY(-50%);
+}
+
+.bathroombannerform {
+  position: absolute;
+  right:10%;
+  top: 45%;
+}
+
+@media only screen and (max-width:4000px) and (min-width:2000px) {
+  .bathroom_tagline {
+    font-size: 4.7em;
+  }
+
+  .bathroom_tagline1 {
+    font-size: 4.7em;
+  }
+
+  .bathroombannercontent {
+    top: 25%;
+  }
+
+  .bathroombannerform {
+    top: 40%;
+  }
+}
+
+@media only screen and (max-width:2000px) and (min-width:1600px) {
+  .bathroom_tagline {
+    font-size: 4em;
+  }
+
+  .bathroom_tagline1 {
+    font-size: 4em;
+  }
+
+  .bathroombannercontent {
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width:1600px) and (min-width:1200px) {
+  .bathroom_tagline {
+    font-size: 4em;
+  }
+
+  .bathroom_tagline1 {
+    font-size: 4em;
+  }
+
+  .bathroombannercontent {
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width:1200px) and (min-width:1000px) {
+  .bathroom_tagline {
+    font-size: 2.5em;
+  }
+
+  .bathroom_tagline1 {
+    font-weight: 500;
+    font-size: 2.5em;
+
+  }
+
+  .bathroombannercontent {
+    top: 15%;
+  }
+
+  .bathroombannerform {
+    top: 35%;
+  }
+
+}
+
+@media only screen and (max-width:1000px) and (min-width:900px) {
+  .bathroom_tagline {
+    font-size: 2em;
+  }
+
+  .bathroom_tagline1 {
+    font-weight: 400;
+    font-size: 2em;
+  }
+
+  .bathroombannercontent {
+    white-space: nowrap;
+    top: 10%;
+}
+
+  .bathroombannerform {
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width:900px) and (min-width:600px) {
+  .bathroombannerform {
+    position: relative;
+    top: 0;
+    transform: none;
+    padding: 20px;
+    background-color: #2552A4;
+    padding-top: 20%;
+  }
+
+  .bathroom_tagline {
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    font-weight: 100 !important;
+    font-size: 3em;
+  }
+
+  .bathroom_tagline1 {
+    font-weight: 400;
+    font-size: 3em;
+  }
+
+  .bathroombannercontent {
+    top: 15%;
+  }
+  .bathroombannerform {
+    right:0%;
+}
+}
+
+@media only screen and (max-width:600px) and (min-width:350px) {
+  .bathroombannerform {
+    position: relative;
+    top: 0;
+    transform: none;
+    padding: 20px;
+    background-color: #2552A4;
+    padding-top: 20%;
+
+  }
+
+  .bathroom_tagline {
+    font-size: 1.75em;
+  }
+
+  .bathroom_tagline1 {
+    font-weight: 400;
+    font-size: 1.75em;
+  }
+  .bathroombannercontent {
+    top: 15%;
+
+  }
+  .bathroombannerform {
+    right:0%;
+}
+}
+

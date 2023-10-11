@@ -1,0 +1,112 @@
+.partnerRow{
+    background-color: #F5F5F5;
+    padding: 4% 7% 4% 7%;
+}
+.partnerRowbox{
+    display: flex;
+}
+.partnerMidRow{
+    padding: 6% 7% 6% 7%;
+}
+.partnerRowLeft{
+    width: 65%;
+}
+.partnerRowRight{
+    width: 35%; 
+}
+.partnerRowBtn{
+    background-color: #2552A4;
+    color: #FFFFFF;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    border-radius: 8px;
+    padding-top: 12px;
+    margin-top: 40px;
+}
+.partnerRowText{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #737373;
+    width: 75%;
+}
+.partnerMidRowText{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #737373;
+    width: 80%;
+}
+.partnerImgOuter{
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 2.5%;
+    filter: drop-shadow(10px 20px 5px #0000001A);
+}
+.partnerRowImg{
+    // height: 50% !important;
+    // height: 55vh;
+    width: 100%;
+    border-radius: 5%;
+}
+.partenerRowHead{
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 30px !important;
+    line-height: 39px;
+    color: #000000;
+}
+.partnerSubHead{
+    color: #EF5350;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 18px !important;
+    line-height: 39px;
+    padding-top: 10px;
+}
+.partnerRowLeft1{
+    padding-top: 50px !important;
+}
+.partnerRowLeft2{
+    padding-left: 50px !important;
+}
+.partenerRowText1{
+    padding-top: 20px;
+}
+@media only screen and (min-width:320px) and (max-width: 700px){
+    .partnerRowbox{
+        display: block;
+    }
+    .partnerRowRight{
+        padding-top: 5%;
+    }
+    .partnerRowText{
+        padding-right: 0px !important;
+        width: 100%;
+    }
+    .partnerRowLeft, .partnerRowRight, .partnerMidRowText{
+        width: 100%;
+    }
+    .partnerRowLeft2{
+        padding-left: 0px !important;
+        padding-top: 20px;
+    }
+}
+@media only screen and (min-width:700px) and (max-width: 1024px){
+    .partnerRowText{
+        padding-right: 0px !important;
+        width: 100%;
+    }
+    .partnerMidRowText{
+        width: 100%;
+    }
+    .partnerRowLeft2{
+        padding-top: 20px;
+    }
+}

@@ -1,0 +1,78 @@
+.ToppicsdivforDesignGallery {
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.lhomePage {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  // display:flex;
+}
+
+.LhomeBottom {
+  height: 80vh;
+  position: absolute;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.component_1 {
+  margin-top: 5%;
+}
+
+.customstories {
+  text-align: center;
+}
+
+.filter_home1 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.filter_link_span1 {
+
+  font-size: 12px;
+
+}
+
+.filter_link_span2 {
+  font-size: 12px;
+
+}
+
+.filter_header_content {
+  font-family: "Montserrat";
+  font-size: 26px;
+  line-height: 48.76px;
+  font-weight: 700;
+  text-align: center;
+  color: #2552A4;
+}
+
+.filter_content {
+  color: #2C2C2C;
+  font-size: 12px;
+  font-weight: lighter !important;
+}
+
+.filter_additional_content {
+  line-height: 19.5px;
+}
+
+.kitchen_filter_link {
+  font-family: "Montserrat";
+  line-height: 19.5px;
+  font-weight: 400;
+  color: #2C2C2C;
+  text-decoration: none;
+}
+
+.component_2 {
+  padding-bottom: 15%;
+}

@@ -1,0 +1,31 @@
+.joinus{
+    background-color: #EF5350;
+}
+.joinusContainer{
+    display: flex;
+}
+.joinusImage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.joinusImage img{
+    width: 500px;
+    margin-top: 50px;
+}
+.joinusContent{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.joinusContent p{
+    color: #FFFFFF;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 5vw;
+    text-align: center;
+    line-height: 6vw;
+}
+
+

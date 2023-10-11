@@ -1,0 +1,31 @@
+{
+    "categories": {
+        "discover": [
+            {
+                "image": "/assets/listingimages/Discover.png",
+                "head": "Discover",
+                "text": "explore more than just modular design ideas with our experts."
+            }
+        ],
+        "design": [
+            {
+                "image": "/assets/listingimages/Design.png",
+                "head": "Design",
+                "text": "complete the design with painting, flooring & other decor solutions."
+            }
+        ],
+        "movein": [
+            {
+                "image": "/assets/listingimages/Move-in.png",
+                "head": "Move-in",
+                "text": "Move in with ease, with our hassle-free civil work & installation services"
+            }
+        ],
+        "arrow": [
+            {
+                "image": "/assets/listingimages/vector1.jpeg",
+                "head": "Downarrow"
+            }
+        ]
+    }
+}

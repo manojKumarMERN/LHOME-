@@ -1,0 +1,169 @@
+.blueComponent{
+    width: 100vw;
+    height: 100px;
+    background: #2552A4;
+    padding-top: 1%;
+    margin-bottom: 14%;
+}
+.redComponent{
+    width: 100vw;
+    height: 100px;
+    background: #EF5350;
+    padding-top: 1%;
+    margin-bottom: 14%; 
+}
+.Wholecontainer {
+    width: 80%;
+    height: 160px;
+    border-radius: 32px;
+    background-color: #FFFFFF;
+    margin:0 auto ;
+
+}
+.InnerLayer {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    margin-top:2%;
+
+}
+
+.Head {
+    color: #EF5350;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 39px;
+    letter-spacing: 0em;
+    padding-top: 1%;
+}
+// .greybox{
+//     background-color: #F5F5F5;
+//     width:100%;
+//     min-width: 250px;
+
+// }
+.Box {
+    display: flex;
+    width: 90% ;
+    min-width: 250px;
+    height: 45px;
+    padding-left: 25px;
+    align-items: center;
+    background-color: #F5F5F5;
+    // margin-right: 40px;
+    border-radius: 20px;
+    margin:0 auto 30px;
+}
+
+.content {
+    font-family: "Montserrat";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#000000;
+}
+@media screen and  (max-width:1240px) and  (min-width:1000px) {
+    .content {
+     
+        font-size: 10px;
+        font-weight: 600;
+
+    }
+}
+
+@media screen and  (max-width:4000px) and  (min-width:3500px) {
+    .Head {
+      
+        font-size: 46px;
+        line-height: 49px;
+      
+    }
+    .Box {
+        
+        height: 100px;
+       border-radius: 50px;
+       
+    }
+    .content {
+        font-size: 34px;
+        line-height: 40px;
+      
+    }
+}
+@media screen and  (max-width:3500px) and  (min-width:3000px) {
+    .Head {
+      
+        font-size: 46px;
+        line-height: 49px;
+      
+    }
+    .Box {
+        
+        height: 90px;
+       border-radius: 50px;
+       
+    }
+    .content {
+        font-size: 32px;
+        line-height: 38px;
+      
+    }
+}
+@media screen and  (max-width:3000px) and  (min-width:2500px) {
+    .Head {
+      
+        font-size: 38px;
+        line-height: 32px;
+      
+    }
+    .Box {
+        
+        height: 70px;
+       border-radius: 50px;
+       
+    }
+    .content {
+        font-size: 22px;
+        line-height: 28px;
+      
+    }
+}
+@media screen and  (max-width:2500px) and  (min-width:2000px) {
+    .Head {
+      
+        font-size: 32px;
+        line-height: 26px;
+      
+    }
+    .Box {
+        
+        height: 60px;
+       border-radius: 50px;
+       
+    }
+    .content {
+        font-size: 18px;
+        line-height: 22px;
+      
+    }
+}
+
+@media (max-width:700px){
+    .InnerLayer {
+        grid-template-columns: repeat(1 , 1fr);
+}
+.blueComponent , .redComponent {
+    margin-bottom: 200px;
+    height: 150px;
+}
+.Wholecontainer{
+    height: 320px;
+}
+
+}
+

@@ -1,0 +1,132 @@
+.interiorIconBack {
+    border-radius: 50px;
+    background-color: #2552A4;
+    padding: 15px;
+    width: 65px;
+    text-align: center;
+    margin:0 auto;
+    height: 65px;
+ }
+ 
+ .interiorIconImg {
+    min-width: 30px;
+    max-width: 30px;
+    height: 30px;
+    margin: 0 auto;
+ }
+ 
+ .interiorDesignTop {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+ }
+ .interiorDesignTopOuter {
+    margin-bottom: 1%;
+ }
+ .interiorDesignBottomOuter {
+    margin-top: 1% !important;
+    margin-bottom: 1%; 
+ }
+ 
+ .interiorDesignTopText {
+    margin-right: 5%;
+    margin-left: 3%;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #222222;
+ }
+ 
+ .interiorDesignbottomText {
+    margin-right: 3%;
+    margin-left: 1.5%;
+    white-space: nowrap;
+ }
+ 
+ .interiorDesignBottom {
+    display: flex;
+    width: 92%;
+    margin: 0 auto;
+    font-weight: 600;
+    color: #222222;
+ }
+ .interiorDesign {
+    width: 100%;
+    padding: 0;
+    left: 0;
+    background-color: #fff;
+ }
+ 
+ .interiorIconsBack {
+    background: #2552A4;
+    padding: 10px;
+    border-radius: 50px;
+    margin-right: 5%;
+    margin-left: 5%;
+    z-index: 1;
+ }
+ 
+ .interiorIconsBottomBack {
+    background: #2552A4;
+    border-radius: 50px;
+    margin-right: 5%;
+    margin-left: 3.8%;
+    padding: 10px;
+    margin-top:4%;
+    z-index: 1;
+ }
+ .interiorIconsBottomBackImage {
+    width: 40px;
+    height: 40px;
+ }
+ 
+ .interiorIconsBack:after{
+    content:"";
+    position:absolute;
+    border-top:4px solid #ccc;
+    width: 90px;
+    transform: rotate(50deg);
+    transform-origin: 0% 0%;
+    margin-left: 2.5%;
+  }
+  .interiorIconsBack:before{
+    content: "";
+    position: absolute;
+    border-top: 4px solid #ccc;
+    width: 105px;
+    transform: rotate(135deg);
+    transform-origin: -5%;
+    margin-top: 1.4%;
+  }
+ 
+  .interiorDesignOuter {
+    overflow-y: scroll;
+    position: relative;
+  }
+
+  .guaranteedHeader {
+    font-weight: 700;
+    font-size: 24px;
+    color:#222222;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+ }
+
+ .interiorDesignLayer {
+   width: 1500px;
+   overflow: scroll;
+ }
+
+ @media only screen and (min-width:600px) and (max-width: 1000px){ 
+   .interiorIconsBack:before{
+      transform-origin: 0%;
+      margin-top: 3%;
+    }
+}
+
+@media only screen and (min-width:320px) and (max-width: 599px){ 
+   .interiorIconsBack:before{
+      transform-origin: 0%;
+      margin-top: 6.8%;
+    }
+}

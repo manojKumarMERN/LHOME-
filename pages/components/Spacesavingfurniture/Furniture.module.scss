@@ -1,0 +1,183 @@
+.furnitureimageContainer {
+  position: relative;
+}
+
+.furnitureimage {
+  width: 100%;
+}
+
+.furniture_tagline {
+  font-family: "Montserrat";
+  color: #FFFFFF;
+  font-weight: 100 !important;
+  font-size: 4em;
+}
+
+.furniture_tagline1 {
+
+  // width: 60%;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-family: "Montserrat";
+  font-size: 4em;
+  line-height: 100%;
+}
+
+.furniturebannercontent {
+  position: absolute;
+  right: 10%;
+  top: 25%;
+  transform: translateY(-50%);
+}
+
+.furniturebannerform {
+  position: absolute;
+  right:10%;
+  top: 45%;
+}
+
+@media only screen and (max-width:4000px) and (min-width:2000px) {
+  .furniture_tagline {
+    font-size: 4.7em;
+  }
+
+  .furniture_tagline1 {
+    font-size: 4.7em;
+  }
+
+  .furniturebannercontent {
+    top: 25%;
+  }
+
+  .furniturebannerform {
+    top: 40%;
+  }
+}
+
+@media only screen and (max-width:2000px) and (min-width:1600px) {
+  .furniture_tagline {
+    font-size: 4em;
+  }
+
+  .furniture_tagline1 {
+    font-size: 4em;
+  }
+
+  .furniturebannercontent {
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width:1600px) and (min-width:1200px) {
+  .furniture_tagline {
+    font-size: 4em;
+  }
+
+  .furniture_tagline1 {
+    font-size: 4em;
+  }
+
+  .furniturebannercontent {
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width:1200px) and (min-width:1000px) {
+  .furniture_tagline {
+    font-size: 2.5em;
+  }
+
+  .furniture_tagline1 {
+    font-weight: 500;
+    font-size: 2.5em;
+
+  }
+
+  .furniturebannercontent {
+    top: 15%;
+  }
+
+  .furniturebannerform {
+    top: 35%;
+  }
+
+}
+
+@media only screen and (max-width:1000px) and (min-width:900px) {
+  .furniture_tagline {
+    font-size: 2em;
+  }
+
+  .furniture_tagline1 {
+    font-weight: 400;
+    font-size: 2em;
+  }
+
+  .furniturebannercontent {
+    white-space: nowrap;
+    top: 10%;
+}
+
+  .furniturebannerform {
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width:900px) and (min-width:600px) {
+  .furniturebannerform {
+    position: relative;
+    top: 0;
+    transform: none;
+    padding: 20px;
+    background-color: #2552A4;
+    padding-top: 20%;
+  }
+
+  .furniture_tagline {
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    font-weight: 100 !important;
+    font-size: 3em;
+  }
+
+  .furniture_tagline1 {
+    font-weight: 400;
+    font-size: 3em;
+  }
+
+  .furniturebannercontent {
+    top: 15%;
+  }
+  .furniturebannerform {
+    right:0%;
+}
+}
+
+@media only screen and (max-width:600px) and (min-width:350px) {
+  .furniturebannerform {
+    position: relative;
+    top: 0;
+    transform: none;
+    padding: 20px;
+    background-color: #2552A4;
+    padding-top: 20%;
+
+  }
+
+  .furniture_tagline {
+    font-size: 1.75em;
+  }
+
+  .furniture_tagline1 {
+    font-weight: 400;
+    font-size: 1.75em;
+  }
+  .furniturebannercontent {
+    top: 15%;
+
+  }
+  .furniturebannerform {
+    right:0%;
+}
+}
+

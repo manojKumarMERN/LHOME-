@@ -1,0 +1,96 @@
+.bottomcarousel {
+  margin: 0% 1% 5% 1%
+}
+
+.heading h3 {
+  font-family: Montserrat !important;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.contentStoryView{
+  max-height: 100% !important;
+}
+.customRArrowStyle {
+  margin-left: 200px;
+  text-align: center;
+  margin-top: 320px;
+}
+
+.text-black {
+  color: black;
+}
+
+.autoplayCS {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.autoplayContent {
+  background-color: #2552A4;
+  width: 97%;
+  margin: 50% auto 0;
+  padding: 52% 8% 8%;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.autoplayH4 {
+  color: #FFFFFF;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 2vw;
+}
+
+.autoplayPara {
+  color: #FFFFFF;
+  text-align: left;
+  font-size: 0.8vw;
+  max-height: 5 * 1.2em;
+  overflow: hidden;
+  position: relative;
+  margin: 0 !important;
+}
+
+.autoplayImg {
+  border-radius: 50%;
+  width: 75%;
+  position: absolute;
+  top: 0;
+}
+
+.autoplayBtn {
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.centeredImage .autoplayContent {
+  background: #F44336;
+  transition: background 2s, transform 1s;
+  padding: 60% 8% 0;
+  transition: padding 2s, transform 1s;
+}
+
+.centeredImage .autoplayImg {
+  margin-top: 20px;
+  transition: margin-top 1.0s, transform 1.0s;
+}
+
+@media only screen and (min-width:700px) and (max-width:1000px) {
+  .autoplayPara {
+    font-size: 1.5vw;
+  }
+  .autoplayH4{
+    font-size: 3vw;
+  }
+}
+@media only screen and (min-width:320px) and (max-width:699px) {
+  .autoplayPara {
+    font-size: 1.8vw;
+  }
+  .autoplayH4{
+    font-size:4.5vw;
+}
+}

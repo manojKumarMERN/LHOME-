@@ -1,0 +1,160 @@
+.ToppicsdivforDesignGallery {
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    padding: 20px;
+  }
+  
+  .lhomePage {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    // display:flex;
+  }
+  
+  .LhomeBottom {
+    height: 90vh;
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  
+  }
+  
+  //  filter module css
+  .bgclr {
+    background-color: #EF5350;
+  }
+  
+  .filter_home {
+    text-align: center;
+  }
+  
+  .kitchen_filter_link {
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  
+  .filter_slash {
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 5px;
+  }
+  
+  .filter_header_content {
+    font-family: "Montserrat";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 49px;
+    letter-spacing: 0em;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  
+  .filter_additional_content {
+    font-size: 15px;
+    font-weight: lighter;
+    line-height: 20px;
+    letter-spacing: 0em;
+    color: #FFFFFF;
+  }
+  
+  .Shaped {
+    // width:100%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .shape_content {
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0em;
+    color: #FFD600;
+  }
+  
+  .shaped_slash {
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0em;
+    color: #FFD600;
+    padding: 0px 3px 0px 3px;
+  }
+  
+  @media screen and (max-width:4000px) and (min-width:3000px) {
+    .kitchen_filter_link {
+      font-size: 22px;
+      line-height: 30px;
+    }
+  
+    .filter_slash {
+      font-size: 22px;
+    }
+  
+    .filter_header_content {
+      font-size: 52px;
+      line-height: 69px;
+    }
+  
+    .filter_additional_content {
+      font-size: 32px;
+      line-height: 42px;
+    }
+  
+    .shape_content {
+      font-size: 32px;
+      line-height: 39px;
+    }
+  
+    .shaped_slash {
+      font-size: 32px;
+    }
+  }
+  @media screen and (max-width:3000px) and (min-width:2000px) {
+    .kitchen_filter_link {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  
+    .filter_slash {
+      font-size: 18px;
+    }
+  
+    .filter_header_content {
+      font-size: 42px;
+      line-height: 49px;
+    }
+  
+    .filter_additional_content {
+      font-size: 22px;
+      line-height: 28px;
+    }
+  
+    .shape_content {
+      font-size: 18px;
+      line-height: 29px;
+    }
+  
+    .shaped_slash {
+      font-size: 18px;
+    }
+  }
+  
+  

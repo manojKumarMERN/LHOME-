@@ -1,0 +1,166 @@
+.referNow {
+    background: #4D6797;
+    padding: 6% 6%;
+}
+
+.division{
+    width: 50%;
+}
+
+.refermanmaintext1{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 34px;
+    line-height: 22px;
+    color: #fff;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.refermansubtext1{
+    width: 400px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 5px;
+    color: #fff;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.referNowOuter {
+    display: flex;
+    align-items: center;
+
+}
+
+.refermanmaintext {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 55px;
+    line-height: 22px;
+    color: #fff;
+    white-space: nowrap;
+    text-align: left;
+}
+.refermanmaintext2{
+    text-align: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 55px;
+    line-height: 22px;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.referNow1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4D6797;
+    padding: 6% 6%;
+}
+.refermansubtext {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 1rem;
+    margin-top: 5px;
+    color: #fff;
+    /* padding-top: 10px; */
+    text-align: left;
+    padding: 3% 35% 0% 0%;
+}
+
+.refermanbuttonholder{
+    width: 50%;
+    text-align: end
+}
+
+.refermanbuttonholder button {
+    font-family: Montserrat;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 14px;
+    color: #fff;
+    // padding: 12px 20px;
+    /* margin-top: 10px; */
+    background: #f44336;
+    font-size: 25px;
+    white-space: nowrap;
+    padding: 3% 10%;
+}
+
+.referman {
+    width: 35%;
+}
+
+@media only screen and (min-width:320px) and (max-width: 724px) {
+    .referNowOuter {
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+}
+
+@media only screen and (max-width:1000px) and (min-width:500px)  {
+    .referNowOuter {
+        flex-direction: column;
+    }
+    .refermanmaintext{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .refermansubtext{
+        font-family: Montserrat;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 1rem;
+    color: #fff;
+    padding: 10%;
+    }
+
+    .refermanbuttonholder{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .refermansubtext {
+        font-size: 10px;
+    padding: 15px 0;
+    }
+    .refermanmaintext{
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+    }
+    .referNowOuter{
+        flex-direction: column;
+    }
+    .refermanbuttonholder{
+        display: flex;
+        justify-content: center;
+    }
+    .refermanbuttonholder button {
+        ont-family: Montserrat;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 14px;
+    color: #fff;
+    /* margin-top: 10px; */
+    background: #f44336;
+    font-size: 21px;
+    white-space: nowrap;
+    padding: 8% 10%;
+    }
+
+}

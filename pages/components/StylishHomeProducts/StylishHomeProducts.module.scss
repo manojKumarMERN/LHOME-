@@ -1,0 +1,1352 @@
+.mainhighlights {
+  background-color: #FFF;
+  padding: 2%;
+}
+
+.highlights {
+  background-color: #F5F5F5;
+  border-radius: 25px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+.scroll-btn {
+  color: #222222;
+}
+
+.Arrow{
+  width: 30px;
+  height: 30px;
+}
+.leftBtn{
+  background-color: transparent;
+  font-size: 30px;
+  font-weight: 500;
+  position: absolute;
+  left: 5%;
+  margin-bottom: 5%;
+}
+
+.leftBtn:hover {
+  background-color: transparent;
+}
+
+.rightBtn {
+  background-color: transparent;
+  font-size: 30px;
+  font-weight: 500;
+  position: absolute;
+  right: 5%;
+  margin-bottom: 5%;
+}
+.carousel_design div[dir="ltr"]{
+  position: unset !important;
+}
+.rightBtn:hover {
+  background-color: transparent;
+
+}
+
+// @media (max-width:992px) {
+//   .leftBtn {
+//     margin-left: -2%;
+//   }
+
+//   .rightBtn {
+//     margin-left: 96%;
+//   }
+// }
+
+// @media (max-width:767px) {
+//   .rightBtn {
+//     margin-left: 94%;
+//   }
+// }
+
+// @media (max-width:500px) {
+//   .rightBtn {
+//     margin-left: 92%;
+//   }
+// }
+
+// @media (min-width:1500px) and (max-width:1920px) {
+//   .leftBtn {
+//     margin-left: 2%;
+//   }
+
+//   .rightBtn {
+//     margin-left: 98%;
+//   }
+// }
+
+// @media (min-width:1920) {
+//   .leftBtn {
+//     margin-right: -1%;
+//   }
+// }
+
+.trendingtitle {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 39px;
+  color: #222222;
+  padding-left: 3%;
+  display: flex;
+}
+
+.toppickstitle {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 39px;
+  color: #222222;
+  padding-left: 38px;
+  display: flex;
+}
+
+.toppicksfilmroleClass {
+  // width: 96%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.customdivisionchild {
+  display: flex;
+  background: #ffffff;
+  border-radius: 32px;
+  width: 100%;
+}
+
+.customdivision {
+  display: flex;
+  padding: 20px;
+  padding-bottom: 45px;
+  margin-right: 0;
+  // margin-left: 6px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.customlist {
+  text-align: center;
+}
+
+.customname {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1vw;
+  line-height: 15px;
+  color: #000000;
+  width: 100%;
+  margin-left: 5%;
+  margin-top: 3%;
+  display: flex;
+}
+
+.wishlistholder {
+  font-size: 1.2vw;
+  padding-left: 15px;
+}
+
+.wishlist {
+  width: 25px;
+  height: 25px;
+}
+
+.shareholder {
+  font-size: 1.2vw;
+  padding-left: 5px;
+}
+
+.share {
+  width: 25px;
+  height: 25px;
+}
+
+.trendingfilmroleClass button {
+  font-size: 30px;
+  padding-bottom: 40px;
+}
+.image_bottom_icons{
+  display: flex;
+  justify-content: space-around;
+  width: 17%;
+}
+.toppicksfilmroleClass button {
+  font-size: 30px;
+  padding-bottom: 40px;
+}
+
+.wardrobeflyfilmroleClass button {
+  font-size: 30px;
+  padding-bottom: 40px;
+}
+
+// @media only screen and (min-width:1500px) and (max-width:1920px) {
+//   .customdivision {
+//     margin-left: 70px;
+//   }
+// }
+
+.trendingfilmroleClass {
+
+  @media (max-width: 768px) {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4%;
+  }
+}
+
+.customtext {
+  padding: 20px;
+  padding-left: 0px;
+  padding-top: 0px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 10px;
+  color: #b7b7b7;
+  width: 200px;
+  display: flex;
+  margin-top: 5px;
+  margin-left: 5%;
+}
+
+.trendingfilmroleClass {
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.trendingfilmrole {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0 auto;
+  box-sizing: "content-box";
+}
+
+.customimage {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 350px;
+}
+
+.customimage>img {
+  width: 100%;
+  height: 220px;
+  border-radius: 20px;
+}
+
+.customimage {
+  height: none;
+  width: 100%;
+}
+
+.warddrobeflytitle {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 39px;
+  color: #222222;
+  padding-left: 3%;
+  display: flex;
+}
+
+.wardrobeflyfilmroleClass {
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wardrobeflyfilmrole {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+
+@media only screen and (max-width: 622px) {
+
+
+
+  .slider {
+    height: 400px;
+  }
+
+  .sliderwrapper {
+    height: 550px;
+  }
+
+  .sliderwrapperinputs {
+    height: 420px;
+  }
+
+  .designermeetholder {
+    width: 95%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .customimage {
+    height: none;
+  }
+
+  .customdivisionchild {
+    width: 270px;
+  }
+
+  .designermeet {
+    margin-left: 0px;
+  }
+
+  .estimatebuttonholder {
+    left: 32%;
+  }
+
+  .sliderwrappertextholder {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .estimatebuttonholder {
+    top: 60%;
+  }
+
+  .sliderwrappertextholder {
+    padding-left: unset;
+  }
+
+}
+
+@media only screen and (min-width: 1101px) and (max-width: 1280px) {
+  .division2 {
+    .leftdetailsholder {
+      margin-top: 20px;
+    }
+  }
+
+
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1100px) {
+  .rightdetailsholder {
+    margin-top: 30px;
+  }
+
+  .contacttitle {
+    line-height: 13px;
+    font-size: 10px;
+  }
+
+  .expertisetitle {
+    line-height: 13px;
+    font-size: 10px;
+  }
+
+  .threedtitle {
+    line-height: 13px;
+    font-size: 10px;
+  }
+
+  .division2 {
+    .leftdetailsholder {
+      margin-top: 5px;
+    }
+
+    .rightdetailsholder {
+      margin-top: 30px;
+    }
+  }
+
+  .calendaricon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .happycustomerhomeicon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .experticon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .warrantyicon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .superiorparent {
+    margin-top: -15px;
+  }
+
+  .safetyparent {
+    margin-top: -15px;
+  }
+
+  .experttext {
+    margin-top: 60px;
+  }
+
+  .contacttext {
+    margin-top: 0px;
+  }
+
+  .expertisetext {
+    margin-top: 10px;
+  }
+
+  .referdetailslist {
+    margin-top: -25px;
+  }
+}
+
+@media only screen and (min-width: 622px) and (max-width: 900px) {
+  .tagline1 {
+    font-size: 3vw;
+    width: 100%;
+    justify-content: center;
+    padding-left: unset;
+    line-height: 30px;
+    position: relative;
+  }
+
+  .tagline2 {
+    font-size: 3vw;
+    width: 100%;
+    justify-content: center;
+    padding-left: unset;
+    line-height: 20px;
+    position: relative;
+  }
+
+  .customWidth_2 {
+    width: 5vw !important;
+  }
+
+  .customWidth_4 {
+    width: 10vw !important;
+  }
+
+  .customWidth_6 {
+    width: 15vw !important;
+  }
+
+  .customWidth_8 {
+    width: 20vw !important;
+  }
+
+  .customWidth_10 {
+    width: 25vw !important;
+  }
+
+  .customWidth_12 {
+    width: 30vw !important;
+  }
+
+  .customWidth_14 {
+    width: 35vw !important;
+  }
+
+  .whatsapplabel {
+    .label1 {
+      justify-content: unset;
+      padding-left: 40px;
+    }
+
+    .label2 {
+      justify-content: unset;
+      padding-left: 40px;
+      font-size: 1vw;
+    }
+  }
+
+  .whatsappcheckbox {
+    right: 5px;
+  }
+
+  .estimatebuttonholder {
+    padding-top: 20px;
+  }
+
+  .leftdetailsholder {
+    margin-top: -30px;
+  }
+
+  .division1 {
+    width: 50%;
+    height: 250px;
+    margin-top: unset;
+
+    .verticaldivider {
+      display: block;
+    }
+  }
+
+  .division2 {
+    width: 50%;
+    height: 250px;
+
+    .verticaldivider {
+      display: none;
+    }
+
+    margin-top: unset;
+  }
+
+  .division3 {
+    width: 100%;
+    height: 250px;
+    padding-left: 25%;
+    padding-right: 25%;
+
+    .verticaldivider {
+      display: none;
+    }
+
+    margin-top: unset;
+  }
+
+  .rightdetailsholder {
+    margin-top: 30px;
+  }
+
+  .contacttitle {
+    line-height: 13px;
+    font-size: 10px;
+    margin-top: 40px;
+  }
+
+  .expertisetitle {
+    line-height: 13px;
+    font-size: 10px;
+    margin-top: 40px;
+  }
+
+  .threedtitle {
+    line-height: 13px;
+    font-size: 10px;
+  }
+
+  .happycustomerhomedetailsparent {
+    margin-top: -40px;
+  }
+
+  .warrantydetailsparent {
+    margin-top: -40px;
+  }
+
+  .superiorparent {
+    margin-top: -40px;
+  }
+
+  .safetyparent {
+    margin-top: -40px;
+  }
+
+  .safetyparent {
+    margin-top: -20px;
+  }
+
+  .superiorparent {
+    margin-top: -20px;
+  }
+
+  .referdetailslist {
+    margin-top: -25px;
+  }
+}
+
+
+
+@media only screen and (min-width: 500px) and (max-width: 768px) {
+
+  .leftdetailsholder {
+    width: 50%;
+    height: 50%;
+  }
+
+  .rightdetailsholder {
+    width: 50%;
+    height: 50%;
+    margin-top: 0px;
+  }
+
+  .calendaricon {
+    width: 25%;
+  }
+
+  .happycustomerhomeicon {
+    width: 25%;
+  }
+
+  .experticon {
+    width: 25%;
+  }
+
+  .warrantyicon {
+    width: 25%;
+  }
+
+  .calendartext {
+    width: 100%;
+    font-size: 13px;
+    margin-top: 55px;
+    margin-left: unset;
+  }
+
+  .calendaricon img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .happycustomerhomeicon img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .experticon img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .warrantyicon img {
+    width: 15px;
+    height: 15px;
+    background: rgba(50, 92, 169, 0.2);
+  }
+
+  .happycustomerhometext {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 13px;
+    margin-left: unset;
+  }
+
+  .happycustomerhomeicon {
+    margin-top: 40px;
+  }
+
+  .experttext {
+    width: 100%;
+    margin-top: 57px;
+    font-size: 13px;
+    margin-left: unset;
+  }
+
+  .warrantytext {
+    width: 100%;
+    margin-top: 19px;
+    font-size: 13px;
+    margin-left: unset;
+  }
+
+  .experticon {
+    margin-top: 40px;
+  }
+
+  .warrantyicon {
+    margin-top: 40px;
+  }
+
+  .leftdetailsholder {
+    width: 100%;
+  }
+
+  .rightdetailsholder {
+    width: 100%;
+  }
+
+  .experticon {
+    margin-top: 80px;
+  }
+
+  .calendartext {
+    padding: 10px;
+  }
+
+  .happycustomerhometext {
+    padding: 10px;
+  }
+
+  .experttext {
+    padding: 10px;
+  }
+
+  .warrantytext {
+    padding: 10px;
+  }
+
+  .leftmovedown {
+    margin-top: 14px;
+  }
+
+  .rightmoveup {
+    margin-top: -38px;
+  }
+
+  .contacttitle {
+    margin-top: 0px;
+  }
+
+  .expertisetitle {
+    margin-top: 0px;
+  }
+
+  .happycustomerhomedetailsparent {
+    margin-top: 0px;
+  }
+
+  .warrantydetailsparent {
+    margin-top: 0px;
+  }
+
+  .threedparent {
+    margin-top: -20px;
+  }
+
+  .instantparent {
+    margin-top: -25px;
+  }
+
+  .instanttext {
+    margin-top: -16px;
+  }
+
+  .deliveryparent {
+    margin-top: 50px;
+  }
+
+  .priceparent {
+    margin-top: 50px;
+  }
+
+  .safetyparent {
+    margin-top: 10px;
+  }
+
+  .superiorparent {
+    margin-top: 10px;
+  }
+
+  .deliverytext {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .pricetext {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .division3 {
+    .leftdetailsholder {
+      margin-top: -30px;
+    }
+  }
+
+  .referdetailslist {
+    margin-top: -40px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .division1 {
+    width: 100%;
+    height: 150px;
+
+    .verticaldivider {
+      display: none;
+    }
+
+    margin-top: unset;
+  }
+
+  .division2 {
+    width: 100%;
+    height: 150px;
+
+    .verticaldivider {
+      display: none;
+    }
+
+    margin-top: -90px;
+  }
+
+  .division3 {
+    width: 100%;
+    height: 150px;
+    padding-left: unset;
+    padding-right: unset;
+
+    .verticaldivider {
+      display: none;
+    }
+
+    margin-top: -90px;
+  }
+
+  .whythesedetailssubholder {
+    height: 750px;
+  }
+
+  .whythesedetailsholder {
+    height: 750px;
+  }
+
+  .calendartext {
+    padding: 10px;
+  }
+
+  .happycustomerhometext {
+    padding: 10px;
+  }
+
+  .experttext {
+    padding: 10px;
+  }
+
+  .warrantytext {
+    padding: 10px;
+  }
+
+  .leftdetailsholder {
+    margin-top: -40px;
+  }
+
+  .rightdetailsholder {
+    margin-top: 40px;
+  }
+
+  .leftmoveup {
+    margin-top: -20px;
+  }
+
+  .leftmovedown {
+    margin-top: 20px;
+  }
+
+  .rightmoveup {
+    margin-top: -5px;
+  }
+
+  .rightmovedown {
+    margin-top: 20px;
+  }
+
+  .division1 {
+    .detailsholder {
+      margin-left: 20px;
+    }
+  }
+
+  .division1 {
+    .rightdetailsholder {
+      margin-top: 35px;
+    }
+  }
+
+  .division2 {
+    .rightdetailsholder {
+      margin-top: 10px;
+    }
+  }
+
+  .deliveryparent {
+    margin-top: 0px;
+  }
+
+  .priceparent {
+    margin-top: 0px;
+  }
+
+  .calendaricon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .calendaricon {
+    margin-top: 70px;
+  }
+
+  .experticon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .experticon {
+    margin-top: 70px;
+  }
+
+  .happycustomerhomeicon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .happycustomerhomeicon {
+    margin-top: 35px;
+  }
+
+  .warrantyicon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .warrantyicon {
+    margin-top: 35px;
+  }
+
+  .leftdetailsholder {
+    width: 50%;
+    height: 50%;
+  }
+
+  .rightdetailsholder {
+    width: 50%;
+    height: 50%;
+    margin-top: 0px;
+  }
+
+  .calendaricon {
+    width: 25%;
+  }
+
+  .happycustomerhomeicon {
+    width: 25%;
+  }
+
+  .experticon {
+    width: 25%;
+  }
+
+  .warrantyicon {
+    width: 25%;
+  }
+
+  .calendartext {
+    width: 100%;
+    font-size: 13px;
+    margin-top: 55px;
+    margin-left: unset;
+  }
+
+  .calendaricon img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .happycustomerhomeicon img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .experticon img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .warrantyicon img {
+    width: 15px;
+    height: 15px;
+    background: rgba(50, 92, 169, 0.2);
+  }
+
+  .happycustomerhometext {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 13px;
+    margin-left: unset;
+  }
+
+  .happycustomerhomeicon {
+    margin-top: 40px;
+  }
+
+  .experttext {
+    width: 100%;
+    margin-top: 57px;
+    font-size: 13px;
+    margin-left: unset;
+  }
+
+  .warrantytext {
+    width: 100%;
+    margin-top: 19px;
+    font-size: 13px;
+    margin-left: unset;
+  }
+
+  .experticon {
+    margin-top: 40px;
+  }
+
+  .warrantyicon {
+    margin-top: 40px;
+  }
+
+  .leftdetailsholder {
+    width: 100%;
+  }
+
+  .rightdetailsholder {
+    width: 100%;
+  }
+
+  .experticon {
+    margin-top: 80px;
+  }
+
+  .calendartext {
+    padding: 10px;
+  }
+
+  .happycustomerhometext {
+    padding: 10px;
+  }
+
+  .experttext {
+    padding: 10px;
+  }
+
+  .warrantytext {
+    padding: 10px;
+  }
+
+  .leftmovedown {
+    margin-top: 14px;
+  }
+
+  .rightmoveup {
+    margin-top: -38px;
+  }
+
+  .contacttitle {
+    margin-top: 0px;
+  }
+
+  .expertisetitle {
+    margin-top: 0px;
+  }
+
+  .happycustomerhomedetailsparent {
+    margin-top: 0px;
+  }
+
+  .warrantydetailsparent {
+    margin-top: 0px;
+  }
+
+  .threedparent {
+    margin-top: -20px;
+  }
+
+  .instantparent {
+    margin-top: -25px;
+  }
+
+  .instanttext {
+    margin-top: -16px;
+  }
+
+  .deliveryparent {
+    margin-top: 20px;
+  }
+
+  .priceparent {
+    margin-top: 20px;
+  }
+
+  .safetyparent {
+    margin-top: 10px;
+  }
+
+  .superiorparent {
+    margin-top: 10px;
+  }
+
+  .referdetailslist {
+    margin-top: -40px;
+  }
+
+  .imageHolder {
+    height: 75%;
+  }
+
+  .imageHolder img {
+    margin-left: -60px;
+    margin-top: 25px;
+  }
+
+  .referdetailsholder {
+    // margin-top:20px;
+    margin-left: -5px;
+  }
+
+  .referdetailslist {
+    margin-top: -35px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 668px) {
+  .toppickskitchentle {
+    justify-content: center;
+  }
+
+  .toppickstitle {
+    justify-content: center;
+  }
+
+  .trendingtitle {
+    justify-content: center;
+  }
+
+  .warddrobeflytitle {
+    justify-content: center;
+  }
+
+  .trendingfilmroleClass {
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .toppicksfilmroleClass {
+    width: 60vw;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .wardrobeflyfilmroleClass {
+    width: 60vw;
+    align-items: center;
+    justify-content: center;
+
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .toppickskitchentle {
+    justify-content: center;
+  }
+
+  .trendingtitle {
+    justify-content: center;
+  }
+
+  .toppickstitle {
+    justify-content: center;
+  }
+
+  .warddrobeflytitle {
+    justify-content: center;
+  }
+
+  .trendingfilmroleClass {
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .toppicksfilmroleClass {
+    width: 60vw;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .wardrobeflyfilmroleClass {
+    width: 60vw;
+    align-items: center;
+    justify-content: center;
+
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .toppickskitchentle {
+    justify-content: center;
+  }
+
+  .trendingtitle {
+    justify-content: center;
+  }
+
+  .toppickstitle {
+    justify-content: center;
+  }
+
+  .warddrobeflytitle {
+    justify-content: center;
+  }
+
+  .trendingfilmroleClass {
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .toppicksfilmroleClass {
+    width: 60vw;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .wardrobeflyfilmroleClass {
+    width: 60vw;
+    align-items: center;
+    justify-content: center;
+
+  }
+}
+
+@media only screen and (max-width: 726px) {
+  .toppickskitchentle {
+    justify-content: center;
+  }
+
+  .toppickstitle {
+    justify-content: center;
+  }
+
+  .trendingtitle {
+    justify-content: center;
+  }
+
+  .warddrobeflytitle {
+    justify-content: center;
+  }
+
+  .trendingfilmroleClass {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0%;
+  }
+
+  .toppicksfilmroleClass {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0%;
+  }
+
+  .wardrobeflyfilmroleClass {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0%;
+  }
+
+  .wishlist {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+  }
+
+  .share {
+    width: 20px;
+    height: 20px;
+    margin-right: 35px;
+  }
+}
+
+.leftBtn {
+  background-color: transparent;
+  font-size: 30px;
+  font-weight: 500;
+  margin-left: -1%;
+  margin-bottom: 5%;
+}
+
+.leftBtn:hover {
+  background-color: transparent;
+}
+
+// .rightBtn {
+//   background-color: transparent;
+//   font-size: 30px;
+//   font-weight: 500;
+//   margin-left: 97%;
+//   margin-bottom: 5%;
+//   z-index: 1111111;
+// }
+
+.react-multiple-carousel__arrow{
+  background-color: transparent;
+}
+
+.react-multiple-carousel__arrow:hover{
+  background-color: transparent;
+}
+
+// .rightBtn:hover {
+//   background-color: transparent;
+
+// }
+
+// @media (max-width:992px) {
+//   .leftBtn {
+//     margin-left: -2%;
+//   }
+
+//   .rightBtn {
+//     margin-left: 96%;
+//   }
+// }
+
+// @media (max-width:767px) {
+//   .rightBtn {
+//     margin-left: 94%;
+//   }
+// }
+
+// @media (max-width:500px) {
+//   .rightBtn {
+//     margin-left: 92%;
+//   }
+// }
+
+// @media (min-width:1500px) and (max-width:1920px) {
+//   .leftBtn {
+//     margin-left: 2%;
+//   }
+
+//   .rightBtn {
+//     margin-left: 98%;
+//   }
+// }
+
+// @media (min-width:1920) {
+//   .leftBtn {
+//     margin-right: -1%;
+//   }
+// }

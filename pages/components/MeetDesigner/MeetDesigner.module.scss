@@ -1,0 +1,229 @@
+.red{
+    background-color: #EF5350;
+    height: 300px;
+    margin-bottom: 200px;
+    @media (max-width:700px){
+        margin-bottom: 250px;
+    }
+}
+.blue{
+    background-color: #2552A4;
+    height: 300px;
+    margin-bottom: 200px;
+    @media (max-width:700px){
+        margin-bottom: 250px;
+    }
+}
+.meetContainer1{
+    display: flex;
+    justify-content: center;
+    height: 190px;
+}
+.meetContainer2{
+    display: flex;
+    flex-direction:row-reverse !important;
+    justify-content: center;
+    height: 190px;
+}
+.meetHead{
+    font-size: 35px;
+    color: #FFFFFF;
+    font-family: "Montserrat";
+    font-weight: 600;
+    line-height: 58.51px;
+    padding-top: 50px;
+}
+.meetButton{
+    height: 35px;
+    background-color: #2552A4;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-family: "Montserrat";
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.meetButtonBlue{
+    height: 35px;
+    background-color: #F44336;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-family: "Montserrat";
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.meetImage{
+    width: 180px;
+    height: 180px;
+    margin: 20px 0px 80px 20px;
+}
+.backContainer{
+    background-color: #FFFFFF;
+}
+//ideas css
+
+.Wholecontainer {
+    width: 100%;
+    height: 160px;
+    border-radius: 32px;
+    background-color: #FFFFFF;
+    margin:0 auto ;
+
+}
+.InnerLayer {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    margin-top: 2%;
+
+}
+
+.Head {
+    color: #EF5350;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 39px;
+    letter-spacing: 0em;
+    padding-top: 1%;
+}
+
+.Box {
+    display: flex;
+    width: 90% ;
+    min-width: 250px;
+    height: 45px;
+    padding-left: 25px;
+    align-items: center;
+    background-color: #F5F5F5;
+    border-radius: 20px;
+    margin:0 auto 30px;
+}
+
+.content {
+    font-family: "Montserrat";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#000000;
+    margin-top: 3%;
+
+}
+@media screen and  (max-width:1240px) and  (min-width:1000px) {
+    .content {
+     
+        font-size: 10px;
+        font-weight: 600;
+
+    }
+}
+
+// @media screen and  (max-width:4000px) and  (min-width:3500px) {
+//     .Head {
+      
+//         font-size: 46px;
+//         line-height: 49px;
+      
+//     }
+//     .Box {
+//         // width:100%;
+//         height: 100px;
+//        border-radius: 50px;
+       
+//     }
+//     .content {
+//         font-size: 34px;
+//         line-height: 40px;
+      
+//     }
+// }
+// @media screen and  (max-width:3500px) and  (min-width:3000px) {
+//     .Head {
+      
+//         font-size: 46px;
+//         line-height: 49px;
+      
+//     }
+//     .Box {
+        
+//         height: 90px;
+//        border-radius: 50px;
+       
+//     }
+//     .content {
+//         font-size: 32px;
+//         line-height: 38px;
+      
+//     }
+// }
+// @media screen and  (max-width:3000px) and  (min-width:2500px) {
+//     .Head {
+      
+//         font-size: 38px;
+//         line-height: 32px;
+      
+//     }
+//     .Box {
+        
+//         height: 70px;
+//        border-radius: 50px;
+       
+//     }
+//     .content {
+//         font-size: 22px;
+//         line-height: 28px;
+      
+//     }
+// }
+// @media screen and  (max-width:2500px) and  (min-width:2000px) {
+//     .Head {
+      
+//         font-size: 32px;
+//         line-height: 26px;
+      
+//     }
+//     .Box {
+        
+//         height: 60px;
+//        border-radius: 50px;
+       
+//     }
+//     .content {
+//         font-size: 18px;
+//         line-height: 22px;
+      
+//     }
+// }
+// @media screen and  (max-width:520px) and  (min-width:350px) {
+
+// .meetHead{
+//     font-size: 18px;
+//     font-weight: 600;
+//     line-height: 30px;
+// }
+// .meetButton{
+//     font-size: 8px;
+    
+// }
+// .meetButtonBlue{
+//   font-size: 8px;
+  
+// }
+// }
+// @media (max-width:700px){
+//     .InnerLayer {
+//         grid-template-columns: repeat(1 , 1fr);
+// }
+// .blueComponent , .redComponent {
+//     margin-bottom: 200px;
+//     height: 150px;
+// }
+// .Wholecontainer{
+//     height: 320px;
+// }
+// }

@@ -1,0 +1,31 @@
+{
+    "categories": {
+        "discover": [
+            {
+                "image": "/assets/referandearn/referman3.png",
+                "head": "Refer",
+                "text": "Tell your friends about us"
+            }
+        ],
+        "design": [
+            {
+                "image": "/assets/referandearn/referman4.png",
+                "head": "Relax",
+                "text": "Your friend books us"
+            }
+        ],
+        "movein": [
+            {
+                "image": "/assets/referandearn/referman5.png",
+                "head": "Rejoice",
+                "text": "Your friends pay us half, we pay you full"
+            }
+        ],
+        "arrow": [
+            {
+                "image": "/assets/referandearn/vector1.jpeg",
+                "head": "Downarrow"
+            }
+        ]
+    }
+}

@@ -1,0 +1,398 @@
+ .lhomelogoholder {
+    width: 125px;
+    height: 125px;
+    //position:absolute;
+ }
+
+ .headerHidden {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 0%;
+ }
+
+ .otherDropDown {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px 0 0 5px;
+
+ }
+
+ .citiesDropdown {
+    position: relative;
+    left: 10%;
+    
+ }
+
+ .smallMenuButtons {
+    display: flex;
+    height: 20px;
+    z-index: 5;
+    float: right;
+ }
+
+ .smallMenuButtons a {
+    text-decoration: none;
+ }
+
+ .smallMenuBand {
+    width: 120px;
+    font-family: "Futura Bk BT Book";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 10px;
+    color: #737373;
+    padding-top: 5px;
+    display: flex;
+    white-space: nowrap;
+    margin: 0% 12px;
+ }
+
+ .largeMenuButtons {
+    display: flex;
+    //  height:20px;
+    //  position:absolute;
+    width: 100%;
+ }
+
+
+ .smallmenuCustomerSupportIcon {
+    width: 10px;
+    height: 10px;
+    background-size: 100% 100%;
+    float: left;
+ }
+
+ .smallmenuCustomerSupportText {
+    margin-top: 0;
+    float: left;
+ }
+
+ .customWidth_2 {
+    width: 2vw !important;
+ }
+
+ .customWidth_4 {
+    width: 4vw !important;
+ }
+
+ .customWidth_6 {
+    width: 6vw !important;
+ }
+
+ .customWidth_8 {
+    width: 8vw !important;
+ }
+
+ .customWidth_10 {
+    width: 10vw !important;
+ }
+
+
+ .customWidth_12 {
+    width: 12vw !important;
+ }
+
+ .customWidth_14 {
+    width: 14vw !important;
+ }
+
+
+ .customWidthpx_2 {
+    width: 14px !important;
+ }
+
+ .customWidthpx_4 {
+    width: 28px !important;
+ }
+
+ .customWidthpx_6 {
+    width: 42px !important;
+ }
+
+ .customWidthpx_8 {
+    width: 56px !important;
+ }
+
+ .customWidthpx_10 {
+    width: 70px !important;
+ }
+
+
+ .customWidthpx_12 {
+    width: 84px !important;
+ }
+
+
+ .test {
+    width: 100px !important;
+ }
+
+ .customWidthpx_16 {
+    width: 112px !important;
+ }
+
+ .customWidthpx_18 {
+    width: 126px !important;
+ }
+
+ .customWidthpx_20 {
+    width: 140px !important;
+ }
+
+ .customWidthpx_100 {
+    width: 100px !important;
+ }
+
+ .largeemptyBand {
+    width: 9.5vw;
+ }
+
+ .textpaddingleft {
+    padding-left: .25vw;
+ }
+
+ .iconpaddingtop {
+    margin-top: -1px;
+ }
+
+ .cityText {
+    margin-left: 0px;
+ }
+
+
+ .largeMenuBand {
+    width: 100px;
+    // font-family: 'Futura Md BT';
+    // font-style: normal;
+    font-weight: 500;
+    color: #222222;
+    font-size: 14px;
+    line-height: 15px;
+ }
+
+ .menuHolder {
+    display: flex;
+     padding-top: 2%;
+    height: 50px;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: space-between;
+    white-space: nowrap;
+ }
+
+ .menuHolder a {
+    text-decoration: none;
+ }
+
+
+ .lhomelogo {
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    height: 100px;
+    display: flex;
+ }
+
+ .lhomelogobackground {
+    background-size: contain;
+    background: url(/assets/images/lhomeLogo.jpg) no-repeat;
+    background-size: 100% 100%;
+ }
+
+ .lhomelogomask {
+    width: 100%;
+    height: 100%;
+ }
+
+ .bringfront {
+    z-index: 1000000;
+    position: relative;
+ }
+
+ .hover {
+    cursor: default;
+ }
+
+ .default {
+    cursor: default;
+ }
+
+ .userLoginRegister {
+    background: #F44336;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 5px 15px;
+ }
+
+ .userLoginRegisterHolder {
+    padding-left: 40px;
+ }
+
+ .LhomeBottom {
+    height: 80vh;
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    overflow-y: auto;
+ }
+
+ .boxHolder {
+    position: absolute;
+    width: 50%;
+ }
+
+ .modifiedfont {
+    font-size: 12px;
+ }
+
+
+
+ @media only screen and (max-width:400px) {
+    .userLoginRegisterHolder {
+       margin-left: -15px;
+       margin-top: -2px;
+       font-size: 1.5vw !important;
+    }
+
+    .userLoginRegister {
+       font-size: 1.5vw !important;
+    }
+ }
+
+
+
+ @media only screen and (max-width: 600px) {
+    .lhomelogoholder {
+       width: 125px;
+       height: 125px;
+    }
+
+    .customWidth_2 {
+       width: 5vw !important;
+    }
+
+    .customWidth_4 {
+       width: 15vw !important;
+    }
+
+    .customWidth_6 {
+       width: 20vw !important;
+    }
+
+    .customWidth_8 {
+       width: 25vw !important;
+    }
+
+    .customWidth_10 {
+       width: 30vw !important;
+    }
+
+    .customWidth_12 {
+       width: 35vw !important;
+    }
+
+    .customWidth_14 {
+       width: 40vw !important;
+    }
+
+    .userLoginRegisterHolder {
+       padding-left: unset;
+    }
+
+    .userLoginRegister {
+       font-size: 2vw;
+    }
+ }
+
+
+ @media only screen and (min-width: 600px) and (max-width : 900px) {
+    .lhomelogoholder {
+       width: 125px;
+       height: 125px;
+    }
+
+    .customWidth_2 {
+       width: 5vw !important;
+    }
+
+    .customWidth_4 {
+       width: 10vw !important;
+    }
+
+    .customWidth_6 {
+       width: 15vw !important;
+    }
+
+    .customWidth_8 {
+       width: 20vw !important;
+    }
+
+    .customWidth_10 {
+       width: 25vw !important;
+    }
+
+    .customWidth_12 {
+       width: 30vw !important;
+    }
+
+    .customWidth_14 {
+       width: 35vw !important;
+    }
+
+    .userLoginRegister {
+       font-size: 1vw;
+    }
+
+ }
+
+ .headerOuter {
+    // width: 90%;
+    display: flex;
+    // border:1px solid green;
+    margin: 0% 3% 0% 3%;
+ }
+
+ .headerLeft {
+    // border:2px solid red;
+    width: 10%;
+ }
+
+ .headerRight {
+    // border: 1px solid black;
+    width: 90%;
+    margin: 1% 0% 2% 0%;
+ }
+
+ @media only screen and (min-width:320px) and (max-width: 724px) {
+    .menuHolder {
+       display: flex;
+       padding-top: 2%;
+       margin: 0 auto;
+       width: 100%;
+       justify-content: flex-end;
+       white-space: nowrap;
+      //  margin-left: 130px;
+       margin-top: 25px;
+    }
+ }
+
+
+ @media only screen and (min-width:725px) and (max-width:1120px) {
+    .menuHolder {
+       display: flex;
+       padding-top: 2%;
+       margin: 0 auto;
+       width: 100%;
+       justify-content: flex-end;
+       white-space: nowrap;
+       margin-top: 25px;
+    }
+ }

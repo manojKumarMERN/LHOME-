@@ -1,0 +1,167 @@
+ .designermeet {
+    margin-left: 12%;
+    background: #FFFFFF;
+    border-radius: 20px;
+    height: auto;
+    width: auto;
+    position: relative;
+ }
+
+ .designermeettitle {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2em;
+    line-height: 29.26px;
+    color: #F44336;
+    font-weight: bolder;
+    padding-left: px;
+    float: left;
+    width: 100%;
+    height: auto;
+    margin-left: 3%;
+    margin-top: 3%;
+ }
+
+ .marginmove_5 {
+    margin-left: 5%;
+ }
+
+ .marginmove_2 {
+    margin-left: 2%;
+    margin-right: 5%;
+    margin-bottom: 1%;
+ }
+
+ .marginmovebig_2 {
+    margin-left: 5%;
+    margin-right: 5%;
+ }
+
+ .forminput {
+    font-size: 1em;
+ }
+
+ .whatsapplabel {
+    width: 100%;
+    float: right;
+    display: flex;
+
+    .label1 {
+       font-family: 'Montserrat';
+       font-style: normal;
+       font-weight: 500;
+       font-size: 0.90em;
+       color: #737373;
+
+
+    }
+
+    .label2 {
+       font-family: 'Montserrat';
+       font-style: normal;
+       font-weight: 500;
+       font-size: 9px;
+
+       //  width: 100%;
+       color: #D2D2D2;
+       // margin-right: 6%;
+
+    }
+
+ }
+
+ .whatsappcheckbox {
+    //   width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 2%;
+ }
+
+ .inputbox {
+    width: 100%;
+
+    div {
+       min-width: 40% !important;
+    }
+
+    input {
+       width: 100%;
+    }
+
+    label {
+       width: 100%;
+    }
+ }
+
+ .whatsappdetailsholder {
+    margin-top: 5px;
+ }
+
+ .designerbookingconfirmationholder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+ }
+
+ .designerbookingconfirmationbutton {
+    background: #F44336;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    height: 12%;
+ }
+
+ .designerbookingconfirmationbutton>label {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1em;
+    color: #FFFFFF;
+    margin-top: 1%;
+    padding: 5px 15px 5px 15px;
+ }
+
+ .designerbookingwarningtext {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.46em;
+    line-height: 10px;
+    color: #737373;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+ }
+
+
+
+ @media only screen and (max-width: 1024px) {
+    .designermeetholder {
+       margin-bottom: 120px;
+    }
+
+ }
+
+ @media only screen and (max-width: 775px) {
+    .whatsappdetailsholder {
+       margin-right: 2%;
+    }
+
+    .designermeetholder {
+       margin-bottom: 160px;
+    }
+
+    .label2 {
+       margin-right: 24px !important;
+    }
+
+    .whatsappcheckbox {
+       right: 0px;
+       margin-right: 2%;
+    }
+
+    .designermeet {
+       margin: 2% !important;
+    }
+ }

@@ -1,0 +1,38 @@
+.errorMessage{
+  font-size:10px;
+  color:red;
+  padding-left:10px;
+  height:10px;
+}
+
+.height_5{
+  margin-top: 1.25rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.autocompleteresults{
+   background:rgba(255,255,255,1);
+   color:darkblue;
+   border:1px solid black;
+   height:100px;
+   overflow-y:auto;
+   z-index:100;
+   position:absolute;
+}
+
+.autocompleteresults>div{
+  background : rgba(0,0,0,.1);  
+  cursor:default;
+  border-bottom:1px solid rgba(0,0,0,.2);
+  padding-bottom:8px;
+}
+
+
+.autocompleteresults div:hover{
+  cursor:pointer;
+}  
+
+
+
+
+

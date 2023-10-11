@@ -1,0 +1,32 @@
+{
+    "ContentedLiving":[
+        {
+          "id": 1,
+          "image":"/assets/bottomcarousel/Maskgroup.svg",
+          "icon":"/assets/icons/play.png",
+          "heading": "John and family",
+          "text": "Transform your kitchen to the heart of your home with the help of LHome. From coffee dates to dinner parties,"
+        },
+        {
+            "id": 1,
+            "image":"/assets/bottomcarousel/Maskgroup.svg",
+            "icon":"/assets/icons/play.png",
+            "heading": "John and family",
+            "text": "Transform your kitchen to the heart of your home with the help of LHome. From coffee dates to dinner parties,"
+        },
+        {
+            "id": 1,
+            "image":"/assets/bottomcarousel/Maskgroup.svg",
+            "icon":"/assets/icons/play.png",
+            "heading": "John and family",
+            "text": "Transform your kitchen to the heart of your home with the help of LHome. From coffee dates to dinner parties,"
+        },
+        {
+            "id": 1,
+            "image":"/assets/bottomcarousel/Maskgroup.svg",
+            "icon":"/assets/icons/play.png",
+            "heading": "John and family",
+            "text": "Transform your kitchen to the heart of your home with the help of LHome. From coffee dates to dinner parties,"
+        }
+    ]
+}
