@@ -106,19 +106,34 @@
   border-radius: 20px;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 1024px) {
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  .listingfilmrole {
+
+    width: 100%;
+  }
+  .division{
+    width: 100%;
+  }
+  .divisionchild{
+    width: 90%;
+  }
+  
+}
+
+@media screen and (max-width:600px){
+
   .listingfilmrole {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
-  .divisionchild {
-    width: 400px;
+  .divisionchild{
+    margin: 5%;
+    height: 120px;
   }
-}
-
-@media screen and (max-width:500px){
+  .division{
+    width: 100%;
+  }
   .categoryname{
-    white-space:pre-wrap;
+    font-size: 20px;
   }
 }
