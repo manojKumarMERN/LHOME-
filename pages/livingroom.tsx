@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as config from "../next.config.js";
 import PageHeader from "./components/PageHeader";
-import css from "../styles/bedroom.module.scss";
+import css from "../styles/livingroom.module.scss";
 import Footer from "./components/Footer/Footer";
 import Autoplay from "./components/Autoplayslider/Autoplayslider";
 import ReferNowPage from "./components/ReferNow/ReferNowPage";
@@ -81,28 +81,27 @@ const ModularKitchenPage: React.FC = () => {
                     <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
                     <div className={css.LhomeBottom}>
                         <div><LivingRoomBanner /></div>
-                        <div className={css.ideabr}>
-                            <div className={css.bgclr}>
-                                <div className={css.filter_home}>
-                                <div className="pt-4">
-                                    <span className={css.filter_link_span1}><Link href={{ pathname: "/" }} className={css.kitchen_filter_link}>Home</Link></span>
-                                    <span className={css.filter_slash}>/</span>
-                                    <span className={css.filter_link_span2}><Link href={{ pathname: "/livingroom" }} className={css.kitchen_filter_link}>livingroom</Link></span>
-                                    </div>
-                                </div>
-                                <p className={css.filter_header_content}>Living Room</p>
-                                <div className="row ">
-                                <div className="col-lg-4 "> </div>
-                                <div className={"col-lg-4 " + css.filter_content}><p className={css.filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
-                                    From coffee dates to dinner parties, our end-to-end design and installation
-                                    services will turn your kitchen into a stylish and functional space.</p></div>
-                                    <div className="col-lg-4 "></div>
-                                    </div>
-                                <div className={css.livingroomIdea}>
-                                    <Ideas color="red" prop="Living Room" />
-                                </div>
-                            </div>
-                        </div>
+                        <div className={css.livingroom_bgclr}>
+                <div className={css.livingroom_filter_home}>
+                <div className="pt-4">
+                  <span className={css.livingroom_filter_link_span1}><Link href={{ pathname: "/" }} className={css.livingroom_filter_link}>home</Link></span>
+                  <span className={css.livingroom_filter_slash}>/</span>
+                  <span className={css.livingroom_filter_link_span2}><Link href={{ pathname: "/livingroom" }} className={css.livingroom_filter_link}>livingroom</Link></span>
+                </div>
+                <div className={css.livingroom_filter_header_content}>Living Room</div>
+                <div className="row ">
+                <div className="col-lg-4 "> </div>
+
+                <div className={"col-lg-4 " + css.livingroom_filter_content}><p className={css.livingroom_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
+                  From coffee dates to dinner parties, our end-to-end design and installation
+                  services will turn your kitchen into a stylish and functional space.</p>
+                  </div>
+                  <div className="col-lg-4 "></div>
+                  
+                  </div>
+                  <div><Ideas prop = "Living Room" color="red"/></div>
+                  </div>
+                  </div>
                         <div><DynamicIterableComponent data={LivingRoom} /></div>
                         <div><Autoplay living={living} /></div>
                         <div><ReferNowPage /></div>

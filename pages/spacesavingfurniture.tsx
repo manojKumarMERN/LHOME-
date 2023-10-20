@@ -84,25 +84,28 @@ const SpacesavingfurniturePage: React.FC = () => {
                     <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
                     <div className={css.LhomeBottom}>
                         <div><FurnitureBaner /></div>
-                        <div className="">
-                            <div className={css.bgclr}>
-                                <div className={css.filter_home}>
-                                <div className="pt-4">
-                                    <span className={css.filter_link_span1}><Link href={{ pathname: "/" }} className={css.kitchen_filter_link}>Home</Link></span>
-                                    <span className={css.filter_slash}>/</span>
-                                    <span className={css.filter_link_span2}><Link href={{ pathname: "/Spacesavingfurniture" }} className={css.kitchen_filter_link}>space saving furniture</Link></span>
-                                    </div>
-                                </div>
-                                <div className={css.filter_header_content}>Space Saving Furniture</div>
-                                <div className="row ">
-                                    <div className="col-lg-4 "> </div>
-                                    <div className={"col-lg-4 " + css.filter_content}><p className={css.filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
-                                    From coffee dates to dinner parties, our end-to-end design and installationservices will turn your kitchen into a stylish and functional space.</p></div>
-                                    <div className="col-lg-4 "> </div>
-                                    </div>
-                                    <div><Ideas  prop="Space Saving Furniture" color="red"/></div>
-                            </div>
-                        </div>
+                     
+            <div className={css.spacesaving_bgclr}>
+                <div className={css.spacesaving_filter_home}>
+                <div className="pt-4">
+                  <span className={css.spacesaving_filter_link_span1}><Link href={{ pathname: "/" }} className={css.spacesaving_filter_link}>home</Link></span>
+                  <span className={css.spacesaving_filter_slash}>/</span>
+                  <span className={css.spacesaving_filter_link_span2}><Link href={{ pathname: "/spacesavingfurniture" }} className={css.spacesaving_filter_link}>spacesavingfurniture</Link></span>
+                </div>
+                <div className={css.spacesaving_filter_header_content}>Space Saving Furniture</div>
+                <div className="row ">
+                <div className="col-lg-4 "> </div>
+
+                <div className={"col-lg-4 " + css.spacesaving_filter_content}><p className={css.spacesaving_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
+                  From coffee dates to dinner parties, our end-to-end design and installation
+                  services will turn your kitchen into a stylish and functional space.</p>
+                  </div>
+                  <div className="col-lg-4 "></div>
+                  
+                  </div>
+                  <div><Ideas prop = "Space Saving Furniture" color="red"/></div>
+                  </div>
+                  </div>
                         <div><DynamicIterableComponent data={data} /></div>
                         <div><Autoplay living={living} /></div>
                         <div><ReferNowPage /></div>

@@ -1,0 +1,316 @@
+.loginLeftImage {
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    width: 50%;
+}
+
+.btn-close{
+    background-color: #fff;
+    border-radius: 100%;
+}
+
+.fade .modal-header {
+    border-bottom: 0;
+}
+
+.form_content h2 {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.form_content p {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-top: 2%;
+}
+
+.formsofmodel {
+    width: 50%;
+    position: relative;
+    z-index: 111;
+}
+
+.whatsapplabel {
+    width: 100%;
+    float: right;
+    display: flex;
+    padding-bottom: 5%;
+
+    .label1 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 0.80em;
+        color: #fff;
+    }
+
+    .label2 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 7px;
+        color: #fff;
+    }
+}
+
+.SInput1 {
+    width: 100%;
+    margin-bottom: 10%;
+    padding-bottom: 3%;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+}
+
+.SInput1 :focus,.SInput2 :focus{
+    outline: none;
+    border-bottom: 1px solid #fff;
+
+}
+
+div.whatsappcheckbox input[type="checkbox"]{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    bottom:1px solid #fff ;
+}
+
+.whatsappcheckbox{
+    width: 10%;
+}
+
+.SInput1::placeholder {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding-bottom: 20px;
+}
+
+.SInput2::placeholder {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+}
+
+.SInput2 {
+    width: 100%;
+    margin-bottom: 10%;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    padding-bottom: 3%;
+}
+
+.InputContainer {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+
+
+.dropdown_icon {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 16px;
+  }
+
+.formLR {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1% 5% 5% 2%;
+}
+
+.form_content {
+    width: 100%;
+    height: auto;
+    padding: 15% 10% 15% 10%;
+    text-align: center;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: linear-gradient(144deg, rgba(255, 255, 255, 0.20) 0.99%, rgba(255, 255, 255, 0.05) 99.36%);
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.20);
+    backdrop-filter: blur(20px);
+
+}
+
+.rightImage {
+    // width: 100%;
+    height: auto;
+}
+
+// .emptybubble {
+// //     width: 50%;
+// //     height: auto;
+// //     border-radius: 50%;
+// // border: 1px solid rgba(255, 255, 255, 0.10);
+// // background: linear-gradient(144deg, rgba(255, 255, 255, 0.20) 0.99%, rgba(255, 255, 255, 0.05) 99.36%);
+// // box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.20);
+// // backdrop-filter: blur(20px);
+
+// }
+
+.emptybubble {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 175px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: linear-gradient(144deg, rgba(255, 255, 255, 0.20) 0.99%, rgba(255, 255, 255, 0.05) 99.36%);
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.20);
+    backdrop-filter: blur(20px);
+    z-index: -1;
+    /* Place it behind the image */
+}
+.formsofmodel input:focus{
+    outline: 0;
+}
+
+.rightImage img {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 5%;
+}
+
+.form_content .inputAndbtn {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputAndbtn input {
+    padding-bottom: 7%;
+    margin: 5%;
+}
+
+.formsofmodel .LoginButton {
+    padding: 3% 10%;
+    border: none;
+    background-color: #fff;
+    margin: 3%;
+    border-radius: 10px;
+    color: #F44336;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+}
+.formsofmodel .SignButton{
+    padding: 3% 40%;
+    border: none;
+    background-color: #fff;
+    border-radius: 10px;
+    color: #F44336;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.LRInput {
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.mainVal {
+    display: flex;
+    justify-content: center;
+    padding: 3%;
+}
+
+.iconpart {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    width: 9%;
+    border-radius: 56%;
+    height: auto;
+
+}
+.InputContainer .dropdown ::after{
+    display: none !important;
+  }
+  .InputContainer div div button, .InputContainer div div button:hover{
+    background-color: transparent;
+    border: none;
+  }
+  .InputContainer .dropdown button svg{
+    width: 80%;
+  }
+
+  //checkbox
+  .whatsappcheckbox {
+    display: block;
+    position: relative;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .whatsappcheckbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border:1px solid white;
+  }
+  
+  .whatsappcheckbox input:checked ~ .checkmark {
+    background-color: transparent;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .whatsappcheckbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  .whatsappcheckbox .checkmark:after {
+    left: 6px;
+    top: 0px;
+    width: 8px;
+    height: 13px;
+    border: solid white;
+    border-width: 0 1px 1px 0;
+    -webkit-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    transform: rotate(40deg);
+  }

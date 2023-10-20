@@ -4,6 +4,11 @@ import * as React from "react";
 import "@fontsource/montserrat"; // Defaults to weight 400
 import "@fontsource/montserrat/700.css"; // Specify weight
 import "@fontsource/montserrat/400-italic.css"
+// import "@fontsource/montserrat/200.css"; // Specify weight
+// import "@fontsource/montserrat/400.css"; // Specify weight
+// import "@fontsource/montserrat/500.css"; // Specify weight
+
+
 import {
   BrowserRouter,
   Routes,

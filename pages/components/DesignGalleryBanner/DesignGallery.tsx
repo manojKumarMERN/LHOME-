@@ -30,7 +30,7 @@ const DesignGalleryBanner: React.FC = () => {
             <div className={css1.designGallery}>
                 
                 <div className={css1.galleryTitle}>
-                Modular Kitchen makes your home Modular
+                    <b>  Modular Kitchen </b> makes your home Modular
                 </div>
 
                 <div className={css1.contentBox}>

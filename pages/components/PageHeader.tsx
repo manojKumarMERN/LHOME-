@@ -7,7 +7,15 @@ import CitiesDropDownMenu from './CitiesDropDown';
 import { simpleCallInitAPI } from '../../services/ApicallInit'
 import Link from 'next/link';
 import OtherDropDownMenu from './OtherDropDown';
-import { BsHeadset } from "react-icons/bs"
+import { BsHeadset } from "react-icons/bs";
+import Modal from 'react-bootstrap/Modal';
+import LoginRegisterPage from '../loginRegisterPage';
+import {AiFillCloseCircle} from 'react-icons/ai'
+import {BsChatTextFill} from 'react-icons/bs';
+import {BsChevronDown} from 'react-icons/bs';
+import {BsThreeDotsVertical} from 'react-icons/bs'
+import Contentchatbox from '../Contentchatbox';
+import Homiebot from './HomieBot/Homiebot';
 
 interface pageheaderproperties {
   screenwidth: number;
@@ -41,7 +49,9 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
   const [otherDropDown, setOtherDropDown] = React.useState(false);
   const logo = React.useRef(null);
   const [homeLogo, sethomeLogo] = React.useState("");
-
+  const [show, setShow] = React.useState(false);
+  const [chatBoxShow,setChatBoxShow] = React.useState(false);
+  const [receivedData, setReceivedData] = React.useState('');
 
   React.useEffect(() => {
     function getsettings() {
@@ -155,6 +165,18 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
     }
     getsettings();
   }, [assetpath, screenwidth]);
+  const handlePopup = () => {
+    setShow(true);
+  }
+  const handleClose = () => setShow(false);
+  const handleCloseBox = () => setChatBoxShow(false);
+  const handleChatBox = () =>{
+    setChatBoxShow(true);
+  }
+  const handleChildData = (data) => {
+    console.log('Data received from child:', data);
+    setReceivedData(data);
+  };
 
   return (
     <React.Fragment>
@@ -223,7 +245,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
               
               { smallmenuoptionsstring.indexOf(",Customer Support") < 0 ?
                 <Link href={{ pathname: "/CustomersupportPage" }} style={{display:'flex',alignItems:"center"}}>
-                  <BsHeadset color="black" size={22} style={{ marginRight: '-10px' }} />
+                  <BsHeadset color="black" size={22} style={{ marginRight: '-20px' }} />
                   <div className={`${css.smallMenuBand} ${css.customWidthpx_100}`}>
                   Customer Support
                 </div>
@@ -314,15 +336,39 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                   : ''
                 }
                 <div className={css.userLoginRegisterHolder}>
-                  <button className={css.userLoginRegister}>
-                    Login / Register
-                  </button>
+                <button className={css.userLoginRegister} onClick={handlePopup}>
+                  Login / Register
+                </button>
+                <Modal show={show} onHide={handleClose} className={css.Modal_Popup}>
+                <Modal.Header  >
+                    <AiFillCloseCircle onClick={handleClose}/>
+                  </Modal.Header >
+                  <LoginRegisterPage />
+                </Modal>
+
                 </div>
               </div>
             </div>
           </div>)}
       </div>
+      {/* <div className={css.chat_Box}>
+        <BsChatTextFill className={css.Chat} onClick={handleChatBox} />
+        <Modal show={chatBoxShow} onHide={handleCloseBox} className={css.ChatBox_Popup}>
+          <Modal.Header >
+            <div className={css.white_bg}>
+            <img src={homeLogo} alt="homeLogo" className={css.round_image} />
+            </div>
+            <p className={css.chat_Box_Heading}>{receivedData ? receivedData:"Chat with us now"}</p>
+            <BsThreeDotsVertical className={css.bs_fonts}/>
+            <BsChevronDown onClick={handleCloseBox} className={css.bs_fonts}/>
+          </Modal.Header>
+          <Contentchatbox onDataReceived={handleChildData}/>
+        </Modal>
+      </div> */}
 
+      <div className={css.chat_box}>
+        <Homiebot/>
+      </div>
 
     </React.Fragment>
   )

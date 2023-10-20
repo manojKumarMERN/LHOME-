@@ -90,27 +90,27 @@ const HomeOffice: React.FC = () => {
           <div className={css.LhomeBottom}>
             <div><BathroomBaner /></div>
 
-            <div className={css.bgclr}>
-              <div className={css.filter_home}>
+            <div className={css.bathroom_bgclr}>
+                <div className={css.bathroom_filter_home}>
                 <div className="pt-4">
-                  <span className={css.filter_link_span1}><Link href={{ pathname: "/" }} className={css.kitchen_filter_link}>Home</Link></span>
-                  <span className={css.filter_slash}>/</span>
-                  <span className={css.filter_link_span2}><Link href={{ pathname: "/bathroom" }} className={css.kitchen_filter_link}>bathroom</Link></span>
+                  <span className={css.bathroom_filter_link_span1}><Link href={{ pathname: "/" }} className={css.bathroom_filter_link}>home</Link></span>
+                  <span className={css.bathroom_filter_slash}>/</span>
+                  <span className={css.bathroom_filter_link_span2}><Link href={{ pathname: "/bathroom" }} className={css.bathroom_filter_link}>bathroom</Link></span>
                 </div>
-              </div>
-              <p className={css.filter_header_content}>Bathroom</p>
-              <div className="row ">
+                <div className={css.bathroom_filter_header_content}>Bath Room</div>
+                <div className="row ">
                 <div className="col-lg-4 "> </div>
-                <div className={"col-lg-4 " + css.filter_content}><p className={css.filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
-                  From coffee dates to dinner parties, our end-to-end design and installation
-                  services will turn your kitchen into a stylish and functional space.</p></div>
-                <div className="col-lg-4 "> </div>
-              </div>
-            </div>
 
-            <div className={css.mainIdea}>
-              <Ideas prop="Bath Room" color="red" />
-            </div>
+                <div className={"col-lg-4 " + css.bathroom_filter_content}><p className={css.bathroom_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
+                  From coffee dates to dinner parties, our end-to-end design and installation
+                  services will turn your kitchen into a stylish and functional space.</p>
+                  </div>
+                  <div className="col-lg-4 "></div>
+                  
+                  </div>
+                  <div><Ideas prop = "Bath Room" color="red"/></div>
+                  </div>
+                  </div>
             <div><DynamicIterableComponent data={homeOffice} /></div>
             <div><Autoplay living={living} /></div>
             <div><ReferNowPage /></div>
