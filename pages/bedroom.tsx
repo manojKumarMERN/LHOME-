@@ -83,33 +83,27 @@ const ModularKitchenPage: React.FC = () => {
                     <div className={css.LhomeBottom}>
                         <div><BedroomBanner /></div>
 
-                        <div className={css.ideabr}>
-                            <div className={css.bgclr}>
-                                <div className={css.filter_home}>
-                                    <div className="pt-4">
-                                        <span className={css.filter_link_span1}><Link href={{ pathname: "/" }} className={css.kitchen_filter_link}>Home</Link></span>
-                                        <span className={css.filter_slash}>/</span>
-                                        <span className={css.filter_link_span2}><Link href={{ pathname: "/bedroom" }} className={css.kitchen_filter_link}>bedroom</Link></span>
-                                    </div>
-                                </div>
-                                <div className={css.filter_header_content}>BedRoom</div>
-                                <div className="row ">
-                                    <div className="col-lg-4 "> </div>
+                        <div className={css.bedroom_bgclr}>
+                <div className={css.bedroom_filter_home}>
+                <div className="pt-4">
+                  <span className={css.bedroom_filter_link_span1}><Link href={{ pathname: "/" }} className={css.bedroom_filter_link}>home</Link></span>
+                  <span className={css.bedroom_filter_slash}>/</span>
+                  <span className={css.bedroom_filter_link_span2}><Link href={{ pathname: "/bedroom" }} className={css.bedroom_filter_link}>bedroom</Link></span>
+                </div>
+                <div className={css.bedroom_filter_header_content}>Bed Room</div>
+                <div className="row ">
+                <div className="col-lg-4 "> </div>
 
-                                    <div className={"col-lg-4 " + css.filter_content}><p className={css.filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
-                                        From coffee dates to dinner parties, our end-to-end design and installation
-                                        services will turn your kitchen into a stylish and functional space.</p>
-                                    </div>
-                                    <div className="col-lg-4 "></div>
-                                </div>
-                                <div className={css.bedroomidea}>
-                                    <Ideas prop="Bed Room" color="red" />
-                                </div>
-
-                            </div>
-
-
-                        </div>
+                <div className={"col-lg-4 " + css.bedroom_filter_content}><p className={css.bedroom_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
+                  From coffee dates to dinner parties, our end-to-end design and installation
+                  services will turn your kitchen into a stylish and functional space.</p>
+                  </div>
+                  <div className="col-lg-4 "></div>
+                  
+                  </div>
+                  <div><Ideas prop = "Bed Room" color="red"/></div>
+                  </div>
+                  </div>
                         <div><DynamicIterableComponent data={bedroom} /></div>
                         <div><Autoplay living={living} /></div>
                         <div><ReferNowPage /></div>

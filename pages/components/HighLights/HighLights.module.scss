@@ -351,6 +351,25 @@
   
   }
 
+  @media only screen and  (max-width: 1024px){
+    .customname{
+      font-size: 0.9rem;
+    }
+    .wishlistholder {
+      font-size: 0.9rem;
+
+    }
+    .shareholder {
+      font-size: 0.9rem;
+
+    }
+  }
+  @media only screen and  (max-width: 700px){
+    .customname{
+      font-size: 0.6rem;
+}
+}
+
 @media only screen and (min-width: 1101px) and (max-width: 1280px) {
   .division2 {
     .leftdetailsholder {
@@ -359,6 +378,19 @@
   }
 
   
+}
+
+@media only screen and (max-width: 1240px) and (min-width: 1000px){
+  .customname{
+    font-size: 11px;
+  }
+  .wishlistholder{
+    font-size: 16px;
+  }
+  .shareholder{
+    font-size: 16px;
+  }
+
 }
 
 @media only screen and (min-width: 901px) and (max-width: 1100px) {

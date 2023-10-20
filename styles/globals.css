@@ -15,9 +15,10 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: 'Montserrat';
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) { 
   html {
     color-scheme: dark;
   }
@@ -38,7 +39,7 @@ a {
 @tailwind utilities;
 
 
-@font-face{
+/* @font-face{
   font-family: "Futura Bk BT Book";
   src: url("/assets/fonts/Futura_BK_BT/cc84650569fd07dac022c55b20c66e46.eot");
   src: url("/assets/fonts/Futura_BK_BT/cc84650569fd07dac022c55b20c66e46.eot?#iefix")format("embedded-opentype"),
@@ -51,16 +52,7 @@ a {
   font-display:swap;
 }
 
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  src: url("/assets/fonts/Montserrat/regular/Montserrat-Regular.eot");
-  src: url("/assets/fonts/Montserrat/Regular/Montserrat-Regular.eot?#iefix") format("embedded-opentype"), 
-       url("/assets/fonts/Montserrat/regular/Montserrat-Regular.woff") format("woff"), 
-       url("/assets/fonts/Montserrat/regular/Montserrat-Regular.ttf") format("truetype"), 
-       url("/assets/fonts/Montserrat/regular/Montserrat-Regular.svg#Montserrat-Regular") format("svg"); 
-}
+
 
 @font-face {
   font-family: 'Montserrat';
@@ -71,7 +63,7 @@ a {
        url("/assets/fonts/Montserrat/bold/Montserrat-Bold.woff") format("woff"), 
        url("/assets/fonts/Montserrat/bold/Montserrat-Bold.ttf") format("truetype"), 
        url("/assets/fonts/Montserrat/bold/Montserrat-Bold.svg#Montserrat-Bold") format("svg"); 
-}
+} */
 
 ::-webkit-scrollbar {
   width: 5px;
@@ -85,3 +77,4 @@ a {
   border-radius: 5px;
   border: transparent;
 }
+
