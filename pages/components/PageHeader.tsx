@@ -15,7 +15,6 @@ import {BsChatTextFill} from 'react-icons/bs';
 import {BsChevronDown} from 'react-icons/bs';
 import {BsThreeDotsVertical} from 'react-icons/bs'
 import Contentchatbox from '../Contentchatbox';
-import Homiebot from './HomieBot/Homiebot';
 
 interface pageheaderproperties {
   screenwidth: number;
@@ -342,7 +341,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                 <Modal show={show} onHide={handleClose} className={css.Modal_Popup}>
                 <Modal.Header  >
                     <AiFillCloseCircle onClick={handleClose}/>
-                  </Modal.Header >
+                  </Modal.Header>
                   <LoginRegisterPage />
                 </Modal>
 
@@ -351,7 +350,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
             </div>
           </div>)}
       </div>
-      {/* <div className={css.chat_Box}>
+      <div className={css.chat_Box}>
         <BsChatTextFill className={css.Chat} onClick={handleChatBox} />
         <Modal show={chatBoxShow} onHide={handleCloseBox} className={css.ChatBox_Popup}>
           <Modal.Header >
@@ -364,12 +363,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
           </Modal.Header>
           <Contentchatbox onDataReceived={handleChildData}/>
         </Modal>
-      </div> */}
-
-      <div className={css.chat_box}>
-        <Homiebot/>
       </div>
-
     </React.Fragment>
   )
 }
