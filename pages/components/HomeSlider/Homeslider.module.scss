@@ -68,7 +68,7 @@
    font-family: 'Montserrat';
    font-style: normal;
    font-weight: 700;
-   font-size: 16px;
+   font-size: 1.1rem;
    line-height: 29px;
    text-transform: capitalize;
    color: #000000;
@@ -87,7 +87,7 @@
    font-style: normal;
    font-weight: 700; 
    padding: 0% 0% 0% 20%;
-   content: "Lhome Make your home bette";
+   content: "Lhome Make Your Home Better";
 }
 
 
@@ -95,7 +95,7 @@
 @media (min-width: 1920px) and (max-width: 3000px) {
    .tagline1 {
        white-space: normal; /* Allow text wrapping */
-       content: "Lhome Make \A your \A home bette"; 
+       content: "Lhome Make \A Your \A Home Better"; 
        white-space: pre-line; /* Observe newline characters */
    }
 }

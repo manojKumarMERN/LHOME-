@@ -3,7 +3,7 @@
  }
  .warrantyInnerLayer {                                                  
     margin:0 auto;
-    padding: 2% 15% 2% 15%;
+    padding: 5% 15% 5% 15%;
     background-color: #F5F5F5;
     margin: 4% 2% 4% 2%;
     border-radius: 14px;
@@ -31,6 +31,7 @@
    font-family: "Montserrat";
     font-size: 21px;
     font-weight: 510;
+    line-height: 2.5rem;
     color: #222;
     margin: 1% 0%;
  }
@@ -38,6 +39,7 @@
  .warrantySubText {
    font-family: "Montserrat";
     font-size: 13px;
+    line-height: 1em;
     font-weight: 600;
     color:#737373;
  }
@@ -50,14 +52,14 @@
     background: #F44336;
      padding: 2%;
      border-radius: 14px;
-     width: 50px;
+     width: 4em;
  }
  
  .flatWarrantyiconChangesImg {
     background: #F44336;
      padding: 2%;
      border-radius: 14px;
-     width:50px;
+     width:4em;
  }
  
  @media only screen and (min-width:320px) and (max-width: 724px){

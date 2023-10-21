@@ -1,5 +1,6 @@
 .listingOuterLayer {
   width: 88%;
+  padding-top: 3rem;
   margin: 0 auto;
 }
 .mainhighlights{
@@ -11,9 +12,6 @@
   height: 30px;
 }
 
-// .react-multi-carousel-list{
-//   position: unset !important;
-// }
 .carousel_design div[dir="ltr"]{
   position: unset !important;
 }
@@ -56,44 +54,11 @@
 
 }
 
-// @media (max-width:992px){
-//   .leftBtn{
-//     margin-left: -2%;
-//   }
-//   .rightBtn{
-//     margin-left: 96%;
-//   }
-// }
-// @media (max-width:767px) {
-//   .rightBtn{
-//     margin-left: 94%;
-//   }
-// }
-// @media (max-width:500px) {
-//   .rightBtn{
-//     margin-left: 90%;
-//   }
-// }
-// @media (min-width:1500px) and (max-width:1920px) {
-//   .leftBtn{
-//     margin-left: 2%;
-//   }
-//   .rightBtn{
-//     margin-left: 98%;
-//   }
-// }
-// @media (min-width:1920){
-//   .leftBtn{
-//     margin-right: -1%;
-//   }
-// }
-
 .trendingtitle {
    font-family: "Montserrat";
    font-style: normal;
    font-weight: 700;
    font-size: 24px;
-   line-height: 39px;
    color: #222222;
    padding-left: 3%;
    display: flex;

@@ -187,17 +187,17 @@ const ModularKitchenPage: React.FC = () => {
               </div>}
             {activePage == 'Straight' &&
               <div>
-               <Ideas color="blue" prop="U-Shaped Kitchen" />
+               <Ideas color="blue" prop="Straight Kitchen" />
                 <DynamicIterableComponent data={data1} />
               </div>}
             {activePage == 'Island Kitchen' &&
               <div>
-               <Ideas color="blue" prop="U-Shaped Kitchen" />
+               <Ideas color="blue" prop="Island Kitchen" />
                <DynamicIterableComponent data={data2} />
               </div>}
             {activePage == 'L-Shaped' &&
               <div>
-              <Ideas color="blue" prop="U-Shaped Kitchen" />
+              <Ideas color="blue" prop="L-Shaped Kitchen" />
               <DynamicIterableComponent data={data3} />
               </div>}
             <div ><Autoplay living={living} /></div>

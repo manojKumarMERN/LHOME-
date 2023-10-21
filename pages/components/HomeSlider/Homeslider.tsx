@@ -36,10 +36,10 @@ const HomeSlider: React.FC<HomeSliderProps> = ({ screenwidth, screenheight }) =>
                         <div className={css.sliderwrappertextholder}>
                            {screenwidth > 650 ?
                               <div className={css.taglineholder}>
-                                 <h1 className={css.tagline1}>Lhome Make<br></br>  your home<br></br> better</h1>
+                                 <h1 className={css.tagline1}>Lhome Make<br></br>  Your Home<br></br> Better</h1>
                               </div>
                               :
-                              <div className={css.tagline1}>Lhome Make Your home better </div>
+                              <div className={css.tagline1}>Lhome Make Your Home Better </div>
                            }
                         </div>
                         <div className={css.estimatebuttonholder}>
