@@ -21,11 +21,11 @@
 }
 
 .arrowimage>svg {
-    stroke-width: 1 !important;
+    stroke-width: 0.5 !important;
 }
 
 .arrowimage1>svg {
-    stroke-width: 1 !important;
+    stroke-width: 0.5 !important;
 }
 
 .arrowimage1 {
@@ -114,7 +114,7 @@
     position: absolute;
     color: rgb(250, 246, 246);
     z-index: 3;
-    padding-top: 27px;
+    padding-top: 24px;
     font-family: 'Montserrat';
     font-size: 20px;
     font-weight: bold;
