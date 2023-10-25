@@ -35,9 +35,9 @@ const InteriorDesign: React.FC = () => {
                      <div className={css.likeScoreDetailLocation}> Coimbatore | Rajapalayam</div>
                   </div>
                   <div className={css.guaranteedBodyLine}><hr id="verticaldivider" className={css.verticaldivider} /></div>
-                  <div className={css.guaranteedRjpamText}><img className={css.guaranteedRjpamImg} src={rajapalayam} alt="" />Rajapalayam</div>
-                  <div className={css.guaranteedCbeText}><img className={css.guaranteedRjpamImg} src={coimbatore} alt="" />Coimbatore</div>
-               </div>
+                  <div className={css.guaranteedRjpamText}><img className={css.guaranteedRjpamImg} src={rajapalayam} alt="" /><div className={css.image_textContent}>Rajapalayam</div></div>
+                  <div className={css.guaranteedCbeText}><img className={css.guaranteedRjpamImg} src={coimbatore} alt="" /><div className={css.image_textContent}>Coimbatore</div></div>
+                </div>
                </div>
             </div>
       </div>

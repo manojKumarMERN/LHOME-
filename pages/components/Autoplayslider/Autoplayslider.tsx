@@ -94,6 +94,13 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
     let centerIndex = (currentSlide + 2) % sliderImageUrl.length;
     setCenterImageIndex(centerIndex);
   };
+  const CustomDot:any = ({ onMove, index, onClick, active }) => {
+    return (
+      <li className={active ? "active" : "inactive"} onClick={() => onClick()} style={{width:"2%",marginTop:"-20px"}}>
+        <div className={active ? css2.active_dot : css2.inactive_dot}></div>
+      </li>
+    );
+  };
 
   return (
     <React.Fragment>
@@ -115,6 +122,7 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
               "custom-dot-list-style " + css2.customDotListStyle
 
             }
+            customDot={<CustomDot/>}
             customLeftArrow={<CustomLeftArrow onClick={() => { }} />}
             customRightArrow={<CustomRightArrow onClick={() => { }} />}
 
