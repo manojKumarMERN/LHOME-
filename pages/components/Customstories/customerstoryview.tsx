@@ -3,41 +3,50 @@ import css from "./customerstoryview.module.scss";
 // import circleimage from "../../../public/assets/Homeoffice/homeoffice.png";
 import Image from "next/image";
 import Recentprojectnav from "../Tabsimage/recentprojectnav";
-
-
+import StarRatings from 'react-star-ratings';
+import { FaStar } from 'react-icons/fa';
 const CustomerStoryView = ({ data }: any) => {
     console.log(data, "asdfghjkjhgfds")
     return (
         <React.Fragment>
-          
-                     <div className={css.customerstory}>
+
+            <div className={css.customerstory}>
                 <div className={css.customerstorylayer}>
                     <div className={css.sliderwrapper}>
-                        
+
                         <div className={css.customerstory_content}>
-                        <div className={css.customerstory_image}>
-                            <Image src={data?.image} width={500} height={500} alt="" className={css.customerstory_circleimage}/>
-                        </div>
+                            <div className={css.customerstory_image}>
+                                <Image src={data?.image} width={500} height={500} alt="" className={css.customerstory_circleimage} />
+                            </div>
                             <div className={css.story_contents}>
                                 <p className={css.customerstory_title}>{data?.heading}</p>
                                 <p className={css.customerstory_sub_title}>{data?.type}</p>
                                 <p className={css.customerstory_state}>{data?.place}</p>
                                 <p className={css.customerstory_additional_content}>{data?.content}</p>
                             </div>
-                            <div >
-                            <div className=" flex w-full justify-center items-center">
-                            <img src={data?.icon}  alt="lhome" width={100} height={100} className="customerstory_star"/> 
+                            <div className={css.Bottom_Rating_User}>
+                                <div className={css.Bottom_star}>
+                                    <StarRatings
+                                        rating={4.5}
+                                        starRatedColor="#FFD600"
+                                        changeRating={3}
+                                        numberOfStars={5}
+                                        name='rating'
+                                        starDimension="20px"
+                                        starHoverColor={false}
+                                        starSpacing="10px"
+                                    />                            
+                                    </div>
+                                    <div className={css.Rating_UserName}><p className={css.customerstory_username}>-Jonhson</p></div>
                             </div>
-                            <p className={css.customerstory_username}>-Jonhson</p>
-                                </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div>
-                <Recentprojectnav/>
+                <Recentprojectnav />
             </div>
-        
+
         </React.Fragment>
     )
 }

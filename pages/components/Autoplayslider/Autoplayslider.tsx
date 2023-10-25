@@ -96,7 +96,7 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
   };
   const CustomDot:any = ({ onMove, index, onClick, active }) => {
     return (
-      <li className={active ? "active" : "inactive"} onClick={() => onClick()} style={{width:"2%",marginTop:"-20px"}}>
+      <li className={active ? "active" : "inactive"} onClick={() => onClick()} style={{margin:"-20px 0.5% 0"}}>
         <div className={active ? css2.active_dot : css2.inactive_dot}></div>
       </li>
     );
