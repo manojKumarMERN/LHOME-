@@ -97,7 +97,7 @@ const DesignGalleryPage: React.FC = () => {
                <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
                <div className={css.LhomeBottom}>
            <div><DesignGalleryBanner /></div>
-         <div><DesignGallery /></div>
+         <div className={css.img_desgin_Gallery}><DesignGallery /></div>
          <div><WhyLhome screenwidth={screenwidth} screenheight={screenheight} /></div>
          <div className={"mb-3 "+css.ToppicsdivforDesignGallery}><TopPicksForKitchen Citie="" />
           <Wardrobes Citie="" /></div>
