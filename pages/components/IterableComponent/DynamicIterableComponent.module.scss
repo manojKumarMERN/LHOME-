@@ -24,7 +24,7 @@
   line-height: 10px;
   letter-spacing: 0em;
   display: flex;
-  margin: 0px 10px 10px 10px;
+  margin: 0 0 4% 4%;
   color: #222222;
 }
 
@@ -35,6 +35,7 @@
   border-radius: 32px;
   width: 100%;
   height: auto;
+  padding: 3% 1%;
 }
 
 .customimage {
@@ -46,7 +47,7 @@
 
 .customimage>img {
   width: 100%;
-  height: 190px;
+  height: 22vh;
   // max-height: 60%;
   border-radius: 20px;
 }
@@ -59,8 +60,7 @@
   letter-spacing: 0em;
   color: #222222;
   font-size: 12px;
-  // font-weight: bold;
-  // white-space: nowrap
+  padding:  0 0 4% 4%;
 }
 
 .com_icons {
@@ -83,6 +83,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 3%;
 }
 
 .custom_icons {
@@ -117,7 +118,7 @@
   color: #ffffff;
   border-radius: 8px;
   padding: 7px;
-
+  margin-bottom: 2%;
 
 
 }
@@ -298,7 +299,7 @@
 
   .customtext {
     font-size: 15px;
-    margin: 10px;
+    margin: 2% 0 4% 4%;
   }
 
   .content {
