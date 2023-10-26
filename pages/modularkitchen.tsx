@@ -116,13 +116,13 @@ const ModularKitchenPage: React.FC = () => {
                 </div>
                 <div className={css.filter_header_content}>Modular Kitchen</div>
                 <div className="row ">
-                <div className="col-lg-4 "> </div>
+                <div className="col-lg-3 "> </div>
 
-                <div className={"col-lg-4 " + css.filter_content}><p className={css.filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
+                <div className={"col-lg-6 " + css.filter_content}><p className={css.filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
                   From coffee dates to dinner parties, our end-to-end design and installation
                   services will turn your kitchen into a stylish and functional space.</p>
                   </div>
-                  <div className="col-lg-4 "></div>
+                  <div className="col-lg-3  "></div>
                   
                   </div>
                   </div>
