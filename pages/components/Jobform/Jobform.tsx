@@ -193,7 +193,7 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
                         </div>
 
                     </div>
-                    <p className={css.para}>Upload in either DOC, DOCX or PDF file format (file size not more than 1MB)</p>
+                    <p className={css.para_top}>Upload in either DOC, DOCX or PDF file format (file size not more than 1MB)</p>
                     <div className={css["row"]}>
                         <div className={css["col-50"]}>
                             <div className={css["row"]}>

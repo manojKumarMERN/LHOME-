@@ -137,6 +137,10 @@ const JoinOfferPage: React.FC = () => {
         <div className={css.lhomePage}>
           <div className={css.LhomeBottom}>
             <div>
+
+              <div className={css.lhomelogo}>
+                <img src="/assets/images/lhomeLogo.jpg" alt="logo Lhome" key={"unique one"} />
+              </div>
               <JobOffer value={details} />
             </div>
           </div>

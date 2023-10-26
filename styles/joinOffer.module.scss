@@ -26,11 +26,13 @@
  .lhomelogo{
    display: flex;
    justify-content: center;
+
  }
 
  .lhomelogo img {
    width: 10%;
    height: 10%;
+   mix-blend-mode: multiply;
  }
  
  .lhomelogoholder{
