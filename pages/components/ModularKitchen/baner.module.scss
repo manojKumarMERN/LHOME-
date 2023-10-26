@@ -32,17 +32,17 @@
 
 .kitchenbanerform {
   position: absolute;
-  left: 4%;
-  top: 45%;
+  left: 2;
+  top: 52%;
 }
 
 @media only screen and (max-width:4000px) and (min-width:2000px) {
   .kitchen_tagline {
-    font-size: 4.7em;
+    font-size: 4.2em;
   }
 
   .kitchen_tagline1 {
-    font-size: 4.7em;
+    font-size: 4.2em;
   }
 
   .kitchenbanercontent {
@@ -52,86 +52,76 @@
 
   .kitchenbanerform {
     left: 7%;
-    top: 40%;
+    top: 45%;
+    transform: scale(1.25);
   }
 }
 
 @media only screen and (max-width:2000px) and (min-width:1600px) {
   .kitchen_tagline {
-    font-size: 4em;
+    font-size: 3.5em;
   }
 
   .kitchen_tagline1 {
-    font-size: 4em;
+    font-size: 3.5em;
   }
 
   .kitchenbanercontent {
-    left: 10%;
-    top: 25%;
+    left: 7%;
+    top: 32%;
   }
 }
 
 @media only screen and (max-width:1600px) and (min-width:1200px) {
   .kitchen_tagline {
-    font-size: 4em;
+    font-size: 3em;
   }
 
   .kitchen_tagline1 {
-    font-size: 4em;
+    font-size: 3em;
   }
 
   .kitchenbanercontent {
-    left: 10%;
-    top: 25%;
+    left: 6%;
+    top: 20%;
+  }
+  .kitchenbanerform{
+    position: absolute;
+    left: -1%;
+    top: 39%;
+    transform: scale(0.975);
   }
 }
 
 @media only screen and (max-width:1200px) and (min-width:1000px) {
   .kitchen_tagline {
-    font-size: 2.5em;
+    font-size: 2.25em;
   }
 
   .kitchen_tagline1 {
     font-weight: 500;
-    font-size: 2.5em;
-
+    font-size: 2.25em;
   }
 
   .kitchenbanercontent {
     left: 10%;
-    top: 15%;
+    top: 13%;
   }
 
   .kitchenbanerform {
     top: 30%;
+    transform: scale(0.95);
+    width: 60vw;
   }
-
 }
 
-@media only screen and (max-width:1000px) and (min-width:900px) {
-  .kitchen_tagline {
-    font-size: 2em;
-  }
-
-  .kitchen_tagline1 {
-    font-weight: 400;
-    font-size: 2em;
-  }
-
-  .kitchenbanercontent {
-    white-space: nowrap;
-
-    left: 10%;
-    top: 10%;
-
-  }
-
+@media (max-width: 775px) {
   .kitchenbanerform {
-    top: 25%;
+    padding-right: 2% !important;
   }
 }
 
-@media only screen and (max-width:900px) and (min-width:600px) {
+@media (max-width: 1000px) {
   .kitchenbanerform {
     position: relative;
     left: 0;
@@ -140,6 +130,7 @@
     padding: 20px;
     background-color: #2552A4;
     padding-top: 20%;
+    padding-right: 12%;
   }
 
   .kitchen_tagline {

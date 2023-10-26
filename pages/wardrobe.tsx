@@ -117,7 +117,7 @@ const WardrobePage: React.FC = () => {
                 <div className="row ">
                 <div className="col-lg-3 "> </div>
 
-                <div className={"col-lg-6 " + css.wardrobe_filter_content}><p className={css.wardrobe_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
+                <div className={"col-lg-6 px-[15px] " + css.wardrobe_filter_content}><p className={css.wardrobe_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
                   From coffee dates to dinner parties, our end-to-end design and installation
                   services will turn your kitchen into a stylish and functional space.</p>
                   </div>
@@ -153,15 +153,15 @@ const WardrobePage: React.FC = () => {
                         {activePage == 'unset' &&
                          <>
                             <div>
-                                <Ideas color="blue" prop="U-Shaped Warderope" />
+                                <Ideas color="blue" prop="U-Shaped Wardrobe" />
                                 <DynamicIterableComponent data={data} />
                             </div>
                             <div>
-                                <MeetDesigner colour='red' prop="Straight Warderope" container="meetContainer1" />
+                                <MeetDesigner colour='red' prop="Straight Wardrobe" container="meetContainer1" />
                                 <DynamicIterableComponent data={data1} />
                             </div>
                             <div>
-                                <MeetDesigner colour='blue' prop="Island Warderope" container="meetContainer2" />
+                                <MeetDesigner colour='blue' prop="Island Wardrobe" container="meetContainer2" />
                                 <DynamicIterableComponent data={data2} />
                             </div>
                         </>
@@ -169,21 +169,21 @@ const WardrobePage: React.FC = () => {
 
                         {activePage == 'U-Shaped' &&
                             <div>
-                                <Ideas color='blue' prop="U-Shaped Warderope" />
+                                <Ideas color='blue' prop="U-Shaped Wardrobe" />
                                 <DynamicIterableComponent data={data} />
                             </div>
                         }
 
                         {activePage == 'Straight' &&
                             <div>
-                                <Ideas color='blue' prop="Straight Warderope" />
+                                <Ideas color='blue' prop="Straight Wardrobe" />
                                 <DynamicIterableComponent data={data1} />
                             </div>
                         }
 
                         {activePage == 'L-Shaped' &&
                             <div className="mb-5 ">
-                                <Ideas color='blue' prop="L-Shaped Warderope" />
+                                <Ideas color='blue' prop="L-Shaped Wardrobe" />
                                 <DynamicIterableComponent data={data2} />
                             </div>
                         }

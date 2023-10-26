@@ -118,7 +118,7 @@ const ModularKitchenPage: React.FC = () => {
                 <div className="row ">
                 <div className="col-lg-3 "> </div>
 
-                <div className={"col-lg-6 " + css.filter_content}><p className={css.filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
+                <div className={"col-lg-6 px-[15px] " + css.filter_content}><p className={css.filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
                   From coffee dates to dinner parties, our end-to-end design and installation
                   services will turn your kitchen into a stylish and functional space.</p>
                   </div>
@@ -164,7 +164,7 @@ const ModularKitchenPage: React.FC = () => {
               <>
                 <div>
                   <Ideas color="blue" prop="U-Shaped Kitchen" />
-                  <DynamicIterableComponent data={data} />
+                 <div className="mt-5 "> <DynamicIterableComponent data={data} /></div>
                 </div>
                 <div>
                   <MeetDesigner colour='red' prop="Straight Kitchen" container="meetContainer1" />
