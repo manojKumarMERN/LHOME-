@@ -10,8 +10,8 @@ const RaiseIssue = () => {
                 <div className={css.Customersupportpage}>
                     <h5 className={css.head}>Reach out us</h5>
                     <div className={css.customlogo}>
-                        <Image src={require("../../../public/assets/Tabimage/email.jpg")} alt="" className={css.referearn_socialicon} />
-                        <Image src={require("../../../public/assets/Tabimage/WhatsAppicon.jpg")} alt="" className={css.referearn_socialicon} />
+                        <Image src={require("../../../public/assets/Tabimage/email.png")} alt="Email" className={css.referearn_socialicon} />
+                        <Image src={require("../../../public/assets/Tabimage/WhatsAppicon.webp")} alt="WA" className={css.referearn_socialicon} />
                     </div>
                     <div className={css.customertext}>
                         <textarea className={css.texthere}>texthere..</textarea>

@@ -127,7 +127,7 @@ div.whatsappcheckbox input[type="checkbox"]{
 .dropdown_icon {
     position: absolute;
     top: 20%;
-    left: 10%;
+    left: 5%;
     transform: translateY(-50%);
     color: #fff;
     font-size: 16px;
@@ -235,9 +235,15 @@ div.whatsappcheckbox input[type="checkbox"]{
 }
 
 .mainVal {
-    display: flex;
-    justify-content: center;
-    padding: 3%;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.G_icon{
+width: 100%;
+height: 100%;
 }
 
 .iconpart {
@@ -313,4 +319,19 @@ div.whatsappcheckbox input[type="checkbox"]{
     -webkit-transform: rotate(40deg);
     -ms-transform: rotate(40deg);
     transform: rotate(40deg);
+  }
+  //flag
+  .InputContainer button[class="ReactFlagsSelect-module_selectBtn__19wW7"]{
+    border: none;
+    width: 10%;
+  }
+  .InputContainer span[class="ReactFlagsSelect-module_label__27pw9"]{
+    display: none;
+  }
+  .InputContainer span[class="ReactFlagsSelect-module_selectValue__152eS"]::after{
+    content: '▼'; 
+    font-size: 16px;
+    color: #FFFFFF; 
+    margin-left: 5px; 
+    border-top: none !important;
   }
