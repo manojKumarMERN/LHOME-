@@ -24,18 +24,18 @@
  }
 
  .marginmove_5 {
-    margin-left: 5%;
+    margin-left: 10%;
  }
 
- .marginmove_2 {
-    margin-left: 2%;
-    margin-right: 5%;
-    margin-bottom: 1%;
- }
+//  .marginmove_2 {
+//     margin-left: 2%;
+//     margin-right: 5%;
+//     margin-bottom: 1%;
+//  }
 
  .marginmovebig_2 {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
  }
 
  .forminput {
@@ -46,6 +46,7 @@
     width: 100%;
     float: right;
     display: flex;
+    margin-right: 10%;
 
     .label1 {
        font-family: 'Montserrat';
@@ -82,11 +83,11 @@
     width: 100%;
 
     div {
-       min-width: 40% !important;
+       min-width: 30% !important;
     }
 
     input {
-       width: 100%;
+       width: 90%;
     }
 
     label {

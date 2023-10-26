@@ -200,7 +200,7 @@ const ModularKitchenPage: React.FC = () => {
               <Ideas color="blue" prop="L-Shaped Kitchen" />
               <DynamicIterableComponent data={data3} />
               </div>}
-            <div ><Autoplay living={living} /></div>
+            <div className="mb-[-50px]"><Autoplay living={living} /></div>
             <div><ReferNowPage /></div>
             <div><Warranty /></div>
             <div><FAQPage /></div>

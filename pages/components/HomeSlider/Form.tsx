@@ -7,7 +7,7 @@ const Form: React.FC = () => {
 
         <div className={`${css.designermeetholder}`}>
             <div className={css.designermeet}>
-                <div className={css.designermeettitle}>
+                <div className={css.designermeettitle + ` pl-10`}>
                     Meet a designer
                 </div>
                 <div id="formentry" className={`flex  gap-6 ${css.inputbox}`}>
@@ -19,10 +19,10 @@ const Form: React.FC = () => {
                         </label>
                
                     </div>
-                    <div className={`relative h-full w-full min-w-[200px] ${css.marginmove_2}`}>
+                    <div className={`relative h-full pr-8 w-full min-w-[200px] ${css.marginmove_2}`}>
                         <input
                             placeholder="Enter your Email"
-                            className={`peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-Montserrat text-16px font-normal placeholder-gray-700 placeholder-opacity-40  outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-pink-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 ${css.forminput}`}/>
+                            className={`peer h-full w-full  border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-Montserrat text-16px font-normal placeholder-gray-700 placeholder-opacity-40  outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-pink-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 ${css.forminput}`}/>
                         <label className="after:content[' '] pointer-events-none absolute left-0 -top-2.5 flex h-full w-full select-none text-sm font-normal leading-tight text-blue-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-pink-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:after:scale-x-100 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
                         </label>
                     </div>
