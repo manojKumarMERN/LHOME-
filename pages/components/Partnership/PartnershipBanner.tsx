@@ -30,7 +30,7 @@ const PartnershipBanner: React.FC = () => {
                 {partnerBanner?.map((datas: any, index: number) => ( 
                     <div key={index} className={css.partnerRow}>
                         <div className={css.partnerLeft}>
-                            <p className={css.partnertop}>{datas.toptext}<span className={css.partnerbottom}>{datas.bottomtext}</span></p>
+                            <h2 className={css.partnertop}>{datas.toptext}<span className={css.partnerbottom}>{datas.bottomtext}</span></h2>
                             <div className={css.partnerForm}><Form/></div>
                         </div>
                         <div className={css.partnerRight}>

@@ -50,12 +50,12 @@ const JoinusTable: React.FC = () => {
     const filteredJoinusData = filterData();
     setFilteredJoinusData(filteredJoinusData);
   }, [selectedRole, selectedLocation, selectedDepartment, JoinusData]);
-
+  const router = useRouter(); 
   const handleRowClick = (row) => {
     console.log('Row clicked:', row);
     const arrdata = [row];
     const url = `${window.location.origin}/JoinOfferPage?jobDetails=${encodeURIComponent(JSON.stringify(arrdata))}`;
-    window.open(url, '_blank');
+    router.push(url);
   }
   
   const totalPages = Math.ceil(filteredJoinusData.length / perPage);

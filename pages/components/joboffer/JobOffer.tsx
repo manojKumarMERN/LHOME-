@@ -6,7 +6,8 @@ import { MdKeyboardArrowLeft } from 'react-icons/md';
 import ApplyForJobForm from '../Jobform/Jobform';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
+import {BsFacebook,BsTelegram,BsLinkedin} from 'react-icons/bs';
+import {FaInstagramSquare,FaTwitterSquare,FaWhatsappSquare} from 'react-icons/fa';
 interface JobDetails {
   details: {
     header: string;
@@ -134,6 +135,14 @@ const JobOffer: React.FC<JobOfferProps> = ({ value }) => {
             <div>
               <button className={`${css.jobSharebtn} ${css.jobApplybtn2}`}>
                 Share
+                <div className={css.Socailmedia_icons}>
+                <BsFacebook/>
+                <FaInstagramSquare/>
+                <FaTwitterSquare/>
+                <BsTelegram/>
+                <FaWhatsappSquare/>
+                <BsLinkedin/>
+                </div>
               </button>
 
             </div>

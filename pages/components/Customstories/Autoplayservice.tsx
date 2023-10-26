@@ -50,7 +50,7 @@ const Autoplayservice: React.FC<properties> = ({ header }) => {
 
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: Infinity, min: 1024 },
       items: 3,
       slidesToSlide: 1,
     },

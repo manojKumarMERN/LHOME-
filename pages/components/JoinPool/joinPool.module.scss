@@ -10,9 +10,8 @@
 .refermanmaintext1{
     font-family: Montserrat;
     font-style: normal;
-    font-weight: lighter;
+    font-weight: bold;
     font-size: 34px;
-    line-height: 22px;
     color: #fff;
     white-space: nowrap;
     text-align: left;
@@ -28,6 +27,8 @@
     color: #fff;
     padding-top: 10px;
     text-align: center;
+    line-height: 20px;
+    margin-top: 20px;
 }
 
 .referNowOuter {
@@ -50,11 +51,11 @@
     text-align: center;
     font-family: Montserrat;
     font-style: normal;
-    font-weight: lighter;
     font-size: 55px;
     line-height: 22px;
     color: #fff;
     white-space: nowrap;
+    font-weight: 600;
 }
 
 .referNow1{
@@ -67,13 +68,11 @@
 .refermansubtext {
     font-family: Montserrat;
     font-style: normal;
-    font-weight: lighter;
-    font-size: 1rem;
-    margin-top: 5px;
+    font-weight: 400;
+    font-size: 0.9vw;
     color: #fff;
-    /* padding-top: 10px; */
     text-align: left;
-    padding: 3% 35% 0% 0%;
+    width: 80%;
 }
 
 .refermanbuttonholder{
@@ -106,8 +105,18 @@
         padding-bottom: 3%;
     }
 }
-
-@media only screen and (max-width:1000px) and (min-width:500px)  {
+@media only screen and (min-width:400px) and (max-width:500px)  {
+    .referNowOuter {
+        flex-direction: column;
+    }
+    .refermansubtext{
+        font-size: 1rem;
+    }
+    .division{
+        width: 90%;
+    }
+}
+@media only screen and (min-width:500px) and (max-width:1000px)  {
     .referNowOuter {
         flex-direction: column;
     }
@@ -116,15 +125,17 @@
         display: flex;
         justify-content: center;
     }
-
+    .division{
+        width: 90%;
+    }
     .refermansubtext{
-        font-family: Montserrat;
+    font-family: Montserrat;
     font-style: normal;
     font-weight: lighter;
     font-size: 1rem;
     color: #fff;
-    padding: 10%;
-    }
+    width: 100%;
+}
 
     .refermanbuttonholder{
         display: flex;
@@ -134,7 +145,7 @@
 
 @media only screen and (max-width:400px) {
     .refermansubtext {
-        font-size: 10px;
+        font-size: 10px !important;
     padding: 15px 0;
     }
     .refermanmaintext{
@@ -150,7 +161,7 @@
         justify-content: center;
     }
     .refermanbuttonholder button {
-        ont-family: Montserrat;
+    font-family: Montserrat;
     border-radius: 8px;
     font-style: normal;
     font-weight: 700;
@@ -161,6 +172,9 @@
     font-size: 21px;
     white-space: nowrap;
     padding: 8% 10%;
+    }
+    .division{
+        width: 90%;
     }
 
 }

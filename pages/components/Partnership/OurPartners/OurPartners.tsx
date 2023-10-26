@@ -34,10 +34,9 @@ const OurPartners: React.FC = () => {
                     <div className={css.ourpartnertitle}>Our partners&apos; success stories</div>
                     <div className={css.ourpartnerContainer}>
                         {ourpartner.map((partner: any, index: number) =>
-                            <div key={index}>
-                                <div>
-                                <img src={partner.image} alt="img" className={css.boxImg} />
-                                <span><img src={partner.icon} className={css.boxIcon} alt="img"/></span>
+                            <div key={index} style={{width:'100%'}}>
+                                <div className={css.boxIcon_Content_parent}>
+                                <div className={css.boxIcon_Content}><img src={partner.icon} className={css.boxIcon} alt="img"/></div>
                                 </div>
                                 <div className={css.ourPartners}>
                                     <div className={css.ourPartnersHead1}>{partner.head1}</div>
