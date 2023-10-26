@@ -57,7 +57,7 @@
  font-family: "Montserrat";
  font-size: 40px;
  font-weight: 700;
- line-height: 49px;
+ line-height: 69px;
  letter-spacing: 0em;
  color: #FFFFFF;
 }
@@ -75,44 +75,44 @@
 
 @media screen and (max-width:4000px) and (min-width:3000px) {
  .bathroom_filter_link {
-   font-size: 22px;
-   line-height: 30px;
+  font-size: 1.5em;
+  line-height: 30px;
  }
 
  .bathroom_filter_slash {
-   font-size: 22px;
- }
+  font-size: 1.5em;
+}
 
  .bathroom_filter_header_content {
-   font-size: 52px;
-   line-height: 69px;
+  font-size: 3em;
+  line-height: 69px;
  }
 
  .bathroom_filter_additional_content {
-   font-size: 32px;
-   line-height: 42px;
+  font-size: 1.5em;
+  line-height: 42px;
  }
 
 
 }
 @media screen and (max-width:3000px) and (min-width:2000px) {
  .bathroom_filter_link {
-   font-size: 18px;
-   line-height: 28px;
+  font-size: 1.25em;
+  line-height: 28px;
  }
 
  .bathroom_filter_slash {
-   font-size: 18px;
- }
+  font-size: 1.25em;
+}
 
- .bathroom_filter_header_content {
-   font-size: 42px;
-   line-height: 49px;
- }
+//  .bathroom_filter_header_content {
+//    font-size: 42px;
+//    line-height: 49px;
+//  }
 
  .bathroom_filter_additional_content {
-   font-size: 22px;
-   line-height: 28px;
+  font-size: 1.25em;
+  line-height: 28px;
  }
 
 }

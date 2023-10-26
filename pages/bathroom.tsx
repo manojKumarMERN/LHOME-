@@ -99,20 +99,20 @@ const HomeOffice: React.FC = () => {
                 </div>
                 <div className={css.bathroom_filter_header_content}>Bath Room</div>
                 <div className="row ">
-                <div className="col-lg-4 "> </div>
+                <div className="col-lg-3 "> </div>
 
-                <div className={"col-lg-4 " + css.bathroom_filter_content}><p className={css.bathroom_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
+                <div className={"col-lg-6 px-[15px] " + css.bathroom_filter_content}><p className={css.bathroom_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
                   From coffee dates to dinner parties, our end-to-end design and installation
                   services will turn your kitchen into a stylish and functional space.</p>
                   </div>
-                  <div className="col-lg-4 "></div>
+                  <div className="col-lg-3 "></div>
                   
                   </div>
                   <div><Ideas prop = "Bath Room" color="red"/></div>
                   </div>
                   </div>
-            <div><DynamicIterableComponent data={homeOffice} /></div>
-            <div><Autoplay living={living} /></div>
+            <div className="mt-[-5%]"><DynamicIterableComponent data={homeOffice} /></div>
+            <div className="mb-[-50px]"><Autoplay living={living} /></div>
             <div><ReferNowPage /></div>
             <div><Warranty /></div>
             <div><FAQPage /></div>

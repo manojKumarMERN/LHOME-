@@ -103,7 +103,7 @@ const DesignGalleryPage: React.FC = () => {
           <Wardrobes Citie="" /></div>
           <div><Interior /></div>
           <div><StylishHomeProducts Citie=""/></div>
-          <div><Autoplay living={null} /></div>
+          <div className="mt-4 mb-[-50px]"><Autoplay living={null} /></div>
           <div><ReferNowPage /></div>
           <div><Warranty /></div>
           <div><FAQPage /></div>

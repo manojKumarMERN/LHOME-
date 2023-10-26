@@ -39,7 +39,7 @@ const HomePage: React.FC<homeproperties> = ({ screenwidth, screenheight }) => {
                   <div className={css.categoryComponent}><Category /></div>
                   <div><HightLights /></div>
                   <div><ReferNowPage /></div>
-                  <div>
+                  <div className="mt-[100px]">
                   <Autoplay living={living}/>
                   </div>
                   <div><NRIFriendly /></div>
