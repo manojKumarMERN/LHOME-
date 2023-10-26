@@ -4,7 +4,6 @@ import rightvector from './components/loginRegister/rightvector.png';
 import Image from 'next/image';
 import css from '../styles/loginRegister.module.scss';
 import { IoLogoGoogle } from 'react-icons/io';
-import CustomDropdown from './components/loginRegister/CustomDropDown';
 import ReactFlagsSelect from "react-flags-select";
 
 
