@@ -188,7 +188,7 @@ const WardrobePage: React.FC = () => {
                             </div>
                         }
 
-                        <div><Autoplay living={living} /></div>
+                        <div className="mb-[-50px]"><Autoplay living={living} /></div>
                         <div><ReferNowPage /></div>
                         <div><Warranty /></div>
                         <div><FAQPage /></div>

@@ -10,7 +10,7 @@
   font-family: "Montserrat";
   color: #FFFFFF;
   font-weight: 100 !important;
-  font-size: 4em;
+  font-size: 3.5em;
 }
 
 .homeoffice_tagline1 {
@@ -19,7 +19,7 @@
   color: #FFFFFF;
   font-weight: 700;
   font-family: "Montserrat";
-  font-size: 4em;
+  font-size: 3.5em;
   line-height: 100%;
 }
 
@@ -32,21 +32,23 @@
 
 .homeofficebanerform {
   position: absolute;
-  right:10%;
+  right:5%;
   top: 45%;
+  width: 35vw;
 }
 
 @media only screen and (max-width:4000px) and (min-width:2000px) {
   .homeoffice_tagline {
-    font-size: 4.7em;
+    font-size: 4.2em;
   }
 
   .homeoffice_tagline1 {
-    font-size: 4.7em;
+    font-size: 4.2em;
   }
 
   .homeofficebanercontent {
     top: 25%;
+    right: 12%;
   }
 
   .homeofficebanerform {
@@ -56,11 +58,11 @@
 
 @media only screen and (max-width:2000px) and (min-width:1600px) {
   .homeoffice_tagline {
-    font-size: 4em;
+    font-size: 3.5em;
   }
 
   .homeoffice_tagline1 {
-    font-size: 4em;
+    font-size: 3.5em;
   }
 
   .homeofficebanercontent {
@@ -70,16 +72,21 @@
 
 @media only screen and (max-width:1600px) and (min-width:1200px) {
   .homeoffice_tagline {
-    font-size: 4em;
+    font-size: 3.5em;
   }
 
   .homeoffice_tagline1 {
-    font-size: 4em;
+    font-size: 3.5em;
   }
 
   .homeofficebanercontent {
-    top: 25%;
+    top: 19%;
+    right: 7%;
   }
+  .homeofficebanerform {
+    top: 38%;
+    width: 40vw;
+    }
 }
 
 @media only screen and (max-width:1200px) and (min-width:1000px) {
@@ -98,8 +105,8 @@
   }
 
   .homeofficebanerform {
-    top: 35%;
-  }
+    top: 30%;
+    width: 50vw;  }
 
 }
 
@@ -115,7 +122,6 @@
 
   .homeofficebanercontent {
     white-space: nowrap;
-    top: 10%;
 }
 
   .homeofficebanerform {
@@ -123,14 +129,22 @@
   }
 }
 
-@media only screen and (max-width:900px) and (min-width:600px) {
+@media (max-width:775px) {
+  .homeofficebanerform {
+    padding-right: 1% !important;
+  }  
+}
+
+@media (max-width:1000px) {
   .homeofficebanerform {
     position: relative;
     top: 0;
     transform: none;
     padding: 20px;
-    background-color: #2552A4;
+    background-color: #EF5350;
     padding-top: 20%;
+    padding-right: 14%;
+    width: unset;
   }
 
   .homeoffice_tagline {
@@ -180,148 +194,3 @@
     right:0%;
 }
 }
-// .imageContainer {
-//     position: relative;
-//     max-width: 100%;
-//   }
-  
-//   .sliderwrapper {
-//     position: relative;
-//     /* Make the wrapper relative for absolute positioning of the form */
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//   }
-//   .tagline{
-//     margin-top:-20px;
-//     width:80%;
-//     font-weight: 600;
-//     font-family: "Montserrat";
-  
-//   }
-//   .tagline1{
-//     font-weight: 400 !important;
-  
-//   }
-//   .livingroombanercontent {
-//     position: absolute;
-//     right: 230px;
-//     top: 25%;
-//     transform: translateY(-50%);
-//     color: white;
-//     font-size:32px;
-//     width: 20%;
-//   }
-  
-//   .livingroombanerform {
-//     position: absolute;
-//     right: 70px;
-//     top: 62%;
-//     transform: translateY(-50%);
-//     padding: 10px;
-//     color: white;
-//   }
-  
-  
-//   @media only screen and (max-width: 992px) {
-//     .livingroombanercontent {
-//       // left: 20px;
-//       top: 15%;
-//       font-size: 24px;
-//     }
-  
-//     .livingroombanerform {
-//       position: relative;
-//       left: 0;
-//       top: 0;
-//       transform: none;
-//       padding: 20px;
-  
-//     }  
-//   }
-  
-//   @media only screen and (max-width: 899px) and (min-width:775px) {
-//     .banerform { 
-//       margin-right: 10%;
-//     }
-//   }
-  
-//   @media only screen and (max-width: 899px) {
-//     .livingroombanercontent {
-//       // left: 20px;
-//       top: 15%;
-//       font-size: 24px;
-//     }
-  
-//     .livingroombanerform {
-//       position: relative;
-//       left: 0;
-//       top: 0;
-//       transform: none;
-//       padding: 20px;
-//       background-color: #EF5350;
-//       padding-top: 20%;
-//     }
-//   }
-  
-//   @media only screen and (max-width: 600px) and (min-width:300px) {
-//     .livingroombanercontent {
-//       font-size: 20px;
-//       // align-items: center !important;
-//     }
-  
-  
-//   }
-  
-//   @media only screen and (max-width: 1026px) and (min-width:900px) {
-//     .livingroombanerform {
-//       position: relative;
-//       position: absolute;
-//       left: 0;
-//       margin-top: 8%;
-//     }
-//     .livingroombanercontent {
-//       white-space: nowrap;
-//     }
-//   }
-  
-//   @media only screen and (max-width:1400px) and (min-width:1000px) {
-//     .livingroombanercontent {
-//       white-space: nowrap;
-//     }
-//   }
-  
-//   @media only screen and (max-width:900px) and (min-width:300px) {
-//     .livingroombanercontent {
-//       white-space: nowrap;
-//       margin-top: -50px;
-//     }
-//   }
-  
-//   @media only screen and (max-width:500px) and (min-width:450px) {
-//     .livingroombanercontent {
-//       font-size: 1.1rem !important;
-//       font-weight: 700;
-//     }
-//   }
-  
-//   @media only screen and (max-width:450px) and (min-width:380px) {
-//     .livingroombanercontent {
-//       font-size: 15px;
-//       font-weight: 700;
-//       // margin-top: -20px;
-//     }
-//   }
-  
-//   @media only screen and (max-width:380px) and (min-width:270px) {
-//     .livingroombanercontent {
-//       font-size: 12px;
-//       // margin-top: -20px;
-//     }
-//   }
-  
-  
-  
-  
-  

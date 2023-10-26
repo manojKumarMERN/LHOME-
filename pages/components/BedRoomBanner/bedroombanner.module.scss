@@ -10,7 +10,7 @@
   font-family: "Montserrat";
   color: #FFFFFF;
   font-weight: 100 !important;
-  font-size: 4em;
+  font-size: 3.5em;
 }
 
 .bedroom_tagline1 {
@@ -19,34 +19,36 @@
   color: #FFFFFF;
   font-weight: 700;
   font-family: "Montserrat";
-  font-size: 4em;
+  font-size: 3.5em;
   line-height: 100%;
 }
 
 .bedroombannercontent {
   position: absolute;
-  right: 10%;
+  right: 15%;
   top: 25%;
   transform: translateY(-50%);
 }
 
 .bedroombannerform {
   position: absolute;
-  right:10%;
+  right:5%;
   top: 45%;
+  width: 35vw;
 }
 
 @media only screen and (max-width:4000px) and (min-width:2000px) {
   .bedroom_tagline {
-    font-size: 4.7em;
+    font-size: 4.2em;
   }
 
   .bedroom_tagline1 {
-    font-size: 4.7em;
+    font-size: 4.2em;
   }
 
   .bedroombannercontent {
     top: 25%;
+    right: 12%;
   }
 
   .bedroombannerform {
@@ -56,11 +58,11 @@
 
 @media only screen and (max-width:2000px) and (min-width:1600px) {
   .bedroom_tagline {
-    font-size: 4em;
+    font-size: 3.5em;
   }
 
   .bedroom_tagline1 {
-    font-size: 4em;
+    font-size: 3.5em;
   }
 
   .bedroombannercontent {
@@ -70,15 +72,19 @@
 
 @media only screen and (max-width:1600px) and (min-width:1200px) {
   .bedroom_tagline {
-    font-size: 4em;
+    font-size: 3.5em;
   }
 
   .bedroom_tagline1 {
-    font-size: 4em;
+    font-size: 3.5em;
   }
 
   .bedroombannercontent {
-    top: 25%;
+    top: 19%;
+  }
+  .bedroombannerform {
+  top: 38%;
+  width: 50vw;
   }
 }
 
@@ -98,7 +104,8 @@
   }
 
   .bedroombannerform {
-    top: 35%;
+    top: 30%;
+    width: 50vw;
   }
 
 }
@@ -115,7 +122,6 @@
 
   .bedroombannercontent {
     white-space: nowrap;
-    top: 10%;
 }
 
   .bedroombannerform {
@@ -123,14 +129,22 @@
   }
 }
 
-@media only screen and (max-width:900px) and (min-width:600px) {
+@media (max-width:775px) {
+  .bedroombannerform {
+    padding-right: 1% !important;
+  }  
+}
+
+@media (max-width:1000px) {
   .bedroombannerform {
     position: relative;
     top: 0;
     transform: none;
     padding: 20px;
-    background-color: #2552A4;
+    background-color: #EF5350;
     padding-top: 20%;
+    padding-right: 14%;
+    width: unset;
   }
 
   .bedroom_tagline {
