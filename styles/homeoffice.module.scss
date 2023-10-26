@@ -4,10 +4,6 @@
     padding: 20px;
 }
 
-// .mainIdea{
-//    margin-top: -2%;
-// }
-
 .lhomePage{
     width:100%;
     margin:0;
@@ -15,7 +11,6 @@
     height:100vh;
     overflow-x:hidden !important;
     overflow-y:auto;
-    // display:flex;
  }
  .LhomeBottom{
     height: 90vh;
@@ -64,14 +59,14 @@
    font-family: "Montserrat";
    font-size: 40px;
    font-weight: 700;
-   line-height: 49px;
+   line-height: 69px;
    letter-spacing: 0em;
    color: #FFFFFF;
  }
  
  .homeoffice_filter_additional_content {
    // font-family: "Montserrat";
-   font-size: 15px;
+   font-size: 16px;
    font-weight: lighter;
    line-height: 20px;
    letter-spacing: 0em;
@@ -106,22 +101,22 @@
  
  @media screen and (max-width:4000px) and (min-width:3000px) {
    .homeoffice_filter_link {
-     font-size: 22px;
-     line-height: 30px;
+    font-size: 1.5em;
+    line-height: 30px;
    }
  
    .homeoffice_filter_slash {
-     font-size: 22px;
-   }
+    font-size: 1.5em;
+  }
  
    .homeoffice_filter_header_content {
-     font-size: 52px;
-     line-height: 69px;
+    font-size: 3em;
+    line-height: 69px;
    }
  
    .homeoffice_filter_additional_content {
-     font-size: 32px;
-     line-height: 42px;
+    font-size: 1.5em;
+    line-height: 42px;
    }
  
    .homeoffice_shape_content {
@@ -135,22 +130,22 @@
  }
  @media screen and (max-width:3000px) and (min-width:2000px) {
    .homeoffice_filter_link {
-     font-size: 18px;
-     line-height: 28px;
+    font-size: 1.25em;
+    line-height: 28px;
    }
  
    .homeoffice_filter_slash {
-     font-size: 18px;
-   }
+    font-size: 1.25em;
+  }
  
-   .homeoffice_filter_header_content {
-     font-size: 42px;
-     line-height: 49px;
-   }
+  //  .homeoffice_filter_header_content {
+  //    font-size: 42px;
+  //    line-height: 49px;
+  //  }
  
    .homeoffice_filter_additional_content {
-     font-size: 22px;
-     line-height: 28px;
+    font-size: 1.25em;
+    line-height: 28px;
    }
  
    .homeoffice_shape_content {

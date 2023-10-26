@@ -57,15 +57,14 @@
    font-family: "Montserrat";
    font-size: 40px;
    font-weight: 700;
-   line-height: 49px;
+   line-height: 69px;
    letter-spacing: 0em;
-   padding: 1% 0;
    color: #FFFFFF;
  }
  
  .wardrobe_filter_additional_content {
    // font-family: "Montserrat";
-   font-size: 15px;
+   font-size: 16px;
    font-weight: lighter;
    line-height: 20px;
    letter-spacing: 0em;
@@ -100,16 +99,16 @@
  
  @media screen and (max-width:4000px) and (min-width:3000px) {
    .wardrobe_filter_link {
-     font-size: 22px;
+     font-size: 1.5em;
      line-height: 30px;
    }
  
    .wardrobe_filter_slash {
-     font-size: 22px;
+     font-size: 1.5em;
    }
  
    .wardrobe_filter_header_content {
-     font-size: 52px;
+     font-size: 3em;
      line-height: 69px;
    }
  
@@ -129,22 +128,22 @@
  }
  @media screen and (max-width:3000px) and (min-width:2000px) {
    .wardrobe_filter_link {
-     font-size: 18px;
-     line-height: 28px;
+    font-size: 1.25em;
+    line-height: 28px;
    }
  
    .wardrobe_filter_slash {
-     font-size: 18px;
-   }
+    font-size: 1.25em;
+  }
  
-   .wardrobe_filter_header_content {
-     font-size: 42px;
-     line-height: 49px;
-   }
+  //  .wardrobe_filter_header_content {
+  //    font-size: 42px;
+  //    line-height: 49px;
+  //  }
  
    .wardrobe_filter_additional_content {
-     font-size: 22px;
-     line-height: 28px;
+    font-size: 1.25em;
+    line-height: 28px;
    }
  
    .wardrobe_shape_content {

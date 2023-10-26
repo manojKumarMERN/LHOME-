@@ -57,14 +57,14 @@
  font-family: "Montserrat";
  font-size: 40px;
  font-weight: 700;
- line-height: 49px;
+ line-height: 69px;
  letter-spacing: 0em;
  color: #FFFFFF;
 }
 
 .spacesaving_filter_additional_content {
  // font-family: "Montserrat";
- font-size: 15px;
+ font-size: 16px;
  font-weight: lighter;
  line-height: 20px;
  letter-spacing: 0em;
@@ -75,21 +75,21 @@
 
 @media screen and (max-width:4000px) and (min-width:3000px) {
  .spacesaving_filter_link {
-   font-size: 22px;
+  font-size: 1.5em;
    line-height: 30px;
  }
 
  .spacesaving_filter_slash {
-   font-size: 22px;
+  font-size: 1.5em;
  }
 
  .spacesaving_filter_header_content {
-   font-size: 52px;
+  font-size: 3em;
    line-height: 69px;
  }
 
  .spacesaving_filter_additional_content {
-   font-size: 32px;
+  font-size: 1.5em;
    line-height: 42px;
  }
 
@@ -97,21 +97,21 @@
 }
 @media screen and (max-width:3000px) and (min-width:2000px) {
  .spacesaving_filter_link {
-   font-size: 18px;
+  font-size: 1.25em;
    line-height: 28px;
  }
 
  .spacesaving_filter_slash {
-   font-size: 18px;
+  font-size: 1.25em;
  }
 
- .spacesaving_filter_header_content {
-   font-size: 42px;
-   line-height: 49px;
- }
+//  .spacesaving_filter_header_content {
+//    font-size: 42px;
+//    line-height: 49px;
+//  }
 
  .spacesaving_filter_additional_content {
-   font-size: 22px;
+  font-size: 1.25em;
    line-height: 28px;
  }
 
