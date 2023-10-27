@@ -15,12 +15,12 @@ import { useRouter } from "next/router.js";
 
 
 
-const Cities: React.FC= () => {
+const Cities: React.FC = () => {
 
-    const router =useRouter()
-    const {City} =router.query
+    const router = useRouter()
+    const { City } = router.query
     console.log(City)
-    
+
     const living = React.useRef(null);
     const [screenwidth, setWidth] = React.useState(window.innerWidth);
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
@@ -70,18 +70,18 @@ const Cities: React.FC= () => {
 
     return (
         <React.Fragment>
-          <div className="animate-fade-in">
+            <div className="animate-fade-in">
                 <div className={css.lhomePage}>
                     <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
                     <div className={css.LhomeBottom}>
-                        <div> <CitiesBanner Citie={City}  /></div>
+                        <div> <CitiesBanner Citie={City} /></div>
 
                         <div className={css.ideabr}>
 
                             <div className={css.filter_home1}>
                                 <span className={css.filter_link_span1}><Link href={{ pathname: "/" }} className={css.kitchen_filter_link}>home</Link></span>
                                 <span className={css.filter_slash}>/</span>
-                                <span className={css.filter_link_span2}><Link href={{ pathname: "/cities"}} className={css.kitchen_filter_link}>{City}</Link></span>
+                                <span className={css.filter_link_span2}><Link href={{ pathname: "/cities" }} className={css.kitchen_filter_link}>{City}</Link></span>
                             </div>
                             <p className={css.filter_header_content}>We are the best interior design<br />company in {City}  </p>
                             <div className={css.filter_content}><p className={css.filter_additional_content}>If you’re on the lookout for simple home interior designs, look no further<br />
@@ -91,8 +91,9 @@ const Cities: React.FC= () => {
                             </div>
                         </div>
                         <div className={"mb-3 " + css.ToppicsdivforDesignGallery}>
-                            <TopPicksForKitchen  Citie={City}/>
-                            <Wardrobes  Citie={City}/></div>
+                            <div><TopPicksForKitchen Citie="" Currentpage={router.pathname} /></div>
+                            <div><Wardrobes Citie="" Currentpage={router.pathname} /></div>
+                        </div>
                         <p className={css.filter_header_content1}>Full-service Interior Design Service in {City} </p>
                         <div className={css.filter_content1}><p className={css.filter_additional_content1}>LHome, a leading provider of home interior designs in {City},
                             offers luxury interior design services for homeowners who want to <br />create opulent and sophisticated living spaces.
@@ -110,7 +111,7 @@ const Cities: React.FC= () => {
                 </div>
 
             </div>
-            
+
         </React.Fragment>
     )
 }
