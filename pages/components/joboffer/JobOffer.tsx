@@ -6,8 +6,7 @@ import { MdKeyboardArrowLeft } from 'react-icons/md';
 import ApplyForJobForm from '../Jobform/Jobform';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import {BsFacebook,BsTelegram,BsLinkedin} from 'react-icons/bs';
-import {FaInstagramSquare,FaTwitterSquare,FaWhatsappSquare} from 'react-icons/fa';
+import {FaFacebookF,FaInstagram,FaTwitter,FaTelegramPlane,FaWhatsapp,FaLinkedinIn} from 'react-icons/fa';
 interface JobDetails {
   details: {
     header: string;
@@ -136,12 +135,12 @@ const JobOffer: React.FC<JobOfferProps> = ({ value }) => {
               <button className={`${css.jobSharebtn} ${css.jobApplybtn2}`}>
                 Share
                 <div className={css.Socailmedia_icons}>
-                <BsFacebook/>
-                <FaInstagramSquare/>
-                <FaTwitterSquare/>
-                <BsTelegram/>
-                <FaWhatsappSquare/>
-                <BsLinkedin/>
+                <div className={css.Social_Content_icons}><FaFacebookF className={css.Social_icons}/></div>
+                <div className={css.Social_Content_icons}><FaInstagram className={css.Social_icons}/></div>
+                <div className={css.Social_Content_icons}><FaTwitter className={css.Social_icons}/></div>
+                <div className={css.Social_Content_icons}><FaTelegramPlane className={css.Social_icons}/></div>
+                <div className={css.Social_Content_icons}><FaWhatsapp className={css.Social_icons}/></div>
+                <div className={css.Social_Content_icons}><FaLinkedinIn className={css.Social_icons}/></div>
                 </div>
               </button>
 
