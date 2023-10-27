@@ -3,8 +3,9 @@ import leftvector from './components/loginRegister/leftvector.png';
 import rightvector from './components/loginRegister/rightvector.png';
 import Image from 'next/image';
 import css from '../styles/loginRegister.module.scss';
-import { AiFillGoogleCircle } from 'react-icons/ai';
-import CustomDropdown from './components/loginRegister/CustomDropDown';
+import { IoLogoGoogle } from 'react-icons/io';
+import ReactFlagsSelect from "react-flags-select";
+
 
 function LoginRegisterPage() {
 
@@ -15,9 +16,10 @@ function LoginRegisterPage() {
     };
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
-      };
-      
+    };
 
+    const [select, setSelect] = React.useState("IN");
+    const onSelect = (code) => setSelect(code);
 
     return (
         <>
@@ -41,7 +43,7 @@ function LoginRegisterPage() {
                             </div>
                             <p>Or Login With</p>
                             <div className={css.mainVal}>
-                                <AiFillGoogleCircle size={30} color='#fff' />
+                                <IoLogoGoogle size={30} color='#2F52A4' className={css.G_icon} />
                             </div>
                             <p>First time user? <span className={css.signupbtn} onClick={toggleForm} style={{ fontWeight: 'bold' }}>Sign up</span> here</p>
                         </div>
@@ -58,7 +60,14 @@ function LoginRegisterPage() {
                                     <div>
                                         <input type='text' className={css.SInput1} placeholder='Enter your name' />
                                         <div className={css.InputContainer}>
-                                            <div className={css.dropdown_icon}><CustomDropdown /></div>
+                                            <div className={css.dropdown_icon}>
+                                            <ReactFlagsSelect
+                                                selected={select}
+                                                onSelect={onSelect}
+                                                fullWidth={false}
+                                                countries={["","IN","fi", "GB", "IE", "IT", "NL", "SE" ]}
+                                                className={css.number_dropdown}
+                                            /></div>
                                             <input type='tel' className={css.SInput2} placeholder='00000 00000' />
                                         </div>
                                         <div className={css.whatsapplabel}>
@@ -67,8 +76,8 @@ function LoginRegisterPage() {
                                                 <span className={css.label2}>opt for meeting and offer updates on WhatsApp</span>
                                             </div>
                                             <div className={css.whatsappcheckbox}>
-                                            <input type="checkbox" className={css.SInput3} checked={isChecked} onChange={handleCheckboxChange} id="customCheckbox"/>
-                                                <label htmlFor="customCheckbox"  className={css.checkmark}></label>
+                                                <input type="checkbox" className={css.SInput3} checked={isChecked} onChange={handleCheckboxChange} id="customCheckbox" />
+                                                <label htmlFor="customCheckbox" className={css.checkmark}></label>
                                             </div>
                                         </div>
                                         <input type='text' className={css.SInput1} placeholder='Enter your email' />
@@ -76,7 +85,7 @@ function LoginRegisterPage() {
                                     </div>
                                     <p>Or Login With</p>
                                     <div className={css.mainVal}>
-                                        <AiFillGoogleCircle size={30} color='#fff' />
+                                        <IoLogoGoogle size={35} color='#2F52A4' className={css.G_icon} />
                                     </div>
                                     <p>First time user? <span onClick={toggleForm} style={{ fontWeight: 'bold' }}>log in </span> here</p>
                                 </div>

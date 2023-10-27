@@ -12,7 +12,10 @@
     font-weight: 400;
     line-height: normal;
 }
-
+.referearn_socialicon{
+    width: 70px;
+    margin: 0% 2% 2%;
+}
 .content {
     color: #737373;
     font-family: Montserrat;
@@ -79,6 +82,7 @@
 .Box {
     width: 100%;
     flex-direction: column;
+    margin-bottom: 5%;
 }
 
 .tablist {

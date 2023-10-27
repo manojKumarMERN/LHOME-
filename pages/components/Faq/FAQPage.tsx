@@ -3,6 +3,7 @@ import css from "../Faq/FAQPage.module.scss";
 import * as config from "../../../next.config";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import {ImPlus} from 'react-icons/im';
 
 const FAQPage: React.FC = () => {
   let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
@@ -91,7 +92,7 @@ const FAQPage: React.FC = () => {
               <div className={css.faqBox} onClick={() => toggleAnswer(index)}>
                 <div className={css.faqQuestion}>{faqItem.question}</div>
                 <div className={`${css.faqIcon} ${activeIndex === index ? css.rotate : ''}`}>
-                  <AiOutlinePlus />
+                  <ImPlus/>
                 </div>
               </div>
               <div className={`${css.faqAnswer} ${activeIndex === index ? css.open : ''}`}>

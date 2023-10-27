@@ -3,6 +3,7 @@
 }
 .visitus_main_component2 {
     display: flex;
+    margin-top: 3%;
 }
 .visitus_co_common{
     margin-top: 5%;
@@ -25,7 +26,12 @@
     text-align: center;
     left:30%;
 }
-
+.visitus_arrow1_image{
+    width: 25%;
+}
+.visitus_arrow2_image{
+    width: 50%;
+}
 .visitus_office1_image {
     border-radius: 15px;
     width:90%;
@@ -47,12 +53,12 @@ font-weight: 700;
 line-height: 39px;
 letter-spacing: 0em;
 color: #EF5350;
+margin-bottom: 1.5rem;
 }
 .visitus_content1{
 font-family: "Montserrat";
 font-size: 14px;
 font-weight: 500;
-line-height: 29px;
 letter-spacing: 0em;
 color:#737373;
 // width:60%;
@@ -63,7 +69,8 @@ color:#737373;
     display: flex;
     width: 100%;
     justify-content: center;
-    margin-top:3%;
+    margin-top: 1%;
+    margin-left: 13%;
 }
 .visitus_office2_image {
     border-radius: 15px;
@@ -79,16 +86,15 @@ color:#737373;
     line-height: 39px;
     letter-spacing: 0em;
     color: #EF5350;
-
+    margin-bottom: 1.5rem;
 }
 .visitus_content2{
     font-family: "Montserrat";
     font-size: 14px;
     font-weight: 500;
-    line-height: 29px;
     letter-spacing: 0em;
     color:#737373;
-    
+    text-align: left;
 }
 .visitus_arrow2{
     display: flex;
