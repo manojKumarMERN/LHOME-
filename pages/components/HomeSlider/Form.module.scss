@@ -27,12 +27,6 @@
     margin-left: 10%;
  }
 
-//  .marginmove_2 {
-//     margin-left: 2%;
-//     margin-right: 5%;
-//     margin-bottom: 1%;
-//  }
-
  .marginmovebig_2 {
     margin-left: 10%;
     margin-right: 10%;
@@ -152,10 +146,6 @@
        margin-bottom: 160px;
     }
 
-    .label2 {
-       margin-right: 24px !important;
-    }
-
     .whatsappcheckbox {
        right: 0px;
        margin-right: 2%;
@@ -164,4 +154,18 @@
     .designermeet {
        margin: 2% !important;
     }
+ }
+
+
+ @media (max-width:576px) {
+   
+   .forminput {
+      font-size: 0.7em;
+   }
+   .label1 {
+      font-size: 0.85em !important;
+   } 
+   .label2{
+      font-size: 0.4em;
+   }
  }
