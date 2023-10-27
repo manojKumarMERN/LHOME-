@@ -16,7 +16,7 @@ import Footer  from "./components/Footer/Footer";
 import Warranty from "./components/warranty/Warranty";
 import Guranted from "./components/Guranted/Guranted";
 import Interior from "./components/Designinterior/Interior";
-
+import { useRouter } from 'next/router';
 
 const DesignGalleryPage: React.FC = () => {
 
@@ -88,7 +88,7 @@ const DesignGalleryPage: React.FC = () => {
    const living = React.useRef(null);
 
    const Cclass: string = "peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-pink-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-        
+   const router = useRouter();  
    
    return (
       <React.Fragment>
@@ -99,8 +99,10 @@ const DesignGalleryPage: React.FC = () => {
            <div><DesignGalleryBanner /></div>
          <div className={css.img_desgin_Gallery}><DesignGallery /></div>
          <div><WhyLhome screenwidth={screenwidth} screenheight={screenheight} /></div>
-         <div className={"mb-3 "+css.ToppicsdivforDesignGallery}><TopPicksForKitchen Citie="" />
-          <Wardrobes Citie="" /></div>
+          <div className={"mb-3 " + css.ToppicsdivforDesignGallery}>
+                                <TopPicksForKitchen Citie="" Currentpage={router.pathname} />
+                                <Wardrobes Citie="" Currentpage={router.pathname} />
+                            </div>
           <div><Interior /></div>
           <div><StylishHomeProducts Citie=""/></div>
           <div className="mt-4 mb-[-50px]"><Autoplay living={null} /></div>

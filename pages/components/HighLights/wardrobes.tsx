@@ -7,12 +7,14 @@ import CustomRightArrow from "./CustomRightArrow";
 import Carousel from "react-multi-carousel";
 import { BsHeart } from "react-icons/bs";
 import {FaRegShareFromSquare} from 'react-icons/fa6'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+interface propproperty {
+    Citie: any;
+    Currentpage: string
+}
 
-interface propproperty{
-    Citie:any
-  }
-
-const Wardrobes: React.FC<propproperty> = ({Citie}) => {
+const Wardrobes: React.FC<propproperty> = ({ Citie, Currentpage }) => {
 
     //assetspath 
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
@@ -80,8 +82,14 @@ const Wardrobes: React.FC<propproperty> = ({Citie}) => {
         <React.Fragment>
              <div className={css.wardrobesfly}>
                   <div className={css.listingOuterLayer}>
-                    <div className={css.warddrobeflytitle}>
-                      Wardrobes That Fly Off the Shelves {Citie}
+                  <div className='d-flex justify-content-between  align-items-center'>
+                        <div className={css.warddrobeflytitle}>
+                            Wardrobes That Fly Off the Shelves {Citie}
+                        </div>
+                        {Currentpage === "/designgallery" && (<button className={css.compactBtn}>
+                            see all <FontAwesomeIcon icon={faChevronRight} />
+                        </button>)}
+
                     </div>
                     <div className={css.carousel_design}>
                     <Carousel

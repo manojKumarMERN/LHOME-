@@ -3,23 +3,26 @@ import leftvector from './components/loginRegister/leftvector.png';
 import rightvector from './components/loginRegister/rightvector.png';
 import Image from 'next/image';
 import css from '../styles/loginRegister.module.scss';
-import { IoLogoGoogle } from 'react-icons/io';
 import ReactFlagsSelect from "react-flags-select";
-
+import { IoLogoGoogle } from 'react-icons/io';
 
 function LoginRegisterPage() {
 
     const [showLogin, setShowLogin] = React.useState(true);
     const [isChecked, setIsChecked] = React.useState<boolean>(false);
+
+    const [select, setSelect] = React.useState("IN");
+    const onSelect = (code) => setSelect(code)
+
     const toggleForm = () => {
         setShowLogin(!showLogin);
     };
+
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
     };
 
-    const [select, setSelect] = React.useState("IN");
-    const onSelect = (code) => setSelect(code);
+
 
     return (
         <>
@@ -38,12 +41,22 @@ function LoginRegisterPage() {
                             <h2>Login</h2>
                             <p>Enter your register mobile number</p>
                             <div className={css.inputAndbtn}>
-                                <input type='number' className={css.LRInput} />
+                                <div className={css.dropdown_login_icon}>
+                                    <ReactFlagsSelect
+                                        selected={select}
+                                        onSelect={onSelect}
+                                        fullWidth={false}
+                                        countries={["", "IN", "fi", "GB", "IE", "IT", "NL", "SE"]}
+                                        className={css.number_dropdown}
+                                    />
+                                </div>
+
+                                <input type='number' inputMode='text' className={css.LRInput} placeholder='00000 00000' />
                                 <button className={css.LoginButton}>LOGIN</button>
                             </div>
                             <p>Or Login With</p>
                             <div className={css.mainVal}>
-                                <IoLogoGoogle size={30} color='#2F52A4' className={css.G_icon} />
+                                <IoLogoGoogle size={35} color='#2F52A4' className={css.G_icon} />
                             </div>
                             <p>First time user? <span className={css.signupbtn} onClick={toggleForm} style={{ fontWeight: 'bold' }}>Sign up</span> here</p>
                         </div>
@@ -61,17 +74,18 @@ function LoginRegisterPage() {
                                         <input type='text' className={css.SInput1} placeholder='Enter your name' />
                                         <div className={css.InputContainer}>
                                             <div className={css.dropdown_icon}>
-                                            <ReactFlagsSelect
-                                                selected={select}
-                                                onSelect={onSelect}
-                                                fullWidth={false}
-                                                countries={["","IN","fi", "GB", "IE", "IT", "NL", "SE" ]}
-                                                className={css.number_dropdown}
-                                            /></div>
+                                                <ReactFlagsSelect
+                                                    selected={select}
+                                                    onSelect={onSelect}
+                                                    fullWidth={false}
+                                                    countries={["", "IN", "fi", "GB", "IE", "IT", "NL", "SE"]}
+                                                    className={css.number_dropdown}
+                                                />
+                                            </div>
                                             <input type='tel' className={css.SInput2} placeholder='00000 00000' />
                                         </div>
                                         <div className={css.whatsapplabel}>
-                                            <div className='w-full flex flex-col justify-center items-center'>
+                                            <div className='w-full flex flex-col justify-center items-right pe-2'>
                                                 <span className={css.label1}>you can reach me on whatsApp</span>
                                                 <span className={css.label2}>opt for meeting and offer updates on WhatsApp</span>
                                             </div>
@@ -81,6 +95,8 @@ function LoginRegisterPage() {
                                             </div>
                                         </div>
                                         <input type='text' className={css.SInput1} placeholder='Enter your email' />
+                                        <input type='text' className={css.SInput0} placeholder='Enter your current residence pincode' />
+
                                         <button className={css.SignButton}>LOGIN</button>
                                     </div>
                                     <p>Or Login With</p>

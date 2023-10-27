@@ -9,7 +9,9 @@ import CustomLeftArrow from "./CustomLeftArrow";
 import CustomRightArrow from "./CustomRightArrow";
 import css2 from '../HighLights/HighLights.module.scss';
 import { BsHeart } from "react-icons/bs";
-import { FaRegShareFromSquare } from 'react-icons/fa6'
+import { FaRegShareFromSquare } from 'react-icons/fa6';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 interface propproperty {
     Citie: any
@@ -80,7 +82,10 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
             <div className={css.mainhighlights}>
                 <div className={css.highlights}>
                     <div className={css2.listingOuterLayer}>
-                        <div className={css.trendingtitle}>Stylish Home Products {Citie}</div>
+                        <div className='d-flex justify-content-between align-items-center'>
+                            <div className={css.trendingtitle}>Stylish Home Products {Citie}</div>
+                            <button className={css.compactBtn}>see all <FontAwesomeIcon icon={faChevronRight} /></button>
+                        </div>
                         <div className={css.carousel_design}>
                             <Carousel
 
@@ -136,8 +141,9 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                     </div>
                     <div className={css.wardrobesfly}>
                         <div className={css2.listingOuterLayer}>
-                            <div className={css.warddrobeflytitle}>
-                                Compact Furniture {Citie}
+                            <div className='d-flex justify-content-between align-items-center'>
+                                <div className={css.warddrobeflytitle}>Compact Furniture {Citie}</div>
+                                <button className={css.compactBtn}>see all <FontAwesomeIcon icon={faChevronRight} /></button>
                             </div>
                             <div className={css.carousel_design}>
                                 <Carousel

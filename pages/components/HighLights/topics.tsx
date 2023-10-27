@@ -6,12 +6,17 @@ import Carousel from "react-multi-carousel";
 import CustomLeftArrow from "./CustomLeftArrow";
 import CustomRightArrow from "./CustomRightArrow";
 import { BsHeart } from "react-icons/bs";
-import {FaRegShareFromSquare} from 'react-icons/fa6'
+import {FaRegShareFromSquare} from 'react-icons/fa6';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 interface propproperty {
-    Citie: any
+    Citie: any;
+    Currentpage:string
+
 }
 
-const TopPicksForKitchen: React.FC<propproperty> = ({ Citie }) => {
+const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
 
     //assetspath 
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
@@ -72,8 +77,13 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie }) => {
     return (
         <React.Fragment>
             <div className={css.listingOuterLayer}>
+            <div className='d-flex justify-content-between  align-items-center'>
                     <div className={css.toppickstitle}>
                         Top Picks for Kitchen Designs {Citie}
+                    </div>
+                    {Currentpage === "/designgallery" &&(<button className={css.compactBtn}>
+                        see all <FontAwesomeIcon icon={faChevronRight} />
+                    </button>)}
                     </div>
                     <div className={css.carousel_design}>
                     <Carousel
