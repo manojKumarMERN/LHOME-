@@ -68,10 +68,10 @@ console.log(data);
 
                 {/* Displaying related images */}
                 <div className={`${css.RelatedImg} container`}>
-                    <p className="w-100">Related Design</p>
-                    <div className={`row ${css.Relatedimgtag}`}>
+                    <p className={`${css.headingRelated} w-100`}>Related Design</p>
+                    <div className={window.innerWidth <= 1000 ? `${css.Relatedimgtag_x}` : `row ${css.Relatedimgtag}`}>
                         {data.filter(item => item !== selectedItem).map((item, index) => (
-                            <div key={index} className={item.image?"col-6 mb-3":""}>
+                            <div key={index} className={item.image?(window.innerWidth <= 1000 ? "col-3 m-3 " :"col-6 mb-3"): " "}>
                                 {item.image?
                                 <img src={item.image} alt='remaining images' className={css.img_fluid} />
                                 :''}

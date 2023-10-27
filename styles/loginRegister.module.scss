@@ -3,12 +3,39 @@
     justify-content: center;
     padding: 2%;
     width: 50%;
+    height: 100%;
 }
 
-.btn-close{
+.btn-close {
     background-color: #fff;
     border-radius: 100%;
 }
+
+.InputContainer button[class="ReactFlagsSelect-module_selectBtn__19wW7"]{
+    border: none;
+    width: 10%;
+  }
+  .InputContainer span[class="ReactFlagsSelect-module_label__27pw9"]{
+    display: none;
+  }
+  .InputContainer button::after{
+    border-top: 12px solid #FFFFFF;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 0;
+  }
+  .InputContainer button[aria-expanded="true"]::after {
+    border-top: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #FFFFFF;
+  }
+
+
+  .G_icon{
+    width: 100%;
+    height: 100%;
+  }
 
 .fade .modal-header {
     border-bottom: 0;
@@ -60,6 +87,7 @@
         font-weight: 500;
         font-size: 7px;
         color: #fff;
+        text-align: right;
     }
 }
 
@@ -71,20 +99,41 @@
     background-color: transparent;
 }
 
-.SInput1 :focus,.SInput2 :focus{
+.SInput0 {
+    width: 100%;
+    margin-bottom: 10%;
+    padding-bottom: 3%;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+}
+
+.SInput0::placeholder {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 16x;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding-bottom: 20px;
+}
+
+.SInput0:focus,
+.SInput1 :focus,
+.SInput2 :focus
+ {
     outline: none;
     border-bottom: 1px solid #fff;
 
 }
 
-div.whatsappcheckbox input[type="checkbox"]{
+div.whatsappcheckbox input[type="checkbox"] {
     width: 100%;
     height: 100%;
     background-color: transparent;
-    bottom:1px solid #fff ;
+    bottom: 1px solid #fff;
 }
 
-.whatsappcheckbox{
+.whatsappcheckbox {
     width: 10%;
 }
 
@@ -108,12 +157,22 @@ div.whatsappcheckbox input[type="checkbox"]{
     text-align: center;
 }
 
+.LRInput::placeholder {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: left;
+}
+
 .SInput2 {
     width: 100%;
     margin-bottom: 10%;
     border-bottom: 1px solid #fff;
     background-color: transparent;
-    padding-bottom: 3%;
+    padding: 3%;
 }
 
 .InputContainer {
@@ -122,22 +181,12 @@ div.whatsappcheckbox input[type="checkbox"]{
     width: 100%;
 }
 
-
-
-.dropdown_icon {
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    transform: translateY(-50%);
-    color: #fff;
-    font-size: 16px;
-  }
-
 .formLR {
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 1% 5% 5% 2%;
+    align-items: center;
 }
 
 .form_content {
@@ -154,36 +203,25 @@ div.whatsappcheckbox input[type="checkbox"]{
 }
 
 .rightImage {
-    // width: 100%;
     height: auto;
 }
-
-// .emptybubble {
-// //     width: 50%;
-// //     height: auto;
-// //     border-radius: 50%;
-// // border: 1px solid rgba(255, 255, 255, 0.10);
-// // background: linear-gradient(144deg, rgba(255, 255, 255, 0.20) 0.99%, rgba(255, 255, 255, 0.05) 99.36%);
-// // box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.20);
-// // backdrop-filter: blur(20px);
-
-// }
 
 .emptybubble {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100px;
-    height: 100px;
-    border-radius: 175px;
+    width: 150px;
+    height: 150px;
+    border-radius: 0 0 100%;
     border: 1px solid rgba(255, 255, 255, 0.10);
     background: linear-gradient(144deg, rgba(255, 255, 255, 0.20) 0.99%, rgba(255, 255, 255, 0.05) 99.36%);
     box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.20);
     backdrop-filter: blur(20px);
-    z-index: -1;
+    z-index: 99;
     /* Place it behind the image */
 }
-.formsofmodel input:focus{
+
+.formsofmodel input:focus {
     outline: 0;
 }
 
@@ -200,9 +238,15 @@ div.whatsappcheckbox input[type="checkbox"]{
 }
 
 .inputAndbtn input {
-    padding-bottom: 7%;
+    padding: 5%;
     margin: 5%;
 }
+
+.inputAndbtn {
+    position: relative;
+
+}
+
 
 .formsofmodel .LoginButton {
     padding: 3% 10%;
@@ -216,7 +260,8 @@ div.whatsappcheckbox input[type="checkbox"]{
     font-style: normal;
     font-weight: 700;
 }
-.formsofmodel .SignButton{
+
+.formsofmodel .SignButton {
     padding: 3% 40%;
     border: none;
     background-color: #fff;
@@ -232,19 +277,28 @@ div.whatsappcheckbox input[type="checkbox"]{
     background: transparent;
     border: 1px solid #ccc;
     border-radius: 5px;
+    text-indent: 70px;
+    color: #fff;
 }
 
-.mainVal {
+
+    .mainVal {
     margin: 0 auto;
     background-color: #FFFFFF;
     width: 40px;
     height: 40px;
     border-radius: 50%;
 }
-.G_icon{
-width: 100%;
-height: 100%;
-}
+
+.dropdown_icon {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 16px;
+  }
+
 
 .iconpart {
     display: flex;
@@ -255,19 +309,24 @@ height: 100%;
     height: auto;
 
 }
-.InputContainer .dropdown ::after{
+
+.InputContainer .dropdown ::after {
     display: none !important;
-  }
-  .InputContainer div div button, .InputContainer div div button:hover{
+}
+
+.InputContainer div div button,
+.InputContainer div div button:focus,
+.InputContainer div div button:hover {
     background-color: transparent;
     border: none;
-  }
-  .InputContainer .dropdown button svg{
-    width: 80%;
-  }
+}
 
-  //checkbox
-  .whatsappcheckbox {
+.InputContainer .dropdown button svg {
+    width: 80%;
+}
+
+//checkbox
+.whatsappcheckbox {
     display: block;
     position: relative;
     margin-top: 5px;
@@ -277,39 +336,41 @@ height: 100%;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-  
-  .whatsappcheckbox input {
+}
+
+.whatsappcheckbox input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
-  .checkmark {
+}
+
+.checkmark {
     position: absolute;
     top: 0;
     left: 0;
     height: 20px;
     width: 20px;
     background-color: transparent;
-    border:1px solid white;
-  }
-  
-  .whatsappcheckbox input:checked ~ .checkmark {
+    border: 1px solid white;
+}
+
+.whatsappcheckbox input:checked~.checkmark {
     background-color: transparent;
-  }
-  
-  .checkmark:after {
+}
+
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
-  
-  .whatsappcheckbox input:checked ~ .checkmark:after {
+}
+
+.whatsappcheckbox input:checked~.checkmark:after {
     display: block;
-  }
-  .whatsappcheckbox .checkmark:after {
+}
+
+.whatsappcheckbox .checkmark:after {
     left: 6px;
     top: 0px;
     width: 8px;
@@ -319,19 +380,63 @@ height: 100%;
     -webkit-transform: rotate(40deg);
     -ms-transform: rotate(40deg);
     transform: rotate(40deg);
-  }
-  //flag
-  .InputContainer button[class="ReactFlagsSelect-module_selectBtn__19wW7"]{
+}
+
+@media only screen and (max-width:800px) {
+    .loginLeftImage {
+        display: none;
+    }
+
+    .formsofmodel {
+        width: 100%;
+    }
+
+    .formLR {
+        padding: 5%;
+    }
+}
+
+.inputAndbtn {
+    position: relative;
+    width: 100%;
+}
+
+.inputAndbtn .dropdown ::after {
+    display: none !important;
+}
+.inputAndbtn div div button,
+.inputAndbtn div div button:focus,
+.inputAndbtn div div button:hover {
+    background-color: transparent;
+    border: none;
+}
+.inputAndbtn .dropdown button svg {
+    width: 80%;
+}
+.dropdown_login_icon{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 16px;
+}
+.inputAndbtn button[class="ReactFlagsSelect-module_selectBtn__19wW7"]{
     border: none;
     width: 10%;
   }
-  .InputContainer span[class="ReactFlagsSelect-module_label__27pw9"]{
+  .inputAndbtn span[class="ReactFlagsSelect-module_label__27pw9"]{
     display: none;
   }
-  .InputContainer span[class="ReactFlagsSelect-module_selectValue__152eS"]::after{
-    content: '▼'; 
-    font-size: 16px;
-    color: #FFFFFF; 
-    margin-left: 5px; 
-    border-top: none !important;
+  .inputAndbtn button::after{
+    border-top: 12px solid #FFFFFF;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 0;
+  }
+  .inputAndbtn button[aria-expanded="true"]::after {
+    border-top: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #FFFFFF;
   }
