@@ -12,7 +12,7 @@ interface CustomRightArrowProps {
   const CustomRightArrow: FC<CustomRightArrowProps> = ({ onClick }) => {
 
     const router = useRouter();
-    const arrowColor = router.pathname ==="/designgallery" ?"#7B7B7B" : "#222";
+    const arrowColor = router.pathname ==="/designgallery" ?"#7B7B7B" : router.pathname === "/cities" ? "#7B7B7B" : "#222";
 
     return (
       <button 
