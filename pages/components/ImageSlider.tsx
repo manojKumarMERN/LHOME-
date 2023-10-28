@@ -1,4 +1,3 @@
-
 import { useRouter } from 'next/router';
 import * as React from "react";
 import css from '../../styles/ImageSlider.module.scss';
@@ -49,7 +48,7 @@ const ImageSlider: React.FC<Sliderproperties> = ({ screenwidth, screenheight, sw
       let sltop = `${sheight * .10}px`;
       let silleft = `${(swidth * .07) + 20}px`;
       let siltop = `${(sheight * .10) + 20}px`;
-      let srleft = `${(window.innerWidth < 700 ? 0 : (swidth * .20)) + swidth - (swidth * .07) - sliderleftblock.current.offsetWidth - reduce}px`;
+      let srleft = `${(window.innerWidth < 992 ? 0 : (swidth * .20)) + swidth - (swidth * .07) - sliderleftblock.current.offsetWidth - reduce}px`;
       let siwidth = parseFloat(srleft.split("px")[0]) - parseFloat(silleft.split("px")[0]) + sliderrightblock.current.offsetWidth - 20;
       let srtop = `${sheight - (sheight * .10) - sliderleftblock.current.offsetHeight}px`;
       let siheight = parseFloat(srtop.split("px")[0]) - parseFloat(siltop.split("px")[0]) + sliderrightblock.current.offsetHeight - 20;
@@ -96,8 +95,8 @@ const ImageSlider: React.FC<Sliderproperties> = ({ screenwidth, screenheight, sw
       let slleft = `${swidth * .07}px`;
       let sltop = `${sheight * .10}px`;
       let silleft = `${(swidth * .07) + 20}px`;
-      let siltop = `${(sheight * .10) + 20}px`;
-      let srleft = `${(window.innerWidth < 700 ? 0 : (swidth * .20)) + swidth - (swidth * .07) - sliderleftblock.current.offsetWidth - reduce}px`;
+      let siltop = `${(sheight * .10)}px`;
+      let srleft = `${(window.innerWidth < 992 ? 0 : (swidth * .20)) + swidth - (swidth * .07) - sliderleftblock.current.offsetWidth - reduce}px`;
       let siwidth = parseFloat(srleft.split("px")[0]) - parseFloat(silleft.split("px")[0]) + sliderrightblock.current.offsetWidth - 20;
       let srtop = `${sheight - (sheight * .21) - sliderleftblock.current.offsetHeight}px`;
       let siheight = parseFloat(srtop.split("px")[0]) - parseFloat(siltop.split("px")[0]) + sliderrightblock.current.offsetHeight - 20;
@@ -133,7 +132,7 @@ const ImageSlider: React.FC<Sliderproperties> = ({ screenwidth, screenheight, sw
       .catch(error => {
         console.log(error);
       });
-  }, [ sheight, swidth, screenwidth]);
+  }, [assetpath, sheight, swidth, screenwidth]);
 
   const prevItem = () => {
     slidercounter--;
@@ -169,7 +168,6 @@ const ImageSlider: React.FC<Sliderproperties> = ({ screenwidth, screenheight, sw
           </div>
           <div className={css.customlist}>
             <div className={css.customname}>
-              {/* {datas.name} */}
               <span className={css.wishlistholder}>
                 <img
                   loading="lazy"
@@ -188,7 +186,6 @@ const ImageSlider: React.FC<Sliderproperties> = ({ screenwidth, screenheight, sw
               </span>
             </div>
             <label className={css.customtext}>
-              {/* {datas.size} */}
             </label>
           </div>
         </div>

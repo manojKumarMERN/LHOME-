@@ -407,7 +407,17 @@
  }
  .Modal_Popup div[class="modal-dialog"]{
    max-width: 60% !important;
-
+   margin-top: 5% !important;
+   margin: auto;
+@media (max-width:1100px) and (min-width:800px) {
+   max-width: 80% !important;
+}
+@media (max-width:550px) {
+   max-width: 80% !important;
+}
+@media (max-width:410px) {
+   max-width: 95% !important;
+}
 }
 
 //Chatbox

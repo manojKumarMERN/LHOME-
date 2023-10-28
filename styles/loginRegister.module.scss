@@ -79,6 +79,7 @@
         font-weight: 500;
         font-size: 0.80em;
         color: #fff;
+        text-align: right;
     }
 
     .label2 {
@@ -115,6 +116,9 @@
     font-weight: 300;
     line-height: normal;
     padding-bottom: 20px;
+    @media (max-width:1300px) {
+        font-size: 0.85em;
+    }
 }
 
 .SInput0:focus,
