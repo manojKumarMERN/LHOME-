@@ -72,14 +72,14 @@ const HomeOffice: React.FC = () => {
   React.useEffect(() => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResized);
-  }, [assetpath, handleResize, handleResized])
+  }, [ handleResize, handleResized])
 
   React.useEffect(() => {
     let api = simpleCallInitAPI(`${assetpath}/assets/bathroom.json`);
     api.then((data: any) => {
       setHomeoffice(data.data.bathroom);
     });
-  });
+  }, []);
 
   return (
 

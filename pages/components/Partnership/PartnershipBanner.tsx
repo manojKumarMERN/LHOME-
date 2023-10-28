@@ -21,7 +21,7 @@ const PartnershipBanner: React.FC = () => {
             });
             setPartnerBanner(banerImage);
         });
-    }, [assetpath]);
+    }, []);
 
     return (
     

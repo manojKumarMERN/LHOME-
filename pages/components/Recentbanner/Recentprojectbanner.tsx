@@ -28,7 +28,7 @@ const RecentProject: React.FC = () => {
             });
             setToolimage(sectionOne);
         })
-    }, [assetpath]);
+    }, []);
     console.log(Toolimage);
     return (
         <>

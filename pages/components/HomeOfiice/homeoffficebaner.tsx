@@ -20,7 +20,7 @@ const HomeOfficeBaner:React.FC=()=>{
             });
             setHomeOfficeBaner(homeOfficeBanerImage);
         });
-    }, [assetpath]);
+    }, []);
 
     console.log(homeOfficeBaner);
 

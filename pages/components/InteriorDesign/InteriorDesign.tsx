@@ -31,7 +31,7 @@ const InteriorDesign: React.FC = () => {
     .catch(error => {
         console.log(error);
     });
- }, [assetpath]);
+ }, []);
 
    return (
       <React.Fragment>

@@ -24,7 +24,7 @@ const Ideas: React.FC <headProps> = ({prop , color}) => {
             });
             setKitchencontent(sectionOne);
         })
-    }, [assetpath]);
+    }, []);
 
     return (
         <React.Fragment>

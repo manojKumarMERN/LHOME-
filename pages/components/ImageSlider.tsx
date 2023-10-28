@@ -133,7 +133,7 @@ const ImageSlider: React.FC<Sliderproperties> = ({ screenwidth, screenheight, sw
       .catch(error => {
         console.log(error);
       });
-  }, [assetpath, sheight, swidth, screenwidth]);
+  }, [ sheight, swidth, screenwidth]);
 
   const prevItem = () => {
     slidercounter--;

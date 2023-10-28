@@ -182,7 +182,7 @@ const HomePage: React.FC<homeproperties> = ({ screenwidth, screenheight }) => {
          guaranteed.current.style.top = `${warranty.current.offsetTop + warranty.current.offsetHeight + 20}px`;
          footer.current.style.top = `${guaranteed.current.offsetTop + guaranteed.current.offsetHeight + 20}px`;
       }, 1500)
-   }, [screenwidth, assetpath]);
+   }, [screenwidth]);
 
    React.useEffect(() => {
       let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
@@ -278,7 +278,7 @@ const HomePage: React.FC<homeproperties> = ({ screenwidth, screenheight }) => {
          .catch(error => {
             console.log(error);
          });
-   }, [screenwidth, swidth, sheight, assetpath]);
+   }, [screenwidth, swidth, sheight]);
 
    /*image horizontal scroll */
 

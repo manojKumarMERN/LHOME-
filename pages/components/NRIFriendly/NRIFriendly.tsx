@@ -6,7 +6,8 @@ import { simpleCallInitAPI } from '../../../services/ApicallInit';
 const NRIFriendly: React.FC = () => {
    let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
    const [refergirlimage, setRefergirlImage] = React.useState("");
-   const [refergirlalt, setRefergirlAlt] = React.useState(""); React.useEffect(() => {
+   const [refergirlalt, setRefergirlAlt] = React.useState(""); 
+   React.useEffect(() => {
       let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
       api.then((data: any) => {
          setRefergirlImage(`${assetpath}${data.data.settings.refergirlImage}`);
@@ -16,7 +17,7 @@ const NRIFriendly: React.FC = () => {
          .catch(error => {
             console.log(error);
          });
-   }, [assetpath]);
+   }, []);
 
    return (
       <React.Fragment>

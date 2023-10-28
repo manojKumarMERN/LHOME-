@@ -76,7 +76,7 @@ const Interior: React.FC = () => {
                 console.log(error);
             });
 
-    }, [assetpath]);
+    }, []);
 
     return (
         <React.Fragment>

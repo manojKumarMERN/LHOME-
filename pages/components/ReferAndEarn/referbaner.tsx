@@ -22,7 +22,7 @@ const ReferBaner: React.FC = () => {
             })
             setReferBan(ReferEarnBaner)
         })
-    }, [assetpath])
+    }, [])
 
 
     return (

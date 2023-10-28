@@ -21,7 +21,7 @@ const BedroomBanner: React.FC = () => {
             });
             setBedroomBanner(banerImage);
         });
-    }, [assetpath]);
+    }, []);
 
     return (
     
