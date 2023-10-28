@@ -91,8 +91,8 @@ const Cities: React.FC= () => {
                             </div>
                         </div>
                         <div className={"mb-3 " + css.ToppicsdivforDesignGallery}>
-                            <TopPicksForKitchen  Citie={City}/>
-                            <Wardrobes  Citie={City}/></div>
+                            <TopPicksForKitchen  Citie={City} Currentpage={router.pathname}/>
+                            <Wardrobes  Citie={City} Currentpage={router.pathname}/></div>
                         <p className={css.filter_header_content1}>Full-service Interior Design Service in {City} </p>
                         <div className={css.filter_content1}><p className={css.filter_additional_content1}>LHome, a leading provider of home interior designs in {City},
                             offers luxury interior design services for homeowners who want to <br />create opulent and sophisticated living spaces.

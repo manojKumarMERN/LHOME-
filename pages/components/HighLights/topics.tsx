@@ -81,7 +81,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                     <div className={css.toppickstitle}>
                         Top Picks for Kitchen Designs {Citie}
                     </div>
-                    {Currentpage === "/designgallery" &&(<button className={css.compactBtn}>
+                    {(Currentpage === "/designgallery"||Currentpage === "/cities") &&(<button className={css.compactBtn}>
                         see all <FontAwesomeIcon icon={faChevronRight} />
                     </button>)}
                     </div>
