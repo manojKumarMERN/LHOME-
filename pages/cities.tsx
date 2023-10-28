@@ -15,12 +15,12 @@ import { useRouter } from "next/router.js";
 
 
 
-const Cities: React.FC= () => {
+const Cities: React.FC = () => {
 
-    const router =useRouter()
-    const {City} =router.query
+    const router = useRouter()
+    const { City } = router.query
     console.log(City)
-    
+
     const living = React.useRef(null);
     const [screenwidth, setWidth] = React.useState(window.innerWidth);
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
@@ -70,35 +70,33 @@ const Cities: React.FC= () => {
 
     return (
         <React.Fragment>
-          <div className="animate-fade-in">
+            <div className="animate-fade-in">
                 <div className={css.lhomePage}>
                     <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
                     <div className={css.LhomeBottom}>
-                        <div> <CitiesBanner Citie={City}  /></div>
+                        <div> <CitiesBanner Citie={City} /></div>
 
-                        <div className={css.ideabr}>
+                        <div className={css.ideabr+" mb-4"}>
 
                             <div className={css.filter_home1}>
-                                <span className={css.filter_link_span1}><Link href={{ pathname: "/" }} className={css.kitchen_filter_link}>home</Link></span>
-                                <span className={css.filter_slash}>/</span>
-                                <span className={css.filter_link_span2}><Link href={{ pathname: "/cities"}} className={css.kitchen_filter_link}>{City}</Link></span>
+                                <span><Link href={{ pathname: "/" }}>home</Link></span>
+                                <span>/</span>
+                                <span><Link href={{ pathname: "/cities" }}>{City}</Link></span>
                             </div>
                             <p className={css.filter_header_content}>We are the best interior design<br />company in {City}  </p>
-                            <div className={css.filter_content}><p className={css.filter_additional_content}>If you’re on the lookout for simple home interior designs, look no further<br />
+                            <div className={css.filter_content}>If you’re on the lookout for simple home interior designs, look no further<br />
                                 than HomeLane for end- to-end interior design services.
-                            </p>
-
                             </div>
                         </div>
                         <div className={"mb-3 " + css.ToppicsdivforDesignGallery}>
-                            <TopPicksForKitchen  Citie={City} Currentpage={router.pathname}/>
-                            <Wardrobes  Citie={City} Currentpage={router.pathname}/></div>
-                        <p className={css.filter_header_content1}>Full-service Interior Design Service in {City} </p>
-                        <div className={css.filter_content1}><p className={css.filter_additional_content1}>LHome, a leading provider of home interior designs in {City},
-                            offers luxury interior design services for homeowners who want to <br />create opulent and sophisticated living spaces.
-                            With a team of highly skilled and experienced interior designers in {City},<br /> HomeLane creates personalized design plans that cater to each homeowner’s unique style and preferences
-                        </p>
-
+                            <TopPicksForKitchen Citie={City} Currentpage={router.pathname} />
+                            <Wardrobes Citie={City} Currentpage={router.pathname} /></div>
+                        <div>
+                            <p className={css.filter_header_content1}>Full-service Interior Design Service in {City} </p>
+                            <div className={css.filter_content1}>LHome, a leading provider of home interior designs in {City},
+                                offers luxury interior design services for homeowners who want to <br />create opulent and sophisticated living spaces.
+                                With a team of highly skilled and experienced interior designers in {City},<br /> HomeLane creates personalized design plans that cater to each homeowner’s unique style and preferences
+                            </div>
                         </div>
 
                         <div> <HightLights Citie={City} /></div>
@@ -110,7 +108,7 @@ const Cities: React.FC= () => {
                 </div>
 
             </div>
-            
+
         </React.Fragment>
     )
 }
