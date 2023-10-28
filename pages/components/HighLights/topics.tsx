@@ -7,9 +7,7 @@ import CustomLeftArrow from "./CustomLeftArrow";
 import CustomRightArrow from "./CustomRightArrow";
 import { BsHeart } from "react-icons/bs";
 import {FaRegShareFromSquare} from 'react-icons/fa6';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-
+import {FaAngleRight} from 'react-icons/fa6';
 interface propproperty {
     Citie: any;
     Currentpage:string
@@ -82,7 +80,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                         Top Picks for Kitchen Designs {Citie}
                     </div>
                     {(Currentpage === "/designgallery"||Currentpage === "/cities") &&(<button className={css.compactBtn}>
-                        see all <FontAwesomeIcon icon={faChevronRight} />
+                        see all <FaAngleRight  className={css.right_Arrow}/>
                     </button>)}
                     </div>
                     <div className={css.carousel_design}>

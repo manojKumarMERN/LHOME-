@@ -148,7 +148,12 @@
   margin-top: 3%;
   display: flex;
 }
+.right_Arrow{
+  margin-top: 2px;
+}
 .compactBtn{
+  display: flex;
+  justify-content: space-between;
   color: #737373;
 font-family: Montserrat;
 font-size: 16px;

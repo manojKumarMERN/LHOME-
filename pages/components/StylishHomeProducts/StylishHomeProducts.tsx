@@ -10,8 +10,7 @@ import CustomRightArrow from "./CustomRightArrow";
 import css2 from '../HighLights/HighLights.module.scss';
 import { BsHeart } from "react-icons/bs";
 import { FaRegShareFromSquare } from 'react-icons/fa6';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import {FaAngleRight} from 'react-icons/fa6';
 
 interface propproperty {
     Citie: any
@@ -84,7 +83,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                     <div className={css2.listingOuterLayer}>
                         <div className='d-flex justify-content-between align-items-center'>
                             <div className={css.trendingtitle}>Stylish Home Products {Citie}</div>
-                            <button className={css.compactBtn}>see all <FontAwesomeIcon icon={faChevronRight} /></button>
+                            <button className={css.compactBtn}>see all <FaAngleRight className={css.right_Arrow}/></button>
                         </div>
                         <div className={css.carousel_design}>
                             <Carousel
@@ -143,7 +142,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                         <div className={css2.listingOuterLayer}>
                             <div className='d-flex justify-content-between align-items-center'>
                                 <div className={css.warddrobeflytitle}>Compact Furniture {Citie}</div>
-                                <button className={css.compactBtn}>see all <FontAwesomeIcon icon={faChevronRight} /></button>
+                                <button className={css.compactBtn}>see all <FaAngleRight className={css.right_Arrow}/></button>
                             </div>
                             <div className={css.carousel_design}>
                                 <Carousel
