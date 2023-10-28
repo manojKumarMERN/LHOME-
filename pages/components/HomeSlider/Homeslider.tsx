@@ -22,7 +22,7 @@ const HomeSlider: React.FC<HomeSliderProps> = ({ screenwidth, screenheight }) =>
       setSHeight(sliderref.current.offsetHeight);
 
         }, 1500)
-  }, [screenwidth]);
+  }, [screenwidth, assetpath]);
   
   return (
 
@@ -34,12 +34,12 @@ const HomeSlider: React.FC<HomeSliderProps> = ({ screenwidth, screenheight }) =>
                      </div>
                      <div className={css.sliderwrapperinputs}>
                         <div className={css.sliderwrappertextholder}>
-                           {screenwidth > 650 ?
+                           {screenwidth > 992 ?
                               <div className={css.taglineholder}>
-                                 <h1 className={css.tagline1}>Lhome Make<br></br>  Your Home<br></br> Better</h1>
+                                 <h1 className={css.tagline1}>Lhome Make<br></br>  your home<br></br> better</h1>
                               </div>
                               :
-                              <div className={css.tagline1}>Lhome Make Your Home Better </div>
+                              <div className={css.tagline1}>Lhome Make Your home better </div>
                            }
                         </div>
                         <div className={css.estimatebuttonholder}>
