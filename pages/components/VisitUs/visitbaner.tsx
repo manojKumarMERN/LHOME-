@@ -20,7 +20,7 @@ const VisitBaner = () => {
             setVisitBaner(VistBanerImage);
         });
 
-    }, [assetpath])
+    }, [])
     return (
         <>
             {VisitBaner?.map((datas: any, index: number) => (

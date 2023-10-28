@@ -24,7 +24,7 @@ const CitiesBanner: React.FC<propproperty> = ({ Citie }) => {
             });
             setCitiesBanner(bannerImage);
         });
-    }, [assetpath]);
+    }, []);
 
     return (
 

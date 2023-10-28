@@ -19,7 +19,7 @@ const TermsAndCondition = () => {
             setTermsAndCondition(TermsandCondition)
         })
 
-    }, [assetpath])
+    }, [])
 
     return (
         <>

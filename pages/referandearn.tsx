@@ -63,7 +63,7 @@ const ReferAndEarn: React.FC = () => {
     React.useEffect(() => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResized);
-    }, [handleResize, handleResized, assetpath]);
+    }, [handleResize, handleResized]);
 
 
     return (

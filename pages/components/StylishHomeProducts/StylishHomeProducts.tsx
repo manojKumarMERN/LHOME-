@@ -55,7 +55,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
             .catch(error => {
                 console.log(error);
             });
-    }, [assetpath]);
+    }, []);
 
     const responsive = {
         desktop: {

@@ -107,12 +107,13 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
         });
     }
     getsettings();
-  }, [screenwidth, assetpath]);
+  }, [screenwidth]);
 
   React.useEffect(() => {
     function getsettings() {
       let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
       api.then((data: any) => {
+        console.log(data.data.settings);
         menuoptions = data.data.settings.menuoptions
         smallmenuoptions = data.data.settings.smallmenuoptions;
         cities = data.data.settings.cities;
@@ -120,7 +121,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
         menuGaps = data.data.settings.menuGaps;
         smallmenuGaps = data.data.settings.smallmenuGaps;
         Lhome = data.data.settings.logo;
-
+        console.log(Lhome);
         let totalwidth = 0;
         if (screenwidth < 500) {
           totalwidth = screenwidth - (document.querySelector("#logo") as HTMLDivElement).offsetWidth - 135;
@@ -163,7 +164,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
         });
     }
     getsettings();
-  }, [assetpath, screenwidth]);
+  }, [ screenwidth]);
   const handlePopup = () => {
     setShow(true);
   }

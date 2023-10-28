@@ -86,7 +86,7 @@ const WardrobePage: React.FC = () => {
         });
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResized);
-    }, [assetpath, handleResize, handleResized])
+    }, [ handleResize, handleResized])
 
 
     const [activePage, setActivePage] = React.useState<string | null>('unset');

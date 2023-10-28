@@ -72,7 +72,7 @@ const ModularKitchenPage: React.FC = () => {
         api.then((data: any) => {
             setLivingRoom(data.data.livingRoom);
         });
-    });
+    },[]);
 
     return (
         <React.Fragment>

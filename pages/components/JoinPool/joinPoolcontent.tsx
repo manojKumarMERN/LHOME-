@@ -20,7 +20,7 @@ const Joinpoolcom: React.FC = () => {
       .catch(error => {
             console.log(error);
          });
-   }, [assetpath]);
+   }, []);
 
    const router = useRouter();
 

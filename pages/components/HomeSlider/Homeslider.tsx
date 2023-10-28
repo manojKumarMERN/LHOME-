@@ -22,7 +22,7 @@ const HomeSlider: React.FC<HomeSliderProps> = ({ screenwidth, screenheight }) =>
       setSHeight(sliderref.current.offsetHeight);
 
         }, 1500)
-  }, [screenwidth, assetpath]);
+  }, [screenwidth]);
   
   return (
 

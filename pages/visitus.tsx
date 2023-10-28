@@ -63,7 +63,7 @@ const VisitUSMain =()=>{
     React.useEffect(() => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResized);
-    }, [ handleResized,handleResize,assetpath]);
+    }, [ handleResized,handleResize]);
 
     return(
         <React.Fragment>

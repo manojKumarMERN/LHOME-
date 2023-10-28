@@ -77,7 +77,7 @@ const HomeOffice: React.FC = () => {
     api.then((data:any)=>{
       setHomeoffice(data.data.homeOffice);
     });     
-},[assetpath]) ;
+},[]) ;
 
     return(
     

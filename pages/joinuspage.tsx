@@ -69,7 +69,7 @@ const JoinusPage: React.FC = () => {
         });
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResized);
-    }, [assetpath, handleResize, handleResized])
+    }, [ handleResize, handleResized])
     // let imageurl :any  = "/assets/bottomcarousel/image66.jpg";
 
 

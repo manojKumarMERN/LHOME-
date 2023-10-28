@@ -30,7 +30,7 @@ ToggleDropDown.displayName = "Drop Down Event";
 
 const DropDownMenu = (options: any) => {
   const [citiesDropdown, setCitiesDropdown] = React.useState(false);
-  const [assetpath, setAssestpath] = React.useState();
+  const [ setAssestpath] = React.useState();
   const [other, setOther] = React.useState(["Customstories", "Unknown"]);
 
 

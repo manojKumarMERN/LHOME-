@@ -51,7 +51,7 @@ interface WhyLhomeproperties {
   
             }
         }, 1500)
-    }, [screenwidth, assetpath]);
+    }, [screenwidth]);
 
     React.useEffect(() => {
         let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
@@ -73,7 +73,7 @@ interface WhyLhomeproperties {
            .catch(error => {
               console.log(error);
            });
-     }, [screenwidth , assetpath]);
+     }, [screenwidth]);
 
   return (
       <div ref={knowabout} className={css.whythesedetailsholder}>

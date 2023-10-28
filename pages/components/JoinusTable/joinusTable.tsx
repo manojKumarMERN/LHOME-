@@ -25,7 +25,7 @@ const JoinusTable: React.FC = () => {
     api.then((data: any) => {
       setJoinusData(data.data.joinUs);
     });
-  }, [assetpath]);
+  }, []);
 
 
   React.useEffect(() => {

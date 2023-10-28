@@ -18,7 +18,7 @@ const JoinusBanner: React.FC = () => {
             });
             setJoinusBanner(bannerImage);
         });
-    }, [assetpath]);
+    }, []);
 
     return (
 

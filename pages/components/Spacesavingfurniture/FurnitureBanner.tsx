@@ -20,7 +20,7 @@ const FurnitureBaner: React.FC = () => {
             });
             setFurnitureBaner(banerImage);
         });
-    }, [assetpath]);
+    }, []);
 
     return (
     

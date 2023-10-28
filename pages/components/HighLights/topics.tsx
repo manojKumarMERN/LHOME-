@@ -70,7 +70,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
             .catch((error) => {
                 console.log(error)
             })
-    }, [assetpath, toppicks])
+    }, [])
 
     return (
         <React.Fragment>
