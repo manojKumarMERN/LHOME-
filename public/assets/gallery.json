@@ -1,11 +1,34 @@
-{"gallery":
-[
-{"image":"/assets/listingimages/DesignGallery/modularkitchen.png","name":"Kitchen" , "title":"Modular Kitchen"},
-{"image":"/assets/listingimages/DesignGallery/wardrobe.png","name":"Wardrobe" , "title":"Wardrobe"},
-{"image":"/assets/listingimages/DesignGallery/bedroom.png","name":"Bed Room" , "title":"Bed Room"},
-{"image":"/assets/listingimages/DesignGallery/livingroom.png","name":"Living Room" , "title":"Living Room"},
-{"image":"/assets/listingimages/DesignGallery/bathroom.png","name":"Bath Room" , "title":"Bath Room"},
-{"image":"/assets/listingimages/DesignGallery/homeoffice.png","name":"Home Office" , "title":"Home Office"}
-]
-
+{
+    "gallery": [
+        {
+            "image": "/assets/listingimages/DesignGallery/modularkitchen.png",
+            "name": "Kitchen",
+            "title": "Modular Kitchen"
+        },
+        {
+            "image": "/assets/listingimages/DesignGallery/wardrobe.png",
+            "name": "Wardrobe",
+            "title": "Wardrobe"
+        },
+        {
+            "image": "/assets/listingimages/DesignGallery/bedroom.png",
+            "name": "Bed Room",
+            "title": "Bed Room"
+        },
+        {
+            "image": "/assets/listingimages/DesignGallery/livingroom.png",
+            "name": "Living Room",
+            "title": "Living Room"
+        },
+        {
+            "image": "/assets/listingimages/DesignGallery/bathroom.png",
+            "name": "Bath Room",
+            "title": "Bath Room"
+        },
+        {
+            "image": "/assets/listingimages/DesignGallery/homeoffice.png",
+            "name": "Home Office",
+            "title": "Home Office"
+        }
+    ]
 }
