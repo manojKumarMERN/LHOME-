@@ -24,20 +24,22 @@ const CustomerStoryView = ({ data }: any) => {
                                 <p className={css.customerstory_state}>{data?.place}</p>
                                 <p className={css.customerstory_additional_content}>{data?.content}</p>
                             </div>
+                            <div className={css.Bottom_Rating}>
                             <div className={css.Bottom_Rating_User}>
                                 <div className={css.Bottom_star}>
                                     <StarRatings
-                                        rating={4.5}
+                                        rating={5}
                                         starRatedColor="#FFD600"
                                         changeRating={3}
                                         numberOfStars={5}
                                         name='rating'
-                                        starDimension="20px"
+                                        starDimension="15px"
                                         starHoverColor={false}
-                                        starSpacing="10px"
+                                        starSpacing="5px"
                                     />                            
                                     </div>
                                     <div className={css.Rating_UserName}><p className={css.customerstory_username}>-Jonhson</p></div>
+                            </div>
                             </div>
                         </div>
                     </div>

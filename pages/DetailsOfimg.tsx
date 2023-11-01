@@ -3,6 +3,7 @@ import css from '../styles/detailsOfimg.module.scss';
 import * as config from "../next.config.js";
 import { simpleCallInitAPI } from '../services/ApicallInit';
 import { BsHeart } from 'react-icons/bs';
+import {FaFacebookF,FaInstagram,FaTwitter,FaTelegramPlane,FaWhatsapp,FaLinkedinIn,FaYoutube} from 'react-icons/fa';
 
 interface properties {
     data: any;
@@ -32,7 +33,7 @@ const DetailsOfimg: React.FC<properties> = ({ data, selectedItem }) => {
                 console.log(error);
             });
     }, []);
-console.log(data);
+    console.log(data);
     return (
         <React.Fragment>
             <div className={css.detailOff}>
@@ -50,18 +51,20 @@ console.log(data);
                             <p className={css.paragraph}>{selectedItem.para}</p>
                             <div className={css.shareIcon}>
                                 <span className={css.shareText}>Share this design</span>
-                                <div className={css.socialMedia}>
-                                    {
-                                        socialMediaList.map((datas: any, index: number) =>
-                                            <img key={index} className={css.socialMediaIcons} src={datas.image} alt="anything" />
-                                        )
-                                    }
+                                <div className={css.Socailmedia_icons}>
+                                    <div className={css.Social_Content_icons}><FaFacebookF className={css.Social_icons} /></div>
+                                    <div className={css.Social_Content_icons}><FaInstagram className={css.Social_icons} /></div>
+                                    <div className={css.Social_Content_icons}><FaTwitter className={css.Social_icons} /></div>
+                                    <div className={css.Social_Content_icons}><FaYoutube className={css.Social_icons} /></div>
+                                    <div className={css.Social_Content_icons}><FaTelegramPlane className={css.Social_icons} /></div>
+                                    <div className={css.Social_Content_icons}><FaWhatsapp className={css.Social_icons} /></div>
+                                    <div className={css.Social_Content_icons}><FaLinkedinIn className={css.Social_icons} /></div>
                                 </div>
                             </div>
                         </div>
                         <div className={css.btndivision}>
                             <button className={css.bookBtn}>BOOK FREE DESIGN SESSION</button>
-                            <button className={css.wishBtn}><div className={css.wishBtn_content}><BsHeart className={css.Bs_heart}/>WISHLIST</div></button>
+                            <button className={css.wishBtn}><div className={css.wishBtn_content}><BsHeart className={css.Bs_heart} />WISHLIST</div></button>
                         </div>
                     </div>
                 </div>
@@ -71,10 +74,10 @@ console.log(data);
                     <p className={`${css.headingRelated} w-100`}>Related Design</p>
                     <div className={window.innerWidth <= 1000 ? `${css.Relatedimgtag_x}` : `row ${css.Relatedimgtag}`}>
                         {data.filter(item => item !== selectedItem).map((item, index) => (
-                            <div key={index} className={item.image?(window.innerWidth <= 1000 ? "col-3 m-3 " :"col-6 mb-3"): "d-none"}>
-                                {item.image?
-                                <img src={item.image} alt='remaining images' className={css.img_fluid} />
-                                :''}
+                            <div key={index} className={item.image ? (window.innerWidth <= 1000 ? "col-3 m-3 " : "col-6 mb-3") : "d-none"}>
+                                {item.image ?
+                                    <img src={item.image} alt='remaining images' className={css.img_fluid} />
+                                    : ''}
                             </div>
                         ))}
                     </div>
