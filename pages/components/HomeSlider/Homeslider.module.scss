@@ -86,16 +86,6 @@
    content: "Lhome Make your home bette";
 }
 
-
-/* Styling for screens between 1920px and 3000px */
-// @media (min-width: 1920px) and (max-width: 3000px) {
-//    .tagline1 {
-//        white-space: normal; 
-//        content: "Lhome Make \A your \A home bette"; 
-//        white-space: pre-line; 
-//    }
-// }
-
 @media only screen and (max-width: 992px) {
 
    .sliderwrappertextholder {
@@ -132,6 +122,10 @@
 }
 
 .designermeetholder {
-   width: 80%;
+   width: 35vw;
    margin: 0 auto;
+   margin-top: 8%;
+   @media (max-width:1400px) and (min-width:992px) {
+      margin-top: 10%;
+   }
 }

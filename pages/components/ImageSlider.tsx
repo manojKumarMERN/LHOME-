@@ -33,55 +33,6 @@ const ImageSlider: React.FC<Sliderproperties> = ({ screenwidth, screenheight, sw
   const [sliderimagealt, setSliderImageAlt] = React.useState("");
   let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
 
-
-  React.useEffect(() => {
-    let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
-    api.then((data: any) => {
-      totalsliderimages = data.data.settings.sliderimages;
-      totalsliderimagesalt = data.data.settings.sliderimagesalt;
-      sliderleftblock.current.style.position = "absolute";
-      let reduce = 0;
-      if (screenwidth < 300) {
-        reduce = 25;
-      }
-      let slleft = `${swidth * .07}px`;
-      let sltop = `${sheight * .10}px`;
-      let silleft = `${(swidth * .07) + 20}px`;
-      let siltop = `${(sheight * .10) + 20}px`;
-      let srleft = `${(window.innerWidth < 992 ? 0 : (swidth * .20)) + swidth - (swidth * .07) - sliderleftblock.current.offsetWidth - reduce}px`;
-      let siwidth = parseFloat(srleft.split("px")[0]) - parseFloat(silleft.split("px")[0]) + sliderrightblock.current.offsetWidth - 20;
-      let srtop = `${sheight - (sheight * .10) - sliderleftblock.current.offsetHeight}px`;
-      let siheight = parseFloat(srtop.split("px")[0]) - parseFloat(siltop.split("px")[0]) + sliderrightblock.current.offsetHeight - 20;
-      sliderleftblock.current.style.left = slleft;
-      sliderleftblock.current.style.top = sltop;
-      sliderrightblock.current.style.position = "absolute"
-      sliderrightblock.current.style.left = srleft
-      sliderrightblock.current.style.top = srtop
-      sliderimage.current.style.position = "absolute"
-      sliderimage.current.style.left = silleft;
-      sliderimage.current.style.top = siltop;
-      sliderimage.current.style.width = `${siwidth}px`;
-      sliderimage.current.style.height = `${siheight}px`;
-      sliderimages.current.style.width = `${siwidth}px`;
-      sliderimages.current.style.height = `${siheight}px`;
-      sliderleft.current.style.position = "absolute";
-      sliderleft.current.style.top = `47.5%`;
-      sliderleft.current.style.left = "10px";
-      sliderleft.current.style.width = "20px";
-      sliderleft.current.style.height = "20px";
-      sliderright.current.style.top = `47.5%`;
-      sliderright.current.style.left = `${siwidth - 40}px`
-      sliderright.current.style.position = "absolute";
-      sliderright.current.style.width = "20px";
-      sliderright.current.style.height = "20px";
-      setSliderImageName(`${assetpath}${totalsliderimages[slidercounter]}`);
-      setSliderImageAlt(totalsliderimagesalt[slidercounter])
-    })
-      .catch(error => {
-        console.log(error);
-      });
-  }, [screenwidth, swidth, sheight, assetpath]);
-
   React.useEffect(() => {
     let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
     api.then((data: any) => {
@@ -109,9 +60,9 @@ const ImageSlider: React.FC<Sliderproperties> = ({ screenwidth, screenheight, sw
       sliderimage.current.style.left = silleft;
       sliderimage.current.style.top = siltop;
       sliderimage.current.style.width = `${siwidth}px`;
-      sliderimage.current.style.height = `${siheight}px`;
+      sliderimage.current.style.height = `${siheight+50}px`;
       sliderimages.current.style.width = `${siwidth}px`;
-      sliderimages.current.style.height = `${siheight}px`;
+      sliderimages.current.style.height = `${siheight+50}px`;
       sliderleft.current.style.position = "absolute";
       sliderleft.current.style.top = `47.5%`;
       sliderleft.current.style.left = "10px";
