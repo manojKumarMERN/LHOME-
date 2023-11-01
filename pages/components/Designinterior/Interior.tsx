@@ -2,7 +2,7 @@ import * as React from "react";
 import css from "../Designinterior/Interior.module.scss";
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
-import {TbArrowWaveRightDown} from 'react-icons/tb';
+import { TbArrowWaveRightDown } from 'react-icons/tb';
 const Interior: React.FC = () => {
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     const [InteriorDiscover, setInteriorDiscover] = React.useState([]);
@@ -86,10 +86,11 @@ const Interior: React.FC = () => {
                     <div className={css.interiorcategoryinterLayer}>
 
                         <div className={css.interiorfilmrole}>
-                            <div className={css.box_text}>1</div>
+
                             {InteriorDiscover.map((cats: any, index: number) =>
                                 <div key={`${cats.category}${index}${index}`}
                                     className={css.division1}>
+                                    <div className={css.box_text}>1</div>
                                     <div className={"pe-3 " + css.divisionchild}>
                                         <div className={css.category}>
                                             <div className={css.interiorname}>{cats.head}</div>
@@ -107,14 +108,15 @@ const Interior: React.FC = () => {
                             <div className={css.arrowimage} key={index}>
                                 {/* <img key={`${cats.category}_${index}`} loading="lazy"
                                     src={cats.image1} alt={cats.head} /> */}
-                                     <TbArrowWaveRightDown />
+                                <TbArrowWaveRightDown />
                             </div>
                         )}
                         <div className={css.interiorfilmrole}>
-                        <div className={css.box_text}>2</div>
+
                             {InteriorDesign.map((cats: any, index: number) =>
                                 <div key={`${cats.category}${index}${index}`}
                                     className={css.division2}>
+                                    <div className={css.box_text}>2</div>
                                     <div className={"pe-3 " + css.divisionchild}>
                                         <div className={css.category}>
                                             <div className={css.interiorname}>{cats.head}</div>
@@ -133,15 +135,16 @@ const Interior: React.FC = () => {
                             <div className={css.arrowimage1} key={index}>
                                 {/* <img key={`${cats.category}_${index}`} loading="lazy"
                                     src={cats.image1} alt={cats.head} /> */}
-                                <TbArrowWaveRightDown  />
+                                <TbArrowWaveRightDown />
                             </div>
                         )}
 
                         <div className={css.interiorfilmrole}>
-                        <div className={css.box_text}>3</div>
+
                             {InteriorMovein.map((cats: any, index: number) =>
                                 <div key={`${cats.category}${index}${index}`}
                                     className={css.division3}>
+                                    <div className={css.box_text}>3</div>
                                     <div className={"pe-3 " + css.divisionchild}>
                                         <div className={css.category}>
                                             <div className={css.interiorname}>{cats.head}</div>
