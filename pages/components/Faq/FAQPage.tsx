@@ -86,7 +86,7 @@ const FAQPage: React.FC = () => {
       <div className={css.faqContainer}>
       {showFaqHead && <div className={css.faqHead}>Frequently Asked Questions</div>}
       {/* <div className="container "> */}
-        <div className={css.faqInnerLayer}>
+        <div className={showFaqHead ?css.faqInnerLayer: css.faqInnerLayer_CS}>
           {faq.map((faqItem, index) => (
             <div key={index}>
               <div className={css.faqBox} onClick={() => toggleAnswer(index)}>

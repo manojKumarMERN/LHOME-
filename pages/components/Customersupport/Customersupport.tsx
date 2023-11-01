@@ -16,15 +16,15 @@ export default function Customsupport() {
     return (
         <div className="d-flex justify-content-center flex-column">
             <Tab.Group>
-                <Tab.List className="flex container space-x-1 rounded-xl bg-gray-100 p-1 " style={{ width: '70%', margin: '0% auto' }} >
+                <Tab.List className="flex container space-x-1 rounded-xl bg-gray-100 p-0 " style={{ width: '70%', margin: '0% auto' }} >
                     <Tab
                         className={({ selected }) =>
                             classNames(
-                                'w-50 rounded-full h-10 py-2.5 text-sm font-medium leading-5 text-blue-700',
+                                'w-50 rounded-xl h-10 py-2.5 text-sm font-medium leading-5 text-blue-700',
                                 'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
                                 
                                 selected
-                                    ? 'bg-[#4D6797] shadow text-white'
+                                    ? 'bg-[#4D6797]  text-white'
                                     : 'text-black hover:bg-white/[0.12]'
                             )
                         }
@@ -35,10 +35,10 @@ export default function Customsupport() {
                     <Tab
                         className={({ selected }) =>
                             classNames(
-                                'w-50 rounded-full h-10 py-2.5 text-sm font-medium leading-5 text-blue-700',
+                                'w-50 rounded-xl h-10 py-2.5 text-sm font-medium leading-5 text-blue-700',
                                 'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
                                 selected
-                                    ? 'bg-[#4D6797] shadow text-white'
+                                    ? 'bg-[#4D6797]  text-white'
                                     : 'text-black hover:bg-white/[0.12]'
                             )
                         }
@@ -49,10 +49,10 @@ export default function Customsupport() {
                     <Tab
                         className={({ selected }) =>
                             classNames(
-                                'w-50 rounded-full h-10 py-2.5 text-sm font-medium leading-5 text-blue-700',
+                                'w-50 rounded-xl h-10 py-2.5 text-sm font-medium leading-5 text-blue-700',
                                 'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
                                 selected
-                                    ? 'bg-[#4D6797] shadow text-white'
+                                    ? 'bg-[#4D6797]  text-white'
                                     : 'text-black hover:bg-white/[0.12]'
                             )
                         }
@@ -63,10 +63,10 @@ export default function Customsupport() {
                     <Tab
                         className={({ selected }) =>
                             classNames(
-                                'w-50 rounded-full h-10 py-2.5 text-sm font-medium leading-5 text-blue-700',
+                                'w-50 rounded-xl h-10 py-2.5 text-sm font-medium leading-5 text-blue-700',
                                 'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
                                 selected
-                                    ? 'bg-[#4D6797] shadow text-white'
+                                    ? 'bg-[#4D6797] text-white'
                                     : 'text-black hover:bg-white/[0.12]'
                             )
                         }

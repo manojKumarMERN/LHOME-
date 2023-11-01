@@ -189,7 +189,7 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
                     <h1 className={css.formhead}>Apply for this job</h1>
                     <div className={css.formtxt}>Resume/CV *
                         <div className={css.padding}>
-                            <Button className={css.formbtn} variant="outline-danger">Select Resume</Button>
+                            <Button className={css.formbtn} variant="outline-danger">Upload Resume</Button>
                         </div>
 
                     </div>
