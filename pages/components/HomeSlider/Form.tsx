@@ -1,4 +1,4 @@
-import React from 'react';3
+import React from 'react';
 import css from './Form.module.scss';
 import { useRouter } from 'next/router';
 
@@ -8,7 +8,7 @@ const Form: React.FC = () => {
     return (
         <div className={`${css.designermeetholder}`}>
             <div className={css.designermeet}>
-                <div className={css.designermeettitle + ` pl-10`}>
+                <div className={`${router.pathname == "/" ? css.designermeettitleForHome : css.designermeettitle} pl-10`}>
                     Meet a designer
                 </div>
                 <div id="formentry" className={`flex  gap-6 ${css.inputbox}`}>

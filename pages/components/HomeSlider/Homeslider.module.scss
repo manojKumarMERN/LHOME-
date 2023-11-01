@@ -124,8 +124,10 @@
 .designermeetholder {
    width: 35vw;
    margin: 0 auto;
-   margin-top: 8%;
+   margin-top: 6%;
    @media (max-width:1400px) and (min-width:992px) {
       margin-top: 10%;
+      width: 40vw;
+      margin-left: 13%; 
    }
 }
