@@ -27,16 +27,19 @@
     padding: 5px;
 }
 .faqQuestion{
-    font-size: 16px;
+    font-size: 0.9vw;
     font-weight: 600;
     color: #737373;
     width: 92%;
     padding-left: 20px;
+    @media screen and (max-width:1023px){
+    font-size:10px;
+    }
 }
 
 .faqAnswer {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     background: #ffff;
     color: #000;
     width: 96%;

@@ -18,7 +18,7 @@ const CustomLeftArrow: FC<CustomLeftArrowProps> = ({ onClick }) => {
       onClick={onClick}
       className={`react-multiple-carousel__arrow ${css2.leftBtn} `}
       >
-     <FontAwesomeIcon icon={faChevronLeft} className={css2.Arrow} style={{color:arrowColor}} />
+     <FontAwesomeIcon icon={faChevronLeft} className={css2.Arrow} style={{color:arrowColor,background:"unset !important"}} />
     </button>
   );
 };

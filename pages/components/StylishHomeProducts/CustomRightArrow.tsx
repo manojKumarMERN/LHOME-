@@ -19,7 +19,7 @@ interface CustomRightArrowProps {
         onClick={onClick}
         className={`react-multiple-carousel__arrow ${css2.rightBtn} `}
       >
-      <FontAwesomeIcon icon={faChevronRight} className={css2.Arrow} style={{color:arrowColor}} />
+      <FontAwesomeIcon icon={faChevronRight} className={css2.Arrow} style={{color:arrowColor,background:"unset !important"}} />
       </button>
     );
   };

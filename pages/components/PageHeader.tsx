@@ -20,7 +20,8 @@ interface pageheaderproperties {
   screenwidth: number;
   screenheight: number;
   assetpath: string;
-  hidden: boolean
+  hidden: boolean;
+  headerVisible: boolean;
 }
 
 let menuoptions: any = [];
@@ -33,7 +34,7 @@ let menuGaps = [];
 let smallmenuGaps = [];
 let Lhome: string = "";
 
-const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight, assetpath, hidden }) => {
+const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight, assetpath, hidden,  headerVisible }) => {
   // const navigate = Router.useNavigate(); 
   const [height, setHeight] = React.useState(screenheight);
   const [width, setWidth] = React.useState(screenwidth);
@@ -177,10 +178,26 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
     console.log('Data received from child:', data);
     setReceivedData(data);
   };
+  const [position, setPosition] = React.useState(window.scrollY);
+  const [visible, setVisible] = React.useState(headerVisible) ;
+  React.useEffect(()=> {
+    const handleScroll = () => {
+      let moving = window.scrollY;
 
+      setVisible(position > moving);
+      setPosition(moving);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return(() => {
+       window.removeEventListener("scroll", handleScroll);
+    })
+},[position]);
+
+const cls = visible ? "visible" : "hidden";
   return (
     <React.Fragment>
-      <div className={hidden ? `${css.headerHidden}` : `${css.headerOuter}`}>
+    <div  className={cls}>
+      <div className={hidden ? `${css.headerHidden}` : `${css.headerOuter}` }>
         <div className={css.headerLeft}>
           <div id="logo" className={`${css.lhomelogoholder}`}>
             <div className={css.lhomelogo}>
@@ -235,7 +252,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                 </div>
                 : ''}
               {smallmenuoptionsstring.indexOf("Visit Us,") < 0 ?
-                <Link href={{ pathname: "/visitus" }}> <div className={`${css.smallMenuBand} ${css.customWidthpx_6}`}>
+                <Link href={{ pathname: "/visitus" }} > <div className={`${css.smallMenuBand} ${css.customWidthpx_6}`} >
 
                   Visit Us
                 </div>
@@ -245,7 +262,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
               
               { smallmenuoptionsstring.indexOf(",Customer Support") < 0 ?
                 <Link href={{ pathname: "/CustomersupportPage" }} style={{display:'flex',alignItems:"center"}}>
-                  <BsHeadset color="black" size={15} style={{ marginRight: '-20px' }} />
+                  <BsHeadset color="black" size={15} style={{ marginRight: '-20px',marginLeft:"15px"}} />
                   <div className={`${css.smallMenuBand} ${css.customWidthpx_100}`}>
                   Customer Support
                 </div>
@@ -262,58 +279,56 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
             <div className={css.largeMenuButtons} id="largeoptions">
               <div className={css.menuHolder}>
                 {menuoptionsstring.indexOf("Home,") < 0 ?
-                  <Link href={{ pathname: '/' }}><div id="home" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_6}`}>
-                    Home
-                  </div></Link>
+                  <Link href={{ pathname: '/' }}><div id="home" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                    Home</div>
+                    </Link>
                   : ''
                 }
                 {menuoptionsstring.indexOf("Design Gallery,") < 0 ?
                   <Link href={{ pathname: '/designgallery' }}><div id="designgallery" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                    Design Gallery
-                  </div></Link>
+                    Design Gallery</div>
+                    </Link>
                   : ''
                 }
                 {menuoptionsstring.indexOf("Modular Kitchen,") < 0 ?
                   <Link href={{ pathname: '/modularkitchen' }}><div id="modularkitchen" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                    Modular Kitchen
-                  </div></Link>
+                    Modular Kitchen</div>
+                  </Link>
                   : ''
                 }
                 {menuoptionsstring.indexOf("Wardrobe,") < 0 ?
-                  <Link href={{ pathname: '/wardrobe' }}><div id="wardrobe" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_10}`}>
-                    Wardrobe
-                  </div></Link>
+                  <Link href={{ pathname: '/wardrobe' }}><div id="wardrobe" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                    Wardrobe</div>
+                    </Link>
                   : ''
                 }
                 {menuoptionsstring.indexOf("Bedroom,") < 0 ?
-                  <Link href={{ pathname: '/bedroom' }}><div id="bedroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_10}`}>
-                    Bedroom
-                  </div></Link>
+                  <Link href={{ pathname: '/bedroom' }}><div id="bedroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                    Bedroom</div>
+                    </Link>
                   : ''
                 }
                 {menuoptionsstring.indexOf("Living Room,") < 0 ?
-                  <Link href={{ pathname: '/livingroom' }}><div id="livingroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_12}`}>
-                    Living Room
-                  </div></Link>
+                  <Link href={{ pathname: '/livingroom' }}><div id="livingroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                    Living Room</div>
+                  </Link>
                   : ''
                 }
                 {menuoptionsstring.indexOf("Bath Room,") < 0 ?
-                  <Link href={{ pathname: '/bathroom' }}> <div id="bathroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_10}`}>
-                    Bath Room
-                  </div>
+                  <Link href={{ pathname: '/bathroom' }}> <div id="bathroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                    Bath Room</div>
                   </Link>
                   : ''
                 }
                 {menuoptionsstring.indexOf("Space Saving Furniture,") < 0 ?
-                  <Link href={{ pathname: '/spacesavingfurniture' }}><div id="spacesavingfurniture" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_20}`}>
-                    Space Saving Furniture
-                  </div></Link>
+                  <Link href={{ pathname: '/spacesavingfurniture' }}><div id="spacesavingfurniture" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                    Space Saving Furniture</div>
+                    </Link>
                   : ''
                 }
                 {menuoptionsstring.indexOf("Home Office,") < 0 ?
-                  <Link href={{ pathname: '/homeoffice' }}> <div id="homeoffice" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_12}`}>
-                    Home Office
-                  </div>
+                  <Link href={{ pathname: '/homeoffice' }}> <div id="homeoffice" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                    Home Office</div>
                   </Link>
                   : ''
                 }
@@ -350,7 +365,8 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
               </div>
             </div>
           </div>)}
-      </div>
+      </div> 
+    </div>
       <div className={css.chat_Box}>
         <BsChatTextFill className={css.Chat} onClick={handleChatBox} />
         <Modal show={chatBoxShow} onHide={handleCloseBox} className={css.ChatBox_Popup}>

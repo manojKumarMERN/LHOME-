@@ -10,7 +10,24 @@
    align-items: center;
    margin-top: 0%;
  }
+ .headerOuter {
+   // width: 90%;
+   display: flex;
+   // border:1px solid green;
+   margin: 0% 3% 0% 3%;
+}
 
+.visible {
+   /* display: flex; */
+   top: 0;
+   transition: top 0.4s ease-out;
+ }
+ 
+ .hidden {
+   /* display: none; */
+   top: -80px;
+   transition: top 0.4s ease-out;
+ }
  .otherDropDown {
     display: flex;
     justify-content: flex-end;
@@ -351,12 +368,6 @@
 
  }
 
- .headerOuter {
-    // width: 90%;
-    display: flex;
-    // border:1px solid green;
-    margin: 0% 3% 0% 3%;
- }
 
  .headerLeft {
     // border:2px solid red;

@@ -18,6 +18,7 @@ import WhyLhome from './whyLhome/whyLhome';
 interface homeproperties {
    screenwidth: number;
    screenheight: number;
+
 }
 
 const HomePage: React.FC<homeproperties> = ({ screenwidth, screenheight }) => {
@@ -25,14 +26,28 @@ const HomePage: React.FC<homeproperties> = ({ screenwidth, screenheight }) => {
    let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
    const living = React.useRef(null);
 
-   const Cclass: string = "peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-pink-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-        
+   const Cclass: string = "peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-pink-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50";
+//    const [position, setPosition] = React.useState(window.scrollY);
+//    const [visible, setVisible] = React.useState(true) ;
+//    React.useEffect(()=> {
+//      const handleScroll = () => {
+//        let moving = window.scrollY;
+ 
+//        setVisible(position > moving);
+//        setPosition(moving);
+//      };
+//      window.addEventListener("scroll", handleScroll);
+//      return(() => {
+//         window.removeEventListener("scroll", handleScroll);
+//      })
+//  },[position]);
+//  const cls = visible ? "visible" : "hidden";  
    
    return (
       <React.Fragment>
          <div className="animate-fade-in">
             <div className={css.lhomePage}>
-               <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false}/>
+               <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} headerVisible={true}/>
                <div className={css.LhomeBottom}>
                   <div><Homeslider screenwidth={screenwidth} screenheight={screenheight} /></div>
                   <div><WhyLhome screenwidth={screenwidth} screenheight={screenheight}/></div>
