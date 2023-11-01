@@ -7,7 +7,7 @@
   background-color: #F5F5F5;
   border-radius: 25px;
   padding-bottom: 25px;
-  padding-top: 25px;
+  padding-top: 50px;
 }
 
 .scroll-btn {
@@ -32,7 +32,7 @@
 }
 
 .rightBtn {
-  background-color: transparent;
+  background: unset !important;
   font-size: 30px;
   font-weight: 500;
   position: absolute;
@@ -1293,7 +1293,7 @@ margin-right: 2%;
 }
 
 .leftBtn {
-  background-color: transparent;
+  background: unset !important;
   font-size: 30px;
   font-weight: 500;
   margin-left: -1%;
