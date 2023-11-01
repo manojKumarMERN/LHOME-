@@ -66,13 +66,22 @@
 .com_icons {
   padding: 5px;
 }
-
+.dynamicIcons_content{
+  display: flex;
+  margin-right: 4%;
+}
 .wishlistholder {
-  font-size: 24px;
+  font-size: 1.5vw;
+  @media screen and (max-width:1024px){
+    font-size: 20px;
+  }
 }
 
 .shareholder {
-  font-size: 24px;
+  font-size: 1.5vw;
+  @media screen and (max-width:1024px){
+    font-size: 20px;
+  }
 }
 
 .customGrey {
@@ -99,28 +108,31 @@
 
 .content {
   font-family: "Montserrat";
-  font-size: 14px;
+  font-size: 1vw;
   line-height: 20px;
   letter-spacing: 0em;
   text-align: center;
-  // padding: 20px;
+@media screen and (max-width:1024px){
+  font-size: 16px;
+}
 }
 
 .btnStyle {
 
   font-family: "Montserrat";
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 1vw;
+  font-weight: 500;
   line-height: 20px;
   letter-spacing: 0em;
   text-align: center;
   background-color: #464646;
   color: #ffffff;
   border-radius: 8px;
-  padding: 7px;
+  padding: 2% 10%;
   margin-bottom: 2%;
-
-
+  @media screen and (max-width:1024px){
+    font-size: 14px;
+  }
 }
 
 
@@ -288,15 +300,6 @@
     padding-left: 4%;
   }
 
-  .wishlistholder {
-    font-size: 25px;
-    // margin-left: 10%;
-  }
-
-  .shareholder {
-    font-size: 25px;
-  }
-
   .customtext {
     font-size: 15px;
     margin: 2% 0 4% 4%;
@@ -304,7 +307,7 @@
 
   .content {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 20px;
   }
 
   .btnStyle {

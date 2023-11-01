@@ -43,13 +43,14 @@ const DynamicIterableComponent: React.FC<properties> = ({ data }) => {
                                             <div className={css.customdivisionchild}  >
                                                 <div className={css.customimage} onClick={() => handlePopup(item) }>
                                                     <img loading="lazy" className='' src={item.image} alt='images' />
-                                                    <div className={" w-full flex grid-cols-5 "}>
+                                                    <div className={" w-full flex grid-cols-5 "} style={{padding:"2% 0 3%"}}>
                                                         <div className="w-full col-span-3 ">
                                                             <span className={css.customname + " sm:text-[8px] md:text-[12px]"}>{item.name}</span>
                                                             <span className={css.customtext}>
                                                                 {item.size}
                                                             </span>
                                                         </div>
+                                                        <div  className={css.dynamicIcons_content}>
                                                         <div className={'col-span-1 ' + css.com_icons} >
                                                             <span className={css.wishlistholder}>
                                                                 <BsHeart />
@@ -60,7 +61,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data }) => {
                                                                 <FaRegShareFromSquare />
                                                             </span>
                                                         </div>
-
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

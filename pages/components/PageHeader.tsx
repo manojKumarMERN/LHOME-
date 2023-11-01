@@ -21,7 +21,7 @@ interface pageheaderproperties {
   screenheight: number;
   assetpath: string;
   hidden: boolean;
-  headerVisible: boolean;
+  headerVisible?: boolean;
 }
 
 let menuoptions: any = [];
@@ -179,7 +179,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
     setReceivedData(data);
   };
   const [position, setPosition] = React.useState(window.scrollY);
-  const [visible, setVisible] = React.useState(headerVisible) ;
+  const [visible, setVisible] = React.useState(true) ;
   React.useEffect(()=> {
     const handleScroll = () => {
       let moving = window.scrollY;

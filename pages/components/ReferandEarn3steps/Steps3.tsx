@@ -86,9 +86,7 @@ const Interior: React.FC = () => {
                     <div className={css.interiorcategoryinterLayer}>
 
                         <div className={css.interiorfilmrole}>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="circle" width="55" height="55" style={{marginTop:15}} viewBox="0 0 64 64" fill="none">
-                                <circle cx="32" cy="32" r="32" fill="#F44336" />
-                            </svg><span className="box-text">1</span>
+                        <div className={css.box_text}>1</div>
                             {Steps3Discover.map((cats: any, index: number) =>
                                 <div key={`${cats.category}${index}${index}`}
                                     className={css.division1}>
@@ -113,9 +111,7 @@ const Interior: React.FC = () => {
                             </div>
                         )}
                         <div className={css.interiorfilmrole}>
-                            <svg xmlns="http://www.w3.org/2000/svg" className={css.circle1} width="55" height="55" style={{marginTop:70}} viewBox="0 0 64 64" fill="none">
-                                <circle cx="32" cy="32" r="32" fill="#F44336" />
-                            </svg><span className={css.boxText1} style={{marginTop:55}}>2</span>
+                        <div className={css.box_text}>2</div>
                             {Steps3Design.map((cats: any, index: number) =>
                                 <div key={`${cats.category}${index}${index}`}
                                     className={css.division2}>
@@ -142,9 +138,7 @@ const Interior: React.FC = () => {
                         )}
 
                         <div className={css.interiorfilmrole}>
-                            <svg xmlns="http://www.w3.org/2000/svg" className={css.circle2} width="55" height="55" style={{marginTop:115}} viewBox="0 0 64 64" fill="none">
-                                <circle cx="32" cy="32" r="32" fill="#F44336" />
-                            </svg><span className={css.boxText2}  style={{marginTop:100}}>3</span>
+                        <div className={css.box_text}>3</div>
                             {Steps3Movein.map((cats: any, index: number) =>
                                 <div key={`${cats.category}${index}${index}`}
                                     className={css.division3}>
