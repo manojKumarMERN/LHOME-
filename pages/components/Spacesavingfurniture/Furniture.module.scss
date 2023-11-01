@@ -14,8 +14,6 @@
 }
 
 .furniture_tagline1 {
-
-  // width: 60%;
   color: #FFFFFF;
   font-weight: 700;
   font-family: "Montserrat";
@@ -25,7 +23,7 @@
 
 .furniturebannercontent {
   position: absolute;
-  right: 14%;
+  right: 8%;
   top: 25%;
   transform: translateY(-50%);
 }
@@ -34,7 +32,7 @@
   position: absolute;
   right:5%;
   top: 45%;
-  width: 35vw;
+  width: 34vw;
 }
 
 @media only screen and (max-width:4000px) and (min-width:2000px) {
@@ -48,7 +46,7 @@
 
   .furniturebannercontent {
     top: 25%;
-    right: 16%;
+    right: 10%;
   }
 
   .furniturebannerform {
@@ -81,11 +79,11 @@
 
   .furniturebannercontent {
     top: 19%;
-    right: 10%;
+    right: 5%;
  }
  .furniturebannerform {
   top: 38%;
-  width: 40vw;
+  width: 38vw;
   }
 }
 
@@ -102,12 +100,11 @@
 
   .furniturebannercontent {
     top: 15%;
-    right: 20%;
   }
 
   .furniturebannerform {
     top: 30%;
-    width: 50vw;
+    width: 38vw;
   }
 
 }
@@ -133,7 +130,7 @@
 
 @media (max-width:775px) {
   .furniturebannerform {
-    padding-right: 1% !important;
+    padding-right: 3% !important;
   }  
 }
 
@@ -145,7 +142,7 @@
     padding: 20px;
     background-color: #EF5350;
     padding-top: 20%;
-    padding-right: 14%;
+    padding-right: 11%;
     width: unset;
   }
 

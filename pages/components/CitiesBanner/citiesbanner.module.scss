@@ -30,9 +30,9 @@
 }
 .citiesbannerform {
   position: absolute;
-  left: 2%;
+  left: 4%;
   top: 52%;
-  width: 40vw;
+  width: 35vw;
 }
 
 @media (max-width:1600px) {
@@ -46,10 +46,9 @@
 
 @media (max-width:1300px) {
   .citiesbannerform {
-  width: 50%;
+  width: 40vw;
   top: 33%;
-  left: 0%;
-  transform: scale(0.90);
+  left: 5%;
   }
   .citiesbannercontent{
     top: 18%;
@@ -105,9 +104,9 @@
 
 @media (min-width:2000px) {
   .citiesbannerform {
-    width: unset;
-    scale: (1.5);
-    left: 8%;
+    // width: unset;
+    // scale: (1.5);
+    left: 10%;
   }
   .citiesbannercontent{
     top: 18%;

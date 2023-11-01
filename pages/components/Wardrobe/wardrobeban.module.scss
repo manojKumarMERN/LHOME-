@@ -32,8 +32,9 @@
 
 .wardrobebanerform {
   position: absolute;
-  left: 2%;
+  left: 4%;
   top: 52%;
+  width: 35vw;
 }
 
 @media only screen and (max-width:4000px) and (min-width:2000px) {
@@ -51,9 +52,8 @@
   }
 
   .wardrobebanerform {
-    left: 7%;
+    left: 9%;
     top: 45;
-    transform: scale(1.25);
   }
 }
 
@@ -87,9 +87,9 @@
   }
   .wardrobebanerform{
     position: absolute;
-    left: -1%;
+    left: 3%;
     top: 39%;
-    transform: scale(0.975);
+    width: 38vw;
   }
 }
 
@@ -110,16 +110,16 @@
   }
 
   .wardrobebanerform {
+    left: 6%;
     top: 30%;
-    transform: scale(0.95);
-    width: 60vw;
+    width: 42vw;
   }
 
 }
 
 @media (max-width: 775px) {
   .wardrobebanerform {
-    padding-right: 2% !important;
+    padding-right: 4% !important;
   }
 }
 
@@ -133,6 +133,7 @@
     background-color: #2552A4;
     padding-top: 20%;
     padding-right: 12%;
+    width: 100vw;
   }
 
 
@@ -154,18 +155,7 @@
   }
 }
 
-@media only screen and (max-width:600px) and (min-width:350px) {
-  .wardrobebanerform {
-    position: relative;
-    left: 0;
-    top: 0;
-    transform: none;
-    padding: 20px;
-    background-color: #2552A4;
-    padding-top: 20%;
-
-  }
-
+@media only screen and (max-width:600px){
   .wardrobe_tagline {
     font-size: 1.75em;
   }

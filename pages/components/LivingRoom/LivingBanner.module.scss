@@ -14,8 +14,6 @@
 }
 
 .homeoffice_tagline1 {
-
-  // width: 60%;
   color: #FFFFFF;
   font-weight: 700;
   font-family: "Montserrat";
@@ -25,7 +23,7 @@
 
 .homeofficebanercontent {
   position: absolute;
-  right: 10%;
+  right: 8%;
   top: 25%;
   transform: translateY(-50%);
 }
@@ -48,7 +46,7 @@
 
   .homeofficebanercontent {
     top: 25%;
-    right: 12%;
+    right: 10%;
   }
 
   .homeofficebanerform {
@@ -81,11 +79,11 @@
 
   .homeofficebanercontent {
     top: 19%;
-    right: 7%;
+    right: 5%;
   }
   .homeofficebanerform {
     top: 38%;
-    width: 40vw;
+    width: 38vw;
     }
 }
 
@@ -106,7 +104,7 @@
 
   .homeofficebanerform {
     top: 30%;
-    width: 50vw;  }
+    width: 38vw;  }
 
 }
 
@@ -131,7 +129,7 @@
 
 @media (max-width:775px) {
   .homeofficebanerform {
-    padding-right: 1% !important;
+    padding-right: 3% !important;
   }  
 }
 
@@ -143,7 +141,7 @@
     padding: 20px;
     background-color: #EF5350;
     padding-top: 20%;
-    padding-right: 14%;
+    padding-right: 12%;
     width: unset;
   }
 
