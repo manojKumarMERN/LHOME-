@@ -23,7 +23,7 @@
 
 .furniturebannercontent {
   position: absolute;
-  right: 8%;
+  left: 58%;
   top: 25%;
   transform: translateY(-50%);
 }
@@ -46,7 +46,7 @@
 
   .furniturebannercontent {
     top: 25%;
-    right: 10%;
+    left: 64%;
   }
 
   .furniturebannerform {
@@ -65,6 +65,7 @@
 
   .furniturebannercontent {
     top: 25%;
+    left: 64%;
   }
 }
 
@@ -79,7 +80,7 @@
 
   .furniturebannercontent {
     top: 19%;
-    right: 5%;
+    left: 61%;
  }
  .furniturebannerform {
   top: 38%;
@@ -100,6 +101,7 @@
 
   .furniturebannercontent {
     top: 15%;
+    left: 61%;
   }
 
   .furniturebannerform {
@@ -160,6 +162,8 @@
 
   .furniturebannercontent {
     top: 15%;
+    left: unset;
+    right: 10%;
   }
   .furniturebannerform {
     right:0%;

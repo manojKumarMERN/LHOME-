@@ -23,7 +23,7 @@
 
 .bathroombannercontent {
   position: absolute;
-  right: 8%;
+  left: 58%;
   top: 25%;
   transform: translateY(-50%);
 }
@@ -46,7 +46,7 @@
 
   .bathroombannercontent {
     top: 25%;
-    right: 10%;
+    left: 64%;
   }
 
   .bathroombannerform {
@@ -65,6 +65,7 @@
 
   .bathroombannercontent {
     top: 25%;
+    left: 64%;
   }
 }
 
@@ -79,7 +80,7 @@
 
   .bathroombannercontent {
     top: 19%;
-    right: 5%;
+    left: 61%;
   }
   .bathroombannerform {
     top: 38%;
@@ -100,6 +101,7 @@
 
   .bathroombannercontent {
     top: 15%;
+    left: 61%;
   }
 
   .bathroombannerform {
@@ -160,6 +162,8 @@
 
   .bathroombannercontent {
     top: 15%;
+    left: unset;
+    right: 10%;
   }
   .bathroombannerform {
     right:0%;

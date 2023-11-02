@@ -25,7 +25,7 @@
 
 .homeofficebanercontent {
   position: absolute;
-  right: 10%;
+  left: 58%;
   top: 25%;
   transform: translateY(-50%);
 }
@@ -48,7 +48,7 @@
 
   .homeofficebanercontent {
     top: 25%;
-    right: 12%;
+    left: 64%;
   }
 
   .homeofficebanerform {
@@ -67,6 +67,7 @@
 
   .homeofficebanercontent {
     top: 25%;
+    left: 64%;
   }
 }
 
@@ -81,7 +82,7 @@
 
   .homeofficebanercontent {
     top: 19%;
-    right: 14%;
+    left: 60%;
   }
   .homeofficebanerform {
     top: 38%;
@@ -102,11 +103,12 @@
 
   .homeofficebanercontent {
     top: 15%;
+    left: 61%;
   }
 
   .homeofficebanerform {
     top: 30%;
-    width: 50vw;
+    width: 38vw;
   }
 
 }
@@ -162,6 +164,8 @@
 
   .homeofficebanercontent {
     top: 15%;
+    left: unset;
+    right: 10%;
   }
   .homeofficebanerform {
     right:0%;
