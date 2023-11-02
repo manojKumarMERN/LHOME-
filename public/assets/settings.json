@@ -1660,6 +1660,12 @@
         "name1": "Become the proud owner of a LHome",
         "name2": "Franchise studio"
       }
-    ]
+    ],
+    "zigzag": [
+      {
+          "image": "/assets/zigzag/zigzag.gif",
+          "alt":"Animation Gif"
+      }
+  ]
   }
 }

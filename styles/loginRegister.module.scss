@@ -28,13 +28,17 @@
     border-top: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 5px solid #FFFFFF;
+    border-bottom: 12px solid #FFFFFF;
   }
 
 
   .G_icon{
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
 .fade .modal-header {
@@ -48,6 +52,7 @@
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
+    margin-bottom: 8%;
 }
 
 .form_content p {
@@ -58,7 +63,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    padding-top: 2%;
+    margin-top: 1rem;
 }
 
 .formsofmodel {
@@ -98,6 +103,7 @@
     padding-bottom: 3%;
     border-bottom: 1px solid #fff;
     background-color: transparent;
+    color: #FFFFFF;
 }
 
 .SInput0 {
@@ -106,6 +112,7 @@
     padding-bottom: 3%;
     border-bottom: 1px solid #fff;
     background-color: transparent;
+    color: #FFFFFF;
 }
 
 .SInput0::placeholder {
@@ -158,7 +165,7 @@ div.whatsappcheckbox input[type="checkbox"] {
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    text-align: center;
+    text-align: left;
 }
 
 .LRInput::placeholder {
@@ -177,6 +184,8 @@ div.whatsappcheckbox input[type="checkbox"] {
     border-bottom: 1px solid #fff;
     background-color: transparent;
     padding: 3%;
+    text-indent: 80px;
+    color: #FFFFFF;
 }
 
 .InputContainer {
@@ -196,7 +205,7 @@ div.whatsappcheckbox input[type="checkbox"] {
 .form_content {
     width: 100%;
     height: auto;
-    padding: 15% 10% 15% 10%;
+    padding: 8% 10% 15% 10%;
     text-align: center;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.10);
@@ -292,6 +301,7 @@ div.whatsappcheckbox input[type="checkbox"] {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    position: relative;
 }
 
 .dropdown_icon {
@@ -442,5 +452,5 @@ div.whatsappcheckbox input[type="checkbox"] {
     border-top: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 5px solid #FFFFFF;
+    border-bottom: 12px solid #FFFFFF;
   }

@@ -12,6 +12,7 @@ import CitiesBanner from "./components/CitiesBanner/citiesbanner";
 import Interior from "./components/Designinterior/Interior";
 import HightLights from "./components/StylishHomeProducts/StylishHomeProducts";
 import { useRouter } from "next/router.js";
+import Zigzag from "./components/zigzag/Zigzag";
 
 
 
@@ -96,6 +97,9 @@ const Cities: React.FC = () => {
                             <div className={css.filter_content1}>LHome, a leading provider of home interior designs in {City},
                                 offers luxury interior design services for homeowners who want to <br />create opulent and sophisticated living spaces.
                                 With a team of highly skilled and experienced interior designers in {City},<br /> HomeLane creates personalized design plans that cater to each homeowner’s unique style and preferences
+                            </div>
+                            <div>
+                                <Zigzag/>
                             </div>
                         </div>
 

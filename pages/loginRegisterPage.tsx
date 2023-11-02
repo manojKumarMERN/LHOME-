@@ -103,7 +103,7 @@ function LoginRegisterPage() {
                                     <div className={css.mainVal}>
                                         <IoLogoGoogle size={35} color='#2F52A4' className={css.G_icon} />
                                     </div>
-                                    <p>First time user? <span onClick={toggleForm} style={{ fontWeight: 'bold' }}>log in </span> here</p>
+                                    <p>First time user? <span onClick={toggleForm} style={{ fontWeight: 'bold' }}>Log in </span> here</p>
                                 </div>
                             </form>
                         </div>

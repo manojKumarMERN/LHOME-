@@ -14,6 +14,7 @@ import Guranted from "../components/Guranted/Guranted";
 import HightLights from "../components/HighLights/HighLights";
 import Autoplay from './Autoplayslider/Autoplayslider';
 import WhyLhome from './whyLhome/whyLhome';
+import Zigzag from "./zigzag/Zigzag";
 
 interface homeproperties {
    screenwidth: number;
@@ -58,6 +59,10 @@ const HomePage: React.FC<homeproperties> = ({ screenwidth, screenheight }) => {
                   <Autoplay living={living}/>
                   </div>
                   <div><NRIFriendly /></div>
+                  <div>
+                     <h3 className={css.zigzag_heading}>Full-service Interior Design</h3>
+                     <div><Zigzag/></div>
+                  </div>
                   <div><Warranty /></div>
                   <div><Guranted /></div>
                   <div><Footer /></div>
