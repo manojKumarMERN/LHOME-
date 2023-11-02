@@ -2,8 +2,9 @@
     "zigzag": [
         {
             "image": "/assets/zigzag/zigzag.gif",
-            "staticimage":"/assets/zigzag/zigzagstatic.jpg",
+            "image1":"/assets/zigzag/static.jpg",
             "alt":"Animation Gif"
         }
+
     ]
 }

@@ -17,7 +17,6 @@ function Zigzag() {
             data?.data?.zigzag?.forEach((datas: any) => {
                 let lc: any = {};
                 lc.AnimationImage = `${assetpath}${datas.image}`;
-                lc.StaicImage = `${assetpath}${datas.staticimage}`;
                 lc.AnimationAlt = `${assetpath}${datas.alt}`;
                 AnimationGifImage.push(lc);
             });
@@ -32,13 +31,13 @@ function Zigzag() {
     const handleMouseLeave = () => {
         setIsAnimationPaused(false);
     };
-    console.log(animationGif)
+
     return (
         <Fragment>
             {animationGif.map((datas: any) => (
                 <div>
                     <img
-                        src={ datas.StaticImage}
+                        src={isAnimationPaused ? datas.AnimationImage : datas.StaticImage}
                         alt={datas.AnimationAlt}
                         className={css.gif_image}
                         onMouseEnter={handleMouseEnter}
