@@ -1611,6 +1611,7 @@
     "recentproject": [
       {
         "image": "/assets/listingimages/Recentproject/repairtools.png",
+        "image1": "/assets/listingimages/Recentproject/repairtools.gif",
         "name": "repairtools",
         "count": "200",
         "para": "Currently Working Projects",
@@ -1618,12 +1619,14 @@
       },
       {
         "image": "/assets/listingimages/Recentproject/Projectscompleted.png",
+        "image1": "/assets/listingimages/Recentproject/Projectscompleted.gif",
         "name": "Projectcompleted",
         "count": "25000",
         "para": "Projects completed"
       },
       {
         "image": "/assets/listingimages/Recentproject/Homescompleted.png",
+        "image1": "/assets/listingimages/Recentproject/Homescompleted.gif",
         "name": "Homescompleted",
         "count": "300+",
         "para": "Homes completed last month"
@@ -1660,12 +1663,6 @@
         "name1": "Become the proud owner of a LHome",
         "name2": "Franchise studio"
       }
-    ],
-    "zigzag": [
-      {
-          "image": "/assets/zigzag/zigzag.gif",
-          "alt":"Animation Gif"
-      }
-  ]
+    ]
   }
 }
