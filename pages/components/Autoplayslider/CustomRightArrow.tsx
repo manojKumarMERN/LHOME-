@@ -4,13 +4,20 @@ import css2 from './Autoplay.module.scss'
 
 
 interface CustomRightArrowProps {
-    onClick: MouseEventHandler<HTMLButtonElement>;
-  }
+  onClick: MouseEventHandler<HTMLButtonElement>;
+  carouselRef: React.RefObject<any>;
+}
   
-  const CustomRightArrow: FC<CustomRightArrowProps> = ({ onClick }) => {
+  const CustomRightArrow: FC<CustomRightArrowProps> = ({ onClick,carouselRef }) => {
+
+    const handleForwardClick = () => {
+      if (carouselRef && carouselRef.current && carouselRef.current.next) {
+        carouselRef.current.next();
+      }
+    }
     return (
       <button 
-        onClick={onClick}
+        onClick={handleForwardClick}
         className={`react-multiple-carousel__arrow ${css2.customRArrowStyle}`}
         style={{ marginTop: "360px" }}
       >

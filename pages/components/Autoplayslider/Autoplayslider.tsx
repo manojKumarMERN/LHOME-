@@ -55,7 +55,8 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
       house: "2BHK",
       para: "We’re really happy with the materials that were used and the timeline for the project.The reaction we got from our friends when they first saw our place was priceless."
 
-    }, {
+    },
+    {
       url: "/assets/bottomcarousel/Maskgroup.svg",
       url2: "/assets/icons/play.png",
       heading: "Selva and Family",
@@ -89,14 +90,55 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
     },
   };
 
-  const handleSlideChange = (currentSlide: number) => {
+  // const handleSlideChange = (currentSlide: number) => {
+  //   setActiveSlide(currentSlide);
+  //   let centerIndex = (currentSlide + 2) % sliderImageUrl.length;
+  //   setCenterImageIndex(centerIndex);
+  // };
+
+
+  const carouselRef = React.useRef(null);
+
+
+  let previousSlide = 0;  
+
+  const handleSlideChange = () => {
+    if (!carouselRef.current) return;
+
+    const currentSlide = carouselRef.current.state.currentSlide;
+
+    console.log("Current Slide:", currentSlide);
+
+    let direction;
+    if (currentSlide === 0 && previousSlide === sliderImageUrl.length - 1) {
+      direction = 1;  
+    } else if (currentSlide > previousSlide) {
+      direction = 1;  
+    } else {
+      direction = -1;  
+    }
+
+    console.log("Previous Slide:", previousSlide);
+    console.log("Direction:", direction);
+
+    let offset = direction >= 0 ? 1 : -2; 
+    console.log("Offset:", offset);
+
+    let centerIndex = (currentSlide + offset + sliderImageUrl.length) % sliderImageUrl.length;
+
+    console.log("Calculated Center Index:", centerIndex);
+
     setActiveSlide(currentSlide);
-    let centerIndex = (currentSlide + 2) % sliderImageUrl.length;
     setCenterImageIndex(centerIndex);
-  };
-  const CustomDot:any = ({ onMove, index, onClick, active }) => {
+
+    previousSlide = currentSlide;  
+};
+
+
+
+  const CustomDot: any = ({ onMove, index, onClick, active }) => {
     return (
-      <li className={active ? "active" : "inactive"} onClick={() => onClick()} style={{margin:"-20px 0.5% 0"}}>
+      <li className={active ? "active" : "inactive"} onClick={() => onClick()} style={{ margin: "-20px 0.5% 0" }}>
         <div className={active ? css2.active_dot : css2.inactive_dot}></div>
       </li>
     );
@@ -110,21 +152,22 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
         </div>
         <div className={"container " + css2.bottomcarousel}>
           <Carousel
-
+            ref={carouselRef}
             responsive={responsive}
-            autoPlay={true}
+            autoPlay={false}
             swipeable={true}
             draggable={true}
             showDots={true}
             infinite={true}
             partialVisible={true}
+
             dotListClass={
               "custom-dot-list-style " + css2.customDotListStyle
 
             }
-            customDot={<CustomDot/>}
-            customLeftArrow={<CustomLeftArrow onClick={() => { }} />}
-            customRightArrow={<CustomRightArrow onClick={() => { }} />}
+            customDot={<CustomDot />}
+            customLeftArrow={<CustomLeftArrow carouselRef={carouselRef} onClick={() => { }} />}
+            customRightArrow={<CustomRightArrow carouselRef={carouselRef} onClick={() => { }} />}
 
             afterChange={handleSlideChange}
           >
@@ -158,8 +201,6 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
       </div >
     </React.Fragment >
   )
-
-
 }
 
 export default Autoplay;

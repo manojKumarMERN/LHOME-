@@ -12,24 +12,25 @@ const RecentProject: React.FC = () => {
     const [middleIndex] = React.useState(1);
 
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
+
     React.useEffect(() => {
         let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
         api.then((data: any) => {
-            let sectionOne = [];
-            data.data.settings.recentproject.forEach((connects: any) => {
-                let connect: any = {};
-                connect.image = `${assetpath}${connects.image}`;
-                connect.name = connects.name;
-                connect.count = connects.count;
-                connect.para = connects.para;
-                connect.line = ` ${assetpath}${connects.line}`;
-
-                sectionOne.push(connect);
-            });
-            setToolimage(sectionOne);
-        })
+            setToolimage(data.data.settings.recentproject);
+        });
     }, []);
     console.log(Toolimage);
+    const [isAnimationPaused, setIsAnimationPaused] = React.useState(false);
+    const handleMouseEnter = () => {
+        console.log("Mouse entered");
+        setIsAnimationPaused(false);
+    };
+
+    const handleMouseLeave = () => {
+        console.log("Mouse left");
+        setIsAnimationPaused(true);
+    };
+    console.log("isAnimationPaused:", isAnimationPaused);
     return (
         <>
             <div>
@@ -42,7 +43,7 @@ const RecentProject: React.FC = () => {
                             <div className={css.detailsholder}>
                                 <div style={{ backgroundColor: "#FFF;" }} key={`${connects.image}${index}${index}`} className={css.division1}>
                                     <img key={`${connects.image}_${index}`} loading="lazy"
-                                        src={connects.image} alt={connects.name} className={connects.name ==='repairtools'? css.recentim : css.recentimg} />
+                                        src={isAnimationPaused ? connects.image : connects.image1}  alt={connects.name} className={connects.name ==='repairtools'? css.recentim : css.recentimg} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}/>
                                     <div className={css.interiorname}>
                                         <div className={css.recentcount}>{connects.count}</div>
                                         <div className={css.recentpara}>{connects.para}</div>
