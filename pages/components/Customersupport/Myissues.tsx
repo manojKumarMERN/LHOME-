@@ -19,7 +19,7 @@ const MyIssue = () => {
             });
             setCustomersupport(sectionOne);
         })
-    }, []);
+    }, [assetpath]);
     return (
         <>
             <React.Fragment>

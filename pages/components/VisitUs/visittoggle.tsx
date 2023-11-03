@@ -18,7 +18,7 @@ const VisitToggle = () => {
        setVisitToggle(items)
     })
 
-  }, [])
+  }, [assetpath])
 // console.log(visitToggle?.coimbatore,"asdfghjklkjhgfdsa")
 
   return (

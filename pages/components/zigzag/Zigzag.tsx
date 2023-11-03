@@ -15,7 +15,7 @@ function Zigzag() {
             console.log("Received data:", data);
             setAnimationGif(data?.data?.zigzag || []);
         });
-    }, []);
+    }, [assetpath]);
 
     const handleMouseEnter = () => {
         console.log("Mouse entered");

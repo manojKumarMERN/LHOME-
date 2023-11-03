@@ -73,7 +73,7 @@ interface WhyLhomeproperties {
            .catch(error => {
               console.log(error);
            });
-     }, [screenwidth]);
+     }, [screenwidth,assetpath]);
 
   return (
       <div ref={knowabout} className={css.whythesedetailsholder}>

@@ -20,7 +20,7 @@ const LivingRoomBanner: React.FC = () => {
             });
             setLivingBanner(banerImage);
         });
-    }, []);
+    }, [assetpath]);
 
     return (
     

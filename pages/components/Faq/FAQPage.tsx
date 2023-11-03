@@ -68,7 +68,7 @@ const FAQPage: React.FC = () => {
         setFaq(sectionOne)
     });
 
-}, []);
+}, [assetpath]);
 
 
 

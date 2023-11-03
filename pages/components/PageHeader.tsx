@@ -34,7 +34,7 @@ let menuGaps = [];
 let smallmenuGaps = [];
 let Lhome: string = "";
 
-const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight, assetpath, hidden,  headerVisible }) => {
+const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight, assetpath, hidden }) => {
   // const navigate = Router.useNavigate(); 
   const [height, setHeight] = React.useState(screenheight);
   const [width, setWidth] = React.useState(screenwidth);
@@ -108,7 +108,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
         });
     }
     getsettings();
-  }, [screenwidth]);
+  }, [screenwidth,assetpath]);
 
   React.useEffect(() => {
     function getsettings() {
@@ -165,7 +165,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
         });
     }
     getsettings();
-  }, [ screenwidth]);
+  }, [ screenwidth,assetpath]);
   const handlePopup = () => {
     setShow(true);
   }

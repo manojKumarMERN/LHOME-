@@ -18,7 +18,7 @@ const RecentProject: React.FC = () => {
         api.then((data: any) => {
             setToolimage(data.data.settings.recentproject);
         });
-    }, []);
+    }, [assetpath]);
     console.log(Toolimage);
     const [isAnimationPaused, setIsAnimationPaused] = React.useState(false);
     const handleMouseEnter = () => {

@@ -62,7 +62,7 @@ const PartnershipRow: React.FC<PartnerProps> = ({ screenwidth }) => {
                 console.log(error);
             });
 
-    }, []);
+    }, [assetpath]);
 
     return (
 
