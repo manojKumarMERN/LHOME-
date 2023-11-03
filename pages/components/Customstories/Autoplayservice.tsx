@@ -45,7 +45,7 @@ const Autoplayservice: React.FC<properties> = ({ header }) => {
       });
       setClient(sectionOne);
     });
-  }, [ header]);
+  }, [ header,assetpath]);
 
 
   const responsive = {

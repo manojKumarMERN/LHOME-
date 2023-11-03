@@ -73,7 +73,7 @@ const ModularKitchenPage: React.FC = () => {
         });
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResized);
-    }, [ handleResize, handleResized])
+    }, [ handleResize, handleResized,assetpath])
 
     return (
         <React.Fragment>

@@ -40,7 +40,7 @@ const StylishHomeProducts: React.FC = () => {
             .catch(error => {
                 console.log(error);
             });
-    }, []);
+    }, [assetpath]);
 
     const responsive = {
         desktop: {

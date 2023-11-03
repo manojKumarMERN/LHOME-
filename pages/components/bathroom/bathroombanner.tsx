@@ -20,7 +20,7 @@ const BathroomBaner: React.FC = () => {
             });
             setbathroomBaner(bathroomBanerImage);
         });
-    }, []);
+    }, [assetpath]);
 
     return (
         <>

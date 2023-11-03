@@ -56,7 +56,7 @@ const Wardrobes: React.FC<propproperty> = ({ Citie, Currentpage }) => {
             .catch((error) => {
                 console.log(error)
             })
-    }, [])
+    }, [assetpath])
 
     const responsive = {
         desktop: {

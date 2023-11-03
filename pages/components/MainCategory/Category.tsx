@@ -55,7 +55,7 @@ const MainCategory: React.FC = () => {
         .catch(error => {
             console.log(error);
         });
-     }, []);
+     }, [assetpath]);
     //const calenderimage =`${config.assetPrefix}/assets/icons/calendaricon.png`; // Provide your image URLs here
     //const expertimage = `${config.assetPrefix}/assets/icons/experticon.png`;
     //const happyhomeimage = `${config.assetPrefix}/assets/icons/happycustomericon.png`;

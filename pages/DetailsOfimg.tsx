@@ -32,7 +32,7 @@ const DetailsOfimg: React.FC<properties> = ({ data, selectedItem }) => {
             .catch(error => {
                 console.log(error);
             });
-    }, []);
+    }, [assetpath]);
     console.log(data);
     return (
         <React.Fragment>

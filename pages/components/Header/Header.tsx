@@ -85,7 +85,7 @@ const Header: React.FC<pageheaderproperties> = ({ screenwidth, screenheight, ass
         });
     }
     getsettings();
-  }, [screenwidth]);
+  }, [screenwidth,assetpath]);
 
   React.useEffect(() => {
     function getsettings() {
@@ -136,7 +136,7 @@ const Header: React.FC<pageheaderproperties> = ({ screenwidth, screenheight, ass
         });
     }
     getsettings();
-  }, [ screenwidth]);
+  }, [ screenwidth,assetpath]);
 
   return (
     <React.Fragment>

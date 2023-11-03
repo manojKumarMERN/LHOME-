@@ -278,7 +278,7 @@ const HomePage: React.FC<homeproperties> = ({ screenwidth, screenheight }) => {
          .catch(error => {
             console.log(error);
          });
-   }, [screenwidth, swidth, sheight]);
+   }, [screenwidth, swidth, sheight,assetpath]);
 
    /*image horizontal scroll */
 

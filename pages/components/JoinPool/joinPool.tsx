@@ -19,7 +19,7 @@ const JoinPool: React.FC = () => {
          .catch(error => {
             console.log(error);
          });
-   }, []);
+   }, [assetpath]);
 
    const router = useRouter();
 

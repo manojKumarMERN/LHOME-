@@ -33,7 +33,7 @@ const MeetDesigner: React.FC<ModularkitchenProps> = ({colour,container,prop}) =>
             });
             setKitchencontent(sectionOne);
         })
-    },[])
+    },[assetpath])
     
 
 return(

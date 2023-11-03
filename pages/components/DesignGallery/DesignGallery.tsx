@@ -17,7 +17,7 @@ const DesignGallery: React.FC = () => {
         console.log(error);
       });
 
-  }, []);
+  }, [assetpath]);
 
   return (
     <React.Fragment>

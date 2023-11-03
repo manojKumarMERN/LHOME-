@@ -19,7 +19,7 @@ const WarDrobeBaner : React.FC = () => {
             });
             setWardrobeBigBaner(WardrobeBanerImage );
         });
-    }, []);
+    }, [assetpath]);
 
 
     return(

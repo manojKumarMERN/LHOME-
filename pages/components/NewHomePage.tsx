@@ -48,7 +48,7 @@ const HomePage: React.FC<homeproperties> = ({ screenwidth, screenheight }) => {
       <React.Fragment>
          <div className="animate-fade-in">
             <div className={css.lhomePage}>
-               <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} headerVisible={true}/>
+               <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
                <div className={css.LhomeBottom}>
                   <div><Homeslider screenwidth={screenwidth} screenheight={screenheight} /></div>
                   <div><WhyLhome screenwidth={screenwidth} screenheight={screenheight}/></div>

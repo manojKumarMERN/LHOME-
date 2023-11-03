@@ -20,7 +20,7 @@ const KitchenBaner: React.FC = () => {
             });
             setKitchenBaner(banerImage);
         });
-    }, []);
+    }, [assetpath]);
 
     return (
     

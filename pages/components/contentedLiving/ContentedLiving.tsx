@@ -14,7 +14,7 @@ const ContentedLiving: React.FC = () => {
             setContent(data.data.ContentedLiving);
         });
 
-    }, []);
+    }, [assetpath]);
 
 
     return (

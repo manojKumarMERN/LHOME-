@@ -23,7 +23,7 @@ const ContactUs = () => {
             .catch(error => {
                 console.log(error);
             });
-    },[])
+    },[assetpath])
     return (
         <>
             {/* <div className="container"> */}
