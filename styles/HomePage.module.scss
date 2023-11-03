@@ -98,7 +98,17 @@
    overflow-x: hidden !important;
 }
 
-
+.visible-scroll {
+   /* display: flex; */
+   top: 0;
+   transition: top 0.4s ease-out;
+ }
+ 
+ .hidden-scroll {
+   /* display: none; */
+   top: -80px;
+   transition: top 0.4s ease-out;
+ }
 
 .tagline1{
    display: flex;

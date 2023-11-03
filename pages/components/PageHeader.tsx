@@ -15,7 +15,7 @@ import {BsChatTextFill} from 'react-icons/bs';
 import {BsChevronDown} from 'react-icons/bs';
 import {BsThreeDotsVertical} from 'react-icons/bs'
 import Contentchatbox from '../Contentchatbox';
-
+import useScrollDirection from './useScrollDirection';
 interface pageheaderproperties {
   screenwidth: number;
   screenheight: number;
@@ -178,25 +178,26 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
     console.log('Data received from child:', data);
     setReceivedData(data);
   };
-  const [position, setPosition] = React.useState(window.scrollY);
-  const [visible, setVisible] = React.useState(true) ;
-  React.useEffect(()=> {
-    const handleScroll = () => {
-      let moving = window.scrollY;
+//   const [position, setPosition] = React.useState(window.scrollY);
+//   const [visible, setVisible] = React.useState(true) ;
+//   React.useEffect(()=> {
+//     const handleScroll = () => {
+//       let moving = window.scrollY;
 
-      setVisible(position > moving);
-      setPosition(moving);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return(() => {
-       window.removeEventListener("scroll", handleScroll);
-    })
-},[position]);
+//       setVisible(position > moving);
+//       setPosition(moving);
+//     };
+//     window.addEventListener("scroll", handleScroll);
+//     return(() => {
+//        window.removeEventListener("scroll", handleScroll);
+//     })
+// },[position]);
 
-const cls = visible ? "visible" : "hidden";
+// const cls = visible ? "visible" : "hidden";
+const scrollDirection = useScrollDirection();
   return (
     <React.Fragment>
-    <div  className={cls}>
+    <div className={`stickly ${scrollDirection === "up" ? "hidden" : "visible"} transition-all duration-500`}>
       <div className={hidden ? `${css.headerHidden}` : `${css.headerOuter}` }>
         <div className={css.headerLeft}>
           <div id="logo" className={`${css.lhomelogoholder}`}>
