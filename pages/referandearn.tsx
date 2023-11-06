@@ -65,13 +65,35 @@ const ReferAndEarn: React.FC = () => {
         return () => window.removeEventListener('resize', handleResized);
     }, [handleResize, handleResized]);
 
+    
+
+    const page = React.useRef(null);
+    const [prevPosition, setPrev] = React.useState(0);
+    const [hidden, setHidden] = React.useState(false)
+
+    const pageheaderMonitor = () => {
+        if (page.current.scrollTop > prevPosition) {
+            console.log("scrollTop value", page.current.scrollTop);
+            console.log("postionValue ", prevPosition);
+            setPrev(page.current.scrollTop)
+            setHidden(true)
+        } else {
+            setHidden(false)
+            setPrev(page.current.scrollTop)
+
+        }
+    }
+
 
     return (
         <React.Fragment>
             <div className="animate-fade-in">
                 <div className={css.lhomePage}>
-                    <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
-                    <div className={css.LhomeBottom}>
+                <div className={hidden ? "hidden" : ""}>
+                        <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
+                    </div>
+
+                    <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
                         <div className={css.referBanner}><ReferBaner /></div>
                         <div className={css.step3}><Steps3 /></div>
                         <div className={css.terms}><TermsAndCondition /></div>

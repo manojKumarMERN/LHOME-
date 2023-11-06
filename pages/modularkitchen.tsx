@@ -99,16 +99,37 @@ const ModularKitchenPage: React.FC = () => {
 
   };
 
+
+  const page = React.useRef(null);
+  const [prevPosition, setPrev] = React.useState(0);
+  const [hidden, setHidden] = React.useState(false)
+
+  const pageheaderMonitor = () => {
+    if (page.current.scrollTop > prevPosition) {
+      console.log("scrollTop value", page.current.scrollTop);
+      console.log("postionValue ", prevPosition);
+      setPrev(page.current.scrollTop)
+      setHidden(true)
+    } else {
+      setHidden(false)
+      setPrev(page.current.scrollTop)
+
+    }
+  }
+
   return (
     <React.Fragment>
       <div className="animate-fade-in">
         <div className={css.lhomePage}>
-          <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
-          <div className={css.LhomeBottom}>
+          <div className={hidden ? "hidden" : ""}>
+            <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
+          </div>
+
+          <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
             <div><KitchenBaner /></div>
-            
+
             <div className={css.bgclr}>
-                <div className={css.filter_home}>
+              <div className={css.filter_home}>
                 <div className="pt-4">
                   <span className={css.filter_link_span1}><Link href={{ pathname: "/" }} className={css.kitchen_filter_link}>home</Link></span>
                   <span className={css.filter_slash}>/</span>
@@ -116,55 +137,55 @@ const ModularKitchenPage: React.FC = () => {
                 </div>
                 <div className={css.filter_header_content}>Modular Kitchen</div>
                 <div className="row ">
-                <div className="col-lg-3 "> </div>
+                  <div className="col-lg-3 "> </div>
 
-                <div className={"col-lg-6 px-[15px] " + css.filter_content}><p className={css.filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
-                  From coffee dates to dinner parties, our end-to-end design and installation
-                  services will turn your kitchen into a stylish and functional space.</p>
+                  <div className={"col-lg-6 px-[15px] " + css.filter_content}><p className={css.filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
+                    From coffee dates to dinner parties, our end-to-end design and installation
+                    services will turn your kitchen into a stylish and functional space.</p>
                   </div>
                   <div className="col-lg-3  "></div>
-                  
-                  </div>
-                  </div>
 
-                <div className={css.Shaped}>
-                  <p
-                    className={`${css.shape_content} ${activePage === 'U-Shaped' ? css.active : ''}`}
-                    onClick={() => handleClick('U-Shaped')}
-                  >
-                    U-Shaped
-                  </p>
-                  <span className={css.shaped_slash}>|</span>
-                  <p
-                    className={`${css.shape_content} ${activePage === 'Straight' ? css.active : ''}`}
-                    onClick={() => handleClick('Straight')}
-                  >
-                    Straight
-                  </p>
-
-                  <span className={css.shaped_slash}>|</span>
-                  <p
-                    className={`${css.shape_content} ${activePage === 'L-Shaped' ? css.active : ''}`}
-                    onClick={() => handleClick('L-Shaped')}
-                  >
-                    L-Shaped
-                  </p>
-                  <span className={css.shaped_slash}>|</span>
-                  <p
-                    className={`${css.shape_content} ${activePage === 'Island Kitchen' ? css.active : ''}`}
-                    onClick={() => handleClick('Island Kitchen')}
-                  >
-                    Island Kitchen
-                  </p>
                 </div>
               </div>
 
-          
+              <div className={css.Shaped}>
+                <p
+                  className={`${css.shape_content} ${activePage === 'U-Shaped' ? css.active : ''}`}
+                  onClick={() => handleClick('U-Shaped')}
+                >
+                  U-Shaped
+                </p>
+                <span className={css.shaped_slash}>|</span>
+                <p
+                  className={`${css.shape_content} ${activePage === 'Straight' ? css.active : ''}`}
+                  onClick={() => handleClick('Straight')}
+                >
+                  Straight
+                </p>
+
+                <span className={css.shaped_slash}>|</span>
+                <p
+                  className={`${css.shape_content} ${activePage === 'L-Shaped' ? css.active : ''}`}
+                  onClick={() => handleClick('L-Shaped')}
+                >
+                  L-Shaped
+                </p>
+                <span className={css.shaped_slash}>|</span>
+                <p
+                  className={`${css.shape_content} ${activePage === 'Island Kitchen' ? css.active : ''}`}
+                  onClick={() => handleClick('Island Kitchen')}
+                >
+                  Island Kitchen
+                </p>
+              </div>
+            </div>
+
+
             {activePage == 'unset' &&
               <>
                 <div>
                   <Ideas color="blue" prop="U-Shaped Kitchen" />
-                 <div className="mt-5 "> <DynamicIterableComponent data={data} /></div>
+                  <div className="mt-5 "> <DynamicIterableComponent data={data} /></div>
                 </div>
                 <div>
                   <MeetDesigner colour='red' prop="Straight Kitchen" container="meetContainer1" />
@@ -181,24 +202,24 @@ const ModularKitchenPage: React.FC = () => {
               </>}
             {activePage == 'U-Shaped' &&
               <div>
-             
+
                 <Ideas color="blue" prop="U-Shaped Kitchen" />
                 <DynamicIterableComponent data={data} />
               </div>}
             {activePage == 'Straight' &&
               <div>
-               <Ideas color="blue" prop="Straight Kitchen" />
+                <Ideas color="blue" prop="Straight Kitchen" />
                 <DynamicIterableComponent data={data1} />
               </div>}
             {activePage == 'Island Kitchen' &&
               <div>
-               <Ideas color="blue" prop="Island Kitchen" />
-               <DynamicIterableComponent data={data2} />
+                <Ideas color="blue" prop="Island Kitchen" />
+                <DynamicIterableComponent data={data2} />
               </div>}
             {activePage == 'L-Shaped' &&
               <div>
-              <Ideas color="blue" prop="L-Shaped Kitchen" />
-              <DynamicIterableComponent data={data3} />
+                <Ideas color="blue" prop="L-Shaped Kitchen" />
+                <DynamicIterableComponent data={data3} />
               </div>}
             <div className="mb-[-50px]"><Autoplay living={living} /></div>
             <div><ReferNowPage /></div>

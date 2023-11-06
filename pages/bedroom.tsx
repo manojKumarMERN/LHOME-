@@ -73,14 +73,34 @@ const ModularKitchenPage: React.FC = () => {
         });
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResized);
-    }, [ handleResize, handleResized,assetpath])
+    }, [ handleResize, handleResized,assetpath]);
+
+    const page = React.useRef(null);
+    const [prevPosition, setPrev] = React.useState(0);
+    const [hidden, setHidden] = React.useState(false)
+
+    const pageheaderMonitor = () => {
+        if (page.current.scrollTop > prevPosition) {
+            console.log("scrollTop value", page.current.scrollTop);
+            console.log("postionValue ", prevPosition);
+            setPrev(page.current.scrollTop)
+            setHidden(true)
+        } else {
+            setHidden(false)
+            setPrev(page.current.scrollTop)
+
+        }
+    }
 
     return (
         <React.Fragment>
             <div className="animate-fade-in">
                 <div className={css.lhomePage}>
-                    <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false}/>
-                    <div className={css.LhomeBottom}>
+                <div className={hidden ? "hidden" : ""}>
+                        <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
+                    </div>
+
+                    <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
                         <div><BedroomBanner /></div>
 
                         <div className={css.bedroom_bgclr}>

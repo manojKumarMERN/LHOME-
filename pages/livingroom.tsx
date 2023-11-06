@@ -72,36 +72,57 @@ const ModularKitchenPage: React.FC = () => {
         api.then((data: any) => {
             setLivingRoom(data.data.livingRoom);
         });
-    },[assetpath]);
+    }, [assetpath]);
+
+    const page = React.useRef(null);
+    const [prevPosition, setPrev] = React.useState(0);
+    const [hidden, setHidden] = React.useState(false)
+
+    const pageheaderMonitor = () => {
+        if (page.current.scrollTop > prevPosition) {
+            console.log("scrollTop value", page.current.scrollTop);
+            console.log("postionValue ", prevPosition);
+            setPrev(page.current.scrollTop)
+            setHidden(true)
+        } else {
+            setHidden(false)
+            setPrev(page.current.scrollTop)
+
+        }
+    }
 
     return (
         <React.Fragment>
             <div className="animate-fade-in">
                 <div className={css.lhomePage}>
-                    <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
-                    <div className={css.LhomeBottom}>
+
+                    <div className={hidden ? "hidden" : ""}>
+                        <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
+                    </div>
+
+                    <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
                         <div><LivingRoomBanner /></div>
                         <div className={css.livingroom_bgclr}>
-                <div className={css.livingroom_filter_home}>
-                <div className="pt-4">
-                  <span className={css.livingroom_filter_link_span1}><Link href={{ pathname: "/" }} className={css.livingroom_filter_link}>home</Link></span>
-                  <span className={css.livingroom_filter_slash}>/</span>
-                  <span className={css.livingroom_filter_link_span2}><Link href={{ pathname: "/livingroom" }} className={css.livingroom_filter_link}>livingroom</Link></span>
-                </div>
-                <div className={css.livingroom_filter_header_content}>Living Room</div>
-                <div className="row ">
-                <div className="col-lg-3 "> </div>
+                            <div className={css.livingroom_filter_home}>
+                                <div className="pt-4">
+                                    <span className={css.livingroom_filter_link_span1}><Link href={{ pathname: "/" }} className={css.livingroom_filter_link}>home</Link></span>
+                                    <span className={css.livingroom_filter_slash}>/</span>
+                                    <span className={css.livingroom_filter_link_span2}><Link href={{ pathname: "/livingroom" }} className={css.livingroom_filter_link}>livingroom</Link></span>
+                                </div>
+                                <div className={css.livingroom_filter_header_content}>Living Room</div>
+                                <div className="row ">
+                                    <div className="col-lg-3 "> </div>
 
-                <div className={"col-lg-6 px-[15px] " + css.livingroom_filter_content}><p className={css.livingroom_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
-                  From coffee dates to dinner parties, our end-to-end design and installation
-                  services will turn your kitchen into a stylish and functional space.</p>
-                  </div>
-                  <div className="col-lg-3 "></div>
-                  
-                  </div>
-                  <div><Ideas prop = "Living Room" color="red"/></div>
-                  </div>
-                  </div>
+                                    <div className={"col-lg-6 px-[15px] " + css.livingroom_filter_content}><p className={css.livingroom_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
+                                        From coffee dates to dinner parties, our end-to-end design and installation
+                                        services will turn your kitchen into a stylish and functional space.</p>
+                                    </div>
+                                    <div className="col-lg-3 "></div>
+
+                                </div>
+                                <div><Ideas prop="Living Room" color="red" /></div>
+                            </div>
+                        </div>
                         <div className="mt-[-5%]"><DynamicIterableComponent data={LivingRoom} /></div>
                         <div className="mb-[-50px]"><Autoplay living={living} /></div>
                         <div><ReferNowPage /></div>
