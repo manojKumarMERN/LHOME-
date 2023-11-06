@@ -93,7 +93,13 @@
    height: 90vh;        
    position: absolute;
    width: 100%;
-   // top: 20%;
+   overflow-y: auto;
+   overflow-x: hidden !important;
+}
+.LhomeBottom1{
+   height: 100vh;        
+   position: absolute;
+   width: 100%;
    overflow-y: auto;
    overflow-x: hidden !important;
 }

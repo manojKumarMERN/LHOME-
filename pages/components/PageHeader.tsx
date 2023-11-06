@@ -53,62 +53,62 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
   const [chatBoxShow,setChatBoxShow] = React.useState(false);
   const [receivedData, setReceivedData] = React.useState('');
 
-  React.useEffect(() => {
-    function getsettings() {
-      let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
-      api.then((data: any) => {
-        menuoptions = data.data.settings.menuoptions
-        smallmenuoptions = data.data.settings.smallmenuoptions;
-        cities = data.data.settings.cities;
-        menuGaps = data.data.settings.menuGaps;
-        smallmenuGaps = data.data.settings.smallmenuGaps;
+  // React.useEffect(() => {
+  //   function getsettings() {
+  //     let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
+  //     api.then((data: any) => {
+  //       menuoptions = data.data.settings.menuoptions
+  //       smallmenuoptions = data.data.settings.smallmenuoptions;
+  //       cities = data.data.settings.cities;
+  //       menuGaps = data.data.settings.menuGaps;
+  //       smallmenuGaps = data.data.settings.smallmenuGaps;
 
-        let totalwidth = 0;
-        if (screenwidth < 500) {
-          totalwidth = screenwidth - (document.querySelector("#logo") as HTMLDivElement).offsetWidth - 135;
-        } else {
-          totalwidth = screenwidth - (document.querySelector("#logo") as HTMLDivElement).offsetWidth - 350;
-        }
-        let residuewidth = 0;
-        let newoptions = [];
-        menuoptions.forEach((option: any, index: number) => {
-          if (residuewidth + Number(menuGaps[index]) > totalwidth) {
-            newoptions.push(option);
-          } else {
-          }
-          residuewidth += Number(menuGaps[index]);
-        });
-        menuoptions = newoptions;
-        menuoptionsstringed = menuoptions.join(",") + ',';
-        setMenuOptionsString(menuoptionsstringed);
-        setUpdateMenu(Math.random())
-        totalwidth = screenwidth - (screenwidth * .6) - 100;
-        residuewidth = 0;
-        newoptions = [];
-        smallmenuoptions.forEach((option: any, index: number) => {
-          if (residuewidth + Number(smallmenuGaps[index]) > totalwidth) {
-            newoptions.push(option);
-          } else {
-          }
-          residuewidth += Number(smallmenuGaps[index]);
-        });
-        smallmenuoptions = newoptions;
-        smallmenuoptionsstringed = smallmenuoptions.join(",") + ',';
-        setSmallMenuOptionsString(smallmenuoptionsstringed);
-        setUpdateSmallMenu(Math.random());
-        setCitiesDropDown(true);
-        sethomeLogo(`${assetpath}${data.data.settings.logo}`);
+  //       let totalwidth = 0;
+  //       if (screenwidth < 500) {
+  //         totalwidth = screenwidth - (document.querySelector("#logo") as HTMLDivElement).offsetWidth - 135;
+  //       } else {
+  //         totalwidth = screenwidth - (document.querySelector("#logo") as HTMLDivElement).offsetWidth - 350;
+  //       }
+  //       let residuewidth = 0;
+  //       let newoptions = [];
+  //       menuoptions.forEach((option: any, index: number) => {
+  //         if (residuewidth + Number(menuGaps[index]) > totalwidth) {
+  //           newoptions.push(option);
+  //         } else {
+  //         }
+  //         residuewidth += Number(menuGaps[index]);
+  //       });
+  //       menuoptions = newoptions;
+  //       menuoptionsstringed = menuoptions.join(",") + ',';
+  //       setMenuOptionsString(menuoptionsstringed);
+  //       setUpdateMenu(Math.random())
+  //       totalwidth = screenwidth - (screenwidth * .6) - 100;
+  //       residuewidth = 0;
+  //       newoptions = [];
+  //       smallmenuoptions.forEach((option: any, index: number) => {
+  //         if (residuewidth + Number(smallmenuGaps[index]) > totalwidth) {
+  //           newoptions.push(option);
+  //         } else {
+  //         }
+  //         residuewidth += Number(smallmenuGaps[index]);
+  //       });
+  //       smallmenuoptions = newoptions;
+  //       smallmenuoptionsstringed = smallmenuoptions.join(",") + ',';
+  //       setSmallMenuOptionsString(smallmenuoptionsstringed);
+  //       setUpdateSmallMenu(Math.random());
+  //       setCitiesDropDown(true);
+  //       sethomeLogo(`${assetpath}${data.data.settings.logo}`);
 
 
-        // logo.current.style.backgroundImage = `url("${assetpath}/assets/images/LhomeLogo.jpg")`;
-        // logo.current.style.backgroundRepeat = "no-repeat"
-      })
-        .catch(error => {
-          console.log(error);
-        });
-    }
-    getsettings();
-  }, [screenwidth,assetpath]);
+  //       // logo.current.style.backgroundImage = `url("${assetpath}/assets/images/LhomeLogo.jpg")`;
+  //       // logo.current.style.backgroundRepeat = "no-repeat"
+  //     })
+  //       .catch(error => {
+  //         console.log(error);
+  //       });
+  //   }
+  //   getsettings();
+  // }, [screenwidth,assetpath]);
 
   React.useEffect(() => {
     function getsettings() {
@@ -166,6 +166,8 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
     }
     getsettings();
   }, [ screenwidth,assetpath]);
+
+
   const handlePopup = () => {
     setShow(true);
   }

@@ -26,17 +26,26 @@ const HomePage: React.FC<homeproperties> = ({ screenwidth, screenheight }) => {
 
    let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
    const living = React.useRef(null);
+   const page =  React.useRef(null);
+   const [prevPosition , setPrev] = React.useState(0);
+   const [hidden , setHidden] = React.useState(false)
 
-   const Cclass: string = "peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-pink-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50";
-
-
+const pageheaderMonitor = ()=>{
+      console.log(page.current.scrollTop);
+      if(page.current.scrollTop >prevPosition){
+         setPrev(page.current.scrollTop )
+         setHidden(true)
+      }else{
+         setHidden(false)
+      }
+   }
 
    return (
       <React.Fragment>
          <div className="animate-fade-in">
             <div className={css.lhomePage}>
-               <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
-               <div className={css.LhomeBottom}>
+               <div className={hidden? "hidden": ""}><PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} /></div>
+               <div ref={page} onScroll={pageheaderMonitor} className={hidden? css.LhomeBottom1 :css.LhomeBottom}>
                   <div><Homeslider screenwidth={screenwidth} screenheight={screenheight} /></div>
                   <div><WhyLhome screenwidth={screenwidth} screenheight={screenheight} /></div>
                   <div className={css.categoryComponent}><Category /></div>
