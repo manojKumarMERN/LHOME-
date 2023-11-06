@@ -11,7 +11,7 @@ import { BsHeadset } from "react-icons/bs";
 import Modal from 'react-bootstrap/Modal';
 import LoginRegisterPage from '../loginRegisterPage';
 import {AiFillCloseCircle} from 'react-icons/ai'
-import {BsChatTextFill} from 'react-icons/bs';
+import {HiOutlineChatAlt2} from 'react-icons/hi';
 import {BsChevronDown} from 'react-icons/bs';
 import {BsThreeDotsVertical} from 'react-icons/bs'
 import Contentchatbox from '../Contentchatbox';
@@ -371,7 +371,7 @@ const scrollDirection = useScrollDirection();
       </div> 
     </div>
       <div className={css.chat_Box}>
-        <BsChatTextFill className={css.Chat} onClick={handleChatBox} />
+        <HiOutlineChatAlt2 className={css.Chat} onClick={handleChatBox} />
         <Modal show={chatBoxShow} onHide={handleCloseBox} className={css.ChatBox_Popup}>
           <Modal.Header >
             <div className={css.white_bg}>
