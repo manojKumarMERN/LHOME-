@@ -90,12 +90,35 @@ const DesignGalleryPage: React.FC = () => {
     const Cclass: string = "peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-pink-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
     const router = useRouter();
 
+
+    const page = React.useRef(null);
+    const [prevPosition, setPrev] = React.useState(0);
+    const [hidden, setHidden] = React.useState(false)
+
+    const pageheaderMonitor = () => {
+        if (page.current.scrollTop > prevPosition) {
+            console.log("scrollTop value", page.current.scrollTop);
+            console.log("postionValue ", prevPosition);
+            setPrev(page.current.scrollTop)
+            setHidden(true)
+        } else {
+            setHidden(false)
+            setPrev(page.current.scrollTop)
+
+        }
+    }
+
+
     return (
         <React.Fragment>
             <div className="animate-fade-in">
                 <div className={css.lhomePage}>
-                    <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
-                    <div className={css.LhomeBottom}>
+                    
+                    <div className={hidden ? "hidden" : ""}>
+                        <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
+                    </div>
+
+                    <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
                         <div><DesignGalleryBanner /></div>
                         <div className={css.img_desgin_Gallery}><DesignGallery /></div>
                         <div><WhyLhome screenwidth={screenwidth} screenheight={screenheight} /></div>

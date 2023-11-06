@@ -72,7 +72,7 @@ const HomeOffice: React.FC = () => {
   React.useEffect(() => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResized);
-  }, [ handleResize, handleResized])
+  }, [handleResize, handleResized])
 
   React.useEffect(() => {
     let api = simpleCallInitAPI(`${assetpath}/assets/bathroom.json`);
@@ -81,17 +81,37 @@ const HomeOffice: React.FC = () => {
     });
   }, [assetpath]);
 
+  const page = React.useRef(null);
+  const [prevPosition, setPrev] = React.useState(0);
+  const [hidden, setHidden] = React.useState(false)
+
+  const pageheaderMonitor = () => {
+    if (page.current.scrollTop > prevPosition) {
+      console.log("scrollTop value", page.current.scrollTop);
+      console.log("postionValue ", prevPosition);
+      setPrev(page.current.scrollTop)
+      setHidden(true)
+    } else {
+      setHidden(false)
+      setPrev(page.current.scrollTop)
+
+    }
+  }
+
   return (
 
     <React.Fragment>
       <div className="animate-fade-in">
         <div className={css.lhomePage}>
-          <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
-          <div className={css.LhomeBottom}>
+          <div className={hidden ? "hidden" : ""}>
+            <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
+          </div>
+
+          <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
             <div><BathroomBaner /></div>
 
             <div className={css.bathroom_bgclr}>
-                <div className={css.bathroom_filter_home}>
+              <div className={css.bathroom_filter_home}>
                 <div className="pt-4">
                   <span className={css.bathroom_filter_link_span1}><Link href={{ pathname: "/" }} className={css.bathroom_filter_link}>home</Link></span>
                   <span className={css.bathroom_filter_slash}>/</span>
@@ -99,18 +119,18 @@ const HomeOffice: React.FC = () => {
                 </div>
                 <div className={css.bathroom_filter_header_content}>Bath Room</div>
                 <div className="row ">
-                <div className="col-lg-3 "> </div>
+                  <div className="col-lg-3 "> </div>
 
-                <div className={"col-lg-6 px-[15px] " + css.bathroom_filter_content}><p className={css.bathroom_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
-                  From coffee dates to dinner parties, our end-to-end design and installation
-                  services will turn your kitchen into a stylish and functional space.</p>
+                  <div className={"col-lg-6 px-[15px] " + css.bathroom_filter_content}><p className={css.bathroom_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
+                    From coffee dates to dinner parties, our end-to-end design and installation
+                    services will turn your kitchen into a stylish and functional space.</p>
                   </div>
                   <div className="col-lg-3 "></div>
-                  
-                  </div>
-                  <div><Ideas prop = "Bath Room" color="red"/></div>
-                  </div>
-                  </div>
+
+                </div>
+                <div><Ideas prop="Bath Room" color="red" /></div>
+              </div>
+            </div>
             <div className="mt-[-5%]"><DynamicIterableComponent data={homeOffice} /></div>
             <div className="mb-[-50px]"><Autoplay living={living} /></div>
             <div><ReferNowPage /></div>
