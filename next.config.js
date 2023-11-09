@@ -4,20 +4,18 @@ const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  assetPrefix:'/',
+  assetPrefix: '/',
   images: {
-      domains: ['ik.imagekit.io']
+    domains: isProd ? ['https://lhome.odooformybusiness.com'] : ['localhost'],
+    unoptimized: isProd,
   },
-  distDir:'dist',
+  distDir: 'dist',
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
-  output: isProd?'export':undefined,
+  output: isProd ? 'export' : undefined,
   assetPrefix: isProd ? 'https://lhome.odooformybusiness.com' : undefined,
   trailingSlash: true,
-  images:{
-    unoptimized : isProd
-  }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

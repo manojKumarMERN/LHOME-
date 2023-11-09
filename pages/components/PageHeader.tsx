@@ -10,12 +10,14 @@ import OtherDropDownMenu from './OtherDropDown';
 import { BsHeadset } from "react-icons/bs";
 import Modal from 'react-bootstrap/Modal';
 import LoginRegisterPage from '../loginRegisterPage';
-import {AiFillCloseCircle} from 'react-icons/ai'
-import {HiOutlineChatAlt2} from 'react-icons/hi';
-import {BsChevronDown} from 'react-icons/bs';
-import {BsThreeDotsVertical} from 'react-icons/bs'
+import { AiFillCloseCircle } from 'react-icons/ai'
+import { HiOutlineChatAlt2 } from 'react-icons/hi';
+import { BsChevronDown } from 'react-icons/bs';
+import { BsThreeDotsVertical } from 'react-icons/bs'
 import Contentchatbox from '../Contentchatbox';
 import useScrollDirection from './useScrollDirection';
+import Image from 'next/image';
+
 interface pageheaderproperties {
   screenwidth: number;
   screenheight: number;
@@ -50,7 +52,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
   const logo = React.useRef(null);
   const [homeLogo, sethomeLogo] = React.useState("");
   const [show, setShow] = React.useState(false);
-  const [chatBoxShow,setChatBoxShow] = React.useState(false);
+  const [chatBoxShow, setChatBoxShow] = React.useState(false);
   const [receivedData, setReceivedData] = React.useState('');
 
   // React.useEffect(() => {
@@ -158,14 +160,13 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
         setUpdateSmallMenu(Math.random());
         setCitiesDropDown(true);
         sethomeLogo(`${assetpath}${data.data.settings.logo}`);
-
       })
         .catch(error => {
           console.log(error);
         });
     }
     getsettings();
-  }, [ screenwidth,assetpath]);
+  }, [screenwidth, assetpath]);
 
 
   const handlePopup = () => {
@@ -173,215 +174,219 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
   }
   const handleClose = () => setShow(false);
   const handleCloseBox = () => setChatBoxShow(false);
-  const handleChatBox = () =>{
+  const handleChatBox = () => {
     setChatBoxShow(true);
   }
   const handleChildData = (data) => {
     console.log('Data received from child:', data);
     setReceivedData(data);
   };
-//   const [position, setPosition] = React.useState(window.scrollY);
-//   const [visible, setVisible] = React.useState(true) ;
-//   React.useEffect(()=> {
-//     const handleScroll = () => {
-//       let moving = window.scrollY;
+  //   const [position, setPosition] = React.useState(window.scrollY);
+  //   const [visible, setVisible] = React.useState(true) ;
+  //   React.useEffect(()=> {
+  //     const handleScroll = () => {
+  //       let moving = window.scrollY;
 
-//       setVisible(position > moving);
-//       setPosition(moving);
-//     };
-//     window.addEventListener("scroll", handleScroll);
-//     return(() => {
-//        window.removeEventListener("scroll", handleScroll);
-//     })
-// },[position]);
+  //       setVisible(position > moving);
+  //       setPosition(moving);
+  //     };
+  //     window.addEventListener("scroll", handleScroll);
+  //     return(() => {
+  //        window.removeEventListener("scroll", handleScroll);
+  //     })
+  // },[position]);
 
-// const cls = visible ? "visible" : "hidden";
-const scrollDirection = useScrollDirection();
+  // const cls = visible ? "visible" : "hidden";
+  const scrollDirection = useScrollDirection();
+  const headerClass = hidden  ? "" :  `${css.headerAnimated}` ;
   return (
     <React.Fragment>
-    <div className={`stickly ${scrollDirection === "up" ? "hidden" : "visible"} transition-all duration-500`}>
-      <div className={hidden ? `${css.headerHidden}` : `${css.headerOuter}` }>
-        <div className={css.headerLeft}>
-          <div id="logo" className={`${css.lhomelogoholder}`}>
-            <div className={css.lhomelogo}>
-              {/* <div ref={logo} className={`${css.lhomelogomask}`} /> */}
-              <img src={homeLogo} alt='homeLogo' key={"UniqueKey"} />
+      
+        <div className={`stickly ${scrollDirection === "up" ? "hidden" : "visible"} transition-all duration-500`}>
+          <div className={hidden ? `${css.headerHidden}` : `${css.headerOuter}`}>
+            <div className={css.headerLeft}>
+              <div id="logo" className={`${css.lhomelogoholder}`}>
+                <div className={css.lhomelogo}>
+                  {/* <div ref={logo} className={`${css.lhomelogomask}`} /> */}
+                  <img src={homeLogo} alt='homeLogo' key={"UniqueKey"} />
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        {!hidden && (
-          <div className={css.headerRight}>
-            <div className={css.smallMenuButtons}>
-              <div className={css.emptyBand} />
-              {smallmenuoptionsstring.indexOf("Partner With LHome,") < 0 ?
-                <Link href={{ pathname: '/partnership' }}><div className={`${css.smallMenuBand} ${css.customWidthpx_14}`}>
-                  Partner With LHome
-                </div>
-                </Link>
-                : ""}
-              {smallmenuoptionsstring.indexOf("Refer and Earn,") < 0 ?
-                <Link href={{ pathname: '/referandearn' }}> <div className={`${css.smallMenuBand} ${css.customWidthpx_12}`}>
-                  Refer and Earn
-                </div>
-                </Link>
-                : ''}
-              {/* {smallmenuoptionsstring.indexOf("Join Us,") < 0 ?
+            {!hidden && (
+              <div className={css.headerRight}>
+                <div className={css.smallMenuButtons}>
+                  <div className={css.emptyBand} />
+                  {smallmenuoptionsstring.indexOf("Partner With LHome,") < 0 ?
+                    <Link href={{ pathname: '/partnership' }}><div className={`${css.smallMenuBand} ${css.customWidthpx_14}`}>
+                      Partner With LHome
+                    </div>
+                    </Link>
+                    : ""}
+                  {smallmenuoptionsstring.indexOf("Refer and Earn,") < 0 ?
+                    <Link href={{ pathname: '/referandearn' }}> <div className={`${css.smallMenuBand} ${css.customWidthpx_12}`}>
+                      Refer and Earn
+                    </div>
+                    </Link>
+                    : ''}
+                  {/* {smallmenuoptionsstring.indexOf("Join Us,") < 0 ?
               <Link href={{ pathname: "/joinuspage" }}> <div className={`${css.smallMenuBand} ${css.customWidthpx_6}`}>
                 Join Us
               </div></Link>
               : ''} */}
 
-              {smallmenuoptionsstring.indexOf("Join Us,") < 0 ?
-                <a
-                  href="/joinuspage"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${css.smallMenuBand} ${css.customWidthpx_6}`}
-                >
-                  Join Us
-                </a>
-                : ''}
+                  {smallmenuoptionsstring.indexOf("Join Us,") < 0 ?
+                    <a
+                      href="/joinuspage"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${css.smallMenuBand} ${css.customWidthpx_6}`}
+                    >
+                      Join Us
+                    </a>
+                    : ''}
 
-              {smallmenuoptionsstring.indexOf("Cities,") < 0 ?
-                <div className={`${css.smallMenuBand} ${css.customWidthpx_6}`}>
-                  <div className={`${css.cityText} ${css.textpaddingleft}`}>Cities</div>
-                  <div className={css.citiesDropdown}>
-                    {citiesdropdown ?
-                      <CitiesDropDownMenu options={cities} positionmove={"1px"} />
+                  {smallmenuoptionsstring.indexOf("Cities,") < 0 ?
+                    <div className={`${css.smallMenuBand} ${css.customWidthpx_6}`}>
+                      <div className={`${css.cityText} ${css.textpaddingleft}`}>Cities</div>
+                      <div className={css.citiesDropdown}>
+                        {citiesdropdown ?
+                          <CitiesDropDownMenu options={cities} positionmove={"1px"} />
+                          : ''
+                        }
+                      </div>
+                    </div>
+                    : ''}
+                  {smallmenuoptionsstring.indexOf("Visit Us,") < 0 ?
+                    <Link href={{ pathname: "/visitus" }} > <div className={`${css.smallMenuBand} ${css.customWidthpx_6}`} >
+
+                      Visit Us
+                    </div>
+                    </Link>
+                    : ''}
+
+
+                  {smallmenuoptionsstring.indexOf(",Customer Support") < 0 ?
+                    <Link href={{ pathname: "/CustomersupportPage" }} style={{ display: 'flex', alignItems: "center" }}>
+                      <BsHeadset color="black" size={15} style={{ marginRight: '-20px', marginLeft: "15px" }} />
+                      <div className={`${css.smallMenuBand} ${css.customWidthpx_100}`}>
+                        Customer Support
+                      </div>
+                    </Link>
+                    : ''}
+
+                  {smallmenuoptions.length > 0 && screenwidth && screenwidth < 1250 ?
+                    <div id="dropdownoptions" rel="smalloptions" className={`${css.smallMenuBand} ${css.customWidthpx_6}`}>
+                      <DropDownMenu updatesmallmenu={updatesmallmenu} options={smallmenuoptions} fontclass={"yes"} cities={cities} />
+                    </div>
+                    : ''
+                  }
+                </div>
+                <div className={css.largeMenuButtons} id="largeoptions">
+                  <div className={css.menuHolder}>
+                    {menuoptionsstring.indexOf("Home,") < 0 ?
+                      <Link href={{ pathname: '/' }}><div id="home" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                        Home</div>
+                      </Link>
                       : ''
                     }
-                  </div>
-                </div>
-                : ''}
-              {smallmenuoptionsstring.indexOf("Visit Us,") < 0 ?
-                <Link href={{ pathname: "/visitus" }} > <div className={`${css.smallMenuBand} ${css.customWidthpx_6}`} >
+                    {menuoptionsstring.indexOf("Design Gallery,") < 0 ?
+                      <Link href={{ pathname: '/designgallery' }}><div id="designgallery" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                        Design Gallery</div>
+                      </Link>
+                      : ''
+                    }
+                    {menuoptionsstring.indexOf("Modular Kitchen,") < 0 ?
+                      <Link href={{ pathname: '/modularkitchen' }}><div id="modularkitchen" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                        Modular Kitchen</div>
+                      </Link>
+                      : ''
+                    }
+                    {menuoptionsstring.indexOf("Wardrobe,") < 0 ?
+                      <Link href={{ pathname: '/wardrobe' }}><div id="wardrobe" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                        Wardrobe</div>
+                      </Link>
+                      : ''
+                    }
+                    {menuoptionsstring.indexOf("Bedroom,") < 0 ?
+                      <Link href={{ pathname: '/bedroom' }}><div id="bedroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                        Bedroom</div>
+                      </Link>
+                      : ''
+                    }
+                    {menuoptionsstring.indexOf("Living Room,") < 0 ?
+                      <Link href={{ pathname: '/livingroom' }}><div id="livingroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                        Living Room</div>
+                      </Link>
+                      : ''
+                    }
+                    {menuoptionsstring.indexOf("Bath Room,") < 0 ?
+                      <Link href={{ pathname: '/bathroom' }}> <div id="bathroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                        Bath Room</div>
+                      </Link>
+                      : ''
+                    }
+                    {menuoptionsstring.indexOf("Space Saving Furniture,") < 0 ?
+                      <Link href={{ pathname: '/spacesavingfurniture' }}><div id="spacesavingfurniture" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                        Space Saving Furniture</div>
+                      </Link>
+                      : ''
+                    }
+                    {menuoptionsstring.indexOf("Home Office,") < 0 ?
+                      <Link href={{ pathname: '/homeoffice' }}> <div id="homeoffice" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                        Home Office</div>
+                      </Link>
+                      : ''
+                    }
+                    {menuoptionsstring.indexOf("Customer stories,") < 0 ?
+                      <div id="others" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_6} + d-flex`}>
+                        <div>Other</div>
+                        <div className={css.otherDropDown}>
+                          {citiesdropdown ?
+                            <OtherDropDownMenu options={other} positionmove={"1px"} />
+                            : ''
+                          }
+                        </div>
+                      </div>
+                      : ''
+                    }
+                    {menuoptions.length > 0 ?
+                      <div id="dropdownoptions" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_6}`}>
+                        <DropDownMenu updatemenu={updatemenu} fontclass={""} options={menuoptions} />
+                      </div>
+                      : ''
+                    }
+                    <div className={css.userLoginRegisterHolder}>
+                      <button className={css.userLoginRegister} onClick={handlePopup}>
+                        Login / Register
+                      </button>
+                      <Modal show={show} onHide={handleClose} className={css.Modal_Popup}>
+                        <Modal.Header  >
+                          <AiFillCloseCircle onClick={handleClose} />
+                        </Modal.Header>
+                        <LoginRegisterPage />
+                      </Modal>
 
-                  Visit Us
-                </div>
-                </Link>
-                : ''}
-
-              
-              { smallmenuoptionsstring.indexOf(",Customer Support") < 0 ?
-                <Link href={{ pathname: "/CustomersupportPage" }} style={{display:'flex',alignItems:"center"}}>
-                  <BsHeadset color="black" size={15} style={{ marginRight: '-20px',marginLeft:"15px"}} />
-                  <div className={`${css.smallMenuBand} ${css.customWidthpx_100}`}>
-                  Customer Support
-                </div>
-                </Link>
-                : ''}
-
-              {smallmenuoptions.length > 0 && screenwidth && screenwidth < 1250 ?
-                <div id="dropdownoptions" rel="smalloptions" className={`${css.smallMenuBand} ${css.customWidthpx_6}`}>
-                  <DropDownMenu updatesmallmenu={updatesmallmenu} options={smallmenuoptions} fontclass={"yes"} cities={cities} />
-                </div>
-                : ''
-              }
-            </div>
-            <div className={css.largeMenuButtons} id="largeoptions">
-              <div className={css.menuHolder}>
-                {menuoptionsstring.indexOf("Home,") < 0 ?
-                  <Link href={{ pathname: '/' }}><div id="home" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                    Home</div>
-                    </Link>
-                  : ''
-                }
-                {menuoptionsstring.indexOf("Design Gallery,") < 0 ?
-                  <Link href={{ pathname: '/designgallery' }}><div id="designgallery" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                    Design Gallery</div>
-                    </Link>
-                  : ''
-                }
-                {menuoptionsstring.indexOf("Modular Kitchen,") < 0 ?
-                  <Link href={{ pathname: '/modularkitchen' }}><div id="modularkitchen" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                    Modular Kitchen</div>
-                  </Link>
-                  : ''
-                }
-                {menuoptionsstring.indexOf("Wardrobe,") < 0 ?
-                  <Link href={{ pathname: '/wardrobe' }}><div id="wardrobe" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                    Wardrobe</div>
-                    </Link>
-                  : ''
-                }
-                {menuoptionsstring.indexOf("Bedroom,") < 0 ?
-                  <Link href={{ pathname: '/bedroom' }}><div id="bedroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                    Bedroom</div>
-                    </Link>
-                  : ''
-                }
-                {menuoptionsstring.indexOf("Living Room,") < 0 ?
-                  <Link href={{ pathname: '/livingroom' }}><div id="livingroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                    Living Room</div>
-                  </Link>
-                  : ''
-                }
-                {menuoptionsstring.indexOf("Bath Room,") < 0 ?
-                  <Link href={{ pathname: '/bathroom' }}> <div id="bathroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                    Bath Room</div>
-                  </Link>
-                  : ''
-                }
-                {menuoptionsstring.indexOf("Space Saving Furniture,") < 0 ?
-                  <Link href={{ pathname: '/spacesavingfurniture' }}><div id="spacesavingfurniture" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                    Space Saving Furniture</div>
-                    </Link>
-                  : ''
-                }
-                {menuoptionsstring.indexOf("Home Office,") < 0 ?
-                  <Link href={{ pathname: '/homeoffice' }}> <div id="homeoffice" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                    Home Office</div>
-                  </Link>
-                  : ''
-                }
-                {menuoptionsstring.indexOf("Customer stories,") < 0 ?
-                  <div id="others" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_6} + d-flex`}>
-                    <div>Other</div>
-                    <div className={css.otherDropDown}>
-                      {citiesdropdown ?
-                        <OtherDropDownMenu options={other} positionmove={"1px"} />
-                        : ''
-                      }
                     </div>
                   </div>
-                  : ''
-                }
-                {menuoptions.length > 0 ?
-                  <div id="dropdownoptions" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_6}`}>
-                    <DropDownMenu updatemenu={updatemenu} fontclass={""} options={menuoptions} />
-                  </div>
-                  : ''
-                }
-                <div className={css.userLoginRegisterHolder}>
-                <button className={css.userLoginRegister} onClick={handlePopup}>
-                  Login / Register
-                </button>
-                <Modal show={show} onHide={handleClose} className={css.Modal_Popup}>
-                <Modal.Header  >
-                    <AiFillCloseCircle onClick={handleClose}/>
-                  </Modal.Header>
-                  <LoginRegisterPage />
-                </Modal>
-
                 </div>
-              </div>
-            </div>
-          </div>)}
-      </div> 
-    </div>
+              </div>)}
+          </div>
+        </div>
+      
+      {/* chat bot div  */}
       <div className={css.chat_Box}>
         <HiOutlineChatAlt2 className={css.Chat} onClick={handleChatBox} />
         <Modal show={chatBoxShow} onHide={handleCloseBox} className={css.ChatBox_Popup}>
           <Modal.Header >
             <div className={css.white_bg}>
-            <img src={homeLogo} alt="homeLogo" className={css.round_image} />
+              <img src={homeLogo} alt="homeLogo" className={css.round_image} />
             </div>
-            <p className={css.chat_Box_Heading}>{receivedData ? receivedData:"Chat with us now"}</p>
-            <BsThreeDotsVertical className={css.bs_fonts}/>
-            <BsChevronDown onClick={handleCloseBox} className={css.bs_fonts}/>
+            <p className={css.chat_Box_Heading}>{receivedData ? receivedData : "Chat with us now"}</p>
+            <BsThreeDotsVertical className={css.bs_fonts} />
+            <BsChevronDown onClick={handleCloseBox} className={css.bs_fonts} />
           </Modal.Header>
-          <Contentchatbox onDataReceived={handleChildData}/>
+          <Contentchatbox onDataReceived={handleChildData} />
         </Modal>
       </div>
     </React.Fragment>
