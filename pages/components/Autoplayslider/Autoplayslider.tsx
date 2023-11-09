@@ -154,7 +154,7 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
           <Carousel
             ref={carouselRef}
             responsive={responsive}
-            autoPlay={false}
+            autoPlay={true}
             swipeable={true}
             draggable={true}
             showDots={true}
