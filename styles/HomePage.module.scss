@@ -401,6 +401,7 @@
 .division1{
    width:32.96%;
    height:100%;
+   padding-right: 2%;
    margin-top:unset; 
    .verticaldivider{
       display:block;
@@ -410,6 +411,7 @@
 .division2{
    width:32.96%;
    height:100%;
+   padding: 0 1%;
    margin-top:unset; 
    .verticaldivider{
       display:block;
@@ -419,9 +421,10 @@
 }
 
 .division3{
-   width:32.97%;
-   height:100%;
-   margin-top:unset; 
+   width: 32.97%;
+   height: 100%;
+   padding: 0 3%;
+   margin-top: unset;
    .verticaldivider{
       display:block;
    }
