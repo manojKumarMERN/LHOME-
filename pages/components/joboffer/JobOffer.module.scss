@@ -4,7 +4,7 @@
 }
 
 .jobInnerContainer{
-    padding: 70px 30px 70px 60px;
+    padding: 70px 60px 70px 60px;
     background-color: #fff;
     border-radius: 20px;
 }
@@ -65,6 +65,7 @@
 
 .jobRow{
     display: flex;
+    justify-content: space-between;
 }
 .jobLeft{
     width: 80%;
