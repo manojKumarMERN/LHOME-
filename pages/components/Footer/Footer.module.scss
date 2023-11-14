@@ -32,6 +32,10 @@
    margin-left: 1.5%;
 }
 
+.footerContentSubContent:nth-child(0) {
+   padding-left: 10px;
+}
+
 .footerContentSubContentIcon {
    padding-left: 10px;
    padding-right: 10px;
@@ -64,6 +68,7 @@
 } 
 .socialMedia {
    display: flex;
+   padding-left: 10px;
 }
 .socialMediaIcons {
    height: 35px;
@@ -81,16 +86,8 @@
 
 .lhomelogo{
   width: 195px;
-  padding-top: 10%;
-  padding-bottom: 10%;
-//   height: 160px;
+  padding: 5% 0;
   display: flex;
-}
-
-.lhomelogoholder{
-  width :125px;
-  // height: 125px;
-  //position:absolute;
 }
 
 .lhomelogomask{
