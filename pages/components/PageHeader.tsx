@@ -15,8 +15,6 @@ import { HiOutlineChatAlt2 } from 'react-icons/hi';
 import { BsChevronDown } from 'react-icons/bs';
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import Contentchatbox from '../Contentchatbox';
-import useScrollDirection from './useScrollDirection';
-import Image from 'next/image';
 
 interface pageheaderproperties {
   screenwidth: number;
@@ -54,63 +52,6 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
   const [show, setShow] = React.useState(false);
   const [chatBoxShow, setChatBoxShow] = React.useState(false);
   const [receivedData, setReceivedData] = React.useState('');
-
-  // React.useEffect(() => {
-  //   function getsettings() {
-  //     let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
-  //     api.then((data: any) => {
-  //       menuoptions = data.data.settings.menuoptions
-  //       smallmenuoptions = data.data.settings.smallmenuoptions;
-  //       cities = data.data.settings.cities;
-  //       menuGaps = data.data.settings.menuGaps;
-  //       smallmenuGaps = data.data.settings.smallmenuGaps;
-
-  //       let totalwidth = 0;
-  //       if (screenwidth < 500) {
-  //         totalwidth = screenwidth - (document.querySelector("#logo") as HTMLDivElement).offsetWidth - 135;
-  //       } else {
-  //         totalwidth = screenwidth - (document.querySelector("#logo") as HTMLDivElement).offsetWidth - 350;
-  //       }
-  //       let residuewidth = 0;
-  //       let newoptions = [];
-  //       menuoptions.forEach((option: any, index: number) => {
-  //         if (residuewidth + Number(menuGaps[index]) > totalwidth) {
-  //           newoptions.push(option);
-  //         } else {
-  //         }
-  //         residuewidth += Number(menuGaps[index]);
-  //       });
-  //       menuoptions = newoptions;
-  //       menuoptionsstringed = menuoptions.join(",") + ',';
-  //       setMenuOptionsString(menuoptionsstringed);
-  //       setUpdateMenu(Math.random())
-  //       totalwidth = screenwidth - (screenwidth * .6) - 100;
-  //       residuewidth = 0;
-  //       newoptions = [];
-  //       smallmenuoptions.forEach((option: any, index: number) => {
-  //         if (residuewidth + Number(smallmenuGaps[index]) > totalwidth) {
-  //           newoptions.push(option);
-  //         } else {
-  //         }
-  //         residuewidth += Number(smallmenuGaps[index]);
-  //       });
-  //       smallmenuoptions = newoptions;
-  //       smallmenuoptionsstringed = smallmenuoptions.join(",") + ',';
-  //       setSmallMenuOptionsString(smallmenuoptionsstringed);
-  //       setUpdateSmallMenu(Math.random());
-  //       setCitiesDropDown(true);
-  //       sethomeLogo(`${assetpath}${data.data.settings.logo}`);
-
-
-  //       // logo.current.style.backgroundImage = `url("${assetpath}/assets/images/LhomeLogo.jpg")`;
-  //       // logo.current.style.backgroundRepeat = "no-repeat"
-  //     })
-  //       .catch(error => {
-  //         console.log(error);
-  //       });
-  //   }
-  //   getsettings();
-  // }, [screenwidth,assetpath]);
 
   React.useEffect(() => {
     function getsettings() {
@@ -181,28 +122,10 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
     console.log('Data received from child:', data);
     setReceivedData(data);
   };
-  //   const [position, setPosition] = React.useState(window.scrollY);
-  //   const [visible, setVisible] = React.useState(true) ;
-  //   React.useEffect(()=> {
-  //     const handleScroll = () => {
-  //       let moving = window.scrollY;
 
-  //       setVisible(position > moving);
-  //       setPosition(moving);
-  //     };
-  //     window.addEventListener("scroll", handleScroll);
-  //     return(() => {
-  //        window.removeEventListener("scroll", handleScroll);
-  //     })
-  // },[position]);
-
-  // const cls = visible ? "visible" : "hidden";
-  const scrollDirection = useScrollDirection();
-  const headerClass = hidden  ? "" :  `${css.headerAnimated}` ;
   return (
     <React.Fragment>
-      
-        <div className={`stickly ${scrollDirection === "up" ? "hidden" : "visible"} transition-all duration-500`}>
+        <div className={`stickly transition-all duration-500`}>
           <div className={hidden ? `${css.headerHidden}` : `${css.headerOuter}`}>
             <div className={css.headerLeft}>
               <div id="logo" className={`${css.lhomelogoholder}`}>
