@@ -1272,7 +1272,7 @@
     ],
     "homeofficebaner": [
       {
-        "image": "/assets/homeoffice/homeoffice.png",
+        "image": "/assets/homeOffice/homeoffice.png", 
         "name": "Copy Design your own Kitchen with our experts!"
       }
     ],
@@ -1429,7 +1429,7 @@
     ],
     "mobile": "/assets/icons/mobile.svg",
     "location": "/assets/icons/location.svg",
-    "logo":"/assets/images/lhomeLogo.jpg",
+    "logo":"/assets/images/LhomeLogo.jpg",
     "mail": "/assets/icons/mail.svg",
     "coimbatore": "/assets/guranted/coimbatore.jpg",
     "rajapalayam": "/assets/guranted/rajapalayam.png",
