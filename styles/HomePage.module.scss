@@ -8,6 +8,11 @@
    // display:flex;
 }
 
+.hiddenAnimated {
+   background-color: #ffffff; /* Change to your desired background color */
+   opacity: 1;
+   transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+ }
 
 .customWidth_2{
    width: 2vw !important;
@@ -157,6 +162,9 @@
    font-weight: 700;
    position:absolute;
 }
+
+
+
 
 .sliderwrappertextholder{
    display:flex;
