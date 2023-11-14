@@ -146,6 +146,11 @@ margin: 5px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
 }
+.dropdown button[class="dropdown-item"]{
+  background-color:  #F5F5F5 !important;
+  color: #000;
+  font-weight: normal;
+}
 .dropdown button:hover{
   color: #F44336;
 }
