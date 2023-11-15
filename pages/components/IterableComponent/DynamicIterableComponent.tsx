@@ -68,6 +68,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data }) => {
                                             :
                                             <div className={css.customdivisionchild}>
                                                 <div className={css.customGrey + " grid grid-rows-3"}>
+                                                <div className='flex flex-column items-center'>
                                                     <div className={css.custom_icons}>
                                                         <img src={item.icon} alt="icon" className={css.icon_image} />
                                                     </div>
@@ -77,7 +78,8 @@ const DynamicIterableComponent: React.FC<properties> = ({ data }) => {
                                                         dangerouslySetInnerHTML={{ __html: item.content }}></p></div>
                                                         <div className='col-lg-2 '></div>
                                                     </div>
-                                                    <div className='flex w-full h-full justify-center items-center'>
+                                                    </div>
+                                                    <div className='flex w-full justify-center'>
                                                         {item.btn && <button className={css.btnStyle}>{item.btn}</button>}
                                                     </div>
                                                 </div>
