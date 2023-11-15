@@ -32,39 +32,20 @@ const DesignGalleryBanner: React.FC = () => {
                 <div className={css1.galleryTitle}>
                     <b>  Modular Kitchen </b> makes your home Modular
                 </div>
-
                 <div className={css1.contentBox}>
                     <div className={css1.side1}>
                         <div className={css1.contentPart}>
-                            {/* <div className={css1.iconPart1}>
-                                <img src={modularIcon} alt="kitchenIcon" />
-                            </div> */}
-
                             <div className={css1.container}>
-
                                 <div className={css1.imagePart}>
                                     <img src={modularImage} alt="kitchenbanner" />
                                 </div>
-
-                                <div className={css1.shadow}></div>
-
+                               <div className={css1.shadow}></div>
                             </div>
-
-                            {/* <div className={css1.iconPart2}>
-                                <img src={modularIcon} alt="kitchenIcon" />
-                            </div> */}
                         </div>
                     </div>
                     <div className={css1.side2}>
-                        <div className={css1.topLevel}>
-                            {/* <div className={css1.iconPart3}>
-                                <img src={modularIcon} alt="kitchenIcon" />
-                            </div> */}
-                            {/* <div className={css1.iconPart4}>
-                                <img src={modularIcon} alt="kitchenIcon" />
-                            </div> */}
-                        </div>
-
+                        {/* <div className={css1.topLevel}>
+                        </div> */}
                         <div className={css1.bottomLevel}>
                             <Form />
                         </div>
