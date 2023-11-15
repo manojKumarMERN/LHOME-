@@ -94,7 +94,7 @@ const VisitUSMain =()=>{
 
                     <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
                     <div><VisitBaner/></div>
-                    <div><Guranted/></div>
+                    <div className={css.Guranted}><Guranted/></div>
                     <div><Footer/></div>
                     
                     </div>
