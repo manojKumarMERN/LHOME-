@@ -298,7 +298,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
         </div>
       
       {/* chat bot div  */}
-      <div className={css.chat_Box}>
+      {/* <div className={css.chat_Box}>
         <HiOutlineChatAlt2 className={css.Chat} onClick={handleChatBox} />
         <Modal show={chatBoxShow} onHide={handleCloseBox} className={css.ChatBox_Popup}>
           <Modal.Header >
@@ -311,7 +311,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
           </Modal.Header>
           <Contentchatbox onDataReceived={handleChildData} />
         </Modal>
-      </div>
+      </div> */}
     </React.Fragment>
   )
 }

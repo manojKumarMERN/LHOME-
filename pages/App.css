@@ -1,0 +1,80 @@
+.ChatBox_Popup div div div[class="modal-header"]{
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+    align-items: center;
+  }
+  .ChatBox_Popup div[class="modal-dialog"]{
+  transition: transform .3s ease-in !important;
+ 
+  }
+  .chat_Box_Heading{
+    font-size: 1.3vw;
+    font-weight: 500;
+    margin-bottom: unset;
+  }
+ 
+  .white_bg{
+    border-radius: 50%;
+     background-color: #FFFFFF;
+     width: 40px;
+     height: 40px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     overflow: hidden
+     
+  }
+ 
+ 
+ .round_image {
+    width: 100%; 
+    border-radius: 50%; 
+ }
+ .bs_fonts{
+    font-size: 1.5vw;
+ }
+ 
+ .chat_Box{
+    position: absolute;
+    bottom:2%;
+    z-index: 99;
+    right: 1%;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    width: 4%;
+    height:8%
+ }
+ .Chat{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #2552A4;
+    font-size: 3vw ;
+ }
+ .ChatBox_Popup div[class="modal-dialog"]{
+    position: absolute !important;
+    width: 25%;
+    top: 20%;
+    right: 0.5%;
+ 
+ }
+ .ChatBox_Popup div div[class="modal-content"]{
+    background-color: rgba(37, 82, 164, 1) !important;
+  }
+ .ChatBox_Popup div div div[class="modal-header"]{
+    border: none;
+    display: flex;
+    color: #fff;
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+  }
+  .ChatBox_Popup div[class="modal-dialog"]{
+  transition: transform .3s ease-in !important;
+ }
+ 
+ .ChatBox_Popup div div div[class="modal-header"] h3{
+    margin: 0 15%;
+ }
