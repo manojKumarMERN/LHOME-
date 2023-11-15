@@ -8,6 +8,8 @@ import CustomRightArrow from "./CustomRightArrow";
 import { BsHeart } from "react-icons/bs";
 import {FaRegShareFromSquare} from 'react-icons/fa6';
 import {FaAngleRight} from 'react-icons/fa6';
+import Link from "next/link";
+
 interface propproperty {
     Citie: any;
     Currentpage:string
@@ -79,9 +81,18 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                     <div className={css.toppickstitle}>
                         Top Picks for Kitchen Designs {Citie}
                     </div>
-                    {(Currentpage === "/designgallery"||Currentpage === "/cities") &&(<button className={css.compactBtn}>
+                    {/* {(Currentpage === "/designgallery"||Currentpage === "/cities") &&(<button className={css.compactBtn}>
                         see all <FaAngleRight  className={css.right_Arrow}/>
-                    </button>)}
+                    </button>)} */}
+
+                        { 
+                        (Currentpage === "/designgallery"||Currentpage === "/cities") && (
+                                <Link href={{ pathname: "/modularkitchen" }} className={css.seeallLink}>
+                                    <button className={css.compactBtn}>
+                                        see all <FaAngleRight className={css.right_Arrow} />
+                                    </button>
+                                </Link>)
+                        }
                     </div>
                     <div className={css.carousel_design}>
                     <Carousel
