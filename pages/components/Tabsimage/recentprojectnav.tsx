@@ -128,7 +128,7 @@ export default function Recentprojectnav() {
                             <div className={css.recentnavContainer}>
                                 <div className={css.sliderwrapper}>
 
-                                        <div>
+                                        <div className={css.tab_image_content}>
                                             <img loading="lazy"
                                                 src={Object.values(navbanner)[currentTabIndex].image} alt={Object.values(navbanner)[currentTabIndex].alt} className={css.imageContainer} />
                                         </div>
