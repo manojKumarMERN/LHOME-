@@ -11,6 +11,8 @@ import css2 from '../HighLights/HighLights.module.scss';
 import { BsHeart } from "react-icons/bs";
 import { FaRegShareFromSquare } from 'react-icons/fa6';
 import {FaAngleRight} from 'react-icons/fa6';
+import Link from "next/link";
+
 
 interface propproperty {
     Citie: any
@@ -83,7 +85,11 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                     <div className={css2.listingOuterLayer}>
                         <div className='d-flex justify-content-between align-items-center'>
                             <div className={css.trendingtitle}>Stylish Home Products {Citie}</div>
-                            <button className={css.compactBtn}>see all <FaAngleRight className={css.right_Arrow}/></button>
+                            <Link href={{ pathname: "/spacesavingfurniture" }} className={css.seeallLink}>
+                                    <button className={css.compactBtn}>
+                                        see all <FaAngleRight className={css.right_Arrow} />
+                                    </button>
+                                </Link>
                         </div>
                         <div className={css.carousel_design}>
                             <Carousel
@@ -142,7 +148,11 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                         <div className={css2.listingOuterLayer}>
                             <div className='d-flex justify-content-between align-items-center'>
                                 <div className={css.warddrobeflytitle}>Compact Furniture {Citie}</div>
-                                <button className={css.compactBtn}>see all <FaAngleRight className={css.right_Arrow}/></button>
+                                <Link href={{ pathname: "/spacesavingfurniture" }} className={css.seeallLink}>
+                                    <button className={css.compactBtn}>
+                                        see all <FaAngleRight className={css.right_Arrow} />
+                                    </button>
+                                </Link>
                             </div>
                             <div className={css.carousel_design}>
                                 <Carousel
