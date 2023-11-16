@@ -68,7 +68,6 @@
 } 
 .socialMedia {
    display: flex;
-   padding-left: 10px;
 }
 .socialMediaIcons {
    height: 35px;
@@ -88,6 +87,7 @@
   width: 195px;
   padding: 5% 0;
   display: flex;
+  margin-left: -10px;
 }
 
 .lhomelogomask{
