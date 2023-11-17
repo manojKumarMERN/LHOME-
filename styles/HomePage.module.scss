@@ -670,7 +670,7 @@
    font-family: 'Montserrat';
    font-style: normal;
    font-weight: 600;
-   font-size: 14px;
+   font-size: 16px;
    line-height: 20px;
    color: #222222;
    padding:5px;
@@ -684,7 +684,7 @@
    font-family: 'Montserrat';
    font-style: normal;
    font-weight: 600;
-   font-size: 14px;
+   font-size: 16px;
    line-height: 20px;
    color: #222222;
    padding:5px;
@@ -699,7 +699,7 @@
    font-family: 'Montserrat';
    font-style: normal;
    font-weight: 600;
-   font-size: 14px;
+   font-size: 16px;
    line-height: 20px;
    color: #222222;
    padding:5px;
@@ -713,7 +713,7 @@
    font-family: 'Montserrat';
    font-style: normal;
    font-weight: 600;
-   font-size: 14px;
+   font-size: 16px;
    line-height: 20px;
    color: #222222;
    padding:15px;
@@ -726,9 +726,9 @@
 .contacttext{
    font-family: 'Montserrat';
    font-style: normal;
-   font-weight: 600;
-   font-size: 8px;
-   line-height: 10px;
+   font-weight: 500;
+   font-size: 12px;
+   line-height: 12px;
    text-align: center;
    color: #737373;
    padding-left:15px;
@@ -738,21 +738,22 @@
 .expertisetext{
    font-family: 'Montserrat';
    font-style: normal;
-   font-weight: 600;
-   font-size: 8px;
-   line-height: 10px;
+   font-weight: 500;
+   font-size: 12px;
+   line-height: 12px;
    text-align: center;
    color: #737373;
    padding-left:5px;
    padding-right:5px;
+   margin-top: 10px;
 }  
 
 .threedtext{
    font-family: 'Montserrat';
    font-style: normal;
-   font-weight: 600;
-   font-size: 8px;
-   line-height: 10px;
+   font-weight: 500;
+   font-size: 12px;
+   line-height: 12px;
    text-align: center;
    color: #737373;
    padding-left:15px;
@@ -762,9 +763,9 @@
 .instanttext{
    font-family: 'Montserrat';
    font-style: normal;
-   font-weight: 600;
-   font-size: 8px;
-   line-height: 10px;
+   font-weight: 500;
+   font-size: 12px;
+   line-height: 12px;
    text-align: center;
    color: #737373;
    margin-top:-10px;
@@ -1469,8 +1470,8 @@
    .division3{
       width: 100%;
       height: 150px;
-      padding-left: 25%;
-      padding-right: 25%;
+      // padding-left: 25%;
+      // padding-right: 25%;
       .verticaldivider{
          display:none;
       }     
@@ -1519,25 +1520,13 @@
       margin-top:30px; //change style
    }
 
-   .contacttitle{
-      line-height:10px;//change style
-      font-size:10px;//change style
-   }
-
-   .expertisetitle{
+   .contacttitle , .expertisetitle , .threedtitle , .instanttitle{
       line-height:13px;//change style
-      font-size:10px;//change style
+      font-size:12px;//change style
    }
-
-   .threedtitle{
-      line-height:13px;//change style
-      font-size:10px;//change style
-   }
-
-   .instanttitle{
-      line-height:13px;//change style
-      font-size:10px;//change style
-   }
+   .contacttext , .expertisetext , .threedtext , .instanttext{
+      font-size: 10px
+   }  
 
    .division2{
       .rightmoveup{
@@ -1584,36 +1573,18 @@
 
 
 @media only screen and (min-width:901px) and (max-width:1100px){
-   .rightdetailsholder{
-      margin-top:30px;
-   }
+   // .rightdetailsholder{
+   //    margin-top:30px;
+   // }
 
-   .contacttitle{
+   .contacttitle , .instanttitle , .expertisetitle , .threedtitle{
       line-height:13px;
-      font-size:10px;
-   }
-
-   .instanttitle{
-      line-height:13px;
-      font-size:10px;
-   }
-
-   .expertisetitle{
-      line-height:13px;
-      font-size:10px;
-   }
-
-   .threedtitle{
-      line-height:13px;
-      font-size:10px;
+      font-size:12px;
    }
 
    .division2{
       .leftdetailsholder{
          margin-top:5px;
-      }
-      .rightdetailsholder{
-         margin-top:30px;
       }
    }  
 
@@ -1645,22 +1616,9 @@
    .safetyparent{
       margin-top:-15px;
    }
-
-   .experttext{
-      margin-top:60px;
-   }
-
-   .contacttext{
-      margin-top:0px;
-   }
-
-   .expertisetext{
-      margin-top:10px;
-   }
-
-   .referdetailslist{
-      margin-top: -25px;
-   }   
+.contacttext , .expertisetext , .threedtext , .instanttext{
+      font-size: 10px
+   }  
 }
 
 
@@ -1773,20 +1731,23 @@
 
    .contacttitle{
       line-height:13px;
-      font-size:10px;
+      font-size:12px;
       margin-top:40px;
    }
 
    .expertisetitle{
       line-height:13px;
-      font-size:10px;
+      font-size:12px;
       margin-top:40px;
    }
 
-   .threedtitle{
+   .threedtitle , .instanttitle{
       line-height:13px;
-      font-size:10px;
+      font-size:12px;
    }
+   .contacttext , .expertisetext , .threedtext , .instanttext{
+      font-size: 10px
+   } 
 
    .happycustomerhomedetailsparent{
       margin-top:-40px;
@@ -2037,7 +1998,7 @@
    // }
    .title:first-child{
       // margin-top: 80px;
-      margin-bottom: -12%;
+      margin-bottom: -5%;
       margin-top:10px; //Changed Style
    }
    .categoryComponent{
@@ -2928,7 +2889,7 @@
  @media only screen and (min-width:300px) and (max-width: 400px){
    .title:first-child{
       // margin-top: 80px;
-      margin-bottom: -12%;
+      margin-bottom: -5%;
       margin-top:70px; //Changed Style
    }
    .division1{
@@ -2962,8 +2923,8 @@
       color: #737373;
       display:flex;
        text-align: center; //changed style
-       width:40px; //changed style
-       margin-left: 22px; //changed style
+      //  width:40px; //changed style
+      //  margin-left: 22px; //changed style
    }
    
    .superiortext{

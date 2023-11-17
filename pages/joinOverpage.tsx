@@ -125,7 +125,7 @@ const JoinOverpage: React.FC = () => {
                     <div className={css.LhomeBottom}>
 
                         <div className={css.lhomelogo} style={hideDiv ?  {backgroundColor:"white"}:{}}>
-                            <img src="/assets/images/lhomeLogo.jpg" alt="logo Lhome" key={"unique one"} />
+                            <img src="/assets/images/LhomeLogo.jpg" alt="logo Lhome" key={"unique one"} />
                         </div>
 
                         {hideDiv &&
