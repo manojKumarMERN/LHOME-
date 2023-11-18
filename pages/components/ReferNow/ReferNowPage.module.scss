@@ -11,6 +11,10 @@
     padding-top: 2%;
     padding-bottom: 2%;
     justify-content: center;
+    @media screen and (max-width:600px){
+        width: 100%;
+        justify-content: flex-start;
+    }
 }
 
 .refermanmaintext {
@@ -20,6 +24,12 @@
     font-size: 26px;
     line-height: 22px;
     color: #fff;
+    @media screen and (max-width:600px){
+        font-size: 12px; 
+    }
+    @media screen and  (min-width:601px) and (max-width:1000px){
+        font-size: 20px; 
+    }
 }
 
 .refermansubtext {
@@ -30,6 +40,12 @@
     line-height: 22px;
     margin-top: 5px;
     color: #fff;
+    @media screen and (max-width:600px){
+        font-size: 8px; 
+    }
+    @media screen and (min-width:601px) and (max-width:1000px){
+        font-size: 12px; 
+    }
 }
 
 .refermanbuttonholder button{
@@ -42,11 +58,19 @@
     margin-top: 10px;
     background: #f44336;
     font-size: 12px;
+    @media screen and (max-width:600px){
+        padding: 12px 40px;
+        font-size: 8px;
+    }
 }
 
 .referman {
   width: 35%;
   margin-right: -8%;
+  @media screen and (max-width:600px){
+    margin-right: -14%;
+  }
+
 }
 
 @media only screen and (min-width:320px) and (max-width: 724px){
