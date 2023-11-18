@@ -34,7 +34,7 @@ const WarDrobeBaner : React.FC = () => {
                 
                 <img src={datas.wardrobebaner} alt="bannerImage" className={css.wardrobeimage} />
                 <div className={css.wardrobebanercontent}>
-                    <h4 className={css.wardrobe_tagline}>Design your own</h4> <h2 className={css.wardrobe_tagline1}><b>Wardrobe with our experts!</b></h2>
+                    <h4 className={css.wardrobe_tagline}>Design your own</h4> <h2 className={css.wardrobe_tagline1}>Wardrobe with our experts!</h2>
                 </div>
                 <div className={css.wardrobebanerform}>
                     <div className={css.wardrobeform}><Form/></div>

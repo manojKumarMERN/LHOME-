@@ -1298,3 +1298,22 @@
   }
 }
 
+//Modal popup
+.Modal_Popup div div div[class="modal-header"]  {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+  border: none;
+}
+
+.Modal_Popup div[class="modal-dialog"]{
+  max-width: 80% !important;
+
+}
+@media only screen and (max-width:800px){
+  .Modal_Popup div[class="modal-dialog"]{
+    max-width: 98% !important;
+  
+  }
+}
