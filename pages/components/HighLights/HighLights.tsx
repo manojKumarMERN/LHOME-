@@ -10,6 +10,9 @@ import Carousel from "react-multi-carousel";
 import { BsHeart } from "react-icons/bs";
 import { FaRegShareFromSquare } from 'react-icons/fa6'
 import { useRouter } from 'next/router';
+import Modal from 'react-bootstrap/Modal'
+import { AiFillCloseCircle } from 'react-icons/ai';
+import DetailsOfimg from '../../DetailsOfimg';
 
 const StylishHomeProducts: React.FC = () => {
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
@@ -41,6 +44,21 @@ const StylishHomeProducts: React.FC = () => {
                 console.log(error);
             });
     }, [assetpath]);
+
+    const [show, setShow] = React.useState(false);
+    const [selectedItem, setSelectedItem] = React.useState(null);
+
+
+    const handlePopup = (datas) => {
+        setSelectedItem(datas);
+        setShow(true);
+    };
+
+
+    const handleClose = () => {
+        setShow(false);
+    }
+
 
     const responsive = {
         desktop: {
@@ -89,6 +107,7 @@ const StylishHomeProducts: React.FC = () => {
                                     <div
                                         key={`${datas.subname}_${index}_${index}`}
                                         className={css.customdivision}
+                                        onClick={() => handlePopup(datas)}
                                     >
                                         <div className={css.customdivisionchild}>
                                             <div className={css.customimage}>
@@ -119,6 +138,12 @@ const StylishHomeProducts: React.FC = () => {
                                     </div>
                                 ))}
                             </Carousel>
+                            <Modal show={show} onHide={handleClose} className={css.Modal_Popup}>
+                                <Modal.Header >
+                                    <AiFillCloseCircle onClick={handleClose} />
+                                </Modal.Header>
+                                <DetailsOfimg data={trendings} selectedItem={selectedItem} />
+                            </Modal>
                         </div>
                     </div>
 

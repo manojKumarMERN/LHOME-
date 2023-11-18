@@ -6,13 +6,15 @@ import Carousel from "react-multi-carousel";
 import CustomLeftArrow from "./CustomLeftArrow";
 import CustomRightArrow from "./CustomRightArrow";
 import { BsHeart } from "react-icons/bs";
-import {FaRegShareFromSquare} from 'react-icons/fa6';
-import {FaAngleRight} from 'react-icons/fa6';
+import { FaRegShareFromSquare } from 'react-icons/fa6';
+import { FaAngleRight } from 'react-icons/fa6';
 import Link from "next/link";
-
+import Modal from 'react-bootstrap/Modal'
+import { AiFillCloseCircle } from 'react-icons/ai';
+import DetailsOfimg from '../../DetailsOfimg';
 interface propproperty {
     Citie: any;
-    Currentpage:string
+    Currentpage: string
 
 }
 
@@ -47,6 +49,20 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
         },
 
     };
+    const [show, setShow] = React.useState(false);
+    const [selectedItem, setSelectedItem] = React.useState(null);
+
+
+    const handlePopup = (datas) => {
+        setSelectedItem(datas);
+        setShow(true);
+    };
+
+
+    const handleClose = () => {
+        setShow(false);
+    }
+
 
     //use effect for getting data from api
     React.useEffect(() => {
@@ -77,7 +93,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
     return (
         <React.Fragment>
             <div className={css.listingOuterLayer}>
-            <div className='d-flex justify-content-between  align-items-center'>
+                <div className='d-flex justify-content-between  align-items-center'>
                     <div className={css.toppickstitle}>
                         Top Picks for Kitchen Designs {Citie}
                     </div>
@@ -85,16 +101,16 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                         see all <FaAngleRight  className={css.right_Arrow}/>
                     </button>)} */}
 
-                        { 
-                        (Currentpage === "/designgallery"||Currentpage === "/cities") && (
-                                <Link href={{ pathname: "/modularkitchen" }} className={css.seeallLink}>
-                                    <button className={css.compactBtn}>
-                                        see all <FaAngleRight className={css.right_Arrow} />
-                                    </button>
-                                </Link>)
-                        }
-                    </div>
-                    <div className={css.carousel_design}>
+                    {
+                        (Currentpage === "/designgallery" || Currentpage === "/cities") && (
+                            <Link href={{ pathname: "/modularkitchen" }} className={css.seeallLink}>
+                                <button className={css.compactBtn}>
+                                    see all <FaAngleRight className={css.right_Arrow} />
+                                </button>
+                            </Link>)
+                    }
+                </div>
+                <div className={css.carousel_design}>
                     <Carousel
 
                         responsive={responsive}
@@ -116,6 +132,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                             <div
                                 key={`${datas.subname}_${index}_${index}`}
                                 className={css.customdivision}
+                                onClick={() => handlePopup(datas)}
                             >
                                 <div className={css.customdivisionchild}>
                                     <div className={css.customimage}>
@@ -129,13 +146,13 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                                             <div className={css.customname}>
                                                 {datas.name}
                                                 <div className={css.image_bottom_icons}>
-                                            <span className={css.wishlistholder}>
-                                            <BsHeart/>
-                                            </span>
-                                            <span className={css.shareholder}>
-                                            <FaRegShareFromSquare/>
-                                            </span>
-                                            </div>
+                                                    <span className={css.wishlistholder}>
+                                                        <BsHeart />
+                                                    </span>
+                                                    <span className={css.shareholder}>
+                                                        <FaRegShareFromSquare />
+                                                    </span>
+                                                </div>
                                             </div>
                                             <label className={css.customtext}>
                                                 {datas.size}
@@ -146,8 +163,15 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                             </div>
                         ))}
                     </Carousel>
-                    </div>
+                    <Modal show={show} onHide={handleClose} className={css.Modal_Popup}>
+                        <Modal.Header >
+                            <AiFillCloseCircle onClick={handleClose} />
+                        </Modal.Header>
+                        <DetailsOfimg data={toppicks} selectedItem={selectedItem} />
+
+                    </Modal>
                 </div>
+            </div>
         </React.Fragment>
     )
 
