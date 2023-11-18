@@ -3,10 +3,12 @@ import css from "./DesignGallery.module.scss";
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
 import Link from 'next/link'
+import { useRouter } from "next/router";
 
 const DesignGallery: React.FC = () => {
   let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
   const [gallerydesign, setgallerydesign] = React.useState([]);
+  const router = useRouter();
 
   React.useEffect(() => {
     let api = simpleCallInitAPI(`${assetpath}/assets/gallery.json`);
@@ -18,6 +20,31 @@ const DesignGallery: React.FC = () => {
       });
 
   }, [assetpath]);
+
+  const handleRoutes = (galleryData) => {
+    switch (galleryData) {
+      case 'Kitchen':
+        router.push('/modularkitchen')
+        break;
+      case 'Wardrobe':
+        router.push('/wardrobe')
+        break;
+      case 'Bed Room':
+        router.push('/bedroom')
+        break;
+      case 'Living Room':
+        router.push('/livingroom')
+        break;
+      case 'Bath Room':
+        router.push('/bathroom')
+        break;
+      case 'Home Office':
+        router.push('/homeoffice')
+        break;
+      default:
+        break;
+    }
+  }
 
   return (
     <React.Fragment>
@@ -39,6 +66,7 @@ const DesignGallery: React.FC = () => {
                 <div className={css.gallerytitle}>{datas.title}</div>
                 <div className={css.customimage}>
                   <img
+                    onClick={() => handleRoutes(datas.name)}
                     key={`${datas.name}_${index}`}
                     loading="lazy"
                     src={datas.image}

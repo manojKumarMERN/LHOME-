@@ -29,7 +29,6 @@ const CityToggle = React.forwardRef<HTMLElement, CitiesProps>(({ children:any, o
 const OtherDropDownMenu = (options:any,positionmove:string) => {
     const router = useRouter();
     const handleNav =(e)=>{
-        console.log(e.target.innerText);
         e.target.innerText==='Customer stories'?router.push('/customstories'):null;
     }
 

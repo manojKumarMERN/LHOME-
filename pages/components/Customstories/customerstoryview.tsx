@@ -6,7 +6,6 @@ import Recentprojectnav from "../Tabsimage/recentprojectnav";
 import StarRatings from 'react-star-ratings';
 import { FaStar } from 'react-icons/fa';
 const CustomerStoryView = ({ data }: any) => {
-    console.log(data, "asdfghjkjhgfds")
     return (
         <React.Fragment>
 

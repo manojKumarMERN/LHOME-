@@ -67,9 +67,10 @@ display: block;
 
  .largeMenuButtons {
     display: flex;
-    //  height:20px;
-    //  position:absolute;
     width: 100%;
+    @media (min-width:1550px) {
+      padding-left: 3%;
+    }
  }
 
 
@@ -211,6 +212,11 @@ display: block;
     padding-bottom: 10%;
     height: 100px;
     display: flex;
+    @media (min-width:1550px) {
+      padding-bottom: 5%;
+      padding-top: 5%;
+      height: unset;
+    }
  }
 
  .lhomelogobackground {

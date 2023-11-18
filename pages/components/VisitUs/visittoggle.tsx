@@ -19,7 +19,6 @@ const VisitToggle = () => {
     })
 
   }, [assetpath])
-// console.log(visitToggle?.coimbatore,"asdfghjklkjhgfdsa")
 
   return (
     <>

@@ -12,22 +12,18 @@ function Zigzag() {
         let api = simpleCallInitAPI(`${assetpath}/assets/zigzag.json`);
     
         api.then((data) => {
-            // console.log("Received data:", data);
             setAnimationGif(data?.data?.zigzag || []);
         });
     }, [assetpath]);
 
     const handleMouseEnter = () => {
-        // console.log("Mouse entered");
         setIsAnimationPaused(true);
     };
 
     const handleMouseLeave = () => {
-        // console.log("Mouse left");
         setIsAnimationPaused(false);
     };
-    // console.log(animationGif);
-    // console.log("isAnimationPaused:", isAnimationPaused);
+
 
     return (
         <Fragment>

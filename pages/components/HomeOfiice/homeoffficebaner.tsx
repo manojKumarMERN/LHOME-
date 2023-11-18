@@ -22,8 +22,6 @@ const HomeOfficeBaner:React.FC=()=>{
         });
     }, [assetpath]);
 
-    console.log(homeOfficeBaner);
-
     return(
         <>
         

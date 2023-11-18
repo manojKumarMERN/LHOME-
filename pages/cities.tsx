@@ -20,7 +20,7 @@ const Cities: React.FC = () => {
 
     const router = useRouter()
     const { City } = router.query
-    console.log(City)
+    // console.log(City)
 
     const living = React.useRef(null);
     const [screenwidth, setWidth] = React.useState(window.innerWidth);
@@ -77,8 +77,6 @@ const Cities: React.FC = () => {
 
     const pageheaderMonitor = () => {
         if (page.current.scrollTop > prevPosition) {
-            console.log("scrollTop value", page.current.scrollTop);
-            console.log("postionValue ", prevPosition);
             setPrev(page.current.scrollTop)
             setHidden(true)
         } else {

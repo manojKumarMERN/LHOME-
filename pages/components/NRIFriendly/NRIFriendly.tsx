@@ -12,7 +12,6 @@ const NRIFriendly: React.FC = () => {
       api.then((data: any) => {
          setRefergirlImage(`${assetpath}${data.data.settings.refergirlImage}`);
          setRefergirlAlt(`${assetpath}${data.data.settings.refergirlAlt}`);
-         console.log(data)
       })
          .catch(error => {
             console.log(error);

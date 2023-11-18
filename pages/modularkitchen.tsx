@@ -95,8 +95,6 @@ const ModularKitchenPage: React.FC = () => {
   const [activePage, setActivePage] = React.useState<string | null>('unset');
   const handleClick = (pageName: string) => {
     setActivePage(pageName);
-    console.log("12345", pageName)
-
   };
 
 
@@ -106,8 +104,6 @@ const ModularKitchenPage: React.FC = () => {
 
   const pageheaderMonitor = () => {
     if (page.current.scrollTop > prevPosition) {
-      console.log("scrollTop value", page.current.scrollTop);
-      console.log("postionValue ", prevPosition);
       setPrev(page.current.scrollTop)
       setHidden(true)
     } else {

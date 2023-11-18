@@ -73,8 +73,6 @@ const ReferAndEarn: React.FC = () => {
 
     const pageheaderMonitor = () => {
         if (page.current.scrollTop > prevPosition) {
-            console.log("scrollTop value", page.current.scrollTop);
-            console.log("postionValue ", prevPosition);
             setPrev(page.current.scrollTop)
             setHidden(true)
         } else {
