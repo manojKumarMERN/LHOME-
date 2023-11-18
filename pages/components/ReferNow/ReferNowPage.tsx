@@ -3,6 +3,7 @@ import * as React from "react";
 import css from './ReferNowPage.module.scss';
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
+import Link from "next/link";
 
 const ReferNowPage: React.FC = () => {
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
@@ -26,9 +27,9 @@ const ReferNowPage: React.FC = () => {
             <div>
                <div className={css.refermanmaintext}>Love our service? Recommend us!</div>
                <div className={css.refermansubtext}>Earn ₹ 10,000 for every friend who tries LHome.</div>
-               <div className={css.refermanbuttonholder}>
+               <Link href={{pathname:'/referandearn'}}><div className={css.refermanbuttonholder}>
                   <button>Refer Now</button>
-               </div>
+               </div></Link>
                </div> 
             </div>
         </div>

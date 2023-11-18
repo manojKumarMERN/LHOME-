@@ -115,7 +115,7 @@ const Autoplayservice: React.FC<properties> = ({ header }) => {
             Client.map((data, index) => {
               return (
                 <>
-                  <div key={index}>
+                  <div key={index} onClick={() => handleReadMore(data)}>
                     <div className={`${css.autoplayCS} ${index === centerImageIndex ? css.centeredImage : ""}`} >
                       <div>
                         <div className={css.autoplayImgContent}>

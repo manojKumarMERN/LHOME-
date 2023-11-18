@@ -68,7 +68,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data }) => {
                                             :
                                             <div className={css.customdivisionchild}>
                                                 <div className={css.customGrey + " grid grid-rows-3"}>
-                                                <div className='flex flex-column items-center'>
+                                                <div className='flex flex-column gap-2 items-center'>
                                                     <div className={css.custom_icons}>
                                                         <img src={item.icon} alt="icon" className={css.icon_image} />
                                                     </div>
