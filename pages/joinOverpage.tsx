@@ -91,13 +91,11 @@ const JoinOverpage: React.FC = () => {
     const [activePage, setActivePage] = React.useState<string | null>('U-Shaped');
     const handleClick = (pageName: string) => {
         setActivePage(pageName);
-        console.log("12345", pageName)
     };
 
     const router = useRouter();
     const { jobDetails } = router.query
     const hideDiv = router.query.hideDiv === 'true';
-    console.log(jobDetails);
     const [details, setDetails] = React.useState<JobDetails[]>([]);
     const headingFromQuery = router.query.header as string;
     const locationgFromQuery = router.query.joblocation as string;
@@ -117,7 +115,6 @@ const JoinOverpage: React.FC = () => {
         }
     }, [jobDetails]);
 
-    console.log(details)
     return (
         <React.Fragment>
             <div className="animate-fade-in" >

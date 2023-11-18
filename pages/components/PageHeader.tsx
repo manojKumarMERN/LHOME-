@@ -1,7 +1,5 @@
-import { useRouter } from 'next/router';
 import * as React from "react";
 import css from '../../styles/PageHeader.module.scss';
-import * as Router from "react-router-dom";
 import DropDownMenu from './DropDownMenu';
 import CitiesDropDownMenu from './CitiesDropDown';
 import { simpleCallInitAPI } from '../../services/ApicallInit'
@@ -11,10 +9,6 @@ import { BsHeadset } from "react-icons/bs";
 import Modal from 'react-bootstrap/Modal';
 import LoginRegisterPage from '../loginRegisterPage';
 import { AiFillCloseCircle } from 'react-icons/ai'
-import { HiOutlineChatAlt2 } from 'react-icons/hi';
-import { BsChevronDown } from 'react-icons/bs';
-import { BsThreeDotsVertical } from 'react-icons/bs'
-import Contentchatbox from '../Contentchatbox';
 
 interface pageheaderproperties {
   screenwidth: number;
@@ -57,7 +51,6 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
     function getsettings() {
       let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
       api.then((data: any) => {
-        console.log(data.data.settings);
         menuoptions = data.data.settings.menuoptions
         smallmenuoptions = data.data.settings.smallmenuoptions;
         cities = data.data.settings.cities;
@@ -65,7 +58,6 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
         menuGaps = data.data.settings.menuGaps;
         smallmenuGaps = data.data.settings.smallmenuGaps;
         Lhome = data.data.settings.logo;
-        console.log(Lhome);
         let totalwidth = 0;
         if (screenwidth < 500) {
           totalwidth = screenwidth - (document.querySelector("#logo") as HTMLDivElement).offsetWidth - 135;
@@ -119,7 +111,6 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
     setChatBoxShow(true);
   }
   const handleChildData = (data) => {
-    console.log('Data received from child:', data);
     setReceivedData(data);
   };
 

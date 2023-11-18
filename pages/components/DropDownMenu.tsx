@@ -38,7 +38,6 @@ const DropDownMenu = (options: any) => {
   const handleNav = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log(e.target.innerText);
     switch (e.target.innerText) {
       case 'Home':
         router.push('/');

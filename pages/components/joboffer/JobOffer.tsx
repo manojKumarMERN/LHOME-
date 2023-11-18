@@ -28,8 +28,6 @@ interface JobOfferProps {
 }
 
 const JobOffer: React.FC<JobOfferProps> = ({ value }) => {
-  console.log(value);
-
   const [jobOffers, setJobOffers] = React.useState<JobDetails[]>([]);
   const [applyBtn, setApplyBtn] = React.useState(false);
   const [heading,setHeading]=React.useState("");
@@ -48,8 +46,6 @@ const JobOffer: React.FC<JobOfferProps> = ({ value }) => {
         setLocating(locationBrand); 
     }
 }, [value]);
-
-  console.log(jobOffers)
 
   const router = useRouter()
 

@@ -29,8 +29,6 @@ const Autoplayservice: React.FC<properties> = ({ header }) => {
     let api = simpleCallInitAPI(`${assetpath}/assets/reviewStory.json`);
     api.then((data: any) => {
       let sectionOne = [];
-      console.log(data);
-
       let stories = data.data[header];
 
       stories.map((connects: any) => {

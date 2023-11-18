@@ -106,13 +106,11 @@ const JoinOfferPage: React.FC = () => {
   const [activePage, setActivePage] = React.useState<string | null>('U-Shaped');
   const handleClick = (pageName: string) => {
     setActivePage(pageName);
-    console.log("12345", pageName)
 
   };
 
   const router = useRouter();
   const { jobDetails } = router.query
-  console.log(jobDetails);
   const [details, setDetails] = React.useState<JobDetails[]>([]);
 
 
@@ -130,7 +128,6 @@ const JoinOfferPage: React.FC = () => {
     }
   }, [jobDetails]);
 
-  console.log(details)
   return (
     <React.Fragment>
       <div className="animate-fade-in">

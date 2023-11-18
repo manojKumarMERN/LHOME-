@@ -5,7 +5,6 @@ import VisitCommon from "./visituscommon";
 
 
 const VisitUS = ({data}: any) => {
-    console.log(data,"1234567");
     return (
         <React.Fragment>
             <div className={css.visitus_coimbatore}>
@@ -33,12 +32,12 @@ const VisitUS = ({data}: any) => {
                     <div className={css.visitus_arrow2}>
                     <img src={data?.arrow2} alt="" width={500} height={500}  className={css.visitus_arrow2_image} />
                 </div>
-                    <div className={"row " + css.visitus_main_component2}>
-                        <div className={"col-md-6 " + css.visitus_main_image2}>
+                    <div className={"row mt-5 " }>
+                        <div className={"col-md-6 " } style={{paddingLeft:'5%'}}>
                         <p className={css.visitus_main_content2_header}>{data?.header2}</p>
                             <span className={css.visitus_content2}>{data?.content2}</span>
                         </div>
-                        <div className={"col-md-6 " + css.visitus_main_content2}>
+                        <div className={"col-md-6 " }>
                            
                             <img src={data?.image} alt="" width={500} height={500} className={css.visitus_office2_image} />
                         

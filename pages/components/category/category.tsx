@@ -4,9 +4,10 @@ import css from './category.module.scss';
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
 import CircleArrow from "../../../public/assets/SVGIcons/CircleArrow";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Category: React.FC = () => {
+    const router = useRouter();
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;    
     const [listingCategories, setListingCategories] = React.useState([]);
     React.useEffect(() => {
@@ -28,6 +29,23 @@ const Category: React.FC = () => {
     });
 }, [assetpath]);
 
+const handleRoutes = (categoryData)=>{
+    switch (categoryData) {
+        case 'Warddrobe':
+            router.push('/wardrobe')
+            break;
+        case 'Bed Room':
+            router.push('/bedroom')
+            break;
+        case 'Modular Kitchen':
+            router.push('/modularkitchen')
+            break;
+        default:
+            break;
+    }
+    
+}
+
    return (
       <React.Fragment>
          <div className={css.listingcategory}>
@@ -36,7 +54,7 @@ const Category: React.FC = () => {
         <div className={css.listingfilmrole}>
             {
                 listingCategories.map((cats: any, index: number) => 
-                <div key={`${cats.category}_${index}_${index}`} className={css.division}>
+                <div key={`${cats.category}_${index}_${index}`} className={css.division + ` cursor-pointer`} onClick={()=>handleRoutes(cats.category)}>
                     <div className={"pe-4 "+css.divisionchild}>
                         <div className={css.categoryimage}>
                             <img key={`${cats.category}_${index}`} loading="lazy" src={cats.image} alt={cats.category} />

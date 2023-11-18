@@ -58,32 +58,6 @@ export default function Recentprojectnav() {
         }
     })
 
-
-
-
-    // const [currentIndexArray, setCurrentIndexArray] = useState<number[]>(Array.from({ length: Object.keys(navbanner).length }, () => 0));
-    // const itemsPerPage = 1;
-
-    // const handleLeftClick = (tabIndex: number) => {
-    //     console.log(1);
-    //     console.log(currentIndexArray[tabIndex]);
-    //     if (currentIndexArray[tabIndex] > 0) {
-    //         console.log(currentIndexArray[tabIndex]);
-    //         const newArray = [...currentIndexArray];
-    //         newArray[tabIndex] = currentIndexArray[tabIndex] - 1;
-    //         setCurrentIndexArray(newArray);
-    //     }
-    // };
-
-    // const handleRightClick = (tabIndex: number) => {
-    //     console.log(2);
-    //     console.log(currentIndexArray[tabIndex]);
-    //     if (currentIndexArray[tabIndex] < Object.values(navbanner).length / itemsPerPage - 1) {
-    //         const newArray = [...currentIndexArray];
-    //         newArray[tabIndex] = currentIndexArray[tabIndex] + 1;
-    //         setCurrentIndexArray(newArray);
-    //     }
-    // };
     const [currentTabIndex, setCurrentTabIndex] = useState<number>(0);
     
   const handleLeftClick = () => {

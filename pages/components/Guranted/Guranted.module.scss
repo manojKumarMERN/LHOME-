@@ -83,10 +83,11 @@
 
 @media only screen and (min-width:320px) and (max-width: 724px){
    .guaranteedBody {
-       display: block;
-       padding-top: 3%;
-       width: 50%;
-       margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
+    align-items: center;
+    margin: 0 auto;
     }
 
     .guaranteedRjpamImg {
@@ -97,7 +98,6 @@
     }
     .guaranteedRjpamText, .guaranteedCbeText {
        margin:3% 0%;
-       height: 30vh;
     }
     .verticaldivider {
       height: 1px !important;

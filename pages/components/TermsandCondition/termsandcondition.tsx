@@ -11,7 +11,7 @@ const TermsAndCondition = () => {
             let TermsandCondition = []
             data?.data?.termsandcondition?.forEach((datas: any) => {
                 let term: any = {}
-                term.text = `${assetpath}${datas.text}`;
+                term.text = `${datas.text}`;
 
                 TermsandCondition.push(term)
 
@@ -30,7 +30,7 @@ const TermsAndCondition = () => {
                 </div>
                 {termsAndCondition?.map((datas: any, index: number) => (
                     <div className={css.termcon_body} key={index}>
-                        <div  className={css.termcon_content} key={index}>{index + 1}.{datas.text}</div>
+                        <div className={css.termcon_content} key={index}>{index + 1}.{datas.text}</div>
                     </div>
 
 

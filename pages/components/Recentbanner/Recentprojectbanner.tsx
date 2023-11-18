@@ -19,18 +19,14 @@ const RecentProject: React.FC = () => {
             setToolimage(data.data.settings.recentproject);
         });
     }, [assetpath]);
-    console.log(Toolimage);
     const [isAnimationPaused, setIsAnimationPaused] = React.useState(false);
     const handleMouseEnter = () => {
-        console.log("Mouse entered");
         setIsAnimationPaused(false);
     };
 
     const handleMouseLeave = () => {
-        console.log("Mouse left");
         setIsAnimationPaused(true);
     };
-    console.log("isAnimationPaused:", isAnimationPaused);
     return (
         <>
             <div>

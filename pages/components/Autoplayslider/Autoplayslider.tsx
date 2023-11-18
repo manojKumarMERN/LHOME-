@@ -107,7 +107,7 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
 
     const currentSlide = carouselRef.current.state.currentSlide;
 
-    console.log("Current Slide:", currentSlide);
+    // console.log("Current Slide:", currentSlide);
 
     let direction;
     if (currentSlide === 0 && previousSlide === sliderImageUrl.length - 1) {
@@ -118,15 +118,15 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
       direction = -1;  
     }
 
-    console.log("Previous Slide:", previousSlide);
-    console.log("Direction:", direction);
+    // console.log("Previous Slide:", previousSlide);
+    // console.log("Direction:", direction);
 
     let offset = direction >= 0 ? 1 : -2; 
-    console.log("Offset:", offset);
+    // console.log("Offset:", offset);
 
     let centerIndex = (currentSlide + offset + sliderImageUrl.length) % sliderImageUrl.length;
 
-    console.log("Calculated Center Index:", centerIndex);
+    // console.log("Calculated Center Index:", centerIndex);
 
     setActiveSlide(currentSlide);
     setCenterImageIndex(centerIndex);

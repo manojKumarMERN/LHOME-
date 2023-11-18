@@ -39,7 +39,7 @@ const CitiesDropDownMenu = (options: any, positionmove: string) => {
 
   const handleNav = (city: string) => {
     router.push({ pathname: "/cities", query: { City: city } });
-    console.log(city)
+    // console.log(city)
   }
 
   return (
