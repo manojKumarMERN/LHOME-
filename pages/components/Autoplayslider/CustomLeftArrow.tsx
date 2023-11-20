@@ -22,7 +22,6 @@ const CustomLeftArrow: FC<CustomLeftArrowProps> = ({ onClick, carouselRef }) => 
     <button 
       onClick={handleBackwardClick}
       className={`react-multiple-carousel__arrow ${css2.customLArrowStyle}`}
-      style={{ marginTop: "360px" }}
     >
       <i className="bi-arrow-left-short"></i>
     </button>

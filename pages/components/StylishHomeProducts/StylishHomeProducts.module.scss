@@ -38,6 +38,9 @@
   position: absolute;
   right: 5%;
   margin-bottom: 5%;
+  @media (max-width:500px){
+    right: 2.5%;
+  } 
 }
 .carousel_design div[dir="ltr"]{
   position: unset !important;
@@ -47,43 +50,7 @@
 
 }
 
-// @media (max-width:992px) {
-//   .leftBtn {
-//     margin-left: -2%;
-//   }
 
-//   .rightBtn {
-//     margin-left: 96%;
-//   }
-// }
-
-// @media (max-width:767px) {
-//   .rightBtn {
-//     margin-left: 94%;
-//   }
-// }
-
-// @media (max-width:500px) {
-//   .rightBtn {
-//     margin-left: 92%;
-//   }
-// }
-
-// @media (min-width:1500px) and (max-width:1920px) {
-//   .leftBtn {
-//     margin-left: 2%;
-//   }
-
-//   .rightBtn {
-//     margin-left: 98%;
-//   }
-// }
-
-// @media (min-width:1920) {
-//   .leftBtn {
-//     margin-right: -1%;
-//   }
-// }
 
 .trendingtitle {
   font-family: "Montserrat";
@@ -147,6 +114,9 @@
   margin-left: 5%;
   margin-top: 3%;
   display: flex;
+  @media (max-width:700px){
+    font-size: 0.6rem;
+  }
 }
 .right_Arrow{
   margin-top: 2px;
@@ -170,6 +140,9 @@ white-space: nowrap;
 .wishlistholder {
   font-size: 1.8vw;
   padding-left: 50%;
+  @media (max-width: 700px){
+    font-size: 0.9rem;
+  }
 }
 
 .wishlist {
@@ -180,6 +153,9 @@ white-space: nowrap;
 .shareholder {
   font-size: 1.8vw;
   padding-left: 25%;
+  @media (max-width: 700px){
+    font-size: 0.9rem;
+  }
 }
 
 .share {
@@ -209,11 +185,6 @@ white-space: nowrap;
   padding-bottom: 40px;
 }
 
-// @media only screen and (min-width:1500px) and (max-width:1920px) {
-//   .customdivision {
-//     margin-left: 70px;
-//   }
-// }
 
 .trendingfilmroleClass {
 
@@ -268,6 +239,9 @@ white-space: nowrap;
   width: 100%;
   height: 32vh;
   border-radius: 20px;
+  @media (max-width:622px){
+    height:200px;
+  }
 }
 
 .customimage {
@@ -325,7 +299,7 @@ white-space: nowrap;
   }
 
   .customimage {
-    height: none;
+    height: 250px;
   }
 
   .customdivisionchild {

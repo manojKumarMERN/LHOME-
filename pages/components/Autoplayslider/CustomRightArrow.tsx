@@ -19,7 +19,6 @@ interface CustomRightArrowProps {
       <button 
         onClick={handleForwardClick}
         className={`react-multiple-carousel__arrow ${css2.customRArrowStyle}`}
-        style={{ marginTop: "360px" }}
       >
         <i className="bi-arrow-right-short"></i>
       </button>

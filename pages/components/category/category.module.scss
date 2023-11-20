@@ -117,7 +117,7 @@
   }
 }
 
-@media screen and (max-width:600px){
+@media screen and  (min-width:501px) and (max-width:600px){
   .listingfilmrole {
     display: flex;
     flex-direction: column;
@@ -134,4 +134,20 @@
     text-wrap: wrap;
 }
 }
-
+@media screen and  (max-width:500px){
+  .listingfilmrole {
+    display: flex;
+    flex-direction: column;
+  }
+  .divisionchild{
+    margin: 5%;
+    height: 100px;
+  } 
+  .division{
+    width: 100%;
+  }
+  .categoryname{
+    font-size:16px;
+    text-wrap: wrap;
+}
+}
