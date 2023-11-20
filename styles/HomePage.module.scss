@@ -392,7 +392,7 @@
 
 
 .whythesedetailssubholder{
-   height: 200px;
+   // height: 200px;
    width: 100%;
    display: flex;
    flex-wrap: wrap;
@@ -427,6 +427,9 @@
    margin-top: unset;
    .verticaldivider{
       display:block;
+   }
+   @media (min-width:500px) and (max-width:768px) {
+      margin-top: 15%;
    }
 }
 
@@ -1470,12 +1473,9 @@
    .division3{
       width: 100%;
       height: 150px;
-      // padding-left: 25%;
-      // padding-right: 25%;
       .verticaldivider{
          display:none;
       }     
-      margin-top:unset; 
    }
 
    .whythesedetailssubholder{
@@ -1500,20 +1500,12 @@
    .calendaricon{
       width:25%;
    }
-
-   .happycustomerhomeicon{
-      width:25%;
-   }
-
    .experticon{
       width:25%;
    }
 
-   .warrantyicon{
-      width:25%;
-   }
    .leftdetailsholder{
-      margin-top:-40px;
+      margin-top:-20px;
    }
 
    .rightdetailsholder{
@@ -1530,7 +1522,7 @@
 
    .division2{
       .rightmoveup{
-         margin-top:30px;
+         margin-top:10px;
       }
    }
    
@@ -1590,23 +1582,23 @@
 
    
    .calendaricon img{
-      width:20px;
-      height:20px;
+      width:25px;
+      height:25px;
    }
 
    .happycustomerhomeicon img{
-      width:20px;
-      height:20px;
+      width:25px;
+      height:25px;
    }
 
    .experticon img{
-      width:20px;
-      height:20px;
+      width:25px;
+      height:25px;
    }
 
    .warrantyicon img{
-      width:20px;
-      height:20px;
+      width:25px;
+      height:25px;
    }
 
    .superiorparent{
@@ -1722,7 +1714,7 @@
       .verticaldivider{
          display:none;
       }
-      margin-top:unset;
+      margin-top:5%;
    }
 
    // .rightdetailsholder{
@@ -1781,6 +1773,18 @@
 
 }
 
+@media (min-width:500px) and (max-width:622px) {
+   .threedparent , .instantparent{
+      margin-top: 20%;
+   }
+   .calendardetailsparent , .expertdetailsparent{
+      margin-top: 25%;
+   }
+   .happycustomerhomedetailsparent , .warrantydetailsparent{
+      margin-top: 10%;
+   }
+}
+
 
 @media only screen and (min-width:500px) and (max-width:768px){
    .leftdetailsholder{
@@ -1798,17 +1802,9 @@
 
    .calendaricon{
       width:25%;
+      margin-top: 60px;
    }
-
-   .happycustomerhomeicon{
-      width:25%;
-   }
-
    .experticon{
-      width:25%;
-   }
-
-   .warrantyicon{
       width:25%;
    }
 
@@ -1820,23 +1816,23 @@
    }
 
    .calendaricon img{
-      width:15px;
-      height:15px;
+      width:25px;
+      height:25px;
    }  
 
    .happycustomerhomeicon img{
-      width:15px;
-      height:15px;
+      width:25px;
+      height:25px;
    }     
 
    .experticon img{
-      width:15px;
-      height:15px;
+      width:25px;
+      height:25px;
    }        
    
    .warrantyicon img{
-      width:15px;
-      height:15px;
+      width:25px;
+      height:25px;
       // background:rgba(50,92,169,.2); //Changed Style
    }     
 
@@ -1848,7 +1844,8 @@
    }
    
    .happycustomerhomeicon{
-      margin-top:40px;
+      margin-top:25px;
+      width: 25%;
    }
 
    .experttext{
@@ -1871,7 +1868,8 @@
    }
 
    .warrantyicon{
-      margin-top:40px;
+      margin-top:25px;
+      width: 25%;
    }
 
    .leftdetailsholder{
@@ -1883,7 +1881,7 @@
    }
 
    .experticon{
-      margin-top:80px;
+      margin-top:60px;
    }
 
    .calendartext{
@@ -1906,16 +1904,16 @@
    //    margin-top:14px;
    // }
 
-   .rightmoveup{
-      margin-top:-38px;
-   }
+   // .rightmoveup{
+   //    margin-top:-38px;
+   // }
 
    .contacttitle{
-      margin-top:40px;
+      margin-top:25px;
    }
 
    .expertisetitle{
-      margin-top:40px;
+      margin-top:25px;
    }
 
    .happycustomerhomedetailsparent{
@@ -1926,22 +1924,19 @@
       margin-top:0px;
    }
 
-   .threedparent{
-      margin-top:40px;
-   }
+   // .threedparent{
+   //    margin-top:40px;
+   // }
 
-   .instantparent{
-      margin-top:38px;
-   }
+   // .instantparent{
+   //    margin-top:38px;
+   // }
 
    .instanttext{
       margin-top:-16px;
    }
 
-   .instanttitle{
-      font-size: 10px;
-   }
-
+   
    .deliveryparent{
       margin-top:50px;
    }
@@ -2038,7 +2033,7 @@
    }
 
    .whythesedetailsholder{
-      height: 800px;
+      height: 700px;
    }
    
    .calendartext{
@@ -2096,7 +2091,7 @@
 
    .division2{
       .rightdetailsholder{
-         margin-top: 10px;
+         margin-top: 20px;
       }
    }
 
@@ -2113,17 +2108,9 @@
       height:30px
    }
 
-   .calendaricon{
-      margin-top:70px;
-   }
-
    .experticon img{
       width:30px;
       height:30px
-   }
-
-   .experticon{
-      margin-top:70px;
    }
 
    .happycustomerhomeicon img{
@@ -2131,17 +2118,9 @@
       height:30px
    }
 
-   .happycustomerhomeicon{
-      margin-top:35px;
-   }
-
    .warrantyicon img{
       width:30px;
       height:30px
-   }
-
-   .warrantyicon{
-      margin-top:35px;
    }
 
    .leftdetailsholder{
@@ -2155,24 +2134,6 @@
       margin-top:0px;
    }
 
-
-
-   .calendaricon{
-      width:25%;
-   }
-
-   .happycustomerhomeicon{
-      width:25%;
-   }
-
-   .experticon{
-      width:25%;
-   }
-
-   .warrantyicon{
-      width:25%;
-   }
-
    .calendartext{
       width:100%;
       font-size:13px;
@@ -2181,23 +2142,23 @@
    }
 
    .calendaricon img{
-      width:15px;
-      height:15px;
+      width:25px;
+      height:25px;
    }  
 
    .happycustomerhomeicon img{
-      width:15px;
-      height:15px;
+      width:25px;
+      height:25px;
    }     
 
    .experticon img{
-      width:15px;
-      height:15px;
+      width:25px;
+      height:25px;
    }        
    
    .warrantyicon img{
-      width:15px;
-      height:15px;
+      width:25px;
+      height:25px;
       // background:rgba(50,92,169,.2); //Changed Style
    }     
 
@@ -2208,9 +2169,6 @@
       margin-left:unset;
    }
    
-   .happycustomerhomeicon{
-      margin-top:40px;
-   }
 
    .experttext{
       width:100%;
@@ -2226,25 +2184,12 @@
       margin-left:unset;
    }
 
-
-   .experticon{
-      margin-top:40px;
-   }
-
-   .warrantyicon{
-      margin-top:40px;
-   }
-
    .leftdetailsholder{
       width:100%;
    }
 
    .rightdetailsholder{
       width:100%;
-   }
-
-   .experticon{
-      margin-top:80px;
    }
 
    .calendartext{
@@ -2262,11 +2207,6 @@
    .warrantytext{
       padding: 10px
    }
-
-   .leftmovedown{
-      margin-top:14px;
-   }
-
    .rightmoveup{
       margin-top:-38px;
    }
@@ -2351,6 +2291,7 @@
 
    .calendaricon{
       width:50%;
+      margin-top: 50px;
    }
 
    .calendaricon img{
@@ -2360,6 +2301,7 @@
 
    .experticon{
       width:50%;
+      margin-top: 50px;
    }
 
    .experticon img{
@@ -2369,6 +2311,7 @@
 
    .happycustomerhomeicon{
       width:50%;
+      margin-top: 25px;
    }
 
    .happycustomerhomeicon img{
@@ -2378,6 +2321,7 @@
 
    .warrantyicon{
       width:50%;
+      margin-top: 25px;
    }
 
    .warrantyicon img{
@@ -2391,10 +2335,6 @@
 
    .calendartext{
       margin-right:5px;
-   }
-
-   .calendaricon{
-      margin-top:80px;
    }
 
    .happycustomerhometext{
@@ -2415,7 +2355,7 @@
 @media only screen and (max-width: 360px){
    .calendaricon{
       width:50%;
-      margin-top:90px;
+      margin-top:50px;
    }
    .calendaricon img{
       width:30px;
@@ -2424,7 +2364,7 @@
 
    .experticon{
       width:50%;
-      margin-top:90px;
+      margin-top:50px;
    }
 
    .experticon img{
@@ -2434,6 +2374,7 @@
 
    .happycustomerhomeicon{
       width:50%;
+      margin-top: 25px;
    }
 
    .happycustomerhomeicon img{
@@ -2447,6 +2388,7 @@
 
    .warrantyicon{
       width:50%;
+      margin-top: 25px;
    }
 
    .warrantyicon img{
@@ -2844,22 +2786,8 @@
    width:1500px;
    overflow-y: scroll;
  }
- //Changed Styles
- @media only screen and (min-width:470px) and (max-width: 775px){
-   .calendaricon img{
-      width:15px;
-      height:15px;
-      margin-top: 30px;
-   }
- }
- @media only screen and (min-width:450px) and (max-width: 500px){
-   .calendaricon img{
-      width:30px;
-      height:30px;
-      margin-top:unset;
-   
-   }
- }
+
+
  @media only screen and (min-width:300px) and (max-width: 500px){
    .calendaricon img{
       width:30px;
@@ -2868,38 +2796,7 @@
    
    }
  }
- @media only screen and (min-width:300px) and (max-width: 500px){
-   .whythesedetailsholder{
-      padding-left: 5%;
-      padding-right: 5%;
-      padding-top: 5%;
-      position: relative;
-      // height:600px;
-      display: flex;
-      flex-wrap: wrap;
-      padding-bottom: 15%;
-   }
- }
- //changed Style
- @media only screen and (min-width:300px) and (max-width: 400px){
-   .title1{
-      margin-top: 60px;
-   }
- }
- @media only screen and (min-width:300px) and (max-width: 400px){
-   .title:first-child{
-      // margin-top: 80px;
-      margin-bottom: -5%;
-      margin-top:70px; //Changed Style
-   }
-   .division1{
-      width: 100%;
-      
-      // margin-top:150px; // Changed Style
- }
 
-
- }
  @media only screen and (min-width:250px) and (max-width: 550px){
    .deliverytext{
       width:100%;

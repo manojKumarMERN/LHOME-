@@ -7,12 +7,15 @@ import VisitBaner from "./components/VisitUs/visitbaner";
 import Guranted from "./components/Guranted/Guranted";
 import Footer from "./components/Footer/Footer";
 import Customsupport from "./components/Customersupport/Customersupport";
+import { useRouter } from "next/router";
 
 
 
 
 const Customersupportpage = () => {
     const living = React.useRef(null);
+    const router = useRouter();
+    const {tab } = router.query;    
     const [screenwidth, setWidth] = React.useState(window.innerWidth);
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     let hgtt = 0;
@@ -93,7 +96,7 @@ const Customersupportpage = () => {
 
                     <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
                         <div className={css.supportCom}>
-                            <Customsupport />
+                            <Customsupport prop={tab? tab: 0}/>
                         </div>
                     </div>
                 </div>

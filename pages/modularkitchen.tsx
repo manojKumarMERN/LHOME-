@@ -95,7 +95,7 @@ const ModularKitchenPage: React.FC = () => {
   const [activePage, setActivePage] = React.useState<string | null>('unset');
   const handleClick = (pageName: string) => {
     setActivePage(pageName);
-  };
+  };  
 
 
   const page = React.useRef(null);
@@ -126,7 +126,7 @@ const ModularKitchenPage: React.FC = () => {
 
             <div className={css.bgclr}>
               <div className={css.filter_home}>
-                <div className="pt-4">
+                <div className="sm:pt-4">
                   <span className={css.filter_link_span1}><Link href={{ pathname: "/" }} className={css.kitchen_filter_link}>home</Link></span>
                   <span className={css.filter_slash}>/</span>
                   <span className={css.filter_link_span2}><Link href={{ pathname: "/modularkitchen" }} className={css.kitchen_filter_link}>modular kitchen</Link></span>
@@ -151,7 +151,7 @@ const ModularKitchenPage: React.FC = () => {
                 >
                   U-Shaped
                 </p>
-                <span className={css.shaped_slash}>|</span>
+                <span className={`${css.shaped_slash} hidden sm:block`}>|</span>
                 <p
                   className={`${css.shape_content} ${activePage === 'Straight' ? css.active : ''}`}
                   onClick={() => handleClick('Straight')}
@@ -159,14 +159,14 @@ const ModularKitchenPage: React.FC = () => {
                   Straight
                 </p>
 
-                <span className={css.shaped_slash}>|</span>
+                <span className={`${css.shaped_slash} hidden sm:block`}>|</span>
                 <p
                   className={`${css.shape_content} ${activePage === 'L-Shaped' ? css.active : ''}`}
                   onClick={() => handleClick('L-Shaped')}
                 >
                   L-Shaped
                 </p>
-                <span className={css.shaped_slash}>|</span>
+                <span className={`${css.shaped_slash} hidden sm:block`}>|</span>
                 <p
                   className={`${css.shape_content} ${activePage === 'Island Kitchen' ? css.active : ''}`}
                   onClick={() => handleClick('Island Kitchen')}

@@ -92,6 +92,9 @@
    line-height: 29px;
    letter-spacing: 0em;
    color: #FFD600;
+   @media (max-width:500px) {
+    font-size: unset;
+   }
  }
  
  .wardrobe_shaped_slash {

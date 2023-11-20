@@ -2,6 +2,7 @@ import * as React from "react";
 import css from './Footer.module.scss';
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
+import Link from "next/link";
 
 const Footer: React.FC = () => {
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
@@ -66,9 +67,9 @@ const Footer: React.FC = () => {
                         <div className={css.footerContentHeader}>Lhome</div>
                         <div className={css.footerContentSubContent}>
                             <div>Team</div>
-                            <div>Join Us</div>
+                            <Link target="_blank" href={{pathname:'/joinuspage'}} className="no-underline text-[#9F9F9F]"><div>Join Us</div></Link>
                             <div>Privacy Policy</div>
-                            <div>Refer and Earn</div>
+                            <Link href={{pathname:'/referandearn'}} className="no-underline text-[#9F9F9F]"><div>Refer and Earn</div></Link>
                             <div>Disclaimer</div>
                         </div>
                     </div>
@@ -76,11 +77,11 @@ const Footer: React.FC = () => {
                     <div className={css.footerContent}>
                         <div className={css.footerContentHeader}>Customer Support</div>
                         <div className={css.footerContentSubContent}>
-                            <div>Raise issue</div>
-                            <div>My issues</div>
-                            <div>Contact us</div>
-                            <div>Get Estimate</div>
-                            <div>FAQs</div>
+                            <Link href={{pathname:'/CustomersupportPage' , query:{tab : 0}} } className="no-underline text-[#9F9F9F]"><div>Raise issue</div></Link>
+                            <Link href={{pathname:'/CustomersupportPage' , query:{tab : 1}} } className="no-underline text-[#9F9F9F]"><div>My issues</div></Link>
+                            <Link href={{pathname:'/CustomersupportPage' , query:{tab : 2}} } className="no-underline text-[#9F9F9F]"><div>Contact us</div></Link>
+                            <Link href={{pathname:'/CustomersupportPage' , query:{tab : 0}} } className="no-underline text-[#9F9F9F]"><div>Get Estimate</div></Link>
+                            <Link href={{pathname:'/CustomersupportPage' , query:{tab : 3}} } className="no-underline text-[#9F9F9F]"><div>FAQs</div></Link>
                         </div>
                     </div>
 
