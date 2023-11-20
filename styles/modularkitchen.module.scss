@@ -106,6 +106,14 @@
   padding: 0px 3px 0px 3px;
 }
 
+@media (max-width:640px) {
+  .Shaped{
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    padding: 0 15%;
+  }
+}
+
 @media screen and (max-width:4000px) and (min-width:3000px) {
   .kitchen_filter_link {
     font-size: 22px;

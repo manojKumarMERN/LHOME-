@@ -12,10 +12,10 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Customsupport() {
+export default function Customsupport({prop}) {
     return (
         <div className="d-flex justify-content-center flex-column">
-            <Tab.Group>
+            <Tab.Group defaultIndex={Number(prop)}>
                 <Tab.List className="flex container space-x-1 rounded-xl bg-gray-100 p-0 " style={{ width: '70%', margin: '0% auto' }} >
                     <Tab
                         className={({ selected }) =>
