@@ -1286,15 +1286,6 @@ white-space: nowrap;
   background-color: transparent;
 }
 
-// .rightBtn {
-//   background-color: transparent;
-//   font-size: 30px;
-//   font-weight: 500;
-//   margin-left: 97%;
-//   margin-bottom: 5%;
-//   z-index: 1111111;
-// }
-
 .react-multiple-carousel__arrow{
   background-color: transparent;
 }
@@ -1303,45 +1294,22 @@ white-space: nowrap;
   background-color: transparent;
 }
 
-// .rightBtn:hover {
-//   background-color: transparent;
+//Modal Popup
+.Modal_Popup div div div[class="modal-header"]  {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+  border: none;
+}
 
-// }
+.Modal_Popup div[class="modal-dialog"]{
+  max-width: 80% !important;
 
-// @media (max-width:992px) {
-//   .leftBtn {
-//     margin-left: -2%;
-//   }
-
-//   .rightBtn {
-//     margin-left: 96%;
-//   }
-// }
-
-// @media (max-width:767px) {
-//   .rightBtn {
-//     margin-left: 94%;
-//   }
-// }
-
-// @media (max-width:500px) {
-//   .rightBtn {
-//     margin-left: 92%;
-//   }
-// }
-
-// @media (min-width:1500px) and (max-width:1920px) {
-//   .leftBtn {
-//     margin-left: 2%;
-//   }
-
-//   .rightBtn {
-//     margin-left: 98%;
-//   }
-// }
-
-// @media (min-width:1920) {
-//   .leftBtn {
-//     margin-right: -1%;
-//   }
-// }
+}
+@media only screen and (max-width:800px){
+  .Modal_Popup div[class="modal-dialog"]{
+    max-width: 98% !important;
+  
+  }
+}
