@@ -80,7 +80,7 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
     },
     mobile: {
       breakpoint: { max: 767, min: 601 },
-      items: 2,
+      items: 1,
       slidesToSlide: 1,
     },
     mini: {
@@ -100,41 +100,31 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
   const carouselRef = React.useRef(null);
 
 
-  let previousSlide = 0;  
+  let previousSlide = 0;
 
   const handleSlideChange = () => {
     if (!carouselRef.current) return;
 
     const currentSlide = carouselRef.current.state.currentSlide;
-
-    // console.log("Current Slide:", currentSlide);
-
     let direction;
     if (currentSlide === 0 && previousSlide === sliderImageUrl.length - 1) {
-      direction = 1;  
+      direction = 1;
     } else if (currentSlide > previousSlide) {
-      direction = 1;  
+      direction = 1;
     } else {
-      direction = -1;  
+      direction = -1;
     }
-
-    // console.log("Previous Slide:", previousSlide);
-    // console.log("Direction:", direction);
-
-    let offset = direction >= 0 ? 1 : -2; 
-    // console.log("Offset:", offset);
-
+    let offset = direction >= 0 ? 1 : -2;
     let centerIndex = (currentSlide + offset + sliderImageUrl.length) % sliderImageUrl.length;
-
-    // console.log("Calculated Center Index:", centerIndex);
-
     setActiveSlide(currentSlide);
     setCenterImageIndex(centerIndex);
 
-    previousSlide = currentSlide;  
-};
+    previousSlide = currentSlide;
+  };
+  const isMobileDevice = () => {
+    return window.innerWidth <= 767;
 
-
+  };
 
   const CustomDot: any = ({ onMove, index, onClick, active }) => {
     return (
@@ -175,6 +165,7 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
               sliderImageUrl.map((imageUrl, index) => {
 
                 const isCenterSlide = index === centerImageIndex;
+                const isMobile = isMobileDevice();
 
                 return (
                   <div className="slider p-4 highlightImage" key={index}>
@@ -183,8 +174,8 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
                       src={imageUrl.url}
                       alt="lhome"
                     />
-                    {isCenterSlide && (
-                      <div className={isCenterSlide ? css2.activeText : ''}>
+                    {(isCenterSlide || isMobile)  && (
+                      <div className={ (isCenterSlide || isMobile)? css2.activeText : ''}>
                         <h3>{imageUrl.heading}</h3>
                         <label>{imageUrl.house}</label>
                         <p>{imageUrl.para}</p>

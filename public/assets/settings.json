@@ -1545,7 +1545,7 @@
     ],
     "designGalleryBanner": {
       "modularText": "Modular Kitchen makes your home Modular",
-      "modularIcon": "/assets/modular/kitche.svg",
+      "modularIcon": "/assets/modular/kitche.png",
       "modularImage": "/assets/modular/bannerpic.png"
     },
     "stylishHomeProducts": [

@@ -10,9 +10,11 @@ import CustomRightArrow from "./CustomRightArrow";
 import css2 from '../HighLights/HighLights.module.scss';
 import { BsHeart } from "react-icons/bs";
 import { FaRegShareFromSquare } from 'react-icons/fa6';
-import {FaAngleRight} from 'react-icons/fa6';
+import { FaAngleRight } from 'react-icons/fa6';
 import Link from "next/link";
-
+import Modal from 'react-bootstrap/Modal'
+import { AiFillCloseCircle } from 'react-icons/ai';
+import DetailsOfimg from '../../DetailsOfimg';
 
 interface propproperty {
     Citie: any
@@ -77,6 +79,20 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
         },
 
     };
+    const [show, setShow] = React.useState(false);
+    const [selectedItem, setSelectedItem] = React.useState(null);
+
+
+    const handlePopup = (datas) => {
+        setSelectedItem(datas);
+        setShow(true);
+    };
+
+
+    const handleClose = () => {
+        setShow(false);
+    }
+
 
     return (
         <React.Fragment>
@@ -86,10 +102,10 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                         <div className='d-flex justify-content-between align-items-center'>
                             <div className={css.trendingtitle}>Stylish Home Products {Citie}</div>
                             <Link href={{ pathname: "/spacesavingfurniture" }} className={css.seeallLink}>
-                                    <button className={css.compactBtn}>
-                                        see all <FaAngleRight className={css.right_Arrow} />
-                                    </button>
-                                </Link>
+                                <button className={css.compactBtn}>
+                                    see all <FaAngleRight className={css.right_Arrow} />
+                                </button>
+                            </Link>
                         </div>
                         <div className={css.carousel_design}>
                             <Carousel
@@ -112,6 +128,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                                     <div
                                         key={`${datas.subname}_${index}_${index}`}
                                         className={css.customdivision}
+                                        onClick={() => handlePopup(datas)}
                                     >
                                         <div className={css.customdivisionchild}>
                                             <div className={css.customimage}>
@@ -175,6 +192,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                                         <div
                                             key={`${datas.subname}_${index}_${index}`}
                                             className={css.customdivision}
+                                            onClick={() => handlePopup(datas)}
                                         >
                                             <div className={css.customdivisionchild}>
                                                 <div className={css.customimage}>
@@ -210,6 +228,12 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                     </div>
                 </div>
             </div>
+            <Modal show={show} onHide={handleClose} className={css.Modal_Popup}>
+                <Modal.Header >
+                    <AiFillCloseCircle onClick={handleClose} />
+                </Modal.Header>
+                <DetailsOfimg data={stylishHomeProducts || compactFurniture} selectedItem={selectedItem} />
+            </Modal>
         </React.Fragment>
     )
 }
