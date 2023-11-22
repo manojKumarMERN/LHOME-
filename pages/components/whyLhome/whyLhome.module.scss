@@ -1,0 +1,105 @@
+ .title{
+    justify-content: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 30px;     
+    color: #222222;
+    text-align: center;
+ }
+   .addMargin{ 
+      @media (max-width:380px) {
+      margin-top: 15%;
+      }
+      @media (max-width:440px) and (min-width:400px) {
+         margin-top: 15%;
+      }
+      @media (max-width:330px) {
+         margin-top: 30%;   
+      }
+   }
+ 
+ 
+ .firstText{
+    width:60%;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #222222;
+ }
+ 
+ .subTitle{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #222222;
+    text-align:center;
+ }  
+ 
+ .secondText{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #737373;
+ }  
+ .thirdText{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #737373;
+    text-align: center;
+ }
+ 
+ .verticaldivider{
+    height: 160px;
+    margin-top: 0;
+    width: 2px;
+    color: #000000;
+    background: #000000;
+    position: absolute;
+    left: 29%;
+    top: 35%;
+    @media (max-width:1400px) {
+      left: 31%;
+      top: 37%;
+      height: 180px;
+    }
+    @media (max-width:900px) {
+      left: 49%;
+      top: 22%;
+    }
+    @media (max-width:600px) {
+      width: 0;
+    }
+ }
+ 
+ .verticaldivider2{
+    height: 160px;
+    margin-top: 0;
+    width: 2px;
+    color: #000000;
+    background: #000000;
+    position: absolute;
+    left: 72%;
+    top: 35%;
+    @media (max-width:1400px) {
+      left: 70%;
+      top: 37%;
+      height: 180px;
+    }
+    @media (max-width:900px) {
+      width: 0;
+    }
+ }
+ 
+  

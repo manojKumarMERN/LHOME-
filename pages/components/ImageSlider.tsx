@@ -46,6 +46,7 @@ const ImageSlider: React.FC<Sliderproperties> = ({ screenwidth, screenheight, sw
       if (screenwidth < 300) {
         reduce = 25;
       }
+    
       let slleft = `${swidth * .07}px`;
       let sltop = `${sheight * .10}px`;
       let silleft = `${(swidth * .07) + 20}px`;
@@ -54,6 +55,12 @@ const ImageSlider: React.FC<Sliderproperties> = ({ screenwidth, screenheight, sw
       let siwidth = parseFloat(srleft.split("px")[0]) - parseFloat(silleft.split("px")[0]) + sliderrightblock.current.offsetWidth - 20;
       let srtop = `${sheight - (sheight * .21) - sliderleftblock.current.offsetHeight}px`;
       let siheight = parseFloat(srtop.split("px")[0]) - parseFloat(siltop.split("px")[0]) + sliderrightblock.current.offsetHeight - 20;
+      if(screenwidth<=600){
+        siheight -=40;
+        siwidth +=40;
+        silleft = `${(swidth * .07)}px`;
+
+      }
       sliderleftblock.current.style.left = slleft;
       sliderleftblock.current.style.top = sltop;
       sliderrightblock.current.style.position = "absolute"
@@ -64,6 +71,7 @@ const ImageSlider: React.FC<Sliderproperties> = ({ screenwidth, screenheight, sw
       sliderimage.current.style.top = siltop;
       sliderimage.current.style.width = `${siwidth}px`;
       sliderimage.current.style.height = `${siheight+50}px`;
+     
       sliderimages.current.style.width = `${siwidth}px`;
       sliderimages.current.style.height = `${siheight+50}px`;
       sliderleft.current.style.position = "absolute";
