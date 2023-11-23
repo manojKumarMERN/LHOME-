@@ -53,11 +53,11 @@ const HomePage: React.FC<homeproperties> = ({ screenwidth, screenheight }) => {
                
                <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
                   <div><Homeslider screenwidth={screenwidth} screenheight={screenheight} /></div>
-                  <div><WhyLhome screenwidth={screenwidth} screenheight={screenheight} /></div>
-                  <div className={css.categoryComponent}><Category /></div>
+                  <div className={css.addMarginForMobile +" py-[2rem]"}><WhyLhome screenwidth={screenwidth} screenheight={screenheight} /></div>
+                  <div><Category /></div>
                   <div><HightLights /></div>
                   <div><ReferNowPage /></div>
-                  <div className="mt-[100px]">
+                  <div className="mt-4">
                      <Autoplay living={living} />
                   </div>
                   <div><NRIFriendly /></div>
