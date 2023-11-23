@@ -114,6 +114,8 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
     setReceivedData(data);
   };
 
+
+
   return (
     <React.Fragment>
         <div className={`stickly transition-all duration-500`}>
@@ -130,7 +132,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
             {!hidden && (
               <div className={css.headerRight}>
                 <div className={css.smallMenuButtons}>
-                  <div className={css.emptyBand} />
+                  <div className={css.emptyBand}>
                   {smallmenuoptionsstring.indexOf("Partner With LHome,") < 0 ?
                     <Link href={{ pathname: '/partnership' }}><div className={`${css.smallMenuBand} ${css.customWidthpx_14}`}>
                       Partner With LHome
@@ -138,30 +140,24 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                     </Link>
                     : ""}
                   {smallmenuoptionsstring.indexOf("Refer and Earn,") < 0 ?
-                    <Link href={{ pathname: '/referandearn' }}> <div className={`${css.smallMenuBand} ${css.customWidthpx_12}`}>
+                    <Link href={{ pathname: '/referandearn' }}> <div className={`${css.smallMenuBand} ${css.customWidthpx_14}`}>
                       Refer and Earn
                     </div>
                     </Link>
                     : ''}
-                  {/* {smallmenuoptionsstring.indexOf("Join Us,") < 0 ?
-              <Link href={{ pathname: "/joinuspage" }}> <div className={`${css.smallMenuBand} ${css.customWidthpx_6}`}>
-                Join Us
-              </div></Link>
-              : ''} */}
-
                   {smallmenuoptionsstring.indexOf("Join Us,") < 0 ?
-                    <a
+                    <Link
                       href="/joinuspage"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`${css.smallMenuBand} ${css.customWidthpx_6}`}
+                      className={`${css.smallMenuBand} ${css.customWidthpx_14}`}
                     >
                       Join Us
-                    </a>
+                    </Link>
                     : ''}
 
                   {smallmenuoptionsstring.indexOf("Cities,") < 0 ?
-                    <div className={`${css.smallMenuBand} ${css.customWidthpx_6}`}>
+                    <div className={`${css.smallMenuBand} ${css.customWidthpx_14}`}>
                       <div className={`${css.cityText} ${css.textpaddingleft}`}>Cities</div>
                       <div className={css.citiesDropdown}>
                         {citiesdropdown ?
@@ -172,7 +168,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                     </div>
                     : ''}
                   {smallmenuoptionsstring.indexOf("Visit Us,") < 0 ?
-                    <Link href={{ pathname: "/visitus" }} > <div className={`${css.smallMenuBand} ${css.customWidthpx_6}`} >
+                    <Link href={{ pathname: "/visitus" }} > <div className={`${css.smallMenuBand} ${css.customWidthpx_14}`} >
 
                       Visit Us
                     </div>
@@ -182,7 +178,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
 
                   {smallmenuoptionsstring.indexOf(",Customer Support") < 0 ?
                     <Link href={{ pathname: "/CustomersupportPage" }} style={{ display: 'flex', alignItems: "center" }}>
-                      <BsHeadset color="black" size={15} style={{ marginRight: '-20px', marginLeft: "15px" }} />
+                      <BsHeadset color="black" size={window.innerWidth > 2500 ? 30 : 15} />
                       <div className={`${css.smallMenuBand} ${css.customWidthpx_100}`}>
                         Customer Support
                       </div>
@@ -195,6 +191,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                     </div>
                     : ''
                   }
+                </div>
                 </div>
                 <div className={css.largeMenuButtons} id="largeoptions">
                   <div className={css.menuHolder}>
