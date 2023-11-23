@@ -7,6 +7,10 @@
     line-height: 30px;     
     color: #222222;
     text-align: center;
+    @media (min-width:2000px) {
+      font-size: 1.4vw;
+      line-height: 2vw;
+    }
  }
  
  .firstText{
@@ -20,6 +24,10 @@
     @media (max-width:1600px) {
       width: 65%;
     }
+    @media (min-width:2000px) {
+      font-size: 0.8vw;
+      line-height: 1.2vw;
+    }
  }
  
  .subTitle{
@@ -30,6 +38,10 @@
     line-height: 20px;
     color: #222222;
     text-align:center;
+    @media (min-width:2000px) {
+      font-size: 0.8vw;
+      line-height: 1.1vw;
+    }
  }  
  
  .secondText{
@@ -40,6 +52,10 @@
     line-height: 14px;
     text-align: center;
     color: #737373;
+    @media (min-width:2000px) {
+      font-size: 0.6vw;
+      line-height: 0.8vw;
+    }
  }  
  .thirdText{
     font-family: 'Montserrat';
@@ -49,7 +65,11 @@
     line-height: 20px;
     color: #737373;
     text-align: center;
- }
+   @media (min-width:2000px) {
+      font-size: 0.8vw;
+      line-height: 0.8vw;
+   }
+   }
  
  .verticaldivider{
     height: 160px;
@@ -102,3 +122,9 @@
    }
  }
   
+ @media (min-width:2000px) {
+   .icons{
+      height: 1.75vw;
+      width: 1.75vw;
+   }
+ }

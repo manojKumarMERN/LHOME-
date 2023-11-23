@@ -31,7 +31,7 @@ const Warranty: React.FC = () => {
                 <div className={css.warrantyInnerLeftContent}>
                     <div className={css.warrantyTextIcons}>
                     {warrantyimage ?
-                        <img loading="lazy" className={css.flatWarrantyiconChangesImg} src={warrantyimage} alt="Warranty" />
+                        <img loading="lazy" className={css.warrantyiconChanges} src={warrantyimage} alt="Warranty" />
                         :
                         ''
                     }

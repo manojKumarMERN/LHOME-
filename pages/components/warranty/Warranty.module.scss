@@ -59,14 +59,17 @@
      padding: 2%;
      border-radius: 14px;
      width: 4em;
+     @media (min-width:2000px) {
+      width: 3.5vw;
+     }
  }
  
- .flatWarrantyiconChangesImg {
-    background: #F44336;
-     padding: 2%;
-     border-radius: 14px;
-     width:4em;
- }
+//  .flatWarrantyiconChangesImg {
+//     background: #F44336;
+//      padding: 2%;
+//      border-radius: 14px;
+//      width:4em;
+//  }
  
  @media only screen and (min-width:320px) and (max-width: 724px){
     .warrantyInnerTopContent,.warrantyInnerBottomContent {

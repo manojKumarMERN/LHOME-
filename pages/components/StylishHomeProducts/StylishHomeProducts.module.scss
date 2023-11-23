@@ -61,6 +61,11 @@
   color: #222222;
   padding-left: 3%;
   display: flex;
+  @media (min-width:2000px) {
+    font-size: 1.5vw;
+    line-height: 2vw;
+    padding: 1% 3%;
+  }
 }
 
 .toppickstitle {
@@ -132,10 +137,16 @@ font-weight: 400;
 line-height: normal;
 margin-right: 2%;
 white-space: nowrap;
+@media (min-width:2000px) {
+  font-size: 0.9vw;
+}
 }
 
 .seeallLink{
   text-decoration: none;
+  @media (min-width:2000px) {
+    margin-right: 3%;
+  }
 }
 .wishlistholder {
   font-size: 1.8vw;
@@ -211,6 +222,11 @@ white-space: nowrap;
   display: flex;
   margin-top: 5px;
   margin-left: 5%;
+  @media (min-width:2000px) {
+    font-size: 0.7vw;
+    line-height: 0.8vw;
+    margin-top: 2.5%;
+  }
 }
 
 .trendingfilmroleClass {
@@ -258,6 +274,11 @@ white-space: nowrap;
   color: #222222;
   padding-left: 3%;
   display: flex;
+  @media (min-width:2000px) {
+    font-size: 1.5vw;
+    line-height: 2vw;
+    padding: 1% 3%;
+  }
 }
 
 .wardrobeflyfilmroleClass {

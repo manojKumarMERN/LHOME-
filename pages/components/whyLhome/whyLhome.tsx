@@ -69,7 +69,7 @@ interface WhyLhomeproperties {
                                     <div
                                      >
                                        {calenderimage ?
-                                          <img loading="lazy" src={calimage} alt="Calendar" />
+                                          <img className={css.icons} loading="lazy" src={calimage} alt="Calendar" />
                                           :
                                           ''
                                        }
@@ -84,7 +84,7 @@ interface WhyLhomeproperties {
                                     <div 
                                     >
                                        {expertimage ?
-                                          <img loading="lazy" src={desimage} alt="Happy Home" />
+                                          <img className={css.icons} loading="lazy" src={desimage} alt="Happy Home" />
                                           :
                                           ''
                                        }
@@ -99,7 +99,7 @@ interface WhyLhomeproperties {
                                     <div 
                                     >
                                        {happyhomeimage ?
-                                          <img loading="lazy" src={happyhomeimage} alt="Expert" />
+                                          <img className={css.icons} loading="lazy" src={happyhomeimage} alt="Expert" />
                                           :
                                           ''
                                        }
@@ -114,7 +114,7 @@ interface WhyLhomeproperties {
                                     <div 
                                     >
                                        {warrantyimage ?
-                                          <img loading="lazy" src={warrentyimage} alt="Warranty" />
+                                          <img className={css.icons} loading="lazy" src={warrentyimage} alt="Warranty" />
                                           :
                                           ''
                                        }
@@ -188,7 +188,7 @@ interface WhyLhomeproperties {
                                     <div 
                                     >
                                        {deliveryimage ?
-                                          <img loading="lazy" src={deliveryimage} alt="Delivery" />
+                                          <img className={css.icons} loading="lazy" src={deliveryimage} alt="Delivery" />
                                           :
                                           ''
                                        }
@@ -203,7 +203,7 @@ interface WhyLhomeproperties {
                                     <div 
                                     >
                                        {priceimage ?
-                                          <img loading="lazy" src={priceimage} alt="Expert" />
+                                          <img className={css.icons} loading="lazy" src={priceimage} alt="Expert" />
                                           :
                                           ''
                                        }
@@ -218,7 +218,7 @@ interface WhyLhomeproperties {
                                        <div 
                                        >
                                           {superiorimage ?
-                                             <img loading="lazy" src={superiorimage} alt="Superior Quality" />
+                                             <img className={css.icons} loading="lazy" src={superiorimage} alt="Superior Quality" />
                                              :
                                              ''
                                           }
@@ -233,7 +233,7 @@ interface WhyLhomeproperties {
                                        <div 
                                       >
                                           {safetyimage ?
-                                             <img loading="lazy" src={safetyimage} alt="Safety Assured" />
+                                             <img className={css.icons} loading="lazy" src={safetyimage} alt="Safety Assured" />
                                              :
                                              ''
                                           }

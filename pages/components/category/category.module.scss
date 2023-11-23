@@ -33,18 +33,28 @@
   color: #222222;
   padding-left: 9.5%;
   display: flex;
-  // margin-left: 5%;
-  // margin-right: 5%;
   margin-top: 1%;
   span {
     margin-top: 10px;
     margin-left: 10px;
+    @media (min-width:1700px) {
+      scale: 1.6;
+      margin-top: 1%;
+      margin-left: 1%;
+    }
+  }
+  @media (min-width:1700px) {
+    font-size: 1.5vw;
+    margin: 1% 0;
   }
 }
 
 .category {
   width: 60%;
   margin-top: 10px;
+  @media (min-width:1700px) {
+    margin-top: 4%;
+  }
 }
 
 .categoryname {
@@ -70,6 +80,11 @@
   line-height: 10px;
   color: #b7b7b7;
   width: 200px;
+  @media (min-width:2000px) {
+    font-size: 0.9vw;
+    margin-top: 5%;
+    width: unset;
+  }
 }
 
 .listingcategoryOuterLayer {
