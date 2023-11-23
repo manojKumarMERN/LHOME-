@@ -49,7 +49,7 @@ const handleRoutes = (categoryData)=>{
    return (
       <React.Fragment>
          <div className={css.listingcategory}>
-    <div className={css.listingcategoryOuterLayer +` mt-5`}>
+    <div className={css.listingcategoryOuterLayer +` `}>
         <p className={css.categorytitle}>Listing category<span><CircleArrow scale={".5"} /></span></p>
         <div className={css.listingfilmrole}>
             {
