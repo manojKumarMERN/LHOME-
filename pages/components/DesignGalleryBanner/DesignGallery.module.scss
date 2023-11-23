@@ -30,9 +30,9 @@
 
 .iconPart1 {
   position: absolute;
-  top: 20%;
-  left: 4%;
-  scale: 1.5;
+  top: 15%;
+  left: 3%;
+  scale: 1.1;
   transform: rotate(290deg);
   width: 9%;
 }
@@ -58,7 +58,10 @@
   top: 18%;
   right: 40%;
   scale: 2.5;
-  width: 10%;
+  width: 15%;
+  @media (max-width:1600px){
+    width: 10%;
+  }
 }
 
 @media (max-width:1300px) {
@@ -107,17 +110,17 @@
 
 .shadow {
   width: 82%;
-  height: 61%;
+  height: 73%;
   position: absolute;
   z-index: 1;
-  top: 36%;
+  top: 25%;
   left: 13%;
   background-color: rgb(244, 241, 241);
   border-radius: 0 0 0 20%;
 }
 
 .bottomLevel {
-  width: 38vw;
+  width: 30vw;
 
   @media (max-width:1600px) {
     width: 41vw;
