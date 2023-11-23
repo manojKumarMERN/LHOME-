@@ -55,16 +55,16 @@ interface WhyLhomeproperties {
                         <hr className={css.verticaldivider} />   
                         <hr className={css.verticaldivider2} />   
 
-                        <Grid item md={3.625} sm={6} xs={12} direction='column'   justifyContent="space-between" rowSpacing={2}
+                        <Grid item md={3.5} sm={6} xs={12} direction='column'   justifyContent="space-between" rowSpacing={2}
 
                         >
-                           <div className={css.title + ' ' +css.addMargin}>
+                           <div className={css.title}>
                               Why Lhome?
                            </div>
                            <div className={
-                               ' grid grid-cols-2 gap-4 sm:gap-16  mt-[2.5rem] '}>
+                               ' grid grid-cols-2 gap-8 sm:gap-16 pt-[4rem] ' + css.nullifyPaddingTop}>
                                  <div 
-                                 className='flex gap-2 items-center'
+                                 className='flex gap-2 items-center justify-content-end'
                                  >
                                     <div
                                      >
@@ -94,7 +94,7 @@ interface WhyLhomeproperties {
                                     </div>
                                  </div>
                                  <div 
-                                 className='flex gap-2 items-center'
+                                 className='flex gap-2 items-center justify-content-end'
                                  >
                                     <div 
                                     >
@@ -125,12 +125,12 @@ interface WhyLhomeproperties {
                                  </div>
                            </div>
                         </Grid>
-                        <Grid  item md={4.75} sm={6} xs={12}>
-                              <div className={css.title}>
+                        <Grid  item md={5} sm={6} xs={12}>
+                              <div className={css.title + " mt-[-1.5rem] " + css.nullifyMargin}>
                                  Ensure your safety by embracing virtual design methods
                               </div>
                            <div 
-                           className='grid grid-cols-2 gap-4 mt-4'
+                           className={'grid grid-cols-2 gap-8 pt-[2.5rem] px-[2rem] '+ css.nullifyPaddingTop}
                            >
                                  <div 
                                  className='flex flex-column gap-1 items-center'
@@ -174,13 +174,13 @@ interface WhyLhomeproperties {
                                  </div>
                            </div>
                         </Grid>
-                        <Grid  item md={3.625} sm={12} xs={12}
+                        <Grid  item md={3.5} sm={12} xs={12}
                         >
                            <div className={css.title}>
                               Lhome Guarantee
                            </div>
                            <div id="detailsholder" 
-                           className='grid grid-cols-2 gap-4 mt-4'
+                           className={'grid grid-cols-2 gap-4 pt-[3.5rem] ' + css.nullifyPaddingTop}
                            >
                                  <div 
                                  className='flex flex-column gap-2 items-center'

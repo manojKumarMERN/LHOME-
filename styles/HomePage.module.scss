@@ -30,8 +30,8 @@
    font-weight: 600;
    margin-top: 50px;
 }
-@media (max-width:500px) {
-   .categoryComponent{
-      margin-top: 30%;
+.addMarginForMobile{
+   @media (max-width:600px) {
+      margin: 2rem 0;
    }
 }
