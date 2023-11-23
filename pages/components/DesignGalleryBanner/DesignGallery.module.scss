@@ -11,6 +11,9 @@
   font-style: normal;
   line-height: normal;
   margin-left: 5%;
+  @media (min-width:2000px) {
+    font-size: 1.8vw;
+  }
 }
 
 .contentBox {

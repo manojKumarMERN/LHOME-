@@ -39,7 +39,7 @@ const MeetDesigner: React.FC<ModularkitchenProps> = ({colour,container,prop}) =>
 return(
     <React.Fragment>
             <div className={colour ==="red" ?`${css.red}`: `${css.blue}`}>
-            <div className="container">
+            <div className={"container "+css.responsiveLarge} >
                 {
                     MeetDesigner.map((datas: any, index: number) =>
                     <div key={`${datas.meettext}_${index}_${index}`} className={container ==="meetContainer1" ?`${css.meetContainer1}`: `${css.meetContainer2}`}>

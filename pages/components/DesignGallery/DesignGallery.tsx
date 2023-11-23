@@ -49,9 +49,9 @@ const DesignGallery: React.FC = () => {
   return (
     <React.Fragment>
       <div className={css.filter_home1}>
-        <span className={css.filter_link_span1}><Link href={{ pathname: "/" }} className={css.kitchen_filter_link}>home</Link></span>
+        <span><Link href={{ pathname: "/" }} >home</Link></span>
         <span className={css.filter_slash}>/</span>
-        <span className={css.filter_link_span2}><Link href={{ pathname: "/designgallery" }} className={css.kitchen_filter_link}>design gallery</Link></span>
+        <span><Link href={{ pathname: "/designgallery" }} >design gallery</Link></span>
       </div>
       <header>
         <h2 className={css.heading}>Design Gallery</h2>
