@@ -19,29 +19,39 @@
     color: #FFFFFF;
     font-family: 'Montserrat';
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1.3vw;
     text-align: center;
-    width: 200px;
-    height: 50px;
     border-radius: 8px;
-    padding-top: 12px;
-    margin-top: 40px;
+    padding: 1.5%;
+    margin-top: 5%;
+    width: 30%;
+    @media (max-width:1024px){
+        font-size: 16px;
+    }
 }
 .partnerRowText{
     font-family: 'Montserrat';
     font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 1.3vw;
+    line-height: 1.5vw;
     color: #737373;
     width: 75%;
+    @media (max-width:1024px){
+        font-size: 16px;
+        line-height: 20px;
+    }
 }
 .partnerMidRowText{
     font-family: 'Montserrat';
     font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 1.3vw;
+    line-height: 1.5vw;
     color: #737373;
     width: 80%;
+    @media (max-width:1024px){
+        font-size: 16px;
+        line-height: 20px;
+    }
 }
 .partnerImgOuter{
     width: 100%;
@@ -58,17 +68,26 @@
 .partenerRowHead{
     font-family: 'Montserrat';
     font-weight: 700;
-    font-size: 30px !important;
-    line-height: 39px;
+    font-size: 2.5vw !important;
+    line-height: 3vw;
     color: #000000;
+    @media (max-width:1024px){
+        font-size: 30px;
+        line-height: 39px;
+    }
 }
 .partnerSubHead{
     color: #EF5350;
     font-family: 'Montserrat';
     font-weight: 600;
-    font-size: 18px !important;
-    line-height: 39px;
+    font-size: 1.4vw !important;
+    line-height: 3vw;
     padding-top: 10px;
+    @media (max-width:1024px){
+        font-size: 18px;
+        line-height: 39px;
+    }
+
 }
 .partnerRowLeft1{
     padding-top: 50px !important;

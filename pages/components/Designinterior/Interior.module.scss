@@ -63,6 +63,9 @@
     padding: 0% 0 0% 10% ;
     margin-top: 20%;
     white-space: nowrap;
+    @media (min-width:500px) and (max-width:800px){
+        margin-top: 10%;
+    }
 }
 
 .interiortext {
@@ -149,8 +152,8 @@
     display: flex;
     border-radius: 16px !important;
     background: #F5F5F5;
-    // width: 300px;
-    // padding: 10px;
+    width: 23vw;
+    height: 10vw;
 }
 .box_Container{
     position: relative;
@@ -367,6 +370,7 @@
 
     .divisionchild {
         width: 150%;
+        height: 150px;
     }
 
     .division1 {
@@ -394,6 +398,7 @@
 
     .divisionchild {
         width: 100%;
+        height: 150px;
     }
 
     .division1 {

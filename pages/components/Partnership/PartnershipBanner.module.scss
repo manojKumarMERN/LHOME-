@@ -15,10 +15,14 @@
     color: #222222;
     font-family:"Montserrat";
     font-weight:700;
-    font-size: 35px;
+    font-size: 2.8vw;
     width: 100%;
-    line-height: 68.26px;
+    line-height: 4vw;
     padding: 70px 0px 0px 100px;
+    @media (max-width:1024px){
+        line-height: 68.26px; 
+        font-size: 35px;
+    }
 }
 .partnerbottom{
     color: #FFFFFF;
@@ -26,8 +30,12 @@
     margin-left: 10px;
 }
 .partnerImg{
-    width: 750px;
-    height: 740px;
+    width: 90%;
+    height: 90vh;
+    @media (max-width:1600px){
+        width: 750px;
+        height: 750px; 
+    }
 }
 .partnerForm{
     position: absolute;
