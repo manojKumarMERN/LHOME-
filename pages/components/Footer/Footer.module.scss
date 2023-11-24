@@ -19,17 +19,23 @@
    margin-top: -3%;
 }
 .footerContentHeader {
-   font-size: 18px;
+   font-size: 1.2vw;
     font-weight: 600;
     padding-bottom: 15px;
     padding-right: 87%;
     white-space: nowrap;
+    @media(max-width:1000px){
+      font-size:24px;
+    }
 }
 .footerContentSubContent {
-   font-size: 12px;
+   font-size: 0.9vw;
    color: #9F9F9F;
    white-space: nowrap;
    margin-left: 1.5%;
+   @media(max-width:1000px){
+      font-size:12px;
+    }
 }
 
 .footerContentSubContent:nth-child(0) {
@@ -70,7 +76,8 @@
    display: flex;
 }
 .socialMediaIcons {
-   height: 35px;
+   height: auto;
+   width: 50%;
 }
 .socialMediaIcons_0 {
    height: 50px;
@@ -84,7 +91,7 @@
 }
 
 .lhomelogo{
-  width: 195px;
+  width: 60%;
   padding: 5% 0;
   display: flex;
   margin-left: -10px;
