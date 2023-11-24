@@ -4,6 +4,10 @@
 
 .bathroomimage {
   width: 100%;
+  @media (max-width:576px) {
+    width: 100vw;
+    height: 75vw;
+  }
 }
 
 .bathroom_tagline {

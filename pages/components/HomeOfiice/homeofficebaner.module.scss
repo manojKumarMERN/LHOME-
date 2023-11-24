@@ -4,6 +4,9 @@
 
 .homeofficeimage {
   width: 100%;
+  @media (max-width:576px) {
+    height: 75vw;
+  }
 }
 
 .homeoffice_tagline {

@@ -1,8 +1,5 @@
-// .faqContainer {
-//     margin: auto;
-// }
 .faqInnerLayer {
-    margin: 3%;
+    margin: 2% 3%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -19,11 +16,14 @@
 }
 .faqHead {
     font-weight: 700;
-    font-size: 24px !important;
+    font-size: 24px;
     color: #222222;
     text-align: center;
     margin-top: 2%;
     margin-bottom: 2%;
+    @media (min-width:1700px) {
+        font-size: 1.5vw;
+    }
 }
 
 .faqBox{
@@ -34,7 +34,7 @@
     height: 60px;
     background-color: #F5F5F5;
     align-items: center !important;
-    padding: 5px;
+    padding: 2%;
 }
 .faqQuestion{
     font-size: 0.9vw;

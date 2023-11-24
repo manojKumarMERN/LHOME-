@@ -25,6 +25,7 @@
     width:42%;
     text-align: center;
     left:30%;
+
 }
 .visitus_arrow1_image{
     width: 25%;
@@ -128,15 +129,17 @@ color:#737373;
 @media (max-width:500px) and (min-width:400px){
     .visitus_co_tagline {
          font-size: 16px;
-         margin-top: -40%;
+         margin-top: -50%;
+         left: 25%;
          width:50%;
     }
 }
 @media (max-width:400px) and (min-width:300px){
     .visitus_co_tagline {
         font-size: 14px;
-        margin-top: -38%;
+        margin-top: -50%;
         width:50%;
+        left: 25%;
     }
 }
 @media screen and  (max-width:4000px) and  (min-width:3500px) {

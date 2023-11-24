@@ -3,6 +3,9 @@
 }
 .citiesimage{
   width: 100%;
+  @media (max-width:576px) {
+    height: 70vw;
+  }
 }
 .word_bgclr {
   background-color: #2552A4;

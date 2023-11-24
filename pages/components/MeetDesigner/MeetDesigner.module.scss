@@ -6,7 +6,7 @@
         margin-bottom: 250px;
     }
     @media (min-width:2000px) {
-        height: 14vw;
+        height: 17vw;
         margin-bottom: 3vw;
     }
 }
@@ -18,7 +18,7 @@
         margin-bottom: 250px;
     }
     @media (min-width:2000px) {
-        height: 14vw;
+        height: 17vw;
         margin-bottom: 3vw;
     }
 }
@@ -35,6 +35,9 @@
     flex-direction:row-reverse !important;
     justify-content: center;
     height: 190px;
+    @media (min-width:2000px) {
+        height: unset;
+    }
 }
 .meetHead{
     font-size: 40px;
@@ -68,6 +71,10 @@
     font-size: 13px;
     font-family: "Montserrat";
     border-radius: 8px;
+    @media (min-width:2000px) {
+        font-size: 0.7vw;
+        margin-top: 6%;
+    }
 } 
 .meetImage{
     width: 180px;
@@ -75,9 +82,9 @@
     margin: 20px 0px 80px 0;
     @media (min-width:2000px) {
       width: unset;
-      height: 8vw;
+      height: 12vw;
       margin:unset;
-      margin-bottom: -3%;
+      margin-bottom: -5%;
     }
 }
 .backContainer{
@@ -114,6 +121,9 @@
     line-height: 39px;
     letter-spacing: 0em;
     padding-top: 1%;
+    @media (min-width:2000px) {
+        font-size: 1.5vw;
+    }
 }
 
 .Box {
