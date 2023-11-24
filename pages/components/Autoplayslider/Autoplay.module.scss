@@ -95,6 +95,10 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: #2552A4;
+  font-size: 2vw;
+  @media (max-width:1000px){
+    font-size: 24px;
+  }
 }
 
 .customRArrowStyle {
@@ -104,18 +108,24 @@
 }
 
 .activeText label {
-  font-size: 14px;
+  font-size: 1vw;
   font-family: 'Montserrat', sans-serif;
   color: #737373;
   font-weight: 500;
+  @media (max-width:1000px){
+    font-size: 14px;
+  }
 }
 
 .activeText p {
-  font-size: 10px;
+  font-size: 0.8vw;
   font-family: 'Montserrat', sans-serif;
   width: 100%;
   text-align: center;
   color: #B7B7B7;
+  @media (max-width:1000px){
+    font-size: 10px;
+  }
 }
 
 .customRArrowStyle {
@@ -125,33 +135,33 @@
 }
 
 .customRArrowStyle i {
-  font-size: x-large;
+  font-size: 2vw;
   font-weight: bolder;
 }
 
 .bottomcarousel {
   margin-bottom: 7%;
-margin-top: 2%;
+  margin-top: 2%;
 }
 
 .bottomcarousel div>button {
   background-color: transparent;
   color: black;
   font-weight: bolder;
-  font-size: x-large;
-  // margin-top: 300px;
-  // position: absolute;
+  font-size: 2vw;
 
 }
 .customRArrowStyle{
   position: absolute;
   right: 33%;
   bottom: -3%;
+
 }
 .customLArrowStyle{
   position: absolute;
   left: 33%;
   bottom: -3%;
+
 }
 
 
@@ -282,6 +292,8 @@ margin-top: 2%;
 
 .maskgroupimage {
   position: relative;
+  width: 85%;
+  margin: auto;
 }
 
 .playbtn {
@@ -293,16 +305,24 @@ margin-top: 2%;
   font-size: 30px;
 }
 .active_dot {
-  width: 10px;
-  height: 10px;
+  width: 1vw;
+  height: 1vw;
   background-color: #B7B7B7;
   border-radius: 50%;
   margin: 2%;
+  @media (max-width:1000px){
+    width: 10px;
+    height: 10px;
+  }
 }
 .inactive_dot {
-  width: 10px;
-  height: 10px;
+  width: 1vw;
+  height: 1vw;
   background-color: #F5F5F5;
   border-radius: 50%;
   margin: 2%;
+  @media (max-width:1000px){
+    width: 10px;
+    height: 10px;
+  }
 }

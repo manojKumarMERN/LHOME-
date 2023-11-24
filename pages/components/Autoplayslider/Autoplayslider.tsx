@@ -140,11 +140,11 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
         <div className={css2.toppickstitle}>
           Contented Living with Lhome
         </div>
-        <div className={"container " + css2.bottomcarousel}>
+        <div className={css2.bottomcarousel}>
           <Carousel
             ref={carouselRef}
             responsive={responsive}
-            autoPlay={true}
+            autoPlay={false}
             swipeable={true}
             draggable={true}
             showDots={true}
@@ -168,7 +168,7 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
                 const isMobile = isMobileDevice();
 
                 return (
-                  <div className="slider p-4 highlightImage" key={index}>
+                  <div className="slider p-[5%] highlightImage" key={index}>
                     <img
                       className={`${css2.maskgroupimage} ${index === centerImageIndex ? css2.centeredImage : ''}`}
                       src={imageUrl.url}
@@ -178,7 +178,7 @@ const Autoplay: React.FC<playproperties> = ({ living }) => {
                       <div className={ (isCenterSlide || isMobile)? css2.activeText : ''}>
                         <h3>{imageUrl.heading}</h3>
                         <label>{imageUrl.house}</label>
-                        <p>{imageUrl.para}</p>
+                        <p className={css2.autoplay_para}>{imageUrl.para}</p>
                       </div>
                     )}
                   </div>

@@ -3,6 +3,7 @@
   position: relative;
   width: 90%;
   margin: 0 auto 5%;
+  font-size: 1.2vw;
 }
 
 .mdbtable thead[data-test="table-foot"]
@@ -70,7 +71,11 @@
   border-bottom: 1px solid #737373 !important;
   border-radius: 0px;
   border: none;
-  text-indent: 20px;
+  text-indent: 3%;
+  font-size: 1.5vw;
+}
+.custom_mdbtable input[type="text"]::placeholder{
+  font-size: 1.5vw !important;
 }
 .custom_mdbtable div[data-test="datatable-search"]{
   display: block !important;
@@ -80,7 +85,7 @@
 
 .mdbtable .bi_search{
   position: absolute;
-  top: 1%;
+  top: 15px;
 }
 .custom_mdbtable input[type="text"]::placeholder{
   font-size: 16px;
@@ -88,6 +93,7 @@
 }
 .mdbtable .open_job_heading h3{
 font-weight: 700;
+font-size: 2.2vw;
 }
 .mdbtable .open_job_heading{
   position: absolute;
@@ -129,14 +135,14 @@ color: #222222;
 }
 
 .arrow{
-font-size: small;
+font-size: 1.2vw;
 color: #222222;
 display: flex;
 align-items: center;
 justify-content: space-around;
-width: 25px;
+width: 2vw;
 padding: 0 6px;
-margin: 5px;
+margin-top: 2% ;
 }
 .dropdown button{
   display: flex;
@@ -145,6 +151,8 @@ margin: 5px;
   color: #F44336;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
+  font-size: 1.2vw;
+
 }
 .dropdown button[class="dropdown-item"]{
   background-color:  #F5F5F5 !important;
