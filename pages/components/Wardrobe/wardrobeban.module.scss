@@ -4,6 +4,9 @@
 
 .wardrobeimage {
   width: 100%;
+  @media (max-width:576px) {
+    height: 75vw;
+  }
 }
 
 .wardrobe_tagline {

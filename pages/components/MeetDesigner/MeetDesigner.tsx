@@ -46,7 +46,7 @@ return(
                     <div className={css.meetImageBox}>                    
                         <img src={datas.meetimage} className={css.meetImage} alt="" />
                     </div>
-                      <div className={container ==="meetContainer1" ?``: `flex flex-col items-end`}>
+                      <div className={container ==="meetContainer1" ?`flex flex-col item-start justify-content-center`: `flex flex-col items-end justify-content-center`}>
                       <h1 className={css.meetHead}>{datas.meettext}</h1>
                       <button className={colour === "red"?`${css.meetButton}`:`${css.meetButtonBlue}`}>{datas.meetbutton}</button>
                   </div>

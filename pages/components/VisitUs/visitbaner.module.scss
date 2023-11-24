@@ -3,5 +3,8 @@
  }
 .visitusimage{
 width: 100%;
-display: flex;
+position: relative;
+@media (max-width:576px) {
+  height: 60vw;
+}
 }
