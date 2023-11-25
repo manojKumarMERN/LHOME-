@@ -15,6 +15,10 @@
     background: #EF5350;
     padding-top: 1%;
     margin-bottom: 14%; 
+    @media (min-width:2000px) {
+        height: 7vw;
+        margin-bottom: 9%;  
+      }
 }
 .Wholecontainer {
     width: 80%;
