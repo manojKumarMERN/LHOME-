@@ -40,6 +40,10 @@
     @media (max-width:450px) {
       margin-left: unset;
     }
+    @media (min-width:2000px) {
+      font-size: 1.2vw;
+      margin: 4% 2% 3% 6%;
+    }
  }
 
  .designermeettitleForHome {
@@ -79,6 +83,10 @@
     @media (max-width:450px) {
       margin-left: unset;
     }
+    @media (min-width:2000px) {
+      font-size: 1.2vw;
+      margin: 4% 2% 3% 6%;
+    }
  }
 
  .marginmove_5 {
@@ -92,6 +100,9 @@
 
  .forminput {
     font-size: 0.9em;
+    @media (min-width:2000px) {
+      font-size: 0.8vw;
+    }
  }
 
  .whatsapplabel {
@@ -106,7 +117,9 @@
        font-weight: 500;
        font-size: 0.90em;
        color: #737373;
-
+      @media (min-width:2000px) {
+         font-size: 0.5vw;
+      }
 
     }
 
@@ -119,16 +132,26 @@
        //  width: 100%;
        color: #D2D2D2;
        // margin-right: 6%;
+       @media (min-width:2000px) {
+         font-size: 0.45vw;
+       }
 
     }
 
  }
 
+ .checkboxForLg{
+   width: 0.8vw;
+   height: 0.8vw;
+ }
  .whatsappcheckbox {
     //   width: 100%;
     padding-left: 10px;
     padding-right: 10px;
     margin-top: 2%;
+    @media (min-width:2000px) {
+      padding: 0 2%;
+    }
  }
 
  .inputbox {
@@ -163,6 +186,9 @@
     display: flex;
     justify-content: center;
     height: 12%;
+    @media (min-width:2000px) {
+      margin-top: 2%;
+    }
  }
 
  .designerbookingconfirmationbutton>label {
@@ -172,6 +198,9 @@
     font-size: 0.8em;
     color: #FFFFFF;
     padding: 1rem 2rem;
+    @media (min-width:2000px) {
+      font-size: 0.6vw;
+    }
     }
 
  .designerbookingwarningtext {
@@ -184,26 +213,16 @@
     display: flex;
     justify-content: center;
     padding: 2%;
+    @media (min-width:2000px) {
+      font-size: 0.5vw;
+    }
  }
 
-
-
-//  @media only screen and (max-width: 1024px) {
-//     .designermeetholder {
-//        margin-bottom: 120px;
-//     }
-
-//  }
 
  @media only screen and (max-width: 775px) {
     .whatsappdetailsholder {
        margin-right: 2%;
     }
-
-   //  .designermeetholder {
-   //     margin-bottom: 160px;
-   //  }
-
     .whatsappcheckbox {
        right: 0px;
        margin-right: 2%;

@@ -43,7 +43,7 @@ const Form: React.FC = () => {
                         <span className={css.label2}>opt for meeting and offer updates on WhatsApp</span>
                         </div>
                         <label className={`${css.whatsappcheckbox}`}>
-                            <input type="checkbox" className="form-checkbox h-5 w-5 text-blue-600" />
+                            <input type="checkbox" className={"form-checkbox h-5 w-5 text-blue-600 "+ css.checkboxForLg } />
                         </label>
                     </div>
                 <div className="flex  gap-6" style={{ width: "100%", marginTop: "-5px" }}>
