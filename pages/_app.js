@@ -10,6 +10,7 @@ import { BsThreeDotsVertical } from 'react-icons/bs'
 import Contentchatbox from '../pages/Contentchatbox';
 import Modal from 'react-bootstrap/Modal';
 import Image from "next/image";
+import Head from 'next/head';
 function SafeHydrate({ children }) {
   return (
     <div suppressHydrationWarning>
@@ -34,6 +35,11 @@ const  App = ({ Component, pageProps }) => {
     // setReceivedData(data);
   };
   return <SafeHydrate><Provider store={store}><Component {...pageProps} />      <div className={'chat_Box'}>
+    <Head>
+            <title>LHome</title>
+            <meta name="description" content="" />
+            <link rel="icon" href="/assets/icons/favicon.png" />
+          </Head>
   <HiOutlineChatAlt2 className={'Chat'} onClick={handleChatBox} />
   <Modal show={chatBoxShow} onHide={handleCloseBox} className={'ChatBox_Popup'}>
     <Modal.Header >

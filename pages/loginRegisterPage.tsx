@@ -30,12 +30,10 @@ function LoginRegisterPage() {
             <div className={css.formLR}>
                 <div className={css.loginLeftImage}>
                     <div className={css.emptybubble}></div>
-                    <Image src={leftvector} alt='leftvector' />
+                    <Image src={leftvector} alt='leftvector' className={css.Left_vector} />
                 </div>
                 {showLogin ? (<div className={css.formsofmodel}>
-                    <div className={css.rightImage}>
-                        <Image src={rightvector} alt='rightvector' />
-                    </div>
+
                     <form className={css.form_content}>
                         <div className={css.mainContent}>
                             <h2>Login</h2>
@@ -58,15 +56,13 @@ function LoginRegisterPage() {
                             <div className={css.mainVal}>
                                 <IoLogoGoogle size={35} color='#2F52A4' className={css.G_icon} />
                             </div>
-                            <p>First time user? <span className={css.signupbtn} onClick={toggleForm} style={{ fontWeight: 'bold' }}>Sign up</span> here</p>
+                            <p>First time user? <span className={css.signupbtn} onClick={toggleForm} style={{ fontWeight: 'bold' , cursor: 'pointer'  }}>Sign up</span> here</p>
                         </div>
                     </form>
                 </div>) :
                     (
                         <div className={css.formsofmodel}>
-                            <div className={css.rightImage}>
-                                <Image src={rightvector} alt='rightvector' />
-                            </div>
+
                             <form className={css.form_content}>
                                 <div className={css.mainContent}>
                                     <h2>Sign Up</h2>
@@ -97,13 +93,13 @@ function LoginRegisterPage() {
                                         <input type='text' className={css.SInput1} placeholder='Enter your email' />
                                         <input type='text' className={css.SInput0} placeholder='Enter your current residence pincode' />
 
-                                        <button className={css.SignButton}>LOGIN</button>
+                                        <button className={css.SignButton}>REGISTER</button>
                                     </div>
                                     <p>Or Login With</p>
                                     <div className={css.mainVal}>
                                         <IoLogoGoogle size={35} color='#2F52A4' className={css.G_icon} />
                                     </div>
-                                    <p>First time user? <span onClick={toggleForm} style={{ fontWeight: 'bold' }}>Log in </span> here</p>
+                                    <p>First time user? <span onClick={toggleForm} style={{ fontWeight: 'bold' , cursor: 'pointer' }}>Log in </span> here</p>
                                 </div>
                             </form>
                         </div>
