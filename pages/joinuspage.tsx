@@ -86,6 +86,7 @@ const JoinusPage: React.FC = () => {
                             <div className={css.component_1}><JoinusTable/></div>
                             <div className={css.component_2}><JoinPool /></div>
                         </div>
+                        <Footer />
                     </div>
                 </div>
             </div>

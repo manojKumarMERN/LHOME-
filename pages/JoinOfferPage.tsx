@@ -6,6 +6,7 @@ import css from "../styles/joinOffer.module.scss";
 import { simpleCallInitAPI } from "../services/ApicallInit";
 import JobOffer from "./components/joboffer/JobOffer";
 import { useRouter } from "next/router.js";
+import Footer from "./components/Footer/Footer";
 
 interface JobDetails {
   details: {
@@ -140,6 +141,7 @@ const JoinOfferPage: React.FC = () => {
               </div>
               <JobOffer value={details} />
             </div>
+            <Footer />
           </div>
         </div>
       </div>
