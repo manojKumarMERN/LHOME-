@@ -7,6 +7,7 @@ import JobOffer from "./components/joboffer/JobOffer";
 import { useRouter } from "next/router.js";
 import ApplyForJobForm from "./components/Jobform/Jobform";
 import Joinpoolcom from "./components/JoinPool/joinPoolcontent";
+import Footer from "./components/Footer/Footer";
 
 interface JobDetails {
     details: {
@@ -134,6 +135,7 @@ const JoinOverpage: React.FC = () => {
                         <div className={css.contentBox}>
                             <ApplyForJobForm header={headingFromQuery} joblocation={locationgFromQuery} selectCat={categoryFromQuery} />
                         </div>
+                        <Footer />
                     </div>
                 </div>
             </div>
