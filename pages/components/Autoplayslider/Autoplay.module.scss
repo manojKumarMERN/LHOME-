@@ -18,6 +18,9 @@
   padding-left: 20px;
   display: flex;
   justify-content: center;
+  @media (min-width:2000px) {
+    font-size: 1.5vw;
+  }
 }
 .container div[dir="ltr"]{
   position: unset !important;

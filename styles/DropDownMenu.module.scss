@@ -44,6 +44,11 @@
  
  .dropdownitemstyle{
     width: 100px !important;
+    @media (min-width:2000px) {
+      width: unset !important;
+      margin: 4% 2%;
+      font-size: 0.9vw;
+    }
  }
  
  .dropdowngroup{

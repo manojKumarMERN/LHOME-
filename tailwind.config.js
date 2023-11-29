@@ -28,6 +28,9 @@ module.exports = {
             "100%": { opacity: 1, transform: "translate3d(0, 0, 0)"}
           }
       })
+    },
+    screens :{
+      'larger': '2000px'
     }  
   }
 }

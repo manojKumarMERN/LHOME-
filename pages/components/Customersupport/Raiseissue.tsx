@@ -6,7 +6,7 @@ import Image from "next/image";
 const RaiseIssue = () => {
     return (
         <>
-            <div className="container">
+            <div className={"container "+css.containerForLG}>
                 <div className={css.Customersupportpage}>
                     <h5 className={css.head}>Reach out us</h5>
                     <div className={css.customlogo}>

@@ -23,6 +23,9 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    @media (min-width:2000px) {
+        font-size: 0.9vw;
+    }
 }
 
 .time {
@@ -32,6 +35,9 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    @media (min-width:2000px) {
+        font-size: 0.8vw;
+    }
 }
 
 .Customersupportpage {
@@ -54,6 +60,11 @@
     padding-left: 20px;
     padding-top: 10px;
     resize: none;
+    @media (min-width:2000px) {
+        width: 60vw;
+        height: 40vh;
+        font-size: 1vw;
+    }
 }
 
 .Customersupportpage:focus {
@@ -68,6 +79,12 @@
     margin-top: 20px;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    @media (min-width:2000px) {
+        width: 27vw;
+        height: 7vh;
+        font-size: 1.4vw;
+        margin-top: 2%;
+    }
 }
 
 .btncontrol:hover {
@@ -79,6 +96,9 @@
     height: 900px;
     margin: 0% auto;
     font-family: 'Montserrat', sans-serif;
+    @media (min-width:2000px) {
+        margin-top: 2%;
+    }
 }
 
 .Box {
@@ -116,9 +136,12 @@
     font-family: 'Montserrat';
     font-size: 20px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     line-height: normal;
     padding-left: 5px;
+    @media (min-width:2000px) {
+        font-size: 1.75vw;
+    }
 }
 
 .interiortext {
@@ -129,6 +152,9 @@
     font-weight: 300;
     line-height: normal;
     padding: 5px;
+    @media (min-width:2000px) {
+        font-size: 1vw;
+    }
 }
 
 .interioriframe {
@@ -182,4 +208,21 @@
         font-size: 10px;
     }
 
+}
+
+.containerForLG{
+    @media (min-width:2000px) {
+        max-width: 70vw;
+    }
+}
+.head{
+    @media (min-width:2000px) {
+        font-size: 0.8vw;
+    }
+}
+.referform_button_content{
+    @media (min-width:2000px) {
+        font-size: 1vw;
+        padding-top: 2%;
+        }
 }

@@ -39,10 +39,18 @@
  .dropdownitemsstyle{
 
     font-size: 12px;
+    @media (min-width:2000px) {
+      font-size: 0.9vw;
+      padding: 3% 0;
+    }
  }
  
  .dropdownitemstyle{
     width: 100px !important;
+    @media (min-width:2000px) {
+      width: unset !important;
+      margin: 4% 2%;
+    }
  }
  
  .dropdowngroup{
