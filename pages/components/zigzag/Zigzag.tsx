@@ -18,6 +18,9 @@ function Zigzag() {
 
     const handleMouseEnter = () => {
         setIsAnimationPaused(true);
+        setTimeout(() => {
+            setIsAnimationPaused(false)
+        }, 1800);
     };
 
     const handleMouseLeave = () => {

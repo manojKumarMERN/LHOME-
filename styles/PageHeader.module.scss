@@ -302,9 +302,9 @@ display: block;
        font-size: 1.5vw !important;
     }
 
-    .userLoginRegister {
-       font-size: 1.5vw !important;
-    }
+   //  .userLoginRegister {
+   //     font-size: 1.5vw !important;
+   //  }
  }
 
  @media only screen and (max-width: 600px) {
@@ -346,7 +346,7 @@ display: block;
     }
 
     .userLoginRegister {
-       font-size: 2vw;
+       font-size: 10px;
     }
  }
 
