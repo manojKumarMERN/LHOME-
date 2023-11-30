@@ -22,6 +22,9 @@ const RecentProject: React.FC = () => {
     const [isAnimationPaused, setIsAnimationPaused] = React.useState(false);
     const handleMouseEnter = () => {
         setIsAnimationPaused(false);
+        setTimeout(() => {
+            setIsAnimationPaused(true)
+        }, 1800);
     };
 
     const handleMouseLeave = () => {
@@ -39,7 +42,7 @@ const RecentProject: React.FC = () => {
                             <div className={css.detailsholder}>
                                 <div style={{ backgroundColor: "#FFF;" }} key={`${connects.image}${index}${index}`} className={css.division1}>
                                     <img key={`${connects.image}_${index}`} loading="lazy"
-                                        src={isAnimationPaused ? connects.image : connects.image1}  alt={connects.name} className={connects.name ==='repairtools'? css.recentim : css.recentimg} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}/>
+                                        src={isAnimationPaused ? connects.image : connects.image1}  alt={connects.name} className={index ===2 ? (css.recentimg + ' ' + css.scaledown) : css.recentimg} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}/>
                                     <div className={css.interiorname}>
                                         <div className={css.recentcount}>{connects.count}</div>
                                         <div className={css.recentpara}>{connects.para}</div>
