@@ -29,6 +29,11 @@ const DynamicIterableComponent: React.FC<properties> = ({ data }) => {
         setShow(false);
     }
 
+    let arr = [];
+    const addWishlist = (index) => {
+        arr.push(index)
+    }
+
     return (
         <React.Fragment>
             <div>
@@ -41,10 +46,10 @@ const DynamicIterableComponent: React.FC<properties> = ({ data }) => {
                                     >
                                         {item.image ?
                                             <div className={css.customdivisionchild}  >
-                                                <div className={css.customimage} onClick={() => handlePopup(item) }>
-                                                    <img loading="lazy" className='' src={item.image} alt='images' />
+                                                <div className={css.customimage} >
+                                                    <img loading="lazy" className='' src={item.image} onClick={() => handlePopup(item) } alt='images' />
                                                     <div className={" w-full flex grid-cols-5 "} style={{padding:"2% 0 3%"}}>
-                                                        <div className="w-full col-span-3 ">
+                                                        <div className="w-full col-span-3 " onClick={() => handlePopup(item) }>
                                                             <span className={css.customname + " sm:text-[8px] md:text-[12px]"}>{item.name}</span>
                                                             <span className={css.customtext}>
                                                                 {item.size}
@@ -52,11 +57,11 @@ const DynamicIterableComponent: React.FC<properties> = ({ data }) => {
                                                         </div>
                                                         <div  className={css.dynamicIcons_content}>
                                                         <div className={'col-span-1 ' + css.com_icons} >
-                                                            <span className={css.wishlistholder}>
+                                                            <span className={css.wishlistholder} onClick={()=>addWishlist(index)}>
                                                                 <BsHeart />
                                                             </span>
                                                         </div>
-                                                        <div className={'col-span-1 ' + css.com_icons}>
+                                                        <div className={'col-span-1 ' + css.com_icons} >
                                                             <span className={css.shareholder}>
                                                                 <FaRegShareFromSquare />
                                                             </span>

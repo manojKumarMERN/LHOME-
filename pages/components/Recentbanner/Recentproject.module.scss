@@ -1,7 +1,6 @@
 .connectfilmrole {
     display: flex;
     width: 100%;
-    // position: relative;
     margin-bottom: 8%;
 }
 
@@ -45,24 +44,20 @@
     line-height: normal;
 }
 
-// #verticaldivider {
-//     display: block;
-//     position: absolute;
-//     left: 480px;
-//     height: 100px;
-// }
 .division1 img{
  margin:0 auto;
 }
+
+.division1 img:nth-child(2){
+    display: none;
+}
+
 .recentimg {
-    // width: 90%;
     height: 100%;
 
 }
-.recentim{
-    // width: 50%;
-    height: 100%;
-}
+
+
 
 @media screen and (min-width:320px) and (max-width:720px){
     .connectfilmrole {
@@ -78,9 +73,6 @@
     .recentimg {
         height: 80%;    
     }
-    .recentim{
-        height: 80%;
-    } 
 }
 @media only screen and (min-width:720px) and (max-width:1024px) {
     .division1 {
@@ -89,7 +81,4 @@
     .recentimg {
         height: 80%;    
     }
-    .recentim{
-        height: 80%;
-    }  
 }

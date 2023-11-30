@@ -39,6 +39,8 @@ const ImageSlider: React.FC<Sliderproperties> = ({ screenwidth, screenheight, sw
   React.useEffect(() => {
     let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
     api.then((data: any) => {
+      console.log(data);
+      
       totalsliderimages = data.data.settings.sliderimages;
       totalsliderimagesalt = data.data.settings.sliderimagesalt;
       sliderleftblock.current.style.position = "absolute";
@@ -99,7 +101,7 @@ const ImageSlider: React.FC<Sliderproperties> = ({ screenwidth, screenheight, sw
   const prevItem = () => {
     slidercounter--;
     if (slidercounter < 0) {
-      slidercounter = 0;
+      slidercounter = totalsliderimages.length - 1;
     }
     setSliderImageName(totalsliderimages[slidercounter]);
     setSliderImageAlt(totalsliderimagesalt[slidercounter])
@@ -109,7 +111,7 @@ const ImageSlider: React.FC<Sliderproperties> = ({ screenwidth, screenheight, sw
   const nextItem = () => {
     slidercounter++;
     if (slidercounter >= totalsliderimages.length) {
-      slidercounter = totalsliderimages.length - 1;
+      slidercounter = 0;
     }
     setSliderImageName(totalsliderimages[slidercounter]);
     setSliderImageAlt(totalsliderimagesalt[slidercounter])
