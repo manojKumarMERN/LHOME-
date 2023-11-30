@@ -436,8 +436,11 @@ display: block;
    border: none;
    display: flex;
    justify-content: flex-end;
-   color: #fff;
-   
+   color: #222222;
+   font-size: 2vw;
+   @media (max-width:1024px){
+      font-size: 24px;
+   }
  }
  .Modal_Popup div[class="modal-dialog"]{
    max-width: 60% !important;

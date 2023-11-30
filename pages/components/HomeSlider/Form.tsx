@@ -4,7 +4,9 @@ import { useRouter } from 'next/router';
 
 const Form: React.FC = () => { 
     const router = useRouter();
-    
+    const handleSession =()=>{
+        router.push('/Bookfreedesign');
+    }
     return (
         <div className={`${css.designermeetholder}`}>
             <div className={css.designermeet}>
@@ -56,7 +58,7 @@ const Form: React.FC = () => {
                     </div>
                 </div>
                 <div className={css.designerbookingconfirmationholder} style={{ marginTop: "12px" }}>
-                    <button className={css.designerbookingconfirmationbutton}><label>BOOK FREE DESIGN SESSION</label></button>
+                    <button className={css.designerbookingconfirmationbutton} onClick={handleSession}><label>BOOK FREE DESIGN SESSION</label></button>
                 </div>
                 <div className={css.designerbookingwarningtext}>By submitting this form, you agree to the privacy policy and terms of use</div>
             </div>

@@ -1,0 +1,27 @@
+.selectedButton {
+    background-color: #F44336;
+    color: #fff;
+    border-radius: 0.3vw;
+    padding: 1% 0%;
+    width: 30%;
+  }
+  .not_selectedButton{
+    background-color: white;
+    color:#222222;
+    border: 1px solid #9F9F9F;
+    border-radius: 0.3vw;
+    padding: 1% 0%;
+    width: 30%;
+  }
+  .select_button_Heading{
+    font-size: 1vw;
+    font-weight: 600;
+    color: #737373;
+    @media (max-width:1024px){
+        font-size: 12px;
+    }
+  }
+  .Button_content{
+    display: flex;
+    justify-content: space-between;
+  }

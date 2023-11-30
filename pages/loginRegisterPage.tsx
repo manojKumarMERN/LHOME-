@@ -4,8 +4,7 @@ import rightvector from './components/loginRegister/rightvector.png';
 import Image from 'next/image';
 import css from '../styles/loginRegister.module.scss';
 import ReactFlagsSelect from "react-flags-select";
-import { IoLogoGoogle } from 'react-icons/io';
-
+import { TbReload } from "react-icons/tb";
 function LoginRegisterPage() {
 
     const [showLogin, setShowLogin] = React.useState(true);
@@ -21,8 +20,10 @@ function LoginRegisterPage() {
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
     };
-
-
+    const [otpForm, setOtpForm] = React.useState(true);
+    const handleClick = () =>{
+        setOtpForm(!otpForm);
+    }
 
     return (
         <>
@@ -35,7 +36,8 @@ function LoginRegisterPage() {
                 {showLogin ? (<div className={css.formsofmodel}>
 
                     <form className={css.form_content}>
-                        <div className={css.mainContent}>
+                    {otpForm ?
+                        (<div className={css.mainContent}>
                             <h2>Login</h2>
                             <p>Enter your register mobile number</p>
                             <div className={css.inputAndbtn}>
@@ -50,14 +52,27 @@ function LoginRegisterPage() {
                                 </div>
 
                                 <input type='number' inputMode='text' className={css.LRInput} placeholder='00000 00000' />
-                                <button className={css.LoginButton}>LOGIN</button>
+                                <button className={css.LoginButton} onClick={handleClick}>LOGIN</button>
                             </div>
                             <p>Or Login With</p>
                             <div className={css.mainVal}>
-                                <IoLogoGoogle size={35} color='#2F52A4' className={css.G_icon} />
+                                <Image src={require("../public/assets/icons/Gicon.png")} className={css.G_icon} alt='g_icon' />
                             </div>
-                            <p>First time user? <span className={css.signupbtn} onClick={toggleForm} style={{ fontWeight: 'bold' , cursor: 'pointer'  }}>Sign up</span> here</p>
-                        </div>
+                            <p style={{marginTop:'unset'}}>First time user? <span className={css.signupbtn} onClick={toggleForm} style={{ fontWeight: 'bold', cursor: 'pointer' }}>Sign up</span> here</p>   
+                        </div>)
+                         : (<div>
+                            <div className={css.Otp_heading}>Verify your number</div>
+                            <div className={css.otp_Box}>
+                                <p className={css.otp_box_content} style={{padding:0}}>Phone Number: 6379649524</p>
+                                <p className={css.otp_box_content}>One Time Password</p>
+                                <input type='text' className={css.otp_input} placeholder='Enter OTP'/>
+                                <p className={css.otp_box_content}>Your OTP will expire in <span style={{color:'#F44336'}}> 00.10</span></p>
+                                <button className={css.otp_button}>Submit</button><br/>
+                                <button className={css.otp_resend_button}><TbReload /> Resend</button>
+                            </div>
+                            <div className={css.otp_Verify_content}>We have sent OTP to your number, please verify</div>
+                            </div>
+                         )} 
                     </form>
                 </div>) :
                     (
@@ -78,7 +93,7 @@ function LoginRegisterPage() {
                                                     className={css.number_dropdown}
                                                 />
                                             </div>
-                                            <input type='tel' className={css.SInput2} placeholder='00000 00000' />
+                                            <input type='number' className={css.SInput2} placeholder='00000 00000' />
                                         </div>
                                         <div className={css.whatsapplabel}>
                                             <div className='w-full flex flex-col justify-center items-right pe-2'>
@@ -97,9 +112,9 @@ function LoginRegisterPage() {
                                     </div>
                                     <p>Or Login With</p>
                                     <div className={css.mainVal}>
-                                        <IoLogoGoogle size={35} color='#2F52A4' className={css.G_icon} />
+                                        <Image src={require("../public/assets/icons/Gicon.png")} className={css.G_icon} alt='g_icon' />
                                     </div>
-                                    <p>First time user? <span onClick={toggleForm} style={{ fontWeight: 'bold' , cursor: 'pointer' }}>Log in </span> here</p>
+                                    <p style={{marginTop:'unset'}}>First time user? <span onClick={toggleForm} style={{ fontWeight: 'bold', cursor: 'pointer' }}>Log in </span> here</p>
                                 </div>
                             </form>
                         </div>
