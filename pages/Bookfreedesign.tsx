@@ -5,6 +5,8 @@ import * as config from "./../next.config.js";
 import css from '../styles/bookfreedesign.module.scss'
 import Selectbutton from './components/SelectButton/selectbutton';
 import { MdApartment,MdOutlineHolidayVillage,MdHome  } from "react-icons/md";
+import Radibutton from './components/SelectButton/RadiButton';
+import { Bookfreedropdown } from './components/SelectButton/Bookfreedropdown';
 
 
 interface homeproperties {
@@ -36,7 +38,48 @@ const Bookfreedesign: React.FC<homeproperties> = ({ screenwidth, screenheight })
 //         { label: "Villa", icon: <MdOutlineHolidayVillage /> },
 //         { label: "Independent Home", icon: <IndependentHomeIcon /> }
 // ];
-const labels:string[] = ["Apartment","Villa","Independent Home"]
+const labels:string[] = ["Apartment","Villa","Independent Home"];
+const district: string[]=[
+    "Ariyalur",
+    "Chengalpattu",
+    "Chennai",
+    "Coimbatore",
+    "Cuddalore",
+    "Dharmapuri",
+    "Dindigul",
+    "Erode",
+    "Kallakurichi",
+    "Kanchipuram",
+    "Kanniyakumari",
+    "Karur",
+    "Krishnagiri",
+    "Madurai",
+    "Mayiladuthurai",
+    "Nagapattinam",
+    "Namakkal",
+    "Nilgiris",
+    "Perambalur",
+    "Pudukkottai",
+    "Ramanathapuram",
+    "Ranipet",
+    "Salem",
+    "Sivagangai",
+    "Tenkasi",
+    "Thanjavur",
+    "Theni",
+    "Thoothukudi",
+    "Tiruchirappalli",
+    "Tirunelveli",
+    "Tirupathur",
+    "Tiruppur",
+    "Tiruvallur",
+    "Tiruvannamalai",
+    "Tiruvarur",
+    "Vellore",
+    "Viluppuram",
+    "Virudhunagar"
+  ];
+   
 
     return (
         <>
@@ -50,7 +93,10 @@ const labels:string[] = ["Apartment","Villa","Independent Home"]
                 </div>
                 <div className={css.book_Content}>
                     <Selectbutton labels={labels}/>
+                    <Radibutton/>
+                    <Bookfreedropdown/>
                 </div>
+
             </div>
         </>
     )

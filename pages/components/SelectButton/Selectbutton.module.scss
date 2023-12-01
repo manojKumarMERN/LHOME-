@@ -21,6 +21,17 @@
         font-size: 12px;
     }
   }
+  .radio_button_Heading
+  {
+    padding-top: 4%;
+    margin-bottom: unset;
+    font-size: 1vw;
+    font-weight: 600;
+    color: #737373;
+    @media (max-width:1024px){
+        font-size: 12px;
+    }
+  }
   .Button_content{
     display: flex;
     justify-content: space-between;
