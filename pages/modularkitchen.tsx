@@ -14,6 +14,7 @@ import DynamicIterableComponent from "./components/IterableComponent/DynamicIter
 import MeetDesigner from "./components/MeetDesigner/MeetDesigner";
 import Link from "next/link.js";
 import Ideas from "./components/MeetDesigner/ideas";
+import { AxiosService } from "../services/ApiService.js";
 
 
 const ModularKitchenPage: React.FC = () => {
@@ -74,24 +75,38 @@ const ModularKitchenPage: React.FC = () => {
 
   React.useEffect(() => {
     let api = simpleCallInitAPI(`${assetpath}/assets/ushapedKitchen.json`);
-    api.then((data: any) => {
-      setData(data.data.Row1);
-    });
-    let response = simpleCallInitAPI(`${assetpath}/assets/straightKitchen.json`);
-    response.then((data: any) => {
-      setData1(data.data.Row1);
-    });
-    let response1 = simpleCallInitAPI(`${assetpath}/assets/LshapedKitchen.json`);
-    response1.then((data: any) => {
-      setData2(data.data.Row1);
-    });
-    let response2 = simpleCallInitAPI(`${assetpath}/assets/IslandKitchen.json`);
-    response2.then((data: any) => {
-      setData3(data.data.Row1);
-    });
+    // api.then((data: any) => {
+    //   setData(data.data.Row1);
+    // });
+    // let response = simpleCallInitAPI(`${assetpath}/assets/straightKitchen.json`);
+    // response.then((data: any) => {
+    //   setData1(data.data.Row1);
+    // });
+    // let response1 = simpleCallInitAPI(`${assetpath}/assets/LshapedKitchen.json`);
+    // response1.then((data: any) => {
+    //   setData2(data.data.Row1);
+    // });
+    // let response2 = simpleCallInitAPI(`${assetpath}/assets/IslandKitchen.json`);
+    // response2.then((data: any) => {
+    //   setData3(data.data.Row1);
+    // });
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResized);
   }, [handleResize, handleResized, assetpath]);
+
+  const categoryCall = async() =>{
+    const res = await AxiosService.get("http://localhost:8080/category/Modular")
+    if (res?.status === 200){
+      setData(res?.data?.data)
+    }
+    console.log("res--------------------------------->>>>",res)
+
+  }
+
+  React.useEffect( () => {
+    categoryCall()
+
+  },[])
   const [activePage, setActivePage] = React.useState<string | null>('unset');
   const handleClick = (pageName: string) => {
     setActivePage(pageName);
@@ -112,6 +127,23 @@ const ModularKitchenPage: React.FC = () => {
 
     }
   }
+
+  const handlelike = async(id ,user_id = "3") => {
+    try {
+        const res = await AxiosService.put(`http://localhost:8080/category/${user_id}`, {Category_id : id})
+        if(res?.status === 200){
+            categoryCall()
+        }
+
+    console.log("update================>>>>",res)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+  console.log("data1----------------->",data1)
+  console.log("data2----------------->",data2)
+  console.log("data3----------------->",data3)
 
   return (
     <React.Fragment>
@@ -181,22 +213,22 @@ const ModularKitchenPage: React.FC = () => {
               <>
                 <div>
                   <Ideas color="blue" prop="U-Shaped Kitchen" />
-                  <div className="mt-5 "> <DynamicIterableComponent data={data} /></div>
+                  <div className="mt-5 "> <DynamicIterableComponent data={data} handlelike = {handlelike} /></div>
                 </div>
                 <div>
                   <MeetDesigner colour='red' prop="Straight Kitchen" container="meetContainer1" />
-                  <DynamicIterableComponent data={data1} />
+                  <DynamicIterableComponent data={data} handlelike = {handlelike} />
                 </div>
                 <div>
                   <MeetDesigner colour='blue' prop="Island Kitchen" container="meetContainer2" />
-                  <DynamicIterableComponent data={data2} />
+                  <DynamicIterableComponent data={data} handlelike = {handlelike} />
                 </div>
                 <div>
                   <MeetDesigner colour='red' prop="L-Shaped Kitchen" container="meetContainer1" />
-                  <DynamicIterableComponent data={data3} />
+                  <DynamicIterableComponent data={data} handlelike = {handlelike} />
                 </div>
               </>}
-            {activePage == 'U-Shaped' &&
+            {/* {activePage == 'U-Shaped' &&
               <div>
 
                 <Ideas color="blue" prop="U-Shaped Kitchen" />
@@ -216,7 +248,7 @@ const ModularKitchenPage: React.FC = () => {
               <div>
                 <Ideas color="blue" prop="L-Shaped Kitchen" />
                 <DynamicIterableComponent data={data3} />
-              </div>}
+              </div>} */}
             <div className="mb-[-50px]"><Autoplay living={living} /></div>
             <div><ReferNowPage /></div>
             <div><Warranty /></div>

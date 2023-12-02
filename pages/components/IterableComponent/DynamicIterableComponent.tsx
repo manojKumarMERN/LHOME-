@@ -2,19 +2,20 @@ import React from 'react';
 import css from "./DynamicIterableComponent.module.scss";
 import Image from 'next/image';
 import Modal from 'react-bootstrap/Modal'
-import { BsHeart } from "react-icons/bs";
+import { BsHeart, BsHeartPulseFill } from "react-icons/bs";
 import { FaRegShareFromSquare } from 'react-icons/fa6';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import DetailsOfimg from '../../DetailsOfimg';
 
 
 interface properties {
-    data: any
+    data: any ,
+    handlelike : any
 }
 
 
 
-const DynamicIterableComponent: React.FC<properties> = ({ data }) => {
+const DynamicIterableComponent: React.FC<properties> = ({ data ,handlelike }) => {
     const [show, setShow] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
 
@@ -34,6 +35,8 @@ const DynamicIterableComponent: React.FC<properties> = ({ data }) => {
         arr.push(index)
     }
 
+    console.log("data===|||||||||||||||||||||||||||",data)
+
     return (
         <React.Fragment>
             <div>
@@ -44,7 +47,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data }) => {
                                 data.map((item, index) => (
                                     <div className={"p-3 w-full h-full " + css.divCard} key={index} 
                                     >
-                                        {item.image ?
+                                        {item?.image ?
                                             <div className={css.customdivisionchild}  >
                                                 <div className={css.customimage} >
                                                     <img loading="lazy" className='' src={item.image} onClick={() => handlePopup(item) } alt='images' />
@@ -57,8 +60,10 @@ const DynamicIterableComponent: React.FC<properties> = ({ data }) => {
                                                         </div>
                                                         <div  className={css.dynamicIcons_content}>
                                                         <div className={'col-span-1 ' + css.com_icons} >
-                                                            <span className={css.wishlistholder} onClick={()=>addWishlist(index)}>
-                                                                <BsHeart />
+                                                            <span className={css.wishlistholder} onClick={() => handlelike(item?.id )}>
+                                                                {
+                                                                    item?.likes?.includes(3) ? <BsHeartPulseFill /> : <BsHeart /> 
+                                                            }
                                                             </span>
                                                         </div>
                                                         <div className={'col-span-1 ' + css.com_icons} >

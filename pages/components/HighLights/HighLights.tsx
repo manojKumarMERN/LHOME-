@@ -100,7 +100,7 @@ const StylishHomeProducts: React.FC = () => {
     }
 
     const categoryCall = async() => {
-        let res = await AxiosService.get('http://localhost:8080/category')
+        let res = await AxiosService.get('http://localhost:8080/category/modular')
         if(res?.data?.statusCode === 200){
             setTrendings(res?.data?.data);
             console.log("categoryCall--------->>>>",res?.data?.data)
@@ -136,7 +136,7 @@ const StylishHomeProducts: React.FC = () => {
                                 customRightArrow={<CustomRightArrow onClick={() => { }} />}
                             >
 
-                                {trendings.map((datas: any, index: number) => (
+                                {trendings?.map((datas: any, index: number) => (
                                     <div
                                         key={`${datas.subname}_${index}_${index}`}
                                         className={css.customdivision}
