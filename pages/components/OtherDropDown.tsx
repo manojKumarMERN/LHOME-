@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import css from '../../styles/otherdropdown.module.scss';
-import DropDownIcon from "../../public/assets/SVGIcons/DropdownArrow";
+// import DropDownIcon from "../../public/assets/SVGIcons/DropdownArrow";
 import Link from 'next/link';
 import { useRouter } from "next/router";
 interface CitiesProps {
@@ -20,7 +20,7 @@ const CityToggle = React.forwardRef<HTMLElement, CitiesProps>(({ children:any, o
       className={css.cdropdown} 
     >
      <div> 
-        <DropDownIcon transFormX="1" transFormY = "1" fillColor={"none"} strokeColor={"blue"} strokeWidth={.5}/>
+        {/* <DropDownIcon transFormX="1" transFormY = "1" fillColor={"none"} strokeColor={"blue"} strokeWidth={.5}/> */}
      </div>   
     </Link>
   ));
