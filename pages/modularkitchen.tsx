@@ -95,7 +95,7 @@ const ModularKitchenPage: React.FC = () => {
   }, [handleResize, handleResized, assetpath]);
 
   const categoryCall = async() =>{
-    const res = await AxiosService.get("http://localhost:8080/category/Modular")
+    const res = await AxiosService.get("/category/Modular")
     if (res?.status === 200){
       setData(res?.data?.data)
     }
@@ -130,7 +130,7 @@ const ModularKitchenPage: React.FC = () => {
 
   const handlelike = async(id ,user_id = "3") => {
     try {
-        const res = await AxiosService.put(`http://localhost:8080/category/${user_id}`, {Category_id : id})
+        const res = await AxiosService.put(`/category/${user_id}`, {Category_id : id})
         if(res?.status === 200){
             categoryCall()
         }
