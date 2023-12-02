@@ -8,11 +8,13 @@ import CustomLeftArrow from "./CustomLeftArrow";
 import CustomRightArrow from "./CustomRightArrow";
 import Carousel from "react-multi-carousel";
 import { BsHeart } from "react-icons/bs";
+import { BsHeartPulseFill } from "react-icons/bs";
 import { FaRegShareFromSquare } from 'react-icons/fa6'
 import { useRouter } from 'next/router';
 import Modal from 'react-bootstrap/Modal'
 import { AiFillCloseCircle } from 'react-icons/ai';
 import DetailsOfimg from '../../DetailsOfimg';
+import { AxiosService } from '../../../services/ApiService'
 
 const StylishHomeProducts: React.FC = () => {
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
@@ -26,15 +28,15 @@ const StylishHomeProducts: React.FC = () => {
         let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
         api.then((data: any) => {
             let ltrendings = [];
-            data.data.settings.trendings.forEach((datas: any) => {
-                let lc: any = {};
-                lc.image = `${assetpath}${datas.image}`;
-                lc.name = datas.name;
-                lc.subname = datas.subname;
-                lc.size = datas.size
-                ltrendings.push(lc);
-            });
-            setTrendings(ltrendings);
+            // data.data.settings.trendings.forEach((datas: any) => {
+            //     let lc: any = {};
+            //     lc.image = `${assetpath}${datas.image}`;
+            //     lc.name = datas.name;
+            //     lc.subname = datas.subname;
+            //     lc.size = datas.size
+            //     ltrendings.push(lc);
+            // });
+            // setTrendings(ltrendings);
             setWishListImage(`${assetpath}${data.data.settings.wishlistimage}`);
             setWishListAlt(`${assetpath}${data.data.settings.wishlistAlt}`);
             setShareIconImage(`${assetpath}${data.data.settings.shareiconimage}`);
@@ -44,6 +46,8 @@ const StylishHomeProducts: React.FC = () => {
                 console.log(error);
             });
     }, [assetpath]);
+
+    
 
     const [show, setShow] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
@@ -79,6 +83,35 @@ const StylishHomeProducts: React.FC = () => {
 
     };
     const router = useRouter();
+
+    const handlelike = async(id ,user_id = "3") => {
+        try {
+
+            const res = await AxiosService.put(`http://localhost:8080/category/${user_id}`, {Category_id : id})
+
+            if(res?.status === 200){
+                categoryCall()
+            }
+
+        console.log("update================>>>>",res)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const categoryCall = async() => {
+        let res = await AxiosService.get('http://localhost:8080/category')
+        if(res?.data?.statusCode === 200){
+            setTrendings(res?.data?.data);
+            console.log("categoryCall--------->>>>",res?.data?.data)
+        }
+    }
+
+    React.useEffect(()=>{
+        categoryCall()
+    },[assetpath])
+
+    console.log("assetpath-------->>>",assetpath)
 
     return (
         <React.Fragment>
@@ -122,7 +155,11 @@ const StylishHomeProducts: React.FC = () => {
                                                         {datas.name}
                                                         <div className={css.image_bottom_icons}>
                                                             <span className={css.wishlistholder}>
-                                                                <BsHeart />
+                                                            <div onClick={()=> handlelike(datas?.id)}>
+                                                            {
+                                                                    datas?.likes?.includes(3) ? <BsHeartPulseFill /> : <BsHeart /> 
+                                                            }
+                                                        </div>
                                                             </span>
                                                             <span className={css.shareholder}>
                                                                 <FaRegShareFromSquare />
