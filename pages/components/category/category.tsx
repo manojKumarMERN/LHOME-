@@ -3,7 +3,7 @@ import * as React from "react";
 import css from './category.module.scss';
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
-// import CircleArrow from "../../../public/assets/SVGIcons/CircleArrow";
+import CircleArrow from "../../../public/assets/SVGIcons/CircleArrow";
 import { useRouter } from "next/router";
 
 const Category: React.FC = () => {
@@ -51,7 +51,7 @@ const handleRoutes = (categoryData)=>{
          <div className={css.listingcategory}>
     <div className={css.listingcategoryOuterLayer +` `}>
         <p className={css.categorytitle}>Listing category<span>
-            {/* <CircleArrow scale={".5"} /> */}
+            <CircleArrow scale={".5"} />
             </span>
             </p>
         <div className={css.listingfilmrole}>

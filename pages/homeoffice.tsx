@@ -133,7 +133,7 @@ const pageheaderMonitor = () => {
                               <div className={css.mainIdea}>
                               <Ideas prop="Home office" color="red" />
                               </div>
-                              <div className="mt-[-5%]"><DynamicIterableComponent  data={homeOffice}/></div>
+                              <div className="mt-[-5%]"><DynamicIterableComponent  data={homeOffice} categoryId='17'/></div>
                               <div className="mb-[-50px]"><Autoplay living={living} /></div>
                            <div><ReferNowPage/></div>
                            <div><Warranty/></div>

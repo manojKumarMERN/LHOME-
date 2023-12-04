@@ -56,7 +56,7 @@ function LoginRegisterPage() {
                             </div>
                             <p>Or Login With</p>
                             <div className={css.mainVal}>
-                                {/* <Image src={require("../public/assets/icons/Gicon.png")} className={css.G_icon} alt='g_icon' /> */}
+                                <Image src={require("../public/assets/icons/Gicon.png")} className={css.G_icon} alt='g_icon' />
                             </div>
                             <p style={{marginTop:'unset'}}>First time user? <span className={css.signupbtn} onClick={toggleForm} style={{ fontWeight: 'bold', cursor: 'pointer' }}>Sign up</span> here</p>   
                         </div>)
@@ -112,7 +112,7 @@ function LoginRegisterPage() {
                                     </div>
                                     <p>Or Login With</p>
                                     <div className={css.mainVal}>
-                                        {/* <Image src={require("../public/assets/icons/Gicon.png")} className={css.G_icon} alt='g_icon' /> */}
+                                        <Image src={require("../public/assets/icons/Gicon.png")} className={css.G_icon} alt='g_icon' />
                                     </div>
                                     <p style={{marginTop:'unset'}}>First time user? <span onClick={toggleForm} style={{ fontWeight: 'bold', cursor: 'pointer' }}>Log in </span> here</p>
                                 </div>

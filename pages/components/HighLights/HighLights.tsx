@@ -21,6 +21,7 @@ const StylishHomeProducts: React.FC = () => {
     const [trendings, setTrendings] = React.useState([]);
     const [wishlistimage, setWishListImage] = React.useState("");
     const [wishlistalt, setWishListAlt] = React.useState("");
+    const [res , setRes] = React.useState([]);
 
     const [shareiconimage, setShareIconImage] = React.useState("");
     const [sharealt, setShareAlt] = React.useState("");
@@ -28,15 +29,15 @@ const StylishHomeProducts: React.FC = () => {
         let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
         api.then((data: any) => {
             let ltrendings = [];
-            // data.data.settings.trendings.forEach((datas: any) => {
-            //     let lc: any = {};
-            //     lc.image = `${assetpath}${datas.image}`;
-            //     lc.name = datas.name;
-            //     lc.subname = datas.subname;
-            //     lc.size = datas.size
-            //     ltrendings.push(lc);
-            // });
-            // setTrendings(ltrendings);
+            data.data.settings.trendings.forEach((datas: any) => {
+                let lc: any = {};
+                lc.image = `${assetpath}${datas.image}`;
+                lc.name = datas.name;
+                lc.subname = datas.subname;
+                lc.size = datas.size
+                ltrendings.push(lc);
+            });
+            setTrendings(ltrendings);
             setWishListImage(`${assetpath}${data.data.settings.wishlistimage}`);
             setWishListAlt(`${assetpath}${data.data.settings.wishlistAlt}`);
             setShareIconImage(`${assetpath}${data.data.settings.shareiconimage}`);
@@ -45,6 +46,19 @@ const StylishHomeProducts: React.FC = () => {
             .catch(error => {
                 console.log(error);
             });
+            let fetchData = async () => {
+                try {
+                  const response = await AxiosService.post('/wishes', {
+                    loginId: '2',
+                    categoryId : '1'
+                  });
+                  setRes(Array.isArray(response.data?.trendWish) ? response.data?.trendWish : []);
+                } catch (error) {
+                  console.error('Error:', error.message);
+                }
+              };
+          
+              fetchData();
     }, [assetpath]);
 
     
@@ -84,33 +98,34 @@ const StylishHomeProducts: React.FC = () => {
     };
     const router = useRouter();
 
-    const handlelike = async(id ,user_id = "3") => {
+    const handlelike = async(index) => {
+        console.log(index);
+        
         try {
 
-            const res = await AxiosService.put(`/category/${user_id}`, {Category_id : id})
+            const resp = await AxiosService.post(`/wish/${index}`, {loginId: '2' , categoryId : '1'})
 
-            if(res?.status === 200){
-                categoryCall()
-            }
+            if(resp?.status === 200){
+                const response = await AxiosService.post('/wishes', {
+                    loginId: '2',
+                    categoryId : '1'
+                  });
+                  setRes(Array.isArray(response.data?.trendWish) ? response.data?.trendWish : []);            }
 
-        console.log("update================>>>>",res)
         } catch (error) {
             console.log(error)
         }
     }
 
-    const categoryCall = async() => {
-        let res = await AxiosService.get('/category/modular')
-        if(res?.data?.statusCode === 200){
-            setTrendings(res?.data?.data);
-            console.log("categoryCall--------->>>>",res?.data?.data)
+    const updatedTrendings = trendings.map((element, index) => {
+        const matchingItem = res.find(item => item.index === index);
+        if (matchingItem) {
+          return { ...element, liked: true };
         }
-    }
-
-    React.useEffect(()=>{
-        categoryCall()
-    },[assetpath])
-
+        return element;
+      });
+            
+      
     return (
         <React.Fragment>
             <div className={css.mainhighlights}>
@@ -134,11 +149,11 @@ const StylishHomeProducts: React.FC = () => {
                                 customRightArrow={<CustomRightArrow onClick={() => { }} />}
                             >
 
-                                {trendings?.map((datas: any, index: number) => (
+                                {updatedTrendings?.map((datas: any, index: number) => (
                                     <div
                                         key={`${datas.subname}_${index}_${index}`}
                                         className={css.customdivision}
-                                        onClick={() => handlePopup(datas)}
+                                        
                                     >
                                         <div className={css.customdivisionchild}>
                                             <div className={css.customimage}>
@@ -147,15 +162,16 @@ const StylishHomeProducts: React.FC = () => {
                                                     loading="lazy"
                                                     src={datas.image}
                                                     alt={datas.subname}
+                                                    onClick={() => handlePopup(datas)}
                                                 />
                                                 <div className={css.customlist}>
                                                     <div className={css.customname}>
                                                         {datas.name}
                                                         <div className={css.image_bottom_icons}>
                                                             <span className={css.wishlistholder}>
-                                                            <div onClick={()=> handlelike(datas?.id)}>
+                                                            <div onClick={()=>handlelike(index)}>
                                                             {
-                                                                    datas?.likes?.includes(3) ? <BsHeartPulseFill /> : <BsHeart /> 
+                                                                    datas?.liked ? <BsHeartPulseFill /> : <BsHeart /> 
                                                             }
                                                         </div>
                                                             </span>

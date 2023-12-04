@@ -2,22 +2,68 @@ import React from 'react';
 import css from "./DynamicIterableComponent.module.scss";
 import Image from 'next/image';
 import Modal from 'react-bootstrap/Modal'
-import { BsHeart, BsHeartPulseFill } from "react-icons/bs";
+import { BsFillHeartPulseFill, BsHeart, BsHeartPulseFill } from "react-icons/bs";
 import { FaRegShareFromSquare } from 'react-icons/fa6';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import DetailsOfimg from '../../DetailsOfimg';
+import { AxiosService } from '../../../services/ApiService';
 
 
 interface properties {
     data: any ,
-    handlelike : any
+    categoryId : any
 }
 
 
 
-const DynamicIterableComponent: React.FC<properties> = ({ data ,handlelike }) => {
+const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) => {
     const [show, setShow] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
+    const [res , setRes] = React.useState([]);
+
+    React.useEffect(()=>{
+        let fetchData = async () => {
+            try {
+              const response = await AxiosService.post('/wishes', {
+                loginId: '2',
+                categoryId : categoryId
+              });
+              setRes(Array.isArray(response.data?.trendWish) ? response.data?.trendWish : []);
+            } catch (error) {
+              console.error('Error:', error.message);
+            }
+          };
+      
+          fetchData();
+    },[])
+
+     
+    const handlelike = async(index) => {
+        console.log(index);
+        
+        try {
+
+            const resp = await AxiosService.post(`/wish/${index}`, {loginId: '2' , categoryId : categoryId})
+
+            if(resp?.status === 200){
+                const response = await AxiosService.post('/wishes', {
+                    loginId: '2',
+                    categoryId : categoryId
+                  });
+                  setRes(Array.isArray(response.data?.trendWish) ? response.data?.trendWish : []);            }
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const updatedData = data.map((element, index) => {
+        const matchingItem = res.find(item => item.index === index);
+        if (matchingItem) {
+          return { ...element, liked: true };
+        }
+        return element;
+      });
 
 
     const handlePopup = (item) => {
@@ -30,13 +76,6 @@ const DynamicIterableComponent: React.FC<properties> = ({ data ,handlelike }) =>
         setShow(false);
     }
 
-    let arr = [];
-    const addWishlist = (index) => {
-        arr.push(index)
-    }
-
-    console.log("data===|||||||||||||||||||||||||||",data)
-
     return (
         <React.Fragment>
             <div>
@@ -44,7 +83,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data ,handlelike }) =>
                     <div className={"container-fluid " + css.mainBlock}>
                         <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 ">
                             {
-                                data.map((item, index) => (
+                                updatedData.map((item, index) => (
                                     <div className={"p-3 w-full h-full " + css.divCard} key={index} 
                                     >
                                         {item?.image ?
@@ -60,10 +99,12 @@ const DynamicIterableComponent: React.FC<properties> = ({ data ,handlelike }) =>
                                                         </div>
                                                         <div  className={css.dynamicIcons_content}>
                                                         <div className={'col-span-1 ' + css.com_icons} >
-                                                            <span className={css.wishlistholder} onClick={() => handlelike(item?.id )}>
-                                                                {
-                                                                    item?.likes?.includes(3) ? <BsHeartPulseFill /> : <BsHeart /> 
+                                                            <span className={css.wishlistholder} >
+                                                            <div onClick={()=>handlelike(index)}>
+                                                            {
+                                                                    item?.liked ? <BsFillHeartPulseFill /> : <BsHeart /> 
                                                             }
+                                                        </div> 
                                                             </span>
                                                         </div>
                                                         <div className={'col-span-1 ' + css.com_icons} >

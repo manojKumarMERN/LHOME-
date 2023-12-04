@@ -170,15 +170,15 @@ const WardrobePage: React.FC = () => {
                          <>
                             <div>
                                 <Ideas color="blue" prop="U-Shaped Wardrobe" />
-                                <DynamicIterableComponent data={data} />
+                                <DynamicIterableComponent data={data}  categoryId='10'/>
                             </div>
                             <div>
                                 <MeetDesigner colour='red' prop="Straight Wardrobe" container="meetContainer1" />
-                                <DynamicIterableComponent data={data1} />
+                                <DynamicIterableComponent data={data1} categoryId='11' />
                             </div>
                             <div>
                                 <MeetDesigner colour='blue' prop="Island Wardrobe" container="meetContainer2" />
-                                <DynamicIterableComponent data={data2} />
+                                <DynamicIterableComponent data={data2} categoryId='12' />
                             </div>
                         </>
                         }
@@ -186,21 +186,21 @@ const WardrobePage: React.FC = () => {
                         {activePage == 'U-Shaped' &&
                             <div>
                                 <Ideas color='blue' prop="U-Shaped Wardrobe" />
-                                <DynamicIterableComponent data={data} />
+                                <DynamicIterableComponent data={data}  categoryId='10'/>
                             </div>
                         }
 
                         {activePage == 'Straight' &&
                             <div>
                                 <Ideas color='blue' prop="Straight Wardrobe" />
-                                <DynamicIterableComponent data={data1} />
+                                <DynamicIterableComponent data={data1} categoryId='11' />
                             </div>
                         }
 
                         {activePage == 'L-Shaped' &&
                             <div className="mb-5 ">
                                 <Ideas color='blue' prop="L-Shaped Wardrobe" />
-                                <DynamicIterableComponent data={data2} />
+                                <DynamicIterableComponent data={data2} categoryId='12' />
                             </div>
                         }
 

@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import css from '../../styles/DropDownMenu.module.scss';
-// import DropDownIcon from "../../public/assets/SVGIcons/DropdownArrow";
+import DropDownIcon from "../../public/assets/SVGIcons/DropdownArrow";
 import Link from 'next/link';
 // import { Link } from "react-router-dom";
 import { useRouter } from 'next/router';
@@ -23,9 +23,9 @@ const CityToggle = React.forwardRef<HTMLElement, CitiesProps>(({ children: any, 
     }}
     className={css.cdropdown}
   >
-    {/* <div>
+    <div>
       <DropDownIcon transFormX="1" transFormY="4" fillColor={"none"} strokeColor={"blue"} strokeWidth={.5} />
-    </div> */}
+    </div>
   </a>
 ));
 CityToggle.displayName = "Cities Event";
