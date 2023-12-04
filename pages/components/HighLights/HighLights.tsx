@@ -111,8 +111,6 @@ const StylishHomeProducts: React.FC = () => {
         categoryCall()
     },[assetpath])
 
-    console.log("assetpath-------->>>",assetpath)
-
     return (
         <React.Fragment>
             <div className={css.mainhighlights}>
