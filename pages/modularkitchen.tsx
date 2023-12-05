@@ -92,6 +92,7 @@ const ModularKitchenPage: React.FC = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResized);
   }, [handleResize, handleResized, assetpath]);
+
   const [activePage, setActivePage] = React.useState<string | null>('unset');
   const handleClick = (pageName: string) => {
     setActivePage(pageName);
@@ -112,6 +113,7 @@ const ModularKitchenPage: React.FC = () => {
 
     }
   }
+
 
   return (
     <React.Fragment>
@@ -181,41 +183,41 @@ const ModularKitchenPage: React.FC = () => {
               <>
                 <div>
                   <Ideas color="blue" prop="U-Shaped Kitchen" />
-                  <div className="mt-5 "> <DynamicIterableComponent data={data} /></div>
+                  <div className="mt-5 "> <DynamicIterableComponent data={data}  categoryId ='6'/></div>
                 </div>
                 <div>
                   <MeetDesigner colour='red' prop="Straight Kitchen" container="meetContainer1" />
-                  <DynamicIterableComponent data={data1} />
+                  <DynamicIterableComponent data={data1} categoryId ='7' />
                 </div>
                 <div>
                   <MeetDesigner colour='blue' prop="Island Kitchen" container="meetContainer2" />
-                  <DynamicIterableComponent data={data2} />
+                  <DynamicIterableComponent data={data2} categoryId ='8' />
                 </div>
                 <div>
                   <MeetDesigner colour='red' prop="L-Shaped Kitchen" container="meetContainer1" />
-                  <DynamicIterableComponent data={data3} />
+                  <DynamicIterableComponent data={data3} categoryId ='9' />
                 </div>
               </>}
             {activePage == 'U-Shaped' &&
               <div>
 
                 <Ideas color="blue" prop="U-Shaped Kitchen" />
-                <DynamicIterableComponent data={data} />
+                <DynamicIterableComponent data={data}  categoryId ='6'/>
               </div>}
             {activePage == 'Straight' &&
               <div>
                 <Ideas color="blue" prop="Straight Kitchen" />
-                <DynamicIterableComponent data={data1} />
+                <DynamicIterableComponent data={data1} categoryId ='7' />
               </div>}
             {activePage == 'Island Kitchen' &&
               <div>
                 <Ideas color="blue" prop="Island Kitchen" />
-                <DynamicIterableComponent data={data2} />
+                <DynamicIterableComponent data={data2} categoryId ='8' />
               </div>}
             {activePage == 'L-Shaped' &&
               <div>
                 <Ideas color="blue" prop="L-Shaped Kitchen" />
-                <DynamicIterableComponent data={data3} />
+                <DynamicIterableComponent data={data3} categoryId ='9' />
               </div>}
             <div className="mb-[-50px]"><Autoplay living={living} /></div>
             <div><ReferNowPage /></div>

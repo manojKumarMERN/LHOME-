@@ -8,17 +8,20 @@ import CustomLeftArrow from "./CustomLeftArrow";
 import CustomRightArrow from "./CustomRightArrow";
 import Carousel from "react-multi-carousel";
 import { BsHeart } from "react-icons/bs";
+import { BsHeartPulseFill } from "react-icons/bs";
 import { FaRegShareFromSquare } from 'react-icons/fa6'
 import { useRouter } from 'next/router';
 import Modal from 'react-bootstrap/Modal'
 import { AiFillCloseCircle } from 'react-icons/ai';
 import DetailsOfimg from '../../DetailsOfimg';
+import { AxiosService } from '../../../services/ApiService'
 
 const StylishHomeProducts: React.FC = () => {
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     const [trendings, setTrendings] = React.useState([]);
     const [wishlistimage, setWishListImage] = React.useState("");
     const [wishlistalt, setWishListAlt] = React.useState("");
+    const [res , setRes] = React.useState([]);
 
     const [shareiconimage, setShareIconImage] = React.useState("");
     const [sharealt, setShareAlt] = React.useState("");
@@ -43,7 +46,22 @@ const StylishHomeProducts: React.FC = () => {
             .catch(error => {
                 console.log(error);
             });
+            let fetchData = async () => {
+                try {
+                  const response = await AxiosService.post('/wishes', {
+                    loginId: '2',
+                    categoryId : '1'
+                  });
+                  setRes(Array.isArray(response.data?.trendWish) ? response.data?.trendWish : []);
+                } catch (error) {
+                  console.error('Error:', error.message);
+                }
+              };
+          
+              fetchData();
     }, [assetpath]);
+
+    
 
     const [show, setShow] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
@@ -80,6 +98,34 @@ const StylishHomeProducts: React.FC = () => {
     };
     const router = useRouter();
 
+    const handlelike = async(index) => {
+        console.log(index);
+        
+        try {
+
+            const resp = await AxiosService.post(`/wish/${index}`, {loginId: '2' , categoryId : '1'})
+
+            if(resp?.status === 200){
+                const response = await AxiosService.post('/wishes', {
+                    loginId: '2',
+                    categoryId : '1'
+                  });
+                  setRes(Array.isArray(response.data?.trendWish) ? response.data?.trendWish : []);            }
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const updatedTrendings = trendings.map((element, index) => {
+        const matchingItem = res.find(item => item.index === index);
+        if (matchingItem) {
+          return { ...element, liked: true };
+        }
+        return element;
+      });
+            
+      
     return (
         <React.Fragment>
             <div className={css.mainhighlights}>
@@ -103,11 +149,11 @@ const StylishHomeProducts: React.FC = () => {
                                 customRightArrow={<CustomRightArrow onClick={() => { }} />}
                             >
 
-                                {trendings.map((datas: any, index: number) => (
+                                {updatedTrendings?.map((datas: any, index: number) => (
                                     <div
                                         key={`${datas.subname}_${index}_${index}`}
                                         className={css.customdivision}
-                                        onClick={() => handlePopup(datas)}
+                                        
                                     >
                                         <div className={css.customdivisionchild}>
                                             <div className={css.customimage}>
@@ -116,13 +162,18 @@ const StylishHomeProducts: React.FC = () => {
                                                     loading="lazy"
                                                     src={datas.image}
                                                     alt={datas.subname}
+                                                    onClick={() => handlePopup(datas)}
                                                 />
                                                 <div className={css.customlist}>
                                                     <div className={css.customname}>
                                                         {datas.name}
                                                         <div className={css.image_bottom_icons}>
                                                             <span className={css.wishlistholder}>
-                                                                <BsHeart />
+                                                            <div onClick={()=>handlelike(index)}>
+                                                            {
+                                                                    datas?.liked ? <BsHeartPulseFill /> : <BsHeart /> 
+                                                            }
+                                                        </div>
                                                             </span>
                                                             <span className={css.shareholder}>
                                                                 <FaRegShareFromSquare />

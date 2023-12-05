@@ -122,7 +122,7 @@ const ModularKitchenPage: React.FC = () => {
                   <div><Ideas prop = "Bed Room" color="red"/></div>
                   </div>
                   </div>
-                        <div className="mt-[-5%]"><DynamicIterableComponent data={bedroom} /></div>
+                        <div className="mt-[-5%]"><DynamicIterableComponent data={bedroom} categoryId='13'/></div>
                         <div className="mb-[-50px]"><Autoplay living={living} /></div>
                         <div><ReferNowPage /></div>
                         <div><Warranty /></div>

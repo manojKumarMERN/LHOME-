@@ -127,7 +127,7 @@ const SpacesavingfurniturePage: React.FC = () => {
                   <div><Ideas prop = "Space Saving Furniture" color="red"/></div>
                   </div>
                   </div>
-                        <div className="mt-[-5%]"><DynamicIterableComponent data={data} /></div>
+                        <div className="mt-[-5%]"><DynamicIterableComponent data={data} categoryId='16'/></div>
                         <div className="mb-[-50px]"><Autoplay living={living} /></div>
                         <div><ReferNowPage /></div>
                         <div><Warranty /></div>
