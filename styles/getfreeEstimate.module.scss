@@ -29,3 +29,17 @@
     width: 70%;
     margin: 0 auto;
 }
+.mutli_step{
+    width: 100%;
+}
+.mutli_step div div button span{
+    display: flex;
+    flex-direction: column;
+}
+.mutli_step div{
+    width: 70%;
+    margin: 0 auto;
+}
+.mutli_step div div{
+    width: 100%;
+}

@@ -6,12 +6,87 @@ import StepButton from '@mui/material/StepButton';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import css from '../styles/getfreeEstimate.module.scss'
-import Firststep from './components/MultiStep/Firststep';
+import FirststepGetfree from './components/MultiStep/FirststepGetfree';
+import { StepIconProps } from '@mui/material/StepIcon';
+import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
+import { styled } from '@mui/material/styles';
+import Check from '@mui/icons-material/Check';
+import StepLabel from '@mui/material/StepLabel';
+const QontoConnector = styled(StepConnector)(({ theme }) => ({
+    [`&.${stepConnectorClasses.alternativeLabel}`]: {
+      top: 20,
+      left: 'calc(-50% + 25px)',
+        width:'10vw',
+    },
+    [`&.${stepConnectorClasses.active}`]: {
+      [`& .${stepConnectorClasses.line}`]: {
+        borderColor: '#eaeaf0',
+      },
+    },
+    [`&.${stepConnectorClasses.completed}`]: {
+      [`& .${stepConnectorClasses.line}`]: {
+        borderColor: '#eaeaf0',
+      },
+    },
+    [`& .${stepConnectorClasses.line}`]: {
+      borderColor: theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#eaeaf0',
+      borderTopWidth: 2,
+
+      borderRadius: 1,
+    },
+  }));
+  
+  const QontoStepIconRoot = styled('div')<{ ownerState: { active?: boolean } }>(
+    ({ theme, ownerState }) => ({
+      color: theme.palette.mode === 'dark' ? theme.palette.grey[700] : '#eaeaf0',
+      display: 'flex',
+      alignItems: 'center',
+      border: '1px solid #222222',
+      borderRadius:'50%',
+      ...(ownerState.active && {
+        color: 'white',
+        border:'10px solid red',
+        borderRadius:"50%",
+        
+      }),
+
+      '& .QontoStepIcon-completedIcon': {
+        color: 'white',
+        zIndex: 1,
+        fontSize: 18,
+        width: '1vw',
+        height: '1vw',
+        background: 'red',
+        borderRadius:"50%",
+      },
+      '& .QontoStepIcon-circle': {
+        width: '2vw',
+        height: '2vw',
+        borderRadius: '50%',
+        backgroundColor: 'white',
+      },
+    }),
+  );
+  
+  function QontoStepIcon(props: StepIconProps) {
+    const { active, completed, className } = props;
+  
+    return (
+      <QontoStepIconRoot ownerState={{ active }} className={className}>
+        {completed ? (
+          <Check className="QontoStepIcon-completedIcon" />
+        ) : (
+          <div className="QontoStepIcon-circle" />
+        )}
+      </QontoStepIconRoot>
+    );
+  }
+  
+  
 const steps = [
-    'Select campaign settings',
-    'Create an ad group',
-    'Create an ad'
-    // Add more steps as needed
+    'BHK TYPE',
+    'ROOMS TO DESIGN',
+    'GET QUOTE'
 ];
 
 function GetfreeEstimate() {
@@ -41,7 +116,7 @@ function GetfreeEstimate() {
                         <div className={css.GetfreeEstimate_content_value}>
                             <p className={css.GetfreeEstimate_head}>Your Ideas. Our Expertise.</p>
                             <p className={css.GetfreeEstimate_para}>Our 50+ design experts use state-of-the-art 3D design technology, SpaceCraft, to ensure that you get the perfect designs for your home. Wait no more! Start your home interiors journey with us.</p>
-                            <Firststep />
+                            <FirststepGetfree/>
                         </div>
                     </Typography>
                 );
@@ -74,21 +149,27 @@ function GetfreeEstimate() {
 
     return (
         <>
-            <Box sx={{ width: '100%' }}>
-                <Stepper nonLinear activeStep={activeStep}>
+            <Box  className={css.mutli_step}>
+                {/* <Stepper nonLinear activeStep={activeStep} >
                     {steps.map((label, index) => (
                         <Step key={label} completed={completed[index]}>
                             <StepButton color="inherit" onClick={() => setActiveStep(index)}>
-                                {label}
+                                {label} 
                             </StepButton>
                         </Step>
                     ))}
-                </Stepper>
+                </Stepper> */}
+                <Stepper alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
+        {steps.map((label) => (
+          <Step key={label}>
+            <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
+          </Step>
+        ))}
+      </Stepper>
                 <div>
                     <div className={css.getfree_Estimate_Content}>
                         {getStepContent(activeStep)}
                     </div>
-                    {/* Buttons for navigation */}
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', pt: 2 }}>
                         <Button
                             disabled={activeStep === 0}

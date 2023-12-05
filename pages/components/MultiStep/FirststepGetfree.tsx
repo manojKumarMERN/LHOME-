@@ -61,7 +61,7 @@ function BpRadio(props) {
   );
 }
 
-export default function Firststep() {
+export default function FirststepGetfree() {
   return (
     <FormControl style={{width:"65%", margin:'0 auto' ,textAlign:"left"}}>
       <p className={css.radio_button_Heading}>Your floorplan</p>
