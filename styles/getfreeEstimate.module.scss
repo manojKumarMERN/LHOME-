@@ -1,0 +1,31 @@
+.getfree_Estimate_Content{
+    width: 75%;
+    border: 0.1vw solid #222222;
+    margin: 0 auto;
+    height: 50vh;
+    border-radius: 1vw ;
+}
+.GetfreeEstimate_head{
+    color: #F44336;
+    font-size: 2vw;
+    font-weight: 700;
+    @media (max-width:1024px){
+        font-size: 24px;
+    }
+}
+.radio_button_Heading{
+    font-weight: 600;
+    margin-top: 25px;
+}
+.GetfreeEstimate_content_value{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.GetfreeEstimate_para{
+    color: #222222;
+    font-size: 1vw;
+    width: 70%;
+    margin: 0 auto;
+}
