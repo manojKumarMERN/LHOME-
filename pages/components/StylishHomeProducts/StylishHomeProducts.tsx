@@ -72,12 +72,12 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                     loginId: getUserId(),
                     categoryId : '4'
                   });
-                  setRes(Array.isArray(response.data?.trendWish) ? response.data?.trendWish : []);
+                  setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);
                   const response1 = await AxiosService.post('/wishes', {
                     loginId: getUserId(),
                     categoryId : '5'
                   });
-                  setRes1(Array.isArray(response1.data?.trendWish) ? response1.data?.trendWish : []);
+                  setRes1(Array.isArray(response1.data?.wishlist) ? response1.data?.wishlist : []);
                 } catch (error) {
                   console.error('Error:', error.message);
                 }
@@ -86,9 +86,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
               fetchData();
     }, [assetpath]);
 
-    const handlelike = async(index , categoryId) => {
-        console.log(index);
-        
+    const handlelike = async(index , categoryId) => {        
         try {
            if(getUserId()){
                const resp = await AxiosService.post(`/wish/${index}`, {loginId: getUserId() , categoryId : categoryId})
@@ -98,7 +96,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                        loginId: getUserId(),
                        categoryId : categoryId
                      });
-                     categoryId == '4' ? setRes(Array.isArray(response.data?.trendWish) ? response.data?.trendWish : []) :setRes1(Array.isArray(response.data?.trendWish) ? response.data?.trendWish : []);            }
+                     categoryId == '4' ? setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []) :setRes1(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);            }
            } else{
             alert('please login to use')
            }
