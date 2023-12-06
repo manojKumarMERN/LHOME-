@@ -31,7 +31,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
                    loginId: getUserId(),
                    categoryId : categoryId
                  });
-                 setRes(Array.isArray(response.data?.trendWish) ? response.data?.trendWish : []);
+                 setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);
              
             } catch (error) {
               console.error('Error:', error.message);
@@ -42,9 +42,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
     },[])
 
      
-    const handlelike = async(index) => {
-        console.log(index);
-        
+    const handlelike = async(index) => {        
         try {
             if(getUserId()){
                 const resp = await AxiosService.post(`/wish/${index}`, {loginId: getUserId() , categoryId : categoryId})
@@ -54,7 +52,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
                         loginId: getUserId(),
                         categoryId : categoryId
                       });
-                      setRes(Array.isArray(response.data?.trendWish) ? response.data?.trendWish : []);            }
+                      setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);            }
             }else{
                 alert('please login to use');
             }

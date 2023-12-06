@@ -99,7 +99,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                           loginId: getUserId(),
                           categoryId : '2'
                         });
-                        setRes(Array.isArray(response.data?.trendWish) ? response.data?.trendWish : []);
+                        setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);
                  
                 } catch (error) {
                   console.error('Error:', error.message);
@@ -110,9 +110,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
     }, [assetpath])
 
     
-    const handlelike = async(index) => {
-        console.log(index);
-        
+    const handlelike = async(index) => {        
         try {
 
             if(getUserId()){
@@ -123,7 +121,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                         loginId: getUserId(),
                         categoryId : '2'
                       });
-                      setRes(Array.isArray(response.data?.trendWish) ? response.data?.trendWish : []);            }
+                      setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);            }
             }else{
                 alert('please login to use')
             }

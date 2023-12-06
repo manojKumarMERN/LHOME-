@@ -71,7 +71,7 @@ const Wardrobes: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                        loginId: getUserId(),
                        categoryId : '3'
                      });
-                     setRes(Array.isArray(response.data?.trendWish) ? response.data?.trendWish : []);
+                     setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);
                  
                 } catch (error) {
                   console.error('Error:', error.message);
@@ -113,9 +113,7 @@ const Wardrobes: React.FC<propproperty> = ({ Citie, Currentpage }) => {
 
     };
 
-    const handlelike = async(index) => {
-        console.log(index);
-        
+    const handlelike = async(index) => {        
         try {
             if(getUserId()){
                 const resp = await AxiosService.post(`/wish/${index}`, {loginId: getUserId() , categoryId : '3'})
@@ -125,7 +123,7 @@ const Wardrobes: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                         loginId: getUserId(),
                         categoryId : '3'
                       });
-                      setRes(Array.isArray(response.data?.trendWish) ? response.data?.trendWish : []);            }
+                      setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);            }
             }else{
                 alert('please login to use');
             }
