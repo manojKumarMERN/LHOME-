@@ -63,6 +63,9 @@ function BpRadio(props) {
 
 export default function FirststepGetfree() {
   return (
+    <div className={css.GetfreeEstimate_content_value}>
+    <p className={css.GetfreeEstimate_head}>Your Ideas. Our Expertise.</p>
+    <p className={css.GetfreeEstimate_para}>Our 50+ design experts use state-of-the-art 3D design technology, SpaceCraft, to ensure that you get the perfect designs for your home. Wait no more! Start your home interiors journey with us.</p>
     <FormControl style={{width:"65%", margin:'0 auto' ,textAlign:"left"}}>
       <p className={css.radio_button_Heading}>Your floorplan</p>
       <RadioGroup defaultValue="female" aria-labelledby="demo-customized-radios" name="customized-radios" style={{display:"grid",gridTemplateColumns: "auto auto auto",justifyContent:"space-between",rowGap:"50px"}}>
@@ -74,5 +77,6 @@ export default function FirststepGetfree() {
         <FormControlLabel value="6 BHK" control={<BpRadio />} label="6 BHK"/>
       </RadioGroup>
     </FormControl>
+    </div>
   );
 }
