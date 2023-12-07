@@ -13,6 +13,9 @@ import { styled } from '@mui/material/styles';
 import Check from '@mui/icons-material/Check';
 import StepLabel from '@mui/material/StepLabel';
 import SecondstepGetfree from './components/MultiStep/SecondstepGetfree';
+import { useRouter } from 'next/router';
+import * as config from "./../next.config.js";
+import PageHeader from "./components/PageHeader";
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 20,
@@ -90,10 +93,32 @@ const steps = [
   'ROOMS TO DESIGN',
   'GET QUOTE'
 ];
+interface homeproperties {
+  screenwidth: number;
+  screenheight: number;
 
-function GetfreeEstimate() {
+}
+const GetfreeEstimate: React.FC<homeproperties> = ({ screenwidth, screenheight }) => {
+
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState({});
+  let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
+  const living = React.useRef(null);
+
+  const page = React.useRef(null);
+  const [prevPosition, setPrev] = React.useState(0);
+  const [hidden, setHidden] = React.useState(false);
+
+  const pageheaderMonitor = () => {
+      if (page.current.scrollTop > prevPosition) {
+          setPrev(page.current.scrollTop)
+          setHidden(true)
+      } else {
+          setHidden(false)
+          setPrev(page.current.scrollTop)
+
+      }
+  }
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -102,12 +127,9 @@ function GetfreeEstimate() {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-
+  const router = useRouter();
   const handleComplete = () => {
-    const newCompleted = { ...completed };
-    newCompleted[activeStep] = true;
-    setCompleted(newCompleted);
-    handleNext();
+    router.push('/getQuote');
   };
 
   const getStepContent = (step) => {
@@ -126,12 +148,7 @@ function GetfreeEstimate() {
         );
       case 2:
         return null;
-      default:
-        return (
-          <Typography>
-            No content for this step
-          </Typography>
-        );
+
     }
   };
 
@@ -139,17 +156,12 @@ function GetfreeEstimate() {
 
   return (
     <>
+            <div className={hidden ? "hidden" : ""}>
+          <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={true} />
+        </div>
       <Box className={css.mutli_step}>
-        {/* <Stepper nonLinear activeStep={activeStep} >
-          {steps.map((label, index) => (
-            <Step key={label} completed={completed[index]}>
-              <StepButton color="inherit" onClick={() => setActiveStep(index)}>
-              <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
-              </StepButton>
-            </Step>
-          ))}
-        </Stepper> */}
-        <Stepper alternativeLabel  activeStep={activeStep} connector={<QontoConnector />}>
+
+        <Stepper alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
           {steps.map((label, index) => (
             <Step key={label} completed={completed[index]}>
               <StepButton color="inherit" onClick={() => setActiveStep(index)}>
@@ -163,13 +175,14 @@ function GetfreeEstimate() {
             {getStepContent(activeStep)}
           </div>
           <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2 }}>
-            <Button
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              className={css.GetfreeEstimate_Button_Back}
-            >
-              Back
-            </Button>
+            {isLastStep ? (
+              <Button
+                disabled={activeStep === 0}
+                onClick={handleBack}
+                className={css.GetfreeEstimate_Button_Back}
+              >
+                Back
+              </Button>) : ''}
             {isLastStep ? (
               <Button
                 variant="contained"

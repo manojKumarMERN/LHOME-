@@ -38,8 +38,18 @@
     }
 }
 .radio_button_Heading{
+    font-size: 1vw;
     font-weight: 600;
     margin-top: 25px;
+    @media (max-width:1024px){
+        font-size: 12px;
+    }
+}
+.radio_label span{
+    font-size: 1.5vw !important;
+    @media (max-width:1024px){
+        font-size: 18px;
+    }
 }
 .GetfreeEstimate_content_value{
     display: flex;
@@ -98,6 +108,7 @@
     align-items: center;
 }
 .Count_name{
+    margin-bottom: unset;
     text-align: left;
     padding-left: 2%;
     width: 40%;

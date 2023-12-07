@@ -74,12 +74,7 @@ const Bookfreedesign: React.FC<homeproperties> = ({ screenwidth, screenheight })
                         <ThirdStep/>
                     </Typography>
                 );
-            default:
-                return (
-                    <Typography>
-                        No content for this step
-                    </Typography>
-                );
+
         }
     };
 
