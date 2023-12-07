@@ -111,9 +111,8 @@ const ModularKitchenPage: React.FC = () => {
                                 <div className="row ">
                                     <div className="col-lg-3 "> </div>
 
-                                    <div className={"col-lg-6 px-[15px] " + css.livingroom_filter_content}><p className={css.livingroom_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
-                                        From coffee dates to dinner parties, our end-to-end design and installation
-                                        services will turn your kitchen into a stylish and functional space.</p>
+                                    <div className={"col-lg-6 px-[15px] " + css.livingroom_filter_content}><p className={css.livingroom_filter_additional_content}>Design your living room as a harmonious blend of comfort and contemporary elegance.
+                                     Curated furnishings and thoughtful layout create a welcoming space for socializing and relaxation..</p>
                                     </div>
                                     <div className="col-lg-3 "></div>
 

@@ -119,9 +119,8 @@ const HomeOffice: React.FC = () => {
                 <div className="row ">
                   <div className="col-lg-3 "> </div>
 
-                  <div className={"col-lg-6 px-[15px] " + css.bathroom_filter_content}><p className={css.bathroom_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
-                    From coffee dates to dinner parties, our end-to-end design and installation
-                    services will turn your kitchen into a stylish and functional space.</p>
+                  <div className={"col-lg-6 px-[15px] " + css.bathroom_filter_content}><p className={css.bathroom_filter_additional_content}>Craft a spa-like oasis in your bathroom, where sleek design meets luxurious functionality.
+                   Transform daily routines into indulgent experiences with modern fixtures and serene aesthetics.</p>
                   </div>
                   <div className="col-lg-3 "></div>
 

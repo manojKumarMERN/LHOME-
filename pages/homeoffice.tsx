@@ -120,9 +120,8 @@ const pageheaderMonitor = () => {
                 <div className="row ">
                 <div className="col-lg-3 "> </div>
 
-                <div className={"col-lg-6 px=[15px] " + css.homeoffice_filter_content}><p className={css.homeoffice_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
-                  From coffee dates to dinner parties, our end-to-end design and installation
-                  services will turn your kitchen into a stylish and functional space.</p>
+                <div className={"col-lg-6 px=[15px] " + css.homeoffice_filter_content}><p className={css.homeoffice_filter_additional_content}>Create a productive sanctuary with home office design that balances functionality and aesthetics.
+                 Tailored for focus and comfort, it`&#39`s where efficiency meets style in the heart of your home.</p>
                   </div>
                   <div className="col-lg-3 "></div>
                   

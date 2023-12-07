@@ -5,8 +5,9 @@ import { MdLocationPin } from "react-icons/md";
 interface districtprops {
     district: string[];
     heading: string;
+    defaultoption:string;
 }
-const Bookfreedropdown: React.FC<districtprops> = ({district,heading}) => {
+const Bookfreedropdown: React.FC<districtprops> = ({district, heading, defaultoption}) => {
     const [districtList, setDistrictList] = React.useState("");
     return (
         <>
@@ -20,7 +21,7 @@ const Bookfreedropdown: React.FC<districtprops> = ({district,heading}) => {
                     id="selectTitle"
                     className={css.input_Dropdown}
                 >
-                    <option hidden>Location</option>
+                    <option hidden>{defaultoption}</option>
                     {district && district.map((item, index) => (
                         <option key={index} value={item}>
                             {item}

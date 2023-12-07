@@ -54,7 +54,7 @@ function FirstStep() {
                 <div className={css.book_Content}>
                     <Selectbutton labels={labels} heading="I own a..." />
                     <Radibutton />
-                    <Bookfreedropdown district={district} heading="My Locality is" />
+                    <Bookfreedropdown district={district} heading="My Locality is" defaultoption="Location"/>
                 </div>
             </div>
         </>

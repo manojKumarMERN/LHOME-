@@ -4,46 +4,19 @@ import Bookfreedropdown from '../../components/SelectButton/Bookfreedropdown';
 function SecondStep() {
     const Planinglabels: string[] = ["Move In", "Rent Out", "Renovate"];
     const Lookinglabels: string[] = ["End-to-end Interiors", "Kitchen and Wardrobes", "Only Kitchen"];
-    const district: string[] = [
-        "Ariyalur",
-        "Chengalpattu",
-        "Chennai",
-        "Coimbatore",
-        "Cuddalore",
-        "Dharmapuri",
-        "Dindigul",
-        "Erode",
-        "Kallakurichi",
-        "Kanchipuram",
-        "Kanniyakumari",
-        "Karur",
-        "Krishnagiri",
-        "Madurai",
-        "Mayiladuthurai",
-        "Nagapattinam",
-        "Namakkal",
-        "Nilgiris",
-        "Perambalur",
-        "Pudukkottai",
-        "Ramanathapuram",
-        "Ranipet",
-        "Salem",
-        "Sivagangai",
-        "Tenkasi",
-        "Thanjavur",
-        "Theni",
-        "Thoothukudi",
-        "Tiruchirappalli",
-        "Tirunelveli",
-        "Tirupathur",
-        "Tiruppur",
-        "Tiruvallur",
-        "Tiruvannamalai",
-        "Tiruvarur",
-        "Vellore",
-        "Viluppuram",
-        "Virudhunagar"
+    const priceList: string[] = [
+        "Upto ₹ 1.5 Lakhs",
+        "₹ 1.5 - ₹ 4 Lakhs",
+        "₹ 8 - ₹ 12 Lakhs",
+        "₹ 12 - ₹ 20 Lakhs",
+        "₹ 20 Lakhs +",
+
     ];
+    const profession: string[] = [
+        "Already in possession",
+        "0-3 months",
+        "3-6 months"
+    ]
     return (
         <>
             <div className={css.getfree_Estimate_Content}>
@@ -55,8 +28,8 @@ function SecondStep() {
                     <Selectbutton labels={Planinglabels} heading="I am planning to..." />
                     <div style={{ paddingTop: "4%" }}><Selectbutton labels={Lookinglabels} heading="I am looking for..." /></div>
                     <div className={css.NextBook_page}>
-                        <div className={css.Dropdown_list}><Bookfreedropdown district={district} heading="I have a budget of..." /></div>
-                        <div className={css.Dropdown_list}><Bookfreedropdown district={district} heading="Possession in..." /></div>
+                        <div className={css.Dropdown_list}><Bookfreedropdown district={priceList} heading="I have a budget of..." defaultoption="Select Budget"/></div>
+                        <div className={css.Dropdown_list}><Bookfreedropdown district={profession} heading="Possession in..." defaultoption="select Possession"/></div>
                     </div>
                 </div>
             </div>
