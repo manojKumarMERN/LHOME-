@@ -15,7 +15,7 @@ const SignupSchema = Yup.object().shape({
     checkforwhatsapp: Yup.boolean().oneOf([true , false], 'You must accept WhatsApp opt-in'),
 });
 
-const Registerpage = ({toggleForm}) => {
+const Registerpage = ({toggleForm , setShow}) => {
 
     const [select, setSelect] = React.useState("IN");
     const onSelect = (code) => setSelect(code)
@@ -33,6 +33,10 @@ const Registerpage = ({toggleForm}) => {
         onSubmit: async (values) => {
             try {
               const response = await AxiosService.post('/register',  values );
+              if(response){
+                toggleForm();
+                setShow(false);
+              }
             } catch (error) {
               console.error('Error:', error.message);
             }

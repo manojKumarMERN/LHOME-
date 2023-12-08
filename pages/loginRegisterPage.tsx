@@ -110,7 +110,7 @@ function LoginRegisterPage({setShow}) {
                     </div>
                 ) :
                     (
-                        <Registerpage toggleForm={toggleForm} />
+                        <Registerpage toggleForm={toggleForm} setShow={setShow}/>
 
                     )}
 

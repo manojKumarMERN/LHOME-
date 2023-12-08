@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 const RaiseIssue = () => {
     const [issue , setIssue ] = React.useState<string>('');
     const [error , setError ] = React.useState<string>('');
+    const [success , setSuccess ] = React.useState<string>('');
     const router = useRouter();
 
 
@@ -18,17 +19,24 @@ const RaiseIssue = () => {
             setError(`You can't submit empty value as issue`);
         }else if(issue.length <=20){
             setError(`Issue can't be this much short. Please elaborate your issue`);
-            router.replace({pathname: "/CustomersupportPage" , query:{tab : 1}} );
-            router.reload();
-        }else{
+        }else if(!getUserId()){
+            setError('You are not authenticated please login and continue')
+        }
+        else{
             setError('');
         }
-        if(issue!='' && error ==''){
+        if(issue!='' && error =='' && getUserId()){
             const response = await AxiosService.post('/postissue' , {
                 userId : getUserId(),
                 issue
             })
             if( response && response.status == 200){
+                // router.replace({pathname: "/CustomersupportPage" , query:{tab : 1}});
+                setIssue('');
+                setSuccess(`Issue successfully posted we'll get back you soon with a solution..`);
+                setTimeout(()=>{
+                    setSuccess('');
+                }, 3000)
             }
             
         }
@@ -45,9 +53,10 @@ const RaiseIssue = () => {
                     </div>
                     <form onSubmit={handleSubmit}>
                     <div className={css.customertext}>
-                        <textarea className={css.texthere} placeholder="texthere..." onChange={(e)=>setIssue(e.target.value)}></textarea>
+                        <textarea className={css.texthere} value={issue} placeholder="texthere..." onChange={(e)=>setIssue(e.target.value)}></textarea>
                     </div>
                     <span className="text-red-500">{error}</span>
+                    <span className="text-green-500">{success}</span>
                     <div> <Button className={css.btncontrol} type="submit">Submit</Button></div>
                     </form>
                 </div>
