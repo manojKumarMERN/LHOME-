@@ -8,8 +8,8 @@ import css from '../../../styles/getfreeEstimate.module.scss';
 
 const BpIcon = styled('span')(({ theme }) => ({
   borderRadius: '50%',
-  width: 16,
-  height: 16,
+  width: '1.5vw',
+  height: '1.5vw',
   boxShadow:
     theme.palette.mode === 'dark'
       ? '0 0 0 1px rgb(16 22 26 / 40%)'
@@ -38,8 +38,8 @@ const BpCheckedIcon = styled(BpIcon)({
   backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))',
   '&:before': {
     display: 'block',
-    width: 16,
-    height: 16,
+    width: '1.5vw',
+    height: '1.5vw',
     backgroundImage: 'radial-gradient(#fff,#fff 28%,transparent 32%)',
     content: '""',
   },
@@ -69,12 +69,12 @@ export default function FirststepGetfree() {
     <FormControl style={{width:"65%", margin:'0 auto' ,textAlign:"left"}}>
       <p className={css.radio_button_Heading}>Your floorplan</p>
       <RadioGroup defaultValue="female" aria-labelledby="demo-customized-radios" name="customized-radios" style={{display:"grid",gridTemplateColumns: "auto auto auto",justifyContent:"space-between",rowGap:"50px"}}>
-        <FormControlLabel value="1 BHK" control={<BpRadio />} label="1 BHK"/>
-        <FormControlLabel value="2 BHK" control={<BpRadio />} label="2 BHK"/>
-        <FormControlLabel value="3 BHK" control={<BpRadio />} label="3 BHK"/>
-        <FormControlLabel value="4 BHK" control={<BpRadio />} label="4 BHK"/>
-        <FormControlLabel value="5 BHK" control={<BpRadio />} label="5 BHK"/>
-        <FormControlLabel value="6 BHK" control={<BpRadio />} label="6 BHK"/>
+        <FormControlLabel value="1 BHK" control={<BpRadio />} label="1 BHK" className={css.radio_label}/>
+        <FormControlLabel value="2 BHK" control={<BpRadio />} label="2 BHK" className={css.radio_label}/>
+        <FormControlLabel value="3 BHK" control={<BpRadio />} label="3 BHK" className={css.radio_label}/>
+        <FormControlLabel value="4 BHK" control={<BpRadio />} label="4 BHK" className={css.radio_label}/>
+        <FormControlLabel value="5 BHK" control={<BpRadio />} label="5 BHK" className={css.radio_label}/>
+        <FormControlLabel value="6 BHK" control={<BpRadio />} label="6 BHK" className={css.radio_label}/>
       </RadioGroup>
     </FormControl>
     </div>

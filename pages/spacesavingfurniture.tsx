@@ -117,9 +117,9 @@ const SpacesavingfurniturePage: React.FC = () => {
                 <div className="row ">
                 <div className="col-lg-3 "> </div>
 
-                <div className={"col-lg-6 px-[15px] " + css.spacesaving_filter_content}><p className={css.spacesaving_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
-                  From coffee dates to dinner parties, our end-to-end design and installation
-                  services will turn your kitchen into a stylish and functional space.</p>
+                <div className={"col-lg-6 px-[15px] " + css.spacesaving_filter_content}><p className={css.spacesaving_filter_additional_content}>Maximize your living space with innovative,
+                 space-saving furniture solutions. Smart design meets versatility,
+                 offering stylish and functional pieces that enhance efficiency without compromising style.</p>
                   </div>
                   <div className="col-lg-3 "></div>
                   

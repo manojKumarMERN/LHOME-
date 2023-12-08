@@ -133,9 +133,9 @@ const WardrobePage: React.FC = () => {
                 <div className="row ">
                 <div className="col-lg-3 "> </div>
 
-                <div className={"col-lg-6 px-[15px] " + css.wardrobe_filter_content}><p className={css.wardrobe_filter_additional_content}>Transform your kitchen to the heart of your home with the help of LHome.
-                  From coffee dates to dinner parties, our end-to-end design and installation
-                  services will turn your kitchen into a stylish and functional space.</p>
+                <div className={"col-lg-6 px-[15px] " + css.wardrobe_filter_content}><p className={css.wardrobe_filter_additional_content}>Elevate your space with meticulously crafted wardrobes,
+                 marrying functionality and aesthetics seamlessly. Tailored storage solutions meet modern design,
+                 offering a perfect blend of organization and elegance.</p>
                   </div>
                   <div className="col-lg-3 "></div>
                   
