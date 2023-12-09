@@ -5,6 +5,8 @@ import { simpleCallInitAPI } from '../../../services/ApicallInit';
 import { AxiosService } from "../../../services/ApiService";
 import { getUserId } from "../../../services/sessionProvider";
 import Image from "next/image";
+import { format } from 'date-fns';
+
 const MyIssue = () => {
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     const [Customersupport, setCustomersupport] = React.useState([]);
@@ -12,7 +14,7 @@ const MyIssue = () => {
     React.useEffect(() => {
         const userId = getUserId();
         if(userId){
-            AxiosService.post('/fetchList', { userId:'2' })
+            AxiosService.post('/fetchList', { userId: getUserId()})
                 .then((response) => {
                     console.log(response.data.data);
                     const issues = response.data.data.map((item: any) => {
@@ -54,7 +56,7 @@ const MyIssue = () => {
                         : Customersupport.map((issue, index) => (
                             <div className={css.Box} key={index}>
                                 <span className={css.content}>{issue.issue}</span>
-                                <p className={css.time}>{issue.createdAt}</p>
+                                <p className={css.time}>{format(new Date(issue?.createdAt) , 'dd/MM/yyyy')}</p>
                             </div>))
                     }
                 </div>
