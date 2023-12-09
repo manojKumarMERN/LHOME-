@@ -15,6 +15,7 @@ color:#222222;
  margin-top: 20px;
  border-radius: 10px;
 border:1px solid #B7B7B7;
+background-color: #fff !important;
 }
 .referearnform_button{
 margin-top: 20px;
@@ -47,6 +48,34 @@ line-height: 20px;
 letter-spacing: 0em;
 color:#222222;
 }
+.input_field{
+  position: relative;
+}
+.referearnform_copy_button{
+  color: #F44336;
+  border: none;
+  background-color: transparent !important;
+  position: absolute;
+  right: 15%;
+  top: 65%;
+  transform: translateY(-50%);
+  font-weight: 600;
+}
 .referearn_socialicon{
 margin:0 auto;
+}
+.socialMedia {
+  display: flex;
+  justify-content: center;
+}
+.socialMedia_icons{
+  background-color: #222222;
+  color: #fff;
+  border-radius: 50%;
+  margin-right: 2%;
+  padding: 1.5%;
+  font-size: 1.2vw;
+  @media (max-width:1024px){
+     font-size: 12px;
+  }
 }

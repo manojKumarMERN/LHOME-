@@ -6,6 +6,10 @@
   font-family: Montserrat !important;
   font-style: normal;
   font-weight: bold;
+  font-size: 1.5vw;
+  @media(max-width:1024px){
+    font-size: 24px;
+  }
 }
 
 .contentStoryView{
@@ -61,9 +65,12 @@
 
 .autoplayBtn {
   color: #FFFFFF;
-  font-size: 0.8rem;
+  font-size: 0.8vw;
   display: flex;
   justify-content: flex-start;
+  @media(max-width){
+    font-size: 10px;
+  }
 }
 
 .centeredImage .autoplayContent {
