@@ -33,7 +33,11 @@
     "axios": "^1.6.2",
     "bootstrap": "^5.3.1",
     "bootstrap-icons": "^1.10.5",
+<<<<<<< HEAD
     "dayjs": "^1.11.10",
+=======
+    "date-fns": "^2.30.0",
+>>>>>>> fee45ce6195e4b9ffc36bc4b796dfde15b287449
     "flowbite": "^1.6.5",
     "font-awesome": "^4.7.0",
     "formik": "^2.4.5",

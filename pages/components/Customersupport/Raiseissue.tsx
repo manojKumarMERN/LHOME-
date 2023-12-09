@@ -10,8 +10,6 @@ const RaiseIssue = () => {
     const [issue , setIssue ] = React.useState<string>('');
     const [error , setError ] = React.useState<string>('');
     const [success , setSuccess ] = React.useState<string>('');
-    const router = useRouter();
-
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -25,13 +23,12 @@ const RaiseIssue = () => {
         else{
             setError('');
         }
-        if(issue!='' && error =='' && getUserId()){
+        if(issue.length>20 && error =='' && getUserId()){
             const response = await AxiosService.post('/postissue' , {
                 userId : getUserId(),
                 issue
             })
             if( response && response.status == 200){
-                // router.replace({pathname: "/CustomersupportPage" , query:{tab : 1}});
                 setIssue('');
                 setSuccess(`Issue successfully posted we'll get back you soon with a solution..`);
                 setTimeout(()=>{
