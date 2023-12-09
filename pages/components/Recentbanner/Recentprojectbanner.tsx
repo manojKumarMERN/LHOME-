@@ -24,7 +24,7 @@ const RecentProject: React.FC = () => {
         setIsAnimationPaused(false);
         setTimeout(() => {
             setIsAnimationPaused(true)
-        }, 1800);
+        }, 3500);
     };
 
     const handleMouseLeave = () => {
