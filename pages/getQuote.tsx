@@ -8,11 +8,35 @@ import css from "../styles/designgallery.module.scss";
 import StylishHomeProducts from "./components/StylishHomeProducts/StylishHomeProducts";
 import { useRouter } from 'next/router';
 import Footer from "./components/Footer/Footer";
+import GetQuoteContent from "./components/getQuote/getQuote_content";
+import { Grid } from "@mui/material";
 interface homeproperties {
     screenwidth: number;
     screenheight: number;
   
   }
+
+ const contentDatas =  [
+    {
+        title : 'Essential Interiors',
+        subtitle : 'When it comes to choosing your BHK',
+        price : '₹5.55L*',
+        image: '/assets/images/getQuote/getQuote_1.png'
+    },
+    {
+        title : 'Comfort Interiors',
+        subtitle : 'For the first-time homeowners',
+        price : '₹6.65L*',
+        image: '/assets/images/getQuote/getQuote_2.png'
+    },
+    {
+        title : 'Luxury Interiors',
+        subtitle : 'Best of design and style',
+        price : '₹7.75L*',
+        image: '/assets/images/getQuote/getQuote_3.png'
+    },
+ ]
+
 const GetQuote:React.FC<homeproperties> = ({ screenwidth, screenheight })=>{
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
   
@@ -43,6 +67,15 @@ const GetQuote:React.FC<homeproperties> = ({ screenwidth, screenheight })=>{
                     </div>
 
                     <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
+                        <Grid container paddingLeft={10} paddingRight={8} gap={10} className="sm:p-0">
+                        {
+                            contentDatas.map((data , index)=>(
+                                <Grid item lg={3.6} md={3.40} sm={12}>
+                                    <GetQuoteContent data={data} />
+                                    </Grid>
+                                    ))
+                                }
+                                </Grid>
                         <div className={"mb-3 " + css.ToppicsdivforDesignGallery}>
                             <TopPicksForKitchen Citie="" Currentpage={router.pathname} />
                             <Wardrobes Citie="" Currentpage={router.pathname} />
