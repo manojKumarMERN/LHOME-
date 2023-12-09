@@ -66,3 +66,36 @@
 .Dropdown_list{
     width: 48%;
 }
+.Date_input{
+border: 1px solid #222222;
+}
+
+.input_Date_Time_content{
+    display: flex;
+    justify-content: space-between;
+}
+.input_Date_Time{
+    margin-top: 5%;
+}
+.input_field{
+    padding: 2% 5% !important;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    border: 1px solid #9F9F9F;
+    border-radius: 0.5vw;
+}
+.input__content{
+    width: 50%;
+}
+.input_field_icon{
+    margin-right: 2%;
+}
+.select_button_Heading{
+    font-size: 1vw;
+    font-weight: 600;
+    color: #737373;
+    @media (max-width:1024px){
+        font-size: 12px;
+    }
+  }
