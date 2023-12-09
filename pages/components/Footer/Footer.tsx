@@ -3,6 +3,8 @@ import css from './Footer.module.scss';
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
 import Link from "next/link";
+import { FaFacebookF,FaWhatsapp ,FaInstagram} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer: React.FC = () => {
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
@@ -48,11 +50,10 @@ const Footer: React.FC = () => {
                         </div>
 
                         <div className={css.socialMedia}>
-                            {
-                                socialMediaList.map((datas: any, index: number) =>
-                                    <img key={index} className={css.socialMediaIcons} src={datas.image} alt="anything" />
-                                )
-                            }
+                         <div className={css.socialMedia_icons}><FaFacebookF/></div>
+                         <div className={css.socialMedia_icons}><FaInstagram/></div>
+                         <div className={css.socialMedia_icons}><FaWhatsapp/></div>
+                         <div className={css.socialMedia_icons}><FaXTwitter/></div>
                         </div>
 
                         <div className={css.footerContentSubContent}>

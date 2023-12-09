@@ -11,6 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@date-io/date-fns": "^2.17.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fontsource/montserrat": "^5.0.8",
@@ -21,6 +22,7 @@
     "@mui/icons-material": "^5.14.9",
     "@mui/material": "^5.14.10",
     "@popperjs/core": "^2.11.8",
+    "@react-icons/all-files": "^4.1.0",
     "@remix-run/express": "^2.1.0",
     "@remix-run/node": "^2.1.0",
     "@remix-run/react": "^2.1.0",
@@ -47,7 +49,7 @@
     "react-google-recaptcha-v3": "^1.10.1",
     "react-hook-form": "^7.43.9",
     "react-hot-toast": "^2.4.1",
-    "react-icons": "^4.10.1",
+    "react-icons": "^4.12.0",
     "react-lazy-load-image-component": "^1.6.0",
     "react-multi-carousel": "^2.8.4",
     "react-multistep": "^5.5.9",

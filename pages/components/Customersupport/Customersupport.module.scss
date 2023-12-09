@@ -72,24 +72,19 @@
 }
 
 .btncontrol {
-    width: 30%;
-    height: 45px;
-    background: #F44336;
+    padding: 1% 13%;
+    background-color: #F44336 !important;
     border: none;
-    margin-top: 20px;
+    margin-top: 2%;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    @media (min-width:2000px) {
-        width: 27vw;
-        height: 7vh;
-        font-size: 1.4vw;
-        margin-top: 2%;
+    font-size: 1.4vw;
+    border-radius: 0.5vw;
+    @media (max-width:1024px) {
+        font-size: 18px;
     }
 }
 
-.btncontrol:hover {
-    background-color: #F44336 !important;
-}
 
 .dummycontainer {
     width: 56%;
