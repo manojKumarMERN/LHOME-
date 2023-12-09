@@ -141,8 +141,13 @@
  }
 
  .checkboxForLg{
-   width: 0.8vw;
-   height: 0.8vw;
+   width: 1.5vw;
+   height: 1.5vw;
+   background-color: #FFFFFF !important;
+   @media (max-width:1024px){
+      width: unset;
+      height: unset;
+   }
  }
  .whatsappcheckbox {
     //   width: 100%;

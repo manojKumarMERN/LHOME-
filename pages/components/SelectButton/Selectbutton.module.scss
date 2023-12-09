@@ -42,7 +42,7 @@
     box-shadow: unset;
   }
   .input_Dropdown{
-    padding: 1% 0% 1% 10%;
+    padding: 1% 0% 1% 10% !important;
   }
   .bookfree_dropdown{
     position: relative;
@@ -51,7 +51,7 @@
     display: block;
     color: #F44336;
     position: absolute;
-    bottom: 15%;
+    bottom: 13%;
     left: 2%;
   }
   .hidden{
