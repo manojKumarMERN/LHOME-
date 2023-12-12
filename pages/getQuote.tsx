@@ -67,10 +67,11 @@ const GetQuote:React.FC<homeproperties> = ({ screenwidth, screenheight })=>{
                     </div>
 
                     <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
-                        <Grid container paddingLeft={10} paddingRight={8} gap={10} className="sm:p-0">
+                        <div className="text-[#222222] text-[12px] sm:text-[24px] larger:text-[1.5vw] py-[1.5%] text-center leading-7 font-semibold">Below are your estimates to book a free consultation</div>
+                        <Grid container justifyContent={"center"} paddingY={2} paddingX={10} gap={10}  >
                         {
                             contentDatas.map((data , index)=>(
-                                <Grid item lg={3.6} md={3.40} sm={12} key={index}>
+                                <Grid item lg={3} md={3.8} sm={12} key={index}>
                                     <GetQuoteContent data={data} />
                                     </Grid>
                                     ))

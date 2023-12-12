@@ -5,21 +5,29 @@ import { FaXTwitter } from "react-icons/fa6";
 
 
 const ReferEarnForm = () => {
-    const [inputValue, setInputValue] = React.useState("https://www.lhome.co.in");
-    const [displayValue, setDisplayValue] = React.useState(""); // State to display input value
+    const [inputValue, setInputValue] = React.useState("");
+    const [copied , setCopied] = React.useState(false);
   
     const handleCopyClick = () => {
-      navigator.clipboard.writeText(inputValue)
+      if(inputValue != ''){
+        navigator.clipboard.writeText(inputValue)
         .then(() => {
-          console.log('URL copied to clipboard:', inputValue);
+          setCopied(true);
+          setTimeout(()=>{
+              setCopied(false)
+              setInputValue('')
+          }, 2000)
         })
         .catch(err => {
           console.error('Failed to copy:', err);
         });
+    }else{
+        alert('Generate a Link to copy')
+    }
     };
   
     const handleGenerateLinkClick = () => {
-      setDisplayValue(inputValue); // Set display value after button click
+        setInputValue("https://www.lhome.co.in"); 
     };
     return (
         <>
@@ -29,7 +37,7 @@ const ReferEarnForm = () => {
                     <input value={inputValue}
                         className={`placeholder-shown: border-[#D0D0D0]-200 p-3 ${css.referearnform_input}`}
                     />
-                    <button className={css.referearnform_copy_button} onClick={handleCopyClick}>COPY LINK</button>
+                    <button className={copied ? css.copied : css.referearnform_copy_button} onClick={handleCopyClick}>{ copied ?"COPIED":"COPY LINK"}</button>
                 </div>
                 <div className={css.referearnform_button}>
                     <button className={css.referearnform_button_content} onClick={handleGenerateLinkClick}><p className={css.referearnform_button_text}>GENERATE LINK</p></button>

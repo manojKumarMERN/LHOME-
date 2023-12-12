@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
                             <Link href={{pathname:'/CustomersupportPage' , query:{tab : 0}} } className="no-underline text-[#9F9F9F]"><div>Raise issue</div></Link>
                             <Link href={{pathname:'/CustomersupportPage' , query:{tab : 1}} } className="no-underline text-[#9F9F9F]"><div>My issues</div></Link>
                             <Link href={{pathname:'/CustomersupportPage' , query:{tab : 2}} } className="no-underline text-[#9F9F9F]"><div>Contact us</div></Link>
-                            <Link href={{pathname:'/CustomersupportPage' , query:{tab : 0}} } className="no-underline text-[#9F9F9F]"><div>Get Estimate</div></Link>
+                            <Link href={{pathname:'/GetfreeEstimate'} } className="no-underline text-[#9F9F9F]"><div>Get Estimate</div></Link>
                             <Link href={{pathname:'/CustomersupportPage' , query:{tab : 3}} } className="no-underline text-[#9F9F9F]"><div>FAQs</div></Link>
                         </div>
                     </div>

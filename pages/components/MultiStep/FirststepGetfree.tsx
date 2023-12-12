@@ -5,6 +5,9 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import css from '../../../styles/getfreeEstimate.module.scss';
+import { createTheme } from '@mui/material/styles';
+
+const theme = createTheme();
 
 const BpIcon = styled('span')(({ theme }) => ({
   borderRadius: '50%',
@@ -33,7 +36,23 @@ const BpIcon = styled('span')(({ theme }) => ({
   },
 }));
 
-const BpCheckedIcon = styled(BpIcon)({
+// const BpCheckedIcon = styled(BpIcon)({
+//   backgroundColor: 'red',
+//   backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))',
+//   '&:before': {
+//     display: 'block',
+//     width: '1.5vw',
+//     height: '1.5vw',
+//     backgroundImage: 'radial-gradient(#fff,#fff 28%,transparent 32%)',
+//     content: '""',
+//   },
+//   'input:hover ~ &': {
+//     backgroundColor: 'red',
+//   },
+  
+// });
+
+const BpCheckedIcon = styled(BpIcon)(({ theme }) => ({
   backgroundColor: 'red',
   backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))',
   '&:before': {
@@ -46,9 +65,14 @@ const BpCheckedIcon = styled(BpIcon)({
   'input:hover ~ &': {
     backgroundColor: 'red',
   },
-});
+  [theme.breakpoints.down('sm')]: {
+    '&:before': {
+      width: '5px',
+      height: '5px',
+    },
+  },
+}));
 
-// Inspired by blueprintjs
 function BpRadio(props) {
   return (
     <Radio
@@ -61,20 +85,24 @@ function BpRadio(props) {
   );
 }
 
-export default function FirststepGetfree() {
+
+export default function FirststepGetfree({setBHK}) {
+  const handleBHKChange = (e)=>{
+  setBHK(e.target.value)
+  }
   return (
     <div className={css.GetfreeEstimate_content_value}>
     <p className={css.GetfreeEstimate_head}>Your Ideas. Our Expertise.</p>
     <p className={css.GetfreeEstimate_para}>Our 50+ design experts use state-of-the-art 3D design technology, SpaceCraft, to ensure that you get the perfect designs for your home. Wait no more! Start your home interiors journey with us.</p>
     <FormControl style={{width:"65%", margin:'0 auto' ,textAlign:"left"}}>
       <p className={css.radio_button_Heading}>Your floorplan</p>
-      <RadioGroup defaultValue="female" aria-labelledby="demo-customized-radios" name="customized-radios" style={{display:"grid",gridTemplateColumns: "auto auto auto",justifyContent:"space-between",rowGap:"50px"}}>
-        <FormControlLabel value="1 BHK" control={<BpRadio />} label="1 BHK" className={css.radio_label}/>
-        <FormControlLabel value="2 BHK" control={<BpRadio />} label="2 BHK" className={css.radio_label}/>
-        <FormControlLabel value="3 BHK" control={<BpRadio />} label="3 BHK" className={css.radio_label}/>
-        <FormControlLabel value="4 BHK" control={<BpRadio />} label="4 BHK" className={css.radio_label}/>
-        <FormControlLabel value="5 BHK" control={<BpRadio />} label="5 BHK" className={css.radio_label}/>
-        <FormControlLabel value="6 BHK" control={<BpRadio />} label="6 BHK" className={css.radio_label}/>
+      <RadioGroup defaultValue=" " aria-labelledby="demo-customized-radios" name="customized-radios" style={{display:"grid",gridTemplateColumns: "auto auto auto",justifyContent:"space-between",rowGap:"50px" }} >
+        <FormControlLabel value="1" onChange={handleBHKChange} control={<BpRadio />} label="1 BHK" className={css.radio_label}/>
+        <FormControlLabel value="2" onChange={handleBHKChange} control={<BpRadio />} label="2 BHK" className={css.radio_label}/>
+        <FormControlLabel value="3" onChange={handleBHKChange} control={<BpRadio />} label="3 BHK" className={css.radio_label}/>
+        <FormControlLabel value="4" onChange={handleBHKChange} control={<BpRadio />} label="4 BHK" className={css.radio_label}/>
+        <FormControlLabel value="5" onChange={handleBHKChange} control={<BpRadio />} label="5 BHK" className={css.radio_label}/>
+        <FormControlLabel value="6" onChange={handleBHKChange} control={<BpRadio />} label="6 BHK" className={css.radio_label}/>
       </RadioGroup>
     </FormControl>
     </div>

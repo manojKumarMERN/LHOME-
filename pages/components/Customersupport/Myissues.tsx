@@ -43,7 +43,6 @@ const MyIssue = () => {
     }
     }, [assetpath]);
 
-    console.log(Customersupport);
     return (
         <>
             <React.Fragment>
@@ -56,7 +55,7 @@ const MyIssue = () => {
                         : Customersupport.map((issue, index) => (
                             <div className={css.Box} key={index}>
                                 <span className={css.content}>{issue.issue}</span>
-                                <p className={css.time}>{format(new Date(issue?.createdAt) , 'dd/MM/yyyy')}</p>
+                                <p className={css.time}>{format(new Date(issue?.createdAt) , 'dd/MM/yyyy') ?? issue?.createdAt}</p>
                             </div>))
                     }
                 </div>

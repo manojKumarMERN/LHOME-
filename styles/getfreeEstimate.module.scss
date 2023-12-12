@@ -1,8 +1,18 @@
+.lhomePage{
+    width:100%;
+    margin:0;
+    padding:0;
+    height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+    // display:flex;
+  }
+
 .getfree_Estimate_Content{
     width: 75%;
-    border: 0.1vw solid #222222;
+    border: 0.1vw solid #9F9F9F;
     margin: 0 auto;
-    height: 50vh;
+    padding: 3% 0 4%;
     border-radius: 1vw ;
 }
 .GetfreeEstimate_head{
@@ -48,7 +58,7 @@
 .radio_label span{
     font-size: 1.5vw !important;
     @media (max-width:1024px){
-        font-size: 18px;
+        font-size: 18px !important;
     }
 }
 .GetfreeEstimate_content_value{
@@ -62,10 +72,19 @@
     font-size: 1vw;
     width: 70%;
     margin: 0 auto;
+    @media (max-width:1024px) {
+        font-size: 14px ;
+    }
 }
 .mutli_step{
     width: 100%;
-    margin-top: 5%;
+    margin-top: 2%;
+    height: 82vh;
+    position: absolute;
+    width: 100%;
+    // top: 100px;
+    overflow-y: auto;
+    overflow-x:hidden;
 }
 .mutli_step div div button span{
     display: flex;
@@ -103,10 +122,14 @@
     width: 15%;
 }
 .Count_content_component{
-    display: grid;
+    display: grid !important;
     grid-template-columns: auto auto auto;
     column-gap: 50px;
     align-items: center;
+    @media (max-width:768px) {
+        grid-template-columns: auto;
+        justify-content: center;
+    }
 }
 .Count_name{
     margin-bottom: unset;
