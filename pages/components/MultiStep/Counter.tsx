@@ -5,9 +5,10 @@ interface CounterProps {
     count: number;
     countName: string;
     onCountChange: (newCount: number) => void;
+    bhk?: number
 }
 
-const Counter: React.FC<CounterProps> = ({ count: initialCount, onCountChange,countName }) => {
+const Counter: React.FC<CounterProps> = ({ count: initialCount, onCountChange,countName , bhk }) => {
     const [count, setCount] = useState<number>(initialCount);
 
     const incrementCount = () => {
@@ -26,9 +27,9 @@ const Counter: React.FC<CounterProps> = ({ count: initialCount, onCountChange,co
         <>
         
             <div className={css.Count_content}>
-                <AiFillMinusCircle onClick={decrementCount} className={css.decrement} />
+                <button disabled={count==0} onClick={decrementCount} className={count==0 ? css.increment :css.decrement} ><AiFillMinusCircle /></button>
                 <span className={css.number_count}>{count}</span>
-                <AiFillPlusCircle onClick={incrementCount} className={css.increment} />
+                <button disabled={bhk? count == bhk :count==2} onClick={incrementCount} className={ (bhk? count == bhk :count==2 ) ? css.increment :css.decrement} ><AiFillPlusCircle /></button>
                 <p className={css.Count_name}>{countName}</p>
             </div>
         </>

@@ -103,47 +103,48 @@ const GetfreeEstimate: React.FC<homeproperties> = ({ screenwidth, screenheight }
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState({});
   let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
-  const living = React.useRef(null);
+  const [BHK , setBHK] = React.useState('');
+  const [error , setError] = React.useState('')
 
-  const page = React.useRef(null);
-  const [prevPosition, setPrev] = React.useState(0);
   const [hidden, setHidden] = React.useState(false);
 
-  const pageheaderMonitor = () => {
-      if (page.current.scrollTop > prevPosition) {
-          setPrev(page.current.scrollTop)
-          setHidden(true)
-      } else {
-          setHidden(false)
-          setPrev(page.current.scrollTop)
-
-      }
-  }
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    if(BHK !=""){
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    } 
+    else{
+      setError('Please select any of the choices to go further');
+      setTimeout(()=>{
+        setError('')
+      }, 2000)
+    } 
   };
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    setBHK('');
   };
   const router = useRouter();
   const handleComplete = () => {
     router.push('/getQuote');
   };
 
+console.log(BHK);
+
+
   const getStepContent = (step) => {
     switch (step) {
       case 0:
         return (
           <Typography>
-            <FirststepGetfree />
+            <FirststepGetfree setBHK={setBHK}/>
           </Typography>
         );
       case 1:
         return (
           <Typography>
-            <SecondstepGetfree />
+            <SecondstepGetfree BHK={BHK}/>
           </Typography>
         );
       case 2:
@@ -155,7 +156,7 @@ const GetfreeEstimate: React.FC<homeproperties> = ({ screenwidth, screenheight }
   const isLastStep = activeStep === steps.length - 2;
 
   return (
-    <>
+    <div className={css.lhomePage}>
             <div className={hidden ? "hidden" : ""}>
           <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={true} />
         </div>
@@ -174,7 +175,8 @@ const GetfreeEstimate: React.FC<homeproperties> = ({ screenwidth, screenheight }
           <div className={css.getfree_Estimate_Content}>
             {getStepContent(activeStep)}
           </div>
-          <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2 }}>
+          <span className='text-red-500 text-center'>{error}</span>
+          <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2  , marginBottom: "4%"}}>
             {isLastStep ? (
               <Button
                 disabled={activeStep === 0}
@@ -203,7 +205,7 @@ const GetfreeEstimate: React.FC<homeproperties> = ({ screenwidth, screenheight }
           </Box>
         </div>
       </Box>
-    </>
+    </div>
   );
 }
 
