@@ -43,7 +43,7 @@ const ThirdStep: React.FC = () => {
                         <div className="custom-date-picker relative">
                             <DatePicker
                                 selected={selectedDate}
-                                onChange={handleTimeChange}
+                                onChange={handleDateChange}
                                 dateFormat="dd/MM/yyyy"
                                 placeholderText="Select date"
                                 className="absolute bg-transparent mx-5 top-5 focus:outline-none  px-5 cursor-pointer"
@@ -58,7 +58,7 @@ const ThirdStep: React.FC = () => {
                                 closeClock={true}
                                 disableClock={true}
                                 value={selectedTime}
-                                onChange={handleDateChange}
+                                onChange={handleTimeChange}
                                 className="absolute bg-transparent w-full top-[40px] focus:outline-none px-5 cursor-pointer border-none"
                                 
                             />
