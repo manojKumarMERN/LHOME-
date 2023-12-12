@@ -1,9 +1,7 @@
-import css from '../../../styles/bookfreedesign.module.scss';
 import React from 'react';
-import "react-datepicker/dist/react-datepicker.css";
-import { BsCalendarDateFill } from "react-icons/bs";;
-import 'react-calendar/dist/Calendar.css';
-import Calendar from 'react-calendar';
+import css from '../../../styles/bookfreedesign.module.scss';
+import { BsCalendarDateFill } from "react-icons/bs";
+
 import moment from 'moment';
 // import { useAlert } from 'react-alert';
 
@@ -32,9 +30,9 @@ function DateComponent() {
                     Select Date
                 </div>
                 {showPickerDate && (
-                    <Calendar value={dateState} onChange={changeDate} />
+                  <p>hi</p>
+                    // <Calendar value={dateState} onChange={changeDate} />
                 )}
-                {/* <p>Current selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b></p> */}
             </div>
         </>
     )
