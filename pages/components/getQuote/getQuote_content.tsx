@@ -22,7 +22,7 @@ const GetQuoteContent = ({data}) => {
                         <p className='text-[16px] larger:text-[0.8vw] flex gap-2 align-items-center text-[#222222]'><img className='larger:h-[0.9vw]' src='/assets/icons/Bed.png' alt='Bed' />Bedroom</p>
                     </div>
                     <p className="text-[#737373] text-[12px] larger:text-[0.5vw]">
-                        *This is only an indicative price based on our clients' average spends. The final price can be higher or lower depending on factors like finish material, number of furniture, civil work required (painting. flooring, plumbing, etc.), design elements, and wood type. Don't worry, our designers can help you understand this better.    </p>
+                        *This is only an indicative price based on our clients&#39; average spends. The final price can be higher or lower depending on factors like finish material, number of furniture, civil work required (painting. flooring, plumbing, etc.), design elements, and wood type. Don&#39;t worry, our designers can help you understand this better.    </p>
                 </div>
             </div>
             <button className='text-center text-[#FFFFFF] bg-[#F44336] text-[16px] font-bold py-[1.5%] px-[6%] mt-3 rounded larger:text-[0.8vw]'>BOOK FREE DESIGN SESSION</button>

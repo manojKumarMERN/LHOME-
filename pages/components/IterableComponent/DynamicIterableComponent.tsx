@@ -39,7 +39,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
           };
       
           fetchData();
-    },[])
+    },[categoryId])
 
      
     const handlelike = async(index) => {        

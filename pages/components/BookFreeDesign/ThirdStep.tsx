@@ -2,7 +2,7 @@ import css from '../../../styles/bookfreedesign.module.scss';
 import Bookfreedropdown from '../../components/SelectButton/Bookfreedropdown';
 import React from 'react';
 import DateComponent from './DateComponent';
-import TimeComponent from './TimeComponent';
+import TimeComponent from './Timecomponent';
 
 
 const ThirdStep: React.FC = () => {

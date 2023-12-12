@@ -70,7 +70,7 @@ const GetQuote:React.FC<homeproperties> = ({ screenwidth, screenheight })=>{
                         <Grid container paddingLeft={10} paddingRight={8} gap={10} className="sm:p-0">
                         {
                             contentDatas.map((data , index)=>(
-                                <Grid item lg={3.6} md={3.40} sm={12}>
+                                <Grid item lg={3.6} md={3.40} sm={12} key={index}>
                                     <GetQuoteContent data={data} />
                                     </Grid>
                                     ))
