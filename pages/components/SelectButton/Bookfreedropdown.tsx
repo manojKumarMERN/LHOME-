@@ -2,6 +2,7 @@ import React from 'react';
 import { Input } from 'reactstrap';
 import css from './Selectbutton.module.scss'
 import { MdLocationPin } from "react-icons/md";
+import { BiSolidDownArrow } from "react-icons/bi";
 interface districtprops {
     district: string[];
     heading: string;
@@ -28,6 +29,9 @@ const Bookfreedropdown: React.FC<districtprops> = ({district, heading, defaultop
                         </option>
                     ))}
                 </Input>
+                {/* <span className={css.customSelectIcon}>
+          <BiSolidDownArrow />
+        </span> */}
             </div>
         </>
     )

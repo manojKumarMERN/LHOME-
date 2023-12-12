@@ -321,7 +321,9 @@
     transform: scaleX(0.85);
   }
 }
-
+.Modal_Popup{
+  overflow: hidden;
+}
 .Modal_Popup div div div[class="modal-header"]  {
   display: flex;
   flex-shrink: 0;
@@ -329,10 +331,13 @@
   justify-content: flex-end;
   border: none;
 }
+.Modal_Popup div div[class="modal-content"]{
+scale: 0.9;
+}
 
 .Modal_Popup div[class="modal-dialog"]{
   max-width: 80% !important;
-
+  margin: 0 auto;
 }
 @media only screen and (max-width:800px){
   .Modal_Popup div[class="modal-dialog"]{

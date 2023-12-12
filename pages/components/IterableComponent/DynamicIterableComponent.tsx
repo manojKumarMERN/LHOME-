@@ -9,7 +9,7 @@ import DetailsOfimg from '../../DetailsOfimg';
 import { AxiosService } from '../../../services/ApiService';
 import { getUserId } from '../../../services/sessionProvider';
 import toast, { useToaster } from 'react-hot-toast';
-
+import Link from 'next/link';
 
 interface properties {
     data: any ,
@@ -136,8 +136,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
                                                     </div>
                                                     </div>
                                                     <div className='flex w-full justify-center'>
-                                                        {item.btn && <button className={css.btnStyle}>{item.btn}</button>}
-                                                    </div>
+                                                    {item.btn && <Link href={{pathname:'/GetfreeEstimate'}} className={css.btnStyle + " no-underline"}>{item.btn}</Link>}                                                    </div>
                                                 </div>
                                             </div>
                                         }
