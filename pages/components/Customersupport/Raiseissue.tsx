@@ -54,7 +54,7 @@ const RaiseIssue = () => {
                     </div>
                     <span className="text-red-500">{error}</span>
                     <span className="text-green-500">{success}</span>
-                    <div> <Button className={css.btncontrol} type="submit">Submit</Button></div>
+                    <div> <button className={css.btncontrol} type="submit">Submit</button></div>
                     </form>
                 </div>
             </div>

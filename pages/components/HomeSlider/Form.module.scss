@@ -254,8 +254,6 @@
  }
  .checkmark {
    position: absolute;
-   top: 0;
-   left: 0;
    height: 1.8vw;
    width: 1.8vw;
    background-color: transparent;
@@ -295,4 +293,11 @@
        height: 13px;
        width: 8px;
    }
+}
+.whatsappcheckbox input {
+   position: absolute;
+   opacity: 0;
+   cursor: pointer;
+   height: 0;
+   width: 0;
 }
