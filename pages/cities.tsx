@@ -1,28 +1,22 @@
 import * as React from "react";
 import * as config from "../next.config.js";
+import "react-multi-carousel/lib/styles.css";
 import PageHeader from "./components/PageHeader";
+import CitiesBanner from "./components/CitiesBanner/citiesbanner";
+import Zigzag from "./components/zigzag/Zigzag";
+import TopPicksForKitchen from "./components/HighLights/topics";
+import Wardrobes from "./components/HighLights/wardrobes";
 import css from "../styles/cities.module.scss";
 import Footer from "./components/Footer/Footer";
 import Warranty from "./components/warranty/Warranty";
 import Guranted from "./components/Guranted/Guranted";
-import TopPicksForKitchen from "./components/HighLights/topics";
-import Wardrobes from "./components/HighLights/wardrobes";
-import Link from "next/link.js";
-import CitiesBanner from "./components/CitiesBanner/citiesbanner";
 import Interior from "./components/Designinterior/Interior";
 import HightLights from "./components/StylishHomeProducts/StylishHomeProducts";
-import { useRouter } from "next/router.js";
-import Zigzag from "./components/zigzag/Zigzag";
+import { useRouter } from 'next/router';
+import Link from "next/link.js";
 
+const DesignGalleryPage: React.FC = () => {
 
-
-const Cities: React.FC = () => {
-
-    const router = useRouter()
-    const { City } = router.query
-    // console.log(City)
-
-    const living = React.useRef(null);
     const [screenwidth, setWidth] = React.useState(window.innerWidth);
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     let hgtt = 0;
@@ -35,6 +29,7 @@ const Cities: React.FC = () => {
         hgtt = window.innerHeight - 160;
     }
     const [screenheight, setHeight] = React.useState(hgtt);
+
     const handleResize = React.useCallback(() => {
         setWidth(window.innerWidth);
         let hgtt = 0;
@@ -63,26 +58,46 @@ const Cities: React.FC = () => {
         }
         setHeight(hgtt);
     }, []);
+
     const handleResized = React.useCallback(() => {
         setTimeout(() => {
             handleResize();
         }, 1000);
     }, [handleResize]);
 
-    
+
+    React.useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResized);
+    }, [handleResize, handleResized]);
+
+    React.useEffect(() => {
+        setTimeout(() => {
+            handleResize();
+        }, 500);
+    }, [handleResize]);
+
+    const routechanged = (e) => {
+        setTimeout(() => {
+            handleResize();
+        }, 1000);
+    }
+
+    const router = useRouter();
+    const { City } = router.query;
+
 
     const page = React.useRef(null);
     const [prevPosition, setPrev] = React.useState(0);
     const [hidden, setHidden] = React.useState(false)
 
     const pageheaderMonitor = () => {
-        if (page.current.scrollTop > prevPosition) {
+        if (page?.current?.scrollTop > prevPosition) {
             setPrev(page.current.scrollTop)
             setHidden(true)
         } else {
             setHidden(false)
             setPrev(page.current.scrollTop)
-
         }
     }
 
@@ -90,14 +105,14 @@ const Cities: React.FC = () => {
         <React.Fragment>
             <div className="animate-fade-in">
                 <div className={css.lhomePage}>
-                <div className={hidden ? "hidden" : ""}>
+
+                    <div className={hidden ? "hidden" : ""}>
                         <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
                     </div>
 
                     <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
-                        <div> <CitiesBanner Citie={City} /></div>
-
-                        <div className={css.ideabr+" mb-4"}>
+                        <div><CitiesBanner Citie={City} /></div>
+                        <div className={css.ideabr + " mb-4"}>
 
                             <div className={css.filter_home1}>
                                 <span><Link href={{ pathname: "/" }}>home</Link></span>
@@ -111,7 +126,8 @@ const Cities: React.FC = () => {
                         </div>
                         <div className={"mb-3 " + css.ToppicsdivforDesignGallery}>
                             <TopPicksForKitchen Citie={City} Currentpage={router.pathname} />
-                            <Wardrobes Citie={City} Currentpage={router.pathname} /></div>
+                            <Wardrobes Citie={City} Currentpage={router.pathname} />
+                        </div>
                         <div>
                             <p className={css.filter_header_content1}>Full-service Interior Design Service in {City} </p>
                             <div className={css.filter_content1}>LHome, a leading provider of home interior designs in {City},
@@ -119,12 +135,11 @@ const Cities: React.FC = () => {
                                 With a team of highly skilled and experienced interior designers in {City},<br /> HomeLane creates personalized design plans that cater to each homeowner’s unique style and preferences
                             </div>
                             <div>
-                                <Zigzag/>
+                                <Zigzag />
                             </div>
                         </div>
-
                         <div> <HightLights Citie={City} /></div>
-                        <div> <Interior /></div>
+                        <div><Interior /></div>
                         <div><Warranty /></div>
                         <div><Guranted /></div>
                         <div><Footer /></div>
@@ -132,8 +147,7 @@ const Cities: React.FC = () => {
                 </div>
 
             </div>
-
         </React.Fragment>
     )
 }
-export default Cities;
+export default DesignGalleryPage;
