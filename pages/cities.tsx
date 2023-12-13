@@ -15,7 +15,7 @@ import HightLights from "./components/StylishHomeProducts/StylishHomeProducts";
 import { useRouter } from 'next/router';
 import Link from "next/link.js";
 
-const DesignGalleryPage: React.FC = () => {
+const Citiespage: React.FC = () => {
 
     const [screenwidth, setWidth] = React.useState(window.innerWidth);
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
@@ -150,4 +150,4 @@ const DesignGalleryPage: React.FC = () => {
         </React.Fragment>
     )
 }
-export default DesignGalleryPage;
+export default Citiespage;
