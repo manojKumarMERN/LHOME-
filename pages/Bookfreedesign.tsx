@@ -59,19 +59,19 @@ const Bookfreedesign: React.FC<homeproperties> = ({ screenwidth, screenheight })
             case 0:
                 return (
                     <Typography>
-                        <FirstStep/>
+                        <FirstStep />
                     </Typography>
                 );
             case 1:
                 return (
                     <Typography>
-                        <SecondStep/>
+                        <SecondStep />
                     </Typography>
                 );
             case 2:
                 return (
                     <Typography>
-                        <ThirdStep/>
+                        <ThirdStep />
                     </Typography>
                 );
 
@@ -82,40 +82,43 @@ const Bookfreedesign: React.FC<homeproperties> = ({ screenwidth, screenheight })
 
     return (
         <>
-            <div className={hidden ? "hidden" : ""}>
-                <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={true} />
-            </div>
-            <Box sx={{ width: '100%' }}>
-                <div>
-                    <div className={css.getfree_Estimate_Content}>
-                        {getStepContent(activeStep)}
-                    </div>
-                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', pt: 2 ,width:'85%'}}>
-                        <Button
-                            disabled={activeStep === 0}
-                            onClick={handleBack}
-                            className={css.Bookfreedesign_Button_Back}
-                        >
-                            Back
-                        </Button>
-                        {isLastStep ? (
-                            <Button
-                                onClick={handleComplete}
-                                className={css.Bookfreedesign_Button}
-                            >
-                                Book free design session
-                            </Button>
-                        ) : (
-                            <Button
-                                onClick={handleNext}
-                                className={css.Bookfreedesign_Button}
-                            >
-                                Next
-                            </Button>
-                        )}
-                    </Box>
+            <div className={css.lhomePage}>
+                <div className={hidden ? "hidden" : ""}>
+                    <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={true} />
                 </div>
-            </Box>
+                <Box sx={{ width: '100%' }} className={css.mutli_step}>
+                    <div>
+                        <div className={css.getfree_Estimate_Content}>
+                            {getStepContent(activeStep)}
+                        </div>
+                        <Box sx={{ display: 'flex', justifyContent: 'flex-end', pt: 2, width: '85%' }}>
+                            <Button
+                                disabled={activeStep === 0}
+                                onClick={handleBack}
+                                className={css.Bookfreedesign_Button_Back}
+                            >
+                                Back
+                            </Button>
+                            {isLastStep ? (
+                                <Button
+                                    onClick={handleComplete}
+                                    className={css.Bookfreedesign_Button}
+                                >
+                                    Book free design session
+                                </Button>
+                            ) : (
+                                <Button
+                                    onClick={handleNext}
+                                    className={css.Bookfreedesign_Button}
+                                >
+                                    Next
+                                </Button>
+                            )}
+                        </Box>
+                        <div className='w-[100vw] h-[10vh]'></div>
+                    </div>
+                </Box>
+            </div>
         </>
     );
 }
