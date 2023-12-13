@@ -49,7 +49,7 @@ const ThirdStep: React.FC = () => {
                     <div className='mt-5'>
                         <div className={css.select_button_Heading}>Book a meeting with our Design Expert</div>
                         <Grid container gap={6}>
-                            <Grid item md={5.55}>
+                            <Grid item xs={12} md={5.55}>
                                 <div className="custom-date-picker relative">
                                     <DatePicker
                                         selected={selectedDate}
@@ -59,15 +59,15 @@ const ThirdStep: React.FC = () => {
                                         className="absolute bg-transparent mx-5 top-5 focus:outline-none  px-5 cursor-pointer"
                                         style={{ width: '200%' }}
                                     />
-                                    <div className=' w-[100%] rounded-lg h-[50%] flex justify-content-between align-items-center border py-3 px-2 cursor-pointer -z-50'><MdDateRange /><BiSolidDownArrow /></div>
+                                    <div className=' w-[100%] rounded-lg h-[50%] flex justify-content-between align-items-center border py-3 px-2 cursor-pointer -z-50'><MdDateRange className={css.icon_bottom}/><BiSolidDownArrow className={css.icon_bottom}/></div>
                                 </div>
                             </Grid>
-                            <Grid item md={5.55}>
+                            <Grid item xs={12} md={5.55}>
                                 <div className={"custom-time-picker relative"}>
                                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                                         <TimeField className={css.time_content} id='customInput' />
                                     </LocalizationProvider>
-                                    <div className=' w-[100%] rounded-lg h-[50%] flex justify-content-between align-items-center border py-3 px-2 cursor-pointer -z-50'><BsClockFill /><BiSolidDownArrow /></div>
+                                    <div className=' w-[100%] rounded-lg h-[50%] flex justify-content-between align-items-center border py-3 px-2 cursor-pointer -z-50'><BsClockFill className={css.icon_bottom}/><BiSolidDownArrow className={css.icon_bottom}/></div>
                                 </div>
                             </Grid>
                         </Grid>

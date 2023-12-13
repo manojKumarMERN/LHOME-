@@ -1,3 +1,21 @@
+.lhomePage{
+    width:100%;
+    margin:0;
+    padding:0;
+    height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+  }
+  .mutli_step{
+    width: 100%;
+    margin-top: 2%;
+    height: 82vh;
+    position: absolute;
+    width: 100%;
+    // top: 100px;
+    overflow-y: auto;
+    overflow-x:hidden;
+}
 .book_Content{
     width: 75%;
     border: 1px solid #9F9F9F;
@@ -60,9 +78,15 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    @media (max-width:768px){
+        flex-direction: column;
+    }
 }
 .Dropdown_list{
     width: 48%;
+    @media (max-width:768px){
+        width: 100%;
+    }
 }
 .Date_input{
 border: 1px solid #222222;
@@ -105,7 +129,10 @@ border: 1px solid #222222;
     position: absolute;
   }
   .time_content input::placeholder{
-    content: 'welcome';
+    font-size: 1.2vw;
+    @media(max-width:1024px){
+        font-size: 16px;
+    }
   }
   .time_content{
     top: 48px;
@@ -115,4 +142,10 @@ border: 1px solid #222222;
   }
   .custom-time-picker div div fieldset[class="MuiOutlinedInput-notchedOutline"]{
     border: 0 !important;
+  }
+  .icon_bottom {
+    font-size: 1.2vw ;
+    @media (max-width:1024px) {
+        font-size: unset !important;
+    }
   }
