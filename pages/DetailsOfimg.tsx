@@ -4,6 +4,7 @@ import * as config from "../next.config.js";
 import { simpleCallInitAPI } from '../services/ApicallInit';
 import { BsHeart } from 'react-icons/bs';
 import {FaFacebookF,FaInstagram,FaTwitter,FaTelegramPlane,FaWhatsapp,FaLinkedinIn,FaYoutube} from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 interface properties {
     data: any;
@@ -53,11 +54,8 @@ const DetailsOfimg: React.FC<properties> = ({ data, selectedItem }) => {
                                 <div className={css.Socailmedia_icons}>
                                     <div className={css.Social_Content_icons}><FaFacebookF className={css.Social_icons} /></div>
                                     <div className={css.Social_Content_icons}><FaInstagram className={css.Social_icons} /></div>
-                                    <div className={css.Social_Content_icons}><FaTwitter className={css.Social_icons} /></div>
-                                    <div className={css.Social_Content_icons}><FaYoutube className={css.Social_icons} /></div>
-                                    <div className={css.Social_Content_icons}><FaTelegramPlane className={css.Social_icons} /></div>
+                                    <div className={css.Social_Content_icons}><FaXTwitter className={css.Social_icons} /></div>
                                     <div className={css.Social_Content_icons}><FaWhatsapp className={css.Social_icons} /></div>
-                                    <div className={css.Social_Content_icons}><FaLinkedinIn className={css.Social_icons} /></div>
                                 </div>
                             </div>
                         </div>
