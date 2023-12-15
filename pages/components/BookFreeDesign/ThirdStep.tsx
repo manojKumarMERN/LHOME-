@@ -46,28 +46,38 @@ const ThirdStep: React.FC = () => {
                 </div>
                 <div className={css.book_Content}>
                     <Bookfreedropdown district={showroom} heading="Pick the nearest experience centre" defaultoption="Select Showroom" />
-                    <div className='mt-5'>
+                    <div className='mt-[4%] mb-[3.5%]'>
                         <div className={css.select_button_Heading}>Book a meeting with our Design Expert</div>
                         <Grid container gap={6}>
                             <Grid item xs={12} md={5.55}>
-                                <div className="custom-date-picker relative">
+                                <div className={css.custom_date_picker}>
                                     <DatePicker
                                         selected={selectedDate}
                                         onChange={handleDateChange}
                                         dateFormat="dd/MM/yyyy"
+                                        
                                         placeholderText="Select date"
-                                        className="absolute bg-transparent mx-5 top-5 focus:outline-none  px-5 cursor-pointer"
-                                        style={{ width: '200%' }}
+                                        className={css.date_content}
+                                        style={{ width: '100%' }}
+                                        calendarIcon={<MdDateRange/>}
                                     />
-                                    <div className=' w-[100%] rounded-lg h-[50%] flex justify-content-between align-items-center border py-3 px-2 cursor-pointer -z-50'><MdDateRange className={css.icon_bottom}/><BiSolidDownArrow className={css.icon_bottom}/></div>
+                                    <span className={css.LeftIcon}><MdDateRange className={css.icon_bottom}/></span><span className={css.RightIcon}><BiSolidDownArrow className={css.icon_bottom}/></span>
                                 </div>
                             </Grid>
                             <Grid item xs={12} md={5.55}>
-                                <div className={"custom-time-picker relative"}>
-                                    <LocalizationProvider dateAdapter={AdapterDayjs} >
-                                        <TimeField className={css.time_content} id='customInput' />
-                                    </LocalizationProvider>
-                                    <div className=' w-[100%] rounded-lg h-[50%] flex justify-content-between align-items-center border py-3 px-2 cursor-pointer -z-50'><BsClockFill className={css.icon_bottom}/><BiSolidDownArrow className={css.icon_bottom}/></div>
+                            <div className={css.custom_date_picker}>
+                                    <DatePicker
+                                        selected={selectedTime}
+                                        onChange={handleTimeChange}
+                                        dateFormat="h:mm aa"
+                                        showTimeSelect
+                                        showTimeSelectOnly
+                                        placeholderText="Select time slot"
+                                        className={css.date_content}
+                                        style={{ width: '200%' }}
+                                        
+                                    />
+                                    <span className={css.LeftIcon}><BsClockFill className={css.icon_bottom}/></span><span className={css.RightIcon}><BiSolidDownArrow className={css.icon_bottom}/></span>
                                 </div>
                             </Grid>
                         </Grid>

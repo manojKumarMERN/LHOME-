@@ -149,7 +149,7 @@
       height: unset;
    }
  }
- .whatsappcheckbox {
+ .whatsappcheckbox_content {
     //   width: 100%;
     padding-left: 10px;
     padding-right: 10px;
@@ -229,7 +229,7 @@
     .whatsappdetailsholder {
        margin-right: 2%;
     }
-    .whatsappcheckbox {
+    .whatsappcheckbox_content {
        right: 0px;
        margin-right: 2%;
     }
@@ -265,7 +265,7 @@
    }
 }
 
-.whatsappcheckbox input:checked~.checkmark {
+.whatsappcheckbox_content input:checked~.checkmark {
    background-color: transparent;
 }
 
@@ -275,11 +275,11 @@
    display: none;
 }
 
-.whatsappcheckbox input:checked~.checkmark:after {
+.whatsappcheckbox_content input:checked~.checkmark:after {
    display: block;
 }
 
-.whatsappcheckbox .checkmark:after {
+.whatsappcheckbox_content .checkmark:after {
    left: 30%;
    top: 0px;
    width: 0.6vw;
@@ -294,7 +294,7 @@
        width: 8px;
    }
 }
-.whatsappcheckbox input {
+.whatsappcheckbox_content input {
    position: absolute;
    opacity: 0;
    cursor: pointer;
