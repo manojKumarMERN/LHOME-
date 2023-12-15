@@ -8,6 +8,7 @@ import PageHeader from "./components/PageHeader";
 import SecondStep from './components/BookFreeDesign/SecondStep';
 import ThirdStep from './components/BookFreeDesign/ThirdStep';
 import FirstStep from './components/BookFreeDesign/FirstStep';
+import Image from 'next/image.js';
 const steps = [
     'Select campaign settings',
     'Create an ad group',
@@ -83,22 +84,23 @@ const Bookfreedesign: React.FC<homeproperties> = ({ screenwidth, screenheight })
     return (
         <>
             <div className={css.lhomePage}>
-                <div className={hidden ? "hidden" : ""}>
-                    <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={true} />
+                <div className={css.Img_content}>
+                    <Image src={require("../public/assets/images/LhomeLogo.jpg")} className={css.Img_content_img} alt="Logo_Image"/>
                 </div>
                 <Box sx={{ width: '100%' }} className={css.mutli_step}>
                     <div>
                         <div className={css.getfree_Estimate_Content}>
                             {getStepContent(activeStep)}
                         </div>
-                        <Box sx={{ display: 'flex', justifyContent: 'flex-end', pt: 2, width: '85%' }}>
+                        <Box sx={{ display: 'flex', justifyContent: 'flex-end', pt:'1%', width: '85%' }}>
+                            {activeStep === 0 ? null :(
                             <Button
                                 disabled={activeStep === 0}
                                 onClick={handleBack}
                                 className={css.Bookfreedesign_Button_Back}
                             >
                                 Back
-                            </Button>
+                            </Button>)}
                             {isLastStep ? (
                                 <Button
                                     onClick={handleComplete}

@@ -56,7 +56,7 @@ const DesignGallery: React.FC = () => {
       <header>
         <h2 className={css.heading}>Design Gallery</h2>
         <p className={css.paraheading}> If you’re on the lookout for simple home interior designs, look no further<br />
-          than HomeLane for end- to-end interior design services.</p><br />
+          than LHome for end- to-end interior design services.</p><br />
       </header>
       <div className={"mx-2 " + css.outerLayer}>{gallerydesign.length != 0 ?
         <div className={css.division}>

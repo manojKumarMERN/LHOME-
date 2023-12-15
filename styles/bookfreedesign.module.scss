@@ -3,8 +3,7 @@
     margin:0;
     padding:0;
     height:100vh;
-    overflow-x:hidden;
-    overflow-y:auto;
+    scale: 0.92;
   }
   .mutli_step{
     width: 100%;
@@ -13,8 +12,15 @@
     position: absolute;
     width: 100%;
     // top: 100px;
-    overflow-y: auto;
-    overflow-x:hidden;
+    // overflow-y: auto;
+    // overflow-x:hidden;
+}
+.Img_content{
+    display: flex;
+    justify-content: center;
+}
+.Img_content_img{
+    width: 15%;
 }
 .book_Content{
     width: 75%;
@@ -78,6 +84,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-top: 2%;
     @media (max-width:768px){
         flex-direction: column;
     }
@@ -87,6 +94,9 @@
     @media (max-width:768px){
         width: 100%;
     }
+}
+.Dropdown_list div select{
+    padding: 2% 0 2% 10% !important;
 }
 .Date_input{
 border: 1px solid #222222;
@@ -140,6 +150,21 @@ border: 1px solid #222222;
   .time_content  fieldset{
     border: 0 !important;
   }
+  .custom_date_picker{
+    position: relative;
+  }
+  .custom_date_picker div[class="react-datepicker-wrapper"]{
+    width: 100%;
+  }
+  .custom_date_picker div div input{
+    width: 100%;
+    text-align: left;
+    padding-left: 25%;
+    font-size: 1.2vw;
+    @media (max-width:1024px){
+        font-size: 16px;
+    }
+  }
   .custom-time-picker div div fieldset[class="MuiOutlinedInput-notchedOutline"]{
     border: 0 !important;
   }
@@ -149,3 +174,25 @@ border: 1px solid #222222;
         font-size: unset !important;
     }
   }
+  .date_content{
+    border: 0.5px solid #9F9F9F;
+    width: 100%;
+    cursor: pointer;
+    background: white !important;
+    padding: 2% 0;
+    margin-top: 1%;
+    border-radius: 0.5vw;
+  }
+  .date_content:focus{
+    outline: none;
+  }
+.LeftIcon{
+position: absolute;
+left: 5%;
+top: 35%;
+}
+.RightIcon{
+    position: absolute;
+    right: 5%;
+    top: 35%;
+}

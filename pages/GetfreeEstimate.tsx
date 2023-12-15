@@ -16,6 +16,7 @@ import SecondstepGetfree from './components/MultiStep/SecondstepGetfree';
 import { useRouter } from 'next/router';
 import * as config from "./../next.config.js";
 import PageHeader from "./components/PageHeader";
+import Image from 'next/image';
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 20,
@@ -157,9 +158,9 @@ console.log(BHK);
 
   return (
     <div className={css.lhomePage}>
-            <div className={hidden ? "hidden" : ""}>
-          <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={true} />
-        </div>
+                <div className={css.Img_content}>
+                    <Image src={require("../public/assets/images/LhomeLogo.jpg")} className={css.Img_content_img} alt="Logo_Image"/>
+                </div>
       <Box className={css.mutli_step}>
 
         <Stepper alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>

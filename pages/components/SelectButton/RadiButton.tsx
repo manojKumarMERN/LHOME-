@@ -63,7 +63,7 @@ function BpRadio(props) {
 
 export default function Radibutton() {
   return (
-    <FormControl style={{width:"100%"}}>
+    <FormControl style={{width:"100%",marginTop:'2%'}}>
       <p className={css.radio_button_Heading}>Your floorplan</p>
       <RadioGroup defaultValue="female" aria-labelledby="demo-customized-radios" name="customized-radios" style={{display:"flex",flexDirection:"row",justifyContent:"space-between",margin:"0 0 0 0.5%"}}>
         <FormControlLabel value="1 BHK" control={<BpRadio />} label="1 BHK" className={css.radio_label}/>

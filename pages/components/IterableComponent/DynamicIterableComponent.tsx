@@ -86,7 +86,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
             <div>
                 <div className="w-full">
                     <div className={"container-fluid " + css.mainBlock}>
-                        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 ">
+                        <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 ">
                             {
                                 updatedData.map((item, index) => (
                                     <div className={"p-3 w-full h-full " + css.divCard} key={index} 
