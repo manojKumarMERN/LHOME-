@@ -1,157 +1,3 @@
-// import React from 'react';
-// import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
-// import css from "./Jobform.module.scss";
-// import Switch from './Switch';
-// import Link from 'next/link';
-// import { MdKeyboardArrowLeft } from 'react-icons/md';
-
-// interface ApplyForJobFormProps {
-//     header: string;
-//     joblocation: string;
-//     selectCat:boolean
-// }
-
-// const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation,selectCat }) => {
-//     const [isselected, setSlected] = React.useState(selectCat);
-//     const [value, setValue] = React.useState(false);
-
-
-//     return (
-//         <React.Fragment>
-//             <div style={{ display: "flex", justifyContent: "left" }}>
-//                 <div className={css.jobLeftarrow}>
-//                     <Link href={{ pathname: "/joinuspage" }}>
-//                         <MdKeyboardArrowLeft className={css.LeftarrowIcon}  />
-//                         <p>View all jobs</p>
-//                     </Link>
-//                 </div>
-//             </div>
-
-//             <div className={css.overallContainer}>
-//                 <h1 className={css.jobHead}>{header}</h1>
-//                 <p className={css.jobpara}>{joblocation}</p>
-//             </div>
-
-//             <div className={css.bgclrwhite}>
-//                 <Form>
-//                     <div >
-//                         <h1 className={css.formhead}>Apply for this job</h1>
-//                         <div className={css.formtxt}>Resume/CV *<Button className={css.formbtn} variant="outline-danger">Select Resume</Button></div>
-//                         <p className={css.para}>Upload in either DOC, DOCX or PDF file format (file size not more than 1MB)</p>
-
-
-//                         <div className="row flex ">
-//                             <div className='col-1'></div>
-//                             <div className="col-md-5">
-//                                 <Form.Group className="mb-3">
-//                                     <Form.Label className={css.formlabel} htmlFor="TextInput">First name*:</Form.Label>
-//                                     <Form.Control className={css.forminput} type="text" placeholder="" />
-//                                 </Form.Group>
-//                             </div>
-//                             <div className="col-md-5">
-//                                 <Form.Group className="mb-3 w-50%">
-//                                     <Form.Label className={css.formlabel} htmlFor="Select">Last name*:</Form.Label>
-//                                     <Form.Control className={css.forminput} type="text" placeholder="" />
-//                                 </Form.Group>
-//                             </div>
-//                             <div className='col-1'></div>
-//                         </div>
-//                         <div className="row flex ">
-//                             <div className='col-1'></div>
-//                             <div className="col-md-5">
-//                                 <Form.Group className="mb-3">
-//                                     <Form.Label className={css.formlabel} htmlFor="TextInput">Email*:</Form.Label>
-//                                     <Form.Control className={css.forminput} type="email" placeholder="" />
-//                                 </Form.Group>
-//                             </div>
-//                             <div className="col-md-5">
-//                                 <Form.Group className="mb-3 w-50%">
-//                                     <Form.Label className={css.formlabel} htmlFor="Select">Mobile number*:</Form.Label>
-//                                     <Form.Control className={css.forminput} type="text" placeholder="" />
-//                                 </Form.Group>
-//                             </div>
-//                             <div className='col-1'></div>
-//                         </div>
-//                     </div>
-
-//                     {isselected ? <div >
-//                         <div className='row flex'>
-//                             <div className='col-1'></div>
-//                             <div className="col-md-5">
-//                                 <Form.Group className="mb-3">
-//                                     <Form.Label className={css.formlabel} htmlFor="Select">Select department*:</Form.Label>
-//                                     <Form.Select className={`${css.formselect} ${css.forminput}`} id="Select">
-
-//                                     </Form.Select>
-
-//                                 </Form.Group>
-//                             </div>
-//                             <div className='col-6'></div>
-//                         </div>
-//                     </div> : null}
-
-//                     <div >
-//                         <h4 className={css.formhead1}>Mandatory Questions</h4>
-//                         <div className={css.secondform}>
-//                             <div className="row flex">
-//                                 <div className='col-1'></div>
-//                                 <div className='col-3'>
-//                                     <Form.Group className="mb-3">
-//                                         <Form.Label className={css.formlabel} id={css['secondformlabel']} htmlFor="TextInput">Current CTC *</Form.Label>
-//                                         <Form.Control className={css.forminput} type="text" placeholder="" />
-//                                     </Form.Group>
-//                                 </div>
-//                                 <div className='col-1'></div>
-//                                 <div className="col-3">
-//                                     <Form.Group className="mb-3">
-//                                         <Form.Label className={css.formlabel} id={css['secondformlabel']} htmlFor="TextInput">Expected CTC *</Form.Label>
-//                                         <Form.Control className={`${css.forminput1} ${css.forminput}`} id={css['secondforminput']} style={{ marginLeft: -60 }} type="text" placeholder="" />
-//                                     </Form.Group>
-//                                 </div>
-//                                 <div className="col-3">
-//                                     <Form.Group className="mb-3">
-//                                         <Form.Label className={css.formlabel} id={css['secondformlabel']} htmlFor="Select">Preferred Location *</Form.Label>
-//                                         <Form.Control  className={`${css.forminput1} ${css.forminput}`}  id={css['secondforminput']} style={{ marginLeft: -25 }} type="text" placeholder="" />
-//                                     </Form.Group>
-//                                 </div>
-//                                 <div className='col-1'></div>
-
-//                             </div>
-//                         </div>
-
-//                         <div>
-//                             <div className='row flex' id={css['current']}>
-//                                 {/* <div className='col-1'></div> */}
-//                                 <div className='col-6' id={css['rightside']} >
-//                                     <h5 className={css.formhead1}>Are you currently serving your notice period? *</h5>
-//                                     <div className="form-check form-switch" id={css['form-check']}>
-//                                         <Switch isOn={value} onColor="#048811" handleToggle={() => setValue(!value)}
-//                                         /></div>
-//                                 </div>
-//                                 <div className='col-1'>
-//                                     <div className={css.line}>
-//                                         <div className="vr" style={{ height: "50%" }}></div>
-//                                     </div>
-//                                 </div>
-//                                 <div className='col-5' id={css['portfol']}>
-//                                     <div className={css.formhead1} >Portfolio (if available)<Button className={css.formbtn} variant="outline-danger">Select File</Button></div>
-//                                     <p className={css.para}>Upload in either DOC, DOCX, PDF or EML file format (file size not more than 1MB)</p>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                         <div className={css.flex_box}>
-//                             <Button className={`${css.jobApplybtn} ${css.jobApplybtn2}`} type="submit">Submit</Button>
-//                         </div>
-//                     </div>
-//                 </Form>
-//             </div>
-//         </React.Fragment>
-//     );
-// }
-
-// export default ApplyForJobForm;
-
 import React from 'react';
 import css from './form.module.scss';
 import Switch from './Switch';
@@ -182,24 +28,29 @@ const jobApplicationSchema = Yup.object().shape({
 const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, selectCat }) => {
     const [isselected, setSlected] = React.useState(selectCat);
     const [value, setValue] = React.useState(false);
-    // const handleFileSelectClick = () => {
-    //     const fileInput = document.getElementById('Select_Resume');
-    //     if (fileInput) {
-    //         fileInput.click();
-    //     }
-    // };
+    const [ResumeButton , setButton] = React.useState<string>('Upload Resume');
+    const [PortfolioButton , setPortfolioButton] = React.useState<string>('Select File');
+
     const handleClickPortfolio = () => {
         const fileInput = document.getElementById('Select_File');
         if (fileInput) {
             fileInput.click();
         }
     };
+    const handleResume = () => {
+        console.log('handleResume function called');
+        const fileInput = document.getElementById('Select_Resume');
+        if (fileInput) {
+         fileInput.click();
+        }
+    };
     const handleFileChange = (event) => {
-        formik.setFieldValue('resume', event.currentTarget.files[0]); 
+        formik.setFieldValue('resume', event.target.files[0]);     
+        setButton(event.target.files[0].name);            
     };
     const handleSelectPortfolio = (event) => {
         const selectedFile = event.target.files[0];
-        console.log('Selected file:', selectedFile);
+        setPortfolioButton(event.target.files[0].name);            
     };
     //yup form validation
 
@@ -216,13 +67,12 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
             resume: '',
         },
         validationSchema: jobApplicationSchema,
-        onSubmit: async (values) => {
+        onSubmit: async (values) => {            
             try {
-                const response = await AxiosService.post('/userdetail', values);
-                if (response) {
-                    // toggleForm();
-                    // setShow(false);
-                }
+                const response = await AxiosService.post('/userdetail', {...values , portfolio : ''});
+               
+                console.log(response);
+                
             } catch (error) {
                 console.error('Error:', error.message);
             }
@@ -239,7 +89,6 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
     const isErrorLocation = touched.location && errors.location;
     const isErrorResume = touched.resume && errors.resume;
     
-    console.log(isErrorCurrentctc);
     const handleClick = (e) => {
         e.preventDefault();
         formik.handleSubmit();
@@ -264,12 +113,12 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
                     <h1 className={css.formhead}>Apply for this job</h1>
                     <div className={css.formtxt}>Resume/CV *
                         <div className={css.padding}>
-                            <input type='file' hidden id="Select_Resume"
+                            <input type='file' hidden id="Select_Resume" accept=".pdf, .doc, .docx"
                                 onChange={(event) => {
                                     handleFileChange(event);
                                     formik.setFieldTouched('resume', true);
                                 }} />
-                            <Button className={css.formbtn} variant="outline-danger" onClick={() => document.getElementById('Select_Resume').click()}>Upload Resume</Button>
+                            <Button className={css.formbtn} variant="outline-danger" onClick={handleResume}>{ResumeButton}</Button>
                         </div>
 
                     </div>
@@ -340,7 +189,7 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
                                         <div className={css.formhead1} >Portfolio (if available)
                                             <div className={css.padding}>
                                                 <input type='file' hidden id="Select_File" onChange={handleSelectPortfolio} />
-                                                <Button className={css.formbtn} variant="outline-danger" onClick={handleClickPortfolio}>Select File</Button>
+                                                <Button className={css.formbtn} variant="outline-danger" onClick={handleClickPortfolio}>{PortfolioButton}</Button>
                                             </div>
                                         </div>
                                         <p className={css.para}>Upload in either DOC, DOCX, PDF or EML file format (file size not more than 1MB)</p>
@@ -348,7 +197,7 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
                                 </div>
                             </div>
                             <div className={css.flex_box}>
-                                <Button className={`${css.jobApplybtn} ${css.jobApplybtn2}`} type="submit" onClick={handleClick}>Submit</Button>
+                                <button className={`${css.jobApplybtn} ${css.jobApplybtn2}`} type="submit" onClick={handleClick}>Submit</button>
                             </div>
                         </div>
                     </div>
