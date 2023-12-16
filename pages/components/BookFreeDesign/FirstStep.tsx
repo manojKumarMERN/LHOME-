@@ -2,7 +2,7 @@ import css from '../../../styles/bookfreedesign.module.scss';
 import Selectbutton from '../../components/SelectButton/selectbutton';
 import Radibutton from '../../components/SelectButton/RadiButton';
 import Bookfreedropdown from '../../components/SelectButton/Bookfreedropdown';
-function FirstStep() {
+function FirstStep({setBHK,setSelectButton,setSelectLocation}) {
     const labels: string[] = ["Apartment", "Villa", "Independent Home"];
     const district: string[] = [
         "Ariyalur",
@@ -52,9 +52,9 @@ function FirstStep() {
                     <p className={css.step}> Step 1 0f 3</p>
                 </div>
                 <div className={css.book_Content}>
-                    <Selectbutton labels={labels} heading="I own a..." />
-                    <Radibutton />
-                    <Bookfreedropdown district={district} heading="My Locality is" defaultoption="Location"/>
+                    <Selectbutton labels={labels} heading="I own a..." setSelectButton={setSelectButton}/>
+                    <Radibutton setBHK={setBHK}/>
+                    <Bookfreedropdown district={district} heading="My Locality is" defaultoption="Location" setSelectLocation={setSelectLocation}/>
                 </div>
             </div>
         </>

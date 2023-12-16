@@ -8,26 +8,33 @@ import 'react-datepicker/dist/react-datepicker.css';
 import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
 import { MdDateRange } from 'react-icons/md';
-import { RiArrowDropDownFill } from "react-icons/ri";
 import { BsClockFill } from "react-icons/bs";
 import { BiSolidDownArrow } from "react-icons/bi";
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { TimeField } from '@mui/x-date-pickers';
-const ThirdStep: React.FC = () => {
+ interface Dataprops{
+    setSelectShowRoom:any;
+    setSelectDateData:any;
+    setSelectTimeData:any
+ }
+const ThirdStep: React.FC<Dataprops>= ({setSelectShowRoom,setSelectDateData,setSelectTimeData}) => {
     const showroom: string[] = [
         "Coimbatore showroom",
         "Rajapalayam showroom",
     ];
     const [selectedDate, setSelectedDate] = React.useState(null);
     const [selectedTime, setSelectedTime] = React.useState(null);
+    const minDate = new Date();
+    const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const handleDateChange = (date) => {
-        setSelectedDate(date);
+          setSelectedDate(date);
+          setSelectDateData(date);
 
-    };
-    const handleTimeChange = (time) => {
-        setSelectedTime(time);
-    }
+      };
+      const handleTimeChange = (time: string | null) => {
+
+          setSelectedTime(time);
+          setSelectTimeData(time);
+
+      };
     const inputElement = document.querySelector<HTMLInputElement>('#customInput');
     // console.log(inputElement.placeholder);
     if (inputElement) {
@@ -45,7 +52,7 @@ const ThirdStep: React.FC = () => {
                     <p className={css.step}> Step 3 0f 3</p>
                 </div>
                 <div className={css.book_Content}>
-                    <Bookfreedropdown district={showroom} heading="Pick the nearest experience centre" defaultoption="Select Showroom" />
+                    <Bookfreedropdown district={showroom} heading="Pick the nearest experience centre" defaultoption="Select Showroom" setSelectLocation={setSelectShowRoom}/>
                     <div className='mt-[4%] mb-[3.5%]'>
                         <div className={css.select_button_Heading}>Book a meeting with our Design Expert</div>
                         <Grid container gap={6}>
@@ -55,7 +62,7 @@ const ThirdStep: React.FC = () => {
                                         selected={selectedDate}
                                         onChange={handleDateChange}
                                         dateFormat="dd/MM/yyyy"
-                                        
+                                        minDate={minDate}
                                         placeholderText="Select date"
                                         className={css.date_content}
                                         style={{ width: '100%' }}
@@ -70,6 +77,7 @@ const ThirdStep: React.FC = () => {
                                         selected={selectedTime}
                                         onChange={handleTimeChange}
                                         dateFormat="h:mm aa"
+                                        minDate={currentTime}
                                         showTimeSelect
                                         showTimeSelectOnly
                                         placeholderText="Select time slot"

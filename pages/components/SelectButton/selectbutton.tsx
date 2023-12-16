@@ -11,12 +11,13 @@ interface Button {
 interface AppProps {
     labels:string[]; 
     heading:string; 
+    setSelectButton:any;
 }
 const generateButtons = (labels: string[]): Button[] => {
     return labels.map(label => ({ label, value: false }));
   };
 
-  const Selectbutton: React.FC<AppProps> = ({ labels,heading }) => {
+  const Selectbutton: React.FC<AppProps> = ({ labels,heading,setSelectButton }) => {
     const [buttons, setButtons] = useState<Button[]>(generateButtons(labels));
   
 
@@ -26,8 +27,9 @@ const generateButtons = (labels: string[]): Button[] => {
       value: button.label === label
     }));
     setButtons(newButtonsState);
+    const selectedLabel = newButtonsState.find(button => button.value)?.label || '';
+    setSelectButton(selectedLabel);
   };
-
   return (
     <div>
         <p className={css.select_button_Heading}>{heading}</p>
