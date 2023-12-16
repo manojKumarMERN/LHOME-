@@ -1,7 +1,7 @@
 import css from '../../../styles/bookfreedesign.module.scss';
 import Selectbutton from '../../components/SelectButton/selectbutton';
 import Bookfreedropdown from '../../components/SelectButton/Bookfreedropdown';
-function SecondStep() {
+function SecondStep({setSelectPlan,setSelectLooking,setSelectBudget,setSelectPossession}) {
     const Planinglabels: string[] = ["Move In", "Rent Out", "Renovate"];
     const Lookinglabels: string[] = ["End-to-end Interiors", "Kitchen and Wardrobes", "Only Kitchen"];
     const priceList: string[] = [
@@ -25,11 +25,11 @@ function SecondStep() {
                     <p className={css.step}> Step 2 0f 3</p>
                 </div>
                 <div className={css.book_Content}>
-                    <Selectbutton labels={Planinglabels} heading="I am planning to..." />
-                    <div style={{ paddingTop: "4%" }}><Selectbutton labels={Lookinglabels} heading="I am looking for..." /></div>
+                    <Selectbutton labels={Planinglabels} heading="I am planning to..." setSelectButton={setSelectPlan}/>
+                    <div style={{ paddingTop: "4%" }}><Selectbutton labels={Lookinglabels} heading="I am looking for..." setSelectButton={setSelectLooking}/></div>
                     <div className={css.NextBook_page}>
-                        <div className={css.Dropdown_list}><Bookfreedropdown district={priceList} heading="I have a budget of..." defaultoption="Select Budget"/></div>
-                        <div className={css.Dropdown_list}><Bookfreedropdown district={profession} heading="Possession in..." defaultoption="select Possession"/></div>
+                        <div className={css.Dropdown_list}><Bookfreedropdown district={priceList} heading="I have a budget of..." defaultoption="Select Budget" setSelectLocation={setSelectBudget}/></div>
+                        <div className={css.Dropdown_list}><Bookfreedropdown district={profession} heading="Possession in..." defaultoption="select Possession" setSelectLocation={setSelectPossession}/></div>
                     </div>
                 </div>
             </div>

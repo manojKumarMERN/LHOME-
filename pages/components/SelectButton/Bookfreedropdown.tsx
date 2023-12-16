@@ -7,9 +7,15 @@ interface districtprops {
     district: string[];
     heading: string;
     defaultoption: string;
+    setSelectLocation:any;
 }
-const Bookfreedropdown: React.FC<districtprops> = ({ district, heading, defaultoption }) => {
+const Bookfreedropdown: React.FC<districtprops> = ({ district, heading, defaultoption,setSelectLocation }) => {
     const [districtList, setDistrictList] = React.useState("");
+    const handleDistrictChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const selectedDistrict = e.target.value;
+        setDistrictList(selectedDistrict);
+        setSelectLocation(selectedDistrict); 
+    };
     return (
         <>
             <div className={css.bookfree_dropdown}>
@@ -18,7 +24,7 @@ const Bookfreedropdown: React.FC<districtprops> = ({ district, heading, defaulto
                 <Input
                     type="select"
                     value={districtList}
-                    onChange={(e) => setDistrictList(e.target.value)}
+                    onChange={handleDistrictChange}
                     id="selectTitle"
                     className={css.input_Dropdown}
                 >

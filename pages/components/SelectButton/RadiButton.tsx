@@ -61,17 +61,20 @@ function BpRadio(props) {
   );
 }
 
-export default function Radibutton() {
+export default function Radibutton(setBHK) {
+  const handleBHKChange = (e)=>{
+    setBHK(e.target.value)
+    }
   return (
     <FormControl style={{width:"100%",marginTop:'2%'}}>
       <p className={css.radio_button_Heading}>Your floorplan</p>
       <RadioGroup defaultValue="female" aria-labelledby="demo-customized-radios" name="customized-radios" style={{display:"flex",flexDirection:"row",justifyContent:"space-between",margin:"0 0 0 0.5%"}}>
-        <FormControlLabel value="1 BHK" control={<BpRadio />} label="1 BHK" className={css.radio_label}/>
-        <FormControlLabel value="2 BHK" control={<BpRadio />} label="2 BHK" className={css.radio_label}/>
-        <FormControlLabel value="3 BHK" control={<BpRadio />} label="3 BHK" className={css.radio_label}/>
-        <FormControlLabel value="4 BHK" control={<BpRadio />} label="4 BHK" className={css.radio_label}/>
-        <FormControlLabel value="5 BHK" control={<BpRadio />} label="5 BHK" className={css.radio_label}/>
-        <FormControlLabel value="6 BHK" control={<BpRadio />} label="6 BHK" className={css.radio_label}/>
+        <FormControlLabel value="1 BHK" onChange={handleBHKChange} control={<BpRadio />} label="1 BHK" className={css.radio_label}/>
+        <FormControlLabel value="2 BHK" onChange={handleBHKChange} control={<BpRadio />} label="2 BHK" className={css.radio_label}/>
+        <FormControlLabel value="3 BHK" onChange={handleBHKChange} control={<BpRadio />} label="3 BHK" className={css.radio_label}/>
+        <FormControlLabel value="4 BHK" onChange={handleBHKChange} control={<BpRadio />} label="4 BHK" className={css.radio_label}/>
+        <FormControlLabel value="5 BHK" onChange={handleBHKChange} control={<BpRadio />} label="5 BHK" className={css.radio_label}/>
+        <FormControlLabel value="6 BHK" onChange={handleBHKChange} control={<BpRadio />} label="6 BHK" className={css.radio_label}/>
       </RadioGroup>
     </FormControl>
   );

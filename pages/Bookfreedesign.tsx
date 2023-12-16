@@ -29,7 +29,21 @@ const Bookfreedesign: React.FC<homeproperties> = ({ screenwidth, screenheight })
     const page = React.useRef(null);
     const [prevPosition, setPrev] = React.useState(0);
     const [hidden, setHidden] = React.useState(false);
-
+    const [BHK , setBHK] = React.useState('');
+    const [selectButton,setSelectButton] = React.useState('');
+    const [selectLocation,setSelectLocation] =React.useState('');
+    const [selectPlan,setSelectPlan] = React.useState('');
+    const [selectLooking,setSelectLooking] = React.useState('');
+    const [selectBudget,setSelectBudget] = React.useState('');
+    const [selectPossession,setSelectPossession] =React.useState('');
+    const [selectShowRoom,setSelectShowRoom] = React.useState('');
+    const [selectDateData, setSelectDateData] =React.useState('');
+    const [SelectTimeData,setSelectTimeData] =  React.useState('');
+    // console.log(selectShowRoom);
+    // console.log(selectDateData);
+    // console.log(SelectTimeData);
+    // console.log(selectPlan);
+    
     const pageheaderMonitor = () => {
         if (page.current.scrollTop > prevPosition) {
             setPrev(page.current.scrollTop)
@@ -60,19 +74,19 @@ const Bookfreedesign: React.FC<homeproperties> = ({ screenwidth, screenheight })
             case 0:
                 return (
                     <Typography>
-                        <FirstStep />
+                        <FirstStep setBHK={setBHK} setSelectButton={setSelectButton} setSelectLocation={setSelectLocation}/>
                     </Typography>
                 );
             case 1:
                 return (
                     <Typography>
-                        <SecondStep />
+                        <SecondStep setSelectPlan={setSelectPlan} setSelectLooking={setSelectLooking} setSelectPossession={setSelectPossession} setSelectBudget={setSelectBudget}/>
                     </Typography>
                 );
             case 2:
                 return (
                     <Typography>
-                        <ThirdStep />
+                        <ThirdStep setSelectShowRoom={setSelectShowRoom} setSelectDateData={setSelectDateData} setSelectTimeData={setSelectTimeData}/>
                     </Typography>
                 );
 
