@@ -108,8 +108,10 @@
 }
 .chatHistory{
     background-color: #ffffff;
-    height: 200px;
-    padding: 5%;
+    max-height: 250px;
+    overflow-y: auto;
+    // height: 200px;
+    // padding: 5%;
 }
 .TypeText{
     width: 100%;
@@ -119,6 +121,7 @@
     border-bottom-right-radius: 10px;
     text-indent: 5%;
     z-index: -99;
+    background-color: white;
 
 }
 .TypeText::placeholder{
@@ -161,4 +164,19 @@
 .emojiIcon{
     position: absolute;
     bottom: 25%;
+}
+
+
+.user{
+    background-color: #2552A4;
+    color: #FFFFFF;
+    padding: 3% 5%;
+    text-align: right;
+}
+
+.bot{
+    background-color: #F5F5F5;
+    color: #222222;
+    padding: 3% 5%;
+    text-align: left;
 }

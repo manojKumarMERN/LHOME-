@@ -3,13 +3,13 @@ import css from '../../../styles/bookfreedesign.module.scss';
 import Bookfreedropdown from '../../components/SelectButton/Bookfreedropdown';
 import React from 'react';
 import DatePicker from 'react-datepicker';
-import TimePicker from 'react-time-picker';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
 import { MdDateRange } from 'react-icons/md';
 import { BsClockFill } from "react-icons/bs";
 import { BiSolidDownArrow } from "react-icons/bi";
+import { format } from 'date-fns';
  interface Dataprops{
     setSelectShowRoom:any;
     setSelectDateData:any;
@@ -26,17 +26,16 @@ const ThirdStep: React.FC<Dataprops>= ({setSelectShowRoom,setSelectDateData,setS
     const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const handleDateChange = (date) => {
           setSelectedDate(date);
-          setSelectDateData(date);
+          setSelectDateData(format(date, 'yyyy-MM-dd'));
 
       };
-      const handleTimeChange = (time: string | null) => {
+      const handleTimeChange = (time) => {
 
-          setSelectedTime(time);
-          setSelectTimeData(time);
+          setSelectedTime(time);          
+          setSelectTimeData(format(time, 'h:mm:ss a'));
 
       };
     const inputElement = document.querySelector<HTMLInputElement>('#customInput');
-    // console.log(inputElement.placeholder);
     if (inputElement) {
         setTimeout(()=>{
             inputElement.placeholder = 'Select Time';

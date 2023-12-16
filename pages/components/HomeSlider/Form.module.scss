@@ -110,6 +110,7 @@
     float: right;
     display: flex;
     margin-right: 10%;
+    margin-top: 1%;
 
     .label1 {
        font-family: 'Montserrat';
@@ -153,13 +154,12 @@
     //   width: 100%;
     padding-left: 10px;
    padding-right: 6%;
-    margin-top: 0.5%;
+   margin-top: 1.25%;
     @media (min-width:2000px) {
       padding: 0 2%;
     }
-    @media (max-width:1400px) {
-      margin-top: 1.5%;
-    }
+
+
  }
 
  .inputbox {
@@ -257,8 +257,8 @@
  }
  .checkmark {
    position: absolute;
-   height: 1.8vw;
-   width: 1.8vw;
+   height: 1.6vw;
+   width: 1.6vw;
    background-color: transparent;
    border: 1px solid #222222;
    border-radius: 10%;
