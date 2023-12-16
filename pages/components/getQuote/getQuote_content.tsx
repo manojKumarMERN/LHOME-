@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const GetQuoteContent = ({data}) => {
@@ -14,7 +15,7 @@ const GetQuoteContent = ({data}) => {
                         <div className='text-green-600 text-[24px] larger:text-[1.5vw] font-bold'>{data?.price}</div>
                     </div>
                     <div className='text-red-500 text-[12px] larger:text-[0.5vw]'>included:</div>
-                    <div className='grid grid-cols-2 pl-[6%] gap-y-1 mt-1'>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 pl-[6%] gap-y-1 mt-1'>
                         <p className='text-[16px] larger:text-[0.8vw] flex gap-2 align-items-center text-[#222222]'><img className='larger:h-[0.9vw]' src='/assets/icons/Living.png' alt='living' />Living room</p>
                         <p className='text-[16px] larger:text-[0.8vw] flex gap-2 align-items-center text-[#222222]'><img className='larger:h-[0.9vw]' src='/assets/icons/Kitchen.png' alt='kitchen' />Kitchen</p>
                         <p className='text-[16px] larger:text-[0.8vw] flex gap-2 align-items-center text-[#222222]'><img className='larger:h-[0.9vw]' src='/assets/icons/Bathtub.png' alt='bath' />Bathroom</p>
@@ -25,7 +26,7 @@ const GetQuoteContent = ({data}) => {
                         *This is only an indicative price based on our clients&#39; average spends. The final price can be higher or lower depending on factors like finish material, number of furniture, civil work required (painting. flooring, plumbing, etc.), design elements, and wood type. Don&#39;t worry, our designers can help you understand this better.    </p>
                 </div>
             </div>
-            <button className='text-center text-[#FFFFFF] bg-[#F44336] text-[16px] font-bold py-[1.5%] px-[6%] mt-3 rounded larger:text-[0.8vw]'>BOOK FREE DESIGN SESSION</button>
+            <Link href='/Bookfreedesign' className='text-center no-underline text-[#FFFFFF] bg-[#F44336] text-[16px] font-bold py-[1.5%] px-[6%] mt-3 rounded larger:text-[0.8vw]'>BOOK FREE DESIGN SESSION</Link>
         </div>
     )
 }
