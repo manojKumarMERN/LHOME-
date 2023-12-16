@@ -29,7 +29,7 @@ const Counter: React.FC<CounterProps> = ({ count: initialCount, onCountChange,co
             <div className={css.Count_content}>
                 <button disabled={count==0} onClick={decrementCount} className={count==0 ? css.increment :css.decrement} ><AiFillMinusCircle /></button>
                 <span className={css.number_count}>{count}</span>
-                <button disabled={bhk? count == bhk :count==2} onClick={incrementCount} className={ (bhk? count == bhk :count==2 ) ? css.increment :css.decrement} ><AiFillPlusCircle /></button>
+                <button disabled={bhk? count == bhk :count==1} onClick={incrementCount} className={ (bhk? count == bhk :count==1 ) ? css.increment :css.decrement} ><AiFillPlusCircle /></button>
                 <p className={css.Count_name}>{countName}</p>
             </div>
         </>

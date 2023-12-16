@@ -152,10 +152,13 @@
  .whatsappcheckbox_content {
     //   width: 100%;
     padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 2%;
+   padding-right: 6%;
+    margin-top: 0.5%;
     @media (min-width:2000px) {
       padding: 0 2%;
+    }
+    @media (max-width:1400px) {
+      margin-top: 1.5%;
     }
  }
 

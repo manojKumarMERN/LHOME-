@@ -57,7 +57,7 @@ const HomePage: React.FC<homeproperties> = ({ screenwidth, screenheight }) => {
                   <div><Category /></div>
                   <div><HightLights /></div>
                   <div><ReferNowPage /></div>
-                  <div className="mt-[2%] mb-[-2%]">
+                  <div className="mt-[6%] ">
                      <Autoplay living={living} />
                   </div>
                   <div><NRIFriendly /></div>

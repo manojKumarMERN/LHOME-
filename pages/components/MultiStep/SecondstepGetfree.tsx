@@ -9,7 +9,7 @@ export default function SecondstepGetfree({BHK}) {
     const [living,setLiving] = React.useState(1);
     const [kitchen, setKitchen] = React.useState(1);
     const [bedroom, setBedroom] = React.useState(Number(BHK));
-    const [bathroom, setBathroom] = React.useState(1);
+    const [bathroom, setBathroom] = React.useState(BHK);
     const [dining, setDining] = React.useState(1);
     
 
@@ -30,7 +30,7 @@ export default function SecondstepGetfree({BHK}) {
                 <div><Counter count={living} onCountChange={handleCountChange} countName="Living"/></div>
                 <div><Counter count={kitchen} onCountChange={handleCountChange} countName="Kitchen"/></div>
                 <div><Counter bhk={Number(BHK)} count={bedroom} onCountChange={handleCountChange} countName="Bedroom"/></div>
-                <div><Counter count={bathroom} onCountChange={handleCountChange} countName="Bathroom"/></div>
+                <div><Counter bhk={Number(BHK)} count={bathroom} onCountChange={handleCountChange} countName="Bathroom"/></div>
                 <div><Counter count={dining} onCountChange={handleCountChange} countName="Dining"/></div>
             </div>
         </div>
