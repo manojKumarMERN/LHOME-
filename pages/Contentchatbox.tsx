@@ -2,7 +2,7 @@ import React from 'react';
 import css from '../styles/Contentchatbox.module.scss';
 import Modal from 'react-bootstrap/Modal';
 import { BsChevronDown, BsEmojiSmile } from 'react-icons/bs'
-import { IoSendSharp } from 'react-icons/io5'
+import { IoArrowDownCircleOutline, IoSendSharp } from 'react-icons/io5'
 interface ChildProps {
     onDataReceived: (data: string) => void;
 }
@@ -50,7 +50,6 @@ const Contentchatbox = (props: ChildProps) => {
         const element = document.getElementById('chatArea');
         if (element) {
             element.focus();
-            element.addEventListener('keydown', handleKeyDown)
         }
     }
 
@@ -58,21 +57,22 @@ const Contentchatbox = (props: ChildProps) => {
         if (input.trim() === '') {
             return;
         }
-
         let response;
         if (messages.length % 3 === 0) {
-          response = { sender: 'Bot', text: 'Ok' };
-        } else if (messages.length % 3 === 1) {
-          response = { sender: 'Bot', text: 'Goodbye' };
+          response = { sender: 'Bot', text: 'would you like to take a look at our products ?' , checkbox1: `yes` , checkbox2 : 'no' };
+        } else if (messages.length % 3 !== 1 && input == 'Yes') {
+          response = { sender: 'Bot', text: '' , products : ['kitchen' , 'bedroom' , 'living room' , 'space saving furniture' ] };
+        }else if (messages.length % 3 !== 1 && input == 'No') {
+            response = { sender: 'Bot', text: ' We are always available. Come back anytime!' };
         } else {
-          response = { sender: 'Bot', text: ' Fine' };
+          response = { sender: 'Bot', text: ' Nice to have conversation with you' };
         }
 
         const updatedMessages = [...messages, { sender: 'You', text: input }];
         setMessages([...updatedMessages, response]);
-
         setInput('');
     }
+    
     return (
         <React.Fragment>
             <div className={css.maindivchatbot}>
@@ -99,17 +99,29 @@ const Contentchatbox = (props: ChildProps) => {
                             </div>
                         </form> :
                         <div>
-                            <div>
+                            {messages.length!=0 && <div className={css.chatHistory}>
                                 {messages.map((message, index) => (
-                                    <div key={index} className={css.chatHistory}>
-                                        <div className={message.sender == "You" ? css.user : css.bot}>{message.text}</div>
+                                    <div key={index} className={''}>
+                                        <div className={message.sender == "You" ? css.user : css.bot}>
+                                            { message.products ? <></>: <span className={message.sender == "You" ? css.userText : css.botText}>{message.text}</span>}
+                                            { 
+                                            message.checkbox1 && <div className='flex pl-[10%] pr-[15%] justify-between mt-[3%]'>
+                                                <span onClick={()=>setInput('Yes')} className='bg-[#58B743] text-[#FFFFFF] px-[15%] py-[4%] rounded-3xl cursor-pointer'>{message.checkbox1}</span> 
+                                                <span onClick={()=>setInput('No')}  className='bg-[#F44336] text-[#FFFFFF] px-[15%] py-[4%] rounded-3xl cursor-pointer'>{message.checkbox2}</span>
+                                                </div>
+                                                }
+
+                                                {
+                                                    message.products && message.products.map((product , index) =>(<div key={index} className={css.botText + " mt-2 flex justify-between"}><span>{product}</span><IoArrowDownCircleOutline size={32} style={{ color: '#737373' , cursor: 'pointer' }} /></div>))
+                                                }
+                                            </div>
                                     </div>
                                 ))}
-                            </div>
+                            </div>}
                             <div onClick={handleChatArea} className={css.type_Chat_Area}>
                                 <input type='text' placeholder='Enter your message' id='chatArea' onChange={(e) => setInput(e.target.value)} value={input} onKeyDown={handleKeyDown} className={css.TypeText} />
                                 <div className={css.bottom_chat_Icon}>
-                                    {/* <div className={css.emojiIcon}><BsEmojiSmile/></div> */}
+                                    {messages.length != 0 && <div className={css.emojiIcon}><BsEmojiSmile/></div>}
                                     <div className={css.sendIcon} onClick={handleInput}><IoSendSharp className={css.sendIcon_content} />
                                     </div>
                                 </div>
