@@ -61,7 +61,7 @@ function BpRadio(props) {
   );
 }
 
-export default function Radibutton(setBHK) {
+export default function Radibutton({setBHK}) {
   const handleBHKChange = (e)=>{
     setBHK(e.target.value)
     }

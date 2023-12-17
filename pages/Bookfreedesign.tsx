@@ -9,6 +9,8 @@ import SecondStep from './components/BookFreeDesign/SecondStep';
 import ThirdStep from './components/BookFreeDesign/ThirdStep';
 import FirstStep from './components/BookFreeDesign/FirstStep';
 import Image from 'next/image.js';
+import { AxiosService } from '../services/ApiService.js';
+import { useRouter } from 'next/router.js';
 const steps = [
     'Select campaign settings',
     'Create an ad group',
@@ -23,70 +25,102 @@ interface homeproperties {
 const Bookfreedesign: React.FC<homeproperties> = ({ screenwidth, screenheight }) => {
     const [activeStep, setActiveStep] = React.useState(0);
     const [completed, setCompleted] = React.useState({});
-    let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
-    const living = React.useRef(null);
+    const [error, setError] = React.useState('');
+    const [success, setSuccess] = React.useState('');
+    const router = useRouter();
 
     const page = React.useRef(null);
     const [prevPosition, setPrev] = React.useState(0);
     const [hidden, setHidden] = React.useState(false);
-    const [BHK , setBHK] = React.useState('');
-    const [selectButton,setSelectButton] = React.useState('');
-    const [selectLocation,setSelectLocation] =React.useState('');
-    const [selectPlan,setSelectPlan] = React.useState('');
-    const [selectLooking,setSelectLooking] = React.useState('');
-    const [selectBudget,setSelectBudget] = React.useState('');
-    const [selectPossession,setSelectPossession] =React.useState('');
-    const [selectShowRoom,setSelectShowRoom] = React.useState('');
-    const [selectDateData, setSelectDateData] =React.useState('');
-    const [SelectTimeData,setSelectTimeData] =  React.useState('');
-    // console.log(selectShowRoom);
-    // console.log(selectDateData);
-    // console.log(SelectTimeData);
-    // console.log(selectPlan);
-    
-    const pageheaderMonitor = () => {
-        if (page.current.scrollTop > prevPosition) {
-            setPrev(page.current.scrollTop)
-            setHidden(true)
-        } else {
-            setHidden(false)
-            setPrev(page.current.scrollTop)
+    const [own, setOwn] = React.useState('');
+    const [floorplan, setFloorPlan] = React.useState('');
+    const [location, setLocation] = React.useState('');
+    const [planning, setSelectPlan] = React.useState('');
+    const [looking, setSelectLooking] = React.useState('');
+    const [budget, setSelectBudget] = React.useState('');
+    const [Possession, setSelectPossession] = React.useState('');
+    const [nearestcentre, setNearestCentre] = React.useState('');
+    const [meetingdate, setSelectDateData] = React.useState('');
+    const [meetingtime, setSelectTimeData] = React.useState('');
+    console.log({ floorplan, location, own, planning, looking, budget, Possession, nearestcentre, meetingdate, meetingtime });
 
-        }
-    }
 
     const handleNext = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+
+        if (activeStep == 0 && (floorplan == "" || location == "" || own == "")) {
+            setError('Please enter necessary details to go further');
+        } else if (activeStep == 1 && (planning == "" || looking == "" || budget == "" || Possession == "")) {
+            setError('Please enter necessary details to go further');
+        } else if (activeStep == 2 && (nearestcentre == "" || meetingdate == "" || meetingtime == "")) {
+            setError('Please enter necessary details to go further');
+        } else {
+            setError('');
+            setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        }
+
     };
 
     const handleBack = () => {
+        if(activeStep == 3){
+            setNearestCentre('');
+            setSelectDateData('');
+            setSelectTimeData('')
+        }else if(activeStep == 2){
+            setSelectPlan('');
+            setSelectLooking('');
+            setSelectBudget('');
+            setSelectPossession('');
+        }else if(activeStep == 1){
+            setFloorPlan('');
+            setLocation('');
+            setOwn('');
+        }
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
 
-    const handleComplete = () => {
+    const handleComplete = async() => {
         const newCompleted = { ...completed };
         newCompleted[activeStep] = true;
         setCompleted(newCompleted);
-        handleNext();
+         if (activeStep == 2 && (nearestcentre == "" || meetingdate == "" || meetingtime == "")) {
+            setError('Please enter necessary details to go further');
+         } else{
+        const response = await AxiosService.post('/bookingsession' , {
+            floorplan, location, own, planning, looking, budget, Possession, nearestcentre, meetingdate, meetingtime
+        })
+        if(response.status == 201){
+            setError('');
+            setSuccess('Thank you , your free design is booked , Our team will contact you soon ');
+            setTimeout(()=>{
+                router.push('/')
+            }, 2000)
+        }else{
+            setSuccess(`it's been network error try onemore time`)
+            setTimeout(()=>{
+                router.push('/Bookfreedesign')
+            }, 2000)
+        }
+    }
+        // handleNext();
     };
     const getStepContent = (step) => {
         switch (step) {
             case 0:
                 return (
                     <Typography>
-                        <FirstStep setBHK={setBHK} setSelectButton={setSelectButton} setSelectLocation={setSelectLocation}/>
+                        <FirstStep setBHK={setFloorPlan} setSelectButton={setOwn} setSelectLocation={setLocation} />
                     </Typography>
                 );
             case 1:
                 return (
                     <Typography>
-                        <SecondStep setSelectPlan={setSelectPlan} setSelectLooking={setSelectLooking} setSelectPossession={setSelectPossession} setSelectBudget={setSelectBudget}/>
+                        <SecondStep setSelectPlan={setSelectPlan} setSelectLooking={setSelectLooking} setSelectPossession={setSelectPossession} setSelectBudget={setSelectBudget} />
                     </Typography>
                 );
             case 2:
                 return (
                     <Typography>
-                        <ThirdStep setSelectShowRoom={setSelectShowRoom} setSelectDateData={setSelectDateData} setSelectTimeData={setSelectTimeData}/>
+                        <ThirdStep setSelectShowRoom={setNearestCentre} setSelectDateData={setSelectDateData} setSelectTimeData={setSelectTimeData} />
                     </Typography>
                 );
 
@@ -99,22 +133,25 @@ const Bookfreedesign: React.FC<homeproperties> = ({ screenwidth, screenheight })
         <>
             <div className={css.lhomePage}>
                 <div className={css.Img_content}>
-                    <Image src={require("../public/assets/images/LhomeLogo.jpg")} className={css.Img_content_img} alt="Logo_Image"/>
+                    <Image src={require("../public/assets/images/LhomeLogo.jpg")} className={css.Img_content_img} alt="Logo_Image" />
                 </div>
                 <Box sx={{ width: '100%' }} className={css.mutli_step}>
                     <div>
                         <div className={css.getfree_Estimate_Content}>
                             {getStepContent(activeStep)}
                         </div>
-                        <Box sx={{ display: 'flex', justifyContent: 'flex-end', pt:'1%', width: '85%' }}>
-                            {activeStep === 0 ? null :(
-                            <Button
-                                disabled={activeStep === 0}
-                                onClick={handleBack}
-                                className={css.Bookfreedesign_Button_Back}
-                            >
-                                Back
-                            </Button>)}
+                        <div className='text-red-500 text-center my-3'>{error}</div>
+                        <div className='text-green-500 text-center my-3'>{success}</div>
+
+                        <Box sx={{ display: 'flex', justifyContent: 'flex-end', pt: '1%', width: '85%' }}>
+                            {activeStep === 0 ? null : (
+                                <Button
+                                    disabled={activeStep === 0}
+                                    onClick={handleBack}
+                                    className={css.Bookfreedesign_Button_Back}
+                                >
+                                    Back
+                                </Button>)}
                             {isLastStep ? (
                                 <Button
                                     onClick={handleComplete}
