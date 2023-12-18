@@ -14,7 +14,6 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import DetailsOfimg from '../../DetailsOfimg';
 import { AxiosService } from "../../../services/ApiService";
 import { getUserId } from "../../../services/sessionProvider";
-import toast, { useToaster } from 'react-hot-toast';
 
 interface propproperty {
     Citie: any;
@@ -22,7 +21,6 @@ interface propproperty {
 }
 
 const Wardrobes: React.FC<propproperty> = ({ Citie, Currentpage }) => {
-    const toaster = useToaster();
     //assetspath 
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
 

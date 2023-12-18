@@ -14,6 +14,9 @@
     font-size: 1.3vw;
     font-weight: 500;
     margin-bottom: unset;
+    @media (max-width:900px) {
+      font-size: unset;
+    }
   }
  
   .white_bg{
@@ -35,6 +38,9 @@
  }
  .bs_fonts{
     font-size: 1.5vw;
+    @media (max-width:900px) {
+      font-size: unset;
+    }
  }
  
  .chat_Box{
@@ -45,7 +51,12 @@
     border-radius: 50%;
     background-color: #FFFFFF;
     width: 4%;
-    height:8%
+    height:8%;
+    @media (max-width:900px) {
+      right: 2%;
+      width: 60px;
+      height: 60px;
+    }
  }
  .Chat{
     position: absolute;
@@ -54,13 +65,21 @@
     transform: translate(-50%,-50%);
     color: #2552A4;
     font-size: 3vw ;
+    @media (max-width:900px) {
+      font-size: 30px;
+    }
  }
  .ChatBox_Popup div[class="modal-dialog"]{
     position: absolute !important;
-    width: 25%;
-    top: 20%;
-    right: 0.5%;
- 
+    width: 30vw;
+    top: 15%;
+    bottom: 5%;
+    right: 1%;
+ @media(max-width:900px) {
+   top: 10vh;
+   right: 2vw;
+   width: 80vw;
+ }
  }
  .ChatBox_Popup div div[class="modal-content"]{
     background-color: rgba(37, 82, 164, 1) !important;

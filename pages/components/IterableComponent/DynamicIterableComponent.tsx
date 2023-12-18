@@ -8,7 +8,6 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import DetailsOfimg from '../../DetailsOfimg';
 import { AxiosService } from '../../../services/ApiService';
 import { getUserId } from '../../../services/sessionProvider';
-import toast, { useToaster } from 'react-hot-toast';
 import Link from 'next/link';
 
 interface properties {
@@ -19,7 +18,6 @@ interface properties {
 
 
 const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) => {
-    const toaster = useToaster();
     const [show, setShow] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
     const [res , setRes] = React.useState([]);
