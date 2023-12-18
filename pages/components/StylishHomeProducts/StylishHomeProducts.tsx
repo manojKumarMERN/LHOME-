@@ -17,14 +17,12 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import DetailsOfimg from '../../DetailsOfimg';
 import { AxiosService } from "../../../services/ApiService";
 import { getUserId } from "../../../services/sessionProvider";
-import toast, { useToaster } from 'react-hot-toast';
 
 interface propproperty {
     Citie: any
 }
 
 const HightLights: React.FC<propproperty> = ({ Citie }) => {
-    const toaster = useToaster();
 
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     const [stylishHomeProducts, setStylishHomeProducts] = React.useState([]);

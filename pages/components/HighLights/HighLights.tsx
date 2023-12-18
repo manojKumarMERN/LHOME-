@@ -16,11 +16,9 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import DetailsOfimg from '../../DetailsOfimg';
 import { AxiosService } from '../../../services/ApiService'
 import { getUserId } from "../../../services/sessionProvider";
-import toast, { useToaster } from 'react-hot-toast';
 
 
 const StylishHomeProducts: React.FC = () => {
-    const toaster = useToaster();
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     const [trendings, setTrendings] = React.useState([]);
     const [wishlistimage, setWishListImage] = React.useState("");

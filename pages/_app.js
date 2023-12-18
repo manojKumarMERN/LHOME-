@@ -11,6 +11,9 @@ import Contentchatbox from '../pages/Contentchatbox';
 import Modal from 'react-bootstrap/Modal';
 import Image from "next/image";
 import Head from 'next/head';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function SafeHydrate({ children }) {
   return (
     <div suppressHydrationWarning>
@@ -52,7 +55,9 @@ const App = ({ Component, pageProps }) => {
       </Modal.Header>
       <Contentchatbox onDataReceived={handleChildData} />
     </Modal>
-  </div></Provider></SafeHydrate>
+  </div></Provider>
+  <ToastContainer />
+  </SafeHydrate>
 }
 
 export default wrapper.withRedux(dynamic(() => Promise.resolve(App), {
