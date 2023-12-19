@@ -7,6 +7,7 @@ import { ThreeDots } from 'react-loader-spinner';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { ToastContainer, toast } from 'react-toastify';
+import { AxiosService } from '../services/ApiService';
 
 
 
@@ -79,8 +80,11 @@ const Contentchatbox = (props: ChildProps) => {
           message: '',
         },
         validationSchema: userEntrySchema,
-        onSubmit: (values) => {
+        onSubmit: async(values) => {
           console.log(values);
+          const response = await AxiosService.post('/chatbot' , values);
+          console.log(response.data);
+          
           handleOpenModal();
 
         },

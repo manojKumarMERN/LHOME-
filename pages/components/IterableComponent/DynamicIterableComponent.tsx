@@ -2,7 +2,7 @@ import React from 'react';
 import css from "./DynamicIterableComponent.module.scss";
 import Image from 'next/image';
 import Modal from 'react-bootstrap/Modal'
-import { BsFillHeartPulseFill, BsHeart, BsHeartPulseFill } from "react-icons/bs";
+import { BsFillHeartPulseFill, BsHeart, BsHeartFill, BsHeartPulseFill } from "react-icons/bs";
 import { FaRegShareFromSquare } from 'react-icons/fa6';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import DetailsOfimg from '../../DetailsOfimg';
@@ -61,7 +61,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
     }
 
     const updatedData = data.map((element, index) => {
-        const matchingItem = res.find(item => item.index === index);
+        const matchingItem = res.find(item => item.index == index);
         if (matchingItem) {
           return { ...element, liked: true };
         }
@@ -105,7 +105,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
                                                             <span className={css.wishlistholder} >
                                                             <div onClick={()=>handlelike(index)}>
                                                             {
-                                                                    item?.liked ? <BsFillHeartPulseFill /> : <BsHeart /> 
+                                                                    item?.liked ? <BsHeartFill  style={{color: '#F44336'}}/> : <BsHeart /> 
                                                             }
                                                         </div> 
                                                             </span>

@@ -7,8 +7,7 @@ import Wardrobes from "./wardrobes";
 import CustomLeftArrow from "./CustomLeftArrow";
 import CustomRightArrow from "./CustomRightArrow";
 import Carousel from "react-multi-carousel";
-import { BsHeart } from "react-icons/bs";
-import { BsHeartPulseFill } from "react-icons/bs";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { FaRegShareFromSquare } from 'react-icons/fa6'
 import { useRouter } from 'next/router';
 import Modal from 'react-bootstrap/Modal'
@@ -16,6 +15,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import DetailsOfimg from '../../DetailsOfimg';
 import { AxiosService } from '../../../services/ApiService'
 import { getUserId } from "../../../services/sessionProvider";
+import { toast } from "react-toastify";
 
 
 const StylishHomeProducts: React.FC = () => {
@@ -115,7 +115,7 @@ const StylishHomeProducts: React.FC = () => {
                   setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);   
              }        
             }else {
-                alert('please login to use');
+                toast('please login to use');
              } 
 
         } catch (error) {
@@ -124,7 +124,7 @@ const StylishHomeProducts: React.FC = () => {
     }
 
     const updatedTrendings = trendings.map((element, index) => {
-        const matchingItem = res.find(item => item.index === index);
+        const matchingItem = res.find(item => item.index == index);
         if (matchingItem) {
           return { ...element, liked: true };
         }
@@ -177,7 +177,7 @@ const StylishHomeProducts: React.FC = () => {
                                                             <span className={css.wishlistholder}>
                                                             <div onClick={()=>handlelike(index)}>
                                                             {
-                                                                    datas?.liked ? <BsHeartPulseFill /> : <BsHeart /> 
+                                                                    datas?.liked ? <BsHeartFill style={{color: '#F44336'}} /> : <BsHeart /> 
                                                             }
                                                         </div>
                                                             </span>

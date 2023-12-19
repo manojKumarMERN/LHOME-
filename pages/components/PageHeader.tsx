@@ -130,7 +130,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
     <React.Fragment>
         <div className={`stickly transition-all duration-500`}>
           <div className={hidden ? `${css.headerHidden}` : `${css.headerOuter}`}>
-            <div className={css.headerLeft}>
+            <div className={ hidden ? "flex justify-center": css.headerLeft}>
               <div id="logo" className={`${css.lhomelogoholder}`}>
                 <div className={css.lhomelogo}>
                   {/* <div ref={logo} className={`${css.lhomelogomask}`} /> */}
@@ -294,22 +294,6 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
               </div>)}
           </div>
         </div>
-      
-      {/* chat bot div  */}
-      {/* <div className={css.chat_Box}>
-        <HiOutlineChatAlt2 className={css.Chat} onClick={handleChatBox} />
-        <Modal show={chatBoxShow} onHide={handleCloseBox} className={css.ChatBox_Popup}>
-          <Modal.Header >
-            <div className={css.white_bg}>
-              <img src={homeLogo} alt="homeLogo" className={css.round_image} />
-            </div>
-            <p className={css.chat_Box_Heading}>{receivedData ? receivedData : "Chat with us now"}</p>
-            <BsThreeDotsVertical className={css.bs_fonts} />
-            <BsChevronDown onClick={handleCloseBox} className={css.bs_fonts} />
-          </Modal.Header>
-          <Contentchatbox onDataReceived={handleChildData} />
-        </Modal>
-      </div> */}
     </React.Fragment>
   )
 }

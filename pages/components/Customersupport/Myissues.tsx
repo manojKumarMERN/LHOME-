@@ -48,8 +48,8 @@ const MyIssue = () => {
             <React.Fragment>
                 <div className={css.dummycontainer}>
                     {Customersupport.length === 0 ?
-                        <div className="flex">
-                            <Image src={require("../../../public/assets/Tabimage/hand.jpg")} alt="" className={css.handicon} />
+                        <div className="flex items-center justify-center">
+                            <Image src={require("../../../public/assets/Tabimage/hand.png")} alt="" className={css.handicon} />
                             <div className={css.noissue}>No Issues Found!</div>
                         </div>
                         : Customersupport.map((issue, index) => (

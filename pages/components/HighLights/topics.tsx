@@ -5,7 +5,7 @@ import * as config from "../../../next.config.js";
 import Carousel from "react-multi-carousel";
 import CustomLeftArrow from "./CustomLeftArrow";
 import CustomRightArrow from "./CustomRightArrow";
-import { BsFillHeartPulseFill, BsHeart } from "react-icons/bs";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { FaRegShareFromSquare } from 'react-icons/fa6';
 import { FaAngleRight } from 'react-icons/fa6';
 import Link from "next/link";
@@ -130,7 +130,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
     }
 
     const updatedToppicks = toppicks.map((element, index) => {
-        const matchingItem = res.find(item => item.index === index);
+        const matchingItem = res.find(item => item.index == index);
         if (matchingItem) {
           return { ...element, liked: true };
         }
@@ -197,7 +197,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                                                     <span className={css.wishlistholder}>
                                                     <div onClick={()=>handlelike(index)}>
                                                             {
-                                                                    datas?.liked ? <BsFillHeartPulseFill /> : <BsHeart /> 
+                                                                    datas?.liked ? <BsHeartFill  style={{color: '#F44336'}}/> : <BsHeart /> 
                                                             }
                                                         </div>                                                    
                                                         </span>
