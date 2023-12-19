@@ -8,7 +8,7 @@ import Carousel from "react-multi-carousel";
 import CustomLeftArrow from "./CustomLeftArrow";
 import CustomRightArrow from "./CustomRightArrow";
 import css2 from '../HighLights/HighLights.module.scss';
-import { BsFillHeartPulseFill, BsHeart } from "react-icons/bs";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { FaRegShareFromSquare } from 'react-icons/fa6';
 import { FaAngleRight } from 'react-icons/fa6';
 import Link from "next/link";
@@ -105,14 +105,14 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
     }
 
     const updatedstylishHomeProducts = stylishHomeProducts.map((element, index) => {
-        const matchingItem = res.find(item => item.index === index);
+        const matchingItem = res.find(item => item.index == index);
         if (matchingItem) {
           return { ...element, liked: true };
         }
         return element;
       });
     const updatedcompactFurniture = compactFurniture.map((element, index) => {
-        const matchingItem = res1.find(item => item.index === index);
+        const matchingItem = res1.find(item => item.index == index);
         if (matchingItem) {
           return { ...element, liked: true };
         }
@@ -203,7 +203,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                                                             <span className={css.wishlistholder}>
                                                             <div onClick={()=>handlelike(index , '4')}>
                                                             {
-                                                                    datas?.liked ? <BsFillHeartPulseFill /> : <BsHeart /> 
+                                                                    datas?.liked ? <BsHeartFill  style={{color: 'red'}}/> : <BsHeart /> 
                                                             }
                                                         </div>                                                              
                                                         </span>
@@ -271,7 +271,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                                                                 <span className={css.wishlistholder}>
                                                                 <div onClick={()=>handlelike(index , '5')}>
                                                             {
-                                                                    datas?.liked ? <BsFillHeartPulseFill /> : <BsHeart /> 
+                                                                    datas?.liked ? <BsHeartFill  style={{color: 'red'}}/> : <BsHeart /> 
                                                             }
                                                         </div>                                                                  
                                                         </span>

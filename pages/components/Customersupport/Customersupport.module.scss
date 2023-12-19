@@ -230,3 +230,11 @@
         padding-top: 2%;
         }
 }
+.noissue{
+    font-size: 3.5vw;
+    font-weight: 600;
+    color: #4D6797;
+    @media (max-width:1024px) {
+        font-size: 20px;
+    }
+}
