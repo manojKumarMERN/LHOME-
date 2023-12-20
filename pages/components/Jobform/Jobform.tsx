@@ -8,6 +8,8 @@ import { BiSolidDownArrow } from 'react-icons/bi';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { AxiosService } from '../../../services/ApiService';
+import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
 
 interface ApplyForJobFormProps {
     header: string;
@@ -19,8 +21,8 @@ const jobApplicationSchema = Yup.object().shape({
     lastname: Yup.string().required('Last Name is required'),
     email: Yup.string().required('Phone number is required').email('Invalid email address').required('Email is required'),
     phno: Yup.string().required('Phone number is required').matches(/^[0-9]+$/, 'Phone number must contain only digits').min(10, 'Phone number must be exactly 10 digits').max(10, 'Phone number cannot exceed 10 digits'),
-    currentctc: Yup.string().required('current CTC is required').matches(/^\d+(\.\d{1,2})?LPA$/, 'Please provide a valid CTC in the format X.YLPA (e.g., 1.5LPA)'),
-    expectedctc: Yup.string().required('Execpted CTC is required').matches(/^\d+(\.\d{1,2})?LPA$/, 'Please provide a valid CTC in the format X.YLPA (e.g., 1.5LPA)'),
+    currentctc: Yup.string().required('current CTC is required').matches(/^\d+(\.\d{1,2})?$/, 'Please provide a valid CTC in LPA (e.g. 2 or 5) '),
+    expectedctc: Yup.string().required('Execpted CTC is required').matches(/^\d+(\.\d{1,2})?$/, 'Please provide a valid CTC in LPA (e.g. 2 or 5)'),
     location: Yup.string().required('Loaction is required'),
     nperiod: Yup.boolean().oneOf([true, false], 'You must accept WhatsApp opt-in'),
     resume: Yup.mixed().required('Please upload your resume'),
@@ -31,6 +33,7 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
     const [value, setValue] = React.useState(false);
     const [ResumeButton, setButton] = React.useState<string>('Upload Resume');
     const [PortfolioButton, setPortfolioButton] = React.useState<string>('Select File');
+    const router = useRouter();
 
     const handleClickPortfolio = () => {
         const fileInput = document.getElementById('Select_File');
@@ -49,15 +52,11 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
         formik.setFieldValue('resume', event.target.files[0]);
         setButton(event.target.files[0].name);
     };
-    // const handleSelectPortfolio = (event) => {
-    //     const selectedFile = event.target.files[0];
-    //     setPortfolioButton(event.target.files[0].name);
-    // };
     const handleSelectPortfolio = (event) => {
         const selectedFile = event.target.files[0];
         if (selectedFile) {
-            setPortfolioButton(selectedFile.name);
             formik.setFieldValue('portfolio', selectedFile);
+            setPortfolioButton(selectedFile.name);
         }
     };
     //yup form validation
@@ -78,30 +77,29 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
         validationSchema: jobApplicationSchema,
         onSubmit: async (values) => {
             try {
-                console.log({ ...values, portfolio: '' });
                 const formData = new FormData();
-                formData.append('firstName', values.firstname);
-                formData.append('lastName', values.lastname);
+                formData.append('firstname', values.firstname);
+                formData.append('lastname', values.lastname);
                 formData.append('email', values.email);
                 formData.append('phno', values.phno);
                 formData.append('currentctc', values.currentctc);
                 formData.append('expectedctc', values.expectedctc);
                 formData.append('location', values.location);
-                formData.append('nperiod', values.nperiod);
+                formData.append('nperiod', value?'1':'0');
                 formData.append('resume', values.resume);
                 formData.append('portfolio', values.portfolio);
-
-                console.log(formData);
-                // const response = await AxiosService.post('/jobApplication',);
-                // console.log(formData);
-    
                 const response = await AxiosService.post('/jobApplication', formData, {
                   headers: {
                     'Content-Type': 'multipart/form-data',
                   },
                 });
+                if(response.status == 201){
+                    toast.success('Thank you for appplying , Our HR Team will contact you soon')
+                    setTimeout(()=>{
+                        router.push('/joinuspage')
+                    }, 2000)
+                }
             
-                console.log(response.data);
 
             } catch (error) {
                 console.error('Error:', error.message);
@@ -109,11 +107,7 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
         },
     });
     const { values, handleChange, handleBlur, touched, errors } = formik;
-    // const handleClick = (e) => {
-    //     e.preventDefault();
-    //     formik.handleSubmit();
 
-    // };
     return (
         <div>
             <div style={{ display: "flex", justifyContent: "left" }}>
@@ -238,8 +232,7 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
                                             <div className={css.padding}>
                                                 <input type='file' hidden id="Select_File" name='portfolio' onChange={(e)=>{
                                                     handleSelectPortfolio(e);
-                                                    handleChange(e)
-                                                    }} />
+                                                    formik.setFieldTouched('portfolio', true);                                                    }} />
                                                 <Button className={css.formbtn} variant="outline-danger" onClick={handleClickPortfolio}>{PortfolioButton ? PortfolioButton : 'Select File'}</Button>
                                             </div>
                                         </div>
