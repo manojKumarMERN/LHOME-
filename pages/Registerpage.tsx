@@ -5,6 +5,7 @@ import css from '../styles/loginRegister.module.scss';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { AxiosService } from '../services/ApiService';
+import { toast } from 'react-toastify';
 
 //Registration form schema
 const SignupSchema = Yup.object().shape({
@@ -33,9 +34,10 @@ const Registerpage = ({toggleForm , setShow}) => {
         onSubmit: async (values) => {
             try {
               const response = await AxiosService.post('/register',  values );
-              if(response){
+              if(response.status == 201){
+                toast.success('User details registered successfully')
                 toggleForm();
-                setShow(false);
+                // setShow(false);
               }
             } catch (error) {
               console.error('Error:', error.message);
