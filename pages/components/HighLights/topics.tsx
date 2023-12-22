@@ -83,6 +83,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                     A.image = datas.image;
                     A.name = datas.name;
                     A.size = datas.size;
+                    A.para = datas.para;
                     dataArr.push(A);
                 })
                 setTopPicks(dataArr);

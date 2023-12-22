@@ -70,7 +70,7 @@ const Login = ({toggleForm , otpForm , setOtpForm , select , onSelect , setNumbe
                     />
                 </div>
 
-                <input type='text' inputMode='text' className={css.LRInput} placeholder='00000 00000' name='number' onChange={handleNumberChange} onBlur={formik.handleBlur}
+                <input type='text' inputMode='text' className={css.LRInput} placeholder='Enter your mobile number' name='number' onChange={handleNumberChange} onBlur={formik.handleBlur}
                     value={formik.values.number} />
                 {formik.touched.number && formik.errors.number ? (
                     <span className='text-red-500'>{formik.errors.number}</span>

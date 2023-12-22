@@ -3,8 +3,9 @@ import * as React from "react";
 import css from './Guranted.module.scss';
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
-
+import { useRouter } from "next/router";
 const InteriorDesign: React.FC = () => {
+   const router= useRouter();
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     const [googleIcon, setGoogleIcon] = React.useState("");
     const [coimbatore, setCoimbatore] = React.useState("");
@@ -20,6 +21,10 @@ const InteriorDesign: React.FC = () => {
         console.log(error);
     });
  }, [assetpath]);
+ const handleClick= (city: string) =>{
+   console.log(city);
+   router.push({ pathname: "/cities", query: { City: city } });
+ }
 
    return (
       <React.Fragment>
@@ -35,8 +40,8 @@ const InteriorDesign: React.FC = () => {
                      <div className={css.likeScoreDetailLocation}> Coimbatore | Rajapalayam</div>
                   </div>
                   <div className={css.guaranteedBodyLine}><hr id="verticaldivider" className={css.verticaldivider} /></div>
-                  <div className={css.guaranteedRjpamText}><img className={css.guaranteedRjpamImg} src={rajapalayam} alt="" /><div className={css.image_textContent}>Rajapalayam</div></div>
-                  <div className={css.guaranteedCbeText}><img className={css.guaranteedRjpamImg} src={coimbatore} alt="" /><div className={css.image_textContent}>Coimbatore</div></div>
+                  <div className={css.guaranteedRjpamText} onClick={()=>handleClick('Rajapalayam')}><img className={css.guaranteedRjpamImg} src={rajapalayam} alt="" /><div className={css.image_textContent}>Rajapalayam</div></div>
+                  <div className={css.guaranteedCbeText}  onClick={()=>handleClick('Coimbatore')}><img className={css.guaranteedRjpamImg} src={coimbatore} alt="" /><div className={css.image_textContent}>Coimbatore</div></div>
                 </div>
                </div>
             </div>

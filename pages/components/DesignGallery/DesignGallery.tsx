@@ -71,6 +71,7 @@ const DesignGallery: React.FC = () => {
                     loading="lazy"
                     src={datas.image}
                     alt={datas.name}
+                    style={{cursor:"pointer"}}
                   />
                 </div>
               </div>

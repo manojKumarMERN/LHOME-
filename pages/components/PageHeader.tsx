@@ -187,8 +187,8 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
 
 
                   {smallmenuoptionsstring.indexOf(",Customer Support") < 0 ?
-                    <Link href={{ pathname: "/CustomersupportPage" }} style={{ display: 'flex', alignItems: "center" }}>
-                      <BsHeadset style={{marginTop: '4%'}} color="black" size={window.innerWidth > 2500 ? 30 : 16} />
+                    <Link href={{ pathname: "/CustomersupportPage" }} style={{ display: 'flex' }}>
+                      <BsHeadset style={{marginTop: '2%'}} color="black" size={window.innerWidth > 2500 ? 30 : 16} />
                       <div className={`${css.smallMenuBand} ${css.customWidthpx_100}`}>
                         Customer Support
                       </div>

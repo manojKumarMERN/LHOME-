@@ -16,7 +16,7 @@
  .headerOuter {
    // width: 90%;
    display: flex;
-   // border:1px solid green;
+   align-items: center;
    margin: 0% 3% 0% 3%;
 }
 
@@ -195,7 +195,7 @@ display: block;
     color: #222222;
     font-size: 0.8vw;
     line-height: 15px;
-    @media (max-width:2000px){
+    @media (max-width:1024px){
       font-size: 0.7rem;
     }
  }
@@ -219,18 +219,18 @@ display: block;
  }
 
 
- .lhomelogo {
-    width: 100%;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    height: 100px;
-    display: flex;
-    @media (min-width:1550px) {
-      padding-bottom: 5%;
-      padding-top: 5%;
-      height: unset;
-    }
- }
+//  .lhomelogo {
+//     width: 100%;
+//     padding-top: 10%;
+//     padding-bottom: 10%;
+//     height: 100px;
+//     display: flex;
+//     @media (min-width:1601px) {
+//       padding-bottom: 5%;
+//       padding-top: 5%;
+//       height: unset;
+//     }
+//  }
 
  .lhomelogobackground {
     background-size: contain;
@@ -310,7 +310,6 @@ display: block;
  @media only screen and (max-width: 600px) {
     .lhomelogoholder {
        width: 125px;
-       height: 125px;
     }
 
     .customWidth_2 {
@@ -417,7 +416,7 @@ display: block;
  }
 
 
- @media only screen and (min-width:725px) and (max-width:1120px) {
+ @media only screen and (min-width:725px) and (max-width:900px) {
     .menuHolder {
        display: flex;
        padding-top: 2%;
