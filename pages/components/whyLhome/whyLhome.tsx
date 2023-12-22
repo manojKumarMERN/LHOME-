@@ -62,7 +62,7 @@ interface WhyLhomeproperties {
                               Why Lhome?
                            </div>
                            <div className={
-                               ' grid grid-cols-2 gap-8 sm:gap-16 pt-[4rem] ' + css.nullifyPaddingTop}>
+                               ' grid grid-cols-2 gap-8 sm:gap-[3rem] pt-[4rem] ' + css.nullifyPaddingTop}>
                                  <div 
                                  className='flex gap-2 items-center justify-content-end'
                                  >
