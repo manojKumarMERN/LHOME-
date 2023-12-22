@@ -156,10 +156,8 @@
    padding-right: 6%;
    margin-top: 1.25%;
     @media (min-width:2000px) {
-      padding: 0 2%;
-    }
-
-
+      margin-top: unset;
+   }
  }
 
  .inputbox {
@@ -208,7 +206,7 @@
     padding: 0.8rem 2rem;
     cursor: pointer;
     @media (min-width:2000px) {
-      font-size: 0.6vw;
+      font-size: 0.7vw;
     }
     }
 
@@ -221,7 +219,7 @@
     color: #737373;
     display: flex;
     justify-content: center;
-    padding: 2%;
+    padding: 1.5% 0 4% 0;
     @media (min-width:2000px) {
       font-size: 0.5vw;
     }

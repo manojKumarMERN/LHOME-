@@ -11,11 +11,11 @@ import FirstStep from './components/BookFreeDesign/FirstStep';
 import Image from 'next/image.js';
 import { AxiosService } from '../services/ApiService.js';
 import { useRouter } from 'next/router.js';
+import { toast } from 'react-toastify';
 const steps = [
     'Select campaign settings',
     'Create an ad group',
     'Create an ad'
-    // Add more steps as neededkk
 ];
 interface homeproperties {
     screenwidth: number;
@@ -25,8 +25,6 @@ interface homeproperties {
 const Bookfreedesign: React.FC<homeproperties> = ({ screenwidth, screenheight }) => {
     const [activeStep, setActiveStep] = React.useState(0);
     const [completed, setCompleted] = React.useState({});
-    const [error, setError] = React.useState('');
-    const [success, setSuccess] = React.useState('');
     const router = useRouter();
 
     const page = React.useRef(null);
@@ -48,13 +46,12 @@ const Bookfreedesign: React.FC<homeproperties> = ({ screenwidth, screenheight })
     const handleNext = () => {
 
         if (activeStep == 0 && (floorplan == "" || location == "" || own == "")) {
-            setError('Please enter necessary details to go further');
+            toast.error('Please enter necessary details to go further');
         } else if (activeStep == 1 && (planning == "" || looking == "" || budget == "" || Possession == "")) {
-            setError('Please enter necessary details to go further');
+            toast.error('Please enter necessary details to go further');
         } else if (activeStep == 2 && (nearestcentre == "" || meetingdate == "" || meetingtime == "")) {
-            setError('Please enter necessary details to go further');
+            toast.error('Please enter necessary details to go further');
         } else {
-            setError('');
             setActiveStep((prevActiveStep) => prevActiveStep + 1);
         }
 
@@ -83,19 +80,18 @@ const Bookfreedesign: React.FC<homeproperties> = ({ screenwidth, screenheight })
         newCompleted[activeStep] = true;
         setCompleted(newCompleted);
          if (activeStep == 2 && (nearestcentre == "" || meetingdate == "" || meetingtime == "")) {
-            setError('Please enter necessary details to go further');
+            toast.error('Please enter necessary details to go further');
          } else{
         const response = await AxiosService.post('/bookingsession' , {
             floorplan, location, own, planning, looking, budget, Possession, nearestcentre, meetingdate, meetingtime
         })
         if(response.status == 201){
-            setError('');
-            setSuccess('Thank you , your free design is booked , Our team will contact you soon ');
+            toast.success('Thank you , your free design is booked , Our team will contact you soon ');
             setTimeout(()=>{
                 router.push('/')
             }, 2000)
         }else{
-            setSuccess(`it's been network error try onemore time`)
+            toast.success(`it's been network error try onemore time`)
             setTimeout(()=>{
                 router.push('/Bookfreedesign')
             }, 2000)
@@ -140,9 +136,6 @@ const Bookfreedesign: React.FC<homeproperties> = ({ screenwidth, screenheight })
                         <div className={css.getfree_Estimate_Content}>
                             {getStepContent(activeStep)}
                         </div>
-                        <div className='text-red-500 text-center my-3'>{error}</div>
-                        <div className='text-green-500 text-center my-3'>{success}</div>
-
                         <Box sx={{ display: 'flex', justifyContent: 'flex-end', pt: '1%', width: '85%' }}>
                             {activeStep === 0 ? null : (
                                 <Button
