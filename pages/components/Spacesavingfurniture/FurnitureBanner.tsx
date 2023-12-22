@@ -33,7 +33,7 @@ const FurnitureBaner: React.FC = () => {
              <div key={`${datas.toptext}_${index}_${index}`} className={css.furnitureimageContainer}>
                  <img src={datas.furniturebaner} alt="bannerImage" className={css.furnitureimage} />
                  <div className={css.furniturebannercontent}>
-                     <h4 className={css.furniture_tagline}>Design your own</h4> <h2 className={css.furniture_tagline1}>Kitchen with</h2><h2 className={css.furniture_tagline1}>our experts!</h2>
+                     <h4 className={css.furniture_tagline}>Design your own</h4> <h2 className={css.furniture_tagline1}>Furniture with</h2><h2 className={css.furniture_tagline1}>our experts!</h2>
                  </div>
                  <div className={css.furniturebannerform}>
                      <div className={css.furnitureform}><Form /></div>

@@ -1323,31 +1323,51 @@
         "image": "/assets/listingimages/trendings/officeimages/officeimage-1.jpg",
         "name": "Star-Dusty Pink Home Office Design",
         "subname": "Trendings",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "shareIcon": "/assets/icons/shareicon.png",
+        "type":"Home Office ",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      
       },
       {
         "image": "/assets/listingimages/trendings/officeimages/officeimage-2.jpg",
         "name": "Coastal Chic Modern Kitchen Design",
         "subname": "Trendings",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "shareIcon": "/assets/icons/shareicon.png",
+        "type":"Home Office ",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      
       },
       {
         "image": "/assets/listingimages/trendings/officeimages/officeimage-3.jpg",
         "name": "Coastal Chic Modern Kitchen Design",
         "subname": "Trendings",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "shareIcon": "/assets/icons/shareicon.png",
+        "type":"Home Office ",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      
       },
       {
         "image": "/assets/listingimages/trendings/officeimages/officeimage-1.jpg",
         "name": "Star-Dusty Pink Home Office Design",
         "subname": "Trendings",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "shareIcon": "/assets/icons/shareicon.png",
+        "type":"Home Office ",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      
       },
       {
         "image": "/assets/listingimages/trendings/officeimages/officeimage-2.jpg",
         "name": "Coastal Chic Modern Kitchen Design",
         "subname": "Trendings",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "shareIcon": "/assets/icons/shareicon.png",
+        "type":"Home Office ",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      
       }
     ],
     "toppicks": [
@@ -1355,31 +1375,41 @@
         "image": "/assets/listingimages/toppicks/kitchenimage-1.jpg",
         "name": "Star-Dusty Pink Home Office Design",
         "subname": "Trendings",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/listingimages/toppicks/kitchenimage-2.jpg",
         "name": "Coastal Chic Modern Kitchen Design",
         "subname": "Trendings",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/listingimages/toppicks/kitchenimage-3.jpg",
         "name": "Star-Dusty Pink Home Office Design",
         "subname": "Trendings",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/listingimages/toppicks/kitchenimage-1.jpg",
         "name": "Star-Dusty Pink Home Office Design",
         "subname": "Trendings",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/listingimages/toppicks/kitchenimage-2.jpg",
         "name": "Coastal Chic Modern Kitchen Design",
         "subname": "Trendings",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       }
     ],
     "warddrobefly": [
@@ -1387,31 +1417,41 @@
         "image": "/assets/listingimages/wardrobes/wardrobe-1.jpg",
         "name": "Star-Dusty Pink Home Office Design",
         "subname": "Trendings",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/listingimages/wardrobes/wardrobe-2.jpg",
         "name": "Coastal Chic Modern Kitchen Design",
         "subname": "Trendings",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/listingimages/wardrobes/wardrobe-3.jpg",
         "name": "Star-Dusty Pink Home Office Design",
         "subname": "Trendings",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/listingimages/wardrobes/wardrobe-1.jpg",
         "name": "Star-Dusty Pink Home Office Design",
         "subname": "Trendings",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/listingimages/wardrobes/wardrobe-2.jpg",
         "name": "Coastal Chic Modern Kitchen Design",
         "subname": "Trendings",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       }
     ],
     "referboyimage": "/assets/icons/recommendboyicon.png",
@@ -1516,31 +1556,41 @@
         "image": "/assets/StylishHomeProducts/CompactFurniture01.png",
         "name": "Star-Dusty Pink Home Office Design",
         "subname": "compactFurniture",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/StylishHomeProducts/CompactFurniture02.png",
         "name": "Coastal Chic Modern Kitchen Design",
         "subname": "compactFurniture",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/StylishHomeProducts/CompactFurniture03.png",
         "name": "Coastal Chic Modern Kitchen Design",
         "subname": "compactFurniture",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/StylishHomeProducts/CompactFurniture02.png",
         "name": "Star-Dusty Pink Home Office Design",
         "subname": "compactFurniture",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/StylishHomeProducts/CompactFurniture01.png",
         "name": "Coastal Chic Modern Kitchen Design",
         "subname": "compactFurniture",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       }
     ],
     "designGalleryBanner": {
@@ -1553,31 +1603,41 @@
         "image": "/assets/StylishHomeProducts/StylishHomeProducts01.png",
         "name": "Star-Dusty Pink Home Office Design",
         "subname": "stylishHomeProducts",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/StylishHomeProducts/StylishHomeProducts02.png",
         "name": "Coastal Chic Modern Kitchen Design",
         "subname": "stylishHomeProducts",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/StylishHomeProducts/StylishHomeProducts03.png",
         "name": "Coastal Chic Modern Kitchen Design",
         "subname": "stylishHomeProducts",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/StylishHomeProducts/StylishHomeProducts02.png",
         "name": "Star-Dusty Pink Home Office Design",
         "subname": "stylishHomeProducts",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       },
       {
         "image": "/assets/StylishHomeProducts/StylishHomeProducts01.png",
         "name": "Coastal Chic Modern Kitchen Design",
         "subname": "stylishHomeProducts",
-        "size": "Size | 13' X 12'"
+        "size": "Size | 13' X 12'",
+        "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+
       }
     ],
     "bedroombanner": [

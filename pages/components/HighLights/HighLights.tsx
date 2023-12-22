@@ -36,7 +36,8 @@ const StylishHomeProducts: React.FC = () => {
                 lc.image = `${assetpath}${datas.image}`;
                 lc.name = datas.name;
                 lc.subname = datas.subname;
-                lc.size = datas.size
+                lc.size = datas.size;
+                lc.para = datas.para
                 ltrendings.push(lc);
             });
             setTrendings(ltrendings);
@@ -131,7 +132,7 @@ const StylishHomeProducts: React.FC = () => {
         return element;
       });
             
-      
+      console.log(selectedItem)
     return (
         <React.Fragment>
             <div className={css.mainhighlights}>

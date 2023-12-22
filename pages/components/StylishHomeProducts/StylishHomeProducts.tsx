@@ -42,7 +42,8 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                 lc.image = `${assetpath}${datas.image}`;
                 lc.name = datas.name;
                 lc.subname = datas.subname;
-                lc.size = datas.size
+                lc.size = datas.size;
+                lc.para = datas.para
                 lstylishHomeProducts.push(lc);
             });
             setStylishHomeProducts(lstylishHomeProducts);
@@ -56,7 +57,8 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                 lc.image = `${assetpath}${datas.image}`;
                 lc.name = datas.name;
                 lc.subname = datas.subname;
-                lc.size = datas.size
+                lc.size = datas.size;
+                lc.para = datas.para
                 lcompactFurniture.push(lc);
             });
             setCompactFurniture(lcompactFurniture);

@@ -28,7 +28,7 @@ const NRIFriendly: React.FC = () => {
                   <div className={css.refermansubtext}>Bringing Your Vision to Life, Worldwide<br />
                      NRI-friendly Home Solutions</div>
                   <div className={css.refermanbuttonholder}>
-                     <button>Read more</button>
+                     {/* <button>Read more</button> */}
                   </div>
                </div>
             </div>

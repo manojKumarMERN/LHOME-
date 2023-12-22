@@ -31,7 +31,7 @@ const BathroomBaner: React.FC = () => {
              <div key={`${datas.toptext}_${index}_${index}`} className={css.bathroomimageContainer}>
                  <img src={datas.homeoficebaner} alt="bannerImage" className={css.bathroomimage} />
                  <div className={css.bathroombannercontent}>
-                     <h4 className={css.bathroom_tagline}>Design your own</h4> <h2 className={css.bathroom_tagline1}>BedRoom with </h2><h2 className={css.bathroom_tagline1}>our experts!</h2>
+                     <h4 className={css.bathroom_tagline}>Design your own</h4> <h2 className={css.bathroom_tagline1}>BathRoom with </h2><h2 className={css.bathroom_tagline1}>our experts!</h2>
                  </div>
                  <div className={css.bathroombannerform}>
                      <div className={css.bathroomform}><Form /></div>
