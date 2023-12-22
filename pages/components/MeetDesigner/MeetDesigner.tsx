@@ -3,6 +3,9 @@ import css from "../MeetDesigner/MeetDesigner.module.scss";
 import { useRef } from "react";
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
+import { getUserId } from "../../../services/sessionProvider";
+import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 interface ModularkitchenProps{
     colour:string;
     container:string;
@@ -12,6 +15,7 @@ const MeetDesigner: React.FC<ModularkitchenProps> = ({colour,container,prop}) =>
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     const [MeetDesigner,setMeetDesigner] = React.useState([]);
     const [Kitchencontent, setKitchencontent] = React.useState([]);
+    const router = useRouter();
 
     React.useEffect(() => {
         let api = simpleCallInitAPI(`${assetpath}/assets/meetdesign.json`);
@@ -34,6 +38,18 @@ const MeetDesigner: React.FC<ModularkitchenProps> = ({colour,container,prop}) =>
             setKitchencontent(sectionOne);
         })
     },[assetpath])
+
+    const hnadleBookFreeDesign = ()=>{
+        if(!getUserId()){
+            router.push('/Bookfreedesign');
+        }else{
+            toast(`you've to either login or fill the Meet a designer form to access this page`);
+            setTimeout(()=>{
+                toast('work aayittu de')
+                // router.push('/');
+            },2000)
+        }
+    }
     
 
 return(
@@ -48,7 +64,7 @@ return(
                     </div>
                       <div className={container ==="meetContainer1" ?`flex flex-col items-start justify-content-center`: `flex flex-col items-end justify-content-center`}>
                       <h1 className={css.meetHead}>{datas.meettext}</h1>
-                      <button className={colour === "red"?`${css.meetButton}`:`${css.meetButtonBlue}`}>{datas.meetbutton}</button>
+                      <button onClick={hnadleBookFreeDesign} className={colour === "red"?`${css.meetButton}`:`${css.meetButtonBlue}`}>{datas.meetbutton}</button>
                   </div>
                   </div>
                     )
