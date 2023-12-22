@@ -64,8 +64,8 @@ const Warranty: React.FC = () => {
                     }
                     </div>
                     <div className={css.warrantyHeader}>600+ design experts</div>
-                    <div className={css.warrantySubText}>Unleash your creativity and collaborate with our experienced<br />
-                    designers to craft your dream home</div>
+                    <div className={css.warrantySubText}>Unleash your creativity and collaborate with our<br />
+                     experienced designers to craft your dream home</div>
                 </div>
                 <div className={css.warrantyInnerRightContent}>
                     <div className={css.warrantyTextIcons}>

@@ -95,7 +95,7 @@
     width: 100%;
     float: right;
     display: flex;
-    padding-bottom: 5%;
+    padding: 2.5% 0;
 
     .label1 {
         font-family: 'Montserrat';
@@ -147,11 +147,11 @@
 }
 
 .SInput0::placeholder {
-    color: #222222;
+    color: #B7B7B7;
     font-family: Montserrat;
-    font-size: 1.2vw;
+    font-size: 1vw;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 500;
     line-height: normal;
     padding-bottom: 20px;
     @media (max-width:1300px) {
@@ -173,11 +173,11 @@ div.whatsappcheckbox input[type="checkbox"] {
 }
 
 .SInput1::placeholder {
-    color: #222222;
+    color: #B7B7B7;
     font-family: Montserrat;
-    font-size: 1.5vw;
+    font-size: 1vw;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 500;
     line-height: normal;
     padding-bottom: 20px;
     @media (max-width:1024px){
@@ -186,11 +186,11 @@ div.whatsappcheckbox input[type="checkbox"] {
 }
 
 .SInput2::placeholder {
-    color: #222222;
+    color: #B7B7B7;
     font-family: Montserrat;
-    font-size: 1.5vw;
+    font-size: 1vw;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 500;
     line-height: normal;
     text-align: left;
     @media (max-width:1024px){
@@ -199,11 +199,11 @@ div.whatsappcheckbox input[type="checkbox"] {
 }
 
 .LRInput::placeholder {
-    color: #222222;
+    color: #B7B7B7;
     font-family: Montserrat;
-    font-size: 1.5vw;
+    font-size: 0.8vw;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 500;
     line-height: normal;
     text-align: left;
     @media (max-width:1024px){
@@ -335,7 +335,7 @@ div.whatsappcheckbox input[type="checkbox"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     color: #222222;
-    font-size: 1.5vw;
+    font-size: 1vw;
     @media (max-width:1024px){
         font-size: 18px;
     }
