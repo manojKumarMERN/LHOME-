@@ -76,6 +76,7 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
         },
         validationSchema: jobApplicationSchema,
         onSubmit: async (values) => {
+            console.log(values)
             try {
                 const formData = new FormData();
                 formData.append('firstname', values.firstname);
