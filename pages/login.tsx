@@ -47,7 +47,7 @@ const Login = ({toggleForm , otpForm , setOtpForm , select , onSelect , setNumbe
     const handleClick = (e) => {
         e.preventDefault();
         formik.handleSubmit();
-        setOtpForm(!otpForm);
+        // setOtpForm(!otpForm);
     };
 
     const handleNumberChange = (e) => {

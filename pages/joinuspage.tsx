@@ -8,6 +8,7 @@ import { simpleCallInitAPI } from "../services/ApicallInit";
 import JoinPool from "./components/JoinPool/joinPool";
 import JoinusBanner from "./components/JoinusBanner/JoinusBanner";
 import JoinusTable from "./components/JoinusTable/joinusTable";
+import Image from "next/image.js";
 
 const JoinusPage: React.FC = () => {
     const living = React.useRef(null);
@@ -77,9 +78,12 @@ const JoinusPage: React.FC = () => {
         <React.Fragment>
             <div className="animate-fade-in">
                 <div className={css.lhomePage}>
-                    <div>
-                    </div>
+                    <div className="d-flex justify-content-center w-[100%]">
+                    <div className="r w-[13%]">
                     <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={true}/>
+                    {/* <Image src={require("../public/assets/images/LhomeLogo.jpg")} alt="Logo" style={{width:"15%"}} /> */}
+                    </div></div>
+                    
                     <div className={css.LhomeBottom}>
                         <div className={css.customstories}>
                             <div><JoinusBanner/></div>

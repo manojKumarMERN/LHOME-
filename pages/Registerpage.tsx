@@ -77,7 +77,7 @@ const Registerpage = ({toggleForm , setShow}) => {
                             className={css.number_dropdown}
                         />
                     </div>
-                    <input type='text' className={css.SInput2} placeholder='00000 00000' name='number'
+                    <input type='text' className={css.SInput2} placeholder='Enter your mobile number' name='number'
                         onChange={handleNumberChange}
                         onBlur={handleBlur}
                         value={values.number} />
