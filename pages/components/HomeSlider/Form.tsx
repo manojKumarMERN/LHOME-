@@ -3,7 +3,9 @@ import css from './Form.module.scss';
 import { useRouter } from 'next/router';
 import { toast } from "react-toastify";
 import { AxiosService } from '../../../services/ApiService';
+import { getUserId } from '../../../services/sessionProvider';
 const Form: React.FC = () => {
+    const userId = getUserId();
     const router = useRouter();
     const [formData, setFormData] = React.useState({
         name: '',
@@ -13,16 +15,7 @@ const Form: React.FC = () => {
         checkforwhatsapp: false,
     });
 
-    const validateEmail = (email: string) => {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const isValidEmail = regex.test(email);
 
-        if (!isValidEmail) {
-            toast.error('Please enter a valid email address.');
-        }
-
-        return isValidEmail;
-    };
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -39,8 +32,21 @@ const Form: React.FC = () => {
             checkforwhatsapp: checked,
         });
     };
+    const validateEmail = (email: string) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const isValidEmail = regex.test(email);
+
+        if (!isValidEmail) {
+            toast.error('Please enter a valid email address.');
+        }
+
+        return isValidEmail;
+    };
 
     const handleSession = async () => {
+
+        if(userId){router.push('/Bookfreedesign');}
+        else{
         let errorPresent = false;
 
         if (
@@ -50,6 +56,10 @@ const Form: React.FC = () => {
             formData.pincode.trim() === ''
         ) {
             errorPresent = true;
+        }
+        if (errorPresent) {
+            toast.error('Please provide necessary details or login to continue');
+            return;
         }
         if (!validateEmail(formData.email)) {
             errorPresent = true;
@@ -73,10 +83,7 @@ const Form: React.FC = () => {
             return;
         }
 
-        if (errorPresent) {
-            toast.error('Please provide necessary details or login to continue');
-            return;
-        }
+
 
         try {
             const response = await AxiosService.post('/register', {...formData , number: Number(formData.number) , pincode: Number(formData.pincode)});
@@ -91,6 +98,7 @@ const Form: React.FC = () => {
             console.error('Error occurred while registering:', error);
             toast.error('An error occurred while registering. Please try again.');
         }
+    }
     };
 
     return (

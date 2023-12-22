@@ -8,8 +8,7 @@ import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { ToastContainer, toast } from 'react-toastify';
 import { AxiosService } from '../services/ApiService';
-
-
+import { getUserId } from '../services/sessionProvider';
 
 interface ChildProps {
     onDataReceived: (data: string) => void;
@@ -26,6 +25,7 @@ const userEntrySchema = Yup.object().shape({
 });
 
 const Contentchatbox = (props: ChildProps) => {
+    const userId = getUserId();
     const district: string[] = [
         "Ariyalur",
         "Chengalpattu",
@@ -160,12 +160,17 @@ const Contentchatbox = (props: ChildProps) => {
 
         setInput('');
     }
-
+    
     React.useEffect(() => {
         if (chatArea.current) {
             chatArea.current.scrollTop = chatArea.current.scrollHeight;
         }
-    }, [messages, processingResponse]);
+        if(userId){
+            setChatConversation(true);
+        }
+    }, [messages, processingResponse,userId]);
+
+
 
     return (
         <React.Fragment>
@@ -189,8 +194,9 @@ const Contentchatbox = (props: ChildProps) => {
                                 className={css.select}
                                 name='city'
                                 onChange={handleChange} onBlur={handleBlur} value={values.city}
+                                required
                             >
-                                <option className='text-[#B7B7B7] text-[12px] md:text-[0.9vw]' hidden>Select your city</option>
+                                <option value="" disabled hidden>Select your city</option>
 
                                 {district && district.map((item, index) => (
                                     <option key={index} value={item}>
