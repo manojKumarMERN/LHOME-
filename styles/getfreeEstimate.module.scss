@@ -19,8 +19,11 @@
     width: 75%;
     border: 0.1vw solid #9F9F9F;
     margin: 0 auto;
-    padding: 3% 0 4%;
     border-radius: 1vw ;
+    padding: 3% 0;
+    @media (max-width:1025px){
+        padding: 1% 0 1%;
+    }
 }
 .GetfreeEstimate_head{
     color: #F44336;
@@ -57,7 +60,7 @@
 .radio_button_Heading{
     font-size: 1vw;
     font-weight: 600;
-    margin-top: 25px;
+    margin-top: 15px;
     @media (max-width:1024px){
         font-size: 12px;
     }
@@ -66,6 +69,9 @@
     font-size: 1.5vw !important;
     @media (max-width:1024px){
         font-size: 18px !important;
+    }
+    @media (max-width:600px){
+        font-size: 14px !important;
     }
 }
 .GetfreeEstimate_content_value{
@@ -79,15 +85,20 @@
     font-size: 1vw;
     width: 70%;
     margin: 0 auto;
-    @media (max-width:1024px) {
+    @media (max-width:1025px) {
         font-size: 14px ;
+        width: 90%;
+    }
+    @media (max-width:600px){
+        font-size: 12px;
+        width: 100%;
     }
 }
 .mutli_step{
     width: 100%;
     margin-top: 2%;
     height: 82vh;
-    position: absolute;
+    // position: absolute;
     width: 100%;
     // top: 100px;
     // overflow-y: auto;
@@ -100,6 +111,9 @@
 .mutli_step div{
     width: 70%;
     margin: 0 auto;
+    @media (max-width:600px){
+        width: 100%;
+    }
 }
 .mutli_step div div{
     width: 100%;
@@ -137,6 +151,10 @@
         grid-template-columns: auto;
         justify-content: center;
     }
+    @media (max-width:650px){
+        grid-template-columns: auto auto;
+        justify-content: center;
+    }
 }
 .Count_name{
     margin-bottom: unset;
@@ -149,4 +167,10 @@
     @media (max-width:1024px){
         font-size: 12px;
     }
+}
+.mutli_step div div div button span span div[class="css-22s0oj"] div[class="QontoStepIcon-circle"]{
+@media (max-width:1024px){
+    width: 30px !important;
+    height:30px !important
+}
 }

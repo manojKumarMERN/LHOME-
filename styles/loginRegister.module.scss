@@ -149,13 +149,16 @@
 .SInput0::placeholder {
     color: #B7B7B7;
     font-family: Montserrat;
-    font-size: 1vw;
+    font-size: 0.9vw;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     padding-bottom: 20px;
     @media (max-width:1300px) {
-        font-size: 0.85em;
+        font-size: 1vw;
+    }
+    @media(max-width:1024px){
+        font-size: 14px;
     }
 
 }

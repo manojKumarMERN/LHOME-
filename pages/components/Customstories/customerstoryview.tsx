@@ -34,7 +34,7 @@ const CustomerStoryView = ({ data }: any) => {
                                         name='rating'
                                         starDimension="15px"
                                         starHoverColor={false}
-                                        starSpacing="5px"
+                                        starSpacing="3px"
                                     />                            
                                     </div>
                                     <div className={css.Rating_UserName}><p className={css.customerstory_username}>-Jonhson</p></div>

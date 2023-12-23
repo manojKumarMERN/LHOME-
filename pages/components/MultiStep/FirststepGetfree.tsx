@@ -34,23 +34,12 @@ const BpIcon = styled('span')(({ theme }) => ({
     background:
       theme.palette.mode === 'dark' ? 'rgba(57,75,89,.5)' : 'rgba(206,217,224,.5)',
   },
+  '@media screen and (max-width: 1024px)': {
+    width: '15px', 
+    height: '15px', 
+  },
 }));
 
-// const BpCheckedIcon = styled(BpIcon)({
-//   backgroundColor: 'red',
-//   backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))',
-//   '&:before': {
-//     display: 'block',
-//     width: '1.5vw',
-//     height: '1.5vw',
-//     backgroundImage: 'radial-gradient(#fff,#fff 28%,transparent 32%)',
-//     content: '""',
-//   },
-//   'input:hover ~ &': {
-//     backgroundColor: 'red',
-//   },
-  
-// });
 
 const BpCheckedIcon = styled(BpIcon)(({ theme }) => ({
   backgroundColor: 'red',
@@ -61,16 +50,21 @@ const BpCheckedIcon = styled(BpIcon)(({ theme }) => ({
     height: '1.5vw',
     backgroundImage: 'radial-gradient(#fff,#fff 28%,transparent 32%)',
     content: '""',
+    '@media screen and (max-width: 1024px)': {
+      width: '15px', 
+      height: '15px', 
+    },
   },
   'input:hover ~ &': {
     backgroundColor: 'red',
   },
   [theme.breakpoints.down('sm')]: {
     '&:before': {
-      width: '5px',
-      height: '5px',
+      width: '15px',
+      height: '15px',
     },
   },
+  
 }));
 
 function BpRadio(props) {
@@ -96,7 +90,7 @@ export default function FirststepGetfree({setBHK}) {
     <p className={css.GetfreeEstimate_para}>Our 50+ design experts use state-of-the-art 3D design technology, SpaceCraft, to ensure that you get the perfect designs for your home. Wait no more! Start your home interiors journey with us.</p>
     <FormControl style={{width:"65%", margin:'0 auto' ,textAlign:"left"}}>
       <p className={css.radio_button_Heading}>Your floorplan</p>
-      <RadioGroup defaultValue=" " aria-labelledby="demo-customized-radios" name="customized-radios" style={{display:"grid",gridTemplateColumns: "auto auto auto",justifyContent:"space-between",rowGap:"50px" }} >
+      <RadioGroup defaultValue=" " aria-labelledby="demo-customized-radios" name="customized-radios" style={{display:"grid",gridTemplateColumns: "auto auto auto",justifyContent:"space-between",rowGap:"25px" }} >
         <FormControlLabel value="1" onChange={handleBHKChange} control={<BpRadio />} label="1 BHK" className={css.radio_label}/>
         <FormControlLabel value="2" onChange={handleBHKChange} control={<BpRadio />} label="2 BHK" className={css.radio_label}/>
         <FormControlLabel value="3" onChange={handleBHKChange} control={<BpRadio />} label="3 BHK" className={css.radio_label}/>

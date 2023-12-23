@@ -40,13 +40,12 @@ const MeetDesigner: React.FC<ModularkitchenProps> = ({colour,container,prop}) =>
     },[assetpath])
 
     const hnadleBookFreeDesign = ()=>{
-        if(!getUserId()){
+        if(getUserId()){
             router.push('/Bookfreedesign');
         }else{
             toast(`you've to either login or fill the Meet a designer form to access this page`);
             setTimeout(()=>{
-                toast('work aayittu de')
-                // router.push('/');
+                router.push('/');
             },2000)
         }
     }

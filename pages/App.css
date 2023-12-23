@@ -1,98 +1,124 @@
-.ChatBox_Popup div div div[class="modal-header"]{
-    border: none;
-    display: flex;
-    justify-content: space-around;
-    color: #fff;
-    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
-    align-items: center;
-  }
-  .ChatBox_Popup div[class="modal-dialog"]{
+.ChatBox_Popup div div div[class="modal-header"] {
+  border: none;
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+  box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+
+.ChatBox_Popup div[class="modal-dialog"] {
   transition: transform .3s ease-in !important;
- 
+
+}
+
+.chat_Box_Heading {
+  font-size: 1.3vw;
+  font-weight: 500;
+  margin-bottom: unset;
+
+  @media (max-width:900px) {
+    font-size: unset;
   }
-  .chat_Box_Heading{
-    font-size: 1.3vw;
-    font-weight: 500;
-    margin-bottom: unset;
-    @media (max-width:900px) {
-      font-size: unset;
-    }
+}
+
+.white_bg {
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+
+
+.round_image {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.bs_fonts {
+  font-size: 1.5vw;
+
+  @media (max-width:900px) {
+    font-size: unset;
   }
- 
-  .white_bg{
-    border-radius: 50%;
-     background-color: #FFFFFF;
-     width: 40px;
-     height: 40px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     overflow: hidden
-     
+}
+
+.chat_Box {
+  position: absolute;
+  bottom: 2%;
+  z-index: 99;
+  right: 1%;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  width: 4%;
+  height: 8%;
+
+  @media (max-width:900px) {
+    right: 2%;
+    width: 60px;
+    height: 60px;
   }
- 
- 
- .round_image {
-    width: 100%; 
-    border-radius: 50%; 
- }
- .bs_fonts{
-    font-size: 1.5vw;
-    @media (max-width:900px) {
-      font-size: unset;
-    }
- }
- 
- .chat_Box{
-    position: absolute;
-    bottom:2%;
-    z-index: 99;
-    right: 1%;
-    border-radius: 50%;
-    background-color: #FFFFFF;
-    width: 4%;
-    height:8%;
-    @media (max-width:900px) {
-      right: 2%;
-      width: 60px;
-      height: 60px;
-    }
- }
- .Chat{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: #2552A4;
-    font-size: 3vw ;
-    @media (max-width:900px) {
-      font-size: 30px;
-    }
- }
- .ChatBox_Popup div[class="modal-dialog"]{
-    position: absolute !important;
-    width: 20vw;
-    bottom: 34%;
-    right: 1%;
- @media(max-width:900px) {
-   top: 10vh;
-   right: 2vw;
-   width: 80vw;
- }
- }
- .ChatBox_Popup div div[class="modal-content"]{
-    background-color: rgba(37, 82, 164, 1) !important;
+}
+
+.Chat {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #2552A4;
+  font-size: 3vw;
+
+  @media (max-width:900px) {
+    font-size: 30px;
   }
- .ChatBox_Popup div div div[class="modal-header"]{
-    border: none;
-    display: flex;
-    color: #fff;
-    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+}
+
+.ChatBox_Popup div[class="modal-dialog"] {
+  position: absolute !important;
+  width: 20vw;
+  bottom: 40%;
+  right: 1%;
+
+  @media(min-width:2000px) {
+    bottom: 34%
   }
-  .ChatBox_Popup div[class="modal-dialog"]{
+
+  @media (max-width:1025px) {
+    bottom: 45%;
+  }
+
+  @media(max-width:900px) {
+    top: 10vh;
+    right: 2vw;
+    width: 80vw;
+  }
+}
+
+.ChatBox_Popup div div[class="modal-content"] {
+  background-color: rgba(37, 82, 164, 1) !important;
+}
+
+.ChatBox_Popup div div div[class="modal-header"] {
+  border: none;
+  display: flex;
+  color: #fff;
+  box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+}
+
+.ChatBox_Popup div[class="modal-dialog"] {
   transition: transform .3s ease-in !important;
- }
- 
- .ChatBox_Popup div div div[class="modal-header"] h3{
-    margin: 0 15%;
- }
+}
+
+.ChatBox_Popup div div div[class="modal-header"] h3 {
+  margin: 0 15%;
+}
+
+input:-webkit-autofill {
+  display: none;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  /* Change 'white' to your background color */
+}
