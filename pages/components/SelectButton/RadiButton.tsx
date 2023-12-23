@@ -31,9 +31,14 @@ const BpIcon = styled('span')(({ theme }) => ({
     background:
       theme.palette.mode === 'dark' ? 'rgba(57,75,89,.5)' : 'rgba(206,217,224,.5)',
   },
+  '@media screen and (max-width: 1024px)': {
+    width: '15px', 
+    height: '15px', 
+  },
 }));
 
-const BpCheckedIcon = styled(BpIcon)({
+
+const BpCheckedIcon = styled(BpIcon)(({ theme }) => ({
   backgroundColor: 'red',
   backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))',
   '&:before': {
@@ -42,11 +47,22 @@ const BpCheckedIcon = styled(BpIcon)({
     height: '1.5vw',
     backgroundImage: 'radial-gradient(#fff,#fff 28%,transparent 32%)',
     content: '""',
+    '@media screen and (max-width: 1024px)': {
+      width: '15px', 
+      height: '15px', 
+    },
   },
   'input:hover ~ &': {
     backgroundColor: 'red',
   },
-});
+  [theme.breakpoints.down('sm')]: {
+    '&:before': {
+      width: '15px',
+      height: '15px',
+    },
+  },
+  
+}));
 
 // Inspired by blueprintjs
 function BpRadio(props) {

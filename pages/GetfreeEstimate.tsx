@@ -17,6 +17,7 @@ import { useRouter } from 'next/router';
 import * as config from "./../next.config.js";
 import PageHeader from "./components/PageHeader";
 import Image from 'next/image';
+import {toast} from 'react-toastify';
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 20,
@@ -50,7 +51,7 @@ const QontoStepIconRoot = styled('div')<{ ownerState: { active?: boolean } }>(
     borderRadius: '50%',
     ...(ownerState.active && {
       color: 'white',
-      border: '10px solid red',
+      border: '1vw solid red',
       borderRadius: "50%",
 
     }),
@@ -65,11 +66,22 @@ const QontoStepIconRoot = styled('div')<{ ownerState: { active?: boolean } }>(
       borderRadius: "50%",
       border: 'red',
     },
+    
     '& .QontoStepIcon-circle': {
       width: '2vw',
       height: '2vw',
       borderRadius: '50%',
       backgroundColor: 'white',
+    },
+    '@media screen and (max-width: 1024px)': {
+      '& .QontoStepIcon-circle': {
+        width: '20px',
+        height: '20px',
+      },
+      '& .QontoStepIcon-completedIcon':{
+        width: '25px',
+        height: '25px'
+      }
     },
   }),
 );
@@ -105,7 +117,6 @@ const GetfreeEstimate: React.FC<homeproperties> = ({ screenwidth, screenheight }
   const [completed, setCompleted] = React.useState({});
   let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
   const [BHK , setBHK] = React.useState('');
-  const [error , setError] = React.useState('')
 
   const [hidden, setHidden] = React.useState(false);
 
@@ -115,10 +126,8 @@ const GetfreeEstimate: React.FC<homeproperties> = ({ screenwidth, screenheight }
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } 
     else{
-      setError('Please select any of the choices to go further');
-      setTimeout(()=>{
-        setError('')
-      }, 2000)
+      toast.error('Please select any of the choices to go further');
+
     } 
   };
 
@@ -176,7 +185,7 @@ console.log(BHK);
           <div className={css.getfree_Estimate_Content}>
             {getStepContent(activeStep)}
           </div>
-          <span className='text-red-500 text-center'>{error}</span>
+
           <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2  , marginBottom: "4%"}}>
             {isLastStep ? (
               <Button

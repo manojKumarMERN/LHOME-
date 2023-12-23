@@ -3,10 +3,8 @@ import css from '../styles/Contentchatbox.module.scss';
 import Modal from 'react-bootstrap/Modal';
 import { BsChevronDown, BsEmojiSmile } from 'react-icons/bs'
 import { IoArrowDownCircleOutline, IoSendSharp } from 'react-icons/io5'
-import { ThreeDots } from 'react-loader-spinner';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import { ToastContainer, toast } from 'react-toastify';
 import { AxiosService } from '../services/ApiService';
 import { getUserId } from '../services/sessionProvider';
 
@@ -176,8 +174,6 @@ const Contentchatbox = (props: ChildProps) => {
         <React.Fragment>
             <div className={css.maindivchatbot}>
                 <div style={{ clipPath: generateWavyClipPath() }} className={css.chatboxback}>
-                    {/* <div className={css.contentOfchatbox}></div> */}
-
                 </div>
 
                 <section className={css.sectionbg}>
@@ -226,18 +222,6 @@ const Contentchatbox = (props: ChildProps) => {
                                             {
                                                 message.products && message.products.map((product, index) => (<div key={index} className={css.botText + " mt-2 flex justify-between"}><span>{product}</span><IoArrowDownCircleOutline size={32} style={{ color: '#737373', cursor: 'pointer' }} /></div>))
                                             }
-                                            {/* {
-                                                   ( processingResponse && message.sender == "Bot")&& <div className={css.botText}><ThreeDots
-                                                   height="40"
-                                                   width="40"
-                                                   radius="9"
-                                                   color="#4fa94d"
-                                                   ariaLabel="three-dots-loading"
-                                                   wrapperStyle={{}}
-                                                   wrapperClass=""
-                                                   visible={true}
-                                                    /></div>
-                                                } */}
                                         </div>
                                     </div>
                                 ))}
