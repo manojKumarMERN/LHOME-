@@ -39,22 +39,26 @@
   width: 34vw;
 }
 
-@media only screen and (max-width:4000px) and (min-width:2000px) {
+@media(min-width:2000px) {
   .bathroom_tagline {
-    font-size: 4.2em;
+    font-size: 2.8vw;
+    line-height: 3vw;
   }
 
   .bathroom_tagline1 {
-    font-size: 4.2em;
+    font-size: 2.8vw;
+    line-height: 3vw;
   }
 
   .bathroombannercontent {
-    top: 25%;
-    left: 64%;
+    top: 30%;
+    left: 66%;
   }
 
   .bathroombannerform {
-    top: 40%;
+    top: 54%;
+    right: 6%;
+    width: 32vw;
   }
 }
 

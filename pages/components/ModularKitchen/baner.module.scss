@@ -40,13 +40,15 @@
   width: 35vw;
 }
 
-@media only screen and (max-width:4000px) and (min-width:2000px) {
+@media(min-width:2000px) {
   .kitchen_tagline {
-    font-size: 4.2em;
+    font-size: 2.8vw;
+    line-height: 3vw;
   }
 
   .kitchen_tagline1 {
-    font-size: 4.2em;
+    font-size: 2.8vw;
+    line-height: 3vw;
   }
 
   .kitchenbanercontent {
@@ -55,8 +57,9 @@
   }
 
   .kitchenbanerform {
-    left: 9%;
+    left: 7%;
     top: 45%;
+    width: 32vw;
   }
 }
 
