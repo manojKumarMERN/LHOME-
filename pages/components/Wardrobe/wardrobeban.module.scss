@@ -40,23 +40,25 @@
   width: 35vw;
 }
 
-@media only screen and (max-width:4000px) and (min-width:2000px) {
+@media(min-width:2000px) {
   .wardrobe_tagline {
-    font-size: 4.2em;
+    font-size: 2.8vw;
+    line-height: 3vw;
   }
 
   .wardrobe_tagline1 {
-    font-size: 4.2em;
+    font-size: 2.8vw;
+    line-height: 3vw;
   }
 
   .wardrobebanercontent {
-    left: 10%;
-    top: 25%;
+    left: 8%;
+    top: 32%;
   }
 
   .wardrobebanerform {
-    left: 9%;
-    top: 45;
+    left: 5.5%;
+    width: 32vw;
   }
 }
 

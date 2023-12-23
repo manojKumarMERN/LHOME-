@@ -40,22 +40,26 @@
   width: 35vw
 }
 
-@media only screen and (max-width:4000px) and (min-width:2000px) {
+@media (min-width:2000px) {
   .homeoffice_tagline {
-    font-size: 4.2em;
+    font-size: 2.5vw;
+    line-height: 3vw;
   }
 
   .homeoffice_tagline1 {
-    font-size: 4.2em;
+    font-size: 2.5vw;
+    line-height: 3vw;
   }
 
   .homeofficebanercontent {
-    top: 25%;
-    left: 64%;
+    top: 31%;
+    left: 66%;
   }
 
   .homeofficebanerform {
-    top: 40%;
+    top: 55%;
+    right: 6%;
+    width: 32vw;
   }
 }
 
