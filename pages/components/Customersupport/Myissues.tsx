@@ -11,7 +11,6 @@ const MyIssue = () => {
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     const [Customersupport, setCustomersupport] = React.useState([]);
 
-    React.useEffect(() => {
         const userId = getUserId();
         if(userId){
             AxiosService.post('/fetchList', { userId: getUserId()})
@@ -29,19 +28,6 @@ const MyIssue = () => {
                     console.error("Error fetching user data:", error);
                 });
         }
-        else{
-        let api = simpleCallInitAPI(`${assetpath}/assets/customersupport.json`);
-        api.then((data: any) => {
-            const sectionOne = data.data.values.map((support: any) => {
-                return {
-                    issue: support.text,
-                    createdAt: support.time
-                };
-            });
-            setCustomersupport(sectionOne);
-        })
-    }
-    }, [assetpath]);
 
     return (
         <>
