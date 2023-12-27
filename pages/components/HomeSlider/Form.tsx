@@ -110,6 +110,7 @@ const Form: React.FC = () => {
                 <div id="formentry" className={`flex  gap-6 ${css.inputbox}`}>
                     <div className={`relative h-full w-full min-w-[200px] ${css.marginmove_5}`}>
                         <input
+                            autoComplete='off'
                             name="name"
                             value={formData.name}
                             onChange={handleInputChange}
@@ -119,8 +120,9 @@ const Form: React.FC = () => {
                         </label>
 
                     </div>
-                    <div className={`relative h-full pr-8 w-full min-w-[200px] ${css.marginmove_2}`}>
+                    <div className={`relative h-full w-full min-w-[200px] ${css.marginmove_2}`}>
                         <input
+                            autoComplete='off'
                             name="email"
                             value={formData.email}
                             onChange={handleInputChange}
@@ -133,6 +135,7 @@ const Form: React.FC = () => {
                 <div className="flex  gap-6" style={{ width: "100%" }}>
                     <div className={`relative h-full w-full min-w-[200px] ${css.marginmovebig_2}`}>
                         <input
+                            autoComplete='off'
                             name="number"
                             value={formData.number}
                             onChange={handleInputChange}
@@ -148,13 +151,15 @@ const Form: React.FC = () => {
                         <span className={css.label2}>opt for meeting and offer updates on WhatsApp</span>
                     </div>
                     <label className={`${css.whatsappcheckbox_content}`}>
-                        <input type="checkbox" className={"form-checkbox h-5 w-5 text-blue-600 " + css.checkboxForLg} id="customCheckbox_banner" checked={formData.checkforwhatsapp} onChange={handleCheckboxChange} />
+                        <input
+                            autoComplete='off' type="checkbox" className={"form-checkbox h-5 w-5 text-blue-600 " + css.checkboxForLg} id="customCheckbox_banner" checked={formData.checkforwhatsapp} onChange={handleCheckboxChange} />
                         <label htmlFor="customCheckbox_banner" className={css.checkmark}></label>
                     </label>
                 </div>
                 <div className="flex  gap-6" style={{ width: "100%", marginTop: "-5px" }}>
                     <div className={`relative h-full w-full min-w-[200px] ${css.marginmovebig_2}`}>
                         <input
+                            autoComplete='off'
                             name="pincode"
                             value={formData.pincode}
                             onChange={handleInputChange}

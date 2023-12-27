@@ -37,7 +37,6 @@ const Registerpage = ({toggleForm , setShow}) => {
               if(response.status == 201){
                 toast.success('User details registered successfully')
                 toggleForm();
-                // setShow(false);
               }
             } catch (error) {
               console.error('Error:', error.message);
@@ -65,7 +64,7 @@ const Registerpage = ({toggleForm , setShow}) => {
                     onBlur={handleBlur}
                     value={values.name}
                 />
-                {formik.touched.name && formik.errors.name ? <span className='text-red-500'>{formik.errors.name}</span> : null}
+                {formik.touched.name && formik.errors.name ? <span className='text-red-500 flex'>{formik.errors.name}</span> : null}
                 </div>
                 <div className={css.InputContainer}>
                     <div className={css.dropdown_icon}>
@@ -81,7 +80,7 @@ const Registerpage = ({toggleForm , setShow}) => {
                         onChange={handleNumberChange}
                         onBlur={handleBlur}
                         value={values.number} />
-                        {touched.number && errors.number ? <span className='text-red-500'>{errors.number}</span> : null}
+                        {touched.number && errors.number ? <span className='text-red-500 flex'>{errors.number}</span> : null}
                 </div>
                 <div className={css.whatsapplabel}>
                     <div className='w-full flex flex-col justify-center items-right pe-2'>
@@ -101,13 +100,13 @@ const Registerpage = ({toggleForm , setShow}) => {
                 <input type='text' className={css.SInput1} placeholder='Enter your email' name='email' onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.email} />
-                {touched.email && errors.email ? <span className='text-red-500'>{errors.email}</span> : null}</div>
+                {touched.email && errors.email ? <span className='text-red-500 flex'>{errors.email}</span> : null}</div>
                 <div className={css.input_form_content}>
                 <input type='text' className={css.SInput0} placeholder='Enter your current residence pincode' name='pincode'
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.pincode} />
-                {touched.pincode && errors.pincode ? <span className='text-red-500'>{errors.pincode}</span> : null}</div>
+                {touched.pincode && errors.pincode ? <span className='text-red-500 flex'>{errors.pincode}</span> : null}</div>
 
                 <button type='submit' className={css.SignButton}>REGISTER</button>
             </div>
