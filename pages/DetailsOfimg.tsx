@@ -2,20 +2,52 @@ import React from 'react';
 import css from '../styles/detailsOfimg.module.scss';
 import * as config from "../next.config.js";
 import { simpleCallInitAPI } from '../services/ApicallInit';
-import { BsHeart } from 'react-icons/bs';
+import { BsHeart, BsHeartFill } from 'react-icons/bs';
 import {FaFacebookF,FaInstagram,FaTwitter,FaTelegramPlane,FaWhatsapp,FaLinkedinIn,FaYoutube} from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
+import { useRouter } from 'next/router';
+import { getUserId } from '../services/sessionProvider';
+import { toast } from 'react-toastify';
+import { AxiosService } from '../services/ApiService';
 
 interface properties {
     data: any;
     selectedItem: any;
+    index : any;
+    categoryId : any;
 }
 
 
-const DetailsOfimg: React.FC<properties> = ({ data, selectedItem }) => {
+const DetailsOfimg: React.FC<properties> = ({ data, selectedItem , index , categoryId }) => {
 
+    console.log(selectedItem , index , categoryId);
+    
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     const [socialMediaList, setSocialMediaList] = React.useState([]);
+    const [ liked , setLiked ] = React.useState(false);
+    const router = useRouter();
+
+    const handlelike = async() => {        
+        try {
+            if(getUserId()){
+                const resp = await AxiosService.post(`/wish/${index}`, {loginId: getUserId() , categoryId })
+
+            if(resp?.status === 200){
+                const response = await AxiosService.post('/wishes', {
+                    loginId: getUserId(),
+                    categoryId 
+                  });
+                  response?.data?.wishlist.find(wish=>wish.index == index) ? setLiked(true) : setLiked(false);
+                  
+             }        
+            }else {
+                toast('please login to use');
+             } 
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     React.useEffect(() => {
         let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
@@ -33,7 +65,23 @@ const DetailsOfimg: React.FC<properties> = ({ data, selectedItem }) => {
             .catch(error => {
                 console.log(error);
             });
+            const fetchLikes =async () => {
+                const response = await AxiosService.post('/wishes', {
+                    loginId: getUserId(),
+                    categoryId 
+                  });
+                  response?.data?.wishlist.find(wish=>wish.index == index) ? setLiked(true) : setLiked(false);
+            }
+            fetchLikes()
     }, [assetpath]);
+
+    const handleRedirect = () =>{
+        if(getUserId()){
+            router.push('/Bookfreedesign')
+        }else{
+            toast('you have to login to access this page')
+        }
+    }
     return (
         <React.Fragment>
             <div className={css.detailOff}>
@@ -60,8 +108,13 @@ const DetailsOfimg: React.FC<properties> = ({ data, selectedItem }) => {
                             </div>
                         </div>
                         <div className={css.btndivision}>
-                            <button className={css.bookBtn}>BOOK FREE DESIGN SESSION</button>
-                            <button className={css.wishBtn}><div className={css.wishBtn_content}><BsHeart className={css.Bs_heart} />WISHLIST</div></button>
+                            <button className={css.bookBtn} onClick={handleRedirect}>BOOK FREE DESIGN SESSION</button>
+                            <button className={css.wishBtn} onClick={handlelike}>
+                                { (liked) ?
+                                    <div className={css.wishBtn_content}><BsHeartFill style={{color:'white'}} className={css.Bs_heart} />WISHED</div> :
+                                <div className={css.wishBtn_content}><BsHeart className={css.Bs_heart} />WISHLIST</div>
+                                }
+                                </button>
                         </div>
                     </div>
                 </div>

@@ -27,6 +27,8 @@ const StylishHomeProducts: React.FC = () => {
 
     const [shareiconimage, setShareIconImage] = React.useState("");
     const [sharealt, setShareAlt] = React.useState("");
+    const [show, setShow] = React.useState(false);
+
     React.useEffect(() => {
         let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
         api.then((data: any) => {
@@ -63,16 +65,17 @@ const StylishHomeProducts: React.FC = () => {
               };
           
               fetchData();
-    }, [assetpath]);
+    }, [assetpath , show]);
 
     
 
-    const [show, setShow] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
+    const [selectedIndex, setSelectedIndex] = React.useState(null);
 
 
-    const handlePopup = (datas) => {
+    const handlePopup = (datas , index) => {
         setSelectedItem(datas);
+        setSelectedIndex(index)
         setShow(true);
     };
 
@@ -132,7 +135,6 @@ const StylishHomeProducts: React.FC = () => {
         return element;
       });
             
-      console.log(selectedItem)
     return (
         <React.Fragment>
             <div className={css.mainhighlights}>
@@ -169,7 +171,7 @@ const StylishHomeProducts: React.FC = () => {
                                                     loading="lazy"
                                                     src={datas.image}
                                                     alt={datas.subname}
-                                                    onClick={() => handlePopup(datas)}
+                                                    onClick={() => handlePopup(datas , index)}
                                                 />
                                                 <div className={css.customlist}>
                                                     <div className={css.customname}>
@@ -200,7 +202,7 @@ const StylishHomeProducts: React.FC = () => {
                                 <Modal.Header >
                                     <AiFillCloseCircle onClick={handleClose} />
                                 </Modal.Header>
-                                <DetailsOfimg data={trendings} selectedItem={selectedItem} />
+                                <DetailsOfimg data={trendings} selectedItem={selectedItem} index={selectedIndex} categoryId = '1'/>
                             </Modal>
                         </div>
                     </div>

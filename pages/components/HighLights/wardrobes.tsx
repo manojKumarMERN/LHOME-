@@ -35,6 +35,8 @@ const Wardrobes: React.FC<propproperty> = ({ Citie, Currentpage }) => {
 
     //data of top picks
     const [wardrobefly, setWordrobeFly] = React.useState([]);
+    const [show, setShow] = React.useState(false);
+
 
 
     //use effect for getting data from api
@@ -78,13 +80,15 @@ const Wardrobes: React.FC<propproperty> = ({ Citie, Currentpage }) => {
               };
           
               fetchData();
-    }, [assetpath])
-    const [show, setShow] = React.useState(false);
+    }, [assetpath , show])
     const [selectedItem, setSelectedItem] = React.useState(null);
+    const [selectedIndex, setSelectedIndex] = React.useState(null);
 
 
-    const handlePopup = (datas) => {
+
+    const handlePopup = (datas , index) => {
         setSelectedItem(datas);
+        setSelectedIndex(index)
         setShow(true);
     };
 
@@ -187,7 +191,7 @@ const Wardrobes: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                                                 loading="lazy"
                                                 src={datas.image}
                                                 alt={datas.subname}
-                                                onClick={() => handlePopup(datas)}
+                                                onClick={() => handlePopup(datas , index)}
 
                                             />
                                             <div className={css.customlist}>
@@ -218,7 +222,7 @@ const Wardrobes: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                             <Modal.Header >
                                 <AiFillCloseCircle onClick={handleClose} />
                             </Modal.Header>
-                            <DetailsOfimg data={wardrobefly} selectedItem={selectedItem} />
+                            <DetailsOfimg data={wardrobefly} selectedItem={selectedItem} index={selectedIndex} categoryId='3'/>
                         </Modal>
                     </div>
                 </div>
