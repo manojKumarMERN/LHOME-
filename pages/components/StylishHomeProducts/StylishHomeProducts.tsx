@@ -33,6 +33,8 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
     const [sharealt, setShareAlt] = React.useState("");
     const [res , setRes] = React.useState([]);
     const [res1 , setRes1] = React.useState([]);
+    const [show, setShow] = React.useState(false);
+
     React.useEffect(() => {
         let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
         api.then((data: any) => {
@@ -84,7 +86,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
               };
           
               fetchData();
-    }, [assetpath]);
+    }, [assetpath , show]);
 
     const handlelike = async(index , categoryId) => {        
         try {
@@ -139,12 +141,15 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
         },
 
     };
-    const [show, setShow] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
+    const [selectedIndex, setSelectedIndex] = React.useState(null);
+    const [categoryId, setCategory] = React.useState(null);
 
 
-    const handlePopup = (datas) => {
+    const handlePopup = (datas , index , categoryId) => {
         setSelectedItem(datas);
+        setSelectedIndex(index);
+        setCategory(categoryId);
         setShow(true);
     };
 
@@ -196,7 +201,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                                                     loading="lazy"
                                                     src={datas.image}
                                                     alt={datas.subname}
-                                                    onClick={() => handlePopup(datas)}
+                                                    onClick={() => handlePopup(datas , index , '4')}
                                                 />
                                                 <div className={css.customlist}>
                                                     <div className={css.customname}>
@@ -264,7 +269,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                                                         loading="lazy"
                                                         src={datas.image}
                                                         alt={datas.subname}
-                                                        onClick={() => handlePopup(datas)}
+                                                        onClick={() => handlePopup(datas , index , '5')}
                                                     />
                                                     <div className={css.customlist}>
                                                         <div className={css.customname}>
@@ -300,7 +305,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                 <Modal.Header >
                     <AiFillCloseCircle onClick={handleClose} />
                 </Modal.Header>
-                <DetailsOfimg data={stylishHomeProducts || compactFurniture} selectedItem={selectedItem} />
+                <DetailsOfimg data={stylishHomeProducts || compactFurniture} selectedItem={selectedItem} index={selectedIndex} categoryId={categoryId}/>
             </Modal>
         </React.Fragment>
     )

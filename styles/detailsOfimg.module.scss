@@ -143,16 +143,18 @@
 
 .wishBtn_content {
     display: flex;
-    justify-content: space-between;
-    width: 35%;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
     @media (max-width:992px) {
         font-size: 8px;
+        gap: 5px;
     }
 }
 
-.Bs_heart {
-    margin-top: 2px;
-}
+// .Bs_heart {
+//     margin-top: 2px;
+// }
 
 .shareText {
     color: #2552A4;

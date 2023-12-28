@@ -30,6 +30,8 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
     //share icon
     const [shareIcon, setSharIcon] = React.useState("");
     const [res , setRes] = React.useState([]);
+    const [selectedIndex, setSelectedIndex] = React.useState(null);
+
 
     //data of top picks
     const [toppicks, setTopPicks] = React.useState([]);
@@ -56,8 +58,9 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
     const [selectedItem, setSelectedItem] = React.useState(null);
 
 
-    const handlePopup = (datas) => {
+    const handlePopup = (datas , index) => {
         setSelectedItem(datas);
+        setSelectedIndex(index)
         setShow(true);
     };
 
@@ -106,7 +109,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
               };
           
               fetchData();
-    }, [assetpath])
+    }, [assetpath , show])
 
     
     const handlelike = async(index) => {        
@@ -189,7 +192,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                                             loading="lazy"
                                             src={datas.image}
                                             alt={datas.subname}
-                                            onClick={() => handlePopup(datas)}
+                                            onClick={() => handlePopup(datas , index)}
                                         />
                                         <div className={css.customlist}>
                                             <div className={css.customname}>
@@ -220,7 +223,8 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                         <Modal.Header >
                             <AiFillCloseCircle onClick={handleClose} />
                         </Modal.Header>
-                        <DetailsOfimg data={toppicks} selectedItem={selectedItem} />
+                        <DetailsOfimg data={toppicks} selectedItem={selectedItem} index={selectedIndex} categoryId='2'/>
+
 
                     </Modal>
                 </div>

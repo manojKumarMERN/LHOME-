@@ -7,3 +7,7 @@ export const getUserId = ()=>{
 export const getToken = () =>{
     return Cookies.get().token;
 }
+
+export const getChatUserId = () =>{
+    return Cookies.get().chatUserId;
+}

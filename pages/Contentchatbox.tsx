@@ -6,7 +6,9 @@ import { IoArrowDownCircleOutline, IoSendSharp } from 'react-icons/io5'
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { AxiosService } from '../services/ApiService';
-import { getUserId } from '../services/sessionProvider';
+import { getChatUserId, getUserId } from '../services/sessionProvider';
+import Cookies from 'js-cookie';
+
 
 interface ChildProps {
     onDataReceived: (data: string) => void;
@@ -82,8 +84,12 @@ const Contentchatbox = (props: ChildProps) => {
           console.log(values);
           const response = await AxiosService.post('/chatbot' , values);
           console.log(response.data);
+          if(response.status == 201){
+            const { chatbotuser } = response.data;
+            await Cookies.set('chatUserId', chatbotuser.id, { expires: 7, path: '/' });
+            handleOpenModal();
+          }
           
-          handleOpenModal();
 
         },
       });
@@ -163,7 +169,7 @@ const Contentchatbox = (props: ChildProps) => {
         if (chatArea.current) {
             chatArea.current.scrollTop = chatArea.current.scrollHeight;
         }
-        if(userId){
+        if(userId || getChatUserId()){
             setChatConversation(true);
         }
     }, [messages, processingResponse,userId]);

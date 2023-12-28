@@ -20,6 +20,7 @@ interface properties {
 const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) => {
     const [show, setShow] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
+    const [selectedIndex, setSelectedIndex] = React.useState(null);
     const [res , setRes] = React.useState([]);
 
     React.useEffect(()=>{
@@ -37,7 +38,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
           };
       
           fetchData();
-    },[categoryId])
+    },[categoryId , show])
 
      
     const handlelike = async(index) => {        
@@ -69,8 +70,9 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
       });
 
 
-    const handlePopup = (item) => {
+    const handlePopup = (item , index) => {
         setSelectedItem(item);
+        setSelectedIndex(index);
         setShow(true);
     };
     
@@ -92,9 +94,9 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
                                         {item?.image ?
                                             <div className={css.customdivisionchild}  >
                                                 <div className={css.customimage} >
-                                                    <img loading="lazy" className='' src={item.image} onClick={() => handlePopup(item) } alt='images' />
+                                                    <img loading="lazy" className='' src={item.image} onClick={() => handlePopup(item , index) } alt='images' />
                                                     <div className={" w-full flex grid-cols-5 "} style={{padding:"2% 0 3%"}}>
-                                                        <div className="w-full col-span-3 " onClick={() => handlePopup(item) }>
+                                                        <div className="w-full col-span-3 " onClick={() => handlePopup(item , index) }>
                                                             <span className={css.customname + " sm:text-[8px] md:text-[12px]"}>{item.name}</span>
                                                             <span className={css.customtext}>
                                                                 {item.size}
@@ -146,7 +148,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
                                 <Modal.Header >
                                     <AiFillCloseCircle onClick={handleClose} />
                                 </Modal.Header>
-                                <DetailsOfimg data={data} selectedItem={selectedItem}/>
+                                <DetailsOfimg data={data} selectedItem={selectedItem} index={selectedIndex} categoryId={categoryId}/>
 
                             </Modal>
                         </div>
