@@ -8,6 +8,7 @@ import { useFormik } from 'formik';
 import { AxiosService } from '../services/ApiService';
 import { getChatUserId, getUserId } from '../services/sessionProvider';
 import Cookies from 'js-cookie';
+import { toast } from 'react-toastify';
 
 
 interface ChildProps {
@@ -81,7 +82,7 @@ const Contentchatbox = (props: ChildProps) => {
         },
         validationSchema: userEntrySchema,
         onSubmit: async(values) => {
-          console.log(values);
+            try{
           const response = await AxiosService.post('/chatbot' , values);
           console.log(response.data);
           if(response.status == 201){
@@ -89,6 +90,10 @@ const Contentchatbox = (props: ChildProps) => {
             await Cookies.set('chatUserId', chatbotuser.id, { expires: 7, path: '/' });
             handleOpenModal();
           }
+        }catch(err){
+            toast.error(err?.response?.data?.error?.errors?.[0].message);
+            
+        }
           
 
         },

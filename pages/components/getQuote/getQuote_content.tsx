@@ -10,7 +10,7 @@ const GetQuoteContent = ({data}) => {
                     <div className='flex justify-between'>
                         <div>
                             <div className="font-extrabold text-[16px] lg:text-[0.9vw] text-red-500 mb-2">{data?.title}</div>
-                            <div className="text-[12px] h-[4vh] lg:text-[0.7vw] mb-2">{data?.subtitle}</div>
+                            <div className="text-[12px] lg:h-[4vh] lg:text-[0.7vw] mb-2">{data?.subtitle}</div>
                         </div>
                         <div className='text-green-600 text-[24px] lg:text-[1.5vw] font-bold'>{data?.price}</div>
                     </div>

@@ -66,11 +66,13 @@ const DetailsOfimg: React.FC<properties> = ({ data, selectedItem , index , categ
                 console.log(error);
             });
             const fetchLikes =async () => {
+                if(getUserId()){
                 const response = await AxiosService.post('/wishes', {
                     loginId: getUserId(),
                     categoryId 
                   });
                   response?.data?.wishlist.find(wish=>wish.index == index) ? setLiked(true) : setLiked(false);
+                }
             }
             fetchLikes()
     }, [assetpath]);
