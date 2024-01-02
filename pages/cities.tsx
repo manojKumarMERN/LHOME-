@@ -121,7 +121,7 @@ const Citiespage: React.FC = () => {
                             </div>
                             <p className={css.filter_header_content}>We are the best interior design<br />company in {City}  </p>
                             <div className={css.filter_content}>If you’re on the lookout for simple home interior designs, look no further<br />
-                                than HomeLane for end- to-end interior design services.
+                                than LHOMES for end- to-end interior design services.
                             </div>
                         </div>
                         <div className={"mb-3 " + css.ToppicsdivforDesignGallery}>
@@ -132,7 +132,7 @@ const Citiespage: React.FC = () => {
                             <p className={css.filter_header_content1}>Full-service Interior Design Service in {City} </p>
                             <div className={css.filter_content1}>LHome, a leading provider of home interior designs in {City},
                                 offers luxury interior design services for homeowners who want to <br />create opulent and sophisticated living spaces.
-                                With a team of highly skilled and experienced interior designers in {City},<br /> HomeLane creates personalized design plans that cater to each homeowner’s unique style and preferences
+                                With a team of highly skilled and experienced interior designers in {City},<br /> Lhomes creates personalized design plans that cater to each homeowner’s unique style and preferences
                             </div>
                             <div>
                                 <Zigzag />
