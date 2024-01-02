@@ -9,6 +9,7 @@ import DetailsOfimg from '../../DetailsOfimg';
 import { AxiosService } from '../../../services/ApiService';
 import { getUserId } from '../../../services/sessionProvider';
 import Link from 'next/link';
+import { toast } from 'react-toastify';
 
 interface properties {
     data: any ,
@@ -53,7 +54,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
                       });
                       setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);            }
             }else{
-                alert('please login to use');
+                toast('please login to use');
             }
 
         } catch (error) {

@@ -2,6 +2,7 @@ import React from "react";
 import css from "./referearnform.module.scss";
 import { FaFacebookF, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { toast } from "react-toastify";
 
 
 const ReferEarnForm = () => {
@@ -22,7 +23,7 @@ const ReferEarnForm = () => {
           console.error('Failed to copy:', err);
         });
     }else{
-        alert('Generate a Link to copy')
+        toast('Generate a Link to copy')
     }
     };
   
