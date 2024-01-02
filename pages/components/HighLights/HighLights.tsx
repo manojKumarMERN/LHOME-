@@ -16,6 +16,7 @@ import DetailsOfimg from '../../DetailsOfimg';
 import { AxiosService } from '../../../services/ApiService'
 import { getUserId } from "../../../services/sessionProvider";
 import { toast } from "react-toastify";
+import Share from "../../Share";
 
 
 const StylishHomeProducts: React.FC = () => {
@@ -28,6 +29,7 @@ const StylishHomeProducts: React.FC = () => {
     const [shareiconimage, setShareIconImage] = React.useState("");
     const [sharealt, setShareAlt] = React.useState("");
     const [show, setShow] = React.useState(false);
+
 
     React.useEffect(() => {
         let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
@@ -83,6 +85,14 @@ const StylishHomeProducts: React.FC = () => {
     const handleClose = () => {
         setShow(false);
     }
+    const [shareShow, setShareShow] = React.useState(false);
+    const handleShareShow =()=>{
+        setShareShow(true);
+    }
+    const handleShareClose = () =>{
+        setShareShow(false);
+    }
+        
 
 
     const responsive = {
@@ -134,7 +144,7 @@ const StylishHomeProducts: React.FC = () => {
         }
         return element;
       });
-            
+  
     return (
         <React.Fragment>
             <div className={css.mainhighlights}>
@@ -185,7 +195,7 @@ const StylishHomeProducts: React.FC = () => {
                                                         </div>
                                                             </span>
                                                             <span className={css.shareholder}>
-                                                                <FaRegShareFromSquare />
+                                                                <FaRegShareFromSquare onClick={handleShareShow}/>
                                                             </span>
                                                         </div>
                                                     </div>
@@ -203,6 +213,12 @@ const StylishHomeProducts: React.FC = () => {
                                     <AiFillCloseCircle onClick={handleClose} />
                                 </Modal.Header>
                                 <DetailsOfimg data={trendings} selectedItem={selectedItem} index={selectedIndex} categoryId = '1'/>
+                            </Modal>
+                            <Modal show={shareShow} onHide={handleShareClose} className={css.share_Modal}>
+                                <Modal.Header >
+                                    Share<AiFillCloseCircle onClick={handleShareClose} />
+                                </Modal.Header>
+                                <Share/>
                             </Modal>
                         </div>
                     </div>

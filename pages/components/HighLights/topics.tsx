@@ -15,6 +15,7 @@ import DetailsOfimg from '../../DetailsOfimg';
 import { AxiosService } from "../../../services/ApiService";
 import { getUserId } from "../../../services/sessionProvider";
 import { toast } from "react-toastify";
+import Share from "../../Share";
 
 interface propproperty {
     Citie: any;
@@ -141,6 +142,14 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
         }
         return element;
       });
+      const [shareShow, setShareShow] = React.useState(false);
+      const handleShareShow =()=>{
+          setShareShow(true);
+      }
+      const handleShareClose = () =>{
+          setShareShow(false);
+      }
+         
 
     return (
         <React.Fragment>
@@ -207,7 +216,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                                                         </div>                                                    
                                                         </span>
                                                     <span className={css.shareholder}>
-                                                        <FaRegShareFromSquare />
+                                                        <FaRegShareFromSquare onClick={handleShareShow}/>
                                                     </span>
                                                 </div>
                                             </div>
@@ -225,9 +234,16 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                             <AiFillCloseCircle onClick={handleClose} />
                         </Modal.Header>
                         <DetailsOfimg data={toppicks} selectedItem={selectedItem} index={selectedIndex} categoryId='2'/>
-
-
                     </Modal>
+                    <div>
+                            <Modal show={shareShow} onHide={handleShareClose} className={css.share_Modal}>
+                                <Modal.Header >
+                                    Share<AiFillCloseCircle onClick={handleShareClose} />
+                                </Modal.Header>
+                                <Share/>
+                            </Modal>
+                            </div>
+                            
                 </div>
             </div>
         </React.Fragment>

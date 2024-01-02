@@ -1,0 +1,53 @@
+.socialMedia {
+    display: flex;
+    color: #ffffff;
+    font-size: 2vw;
+    justify-content: space-between;
+    padding: 5%;
+}
+.socialMedia_icons_FB,.socialMedia_icons_WA,.socialMedia_icons_TX,.socialMedia_icons_IG{
+    padding: 2%;
+    border-radius: 50%;
+    color: #ffffff;
+
+}
+.socialMedia_icons_FB {
+    background-color: #4267B2;
+}
+
+.socialMedia_icons_WA {
+    background-color: #25D366;
+}
+
+.socialMedia_icons_TX {
+    background-color: #000; 
+}
+.socialMedia_icons_IG{
+    background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+}
+.input_field{
+    border: 0.1vw solid #000;
+    border-radius: 0.5vw;
+    width: 95%;
+    margin: 0% auto 5%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2%;
+}
+.input_field input{
+    outline: none;
+    border: none;
+    padding: 2%;
+    background: transparent;
+}
+.copied,.referearnform_copy_button{
+    border: none;
+    font-weight: 600;
+    background-color: transparent !important;
+}
+.copied{
+    color: #355E3B;
+  }
+  .referearnform_copy_button{
+    color: #F44336;
+  }

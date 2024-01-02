@@ -10,6 +10,7 @@ import { AxiosService } from '../../../services/ApiService';
 import { getUserId } from '../../../services/sessionProvider';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
+import Share from '../../Share';
 
 interface properties {
     data: any ,
@@ -81,6 +82,13 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
     const handleClose = () => {
         setShow(false);
     }
+    const [shareShow, setShareShow] = React.useState(false);
+    const handleShareShow =()=>{
+        setShareShow(true);
+    }
+    const handleShareClose = () =>{
+        setShareShow(false);
+    }
 
     return (
         <React.Fragment>
@@ -115,7 +123,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
                                                         </div>
                                                         <div className={'col-span-1 ' + css.com_icons} >
                                                             <span className={css.shareholder}>
-                                                                <FaRegShareFromSquare />
+                                                                <FaRegShareFromSquare onClick={handleShareShow}/>
                                                             </span>
                                                         </div>
                                                         </div>
@@ -151,6 +159,12 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
                                 </Modal.Header>
                                 <DetailsOfimg data={data} selectedItem={selectedItem} index={selectedIndex} categoryId={categoryId}/>
 
+                            </Modal>
+                            <Modal show={shareShow} onHide={handleShareClose} className={css.share_Modal}>
+                                <Modal.Header >
+                                    Share<AiFillCloseCircle onClick={handleShareClose} />
+                                </Modal.Header>
+                                <Share/>
                             </Modal>
                         </div>
                     </div>
