@@ -18,6 +18,7 @@ import DetailsOfimg from '../../DetailsOfimg';
 import { AxiosService } from "../../../services/ApiService";
 import { getUserId } from "../../../services/sessionProvider";
 import { toast } from "react-toastify";
+import Share from "../../Share";
 
 interface propproperty {
     Citie: any
@@ -32,8 +33,8 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
     const [compactFurniture, setCompactFurniture] = React.useState([]);
     const [shareiconimage, setShareIconImage] = React.useState("");
     const [sharealt, setShareAlt] = React.useState("");
-    const [res , setRes] = React.useState([]);
-    const [res1 , setRes1] = React.useState([]);
+    const [res, setRes] = React.useState([]);
+    const [res1, setRes1] = React.useState([]);
     const [show, setShow] = React.useState(false);
 
     React.useEffect(() => {
@@ -69,40 +70,41 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
             .catch(error => {
                 console.log(error);
             });
-            let fetchData = async () => {
-                try {
-                  const response = await AxiosService.post('/wishes', {
+        let fetchData = async () => {
+            try {
+                const response = await AxiosService.post('/wishes', {
                     loginId: getUserId(),
-                    categoryId : '4'
-                  });
-                  setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);
-                  const response1 = await AxiosService.post('/wishes', {
+                    categoryId: '4'
+                });
+                setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);
+                const response1 = await AxiosService.post('/wishes', {
                     loginId: getUserId(),
-                    categoryId : '5'
-                  });
-                  setRes1(Array.isArray(response1.data?.wishlist) ? response1.data?.wishlist : []);
-                } catch (error) {
-                  console.error('Error:', error.message);
-                }
-              };
-          
-              fetchData();
-    }, [assetpath , show]);
+                    categoryId: '5'
+                });
+                setRes1(Array.isArray(response1.data?.wishlist) ? response1.data?.wishlist : []);
+            } catch (error) {
+                console.error('Error:', error.message);
+            }
+        };
 
-    const handlelike = async(index , categoryId) => {        
+        fetchData();
+    }, [assetpath, show]);
+
+    const handlelike = async (index, categoryId) => {
         try {
-           if(getUserId()){
-               const resp = await AxiosService.post(`/wish/${index}`, {loginId: getUserId() , categoryId : categoryId})
-   
-               if(resp?.status === 200){
-                   const response = await AxiosService.post('/wishes', {
-                       loginId: getUserId(),
-                       categoryId : categoryId
-                     });
-                     categoryId == '4' ? setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []) :setRes1(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);            }
-           } else{
-            toast('please login to use')
-           }
+            if (getUserId()) {
+                const resp = await AxiosService.post(`/wish/${index}`, { loginId: getUserId(), categoryId: categoryId })
+
+                if (resp?.status === 200) {
+                    const response = await AxiosService.post('/wishes', {
+                        loginId: getUserId(),
+                        categoryId: categoryId
+                    });
+                    categoryId == '4' ? setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []) : setRes1(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);
+                }
+            } else {
+                toast('please login to use')
+            }
 
         } catch (error) {
             console.log(error)
@@ -112,17 +114,17 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
     const updatedstylishHomeProducts = stylishHomeProducts.map((element, index) => {
         const matchingItem = res.find(item => item.index == index);
         if (matchingItem) {
-          return { ...element, liked: true };
+            return { ...element, liked: true };
         }
         return element;
-      });
+    });
     const updatedcompactFurniture = compactFurniture.map((element, index) => {
         const matchingItem = res1.find(item => item.index == index);
         if (matchingItem) {
-          return { ...element, liked: true };
+            return { ...element, liked: true };
         }
         return element;
-      });
+    });
 
     const responsive = {
         desktop: {
@@ -147,7 +149,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
     const [categoryId, setCategory] = React.useState(null);
 
 
-    const handlePopup = (datas , index , categoryId) => {
+    const handlePopup = (datas, index, categoryId) => {
         setSelectedItem(datas);
         setSelectedIndex(index);
         setCategory(categoryId);
@@ -158,7 +160,13 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
     const handleClose = () => {
         setShow(false);
     }
-
+    const [shareShow, setShareShow] = React.useState(false);
+    const handleShareShow =()=>{
+        setShareShow(true);
+    }
+    const handleShareClose = () =>{
+        setShareShow(false);
+    }
 
     return (
         <React.Fragment>
@@ -202,21 +210,21 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                                                     loading="lazy"
                                                     src={datas.image}
                                                     alt={datas.subname}
-                                                    onClick={() => handlePopup(datas , index , '4')}
+                                                    onClick={() => handlePopup(datas, index, '4')}
                                                 />
                                                 <div className={css.customlist}>
                                                     <div className={css.customname}>
                                                         {datas.name}
                                                         <div className={css.image_bottom_icons}>
                                                             <span className={css.wishlistholder}>
-                                                            <div onClick={()=>handlelike(index , '4')}>
-                                                            {
-                                                                    datas?.liked ? <BsHeartFill  style={{color: 'red'}}/> : <BsHeart /> 
-                                                            }
-                                                        </div>                                                              
-                                                        </span>
+                                                                <div onClick={() => handlelike(index, '4')}>
+                                                                    {
+                                                                        datas?.liked ? <BsHeartFill style={{ color: 'red' }} /> : <BsHeart />
+                                                                    }
+                                                                </div>
+                                                            </span>
                                                             <span className={css.shareholder}>
-                                                                <FaRegShareFromSquare />
+                                                                <FaRegShareFromSquare onClick={handleShareShow}/>
                                                             </span>
                                                         </div>
                                                     </div>
@@ -270,21 +278,21 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                                                         loading="lazy"
                                                         src={datas.image}
                                                         alt={datas.subname}
-                                                        onClick={() => handlePopup(datas , index , '5')}
+                                                        onClick={() => handlePopup(datas, index, '5')}
                                                     />
                                                     <div className={css.customlist}>
                                                         <div className={css.customname}>
                                                             {datas.name}
                                                             <div className={css.image_bottom_icons}>
                                                                 <span className={css.wishlistholder}>
-                                                                <div onClick={()=>handlelike(index , '5')}>
-                                                            {
-                                                                    datas?.liked ? <BsHeartFill  style={{color: 'red'}}/> : <BsHeart /> 
-                                                            }
-                                                        </div>                                                                  
-                                                        </span>
+                                                                    <div onClick={() => handlelike(index, '5')}>
+                                                                        {
+                                                                            datas?.liked ? <BsHeartFill style={{ color: 'red' }} /> : <BsHeart />
+                                                                        }
+                                                                    </div>
+                                                                </span>
                                                                 <span className={css.shareholder}>
-                                                                    <FaRegShareFromSquare />
+                                                                    <FaRegShareFromSquare onClick={handleShareShow}/>
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -306,7 +314,13 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                 <Modal.Header >
                     <AiFillCloseCircle onClick={handleClose} />
                 </Modal.Header>
-                <DetailsOfimg data={stylishHomeProducts || compactFurniture} selectedItem={selectedItem} index={selectedIndex} categoryId={categoryId}/>
+                <DetailsOfimg data={stylishHomeProducts || compactFurniture} selectedItem={selectedItem} index={selectedIndex} categoryId={categoryId} />
+            </Modal>
+            <Modal show={shareShow} onHide={handleShareClose} className={css.share_Modal}>
+                <Modal.Header >
+                    Share<AiFillCloseCircle onClick={handleShareClose} />
+                </Modal.Header>
+                <Share/>
             </Modal>
         </React.Fragment>
     )
