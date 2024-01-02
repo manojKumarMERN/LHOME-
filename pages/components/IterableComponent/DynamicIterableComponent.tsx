@@ -89,6 +89,10 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
     const handleShareClose = () =>{
         setShareShow(false);
     }
+    const handleImageClick = (item: any, index: number) => {
+        setSelectedItem(item);
+        setSelectedIndex(index);
+    };
 
     return (
         <React.Fragment>
@@ -157,7 +161,7 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
                                 <Modal.Header >
                                     <AiFillCloseCircle onClick={handleClose} />
                                 </Modal.Header>
-                                <DetailsOfimg data={data} selectedItem={selectedItem} index={selectedIndex} categoryId={categoryId}/>
+                                <DetailsOfimg data={data} selectedItem={selectedItem} index={selectedIndex} categoryId={categoryId} handleImageClick={handleImageClick}/>
 
                             </Modal>
                             <Modal show={shareShow} onHide={handleShareClose} className={css.share_Modal}>

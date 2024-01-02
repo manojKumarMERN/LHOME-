@@ -22,7 +22,6 @@ const InteriorDesign: React.FC = () => {
     });
  }, [assetpath]);
  const handleClick= (city: string) =>{
-   console.log(city);
    router.push({ pathname: "/cities", query: { City: city } });
  }
 

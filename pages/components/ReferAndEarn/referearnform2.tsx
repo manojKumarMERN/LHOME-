@@ -30,7 +30,6 @@ const ReferEarnForm2 = () => {
                if(getUserId()){
                 setLoading(true);
                 const response = await AxiosService.post('/referUser' , {...values , userId : getUserId()});
-                console.log(response.data);
                 if(response.status == 201){
                     setLoading(false);
                     resetForm();

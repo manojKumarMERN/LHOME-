@@ -346,6 +346,15 @@ scale: 0.9;
   }
 }
 .share_Modal div[class="modal-dialog"]{
-  max-width: 30% !important;
-
+  max-width: 30% ;
+  margin: 0 auto;
+@media (max-width:600px) {
+  max-width: 90% !important;
+}
+}
+.share_Modal div[class="modal-dialog"] div[class="modal-content"] div[class="modal-header"]{
+  font-size: 1.3vw;
+  @media (max-width:1024px){
+    font-size: 16px;
+  }
 }

@@ -152,6 +152,10 @@ const Wardrobes: React.FC<propproperty> = ({ Citie, Currentpage }) => {
       const handleShareClose = () =>{
                           setShareShow(false);
       }
+      const handleImageClick = (item: any, index: number) => {
+        setSelectedItem(item);
+        setSelectedIndex(index);
+    };
 
 
     return (
@@ -232,7 +236,7 @@ const Wardrobes: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                             <Modal.Header >
                                 <AiFillCloseCircle onClick={handleClose} />
                             </Modal.Header>
-                            <DetailsOfimg data={wardrobefly} selectedItem={selectedItem} index={selectedIndex} categoryId='3'/>
+                            <DetailsOfimg data={wardrobefly} selectedItem={selectedItem} index={selectedIndex} categoryId='3' handleImageClick={handleImageClick}/>
                         </Modal>
                         <Modal show={shareShow} onHide={handleShareClose} className={css.share_Modal}>
                             <Modal.Header >

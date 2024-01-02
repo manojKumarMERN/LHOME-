@@ -149,7 +149,10 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
       const handleShareClose = () =>{
           setShareShow(false);
       }
-         
+      const handleImageClick = (item: any, index: number) => {
+        setSelectedItem(item);
+        setSelectedIndex(index);
+    };
 
     return (
         <React.Fragment>
@@ -233,7 +236,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                         <Modal.Header >
                             <AiFillCloseCircle onClick={handleClose} />
                         </Modal.Header>
-                        <DetailsOfimg data={toppicks} selectedItem={selectedItem} index={selectedIndex} categoryId='2'/>
+                        <DetailsOfimg data={toppicks} selectedItem={selectedItem} index={selectedIndex} categoryId='2' handleImageClick={handleImageClick}/>
                     </Modal>
                     <div>
                             <Modal show={shareShow} onHide={handleShareClose} className={css.share_Modal}>
