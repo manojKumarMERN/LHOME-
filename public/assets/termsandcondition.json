@@ -2,7 +2,7 @@
     "termsandcondition":[
         {
             
-            "text":"A successful referral is defined as a referred customer who does a meeting or places an order with HomeLane and pays 5% of total order value."
+            "text":"A successful referral is defined as a referred customer who does a meeting or places an order with LHome and pays 5% of total order value."
         },
         {
             
@@ -22,7 +22,7 @@
         },
         {
             
-            "text":"Customers already existing in the HomeLane system will not be considered for the referral scheme."
+            "text":"Customers already existing in the LHome system will not be considered for the referral scheme."
         },
         {
             
@@ -30,11 +30,11 @@
         },
         {
             
-            "text":"HomeLane reserves the right to end any or all the offers at its sole discretion without any prior notice."
+            "text":"LHome reserves the right to end any or all the offers at its sole discretion without any prior notice."
         },
         {
         
-            "text":"HomeLane reserves the right to deny any suspected illegitimate case."
+            "text":"LHome reserves the right to deny any suspected illegitimate case."
         }
     ]
 }
