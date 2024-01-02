@@ -14,6 +14,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import DetailsOfimg from '../../DetailsOfimg';
 import { AxiosService } from "../../../services/ApiService";
 import { getUserId } from "../../../services/sessionProvider";
+import { toast } from "react-toastify";
 
 interface propproperty {
     Citie: any;
@@ -125,7 +126,7 @@ const TopPicksForKitchen: React.FC<propproperty> = ({ Citie, Currentpage }) => {
                       });
                       setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);            }
             }else{
-                alert('please login to use')
+                toast('please login to use')
             }
 
         } catch (error) {

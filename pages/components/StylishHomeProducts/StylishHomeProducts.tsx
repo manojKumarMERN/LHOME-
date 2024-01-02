@@ -17,6 +17,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import DetailsOfimg from '../../DetailsOfimg';
 import { AxiosService } from "../../../services/ApiService";
 import { getUserId } from "../../../services/sessionProvider";
+import { toast } from "react-toastify";
 
 interface propproperty {
     Citie: any
@@ -100,7 +101,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                      });
                      categoryId == '4' ? setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []) :setRes1(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);            }
            } else{
-            alert('please login to use')
+            toast('please login to use')
            }
 
         } catch (error) {
