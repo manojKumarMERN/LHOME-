@@ -84,8 +84,8 @@ const Contentchatbox = (props: ChildProps) => {
         onSubmit: async(values) => {
             try{
           const response = await AxiosService.post('/chatbot' , values);
-          console.log(response.data);
-          if(response.status == 201){
+          console.log(response);
+          if(response.status == 200){
             const { chatbotuser } = response.data;
             await Cookies.set('chatUserId', chatbotuser.id, { expires: 7, path: '/' });
             handleOpenModal();
