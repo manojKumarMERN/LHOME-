@@ -167,7 +167,10 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
     const handleShareClose = () =>{
         setShareShow(false);
     }
-
+    const handleImageClick = (item: any, index: number) => {
+        setSelectedItem(item);
+        setSelectedIndex(index);
+    };
     return (
         <React.Fragment>
             <div className={css.mainhighlights}>
@@ -314,7 +317,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                 <Modal.Header >
                     <AiFillCloseCircle onClick={handleClose} />
                 </Modal.Header>
-                <DetailsOfimg data={stylishHomeProducts || compactFurniture} selectedItem={selectedItem} index={selectedIndex} categoryId={categoryId} />
+                <DetailsOfimg data={stylishHomeProducts || compactFurniture} selectedItem={selectedItem} index={selectedIndex} categoryId={categoryId} handleImageClick={handleImageClick}/>
             </Modal>
             <Modal show={shareShow} onHide={handleShareClose} className={css.share_Modal}>
                 <Modal.Header >

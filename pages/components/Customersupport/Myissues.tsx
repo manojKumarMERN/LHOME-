@@ -15,7 +15,6 @@ const MyIssue = () => {
         if(userId){
             AxiosService.post('/fetchList', { userId: getUserId()})
                 .then((response) => {
-                    console.log(response.data.data);
                     const issues = response.data.data.map((item: any) => {
                         return {
                             issue: item.issue,

@@ -15,12 +15,13 @@ interface properties {
     selectedItem: any;
     index : any;
     categoryId : any;
+    handleImageClick: (item: any, index: number) => void;
 }
 
 
-const DetailsOfimg: React.FC<properties> = ({ data, selectedItem , index , categoryId }) => {
+const DetailsOfimg: React.FC<properties> = ({ data, selectedItem , index , categoryId, handleImageClick }) => {
 
-    console.log(selectedItem , index , categoryId);
+    console.log(data);
     
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     const [socialMediaList, setSocialMediaList] = React.useState([]);
@@ -84,10 +85,19 @@ const DetailsOfimg: React.FC<properties> = ({ data, selectedItem , index , categ
             toast('you have to login to access this page')
         }
     }
+    const [inputValue, setInputValue] = React.useState("");
+
+    React.useEffect(() => {
+        const currentURL = window.location.href;
+        setInputValue(currentURL);
+    }, []);
+    const handleSocialMediaClick = (socialMediaURL) => {
+        window.open(socialMediaURL);
+    };
+
     return (
         <React.Fragment>
             <div className={css.detailOff}>
-                {/* Displaying selectedItem details */}
                 <div className={css.imageContent}>
                     <div className={css.imageOfcon}>
                         <img src={selectedItem.image} alt='description of the content' />
@@ -102,10 +112,10 @@ const DetailsOfimg: React.FC<properties> = ({ data, selectedItem , index , categ
                             <div className={css.shareIcon}>
                                 <span className={css.shareText}>Share this design</span>
                                 <div className={css.Socailmedia_icons}>
-                                    <div className={css.Social_Content_icons}><FaFacebookF className={css.Social_icons} /></div>
-                                    <div className={css.Social_Content_icons}><FaInstagram className={css.Social_icons} /></div>
-                                    <div className={css.Social_Content_icons}><FaXTwitter className={css.Social_icons} /></div>
-                                    <div className={css.Social_Content_icons}><FaWhatsapp className={css.Social_icons} /></div>
+                                    <div className={css.Social_Content_icons} onClick={() => handleSocialMediaClick(`https://www.facebook.com/share.php?u=${inputValue}`)}><FaFacebookF className={css.Social_icons} /></div>
+                                    <div className={css.Social_Content_icons} onClick={() => handleSocialMediaClick(`https://www.instagram.com/?url=${inputValue}`)}><FaInstagram className={css.Social_icons} /></div>
+                                    <div className={css.Social_Content_icons} onClick={() => handleSocialMediaClick(`https://twitter.com/intent/tweet?url=${inputValue}`)}><FaXTwitter className={css.Social_icons} /></div>
+                                    <div className={css.Social_Content_icons} onClick={() => handleSocialMediaClick(`https://api.whatsapp.com/send?text=${inputValue}`)}><FaWhatsapp className={css.Social_icons} /></div>
                                 </div>
                             </div>
                         </div>
@@ -125,8 +135,8 @@ const DetailsOfimg: React.FC<properties> = ({ data, selectedItem , index , categ
                 <div className={`${css.RelatedImg} container`}>
                     <p className={`${css.headingRelated} w-100`}>Related Design</p>
                     <div className={window.innerWidth <= 1000 ? `${css.Relatedimgtag_x}` : `row ${css.Relatedimgtag}`}>
-                        {data.filter(item => item !== selectedItem).map((item, index) => (
-                            <div key={index} className={item.image ? (window.innerWidth <= 1000 ? "col-3 m-3 " : "col-6 mb-3") : "d-none"}>
+                        {data.filter(item => item !== selectedItem).map((item, i) => (
+                            <div key={i} onClick={() => handleImageClick(item, i)} className={item.image ? (window.innerWidth <= 1000 ? "col-3 m-3 " : "col-6 mb-3") : "d-none"}>
                                 {item.image ?
                                     <img src={item.image} alt='remaining images' className={css.img_fluid} />
                                     : ''}

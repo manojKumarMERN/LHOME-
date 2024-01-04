@@ -20,7 +20,6 @@ export default function SecondstepGetfree({BHK}) {
         setBathroom(newCount);
         setDining(newCount);
     };
-    console.log(living);
     return (
         <div className={css.GetfreeEstimate_content_value}>
             <p className={css.GetfreeEstimate_head}>Tell Us What You Need</p>

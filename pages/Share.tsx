@@ -29,22 +29,22 @@ function Share() {
     }, []);
     const handleSocialMediaClick = (socialMediaURL) => {
         window.open(socialMediaURL);
-    };
+      };
     return (
         <>
             <div className={css.socialMedia}>
-                <div className={css.socialMedia_icons_FB} onClick={() => handleSocialMediaClick(`https://www.facebook.com/share.php?u=${inputValue}`)}>
-                    <FaFacebookF />
-                </div>
-                <div className={css.socialMedia_icons_IG} onClick={() => handleSocialMediaClick(`https://www.instagram.com/?url=${inputValue}`)}>
-                    <FaInstagram />
-                </div>
-                <div className={css.socialMedia_icons_WA} onClick={() => handleSocialMediaClick(`https://api.whatsapp.com/send?text=${inputValue}`)}>
-                    <FaWhatsapp />
-                </div>
-                <div className={css.socialMedia_icons_TX} onClick={() => handleSocialMediaClick(`https://twitter.com/intent/tweet?url=${inputValue}`)}>
-                    <FaXTwitter />
-                </div>
+            <div className={css.socialMedia_icons_FB} onClick={() => handleSocialMediaClick(`https://www.facebook.com/share.php?u=${inputValue}`)}>
+          <FaFacebookF />
+        </div>
+        <div className={css.socialMedia_icons_IG} onClick={() => handleSocialMediaClick(`https://www.instagram.com/?url=${inputValue}`)}>
+          <FaInstagram />
+        </div>
+        <div className={css.socialMedia_icons_WA} onClick={() => handleSocialMediaClick(`https://api.whatsapp.com/send?text=${inputValue}`)}>
+          <FaWhatsapp />
+        </div>
+        <div className={css.socialMedia_icons_TX} onClick={() => handleSocialMediaClick(`https://twitter.com/intent/tweet?url=${inputValue}`)}>
+          <FaXTwitter />
+        </div>
             </div>
             <div className={css.input_field}>
                 <input value={inputValue}

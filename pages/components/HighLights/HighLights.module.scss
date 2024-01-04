@@ -1331,6 +1331,12 @@
 // share modal
 
 .share_Modal div[class="modal-dialog"]{
-  max-width: 30% !important;
-
+  max-width: 30% ;
+  margin: 0 auto;
+@media (max-width:600px) {
+  max-width: 90% !important;
+}
+}
+.share_Modal div[class="modal-dialog"] div[class="modal-content"] div[class="modal-header"]{
+  font-size: 1.2vw;
 }

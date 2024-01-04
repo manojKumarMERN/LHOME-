@@ -92,7 +92,10 @@ const StylishHomeProducts: React.FC = () => {
     const handleShareClose = () =>{
         setShareShow(false);
     }
-        
+    const handleImageClick = (item: any, index: number) => {
+        setSelectedItem(item);
+        setSelectedIndex(index);
+    };
 
 
     const responsive = {
@@ -212,7 +215,7 @@ const StylishHomeProducts: React.FC = () => {
                                 <Modal.Header >
                                     <AiFillCloseCircle onClick={handleClose} />
                                 </Modal.Header>
-                                <DetailsOfimg data={trendings} selectedItem={selectedItem} index={selectedIndex} categoryId = '1'/>
+                                <DetailsOfimg data={trendings} selectedItem={selectedItem} index={selectedIndex} categoryId = '1' handleImageClick={handleImageClick}/>
                             </Modal>
                             <Modal show={shareShow} onHide={handleShareClose} className={css.share_Modal}>
                                 <Modal.Header >
