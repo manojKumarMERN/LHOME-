@@ -169,7 +169,7 @@ const WardrobePage: React.FC = () => {
                         {activePage == 'unset' &&
                          <>
                             <div>
-                                <Ideas color="blue" prop="U-Shaped Wardrobe" />
+                                <Ideas color="blue" prop="U-Shaped Wardrobe" space="wardrobe"/>
                                 <DynamicIterableComponent data={data}  categoryId='10'/>
                             </div>
                             <div>
@@ -185,21 +185,21 @@ const WardrobePage: React.FC = () => {
 
                         {activePage == 'U-Shaped' &&
                             <div>
-                                <Ideas color='blue' prop="U-Shaped Wardrobe" />
+                                <Ideas color='blue' prop="U-Shaped Wardrobe" space="wardrobe"/>
                                 <DynamicIterableComponent data={data}  categoryId='10'/>
                             </div>
                         }
 
                         {activePage == 'Straight' &&
                             <div>
-                                <Ideas color='blue' prop="Straight Wardrobe" />
+                                <Ideas color='blue' prop="Straight Wardrobe" space="wardrobe"/>
                                 <DynamicIterableComponent data={data1} categoryId='11' />
                             </div>
                         }
 
                         {activePage == 'L-Shaped' &&
                             <div className="mb-5 ">
-                                <Ideas color='blue' prop="L-Shaped Wardrobe" />
+                                <Ideas color='blue' prop="L-Shaped Wardrobe" space="wardrobe"/>
                                 <DynamicIterableComponent data={data2} categoryId='12' />
                             </div>
                         }
