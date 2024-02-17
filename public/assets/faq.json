@@ -1,6 +1,6 @@
 {
   "FAQs": {
-    "designGallery": [
+    "designgallery": [
       {
         "id": 1,
         "question": "What services are included in design gallery interior services?",
@@ -24,242 +24,257 @@
     ],
     "modularKitchen": [
       {
-        "id": 1,
-        "question": "What is modular kitchen design?",
-        "answer": "Modular kitchen design refers to a modern approach where individual components, or modules, are designed and assembled to create a functional and efficient kitchen space. These modules include cabinets, drawers, shelves, and appliances, providing a streamlined and organized kitchen layout."
+        "id": 5,
+        "question": "What Is a Modular Kitchen?",
+        "answer": "A: Modular kitchen design refers to a modern approach where individual components, or modules, are designed and assembled to create a functional and efficient kitchen space. These modules include cabinets, drawers, shelves, and appliances, providing a streamlined and organized kitchen layout."
       },
       {
-        "id": 2,
+        "id": 6,
         "question": "How long does it take to install a modular kitchen?",
         "answer": "The installation time for a modular kitchen can vary based on the size and complexity of the design. Generally, it takes a few weeks from design approval to installation. Our team works efficiently to minimize any inconvenience during the installation process."
       },
       {
-        "id": 3,
+        "id": 7,
         "question": "What materials are used in your modular kitchens?",
         "answer": "We use high-quality materials such as engineered wood, stainless steel, and durable laminates for our modular kitchens. These materials ensure longevity, easy maintenance, and a stylish appearance."
       },
       {
-        "id": 4,
+        "id": 8,
         "question": "Do you provide a warranty for your modular kitchen installations?",
         "answer": "Yes, we offer a warranty on our modular kitchen installations. Our warranty covers any manufacturing defects and ensures that you are satisfied with the quality and durability of our products."
       },
       {
-        "id": 5,
-        "question": "Can I see a 3D design or mockup before finalizing my modular kitchen?",
-        "answer": "Absolutely! We provide 3D designs or mockups of your modular kitchen, allowing you to visualize the final look and make any necessary adjustments before the actual installation."
+        "id": 9,
+        "question": " How do I get started with the process of getting a modular kitchen for my home?",
+        "answer": " Getting started is easy! Simply contact us through our website or visit our showroom. Our team will guide you through the design options, provide a quote, and initiate the process to create your dream modular kitchen."
       },
       {
-        "id": 6,
-        "question": "How do I get started with the process of getting a modular kitchen for my home?",
-        "answer": "Getting started is easy! Simply contact us through our website or visit our showroom. Our team will guide you through the design options, provide a quote, and initiate the process to create your dream modular kitchen."
-      },
-      {
-        "id": 7,
+        "id": 10,
         "question": "Are your modular kitchens easy to clean and maintain?",
         "answer": "Yes, modular kitchens are designed for easy maintenance. The materials used are generally resistant to stains and easy to clean. Regular cleaning with mild detergents is usually sufficient to keep your modular kitchen looking brand new."
       }
     ],
-    "wardrobe": [
+    "wardrope": [
       {
-        "id": 1,
+        "id": 11,
         "question": "What services are included in wardrobe interior design?",
         "answer": "Wardrobe interior design services typically encompass space optimization, storage solutions, material selection, and customized designs to meet your specific needs."
       },
       {
-        "id": 2,
+        "id": 12,
         "question": "How do I choose the right wardrobe design for my space?",
         "answer": "Choose a wardrobe design by considering your storage requirements, available space, and personal style. Consult with a designer for tailored recommendations."
       },
       {
-        "id": 3,
+        "id": 13,
         "question": "What are popular materials for wardrobe interiors?",
         "answer": "Common materials for wardrobe interiors include engineered wood, laminates, and plywood. These materials offer durability, aesthetics, and various finish options."
       },
       {
-        "id": 4,
-        "question": "What are the current trends in wardrobe design?",
+        "id": 14,
+        "question": " What are the current trends in wardrobe design?",
         "answer": "Current trends include minimalist designs, sliding doors, integrated lighting, and the use of mirrored surfaces. Choose elements that align with your style preferences."
       },
       {
-        "id": 5,
+        "id": 15,
         "question": "Are there budget-friendly options for wardrobe interior upgrades?",
-        "answer": "Yes, consider simple upgrades like reorganizing existing storage, adding modular shelves or drawers, or changing door handles for a cost-effective wardrobe refresh."
+        "answer": "Yes, budget-friendly options include organizing accessories like hooks and baskets, as well as simple layout adjustments to optimize existing space."
+      },
+      {
+        "id": 16,
+        "question": "How do I maintain and clean my wardrobe interior?",
+        "answer": "Maintain your wardrobe interior by regular decluttering, using appropriate storage solutions, and cleaning surfaces with a damp cloth. Avoid overcrowding to extend the life of your wardrobe."
       }
     ],
     "bedroom": [
       {
-        "id": 1,
+        "id": 11,
         "question": "What is bedroom interior design, and why should I consider it?",
         "answer": "Bedroom interior design is about creating a comfortable and visually appealing space tailored to your preferences. Consider it to enhance relaxation and personalize your bedroom experience."
       },
       {
-        "id": 2,
-        "question": "How can I make my small bedroom look and feel larger?",
-        "answer": "To maximize a small bedroom, choose light colors, employ space-efficient furniture, use mirrors for depth, and opt for compact, multi-functional pieces."
-      },
-      {
-        "id": 3,
+        "id": 12,
         "question": "What are the key elements of a well-designed bedroom?",
         "answer": "A well-designed bedroom integrates a comfortable bed, suitable lighting, cohesive color schemes, ample storage, and personal decor elements reflecting your style."
       },
       {
-        "id": 4,
+        "id": 13,
         "question": "Can you help me choose the right color scheme for my bedroom?",
         "answer": "Certainly! Our design experts can guide you in selecting a color scheme that aligns with your preferences and complements the overall theme of your bedroom."
       },
       {
-        "id": 5,
+        "id": 14,
         "question": "What is the average timeline for completing a bedroom interior design project?",
         "answer": "Timelines vary but typically take a few weeks from the initial design consultation to the installation of furniture and accessories, depending on project complexity."
       }
     ],
     "livingRoom": [
       {
-        "id": 1,
+        "id": 20,
         "question": "What services are typically provided in living room interior design?",
         "answer": "Living room interior design services often include space planning, furniture selection, color scheme recommendations, lighting design, and overall decor planning."
       },
       {
-        "id": 2,
+        "id": 21,
         "question": "How do I choose a suitable living room design for my home?",
         "answer": "Select a living room design by considering your personal style, the available space, and the functionality you desire. Consult with a professional designer for personalized recommendations."
       },
       {
-        "id": 3,
-        "question": "What are some popular color combinations for living room interiors?",
-        "answer": "Common color combinations for living rooms include neutral tones paired with accent colors like navy blue and mustard yellow, or classic combinations like gray and white."
+        "id": 22,
+        "question": "What are the Best Color Combinations for Living Room Interiors?",
+        "answer":"Common color combinations for living rooms include neutral tones paired with accent colors like navy blue and mustard yellow, or classic combinations like gray and white."
       },
       {
-        "id": 4,
+        "id": 23,
         "question": "Are there budget-friendly options for upgrading my living room decor?",
-        "answer": "Yes, opt for cost-effective upgrades such as rearranging furniture, adding affordable accessories, or incorporating DIY projects to refresh the look without a major investment."
+        "answer": " Yes, opt for cost-effective upgrades such as rearranging furniture, adding affordable accessories, or incorporating DIY projects to refresh the look without a major investment."
       },
       {
-        "id": 5,
+        "id": 24,
         "question": "In which cities is your interior design service available?",
-        "answer": "Our interior design services are available in Tamilnadu, providing personalized solutions for living room and home interiors."
+        "answer": " Our interior design services are available in Tamilnadu , providing personalized solutions for living room and home interiors."
       },
       {
-        "id": 6,
+        "id": 25,
         "question": "How can I make the most of a small living room space?",
         "answer": "Maximize a small living room by choosing space-saving furniture, using mirrors to create depth, and selecting a light color palette to enhance the feeling of spaciousness."
       }
     ],
     "spaceFurniture": [
       {
-        "id": 1,
-        "question": "What services are included in space-saving furniture interior design?",
+        "id": 24,
+        "question": ": What services are included in space-saving furniture interior design?",
         "answer": "Space-saving furniture interior design services encompass optimizing layouts, selecting multi-functional furniture, and maximizing storage to enhance functionality in smaller spaces."
       },
       {
-        "id": 2,
+        "id": 25,
         "question": "How do I choose space-saving furniture for my home?",
-        "answer": "Choose space-saving furniture by considering the dimensions of your space, prioritizing multi-functional pieces, and opting for furniture with built-in storage solutions."
+        "answer": "Choose space-saving furniture by considering the dimensions of your space, prioritizing multi-functional pieces, and opting for furniture with built-in storage solutions.."
       },
       {
-        "id": 3,
+        "id": 26,
         "question": "What are popular types of space-saving furniture?",
         "answer": "Popular types include wall-mounted shelves, foldable tables, sofa beds, loft beds, and ottomans with hidden storage, offering dual-purpose functionality."
       },
       {
-        "id": 4,
+        "id": 27,
         "question": "Can I customize space-saving furniture to fit my specific needs?",
         "answer": "Yes, many space-saving furniture pieces are customizable. Work with a designer to tailor the dimensions and features to suit your unique requirements."
       },
       {
-        "id": 5,
+        "id": 28,
         "question": "How can I make the most of limited space with space-saving furniture?",
         "answer": "Maximize limited space by choosing furniture that serves multiple functions, utilizing vertical storage, and incorporating built-in solutions like fold-out desks or wall-mounted tables."
       },
       {
-        "id": 6,
+        "id": 29,
         "question": "What are the latest trends in space-saving furniture design?",
         "answer": "Current trends include modular furniture, convertible pieces, and designs that seamlessly integrate into existing architecture to maximize space utilization."
       }
     ],
     "homeOffice": [
       {
-        "id": 1,
+        "id": 28,
         "question": "What color schemes are conducive to a focused work environment?",
         "answer": "Neutral tones like whites, grays, and soft blues promote a calm atmosphere. Accents of green or warm tones can add energy without being distracting."
       },
       {
-        "id": 2,
+        "id": 29,
         "question": "How do I create a functional and stylish home office on a budget?",
         "answer": "Create a budget-friendly home office by repurposing furniture, utilizing affordable storage solutions, and investing in key items like a comfortable chair and adequate lighting."
       },
       {
-        "id": 3,
+        "id": 30,
         "question": "What are the latest trends in home office interior design?",
         "answer": "Current trends include nature-inspired elements, flexible and modular furniture, and integrating technology seamlessly into the design for a modern workspace."
       }
     ],
+    "customerStories": [
+      {
+        "id": 24,
+        "question": "What Are the Types of Space-Saving Furniture?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 25,
+        "question": "What Creative Space-Saving Ideas Can I Use at Home?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 26,
+        "question": "What Kind of Space-Saving Furniture Can I Buy at LHome?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 27,
+        "question": "Why Should You Buy Your Space-Saving Furniture from LHome?",
+        "answer": "React is a JavaScript library for building user interfaces."
+      }
+    ],
     "bathroom": [
       {
-        "id": 1,
+        "id": 28,
         "question": "What bathroom interior services does your company provide?",
         "answer": "Our company specializes in comprehensive bathroom interior services, including design, remodeling, space planning, fixture installation, and the selection of materials and finishes."
       },
       {
-        "id": 2,
-        "question": "What materials and finishes do you offer for bathroom interiors?",
+        "id": 29,
+        "question": " What materials and finishes do you offer for bathroom interiors?",
         "answer": "We offer a wide range of high-quality materials and finishes for bathroom interiors, including tiles, countertops, cabinetry, fixtures, and lighting. During the design consultation, our experts will guide you through the options to suit your preferences and budget."
       },
       {
-        "id": 3,
+        "id": 30,
         "question": "Are your bathroom interior designs customizable?",
         "answer": "Absolutely! Our designs are highly customizable to align with your specific style, preferences, and functional needs. We work closely with clients to ensure that the final design reflects their vision for the ideal bathroom space."
       },
       {
-        "id": 4,
+        "id": 31,
         "question": "What sets your bathroom interior design apart from others?",
         "answer": "Our bathroom interior designs are distinguished by a combination of creativity, functionality, and attention to detail. We prioritize personalized solutions to meet the unique preferences and lifestyle of each client."
       },
       {
-        "id": 5,
+        "id": 32,
         "question": "How much does a bathroom interior project typically cost?",
         "answer": "The cost of a bathroom interior project depends on factors such as size, design complexity, and material choices. We offer tailored solutions to accommodate various budgets and provide detailed cost estimates during the consultation."
       },
       {
-        "id": 6,
+        "id": 33,
         "question": "What is the process for selecting materials and finishes for a bathroom interior project?",
         "answer": "Our team will guide you through the material selection process, considering factors such as durability, aesthetics, and budget. We provide a curated selection of high-quality materials and finishes for your bathroom project."
       }
     ],
-    
     "partnership": [
       {
-        "id": 1,
+        "id": 28,
         "question": "What types of partnerships does LHome Development Company offer?",
         "answer": "LHome Development Company offers a variety of partnership opportunities, including collaborations with architects, interior designers, real estate agents, and other industry professionals. We are open to exploring mutually beneficial partnerships that align with our values and business goals."
       },
       {
-        "id": 2,
+        "id": 29,
         "question": "How can I become a partner with LHome Development Company?",
-        "answer": "To explore partnership opportunities with LHome Development Company, please visit our 'Partnership' page on our website. You can fill out the partnership inquiry form, and our team will get in touch with you to discuss potential collaboration."
+        "answer": "To explore partnership opportunities with LHome Development Company, please visit our Partnership page on our website. You can fill out the partnership inquiry form, and our team will get in touch with you to discuss potential collaboration."
       },
       {
-        "id": 3,
+        "id": 30,
         "question": "What are the benefits of partnering with LHome Development Company?",
         "answer": "Partnering with LHome Development Company provides numerous benefits, including access to a diverse portfolio of home development projects, collaborative opportunities with experienced professionals, and the chance to be part of a reputable and innovative company in the industry."
       },
       {
-        "id": 4,
+        "id": 31,
         "question": "What criteria does LHome Development Company consider when selecting partners?",
         "answer": "LHome Development Company evaluates potential partners based on their expertise, experience, alignment with our company values, and a commitment to delivering high-quality services. We seek partners who share our dedication to excellence and client satisfaction."
       },
       {
-        "id": 5,
+        "id": 32,
         "question": "Can I refer clients to LHome Development Company for home development projects?",
         "answer": "Yes, LHome Development Company welcomes client referrals from our partners. If you have clients in need of home development services, we encourage you to refer them to us, and we will ensure they receive the highest level of attention and service."
       },
       {
-        "id": 6,
+        "id": 33,
         "question": "Can partners showcase their work on LHome Development Company's platforms?",
         "answer": "Yes, partners are encouraged to showcase their work on our platforms, subject to mutual agreement. We believe in promoting the talents and achievements of our partners and creating a collaborative community within the industry."
       }
     ],
-    
     "customerfaq": [
       {
         "id": 1,
@@ -426,22 +441,22 @@
           "answer": "React is a JavaScript library for building user interfaces."
         },
         {
-          "id": 34,
+          "id": 24,
           "question": "What Are the Types of Space-Saving Furniture?",
           "answer": "React is a JavaScript library for building user interfaces."
         },
         {
-          "id": 35,
+          "id": 25,
           "question": "What Creative Space-Saving Ideas Can I Use at Home?",
           "answer": "React is a JavaScript library for building user interfaces."
         },
         {
-          "id": 36,
+          "id": 26,
           "question": "What Kind of Space-Saving Furniture Can I Buy at LHome?",
           "answer": "React is a JavaScript library for building user interfaces."
         },
         {
-          "id": 37,
+          "id": 27,
           "question": "Why Should You Buy Your Space-Saving Furniture from LHome?",
           "answer": "React is a JavaScript library for building user interfaces."
         }
