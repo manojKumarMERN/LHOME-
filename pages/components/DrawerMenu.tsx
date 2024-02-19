@@ -35,6 +35,8 @@ const ToggleDropDown = React.forwardRef<HTMLElement, { onClick: () => void }>(({
     </div>
 ));
 
+ToggleDropDown.displayName="drop down event"
+
 const DrawerMenu: React.FC<DrawerMenuProps> = ({ options, cities, onClick }) => {
 
     console.log(options);
