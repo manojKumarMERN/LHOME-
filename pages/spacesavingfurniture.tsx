@@ -124,7 +124,7 @@ const SpacesavingfurniturePage: React.FC = () => {
                   <div className="col-lg-3 "></div>
                   
                   </div>
-                  <div><Ideas prop = "Space Saving Furniture" color="red"/></div>
+                  <div><Ideas prop = "Space Saving Furniture" color="red" space="space_saving_furniture"/></div>
                   </div>
                   </div>
                         <div className="mt-[-5%]"><DynamicIterableComponent data={data} categoryId='16'/></div>

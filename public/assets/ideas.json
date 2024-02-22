@@ -1,0 +1,64 @@
+{
+    "modularKitchens": {
+            "straight": [
+                {"text": "1.Vertical Storage Solution"},
+                {"text": "2.Open Shelving and Minimalistic Design"},
+                {"text": "3.Integrated Appliances and Hidden Storage"},
+                {"text": "4.Multi-Functional Wall"}
+            ],
+            "l_shaped": [
+                {"text": "1.Corner Storage Solutions"},
+                {"text": "2.Two-Tone Cabinetry"},
+                {"text": "3.Integrated Dining Peninsula"},
+                {"text": "4.L-Shaped Kitchen with Island"}
+            ],
+            "u_shaped": [
+                {"text": "1.Full-Height Cabinets and Pantry"},
+                {"text": "2.Centralized Island with Appliances"},
+                {"text": "3.Contrasting Countertops and Backsplash"},
+                {"text": "4.Open Shelving and Display Nooks"}
+            ],
+            "island": [
+                {"text": "1.Multi-Functional Island"},
+                {"text": "2.Contrasting Materials"},
+                {"text": "3.Open Shelving and Wine Storage"},
+                {"text": "4.Hidden Storage and Charging Station"}
+            ]
+    },
+    "wardrobe": [
+        {"text": "1.Customizable Shelving and Drawers"},
+        {"text": "2.Integrated Lighting and Mirrors"},
+        {"text": "3.Pull-Out Shoe Racks and Accessories Organizer"},
+        {"text": "4.Built-In Vanity and Folding Table"}
+    ],
+    "bedroom": [
+        {"text": "1.Modern Contemporary Bedroom"},
+        {"text": "2.Traditional Bedroom"},
+        {"text": "3.Rustic Farmhouse Bedroom"},
+        {"text": "4.Bohemian Bedroom"}
+    ],
+    "living_room": [
+        {"text": "1.Modern Living Room"},
+        {"text": "2.Traditional Living Room"},
+        {"text": "3.Eclectic Living Room"},
+        {"text": "4.Cozy Farmhouse Living Room"}
+    ],
+    "bathroom": [
+        {"text": "1.Marble Accents and Monochrome Palette"},
+        {"text": "2.Vintage Glamour with Brass Touches"},
+        {"text": "3.Open Shelving with Warm Wood Tones"},
+        {"text": "4.Mosaic Accent Wall in the shower or behind the vanity"}
+    ],
+    "space_saving_furniture": [
+        {"text": "1.Murphy Bed with Desk Combo"},
+        {"text": "2.Hanging Wall Shelves with Fold-Out Desk"},
+        {"text": "3.Stackable Storage Ottomans"},
+        {"text": "4.Modular Wall-Mounted Storage"}
+    ],
+    "home_office": [
+        {"text": "1.Open Workspace with Biophilic Design Elements"},
+        {"text": "2.Vintage-Inspired Industrial Office"},
+        {"text": "3.Bold and Energizing Color Palette"},
+        {"text": "4.Zen Minimalism with Japanese Influence"}
+    ]
+}
