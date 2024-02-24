@@ -197,7 +197,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
   const isSmallScreen = useMediaQuery("(max-width: 554px)");
   const isMediumScreen = useMediaQuery("(min-width: 555px) and (max-width: 1257px)");
 
-
+  const isSmallScreen2 = useMediaQuery("(max-width: 450px)");
 
   return (
     <React.Fragment>
@@ -205,7 +205,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
         <div className={hidden ? `${css.headerHidden}` : `${css.headerOuter}`}>
           <div className={hidden ? "flex justify-center" : css.headerLeft}>
             <div id="logo" className={`${css.lhomelogoholder}`}>
-              <div className={css.lhomelogo}>
+              <div className={isSmallScreen2? `${css.lhomelogo}`:''}>
                 {/* <div ref={logo} className={`${css.lhomelogomask}`} /> */}
                 <img src={homeLogo} alt='homeLogo' key={"UniqueKey"} />
               </div>
@@ -361,7 +361,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                     <div id="dropdownOptions" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_6}`}>
                       <DropDownMenu
                         options={menuoptions}
-                      // Pass handleNav as onClick prop
+                      
                       />
                     </div>
                   ) : null}
