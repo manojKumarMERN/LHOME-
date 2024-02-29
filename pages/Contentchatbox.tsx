@@ -174,8 +174,8 @@ const Contentchatbox = (props: ChildProps) => {
         if (chatArea.current) {
             chatArea.current.scrollTop = chatArea.current.scrollHeight;
         }
+        setChatConversation(true);
         if(userId || getChatUserId()){
-            setChatConversation(true);
         }
     }, [messages, processingResponse,userId]);
 

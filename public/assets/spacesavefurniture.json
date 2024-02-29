@@ -2,12 +2,14 @@
   "spacesavingfurniture": [
     {
       "image": "/assets/SpaceSvingFurniture/spacesave1.jpg",
-      "name": "Coastal Chic Modern Kitchen Design",
+      "name": "Dual Brand Comfort Sofa",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"Corner",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave2.jpg",
@@ -15,63 +17,65 @@
       "size": "Size | 13' X 12'",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "furniture":"Sofa",
+      "Ftype":"Corner",
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave3.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"L-type",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
-    },
-    {
-      "icon": "/assets/images/CommonGifs/1_output.gif",
-      "content": "Transform Your Space, <b>Elevate Your Style!<b>",
-      "btn":"Get Free Estimate"
-    },
-    {
-      "icon": "/assets/images/CommonGifs/2_creativity.gif",
-      "content": "Design Brilliance Awaits – <b>Let's Revamp Your Home!<b>",
-      "btn":"Get Free Estimate"
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave4.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"Corner",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave5.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"Corner",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave6.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"Corner",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave7.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"U-type",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave8.jpg",
@@ -79,151 +83,245 @@
       "size": "Size | 13' X 12'",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "furniture":"Sofa",
+      "Ftype":"U-type",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave9.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"U-type",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
-    {
-      "icon": "/assets/images/CommonGifs/3_paint_pallete.gif",
-      "content": "Make Every Room Shine – <b>Start Your Design Journey Today!<b>",
-      "btn":"Get Free Estimate"
-    },
-    {
-      "icon": "/assets/images/CommonGifs/4_hands.gif",
-      "content":"Create Your Dream Space – <b>Let's Design Together!<b>",
-      "btn":"Get Free Estimate"
-
-    },
+    
     {
       "image": "/assets/SpaceSvingFurniture/spacesave10.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"L-type",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave11.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"L-type",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave12.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"L-type",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave13.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"L-type",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave14.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"Straight",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave15.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"Straight",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
-    {
-      "icon":"/assets/images/CommonGifs/5_home.gif",
-      "content":"Unleash Your Home's Potential – <b>Get Inspired!<b>",
-      "btn":"Get Free Estimate"
-    },
-    {
-      "icon": "/assets/images/CommonGifs/1_output.gif",
-      "content": "Transform Your Space, <b>Elevate Your Style!<b>",
-      "btn":"Get Free Estimate"
-    },
+   
+    
     {
       "image": "/assets/SpaceSvingFurniture/spacesave16.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"Straight",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave17.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"Straight",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave18.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Sofa",
+      "Ftype":"Straight",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave19.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Table",
+      "Ftype":"Square",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave20.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Table",
+      "Ftype":"Square",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
       "image": "/assets/SpaceSvingFurniture/spacesave21.jpg",
       "name": "Coastal Chic Modern Kitchen Design",
       "size": "Size | 13' X 12'",
+      "furniture":"Table",
+      "Ftype":"Square",
       "likeIcon": "/assets/icons/wishlist.png",
       "shareIcon": "/assets/icons/shareicon.png",
-      "type":"Space Saving Furniture ",
-      "para":"Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     },
     {
-      "icon": "/assets/images/CommonGifs/2_creativity.gif",
-      "content": "Design Brilliance Awaits – <b>Let's Revamp Your Home!<b>",
-      "btn":"Get Free Estimate"
+      "image": "/assets/SpaceSvingFurniture/spacesave1.jpg",
+      "name": "Coastal Chic Modern Kitchen Design",
+      "size": "Size | 13' X 12'",
+      "furniture":"Table",
+      "Ftype":"Rectangle",
+      "likeIcon": "/assets/icons/wishlist.png",
+      "shareIcon": "/assets/icons/shareicon.png",
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+    },
+    
+    {
+      "image": "/assets/SpaceSvingFurniture/spacesave21.jpg",
+      "name": "Coastal Chic Modern Kitchen Design",
+      "size": "Size | 13' X 12'",
+      "furniture":"Table",
+      "Ftype":"Rectangle",
+      "likeIcon": "/assets/icons/wishlist.png",
+      "shareIcon": "/assets/icons/shareicon.png",
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+    },
+    {
+      "image": "/assets/SpaceSvingFurniture/spacesave3.jpg",
+      "name": "Coastal Chic Modern Kitchen Design",
+      "size": "Size | 13' X 12'",
+      "furniture":"Table",
+      "Ftype":"Round",
+      "likeIcon": "/assets/icons/wishlist.png",
+      "shareIcon": "/assets/icons/shareicon.png",
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+    },
+    {
+      "image": "/assets/SpaceSvingFurniture/spacesave3.jpg",
+      "name": "Coastal Chic Modern Kitchen Design",
+      "size": "Size | 13' X 12'",
+      "furniture":"Table",
+      "Ftype":"Round",
+      "likeIcon": "/assets/icons/wishlist.png",
+      "shareIcon": "/assets/icons/shareicon.png",
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+    },
+    {
+      "image": "/assets/SpaceSvingFurniture/spacesave15.jpg",
+      "name": "Coastal Chic Modern Kitchen Design",
+      "size": "Size | 13' X 12'",
+      "furniture":"Table",
+      "Ftype":"Round",
+      "likeIcon": "/assets/icons/wishlist.png",
+      "shareIcon": "/assets/icons/shareicon.png",
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+    },
+    {
+      "image": "/assets/SpaceSvingFurniture/spacesave14.jpg",
+      "name": "Coastal Chic Modern Kitchen Design",
+      "size": "Size | 13' X 12'",
+      "furniture":"Table",
+      "Ftype":"Round",
+      "likeIcon": "/assets/icons/wishlist.png",
+      "shareIcon": "/assets/icons/shareicon.png",
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+    },
+    {
+      "image": "/assets/SpaceSvingFurniture/spacesave12.jpg",
+      "name": "Coastal Chic Modern Kitchen Design",
+      "size": "Size | 13' X 12'",
+      "furniture":"Table",
+      "Ftype":"Round",
+      "likeIcon": "/assets/icons/wishlist.png",
+      "shareIcon": "/assets/icons/shareicon.png",
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
+    },
+    {
+      "image": "/assets/SpaceSvingFurniture/spacesave11.jpg",
+      "name": "Coastal Chic Modern Kitchen Design",
+      "size": "Size | 13' X 12'",
+      "furniture":"Table",
+      "Ftype":"Round",
+      "likeIcon": "/assets/icons/wishlist.png",
+      "shareIcon": "/assets/icons/shareicon.png",
+      "type": "Space Saving Furniture ",
+      "para": "Bright and inviting, the vibrant colour palette in this small modular kitchen exudes peppy sunshine and good cheer. Bright chrome yellow cabinets offer a happy contrast to pale cream, the duo coming together in the kitchen cupboard design to uplift and elevate the overall vibe."
     }
   ]
 }

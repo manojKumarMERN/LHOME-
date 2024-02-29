@@ -9,11 +9,11 @@ import Warranty from "./components/warranty/Warranty";
 import Guranted from "./components/Guranted/Guranted";
 import FAQPage from "./components/Faq/FAQPage";
 import FurnitureBaner from "./components/Spacesavingfurniture/FurnitureBanner";
-import DynamicIterableComponent from "./components/IterableComponent/DynamicIterableComponent";
 import Link from "next/link.js";
 import Ideas from "./components/MeetDesigner/ideas";
 import { simpleCallInitAPI } from "../services/ApicallInit";
-
+import DynamicIterableComponent from "./components/IterableComponent/DynamicIterableComponent";
+import FurnitureFilter from "./components/furnitureFilter/furbitureFilter";
 
 
 const SpacesavingfurniturePage: React.FC = () => {
@@ -67,19 +67,16 @@ const SpacesavingfurniturePage: React.FC = () => {
         }, 1000);
     }, [handleResize]);
 
-
-
-
     React.useEffect(() => {
         let api = simpleCallInitAPI(`${assetpath}/assets/spacesavefurniture.json`);
         api.then((data: any) => {
-          setData(data.data.spacesavingfurniture);
+            setData(data.data.spacesavingfurniture);
         });
         window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResized); 
-    },[handleResize , handleResized,assetpath])
+        return () => window.removeEventListener('resize', handleResized);
+    }, [handleResize, handleResized, assetpath])
 
-    
+
     const page = React.useRef(null);
     const [prevPosition, setPrev] = React.useState(0);
     const [hidden, setHidden] = React.useState(false)
@@ -99,35 +96,41 @@ const SpacesavingfurniturePage: React.FC = () => {
         <React.Fragment>
             <div className="animate-fade-in">
                 <div className={css.lhomePage}>
-                <div className={hidden ? "hidden" : ""}>
+                    <div className={hidden ? "hidden" : ""}>
                         <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
                     </div>
 
                     <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
                         <div><FurnitureBaner /></div>
-                     
-            <div className={css.spacesaving_bgclr}>
-                <div className={css.spacesaving_filter_home}>
-                <div className="pt-4">
-                  <span className={css.spacesaving_filter_link_span1}><Link href={{ pathname: "/" }} className={css.spacesaving_filter_link}>home</Link></span>
-                  <span className={css.spacesaving_filter_slash}>/</span>
-                  <span className={css.spacesaving_filter_link_span2}><Link href={{ pathname: "/spacesavingfurniture" }} className={css.spacesaving_filter_link}>spacesavingfurniture</Link></span>
-                </div>
-                <div className={css.spacesaving_filter_header_content}>Space Saving Furniture</div>
-                <div className="row ">
-                <div className="col-lg-3 "> </div>
 
-                <div className={"col-lg-6 px-[15px] " + css.spacesaving_filter_content}><p className={css.spacesaving_filter_additional_content}>Maximize your living space with innovative,
-                 space-saving furniture solutions. Smart design meets versatility,
-                 offering stylish and functional pieces that enhance efficiency without compromising style.</p>
-                  </div>
-                  <div className="col-lg-3 "></div>
-                  
-                  </div>
-                  <div><Ideas prop = "Space Saving Furniture" color="red" space="space_saving_furniture"/></div>
-                  </div>
-                  </div>
-                        <div className="mt-[-5%]"><DynamicIterableComponent data={data} categoryId='16'/></div>
+                        <div className={css.spacesaving_bgclr}>
+                            <div className={css.spacesaving_filter_home}>
+                                <div className="pt-4">
+                                    <span className={css.spacesaving_filter_link_span1}><Link href={{ pathname: "/" }} className={css.spacesaving_filter_link}>home</Link></span>
+                                    <span className={css.spacesaving_filter_slash}>/</span>
+                                    <span className={css.spacesaving_filter_link_span2}><Link href={{ pathname: "/spacesavingfurniture" }} className={css.spacesaving_filter_link}>spacesavingfurniture</Link></span>
+                                </div>
+                                <div className={css.spacesaving_filter_header_content}>Space Saving Furniture</div>
+                                <div className="row ">
+                                    <div className="col-lg-3 "> </div>
+
+                                    <div className={"col-lg-6 px-[15px] " + css.spacesaving_filter_content}><p className={css.spacesaving_filter_additional_content}>Maximize your living space with innovative,
+                                        space-saving furniture solutions. Smart design meets versatility,
+                                        offering stylish and functional pieces that enhance efficiency without compromising style.</p>
+                                    </div>
+                                    <div className="col-lg-3 "></div>
+
+                                </div>
+                                <div><Ideas prop="Space Saving Furniture" color="red" space="space_saving_furniture" /></div>
+
+                            </div>
+
+                        </div>
+                        
+                        <div className="mt-[-5%]">
+                            <FurnitureFilter data={data}/>
+                        </div>
+                        
                         <div className="mb-[-50px]"><Autoplay living={living} /></div>
                         <div><ReferNowPage /></div>
                         <div><Warranty /></div>
@@ -136,7 +139,6 @@ const SpacesavingfurniturePage: React.FC = () => {
                         <div><Footer /></div>
                     </div>
                 </div>
-
             </div>
         </React.Fragment>
     )
