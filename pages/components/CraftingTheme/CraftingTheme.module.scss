@@ -1,0 +1,189 @@
+.craftingthemeimageContainer {
+  position: relative;
+}
+
+.craftingthemeimage {
+  width: 100%;
+  
+  @media (max-width:576px) {
+    height: 75vw;
+  }
+}
+
+.craftingtheme_tagline {
+  color: #FFFFFF;
+  // font-weight: 500;
+  font-family: "Montserrat";
+  font-size: 2.8em;
+  line-height: 100%;
+  // text-align: justify; text-align-last: center;
+}
+
+.craftingtheme_tagline1 {
+  color: #FFFFFF;
+  // font-weight: 500;
+  font-family: "Montserrat";
+  font-size: 2.8em;
+  line-height: 100%;
+  // text-align: center;
+}
+.craftingthemebannercontent{
+  // font-family: "Montserrat";
+  position: absolute;
+  text-align: justify; 
+  text-align-last: center;
+  left: 35%;
+  // top:700px;
+  // transform: translateY(-50%);
+
+}
+.craftingthemebannercontent button{
+  left: 30%;
+}
+
+.bannerbtn {
+  background: #F44336;
+  position: "absolute";
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9vw;
+  line-height: 20px;
+  left: 300px;
+  color: #FFFFFF;
+  border-radius: 5px;
+  padding: 15px 25px;
+  @media (max-width:2000px){
+    font-size: 14px;
+    padding: 5px 15px;
+  }
+}
+
+@media(min-width:2000px) {
+  .craftingtheme_tagline {
+    // font-size: 2.8vw;
+    line-height: 3.3vw;
+  }
+
+  .craftingtheme_tagline1 {
+    // font-size: 2.8vw;
+    line-height: 3.3vw;
+  }
+
+  .craftingthemebannercontent {
+    // top: 30%;
+    left: 67%;
+  }
+
+  
+}
+
+@media only screen and (max-width:2000px) and (min-width:1600px) {
+  .craftingtheme_tagline {
+    // font-size: 3.5em;
+  }
+
+  .craftingtheme_tagline1 {
+    // font-size: 3.5em;
+  }
+
+  .craftingthemebannercontent {
+    // top: 75%;
+    left: 10%;
+  }
+}
+
+@media only screen and (max-width:1600px) and (min-width:1200px) {
+  .craftingtheme_tagline {
+    // font-size: 3.5em;
+  }
+
+  .craftingtheme_tagline1 {
+    // font-size: 3.5em;
+  }
+
+  .craftingthemebannercontent {
+    top: 35%;
+  }
+ 
+}
+
+
+@media only screen and (max-width:1200px) and (min-width:1000px) {
+  .craftingtheme_tagline {
+    // font-size: 2.5em;
+  }
+
+  .craftingtheme_tagline1 {
+    // font-weight: 500;
+    // font-size: 2.5em;
+
+  }
+
+  .craftingthemebannercontent {
+    top: 20%;
+    left: 54%;
+  }
+
+  
+
+}
+
+@media only screen and (max-width:1000px) and (min-width:900px) {
+  .craftingtheme_tagline {
+    // font-size: 2em;
+  }
+
+  .craftingtheme_tagline1 {
+    // font-weight: 400;
+    // font-size: 2em;
+  }
+
+  .craftingthemebannercontent {
+    white-space: nowrap;
+}
+
+  
+}
+
+
+
+@media (max-width:1000px) {
+  
+  .craftingtheme_tagline {
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    font-weight: 100 !important;
+    // font-size: 3em;
+  }
+
+  .craftingtheme_tagline1 {
+    // font-weight: 400;
+    // font-size: 3em;
+  }
+
+  .craftingthemebannercontent {
+    top: 15%;
+    left: unset;
+    right: 10%;
+  }
+  
+}
+
+@media only screen and (max-width:600px) and (min-width:350px) {
+  
+
+  .craftingtheme_tagline {
+    // font-size: 1.75em;
+  }
+
+  .craftingtheme_tagline1 {
+    // font-weight: 400;
+    // font-size: 1.75em;
+  }
+  .craftingthemebannercontent {
+    top: 15%;
+  }
+  
+}
+

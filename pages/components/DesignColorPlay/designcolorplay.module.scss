@@ -1,0 +1,36 @@
+.row1 {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    text-align: justify;
+    padding: 4% 7% 0% 7%;
+    // top: 20%
+    column-gap: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
+.rowimg{
+    // width: 100%;
+}
+
+.points {
+// width: 50%;
+    max-height: 13em;
+    overflow: hidden;
+    // display: flex;
+    
+}
+.readmore{
+   color: red;
+   flex-direction: column;
+}
+// .heading {
+//     color: black;
+//     text-align: left;
+//     font-size: 0.8vw;
+//     max-height: 5 * 1.2em;
+//     overflow: hidden;
+//     position: relative;
+//     margin: 0 !important;
+// }

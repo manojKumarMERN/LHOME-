@@ -254,7 +254,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                       : ''
                     }
                     {menuoptionsstring.indexOf("Home Office,") < 0 ?
-                      <Link href={{ pathname: '/homeoffice' }}> <div id="homeoffice" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                      <Link href={{ pathname: '/Designjournal' }}> <div id="homeoffice" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
                         Home Office</div>
                       </Link>
                       : ''
