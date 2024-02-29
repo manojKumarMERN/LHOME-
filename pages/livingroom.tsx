@@ -117,7 +117,7 @@ const ModularKitchenPage: React.FC = () => {
                                     <div className="col-lg-3 "></div>
 
                                 </div>
-                                <div><Ideas prop="Living Room" color="red" /></div>
+                                <div><Ideas prop="Living Room" color="red" space="living_room"/></div>
                             </div>
                         </div>
                         <div className="mt-[-5%]"><DynamicIterableComponent data={LivingRoom} categoryId='14'/></div>

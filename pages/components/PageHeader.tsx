@@ -11,6 +11,10 @@ import LoginRegisterPage from '../loginRegisterPage';
 import { AiFillCloseCircle } from 'react-icons/ai'
 import { getToken } from "../../services/sessionProvider";
 import Cookies from 'js-cookie';
+import { useRouter } from "next/router";
+import DrawerMenu from "./DrawerMenu";
+import DropDownMenuPrimary from "./DropdownPrimary";
+import { useMediaQuery } from "@mui/material";
 
 
 interface pageheaderproperties {
@@ -49,7 +53,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
   const [show, setShow] = React.useState(false);
   const [chatBoxShow, setChatBoxShow] = React.useState(false);
   const [receivedData, setReceivedData] = React.useState('');
-  const [isAuth , setAuth] = React.useState(false);
+  const [isAuth, setAuth] = React.useState(false);
 
   React.useEffect(() => {
     function getsettings() {
@@ -103,9 +107,73 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
         });
     }
     getsettings();
-    setAuth(getToken()? true : false);
-  }, [screenwidth, assetpath , show]);
+    setAuth(getToken() ? true : false);
+  }, [screenwidth, assetpath, show]);
 
+  const router = useRouter();
+
+  const handleNav = (e) => {
+    console.log('Event:', e);
+    if (typeof e === 'string') {
+      switch (e) {
+        case 'Home':
+          router.push('/');
+          break;
+        case 'Design Gallery':
+          router.push('/designgallery');
+          break;
+        case 'Modular Kitchen':
+          router.push('/modularkitchen');
+          break;
+        case 'Wardrobe':
+          router.push('/wardrobe');
+          break;
+        case 'Bedroom':
+          router.push('/bedroom');
+          break;
+        case 'Living Room':
+          router.push('/livingroom');
+          break;
+        case 'Bath Room':
+          router.push('/bathroom');
+          break;
+        case 'Space Saving Furniture':
+          router.push('/spacesavingfurniture');
+          break;
+        case 'Home Office':
+          router.push('/homeoffice');
+          break;
+        case 'Customer stories':
+          router.push('/customstories')
+          break;
+        case 'Unknown':
+          router.push('/unknow');
+          break;
+        case 'Partner With LHome':
+          router.push('/partnership');
+          break;
+
+        case 'Refer and Earn':
+          router.push('/referandearn');
+          break;
+
+        case 'Join Us':
+          router.push('/joinuspage');
+          break;
+
+
+        case 'Visit Us':
+          router.push('/visitus');
+          break;
+
+        case 'Customer Support':
+          router.push('/CustomersupportPage');
+          break;
+      }
+    } else {
+      console.error('Type:', typeof (e));
+    }
+  };
 
   const handlePopup = () => {
     setShow(true);
@@ -119,30 +187,35 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
     setReceivedData(data);
   };
 
-  const handleLogout = ()=>{
+  const handleLogout = () => {
     Cookies.remove('token');
     Cookies.remove('userId');
     setAuth(false)
   }
 
+  //useMediaQuery
+  const isSmallScreen = useMediaQuery("(max-width: 554px)");
+  const isMediumScreen = useMediaQuery("(min-width: 555px) and (max-width: 1257px)");
+
+  const isSmallScreen2 = useMediaQuery("(max-width: 450px)");
 
   return (
     <React.Fragment>
-        <div className={`stickly transition-all duration-500`}>
-          <div className={hidden ? `${css.headerHidden}` : `${css.headerOuter}`}>
-            <div className={ hidden ? "flex justify-center": css.headerLeft}>
-              <div id="logo" className={`${css.lhomelogoholder}`}>
-                <div className={css.lhomelogo}>
-                  {/* <div ref={logo} className={`${css.lhomelogomask}`} /> */}
-                  <img src={homeLogo} alt='homeLogo' key={"UniqueKey"} />
-                </div>
+      <div className={`stickly transition-all duration-500`}>
+        <div className={hidden ? `${css.headerHidden}` : `${css.headerOuter}`}>
+          <div className={hidden ? "flex justify-center" : css.headerLeft}>
+            <div id="logo" className={`${css.lhomelogoholder}`}>
+              <div className={isSmallScreen2? `${css.lhomelogo}`:''}>
+                {/* <div ref={logo} className={`${css.lhomelogomask}`} /> */}
+                <img src={homeLogo} alt='homeLogo' key={"UniqueKey"} />
               </div>
             </div>
+          </div>
 
-            {!hidden && (
-              <div className={css.headerRight}>
-                <div className={css.smallMenuButtons}>
-                  <div className={css.emptyBand}>
+          {!hidden && (
+            <div className={css.headerRight}>
+              <div className={css.smallMenuButtons}>
+                <div className={css.emptyBand}>
                   {smallmenuoptionsstring.indexOf("Partner With LHome,") < 0 ?
                     <Link href={{ pathname: '/partnership' }}><div className={`${css.smallMenuBand} ${css.customWidthpx_14}`}>
                       Partner With LHome
@@ -188,19 +261,103 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
 
                   {smallmenuoptionsstring.indexOf(",Customer Support") < 0 ?
                     <Link href={{ pathname: "/CustomersupportPage" }} style={{ display: 'flex' }}>
-                      <BsHeadset style={{marginTop: window.innerWidth >2500 ?'-3px':'2%'}} color="black" size={window.innerWidth > 2500 ? 30 : 16} />
+                      <BsHeadset style={{ marginTop: window.innerWidth > 2500 ? '-3px' : '2%' }} color="black" size={window.innerWidth > 2500 ? 30 : 16} />
                       <div className={`${css.smallMenuBand} ${css.customWidthpx_100}`}>
                         Customer Support
                       </div>
                     </Link>
                     : ''}
 
-                  {smallmenuoptions.length > 0 && screenwidth && screenwidth < 1250 ?
-                    <div id="dropdownoptions" rel="smalloptions" className={`${css.smallMenuBand} ${css.customWidthpx_6}`}>
-                      <DropDownMenu updatesmallmenu={updatesmallmenu} options={smallmenuoptions} fontclass={"yes"} cities={cities} />
+                  {smallMenuOptions.length > 0 && isSmallScreen && (
+                    <div id="drawerOptions" rel="smalloptions" className={`${css.smallMenuBand} ${css.customWidthpx_6}`}>
+                      <DrawerMenu
+                        options={smallmenuoptions}
+                        cities={cities}
+                        fontclass={""}
+                        onClick={handleNav} />
+                    </div>
+                  )}
+
+                  {smallMenuOptions.length > 0 && isMediumScreen && (
+                    <div id="drawerOptions" rel="smalloptions" className={`${css.smallMenuBand} ${css.customWidthpx_6}`}>
+                      <DropDownMenuPrimary
+                        options={smallmenuoptions}
+                        cities={cities}
+                      />
+                    </div>
+                  )}
+
+                </div>
+              </div>
+              <div className={css.largeMenuButtons} id="largeoptions">
+                <div className={css.menuHolder}>
+                  {menuoptionsstring.indexOf("Home,") < 3 ?
+                    <Link href={{ pathname: '/' }}><div id="home" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                      Home</div>
+                    </Link>
+                    : ''
+                  }
+                  {menuoptionsstring.indexOf("Design Gallery,") < 3 ?
+                    <Link href={{ pathname: '/designgallery' }}><div id="designgallery" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                      Design Gallery</div>
+                    </Link>
+                    : ''
+                  }
+                  {menuoptionsstring.indexOf("Modular Kitchen,") < 3 ?
+                    <Link href={{ pathname: '/modularkitchen' }}><div id="modularkitchen" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                      Modular Kitchen</div>
+                    </Link>
+                    : ''
+                  }
+                  {menuoptionsstring.indexOf("Wardrobe,") < 0 ?
+                    <Link href={{ pathname: '/wardrobe' }}><div id="wardrobe" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                      Wardrobe</div>
+                    </Link>
+                    : ''
+                  }
+                  {menuoptionsstring.indexOf("Bedroom,") < 0 ?
+                    <Link href={{ pathname: '/bedroom' }}><div id="bedroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                      Bedroom</div>
+                    </Link>
+                    : ''
+                  }
+                  {menuoptionsstring.indexOf("Living Room,") < 0 ?
+                    <Link href={{ pathname: '/livingroom' }}><div id="livingroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                      Living Room</div>
+                    </Link>
+                    : ''
+                  }
+                  {menuoptionsstring.indexOf("Bath Room,") < 0 ?
+                    <Link href={{ pathname: '/bathroom' }}> <div id="bathroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                      Bath Room</div>
+                    </Link>
+                    : ''
+                  }
+                  {menuoptionsstring.indexOf("Space Saving Furniture,") < 0 ?
+                    <Link href={{ pathname: '/spacesavingfurniture' }}><div id="spacesavingfurniture" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                      Space Saving Furniture</div>
+                    </Link>
+                    : ''
+                  }
+                  {menuoptionsstring.indexOf("Home Office,") < 0 ?
+                    <Link href={{ pathname: '/homeoffice' }}> <div id="homeoffice" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
+                      Home Office</div>
+                    </Link>
+                    : ''
+                  }
+                  {menuoptionsstring.indexOf("Customer stories,") < 0 ?
+                    <div id="others" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_6} + d-flex`}>
+                      <div>Other</div>
+                      <div className={css.otherDropDown}>
+                        {citiesdropdown ?
+                          <OtherDropDownMenu options={other} positionmove={"1px"} />
+                          : ''
+                        }
+                      </div>
                     </div>
                     : ''
                   }
+<<<<<<< HEAD
                 </div>
                 </div>
                 <div className={css.largeMenuButtons} id="largeoptions">
@@ -287,13 +444,35 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                         </Modal.Header>
                         <LoginRegisterPage setShow={setShow}/>
                       </Modal>
+=======
+                  {menuoptions.length > 0 ? (
+                    <div id="dropdownOptions" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_6}`}>
+                      <DropDownMenu
+                        options={menuoptions}
+                      
+                      />
+                    </div>
+                  ) : null}
+>>>>>>> 82c73e7a65f9230ac517c0035314c1c7904fbcdc
 
-                    </div>}
-                  </div>
+
+                  {isAuth ? <button className={css.userLoginRegister} onClick={handleLogout}> Logout </button> : <div className={css.userLoginRegisterHolder}>
+                    <button className={css.userLoginRegister} onClick={handlePopup}>
+                      Login / Register
+                    </button>
+                    <Modal show={show} onHide={handleClose} className={css.Modal_Popup}>
+                      <Modal.Header  >
+                        <AiFillCloseCircle onClick={handleClose} />
+                      </Modal.Header>
+                      <LoginRegisterPage setShow={setShow} />
+                    </Modal>
+                  </div>}
+                  
                 </div>
-              </div>)}
-          </div>
+              </div>
+            </div>)}
         </div>
+      </div>
     </React.Fragment>
   )
 }

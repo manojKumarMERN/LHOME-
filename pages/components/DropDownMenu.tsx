@@ -1,44 +1,46 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Dropdown from "react-bootstrap/Dropdown";
-import css from '../../styles/DropDownMenu.module.scss';
-import CitiesDropDownMenu from './CitiesDropDown';
+
+
+import React, { useState } from "react";
+import {
+  Menu,
+  MenuItem,
+  createTheme,
+  ThemeProvider,
+  Slide,
+  Grow,
+  IconButton,
+} from "@mui/material";
+
+import { RiArrowDropDownLine } from "react-icons/ri";
 import { useRouter } from "next/router";
-import OtherDropDownMenu from "./OtherDropDown";
-import { simpleCallInitAPI } from '../../services/ApicallInit'
+
 interface DropDownProps {
-  children: object;
-  onClick(event: string): void;
+  options: string[];
 }
 
-const ToggleDropDown = React.forwardRef<HTMLElement, DropDownProps>(({ children, onClick }, ref: any) => (
-  <div className={css.drpdownicon}>
-    <a
-      href=""
-      ref={ref}
-      onClick={(e: any) => {
-        e.preventDefault();
-        onClick(e);
-      }}
-      className={css.ddropdown}
-    >
-      •••
-    </a>
-  </div>
-));
-ToggleDropDown.displayName = "Drop Down Event";
+const DropDownMenu: React.FC<DropDownProps> = ({ options }) => {
+  const theme = createTheme({
+    typography: {
+      allVariants: {
+        fontFamily: "Montserrat",
+      },
+    },
+  });
 
-const DropDownMenu = (options: any) => {
-  const [citiesDropdown, setCitiesDropdown] = React.useState(false);
-  const [ setAssestpath] = React.useState();
-  const [other, setOther] = React.useState(["Customstories", "Unknown"]);
-
-
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const router = useRouter();
-  const handleNav = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    switch (e.target.innerText) {
+
+  const handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  }
+
+  const handleNav = (option: string) => {
+    console.log("Navigating to:", option);
+    switch (option) {
       case 'Home':
         router.push('/');
         break;
@@ -67,55 +69,60 @@ const DropDownMenu = (options: any) => {
         router.push('/homeoffice');
         break;
       case 'Customer stories':
-        router.push('/customstories')
+        router.push('/customstories');
         break;
       case 'Unknown':
-        router.push('/unknow');
+        router.push('/unknown');
         break;
       case 'Partner With LHome':
         router.push('/partnership');
         break;
-
       case 'Refer and Earn':
         router.push('/referandearn');
         break;
-
       case 'Join Us':
         router.push('/joinuspage');
         break;
-
-
       case 'Visit Us':
         router.push('/visitus');
         break;
-      
       case 'Customer Support':
-        router.push('/CustomersupportPage');
+        router.push('/customersupportpage');
         break;
-
-
+      default:
+        console.log("Unhandled option:", option);
+        break;
     }
-  }
+    handleMenuClose();
+  };
+
   return (
-    <div>
-      <Dropdown>
-        <Dropdown.Toggle as={ToggleDropDown} />
-        <Dropdown.Menu title="">
-          <div className={options.fontclass.length > 0 ? css.modifiedfont : ''}>
-            {options.options.map((option: any, index: number) => {
-              return option.toUpperCase() === "CITIES" ?
-                <div key={`{key_${index}`} className={css.dropdowngroup}><Dropdown.Item onClick={handleNav} key={`menu-${option}`}>{option}</Dropdown.Item>
-                  <div key={`{key_${index}`} className={css.dropdowngroupmove}><CitiesDropDownMenu options={options.cities} /></div></div>
-                : <Dropdown.Item onClick={handleNav} key={`menu-${option}`}>{option}</Dropdown.Item>
-            })}
+    <ThemeProvider theme={theme}>
+      <div>
 
-          </div>
-        </Dropdown.Menu>
-      </Dropdown>
+        <IconButton onClick={handleMenuOpen}>
+          <RiArrowDropDownLine size={"25px"}>
+          </RiArrowDropDownLine>
+        </IconButton>
 
-    </div>
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={handleMenuClose}
+          TransitionComponent={Grow}
+          TransitionProps={{
+            style: { transformOrigin: "top center" },
+          }}
+        >
+          {options.map((option, index) => (
+            <MenuItem key={index} onClick={() => handleNav(option)}>
+              {option}
+            </MenuItem>
+          ))}
+        </Menu>
+      </div>
+    </ThemeProvider>
   );
-}
-DropDownMenu.displayName = "Drop Down";
+};
 
 export default DropDownMenu;

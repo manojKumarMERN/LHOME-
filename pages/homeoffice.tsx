@@ -130,7 +130,7 @@ const pageheaderMonitor = () => {
                   </div>
                               
                               <div className={css.mainIdea}>
-                              <Ideas prop="Home office" color="red" />
+                              <Ideas prop="Home office" color="red" space="home_office"/>
                               </div>
                               <div className="mt-[-5%]"><DynamicIterableComponent  data={homeOffice} categoryId='17'/></div>
                               <div className="mb-[-50px]"><Autoplay living={living} /></div>

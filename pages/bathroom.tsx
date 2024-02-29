@@ -125,7 +125,7 @@ const HomeOffice: React.FC = () => {
                   <div className="col-lg-3 "></div>
 
                 </div>
-                <div><Ideas prop="Bath Room" color="red" /></div>
+                <div><Ideas prop="Bath Room" color="red" space="bathroom"/></div>
               </div>
             </div>
             <div className="mt-[-5%]"><DynamicIterableComponent data={homeOffice} categoryId='15'/></div>

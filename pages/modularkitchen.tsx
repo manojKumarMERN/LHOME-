@@ -182,7 +182,7 @@ const ModularKitchenPage: React.FC = () => {
             {activePage == 'unset' &&
               <>
                 <div>
-                  <Ideas color="blue" prop="U-Shaped Kitchen" />
+                  <Ideas color="blue" prop="U-Shaped Kitchen" space="u_shaped" />
                   <div className="mt-5 "> <DynamicIterableComponent data={data}  categoryId ='6'/></div>
                 </div>
                 <div>
@@ -201,22 +201,22 @@ const ModularKitchenPage: React.FC = () => {
             {activePage == 'U-Shaped' &&
               <div>
 
-                <Ideas color="blue" prop="U-Shaped Kitchen" />
+                <Ideas color="blue" prop="U-Shaped Kitchen" space="u_shaped"/>
                 <DynamicIterableComponent data={data}  categoryId ='6'/>
               </div>}
             {activePage == 'Straight' &&
               <div>
-                <Ideas color="blue" prop="Straight Kitchen" />
+                <Ideas color="blue" prop="Straight Kitchen" space="straight"/>
                 <DynamicIterableComponent data={data1} categoryId ='7' />
               </div>}
             {activePage == 'Island Kitchen' &&
               <div>
-                <Ideas color="blue" prop="Island Kitchen" />
+                <Ideas color="blue" prop="Island Kitchen" space="island"/>
                 <DynamicIterableComponent data={data2} categoryId ='8' />
               </div>}
             {activePage == 'L-Shaped' &&
               <div>
-                <Ideas color="blue" prop="L-Shaped Kitchen" />
+                <Ideas color="blue" prop="L-Shaped Kitchen" space="l_shaped"/>
                 <DynamicIterableComponent data={data3} categoryId ='9' />
               </div>}
             <div className="mb-[-50px]"><Autoplay living={living} /></div>
