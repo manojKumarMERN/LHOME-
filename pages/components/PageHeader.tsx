@@ -357,94 +357,6 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                     </div>
                     : ''
                   }
-<<<<<<< HEAD
-                </div>
-                </div>
-                <div className={css.largeMenuButtons} id="largeoptions">
-                  <div className={css.menuHolder}>
-                    {menuoptionsstring.indexOf("Home,") < 0 ?
-                      <Link href={{ pathname: '/' }}><div id="home" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                        Home</div>
-                      </Link>
-                      : ''
-                    }
-                    {menuoptionsstring.indexOf("Design Gallery,") < 0 ?
-                      <Link href={{ pathname: '/designgallery' }}><div id="designgallery" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                        Design Gallery</div>
-                      </Link>
-                      : ''
-                    }
-                    {menuoptionsstring.indexOf("Modular Kitchen,") < 0 ?
-                      <Link href={{ pathname: '/modularkitchen' }}><div id="modularkitchen" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                        Modular Kitchen</div>
-                      </Link>
-                      : ''
-                    }
-                    {menuoptionsstring.indexOf("Wardrobe,") < 0 ?
-                      <Link href={{ pathname: '/wardrobe' }}><div id="wardrobe" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                        Wardrobe</div>
-                      </Link>
-                      : ''
-                    }
-                    {menuoptionsstring.indexOf("Bedroom,") < 0 ?
-                      <Link href={{ pathname: '/bedroom' }}><div id="bedroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                        Bedroom</div>
-                      </Link>
-                      : ''
-                    }
-                    {menuoptionsstring.indexOf("Living Room,") < 0 ?
-                      <Link href={{ pathname: '/livingroom' }}><div id="livingroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                        Living Room</div>
-                      </Link>
-                      : ''
-                    }
-                    {menuoptionsstring.indexOf("Bath Room,") < 0 ?
-                      <Link href={{ pathname: '/bathroom' }}> <div id="bathroom" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                        Bath Room</div>
-                      </Link>
-                      : ''
-                    }
-                    {menuoptionsstring.indexOf("Space Saving Furniture,") < 0 ?
-                      <Link href={{ pathname: '/spacesavingfurniture' }}><div id="spacesavingfurniture" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                        Space Saving Furniture</div>
-                      </Link>
-                      : ''
-                    }
-                    {menuoptionsstring.indexOf("Home Office,") < 0 ?
-                      <Link href={{ pathname: '/Designjournal' }}> <div id="homeoffice" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_14}`}>
-                        Home Office</div>
-                      </Link>
-                      : ''
-                    }
-                    {menuoptionsstring.indexOf("Customer stories,") < 0 ?
-                      <div id="others" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_6} + d-flex`}>
-                        <div>Other</div>
-                        <div className={css.otherDropDown}>
-                          {citiesdropdown ?
-                            <OtherDropDownMenu options={other} positionmove={"1px"} />
-                            : ''
-                          }
-                        </div>
-                      </div>
-                      : ''
-                    }
-                    {menuoptions.length > 0 ?
-                      <div id="dropdownoptions" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_6}`}>
-                        <DropDownMenu updatemenu={updatemenu} fontclass={""} options={menuoptions} />
-                      </div>
-                      : ''
-                    }
-                   {isAuth ?<button className={css.userLoginRegister} onClick={handleLogout}> Logout </button> :  <div className={css.userLoginRegisterHolder}>
-                      <button className={css.userLoginRegister} onClick={handlePopup}>
-                        Login / Register
-                      </button>
-                      <Modal show={show} onHide={handleClose} className={css.Modal_Popup}>
-                        <Modal.Header  >
-                          <AiFillCloseCircle onClick={handleClose} />
-                        </Modal.Header>
-                        <LoginRegisterPage setShow={setShow}/>
-                      </Modal>
-=======
                   {menuoptions.length > 0 ? (
                     <div id="dropdownOptions" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_6}`}>
                       <DropDownMenu
@@ -453,7 +365,6 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                       />
                     </div>
                   ) : null}
->>>>>>> 82c73e7a65f9230ac517c0035314c1c7904fbcdc
 
 
                   {isAuth ? <button className={css.userLoginRegister} onClick={handleLogout}> Logout </button> : <div className={css.userLoginRegisterHolder}>

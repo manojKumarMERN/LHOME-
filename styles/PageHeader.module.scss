@@ -38,6 +38,11 @@
    display: flex;
    align-items: center;
    margin: 0% 3% 0% 3%;
+
+   @media (max-width:450px) {
+   margin: 0% 5% 0% 3%;
+      
+   }
 }
 
 .visible {
@@ -279,18 +284,12 @@
 }
 
 
-//  .lhomelogo {
-//     width: 100%;
-//     padding-top: 10%;
-//     padding-bottom: 10%;
-//     height: 100px;
-//     display: flex;
-//     @media (min-width:1601px) {
-//       padding-bottom: 5%;
-//       padding-top: 5%;
-//       height: unset;
-//     }
-//  }
+ .lhomelogo {
+   position: absolute;
+   max-width: 37%;
+   left: 80px;
+   top: 10px;
+ }
 
 .lhomelogobackground {
    background-size: contain;
@@ -415,6 +414,10 @@
 
    .userLoginRegister {
       font-size: 10px;
+      @media (max-width:450px){
+      font-size: 8px;
+
+      }
    }
 }
 
