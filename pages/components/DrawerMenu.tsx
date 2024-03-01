@@ -5,11 +5,12 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import css from '../../styles/DropDownMenu.module.scss';
 import { GiHamburgerMenu } from "react-icons/gi";
-import { IoChevronForward } from "react-icons/io5"; // Import close and chevron icons
+import { IoArrowBackOutline } from "react-icons/io5"
 import CitiesDropDownMenu from './CitiesDropDown';
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import Dropdown from "react-bootstrap/Dropdown";
-import { Divider, IconButton, createTheme, styled } from "@mui/material";
+import { IoArrowForwardOutline } from "react-icons/io5";
+import { Divider, IconButton, createTheme, styled, useMediaQuery } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 
 interface DrawerMenuProps {
@@ -19,27 +20,8 @@ interface DrawerMenuProps {
     fontclass: string;
 }
 
-const ToggleDropDown = React.forwardRef<HTMLElement, { onClick: () => void }>(({ onClick }, ref: any) => (
-    <div className={css.drpdownicon}>
-        <a
-            href=""
-            ref={ref}
-            onClick={(e: any) => {
-                e.preventDefault();
-                onClick();
-            }}
-            className={css.ddropdown}
-        >
-            <GiHamburgerMenu color="black" size="12px" />
-        </a>
-    </div>
-));
-
-ToggleDropDown.displayName="drop down event"
-
 const DrawerMenu: React.FC<DrawerMenuProps> = ({ options, cities, onClick }) => {
-
-    console.log(options);
+    const isSmallScreen = useMediaQuery("(max-width:450px)");
 
     const theme = createTheme({
         typography: {
@@ -47,7 +29,7 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({ options, cities, onClick }) => 
                 fontFamily: "Montserrat"
             },
         },
-    })
+    });
 
     const DrawerHeader = styled('div')(({ theme }) => ({
         display: 'flex',
@@ -57,7 +39,6 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({ options, cities, onClick }) => 
         ...theme.mixins.toolbar,
         justifyContent: 'flex-end',
     }));
-
 
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [showCitiesDropDown, setShowCitiesDropDown] = useState(false);
@@ -77,17 +58,30 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({ options, cities, onClick }) => 
     return (
         <>
             <ThemeProvider theme={theme}>
-                <ToggleDropDown onClick={handleToggleDrawer} />
-                <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+                <div className={css.drpdownicon}>
+                    <a
+                        href=""
+                        onClick={(e: any) => {
+                            e.preventDefault();
+                            handleToggleDrawer();
+                        }}
+                        className={css.ddropdown}
+                    >
+                        <GiHamburgerMenu color="black" size={isSmallScreen ? "15px" : "20px"} />
+                    </a>
+                </div>
+
+                <Drawer anchor={isSmallScreen ? "left" : "right"} open={drawerOpen} onClose={() => setDrawerOpen(false)}>
 
                     <DrawerHeader sx={{
-                        display:'flex',
-                        justifyContent:"flex-start"
+                        display: 'flex',
+                        justifyContent: "flex-start"
                     }}>
 
-
                         <IconButton onClick={() => setDrawerOpen(false)}>
-                            <IoChevronForward size={24} />
+                            {
+                                isSmallScreen ? <IoArrowBackOutline size={25} /> : <IoArrowForwardOutline size={25}/>
+                            }
                         </IconButton>
 
                     </DrawerHeader>
@@ -95,10 +89,10 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({ options, cities, onClick }) => 
                     <Divider sx={{ borderBottomWidth: '5px', borderColor: '#F44336' }} />
 
                     <List sx={{
-                        display:'flex',
-                        flexDirection:'column',
-                       justifyContent:'flex-start'
-                        
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'flex-start'
+
                     }}>
                         {
                             options.map((options: any, index: number) => {

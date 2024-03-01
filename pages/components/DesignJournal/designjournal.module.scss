@@ -1,0 +1,204 @@
+.designjournalimageContainer {
+    position: relative;
+  }
+  
+  .designjournalimage {
+    width: 100%;
+    @media (max-width:576px) {
+      height: 75vw;
+    }
+  }
+  
+  .designjournal_tagline {
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    font-weight: 100 !important;
+    font-size: 2.8em;
+  }
+  
+  .designjournal_tagline1 {
+    color: #FFFFFF;
+    // font-weight: 700;
+    font-family: "Montserrat";
+    font-size: 2.8em;
+    line-height: 100%;
+  }
+  
+  .designjournalbannercontent {
+    position: absolute;
+    left: 65%;
+    top: 70%;
+    transform: translateY(-50%);
+    
+  }
+  
+  .bannerbtn {
+    background: #F44336;
+    position: "absolute";
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.9vw;
+    line-height: 20px;
+    left: 300px;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 15px 25px;
+    @media (max-width:2000px){
+      font-size: 14px;
+      padding: 5px 15px;
+    }
+  }
+  @media(min-width:2000px) {
+    .designjournal_tagline {
+      font-size: 2.8vw;
+      line-height: 3.3vw;
+    }
+  
+    .designjournal_tagline1 {
+      font-size: 2.8vw;
+      line-height: 3.3vw;
+    }
+  
+    .designjournalbannercontent {
+      top: 30%;
+      left: 67%;
+    }
+  
+    .designjournalbannerform {
+      top: 53%;
+      right: 6%;
+      width: 32vw;
+    }
+  }
+  
+  @media only screen and (max-width:2000px) and (min-width:1600px) {
+    .designjournal_tagline {
+      font-size: 3.5em;
+    }
+  
+    .designjournal_tagline1 {
+      font-size: 3.5em;
+    }
+  
+    .designjournalbannercontent {
+      top: 25%;
+      left: 63%;
+    }
+  }
+  
+  @media only screen and (max-width:1600px) and (min-width:1200px) {
+    .designjournal_tagline {
+      font-size: 3.5em;
+    }
+  
+    .designjournal_tagline1 {
+      font-size: 3.5em;
+    }
+  
+    .designjournalbannercontent {
+      top: 26%;
+    }
+    
+  }
+  
+  
+  @media only screen and (max-width:1200px) and (min-width:1000px) {
+    .designjournal_tagline {
+      font-size: 2.5em;
+    }
+  
+    .designjournal_tagline1 {
+      font-weight: 500;
+      font-size: 2.5em;
+  
+    }
+  
+    .designjournalbannercontent {
+      top: 15%;
+      left: 54%;
+    }
+  
+    
+  
+  }
+  
+  @media only screen and (max-width:1000px) and (min-width:900px) {
+    .designjournal_tagline {
+      font-size: 2em;
+    }
+  
+    .designjournal_tagline1 {
+      font-weight: 400;
+      font-size: 2em;
+    }
+  
+    .designjournalbannercontent {
+      white-space: nowrap;
+  }
+  
+   
+  }
+  
+  @media (max-width:775px) {
+    .designjournalbannerform {
+      padding-right: 3% !important;
+    }  
+  }
+  
+  @media (max-width:1000px) {
+    .designjournalbannerform {
+      position: relative;
+      top: 0;
+      transform: none;
+      padding: 20px;
+      background-color: #EF5350;
+      padding-top: 5%;
+      padding-right: 12%;
+      width: unset;
+    }
+  
+    .designjournal_tagline {
+      font-family: "Montserrat";
+      color: #FFFFFF;
+      font-weight: 100 !important;
+      font-size: 3em;
+    }
+  
+    .designjournal_tagline1 {
+      font-weight: 400;
+      font-size: 3em;
+    }
+  
+    .designjournalbannercontent {
+      top: 15%;
+      left: unset;
+      right: 10%;
+    }
+   
+  }
+  
+  @media only screen and (max-width:600px) and (min-width:350px) {
+    .designjournalbannerform {
+      position: relative;
+      top: 0;
+      transform: none;
+      padding: 20px;
+      background-color: #EF5350;
+    }
+  
+    .designjournal_tagline {
+      font-size: 1.75em;
+    }
+  
+    .designjournal_tagline1 {
+      font-weight: 400;
+      font-size: 1.75em;
+    }
+    .designjournalbannercontent {
+      top: 15%;
+    }
+
+  }
+  
+  

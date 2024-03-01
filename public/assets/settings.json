@@ -1723,6 +1723,48 @@
         "name1": "Become the proud owner of a LHome",
         "name2": "Franchise studio"
       }
+    ],
+    "designjournalbanner":[
+      {
+        "image":"/assets/designJournal/banner-1.jpg",
+        "name":"Best Guide For Interiors"
+      }
+    ],
+    "colorplaybanner":[
+      {
+        "image":"/assets/designJournal/banner-2.jpg",
+        "name":"Color plays a vital role in interiors"
+      }
+    ],
+    "craftingthemebanner":[
+      {
+        "image":"/assets/designJournal/banner-3.jpg",
+        "name":"Crafting a theme for a dream house"
+      }
+    ],
+    "unlockartistrybanner":[
+      {
+        "image":"/assets/designJournal/banner-4.png",
+        "name":"Unlock the artistry of Space in interiors"
+      }
+    ],
+    "artistrylightbanner":[
+      {
+        "image":"/assets/designJournal/banner-5.jpg",
+        "name":"Transforming spaces with the artistry of light"
+      }
+    ],
+    "texturebanner":[
+      {
+        "image":"/assets/designJournal/banner-6.jpg",
+        "name":"Incorporating a variety of Textures and Materials for visual interest and tactile appeal"
+      }
+    ],
+    "wallbanner":[
+      {
+        "image":"/assets/designJournal/banner-7.jpg",
+        "name":"Elevate your space with Walls that do more than enclose"
+      }
     ]
-  }
+  } 
 }

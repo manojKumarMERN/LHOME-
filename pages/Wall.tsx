@@ -1,25 +1,18 @@
 import * as React from "react";
-import * as config from "../next.config.js";
+import * as config from "../next.config";
 import PageHeader from "./components/PageHeader";
-import css from "../styles/Spacesavingfurniture.module.scss";
+import css from "../styles/wall.module.scss";
 import Footer from "./components/Footer/Footer";
-import Autoplay from "./components/Autoplayslider/Autoplayslider";
-import ReferNowPage from "./components/ReferNow/ReferNowPage";
 import Warranty from "./components/warranty/Warranty";
-import Guranted from "./components/Guranted/Guranted";
-import FAQPage from "./components/Faq/FAQPage";
-import FurnitureBaner from "./components/Spacesavingfurniture/FurnitureBanner";
-import Link from "next/link.js";
-import Ideas from "./components/MeetDesigner/ideas";
 import { simpleCallInitAPI } from "../services/ApicallInit";
-import DynamicIterableComponent from "./components/IterableComponent/DynamicIterableComponent";
-import FurnitureFilter from "./components/furnitureFilter/furbitureFilter";
+import WallBanner from "./components/Wall/Wall";
 
-
-const SpacesavingfurniturePage: React.FC = () => {
+const Wall: React.FC = () => {
     const living = React.useRef(null);
+    const [wallpoints, setPoints] = React.useState([]);
+    const [wallheading, setHeadings] = React.useState();
+    const [summary, setsummary] = React.useState();
     const [screenwidth, setWidth] = React.useState(window.innerWidth);
-    const [data, setData] = React.useState([]);
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     let hgtt = 0;
     if (window.innerWidth < 600) {
@@ -31,6 +24,7 @@ const SpacesavingfurniturePage: React.FC = () => {
         hgtt = window.innerHeight - 160;
     }
     const [screenheight, setHeight] = React.useState(hgtt);
+
 
     const handleResize = React.useCallback(() => {
         setWidth(window.innerWidth);
@@ -68,14 +62,23 @@ const SpacesavingfurniturePage: React.FC = () => {
     }, [handleResize]);
 
     React.useEffect(() => {
-        let api = simpleCallInitAPI(`${assetpath}/assets/spacesavefurniture.json`);
+        let api = simpleCallInitAPI(`${assetpath}/assets/designJournal.json`);
         api.then((data: any) => {
-            setData(data.data.spacesavingfurniture);
-        });
+            let colorplay = [];
+            console.log(data.data.desginJournalRows.Walls.points)
+            // data.data.desginJournalRows.Colors.points.forEach((datas: any) => {
+            //     let lc: any = {};
+            //     lc.points = `${assetpath}${datas.points}`;
+            //     // lc.points = datas.points;
+            //     colorplay.push(lc);
+            // });
+            setPoints(data.data.desginJournalRows.Walls.points);
+            setHeadings(data.data.desginJournalRows.Walls.boldHeading);
+            setsummary(data.data.desginJournalRows.Walls.summary);
+        }); 
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResized);
-    }, [handleResize, handleResized, assetpath])
-
+    }, [handleResize, handleResized, assetpath]);
 
     const page = React.useRef(null);
     const [prevPosition, setPrev] = React.useState(0);
@@ -99,43 +102,20 @@ const SpacesavingfurniturePage: React.FC = () => {
                     <div className={hidden ? "hidden" : ""}>
                         <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
                     </div>
-
                     <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
-                        <div><FurnitureBaner /></div>
-
-                        <div className={css.spacesaving_bgclr}>
-                            <div className={css.spacesaving_filter_home}>
-                                <div className="pt-4">
-                                    <span className={css.spacesaving_filter_link_span1}><Link href={{ pathname: "/" }} className={css.spacesaving_filter_link}>home</Link></span>
-                                    <span className={css.spacesaving_filter_slash}>/</span>
-                                    <span className={css.spacesaving_filter_link_span2}><Link href={{ pathname: "/spacesavingfurniture" }} className={css.spacesaving_filter_link}>spacesavingfurniture</Link></span>
-                                </div>
-                                <div className={css.spacesaving_filter_header_content}>Space Saving Furniture</div>
-                                <div className="row ">
-                                    <div className="col-lg-3 "> </div>
-
-                                    <div className={"col-lg-6 px-[15px] " + css.spacesaving_filter_content}><p className={css.spacesaving_filter_additional_content}>Maximize your living space with innovative,
-                                        space-saving furniture solutions. Smart design meets versatility,
-                                        offering stylish and functional pieces that enhance efficiency without compromising style.</p>
+                        <div><WallBanner /></div>
+                            <div className={css.points}>
+                                <div className={css.boldheading}><b>{wallheading}</b></div><br />
+                                <div>{wallpoints.map((datas: any, index: number) => (
+                                    <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
+                                        <b className={css.heading1}>{datas.heading} </b> {datas.discription}<br /><br />
                                     </div>
-                                    <div className="col-lg-3 "></div>
-
+                                ))}
                                 </div>
-                                <div><Ideas prop="Space Saving Furniture" color="red" space="space_saving_furniture" /></div>
-
+                                <div className={css.heading}>{summary}</div>
                             </div>
-
-                        </div>
                         
-                        <div className="mt-[-5%]">
-                            <FurnitureFilter data={data}/>
-                        </div>
-                        
-                        <div className="mb-[-50px]"><Autoplay living={living} /></div>
-                        <div><ReferNowPage /></div>
                         <div><Warranty /></div>
-                        <div><FAQPage /></div>
-                        <div><Guranted /></div>
                         <div><Footer /></div>
                     </div>
                 </div>
@@ -143,4 +123,4 @@ const SpacesavingfurniturePage: React.FC = () => {
         </React.Fragment>
     )
 }
-export default SpacesavingfurniturePage;
+export default Wall;

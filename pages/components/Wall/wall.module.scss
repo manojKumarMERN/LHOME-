@@ -1,0 +1,189 @@
+.wallimageContainer {
+    position: relative;
+  }
+  
+  .wallimage {
+    width: 100%;
+    
+    @media (max-width:576px) {
+      height: 75vw;
+    }
+  }
+  
+  .wall_tagline {
+    color: #FFFFFF;
+    // font-weight: 500;
+    font-family: "Montserrat";
+    font-size: 2.8em;
+    line-height: 100%;
+    // text-align: justify; text-align-last: center;
+  }
+  
+  .wall_tagline1 {
+    color: #FFFFFF;
+    // font-weight: 500;
+    font-family: "Montserrat";
+    font-size: 2.8em;
+    line-height: 100%;
+    // text-align: center;
+  }
+  .wallbannercontent{
+    position: absolute;
+    text-align: justify; 
+    text-align-last: center;
+    left: 27%;
+    // top:700px;
+    // transform: translateY(-50%);
+
+  }
+  .wallbannercontent button{
+    left: 30%;
+  }
+  
+  .bannerbtn {
+    background: #F44336;
+    position: "absolute";
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.9vw;
+    line-height: 20px;
+    left: 300px;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 15px 25px;
+    @media (max-width:2000px){
+      font-size: 14px;
+      padding: 5px 15px;
+    }
+ }
+  
+  @media(min-width:2000px) {
+    .wall_tagline {
+      font-size: 1.4vw;
+      line-height: 3.3vw;
+    }
+  
+    .wall_tagline1 {
+      font-size: 1.4vw;
+      line-height: 3.3vw;
+    }
+  
+    .wallbannercontent {
+      // top: 30%;
+      left: 67%;
+    }
+  
+    
+  }
+  
+  @media only screen and (max-width:2000px) and (min-width:1600px) {
+    .wall_tagline {
+      font-size: 3.5em;
+    }
+  
+    .wall_tagline1 {
+      font-size: 3.5em;
+    }
+  
+    .wallbannercontent {
+      // top: 75%;
+      left: 33%;
+    }
+  }
+  
+  @media only screen and (max-width:1600px) and (min-width:1200px) {
+    .wall_tagline {
+      font-size: 2.8em;
+    }
+  
+    .wall_tagline1 {
+      font-size: 2.8em;
+    }
+  
+    .wallbannercontent {
+      top: 35%;
+    }
+   
+  }
+  
+  
+  @media only screen and (max-width:1200px) and (min-width:1000px) {
+    .wall_tagline {
+      font-size: 1em;
+    }
+  
+    .wall_tagline1 {
+      font-weight: 500;
+      font-size: 1em;
+  
+    }
+  
+    .wallbannercontent {
+      top: 20%;
+      left: 54%;
+    }
+  
+    
+  
+  }
+  
+  @media only screen and (max-width:1000px) and (min-width:900px) {
+    .wall_tagline {
+      font-size: 1em;
+    }
+  
+    .wall_tagline1 {
+      font-weight: 400;
+      font-size: 1em;
+    }
+  
+    .wallbannercontent {
+      white-space: nowrap;
+  }
+  
+    
+  }
+  
+  
+  
+  @media (max-width:1000px) {
+    
+    .wall_tagline {
+      font-family: "Montserrat";
+      color: #FFFFFF;
+      font-weight: 400 !important;
+      font-size: 1em;
+    }
+  
+    .wall_tagline1 {
+      font-weight: 400;
+      font-size: 1em;
+    }
+  
+    .wallbannercontent {
+      top:18%;
+      left: unset;
+      right: 35%;
+    }
+    
+  }
+  
+  @media only screen and (max-width:600px) and (min-width:350px) {
+    
+  
+    .wall_tagline {
+      font-size: 1em;
+    }
+  
+    .wall_tagline1 {
+      font-weight: 400;
+      font-size: 1em;
+    }
+    .wallbannercontent {
+      top: 15%;
+    }
+    
+  }
+  
+  

@@ -35,11 +35,11 @@ CityToggle.displayName = "Cities Event";
 //   const City = router.query.City as string;
 // }
 const CitiesDropDownMenu = (options: any, positionmove: string) => {
+
   const router = useRouter();
 
   const handleNav = (city: string) => {
     router.push({ pathname: "/cities", query: { City: city } });
-    // console.log(city)
   }
 
   return (

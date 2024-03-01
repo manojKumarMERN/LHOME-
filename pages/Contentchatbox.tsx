@@ -9,7 +9,7 @@ import { AxiosService } from '../services/ApiService';
 import { getChatUserId, getUserId } from '../services/sessionProvider';
 import Cookies from 'js-cookie';
 import { toast } from 'react-toastify';
-
+import Products from '../public/assets/pdf.json'
 
 interface ChildProps {
     onDataReceived: (data: string) => void;
@@ -26,6 +26,7 @@ const userEntrySchema = Yup.object().shape({
 });
 
 const Contentchatbox = (props: ChildProps) => {
+    console.log(Products);
     const userId = getUserId();
     const district: string[] = [
         "Ariyalur",
@@ -174,13 +175,13 @@ const Contentchatbox = (props: ChildProps) => {
         if (chatArea.current) {
             chatArea.current.scrollTop = chatArea.current.scrollHeight;
         }
+        setChatConversation(true);
         if(userId || getChatUserId()){
-            setChatConversation(true);
         }
     }, [messages, processingResponse,userId]);
 
 
-
+console.log(messages)
     return (
         <React.Fragment>
             <div className={css.maindivchatbot}>

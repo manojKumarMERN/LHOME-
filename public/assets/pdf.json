@@ -1,0 +1,16 @@
+{
+    "products": [
+        {
+            "Kitchen": "assets/PDFfolder/Kitchen.pdf"
+        },
+        {
+            "Bedroom": "assets/PDFfolder/Bedroom.pdf"
+        },
+        {
+            "Furniture": "assets/PDFfolder/Furniture.pdf"
+        },
+        {
+            "LivingRoom": "assets/PDFfolder/LivingRoom.pdf"
+        }
+    ]
+}
