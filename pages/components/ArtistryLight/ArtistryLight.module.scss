@@ -4,11 +4,11 @@
 
 .artistrylightimage {
   width: 100%;
-  
   @media (max-width:576px) {
     height: 75vw;
   }
 }
+
 
 .artistrylight_tagline {
   color: #FFFFFF;
@@ -78,13 +78,13 @@
 }
 
 @media only screen and (max-width:2000px) and (min-width:1600px) {
-  .artistrylight_tagline {
-    // font-size: 3.5em;
-  }
+  // .artistrylight_tagline {
+  //   // font-size: 3.5em;
+  // }
 
-  .artistrylight_tagline1 {
-    // font-size: 3.5em;
-  }
+  // .artistrylight_tagline1 {
+  //   // font-size: 3.5em;
+  // }
 
   .artistrylightbannercontent {
     // top: 75%;
@@ -93,31 +93,31 @@
 }
 
 @media only screen and (max-width:1600px) and (min-width:1200px) {
-  .artistrylight_tagline {
-    // font-size: 3.5em;
-  }
+  // .artistrylight_tagline {
+  //   // font-size: 3.5em;
+  // }
 
-  .artistrylight_tagline1 {
-    // font-size: 3.5em;
-  }
+  // .artistrylight_tagline1 {
+  //   // font-size: 3.5em;
+  // }
 
   .artistrylightbannercontent {
-    top: 54%;
+    top: 35%;
   }
  
 }
 
 
 @media only screen and (max-width:1200px) and (min-width:1000px) {
-  .artistrylight_tagline {
-    // font-size: 2.5em;
-  }
+  // .artistrylight_tagline {
+  //   // font-size: 2.5em;
+  // }
 
-  .artistrylight_tagline1 {
-    // font-weight: 500;
-    // font-size: 2.5em;
+  // .artistrylight_tagline1 {
+  //   // font-weight: 500;
+  //   // font-size: 2.5em;
 
-  }
+  // }
 
   .artistrylightbannercontent {
     top: 20%;
@@ -129,14 +129,14 @@
 }
 
 @media only screen and (max-width:1000px) and (min-width:900px) {
-  .artistrylight_tagline {
-    // font-size: 2em;
-  }
+  // .artistrylight_tagline {
+  //   // font-size: 2em;
+  // }
 
-  .artistrylight_tagline1 {
-    // font-weight: 400;
-    // font-size: 2em;
-  }
+  // .artistrylight_tagline1 {
+  //   // font-weight: 400;
+  //   // font-size: 2em;
+  // }
 
   .artistrylightbannercontent {
     white-space: nowrap;
@@ -156,10 +156,10 @@
     // font-size: 3em;
   }
 
-  .artistrylight_tagline1 {
-    // font-weight: 400;
-    // font-size: 3em;
-  }
+  // .artistrylight_tagline1 {
+  //   // font-weight: 400;
+  //   // font-size: 3em;
+  // }
 
   .artistrylightbannercontent {
     top: 15%;
@@ -172,14 +172,14 @@
 @media only screen and (max-width:600px) and (min-width:350px) {
   
 
-  .artistrylight_tagline {
-    // font-size: 1.75em;
-  }
+  // .artistrylight_tagline {
+  //   // font-size: 1.75em;
+  // }
 
-  .artistrylight_tagline1 {
-    // font-weight: 400;
-    // font-size: 1.75em;
-  }
+  // .artistrylight_tagline1 {
+  //   // font-weight: 400;
+  //   // font-size: 1.75em;
+  // }
   .artistrylightbannercontent {
     top: 15%;
   }

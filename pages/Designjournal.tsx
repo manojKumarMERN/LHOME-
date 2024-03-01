@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import * as config from "../next.config.js";
 import PageHeader from "./components/PageHeader";
 import css from "../styles/bedroom.module.scss";
@@ -9,10 +9,10 @@ import DesignJorunaalBanner from "./components/DesignJournal/designjournal";
 import DesignColorPlay from "./components/DesignColorPlay/designcolorplay";
 
 
-const designJournal: React.FC = () => {
-    const living = React.useRef(null);
-    const [bedroom, setbedroom] = React.useState([]);
+const DesignJournal: React.FC = () => {
     const [screenwidth, setWidth] = React.useState(window.innerWidth);
+    const [DesignJournal, setDesignJournal] = React.useState([]);
+
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     let hgtt = 0;
     if (window.innerWidth < 600) {
@@ -61,14 +61,13 @@ const designJournal: React.FC = () => {
         }, 1000);
     }, [handleResize]);
 
+
     React.useEffect(() => {
-        let api = simpleCallInitAPI(`${assetpath}/assets/bedroom.json`);
+        let api = simpleCallInitAPI(`${assetpath}/assets/designJournal.json`);
         api.then((data: any) => {
-            setbedroom(data.data.Bedroom);
+            setDesignJournal(data.data.livingRoom);
         });
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResized);
-    }, [handleResize, handleResized, assetpath]);
+    }, [assetpath]);
 
     const page = React.useRef(null);
     const [prevPosition, setPrev] = React.useState(0);
@@ -93,16 +92,14 @@ const designJournal: React.FC = () => {
                         <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
                     </div>
                     <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
-                    <div><DesignJorunaalBanner /></div>
-                    <div><DesignColorPlay /></div>
-                    {/* <div><ColorPlay/></div>
-                    <div><CraftingTheme/></div> */}
-                    <div><Warranty /></div>
-                    <div><Footer /></div>
+                        <div><DesignJorunaalBanner /></div>
+                        <div><DesignColorPlay /></div>
+                        <div><Warranty /></div>
+                        <div><Footer /></div>
                     </div>
                 </div>
             </div>
         </React.Fragment>
     )
 }
-export default designJournal;
+export default DesignJournal;

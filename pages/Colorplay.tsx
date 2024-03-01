@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import { simpleCallInitAPI } from "../services/ApicallInit";
 import ColorPlayBanner from "./components/ColorPlay/colorplay";
 import { log } from "console";
+import Warranty from "./components/warranty/Warranty";
 
 const ColorPlay: React.FC = () => {
     const living = React.useRef(null);
@@ -118,7 +119,7 @@ const ColorPlay: React.FC = () => {
                                 </div>
                                 <div className={css.heading}>{summary}</div>
                             </div>
-                        
+                        <div><Warranty/></div>
                         <div><Footer /></div>
                     </div>
                 </div>

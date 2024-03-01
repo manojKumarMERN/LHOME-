@@ -9,17 +9,28 @@
     justify-content: center;
     align-items: center;
 }
+.rowChange{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    margin: 0 auto;
+    text-align: justify;
+    padding: 4% 7% 0% 7%;
+    column-gap: 2%;
+    justify-content: center;
+    align-items: center;
+}
 
 .rowimg{
-    // width: 100%;
+width: 100%
 }
 
 .points {
-// width: 50%;
-    max-height: 13em;
+width: 90%;
+    max-height: 18em;
     overflow: hidden;
-    // display: flex;
-    
+    bottom: 10%;
+    font-size: 2vh;
 }
 .readmore{
    color: red;
