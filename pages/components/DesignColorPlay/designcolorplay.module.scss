@@ -27,7 +27,7 @@ width: 100%
 
 .points {
 width: 90%;
-    max-height: 18em;
+    max-height: 24em;
     overflow: hidden;
     bottom: 10%;
     font-size: 2vh;
@@ -36,12 +36,18 @@ width: 90%;
    color: red;
    flex-direction: column;
 }
-// .heading {
-//     color: black;
-//     text-align: left;
-//     font-size: 0.8vw;
-//     max-height: 5 * 1.2em;
-//     overflow: hidden;
-//     position: relative;
-//     margin: 0 !important;
-// }
+.heading {
+    font-family: "Montserrat";
+    font-size: 2vh;
+    font-weight: 500;
+    letter-spacing: 0em;
+    // text-align: justify;
+    color: #9F9F9F;
+}
+.heading1{
+    color: black;
+    font-weight: 500;
+    line-height: 28px;
+    font-size: 2vh;
+
+}

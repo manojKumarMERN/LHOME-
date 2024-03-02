@@ -95,11 +95,9 @@ const DesignColorPlay: React.FC = ({ }) => {
                         <b>{colorplayRowhead}</b>
                         <div className={css.sam}>
                             <div>{colorplaypoints.map((datas: any, index: number) => (
-                                <div key={`${datas.heading}_${index}_${index}`}  >
-
-                                    <b className={css.heading1}>{datas.heading} </b>
-                                    <p className={css.description_p}>{datas.discription}
-                                    </p>
+                                <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
+                                    <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
+                                    
                                 </div>
                             ))}
 
@@ -119,10 +117,9 @@ const DesignColorPlay: React.FC = ({ }) => {
                         <h2 dangerouslySetInnerHTML={{ __html: craftRowmainhead }}></h2>
                         <b>{craftRowhead}</b>
                         <div>{Craftingpoints.map((datas: any, index: number) => (
-                            <div key={`${datas.heading}_${index}_${index}`}  >
-                                <b className={css.heading1}>{datas.heading} </b>
-                                <p className={css.description_p}>{datas.discription}
-                                </p>
+                            <div key={`${datas.heading}_${index}_${index}`}  className={css.heading}>
+                        <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
+
                             </div>
 
                         ))}
@@ -143,10 +140,9 @@ const DesignColorPlay: React.FC = ({ }) => {
                         <h2 dangerouslySetInnerHTML={{ __html: unlockartistryRowmainhead }}></h2>
                         <b>{unlockartistryRowhead}</b>
                         <div>{unlockartistrypoints.map((datas: any, index: number) => (
-                            <div key={`${datas.heading}_${index}_${index}`}  >
-                                <b className={css.heading1}>{datas.heading} </b>
-                                <p className={css.description_p}>{datas.discription}
-                                </p>
+                            <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
+                        <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
+
                             </div>
 
                         ))}
@@ -166,10 +162,9 @@ const DesignColorPlay: React.FC = ({ }) => {
                         <h2 dangerouslySetInnerHTML={{ __html: artistrylightRowmainhead }}></h2>
                         <b>{artistrylightRowhead}</b>
                         <div>{artistrylightpoints.map((datas: any, index: number) => (
-                            <div key={`${datas.heading}_${index}_${index}`}  >
-                                <b className={css.heading1}>{datas.heading} </b>
-                                <p className={css.description_p}>{datas.discription}
-                                </p>
+                            <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
+                        <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
+                               
                             </div>
 
                         ))}
@@ -188,6 +183,7 @@ const DesignColorPlay: React.FC = ({ }) => {
                 </div>
 
                 <div>
+
                     <div className={css.points}>
                         <h2 dangerouslySetInnerHTML={{ __html: textureRowmainhead }}></h2>
                         <b>{textureRowhead}</b>
@@ -196,7 +192,6 @@ const DesignColorPlay: React.FC = ({ }) => {
                                 <b className={css.heading1}>{datas.heading} </b>
                                 <p className={css.description_p}>{datas.discription}
                                 </p>
-
                             </div>
 
                         ))}
@@ -215,13 +210,12 @@ const DesignColorPlay: React.FC = ({ }) => {
                 </div>
                 <div className="w-[100%]">
                     <div className={css.points}>
-                        <h2 dangerouslySetInnerHTML={{ __html: wallRowmainhead }}></h2>
+                    <h2 dangerouslySetInnerHTML={{ __html: wallRowmainhead }}></h2>
                         <b>{wallRowhead}</b>
                         <div>{wallpoints.map((datas: any, index: number) => (
-                            <div key={`${datas.heading}_${index}_${index}`}  >
-                                <b className={css.heading1}>{datas.heading} </b>
-                                <p className={css.description_p}>{datas.discription}
-                                </p>
+                            <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
+                            <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
+
                             </div>
 
                         ))}

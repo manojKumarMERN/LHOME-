@@ -31,7 +31,7 @@
   position: absolute;
   text-align: justify; 
   text-align-last: center;
-  left: 20%;
+  left: 27%;
   // top:700px;
   // transform: translateY(-50%);
 
@@ -60,64 +60,64 @@
 
 @media(min-width:2000px) {
   .texture_tagline {
-    // font-size: 2.8vw;
+    font-size: 3vw;
     line-height: 3.3vw;
   }
 
   .texture_tagline1 {
-    // font-size: 2.8vw;
+    font-size: 3vw;
     line-height: 3.3vw;
   }
 
   .texturebannercontent {
-    // top: 30%;
-    left: 67%;
+    top: 58%;
+    left: 33%;
   }
 
-  
+    
 }
 
 @media only screen and (max-width:2000px) and (min-width:1600px) {
-  // .texture_tagline {
-  //   // font-size: 3.5em;
-  // }
+  .texture_tagline {
+    font-size: 3.5em;
+  }
 
-  // .texture_tagline1 {
-  //   // font-size: 3.5em;
-  // }
+  .texture_tagline1 {
+    font-size: 3.5em;
+  }
 
   .texturebannercontent {
-    // top: 75%;
-    left: 30%;
+    top: 75%;
+    left: 33%;
   }
 }
 
 @media only screen and (max-width:1600px) and (min-width:1200px) {
-  // .texture_tagline {
-  //   // font-size: 3.5em;
-  // }
+  .texture_tagline {
+    font-size: 2.8em;
+  }
 
-  // .texture_tagline1 {
-  //   // font-size: 3.5em;
-  // }
+  .texture_tagline1 {
+    font-size: 2.8em;
+  }
 
   .texturebannercontent {
-    top: 31%;
+    top: 33%;
   }
  
 }
 
 
 @media only screen and (max-width:1200px) and (min-width:1000px) {
-  // .texture_tagline {
-  //   // font-size: 2.5em;
-  // }
+  .texture_tagline {
+    font-size: 1em;
+  }
 
-  // .texture_tagline1 {
-  //   // font-weight: 500;
-  //   // font-size: 2.5em;
+  .texture_tagline1 {
+    font-weight: 500;
+    font-size: 1em;
 
-  // }
+  }
 
   .texturebannercontent {
     top: 20%;
@@ -129,14 +129,14 @@
 }
 
 @media only screen and (max-width:1000px) and (min-width:900px) {
-  // .texture_tagline {
-  //   // font-size: 2em;
-  // }
+  .texture_tagline {
+    font-size: 1em;
+  }
 
-  // .texture_tagline1 {
-  //   // font-weight: 400;
-  //   // font-size: 2em;
-  // }
+  .texture_tagline1 {
+    font-weight: 400;
+    font-size: 1em;
+  }
 
   .texturebannercontent {
     white-space: nowrap;
@@ -152,19 +152,19 @@
   .texture_tagline {
     font-family: "Montserrat";
     color: #FFFFFF;
-    font-weight: 100 !important;
-    // font-size: 3em;
+    font-weight: 400 !important;
+    font-size: 1em;
   }
 
-  // .texture_tagline1 {
-  //   // font-weight: 400;
-  //   // font-size: 3em;
-  // }
+  .texture_tagline1 {
+    font-weight: 400;
+    font-size: 1em;
+  }
 
   .texturebannercontent {
-    top: 15%;
+    top:18%;
     left: unset;
-    right: 10%;
+    right: 35%;
   }
   
 }
@@ -172,14 +172,14 @@
 @media only screen and (max-width:600px) and (min-width:350px) {
   
 
-  // .texture_tagline {
-  //   // font-size: 1.75em;
-  // }
+  .texture_tagline {
+    font-size: 1em;
+  }
 
-  // .texture_tagline1 {
-  //   // font-weight: 400;
-  //   // font-size: 1.75em;
-  // }
+  .texture_tagline1 {
+    font-weight: 400;
+    font-size: 1em;
+  }
   .texturebannercontent {
     top: 15%;
   }
