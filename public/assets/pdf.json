@@ -1,16 +1,16 @@
 {
     "products": [
         {
-            "Kitchen": "assets/PDFfolder/Kitchen.pdf"
+            "id": 1,"name":"Kitchen","image": "Kitchen.pdf"
         },
         {
-            "Bedroom": "assets/PDFfolder/Bedroom.pdf"
+            "id": 2,"name":"Bedroom","image": "Bedroom.pdf"
         },
         {
-            "Furniture": "assets/PDFfolder/Furniture.pdf"
+            "id": 3,"name":"Furniture","image": "Furniture.pdf"
         },
         {
-            "LivingRoom": "assets/PDFfolder/LivingRoom.pdf"
+            "id": 4,"name":"LivingRoom","image": "LivingRoom.pdf"
         }
     ]
 }

@@ -40,7 +40,7 @@ const Bookfreedesign: React.FC<homeproperties> = ({ screenwidth, screenheight })
     const [nearestcentre, setNearestCentre] = React.useState('');
     const [meetingdate, setSelectDateData] = React.useState('');
     const [meetingtime, setSelectTimeData] = React.useState('');
-    console.log({ floorplan, location, own, planning, looking, budget, Possession, nearestcentre, meetingdate, meetingtime });
+    // console.log({ floorplan, location, own, planning, looking, budget, Possession, nearestcentre, meetingdate, meetingtime });
 
 
     const handleNext = () => {
