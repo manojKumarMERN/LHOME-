@@ -108,7 +108,7 @@ const Wall: React.FC = () => {
                                 <div className={css.boldheading}><b>{wallheading}</b></div><br />
                                 <div>{wallpoints.map((datas: any, index: number) => (
                                     <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
-                                        <b className={css.heading1}>{datas.heading} </b> {datas.discription}<br /><br />
+                                     <span className={css.heading1}>{datas.heading} </span>  {datas.discription}<br /><br />
                                     </div>
                                 ))}
                                 </div>

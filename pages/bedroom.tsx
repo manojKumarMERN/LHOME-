@@ -101,7 +101,6 @@ const ModularKitchenPage: React.FC = () => {
 
                     <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
                         <div><BedroomBanner /></div>
-                        <div>< DesignColorPlay/></div>
 
                         <div className={css.bedroom_bgclr}>
                 <div className={css.bedroom_filter_home}>

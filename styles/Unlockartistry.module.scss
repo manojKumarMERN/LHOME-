@@ -3,26 +3,30 @@
     font-size: 3vh;
     font-weight: 500;
     letter-spacing: 0em;
-    text-align: justify;
+    // text-align: justify;
     color: #9F9F9F;
+    
 }
 .points{
-    padding-top: 6%;
+    padding-top: 5%;
     width: 66%;
     margin: 0 auto;
     text-align: justify; 
+font-family: "Montserrat";
+        font-style: normal;  
+//   text-align-last: center;
 }
 .boldheading{
-    top: 20%;
     font-size: 3vh;
     color: black;
     text-align: justify;
     font-weight: 500;
+font-family: "Montserrat";
 }
 .heading1{
     color: black;
     font-weight: 500;
-    line-height: 39px;
+    line-height: 3px;
     font-size: 3vh;
 
 }
@@ -52,3 +56,16 @@
     overflow-y: auto;
     overflow-x: hidden !important;
 }
+@media(min-width:2000px) {
+    .heading{
+     font-size: 2.5em;
+ 
+    }
+    .heading1{
+     font-size: 1em;
+     
+    }
+    .boldheading{
+     font-size: 2.5em;
+    }
+   }

@@ -57,24 +57,24 @@
       padding: 5px 15px;
     }
  }
-  
+ 
   @media(min-width:2000px) {
     .wall_tagline {
-      font-size: 1.4vw;
+      font-size: 2.8vw;
       line-height: 3.3vw;
     }
   
     .wall_tagline1 {
-      font-size: 1.4vw;
+      font-size: 2.8vw;
       line-height: 3.3vw;
     }
   
     .wallbannercontent {
-      // top: 30%;
-      left: 67%;
+      top: 55%;
+      left: 33%;
     }
   
-    
+      
   }
   
   @media only screen and (max-width:2000px) and (min-width:1600px) {
@@ -87,7 +87,7 @@
     }
   
     .wallbannercontent {
-      // top: 75%;
+      top: 75%;
       left: 33%;
     }
   }
@@ -185,5 +185,5 @@
     }
     
   }
-  
+
   

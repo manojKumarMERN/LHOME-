@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
                     <div className={css.footerContent}>
                         <div className={css.footerContentHeader}>The Design Journal</div>
                         <div className={css.footerContentSubContent}>
-                            <div>Buying Guides</div>
+                        <Link href={{pathname:'/Designjournal'}} className="no-underline text-[#9F9F9F]"> <div>Buying Guides</div></Link>
                             <div>Style Your Home</div>
                             <div>Interior 101</div>
                             <div>Interiors By LHome</div>

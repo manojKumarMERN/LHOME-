@@ -38,7 +38,7 @@ const ColorPlayBanner: React.FC = () => {
                       </button></Link>
                         </div>
                     </div>
-                ))}
+                ))} 
 
             </div>
 

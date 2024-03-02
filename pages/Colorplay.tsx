@@ -112,7 +112,7 @@ const ColorPlay: React.FC = () => {
                                 <div className={css.boldheading}><b>{colorplayheading}</b></div><br />
                                 <div>{colorplaypoints.map((datas: any, index: number) => (
                                     <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
-                                        <b className={css.heading1}>{datas.heading} </b> {datas.discription}<br /><br />
+                                     <span className={css.heading1}>{datas.heading} </span>  {datas.discription}<br /><br />
 
                                     </div>
                                 ))}
