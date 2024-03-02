@@ -66,7 +66,7 @@ const ColorPlay: React.FC = () => {
         let api = simpleCallInitAPI(`${assetpath}/assets/designJournal.json`);
         api.then((data: any) => {
             let colorplay = [];
-            console.log(data.data.desginJournalRows.Colors.points)
+            // console.log(data.data.desginJournalRows.Colors.points)
             // data.data.desginJournalRows.Colors.points.forEach((datas: any) => {
             //     let lc: any = {};
             //     lc.points = `${assetpath}${datas.points}`;
@@ -81,7 +81,7 @@ const ColorPlay: React.FC = () => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResized);
     }, [handleResize, handleResized, assetpath]);
-    console.log(colorplaypoints);
+    // console.log(colorplaypoints);
 
     const page = React.useRef(null);
     const [prevPosition, setPrev] = React.useState(0);

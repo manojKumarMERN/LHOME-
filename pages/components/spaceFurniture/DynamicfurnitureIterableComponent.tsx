@@ -22,7 +22,7 @@ interface properties {
 
 
 const DynamicFurniturIterableComponent: React.FC<properties> = ({ data, prop, categoryId }) => {
-    console.log(data);
+    // console.log(data);
     const [show, setShow] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
     const [selectedIndex, setSelectedIndex] = React.useState(null);

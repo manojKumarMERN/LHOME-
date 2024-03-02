@@ -21,6 +21,7 @@ const FurnitureFilter: React.FC<properties> = ({ data }) => {
     const [selectedFurniture, setSelectedFurniture] = useState<string | null>(null);
     const [selectedType, setSelectedType] = useState<string | null>(null);
     const [holeData, setHoledata] = useState<[] | null>(null);
+    const [btnString, setBtnstring] = useState<Boolean | null>(true);
 
     const [furnitureMenuAnchor, setFurnitureMenuAnchor] = useState<null | HTMLElement>(null);
     const [typeMenuAnchor, setTypeMenuAnchor] = useState<null | HTMLElement>(null);
@@ -43,6 +44,13 @@ const FurnitureFilter: React.FC<properties> = ({ data }) => {
         setTypeMenuAnchor(null);
     };
 
+    const handleButChange = () => {
+        setSelectedFurniture(null);
+        setSelectedType(null);
+        setBtnstring(true);
+        setHoledata(data);
+    }
+
     const handleSearchClick = () => {
         console.log("Selected Furniture:", selectedFurniture);
         console.log("Selected Type:", selectedType);
@@ -50,7 +58,10 @@ const FurnitureFilter: React.FC<properties> = ({ data }) => {
         if (selectedFurniture && selectedType) {
             const filteredType = data.filter(item => item.furniture == selectedFurniture && item.Ftype == selectedType);
             setHoledata(filteredType)
-
+            if (btnString == true) {
+                setBtnstring(false)
+            }
+            else setBtnstring(true);
         }
 
         else {
@@ -96,7 +107,11 @@ const FurnitureFilter: React.FC<properties> = ({ data }) => {
                         alignItems: 'center',
                         cursor: 'pointer'
                     }} onClick={handleFurnitureMenuOpen}>
-                        <Typography variant="body1">{selectedFurniture ? selectedFurniture : "Furniture"}</Typography><FaChevronRight />
+                        <Typography variant="body1">
+                            {
+                                !btnString ? "Furniture" : selectedFurniture ? selectedFurniture : "Furniture"
+                            }
+                        </Typography><FaChevronRight />
                     </Box>
                     <Menu
                         anchorEl={furnitureMenuAnchor}
@@ -125,7 +140,11 @@ const FurnitureFilter: React.FC<properties> = ({ data }) => {
                         alignItems: 'center',
                         cursor: 'pointer'
                     }} onClick={handleTypeMenuOpen}>
-                        <Typography variant="body1">{selectedType ? selectedType : "Type"}</Typography><FaChevronRight />
+                        <Typography variant="body1">
+                            {
+                                !btnString ? "Type" : selectedType ? selectedType : "Type"
+                            }
+                        </Typography><FaChevronRight />
                     </Box>
                     <Menu
                         anchorEl={typeMenuAnchor}
@@ -160,7 +179,14 @@ const FurnitureFilter: React.FC<properties> = ({ data }) => {
                         alignItems: 'center',
                         cursor: 'pointer'
                     }}>
-                        <Typography variant="body1" color="#EF5350" onClick={handleSearchClick}>Search</Typography>
+
+                        {
+                            btnString ?
+                                <Typography variant="body1" color="#EF5350" onClick={handleSearchClick}>Search</Typography>
+                                :
+                                <Typography variant="body1" color="#EF5350" onClick={handleButChange}>Clear</Typography>
+                        }
+
                     </Box>
                 </Container>
             </ThemeProvider>

@@ -21,7 +21,7 @@ interface properties {
 
 const DetailsOfimg: React.FC<properties> = ({ data, selectedItem , index , categoryId, handleImageClick }) => {
 
-    console.log(data);
+    // console.log(data);
     
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     const [socialMediaList, setSocialMediaList] = React.useState([]);

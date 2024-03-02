@@ -20,7 +20,7 @@ function OtpLoginform({ setShow, number }) {
   };
 
   const handleSubmit = async () => {
-    console.log(1);
+    // console.log(1);
     
     if (otp.length !== 6 || isNaN(Number(otp))) {
       setOtpError('OTP must be a 6-digit number');

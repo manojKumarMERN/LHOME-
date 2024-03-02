@@ -9,7 +9,8 @@ import { AxiosService } from '../services/ApiService';
 import { getChatUserId, getUserId } from '../services/sessionProvider';
 import Cookies from 'js-cookie';
 import { toast } from 'react-toastify';
-import Products from '../public/assets/pdf.json'
+import Products from '../public/assets/pdf.json';
+// import '../public/assets/PDFfolder/Bedroom.pdf';
 
 interface ChildProps {
     onDataReceived: (data: string) => void;
@@ -26,7 +27,9 @@ const userEntrySchema = Yup.object().shape({
 });
 
 const Contentchatbox = (props: ChildProps) => {
-    console.log(Products);
+    const productsArray = Products.products || [];
+    // console.log(productsArray);
+
     const userId = getUserId();
     const district: string[] = [
         "Ariyalur",
@@ -73,6 +76,9 @@ const Contentchatbox = (props: ChildProps) => {
     const [messages, setMessages] = React.useState([]);
     const chatArea = React.useRef(null);
     const [processingResponse, setProcessingResponse] = React.useState(false);
+
+
+    
     const formik = useFormik({
         initialValues: {
           name: '',
@@ -154,7 +160,7 @@ const Contentchatbox = (props: ChildProps) => {
         if (messages.length % 3 === 0) {
             response = { sender: 'Bot', text: 'would you like to take a look at our products ?', checkbox1: `Yes`, checkbox2: 'No' };
         } else if (messages.length % 3 !== 1 && input.toLowerCase() == 'yes') {
-            response = { sender: 'Bot', text: '', products: ['kitchen', 'bedroom', 'living room', 'space saving furniture'] };
+            response = { sender: 'Bot', text: '', products: productsArray };
         } else if (messages.length % 3 !== 1 && input.toLowerCase() == 'no') {
             response = { sender: 'Bot', text: ' We are always available. Come back anytime!' };
         } else {
@@ -170,18 +176,20 @@ const Contentchatbox = (props: ChildProps) => {
 
         setInput('');
     }
+
+
     
     React.useEffect(() => {
         if (chatArea.current) {
             chatArea.current.scrollTop = chatArea.current.scrollHeight;
         }
-        setChatConversation(true);
         if(userId || getChatUserId()){
+            setChatConversation(true);
         }
     }, [messages, processingResponse,userId]);
 
 
-console.log(messages)
+
     return (
         <React.Fragment>
             <div className={css.maindivchatbot}>
@@ -232,7 +240,11 @@ console.log(messages)
                                             }
 
                                             {
-                                                message.products && message.products.map((product, index) => (<div key={index} className={css.botText + " mt-2 flex justify-between"}><span>{product}</span><IoArrowDownCircleOutline size={32} style={{ color: '#737373', cursor: 'pointer' }} /></div>))
+                                                message.products && message.products.map((product, index) => (
+                                                <div key={index} className={css.botText + " mt-2 flex justify-between algin-item-center"}><span>{product.name}</span>
+                                                <a href={`/assets/PDFfolder/${product.image}`} download={product.image.replace('.pdf', '')}><IoArrowDownCircleOutline size={32} style={{ color: '#737373', cursor: 'pointer' }} /></a>
+                                                </div>
+                                                ))
                                             }
                                         </div>
                                     </div>
