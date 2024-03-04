@@ -27,7 +27,7 @@ const TextureBanner: React.FC = () => {
 
         <React.Fragment>
 
-            <div>
+            <div className={css.imglinear}>
                 {texturebanner.map((datas: any, index: number) => (
                     <div key={`${datas.name}_${index}_${index}`} className={css.textureContainer}>
                         <img src={datas.texturebanner} alt="bannerImage" className={css.textureimage} />

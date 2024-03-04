@@ -106,7 +106,7 @@ const UnlockArtistry: React.FC = () => {
                         <div>< UnlockArtistryBanner /></div>
                        
                             <div className={css.points}>
-                                <div className={css.boldheading}><b>{unlockartistryheading}</b></div><br />
+                                <div className={css.boldheading}>{unlockartistryheading}</div><br />
                                 <div>{unlockartistrypoints.map((datas: any, index: number) => (
                                     <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
                                      <span className={css.heading1}>{datas.heading} </span>  {datas.discription}<br /><br />

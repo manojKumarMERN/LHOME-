@@ -92,7 +92,7 @@ const DesignColorPlay: React.FC = ({ }) => {
                     <div className={css.points}>
                         <h2 dangerouslySetInnerHTML={{ __html: colorplayRowmainhead }}></h2>
                         {/* {colorplayRowmainhead} */}
-                        <b>{colorplayRowhead}</b>
+                        <p className={css.subhead}>{colorplayRowhead}</p>
                         <div className={css.sam}>
                             <div>{colorplaypoints.map((datas: any, index: number) => (
                                 <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
@@ -108,6 +108,7 @@ const DesignColorPlay: React.FC = ({ }) => {
                 </div>
             </div>
 
+
             <div className={css.rowChange}>
                 <div className={css.rowimg}>
                     <img src={craftRowimg} />
@@ -115,7 +116,7 @@ const DesignColorPlay: React.FC = ({ }) => {
                 <div className="w-[100%]">
                     <div className={css.points}>
                         <h2 dangerouslySetInnerHTML={{ __html: craftRowmainhead }}></h2>
-                        <b>{craftRowhead}</b>
+                        <p className={css.subhead}>{craftRowhead}</p>
                         <div>{Craftingpoints.map((datas: any, index: number) => (
                             <div key={`${datas.heading}_${index}_${index}`}  className={css.heading}>
                         <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
@@ -138,7 +139,7 @@ const DesignColorPlay: React.FC = ({ }) => {
                 <div className="w-[100%]">
                     <div className={css.points}>
                         <h2 dangerouslySetInnerHTML={{ __html: unlockartistryRowmainhead }}></h2>
-                        <b>{unlockartistryRowhead}</b>
+                        <p className={css.subhead}>{unlockartistryRowhead}</p>
                         <div>{unlockartistrypoints.map((datas: any, index: number) => (
                             <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
                         <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
@@ -160,7 +161,7 @@ const DesignColorPlay: React.FC = ({ }) => {
                 <div className="w-[100%]">
                     <div className={css.points}>
                         <h2 dangerouslySetInnerHTML={{ __html: artistrylightRowmainhead }}></h2>
-                        <b>{artistrylightRowhead}</b>
+                        <p className={css.subhead}>{artistrylightRowhead}</p>
                         <div>{artistrylightpoints.map((datas: any, index: number) => (
                             <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
                         <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
@@ -186,7 +187,7 @@ const DesignColorPlay: React.FC = ({ }) => {
 
                     <div className={css.points}>
                         <h2 dangerouslySetInnerHTML={{ __html: textureRowmainhead }}></h2>
-                        <b>{textureRowhead}</b>
+                        <p className={css.subhead}>{textureRowhead}</p>
                         <div>{texturepoints.map((datas: any, index: number) => (
                             <div key={`${datas.heading}_${index}_${index}`}  >
                                 <b className={css.heading1}>{datas.heading} </b>
@@ -211,7 +212,7 @@ const DesignColorPlay: React.FC = ({ }) => {
                 <div className="w-[100%]">
                     <div className={css.points}>
                     <h2 dangerouslySetInnerHTML={{ __html: wallRowmainhead }}></h2>
-                        <b>{wallRowhead}</b>
+                    <p className={css.subhead}>{wallRowhead}</p>
                         <div>{wallpoints.map((datas: any, index: number) => (
                             <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
                             <span className={css.heading1}>{datas.heading} </span>  {datas.discription}

@@ -105,7 +105,7 @@ const Wall: React.FC = () => {
                     <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
                         <div><WallBanner /></div>
                             <div className={css.points}>
-                                <div className={css.boldheading}><b>{wallheading}</b></div><br />
+                                <div className={css.boldheading}>{wallheading}</div><br />
                                 <div>{wallpoints.map((datas: any, index: number) => (
                                     <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
                                      <span className={css.heading1}>{datas.heading} </span>  {datas.discription}<br /><br />

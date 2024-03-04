@@ -3,7 +3,7 @@ import css from './Footer.module.scss';
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
 import Link from "next/link";
-import { FaFacebookF,FaWhatsapp ,FaInstagram} from "react-icons/fa";
+import { FaFacebookF, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const Footer: React.FC = () => {
@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
     const [mobile, setMobile] = React.useState("");
     const [location, setLocation] = React.useState("");
     const [mail, setMail] = React.useState("");
-    const [Logo,setLogo]=React.useState("");
+    const [Logo, setLogo] = React.useState("");
 
     React.useEffect(() => {
         let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
@@ -45,15 +45,15 @@ const Footer: React.FC = () => {
 
                         <div id="logo" className={`${css.lhomelogoholder}`}>
                             <div className={css.lhomelogo}>
-                                <img  alt="logo" src={Logo} key={"uniqueKey"}/>
+                                <img alt="logo" src={Logo} key={"uniqueKey"} />
                             </div>
                         </div>
 
                         <div className={css.socialMedia}>
-                         <div className={css.socialMedia_icons}><FaFacebookF/></div>
-                         <div className={css.socialMedia_icons}><FaInstagram/></div>
-                         <div className={css.socialMedia_icons}><FaWhatsapp/></div>
-                         <div className={css.socialMedia_icons}><FaXTwitter/></div>
+                            <div className={css.socialMedia_icons}><FaFacebookF /></div>
+                            <div className={css.socialMedia_icons}><FaInstagram /></div>
+                            <div className={css.socialMedia_icons}><FaWhatsapp /></div>
+                            <div className={css.socialMedia_icons}><FaXTwitter /></div>
                         </div>
 
                         <div className={css.footerContentSubContent}>
@@ -63,14 +63,14 @@ const Footer: React.FC = () => {
                         </div>
 
                     </div>
-                    
+
                     <div className={css.footerContent}>
                         <div className={css.footerContentHeader}>Lhome</div>
                         <div className={css.footerContentSubContent}>
                             <div>Team</div>
-                            <Link target="_blank" href={{pathname:'/joinuspage'}} className="no-underline text-[#9F9F9F]"><div>Join Us</div></Link>
+                            <Link target="_blank" href={{ pathname: '/joinuspage' }} className="no-underline text-[#9F9F9F]"><div>Join Us</div></Link>
                             <div>Privacy Policy</div>
-                            <Link href={{pathname:'/referandearn'}} className="no-underline text-[#9F9F9F]"><div>Refer and Earn</div></Link>
+                            <Link href={{ pathname: '/referandearn' }} className="no-underline text-[#9F9F9F]"><div>Refer and Earn</div></Link>
                             <div>Disclaimer</div>
                         </div>
                     </div>
@@ -78,22 +78,25 @@ const Footer: React.FC = () => {
                     <div className={css.footerContent}>
                         <div className={css.footerContentHeader}>Customer Support</div>
                         <div className={css.footerContentSubContent}>
-                            <Link href={{pathname:'/CustomersupportPage' , query:{tab : 0}} } className="no-underline text-[#9F9F9F]"><div>Raise issue</div></Link>
-                            <Link href={{pathname:'/CustomersupportPage' , query:{tab : 1}} } className="no-underline text-[#9F9F9F]"><div>My issues</div></Link>
-                            <Link href={{pathname:'/CustomersupportPage' , query:{tab : 2}} } className="no-underline text-[#9F9F9F]"><div>Contact us</div></Link>
-                            <Link href={{pathname:'/GetfreeEstimate'} } className="no-underline text-[#9F9F9F]"><div>Get Estimate</div></Link>
-                            <Link href={{pathname:'/CustomersupportPage' , query:{tab : 3}} } className="no-underline text-[#9F9F9F]"><div>FAQs</div></Link>
+                            <Link href={{ pathname: '/CustomersupportPage', query: { tab: 0 } }} className="no-underline text-[#9F9F9F]"><div>Raise issue</div></Link>
+                            <Link href={{ pathname: '/CustomersupportPage', query: { tab: 1 } }} className="no-underline text-[#9F9F9F]"><div>My issues</div></Link>
+                            <Link href={{ pathname: '/CustomersupportPage', query: { tab: 2 } }} className="no-underline text-[#9F9F9F]"><div>Contact us</div></Link>
+                            <Link href={{ pathname: '/GetfreeEstimate' }} className="no-underline text-[#9F9F9F]"><div>Get Estimate</div></Link>
+                            <Link href={{ pathname: '/CustomersupportPage', query: { tab: 3 } }} className="no-underline text-[#9F9F9F]"><div>FAQs</div></Link>
                         </div>
                     </div>
 
                     <div className={css.footerContent}>
                         <div className={css.footerContentHeader}>The Design Journal</div>
-                        <div className={css.footerContentSubContent}>
-                        <Link href={{pathname:'/Designjournal'}} className="no-underline text-[#9F9F9F]"> <div>Buying Guides</div></Link>
-                            <div>Style Your Home</div>
-                            <div>Interior 101</div>
-                            <div>Interiors By LHome</div>
-                            <div>Lhome in Your City</div>
+                        <div className={css.footerContentSubContent1}>
+                            <div className={css.gridfooter}>
+                                <Link href={{ pathname: '/Colorplay' }} className="no-underline text-[#9F9F9F]"> <div>Color Play</div></Link>
+                                <Link href={{ pathname: '/CraftingTheme' }} className="no-underline text-[#9F9F9F]"> <div>Crafting Theme</div></Link>
+                                <Link href={{ pathname: '/Unlockartistry' }} className="no-underline text-[#9F9F9F]">  <div>Unlock Artistry</div></Link>
+                                <Link href={{ pathname: '/Artistrylight' }} className="no-underline text-[#9F9F9F]">  <div>Transforming Spaces</div></Link>
+                                <Link href={{ pathname: '/Texture' }} className="no-underline text-[#9F9F9F]">  <div>Texture and Materials</div></Link>
+                                <Link href={{ pathname: '/Wall' }} className="no-underline text-[#9F9F9F]">  <div>Walls</div></Link></div>
+
                         </div>
                     </div>
 
