@@ -156,7 +156,7 @@ const DesignColorPlay: React.FC = ({ }) => {
 
             <div className={css.rowChange}>
                 <div className={css.rowimg}>
-                    <img src={artistrylightRowimg} />
+                    <img src={artistrylightRowimg}/>
                 </div>
                 <div className="w-[100%]">
                     <div className={css.points}>
@@ -179,8 +179,8 @@ const DesignColorPlay: React.FC = ({ }) => {
 
 
             <div className={css.row1}>
-                <div className={css.rowimg}>
-                    <img src={textureRowimg} />
+                <div className={css.rowimg} style={{width:'155%'}}>
+                    <img src={textureRowimg}  />
                 </div>
 
                 <div>
