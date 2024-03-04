@@ -123,3 +123,18 @@
  }
 
 }
+
+.filter{
+  position: relative;
+}
+.filter div[class="MuiContainer-root MuiContainer-maxWidthLg css-1px3qm8-MuiContainer-root"]{
+  width: 100%;
+  margin:0 auto;
+  position: absolute;
+  right: 6%;
+  top: -50px;
+  @media (min-width:1200px){
+  max-width: none !important;
+
+}
+}

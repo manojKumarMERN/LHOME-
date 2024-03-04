@@ -241,7 +241,7 @@ const Contentchatbox = (props: ChildProps) => {
 
                                             {
                                                 message.products && message.products.map((product, index) => (
-                                                <div key={index} className={css.botText + " mt-2 flex justify-between algin-item-center"}><span>{product.name}</span>
+                                                <div key={index} className={css.botText + " mt-2 flex justify-between items-center"}><span>{product.name}</span>
                                                 <a href={`/assets/PDFfolder/${product.image}`} download={product.image.replace('.pdf', '')}><IoArrowDownCircleOutline size={32} style={{ color: '#737373', cursor: 'pointer' }} /></a>
                                                 </div>
                                                 ))

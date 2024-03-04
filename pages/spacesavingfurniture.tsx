@@ -127,7 +127,7 @@ const SpacesavingfurniturePage: React.FC = () => {
 
                         </div>
                         
-                        <div className="mt-[-5%]">
+                        <div className= {css.filter} >
                             <FurnitureFilter data={data}/>
                         </div>
                         
