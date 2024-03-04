@@ -110,7 +110,7 @@ const Texture: React.FC = () => {
                         <div><TextureBanner /></div>
                        
                             <div className={css.points}>
-                                <div className={css.boldheading}><b>{textureheading}</b></div><br/>
+                                <div className={css.boldheading}>{textureheading}</div><br/>
                                 <div>{Texturepoints.map((datas: any, index: number) => (
                                     <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
                                      <span className={css.heading1}>{datas.heading} </span>  {datas.discription}<br /><br />

@@ -106,7 +106,7 @@ const CraftingTheme: React.FC = () => {
                     <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
                         <div><CraftingThemeBanner /></div>
                             <div className={css.points}>
-                                <div className={css.boldheading}><b>{Craftingheading}</b></div><br />
+                                <div className={css.boldheading}>{Craftingheading}</div><br />
                                 <div>{Craftingpoints.map((datas: any, index: number) => (
                                     <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
                                      <span className={css.heading1}>{datas.heading} </span>  {datas.discription}<br /><br />

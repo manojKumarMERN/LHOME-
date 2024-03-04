@@ -32,9 +32,13 @@ width: 90%;
     bottom: 10%;
     font-size: 2vh;
 }
+.subhead{
+    font-weight: 500;
+}
 .readmore{
    color: red;
    flex-direction: column;
+   max-height: 40vh;
 }
 .heading {
     font-family: "Montserrat";
@@ -45,9 +49,20 @@ width: 90%;
     color: #9F9F9F;
 }
 .heading1{
+    font-family: "Montserrat";
     color: black;
     font-weight: 500;
-    line-height: 28px;
+    line-height: 20px;
     font-size: 2vh;
 
 }
+@media only screen and (min-width:320px) and (max-width: 780px){
+    .rowChange{
+        // display: flex ;
+        // flex-direction:column !important ;
+        display: block !important;
+    }
+    .row1{
+        display: block;
+    }
+ } 

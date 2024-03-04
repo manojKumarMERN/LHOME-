@@ -4,12 +4,15 @@
 
 .textureimage {
   width: 100%;
-  
+  opacity: 0.5;
   @media (max-width:576px) {
     height: 75vw;
   }
 }
+.imglinear{
+  background: linear-gradient(45deg, black, transparent)
 
+}
 .texture_tagline {
   color: #FFFFFF;
   // font-weight: 500;
@@ -70,7 +73,7 @@
   }
 
   .texturebannercontent {
-    top: 58%;
+    top: 32%;
     left: 33%;
   }
 
@@ -162,9 +165,9 @@
   }
 
   .texturebannercontent {
-    top:18%;
+    top:23%;
     left: unset;
-    right: 35%;
+    right: 22%;
   }
   
 }

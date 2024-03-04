@@ -27,7 +27,7 @@ const UnlockArtistryBanner: React.FC = () => {
 
         <React.Fragment>
 
-            <div>
+            <div className={css.imglinear}>
                 {Unlockartistrybanner.map((datas: any, index: number) => (
                     <div key={`${datas.name}_${index}_${index}`} className={css.unlockartistryContainer}>
                         <img src={datas.unlockartistrybanner} alt="bannerImage" className={css.unlockartistryimage} />
