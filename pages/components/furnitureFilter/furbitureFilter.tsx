@@ -59,7 +59,8 @@ const FurnitureFilter: React.FC<properties> = ({ data }) => {
             const filteredType = data.filter(item => item.furniture == selectedFurniture && item.Ftype == selectedType);
             setHoledata(filteredType)
             if (btnString == true) {
-                setBtnstring(false)
+                setBtnstring(false);
+
             }
             else setBtnstring(true);
         }
@@ -109,7 +110,7 @@ const FurnitureFilter: React.FC<properties> = ({ data }) => {
                     }} onClick={handleFurnitureMenuOpen}>
                         <Typography variant="body1">
                             {
-                                !btnString ? "Furniture" : selectedFurniture ? selectedFurniture : "Furniture"
+                                 selectedFurniture ? selectedFurniture : "Furniture"
                             }
                         </Typography><FaChevronRight />
                     </Box>
@@ -142,7 +143,7 @@ const FurnitureFilter: React.FC<properties> = ({ data }) => {
                     }} onClick={handleTypeMenuOpen}>
                         <Typography variant="body1">
                             {
-                                !btnString ? "Type" : selectedType ? selectedType : "Type"
+                                selectedType ? selectedType : "Type"
                             }
                         </Typography><FaChevronRight />
                     </Box>
