@@ -90,11 +90,11 @@ const Footer: React.FC = () => {
                         <div className={css.footerContentHeader}>The Design Journal</div>
                         <div className={css.footerContentSubContent1}>
                             <div className={css.gridfooter}>
-                                <Link href={{ pathname: '/Colorplay' }} className="no-underline text-[#9F9F9F]"> <div>Color Play</div></Link>
-                                <Link href={{ pathname: '/CraftingTheme' }} className="no-underline text-[#9F9F9F]"> <div>Crafting Theme</div></Link>
-                                <Link href={{ pathname: '/Unlockartistry' }} className="no-underline text-[#9F9F9F]">  <div>Unlock Artistry</div></Link>
-                                <Link href={{ pathname: '/Artistrylight' }} className="no-underline text-[#9F9F9F]">  <div>Transforming Spaces</div></Link>
-                                <Link href={{ pathname: '/Texture' }} className="no-underline text-[#9F9F9F]">  <div>Texture and Materials</div></Link>
+                                <Link href={{ pathname: '/Colorplay' }} className="no-underline text-[#9F9F9F]"> <div>Color</div></Link>
+                                <Link href={{ pathname: '/CraftingTheme' }} className="no-underline text-[#9F9F9F]"> <div>Theme</div></Link>
+                                <Link href={{ pathname: '/Unlockartistry' }} className="no-underline text-[#9F9F9F]">  <div>Spaces</div></Link>
+                                <Link href={{ pathname: '/Artistrylight' }} className="no-underline text-[#9F9F9F]">  <div>Light</div></Link>
+                                <Link href={{ pathname: '/Texture' }} className="no-underline text-[#9F9F9F]">  <div>Textures and Materials</div></Link>
                                 <Link href={{ pathname: '/Wall' }} className="no-underline text-[#9F9F9F]">  <div>Walls</div></Link></div>
 
                         </div>

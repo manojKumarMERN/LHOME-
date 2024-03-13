@@ -26,7 +26,7 @@ const ColorPlayBanner: React.FC = () => {
 
         <React.Fragment>
 
-            <div>
+            <div  className={css.imglinear}>
                 {colorplaybanner.map((datas: any, index: number) => (
                     <div key={`${datas.toptext}_${index}_${index}`} className={css.colorplayContainer}>
                         <img src={datas.colorplaybanner} alt="bannerImage" className={css.colorplayimage} />

@@ -1,10 +1,13 @@
 .craftingthemeimageContainer {
   position: relative;
 }
+.imglinear{
+  background: linear-gradient(45deg, black, transparent)
 
+}
 .craftingthemeimage {
   width: 100%;
-  
+  // opacity: 0.5 0.5 0.5 0.5;
   @media (max-width:576px) {
     height: 75vw;
   }
@@ -31,7 +34,7 @@
   position: absolute;
   text-align: justify; 
   text-align-last: center;
-  left: 35%;
+  left: 33%; 
   // top:700px;
   // transform: translateY(-50%);
 
@@ -87,8 +90,8 @@
   }
 
   .craftingthemebannercontent {
-    top: 75%;
-    left: 33%;
+    top: 28%;
+    left: 37%;
   }
 }
 

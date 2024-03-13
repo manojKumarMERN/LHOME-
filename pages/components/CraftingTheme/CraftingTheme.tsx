@@ -27,7 +27,7 @@ const CraftingThemeBanner: React.FC = () => {
 
         <React.Fragment>
 
-            <div>
+            <div className={css.imglinear}>  
                 {craftingthemebanner.map((datas: any, index: number) => (
                     <div key={`${datas.toptext}_${index}_${index}`} className={css.craftingthemeContainer}>
                         <img src={datas.craftingthemebanner} alt="bannerImage" className={css.craftingthemeimage} />
