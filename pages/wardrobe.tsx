@@ -212,7 +212,7 @@ const WardrobePage: React.FC = () => {
                         <div><Footer /></div>
                     </div>
                 </div>
-            </div>
+            </div>  
 
         </React.Fragment>
     )

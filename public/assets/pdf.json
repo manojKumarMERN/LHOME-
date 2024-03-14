@@ -1,16 +1,16 @@
 {
     "products": [
         {
-            "id": 1,"name":"Kitchen","image": "Kitchen.pdf"
+            "id": 1,"name":"Kitchen","image": "Kitchen.pdf","description":"Kitchen interiors encompass the thoughtful and harmonious design of the heart of the home."
         },
         {
-            "id": 2,"name":"Bedroom","image": "Bedroom.pdf"
+            "id": 2,"name":"Bedroom","image": "Bedroom.pdf","description":"Transform your bedroom into a tranquil oasis with our serene design. Soft, muted tones create a calming atmosphere, while plush textures invite you to unwind."
         },
         {
-            "id": 3,"name":"Furniture","image": "Furniture.pdf"
+            "id": 3,"name":"Furniture","image": "Furniture.pdf","description":"Our furniture collection blends timeless elegance with modern functionality, offering the perfect balance of style and comfort."
         },
         {
-            "id": 4,"name":"LivingRoom","image": "LivingRoom.pdf"
+            "id": 4,"name":"LivingRoom","image": "LivingRoom.pdf","description":"Welcome to our inviting living room, where comfort meets style in perfect harmony. Sink into our plush sofas and armchairs, adorned with sumptuous cushions and throws, offering a cozy haven for relaxation."
         }
     ]
 }
