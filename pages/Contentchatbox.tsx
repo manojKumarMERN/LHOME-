@@ -81,9 +81,7 @@ const Contentchatbox = (props: ChildProps) => {
     const [isExit, setIsExit] = React.useState(false);
     const [isSelected, setSelected] = React.useState(false);
 
-const test = () => {
-    console.log("yyyyyyy")
-}
+
     
     const formik = useFormik({
         initialValues: {

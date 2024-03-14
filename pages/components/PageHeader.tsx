@@ -207,7 +207,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
             <div id="logo" className={`${css.lhomelogoholder}`}>
               <div className={isSmallScreen2? `${css.lhomelogo}`:''}>
                 {/* <div ref={logo} className={`${css.lhomelogomask}`} /> */}
-                <a href="/"><img src={homeLogo} alt='homeLogo' key={"UniqueKey"} /></a>
+                <Link href="/"><img src={homeLogo} alt='homeLogo' key={"UniqueKey"} /></Link>
               </div>
             </div>
           </div>
