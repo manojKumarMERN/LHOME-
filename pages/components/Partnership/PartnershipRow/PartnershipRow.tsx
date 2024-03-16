@@ -72,7 +72,7 @@ const PartnershipRow: React.FC<PartnerProps> = ({ screenwidth }) => {
                     <div key={index} className={css.partnerRowbox}>
                         <div className={`${css.partnerRowLeft} ${css.partnerRowLeft1}`}>
                             <div className={css.partnerRowText}>{partner.text}</div>
-                            <div className={css.partnerRowBtn}>{partner.btn}</div>
+                            {/* <div className={css.partnerRowBtn}>{partner.btn}</div> */}
                         </div>
                         <div className={css.partnerRowRight}>
                             <div className={css.partnerImgOuter}>

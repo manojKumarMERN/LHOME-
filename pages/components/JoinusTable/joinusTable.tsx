@@ -27,6 +27,30 @@ const JoinusTable: React.FC = () => {
     });
   }, [assetpath]);
 
+  React.useEffect(() => {
+    // Check which state variable has been updated
+    if (selectedRole == "All"){
+      setSelectedRole(null);
+      setSelectedLocation(null);
+      setSelectedDepartment(null);
+    }else if (selectedRole !== null) {
+      // If 'selectedRole' has a value, set 'selectedLocation' and 'selectedDepartment' to null
+      setSelectedLocation(null);
+      setSelectedDepartment(null);
+    } else if (selectedLocation !== null) {
+      // If 'selectedLocation' has a value, set 'selectedRole' and 'selectedDepartment' to null
+      setSelectedRole(null);
+      setSelectedDepartment(null);
+    } 
+  }, [selectedRole, selectedLocation]);
+
+  React.useEffect(()=>{
+     if (selectedDepartment !== null) {
+      setSelectedRole(null);
+      setSelectedLocation(null);
+    }
+  },[selectedDepartment])
+  
 
   React.useEffect(() => {
     const filterData = () => {
