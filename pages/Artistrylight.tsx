@@ -106,7 +106,7 @@ const ArtistryLight: React.FC = () => {
                                      <span className={css.heading1}>{datas.heading} </span> <br/><br/> {datas.discription}<br /><br />
                                     </div>
                                 ))}
-                                </div>
+                                </div>  
                                 <div className={css.heading}>{summary}</div>
                             </div>
                        

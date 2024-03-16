@@ -12,12 +12,8 @@ interface CustomHeaderWithDropdownProps {
 const CustomHeaderWithDropdown: React.FC<CustomHeaderWithDropdownProps> = ({ label, value, onSelectionChange }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState<string | null>(null);
-  // const uniqueValues = [...new Set(value.map(item => item[label.toLowerCase()]))];
-
-  // // Add 'Rajapalayam' to the unique values
-  // if (!uniqueValues.includes('Rajapalayam')) {
-  //   uniqueValues.push('Rajapalayam');
-  // }
+ 
+  
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
@@ -43,6 +39,7 @@ const CustomHeaderWithDropdown: React.FC<CustomHeaderWithDropdownProps> = ({ lab
       }
     })
   }else{
+    val.push("All")
     value.forEach((item) => {
       if (val.includes(item.department)) {
       } else {

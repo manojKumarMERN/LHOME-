@@ -139,7 +139,7 @@ interface WhyLhomeproperties {
                                        Contactless Experience
                                     </div>
                                     <div className={css.secondText}>
-                                       No stepping out. Design your home interiors from the safety and comfort of your home.
+                                       Design your home interiors from the safety and comfort of your home.
                                     </div>
                                  </div>
                                  <div 

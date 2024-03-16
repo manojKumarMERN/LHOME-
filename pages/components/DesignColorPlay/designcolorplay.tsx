@@ -90,7 +90,7 @@ const DesignColorPlay: React.FC = ({ }) => {
 
                 <div className="w-[100%]">
                     <div className={css.points}>
-                        <h2 dangerouslySetInnerHTML={{ __html: colorplayRowmainhead }}></h2>
+                        <h2 className="font-semibold" dangerouslySetInnerHTML={{ __html: colorplayRowmainhead }}></h2>
                         {/* {colorplayRowmainhead} */}
                         <p className={css.subhead}>{colorplayRowhead}</p>
                         <div className={css.sam}>
@@ -115,7 +115,7 @@ const DesignColorPlay: React.FC = ({ }) => {
                 </div>
                 <div className="w-[100%]">
                     <div className={css.points}>
-                        <h2 dangerouslySetInnerHTML={{ __html: craftRowmainhead }}></h2>
+                        <h2 className="font-semibold" dangerouslySetInnerHTML={{ __html: craftRowmainhead }}></h2>
                         <p className={css.subhead}>{craftRowhead}</p>
                         <div>{Craftingpoints.map((datas: any, index: number) => (
                             <div key={`${datas.heading}_${index}_${index}`}  className={css.heading}>
@@ -138,7 +138,7 @@ const DesignColorPlay: React.FC = ({ }) => {
                 </div>
                 <div className="w-[100%]">
                     <div className={css.points}>
-                        <h2 dangerouslySetInnerHTML={{ __html: unlockartistryRowmainhead }}></h2>
+                        <h2 className="font-semibold" dangerouslySetInnerHTML={{ __html: unlockartistryRowmainhead }}></h2>
                         <p className={css.subhead}>{unlockartistryRowhead}</p>
                         <div>{unlockartistrypoints.map((datas: any, index: number) => (
                             <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
@@ -160,7 +160,7 @@ const DesignColorPlay: React.FC = ({ }) => {
                 </div>
                 <div className="w-[100%]">
                     <div className={css.points}>
-                        <h2 dangerouslySetInnerHTML={{ __html: artistrylightRowmainhead }}></h2>
+                        <h2 className="font-semibold" dangerouslySetInnerHTML={{ __html: artistrylightRowmainhead }}></h2>
                         <p className={css.subhead}>{artistrylightRowhead}</p>
                         <div>{artistrylightpoints.map((datas: any, index: number) => (
                             <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
@@ -186,7 +186,7 @@ const DesignColorPlay: React.FC = ({ }) => {
                 <div>
 
                     <div className={css.points}>
-                        <h2 dangerouslySetInnerHTML={{ __html: textureRowmainhead }}></h2>
+                        <h2 className="font-semibold" dangerouslySetInnerHTML={{ __html: textureRowmainhead }}></h2>
                         <p className={css.subhead}>{textureRowhead}</p>
                         <div>{texturepoints.map((datas: any, index: number) => (
                             <div key={`${datas.heading}_${index}_${index}`}  >
@@ -211,7 +211,7 @@ const DesignColorPlay: React.FC = ({ }) => {
                 </div>
                 <div className="w-[100%]">
                     <div className={css.points}>
-                    <h2 dangerouslySetInnerHTML={{ __html: wallRowmainhead }}></h2>
+                    <h2 className="font-semibold" dangerouslySetInnerHTML={{ __html: wallRowmainhead }}></h2>
                     <p className={css.subhead}>{wallRowhead}</p>
                         <div>{wallpoints.map((datas: any, index: number) => (
                             <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >

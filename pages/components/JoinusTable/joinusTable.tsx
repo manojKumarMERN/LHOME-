@@ -45,7 +45,12 @@ const JoinusTable: React.FC = () => {
   }, [selectedRole, selectedLocation]);
 
   React.useEffect(()=>{
-     if (selectedDepartment !== null) {
+     if (selectedDepartment == "All") {
+      setSelectedRole(null);
+      setSelectedLocation(null);
+      setSelectedDepartment(null);
+
+    } else if (selectedDepartment !== null) {
       setSelectedRole(null);
       setSelectedLocation(null);
     }
