@@ -13,6 +13,7 @@ import Image from "next/image";
 import Head from 'next/head';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '@fontsource/montserrat';
 
 function SafeHydrate({ children }) {
   return (

@@ -146,8 +146,8 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
         case 'Customer stories':
           router.push('/customstories')
           break;
-        case 'Unknown':
-          router.push('/unknow');
+        case 'Design journal':
+          router.push('/Designjournal');
           break;
         case 'Partner With LHome':
           router.push('/partnership');
@@ -345,7 +345,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                     </Link>
                     : ''
                   }
-                  {menuoptionsstring.indexOf("Customer stories,") < 0 ?
+                  {menuoptionsstring.indexOf("Customer stories,Design journal") < 0 ?
                     <div id="others" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_6} + d-flex`}>
                       <div>Other</div>
                       <div className={css.otherDropDown}>

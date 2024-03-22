@@ -1,12 +1,14 @@
 .craftingthemeimageContainer {
   position: relative;
 }
-.imglinear{
-  background: linear-gradient(45deg, black, transparent)
 
+.imglinear {
+  background: linear-gradient(45deg, black, transparent)
 }
+
 .craftingthemeimage {
   width: 100%;
+
   // opacity: 0.5 0.5 0.5 0.5;
   @media (max-width:576px) {
     height: 75vw;
@@ -30,17 +32,33 @@
   line-height: 100%;
   // text-align: center;
 }
-.craftingthemebannercontent{
+
+.craftingthemebannercontent {
   position: absolute;
-  text-align: justify; 
+  text-align: justify;
   text-align-last: center;
-  left: 35%; 
+  left: 33%;
   // top:700px;
   // transform: translateY(-50%);
 
 }
-.craftingthemebannercontent button{
+
+.craftingthemebannercontent button {
   left: 30%;
+}
+.btnicon {
+  margin-right: 10px;
+}
+
+.circle {
+  height: 23px;
+  width: 23px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border: 1px solid #fff;
+  align-items: center;
 }
 
 .bannerbtn {
@@ -48,17 +66,26 @@
   position: "absolute";
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.9vw;
   line-height: 20px;
   left: 300px;
   color: #FFFFFF;
   border-radius: 5px;
-  padding: 15px 25px;
-  @media (max-width:2000px){
-    font-size: 12px;
+  padding: 18px 25px;
+  @media (max-width:2000px) {
+    font-size: 13px;
     padding: 5px 15px;
   }
+}
+
+.iconpar {
+  display: flex;
+}
+
+.btnicon {
+  display: flex;
+  align-items: center;
 }
 
 @media(min-width:2000px) {
@@ -74,10 +101,10 @@
 
   .craftingthemebannercontent {
     top: 30%;
-    left: 35%;
+    left: 33%;
   }
 
-    
+
 }
 
 @media only screen and (max-width:2000px) and (min-width:1600px) {
@@ -100,16 +127,20 @@
 @media only screen and (max-width:1600px) and (min-width:1200px) {
   .craftingtheme_tagline {
     font-size: 2.8em;
+    font-weight: 600;
+
   }
 
   .craftingtheme_tagline1 {
     font-size: 2.8em;
+    font-weight: 600;
+
   }
 
   .craftingthemebannercontent {
     top: 30%;
   }
- 
+
 }
 
 
@@ -129,7 +160,7 @@
     left: 54%;
   }
 
-  
+
 
 }
 
@@ -145,15 +176,15 @@
 
   .craftingthemebannercontent {
     white-space: nowrap;
-}
+  }
 
-  
+
 }
 
 
 
 @media (max-width:1000px) {
-  
+
   .craftingtheme_tagline {
     font-family: "Montserrat";
     color: #FFFFFF;
@@ -167,15 +198,15 @@
   }
 
   .craftingthemebannercontent {
-    top:23%;
+    top: 23%;
     left: unset;
     right: 25%;
   }
-  
+
 }
 
 @media only screen and (max-width:600px) and (min-width:350px) {
-  
+
 
   .craftingtheme_tagline {
     font-size: 1em;
@@ -185,9 +216,9 @@
     font-weight: 400;
     font-size: 1em;
   }
+
   .craftingthemebannercontent {
     top: 15%;
   }
-  
-}
 
+}

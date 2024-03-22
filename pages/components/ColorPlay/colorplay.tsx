@@ -3,6 +3,8 @@ import css from "./colorplay.module.scss";
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
 import Link from "next/link";
+import { FaArrowRight } from 'react-icons/fa';
+
 
 const ColorPlayBanner: React.FC = () => {
     const [colorplaybanner, setColorplayBanner] = useState([]);
@@ -31,10 +33,13 @@ const ColorPlayBanner: React.FC = () => {
                     <div key={`${datas.toptext}_${index}_${index}`} className={css.colorplayContainer}>
                         <img src={datas.colorplaybanner} alt="bannerImage" className={css.colorplayimage} />
                         <div className={css.colorplaybannercontent}>
-                            <h4 className={css.colorplay_tagline}>Color plays a vital  </h4> <h2 className={css.colorplay_tagline1}>role in interiors </h2>
+                            <h2 className={css.colorplay_tagline}>Color plays a vital  </h2> <h2 className={css.colorplay_tagline1}>role in interiors </h2>
                        <Link href={{pathname: '/CraftingTheme'}}>
                             <button className={css.bannerbtn} >
-                        To know more about Themes
+                            <div className={css.iconpar}>
+                                        <div className={css.btnicon}>To know more about Themes </div>
+                                        <div className={css.circle}><FaArrowRight /></div>
+                                    </div> 
                       </button></Link>
                         </div>
                     </div>

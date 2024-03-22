@@ -3,6 +3,7 @@ import css from "./wall.module.scss";
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
 import Link from "next/link";
+import { FaArrowRight } from 'react-icons/fa';
 
 
 const WallBanner: React.FC = () => {
@@ -35,7 +36,11 @@ const WallBanner: React.FC = () => {
                             <h4 className={css.wall_tagline}>Elevate your space with Walls </h4> <h2 className={css.wall_tagline1}>that do more than enclose     </h2>
                        <Link href={{pathname: '/CraftingTheme'}}>
                             <button className={css.bannerbtn} >
-                        To know more about Themes   
+                            <div className={css.iconpar}>
+                                        <div className={css.btnicon}>To know more about Themes </div>
+                                        <div className={css.circle}><FaArrowRight /></div>
+                                    </div> 
+                          
                       </button></Link>
                         </div>
                     </div>  

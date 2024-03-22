@@ -87,6 +87,9 @@ const DropDownMenu: React.FC<DropDownProps> = ({ options }) => {
       case 'Customer Support':
         router.push('/customersupportpage');
         break;
+        case 'Design journal':
+          router.push('/Designjournal');
+          break;
       default:
         console.log("Unhandled option:", option);
         break;

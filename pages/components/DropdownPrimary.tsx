@@ -46,9 +46,9 @@ const DropDownMenuPrimary: React.FC<DropDownProps> = ({ options, cities }) => {
       case 'Home':
         router.push('/');
         break;
-      case 'Design Gallery':
-        router.push('/designgallery');
-        break;
+      // case 'Design Gallery':
+      //   router.push('/designgallery');
+      //   break;
       case 'Modular Kitchen':
         router.push('/modularkitchen');
         break;
@@ -91,6 +91,7 @@ const DropDownMenuPrimary: React.FC<DropDownProps> = ({ options, cities }) => {
       case 'Customer Support':
         router.push('/customersupportpage');
         break;
+      
       default:
         console.log("Unhandled option:", option);
         break;

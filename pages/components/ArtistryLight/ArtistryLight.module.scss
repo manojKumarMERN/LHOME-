@@ -4,7 +4,7 @@
 
 .artistrylightimage {
   width: 100%;
-  
+
   @media (max-width:576px) {
     height: 75vw;
   }
@@ -27,17 +27,33 @@
   line-height: 100%;
   // text-align: center;
 }
-.artistrylightbannercontent{
+
+.artistrylightbannercontent {
   position: absolute;
-  text-align: justify; 
+  text-align: justify;
   text-align-last: center;
   left: 31%;
   // top:700px;
   // transform: translateY(-50%);
 
 }
-.artistrylightbannercontent button{
+
+.artistrylightbannercontent button {
   left: 30%;
+}
+.btnicon {
+  margin-right: 10px;
+}
+
+.circle {
+  height: 23px;
+  width: 23px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border: 1px solid #fff;
+  align-items: center;
 }
 
 .bannerbtn {
@@ -45,18 +61,29 @@
   position: "absolute";
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.9vw;
   line-height: 20px;
   left: 300px;
   color: #FFFFFF;
   border-radius: 5px;
-  padding: 15px 25px;
-  @media (max-width:2000px){
-    font-size: 14px;
+  padding: 18px 25px;
+  @media (max-width:2000px) {
+    font-size: 13px;
     padding: 5px 15px;
   }
 }
+
+.iconpar {
+  display: flex;
+}
+
+.btnicon {
+  display: flex;
+  align-items: center;
+}
+
+
 
 @media(min-width:2000px) {
   .artistrylight_tagline {
@@ -74,7 +101,7 @@
     left: 32%;
   }
 
-    
+
 }
 
 @media only screen and (max-width:2000px) and (min-width:1600px) {
@@ -97,16 +124,20 @@
 @media only screen and (max-width:1600px) and (min-width:1200px) {
   .artistrylight_tagline {
     font-size: 2.8em;
+    font-weight: 600;
+
   }
 
   .artistrylight_tagline1 {
     font-size: 2.8em;
+    font-weight: 600;
+
   }
 
   .artistrylightbannercontent {
     top: 33%;
   }
- 
+
 }
 
 
@@ -126,7 +157,7 @@
     left: 54%;
   }
 
-  
+
 
 }
 
@@ -142,15 +173,15 @@
 
   .artistrylightbannercontent {
     white-space: nowrap;
-}
+  }
 
-  
+
 }
 
 
 
 @media (max-width:1000px) {
-  
+
   .artistrylight_tagline {
     font-family: "Montserrat";
     color: #FFFFFF;
@@ -164,15 +195,15 @@
   }
 
   .artistrylightbannercontent {
-    top:23%;
+    top: 23%;
     left: unset;
     right: 20%;
   }
-  
+
 }
 
 @media only screen and (max-width:600px) and (min-width:350px) {
-  
+
 
   .artistrylight_tagline {
     font-size: 1em;
@@ -182,9 +213,9 @@
     font-weight: 400;
     font-size: 1em;
   }
+
   .artistrylightbannercontent {
     top: 15%;
   }
-  
-}
 
+}

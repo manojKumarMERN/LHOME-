@@ -3,6 +3,7 @@ import css from "./Unlockartistry.module.scss";
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
 import Link from "next/link";
+import { FaArrowRight } from 'react-icons/fa';
 
 
 const UnlockArtistryBanner: React.FC = () => {
@@ -35,7 +36,11 @@ const UnlockArtistryBanner: React.FC = () => {
                             <h4 className={css.unlockartistry_tagline}>Unlock the artistry of </h4> <h2 className={css.unlockartistry_tagline1}>Space in interiors  </h2>
                        <Link href={{pathname: '/Artistrylight'}}>
                             <button className={css.bannerbtn} >
-                        To know more about Lighting
+                            <div className={css.iconpar}>
+                                        <div className={css.btnicon}> To know more about Lighting</div>
+                                        <div className={css.circle}><FaArrowRight /></div>
+                                    </div> 
+                        
                       </button></Link>
                         </div>
                     </div>

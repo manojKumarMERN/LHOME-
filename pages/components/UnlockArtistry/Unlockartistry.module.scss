@@ -1,16 +1,16 @@
-
 .unlockartistryimageContainer {
   position: relative;
-  
-}
-.imglinear{
-  background: linear-gradient(45deg, black, transparent)
 
+}
+
+.imglinear {
+  background: linear-gradient(45deg, black, transparent)
 }
 
 .unlockartistryimage {
   width: 100%;
   opacity: 0.5;
+
   @media (max-width:576px) {
     height: 75vw;
   }
@@ -33,17 +33,34 @@
   line-height: 100%;
   // text-align: center;
 }
-.unlockartistrybannercontent{
+
+.unlockartistrybannercontent {
   position: absolute;
-  text-align: justify; 
+  text-align: justify;
   text-align-last: center;
   left: 33%;
   // top:700px;
   // transform: translateY(-50%);
 
 }
-.unlockartistrybannercontent button{
+
+.unlockartistrybannercontent button {
   left: 30%;
+}
+
+.btnicon {
+  margin-right: 10px; 
+}
+
+.circle {
+  height: 23px;
+  width: 23px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border: 1px solid #fff;
+  align-items: center;
 }
 
 .bannerbtn {
@@ -51,17 +68,26 @@
   position: "absolute";
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.9vw;
   line-height: 20px;
   left: 300px;
   color: #FFFFFF;
   border-radius: 5px;
-  padding: 15px 25px;
-  @media (max-width:2000px){
-    font-size: 12px;
+  padding: 18px 25px;
+  @media (max-width:2000px) {
+    font-size: 13px;
     padding: 5px 15px;
   }
+}
+
+.iconpar {
+  display: flex;
+}
+
+.btnicon {
+  display: flex;
+  align-items: center;
 }
 
 @media(min-width:2000px) {
@@ -80,7 +106,7 @@
     left: 33%;
   }
 
-    
+
 }
 
 @media only screen and (max-width:2000px) and (min-width:1600px) {
@@ -94,23 +120,27 @@
 
   .unlockartistrybannercontent {
     top: 28%;
-      left: 33%;
+    left: 33%;
   }
 }
 
 @media only screen and (max-width:1600px) and (min-width:1200px) {
   .unlockartistry_tagline {
     font-size: 2.8em;
+    font-weight: 600;
+
   }
 
   .unlockartistry_tagline1 {
     font-size: 2.8em;
+    font-weight: 600;
+
   }
 
   .unlockartistrybannercontent {
     top: 35%;
   }
- 
+
 }
 
 
@@ -120,7 +150,7 @@
   }
 
   .unlockartistry_tagline1 {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1em;
 
   }
@@ -130,7 +160,7 @@
     left: 54%;
   }
 
-  
+
 
 }
 
@@ -146,15 +176,15 @@
 
   .unlockartistrybannercontent {
     white-space: nowrap;
-}
+  }
 
-  
+
 }
 
 
 
 @media (max-width:1000px) {
-  
+
   .unlockartistry_tagline {
     font-family: "Montserrat";
     color: #FFFFFF;
@@ -168,15 +198,15 @@
   }
 
   .unlockartistrybannercontent {
-    top:23%;
+    top: 23%;
     left: unset;
     right: 25%;
   }
-  
+
 }
 
 @media only screen and (max-width:600px) and (min-width:350px) {
-  
+
 
   .unlockartistry_tagline {
     font-size: 1em;
@@ -186,9 +216,9 @@
     font-weight: 400;
     font-size: 1em;
   }
+
   .unlockartistrybannercontent {
     top: 15%;
   }
-  
-}
 
+}
