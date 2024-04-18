@@ -375,7 +375,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                       <Modal.Header  >
                         <AiFillCloseCircle onClick={handleClose} />
                       </Modal.Header>
-                      <LoginRegisterPage setShow={setShow} />
+                      <LoginRegisterPage setShow={setShow} currentPage={undefined} />
                     </Modal>
                   </div>}
                   

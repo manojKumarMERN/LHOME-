@@ -11,50 +11,51 @@ import { getUserId } from '../../../services/sessionProvider';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
 import Share from '../../Share';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 interface properties {
-    data: any ,
-    categoryId : any
+    data: any,
+    categoryId: any
 }
 
 
 
-const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) => {
+const DynamicIterableComponent: React.FC<properties> = ({ data, categoryId }) => {
     const [show, setShow] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
     const [selectedIndex, setSelectedIndex] = React.useState(null);
-    const [res , setRes] = React.useState([]);
+    const [res, setRes] = React.useState([]);
 
-    React.useEffect(()=>{
+    React.useEffect(() => {
         let fetchData = async () => {
             try {
-                 const response = await AxiosService.post('/wishes', {
-                   loginId: getUserId(),
-                   categoryId : categoryId
-                 });
-                 setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);
-             
-            } catch (error) {
-              console.error('Error:', error.message);
-            }
-          };
-      
-          fetchData();
-    },[categoryId , show])
+                const response = await AxiosService.post('/wishes', {
+                    loginId: getUserId(),
+                    categoryId: categoryId
+                });
+                setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);
 
-     
-    const handlelike = async(index) => {        
+            } catch (error) {
+                console.error('Error:', error.message);
+            }
+        };
+
+        fetchData();
+    }, [categoryId, show])
+
+
+    const handlelike = async (index) => {
         try {
-            if(getUserId()){
-                const resp = await AxiosService.post(`/wish/${index}`, {loginId: getUserId() , categoryId : categoryId})
-    
-                if(resp?.status === 200){
+            if (getUserId()) {
+                const resp = await AxiosService.post(`/wish/${index}`, { loginId: getUserId(), categoryId: categoryId })
+
+                if (resp?.status === 200) {
                     const response = await AxiosService.post('/wishes', {
                         loginId: getUserId(),
-                        categoryId : categoryId
-                      });
-                      setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);            }
-            }else{
+                        categoryId: categoryId
+                    });
+                    setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);
+                }
+            } else {
                 toast('please login to use');
             }
 
@@ -66,27 +67,27 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
     const updatedData = data.map((element, index) => {
         const matchingItem = res.find(item => item.index == index);
         if (matchingItem) {
-          return { ...element, liked: true };
+            return { ...element, liked: true };
         }
         return element;
-      });
+    });
 
 
-    const handlePopup = (item , index) => {
+    const handlePopup = (item, index) => {
         setSelectedItem(item);
         setSelectedIndex(index);
         setShow(true);
     };
-    
+
 
     const handleClose = () => {
         setShow(false);
     }
     const [shareShow, setShareShow] = React.useState(false);
-    const handleShareShow =()=>{
+    const handleShareShow = () => {
         setShareShow(true);
     }
-    const handleShareClose = () =>{
+    const handleShareClose = () => {
         setShareShow(false);
     }
     const handleImageClick = (item: any, index: number) => {
@@ -102,34 +103,40 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
                         <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 ">
                             {
                                 updatedData.map((item, index) => (
-                                    <div className={"p-3 w-full h-full " + css.divCard} key={index} 
+                                    <div className={"p-3 w-full h-full " + css.divCard} key={index}
                                     >
                                         {item?.image ?
                                             <div className={css.customdivisionchild}  >
                                                 <div className={css.customimage} >
-                                                    <img loading="lazy" className='' src={item.image} onClick={() => handlePopup(item , index) } alt='images' />
-                                                    <div className={" w-full flex grid-cols-5 "} style={{padding:"2% 0 3%"}}>
-                                                        <div className="w-full col-span-3 " onClick={() => handlePopup(item , index) }>
+                                                    {/* <img loading="lazy" className='' src={item.image} onClick={() => handlePopup(item , index) } alt='images' />
+                                                     */}
+                                                    <LazyLoadImage
+                                                        src={item.image} 
+                                                        alt='images' 
+                                                        onClick={() => handlePopup(item, index)} 
+                                                    />
+                                                    <div className={" w-full flex grid-cols-5 "} style={{ padding: "2% 0 3%" }}>
+                                                        <div className="w-full col-span-3 " onClick={() => handlePopup(item, index)}>
                                                             <span className={css.customname + " sm:text-[8px] md:text-[12px]"}>{item.name}</span>
                                                             <span className={css.customtext}>
                                                                 {item.size}
                                                             </span>
                                                         </div>
-                                                        <div  className={css.dynamicIcons_content}>
-                                                        <div className={'col-span-1 ' + css.com_icons} >
-                                                            <span className={css.wishlistholder} >
-                                                            <div onClick={()=>handlelike(index)}>
-                                                            {
-                                                                    item?.liked ? <BsHeartFill  style={{color: '#F44336'}}/> : <BsHeart /> 
-                                                            }
-                                                        </div> 
-                                                            </span>
-                                                        </div>
-                                                        <div className={'col-span-1 ' + css.com_icons} >
-                                                            <span className={css.shareholder}>
-                                                                <FaRegShareFromSquare onClick={handleShareShow}/>
-                                                            </span>
-                                                        </div>
+                                                        <div className={css.dynamicIcons_content}>
+                                                            <div className={'col-span-1 ' + css.com_icons} >
+                                                                <span className={css.wishlistholder} >
+                                                                    <div onClick={() => handlelike(index)}>
+                                                                        {
+                                                                            item?.liked ? <BsHeartFill style={{ color: '#F44336' }} /> : <BsHeart />
+                                                                        }
+                                                                    </div>
+                                                                </span>
+                                                            </div>
+                                                            <div className={'col-span-1 ' + css.com_icons} >
+                                                                <span className={css.shareholder}>
+                                                                    <FaRegShareFromSquare onClick={handleShareShow} />
+                                                                </span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -137,19 +144,19 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
                                             :
                                             <div className={css.customdivisionchild}>
                                                 <div className={css.customGrey + " grid grid-rows-3"}>
-                                                <div className='flex flex-column gap-2 items-center'>
-                                                    <div className={css.custom_icons}>
-                                                        <img src={item.icon} alt="icon" className={css.icon_image} />
-                                                    </div>
-                                                    <div className='row '>
-                                                        <div className='col-lg-2 '></div>
-                                                        <div className='col-lg-8 '><p className={css.content} 
-                                                        dangerouslySetInnerHTML={{ __html: item.content }}></p></div>
-                                                        <div className='col-lg-2 '></div>
-                                                    </div>
+                                                    <div className='flex flex-column gap-2 items-center'>
+                                                        <div className={css.custom_icons}>
+                                                            <img src={item.icon} alt="icon" className={css.icon_image} />
+                                                        </div>
+                                                        <div className='row '>
+                                                            <div className='col-lg-2 '></div>
+                                                            <div className='col-lg-8 '><p className={css.content}
+                                                                dangerouslySetInnerHTML={{ __html: item.content }}></p></div>
+                                                            <div className='col-lg-2 '></div>
+                                                        </div>
                                                     </div>
                                                     <div className='flex w-full justify-center'>
-                                                    {item.btn && <Link href={{pathname:'/GetfreeEstimate'}} className={css.btnStyle + " no-underline"}>{item.btn}</Link>}                                                    </div>
+                                                        {item.btn && <Link href={{ pathname: '/GetfreeEstimate' }} className={css.btnStyle + " no-underline"}>{item.btn}</Link>}                                                    </div>
                                                 </div>
                                             </div>
                                         }
@@ -161,14 +168,14 @@ const DynamicIterableComponent: React.FC<properties> = ({ data , categoryId}) =>
                                 <Modal.Header >
                                     <AiFillCloseCircle onClick={handleClose} />
                                 </Modal.Header>
-                                <DetailsOfimg data={data} selectedItem={selectedItem} index={selectedIndex} categoryId={categoryId} handleImageClick={handleImageClick}/>
+                                <DetailsOfimg data={data} selectedItem={selectedItem} index={selectedIndex} categoryId={categoryId} handleImageClick={handleImageClick} />
 
                             </Modal>
                             <Modal show={shareShow} onHide={handleShareClose} className={css.share_Modal}>
                                 <Modal.Header >
                                     Share<AiFillCloseCircle onClick={handleShareClose} />
                                 </Modal.Header>
-                                <Share/>
+                                <Share />
                             </Modal>
                         </div>
                     </div>

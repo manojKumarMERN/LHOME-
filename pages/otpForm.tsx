@@ -4,12 +4,21 @@ import { TbReload } from 'react-icons/tb';
 import { AxiosService } from '../services/ApiService';
 import Cookies from 'js-cookie';
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
 
-function OtpLoginform({ setShow, number }) {
+function OtpLoginform({ setShow, number ,redirectToGetQuote}) {
+  const router = useRouter();
 
   const [count, setCount] = React.useState<number>(60);
   const [otp, setOtp] = React.useState<string>('');
   const [otpError, setOtpError] = React.useState<string>('');
+  const [isFromGetFreeEstimate, setIsFromGetFreeEstimate] = React.useState(false);
+
+  React.useEffect(() => {
+    if (redirectToGetQuote) {
+      setIsFromGetFreeEstimate(true);
+    }
+  }, [redirectToGetQuote]);
 
   const handleOtpChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const otpValue = event.target.value;
@@ -20,8 +29,6 @@ function OtpLoginform({ setShow, number }) {
   };
 
   const handleSubmit = async () => {
-    // console.log(1);
-    
     if (otp.length !== 6 || isNaN(Number(otp))) {
       setOtpError('OTP must be a 6-digit number');
       return; 
@@ -31,13 +38,30 @@ function OtpLoginform({ setShow, number }) {
       const response = await AxiosService.post('/signin/auth', {
         number: number,
         otp: Number(otp),
-      })
-      if(response.status == 201){
-      const { user, token } = response.data;
-      Cookies.set('userId', user.id, { expires: 7, path: '/' });
-      Cookies.set('token', token, { expires: 7, path: '/' });
-      setShow(false);
-      toast.success('Logged in successfully');
+      });
+
+      if (response.status === 201) {
+        const { user, token } = response.data;
+        Cookies.set('userId', user.id, { expires: 7, path: '/' });
+        Cookies.set('token', token, { expires: 7, path: '/' });
+        setShow(false);
+        toast.success('Logged in successfully');
+
+        // Redirect based on the condition
+         if (isFromGetFreeEstimate) {
+          router.push('/getQuote');
+        } else {
+          // Check if cookies are present
+          const userId = Cookies.get('userId');
+          const token = Cookies.get('token');
+
+          // Clear cookies and redirect to home page if cookies are empty
+          if (!userId || !token) {
+            Cookies.remove('userId');
+            Cookies.remove('token');
+            router.push('/');
+          }
+        }
       }
     } catch (err) {
       console.log(err);
@@ -51,7 +75,7 @@ function OtpLoginform({ setShow, number }) {
 
   return (
     <>
-      <form >
+<form >
         <div className={css.Otp_heading}>Verify your number</div>
         <div className={css.otp_Box}>
           <p className={css.otp_box_content} style={{ padding: 0 }}>Phone Number: {number}</p>
@@ -72,7 +96,7 @@ function OtpLoginform({ setShow, number }) {
         <div className={css.otp_Verify_content}>We have sent OTP to your number, please verify</div>
       </form>
     </>
-  )
+  );
 }
 
 export default OtpLoginform;
