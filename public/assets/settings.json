@@ -1642,7 +1642,7 @@
     ],
     "bedroombanner": [
       {
-        "image": "/assets/Bedroom/bedroombanner.jpg",
+        "image": "https://res.cloudinary.com/dcnmvejbo/image/upload/v1714387571/lhome/bedroom/bedroombanner_gklzm1.jpg",
         "name": " Design your own Bedroom with our experts!"
       }
     ],
