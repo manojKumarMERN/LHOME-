@@ -85,7 +85,7 @@ const DropDownMenu: React.FC<DropDownProps> = ({ options }) => {
         router.push('/visitus');
         break;
       case 'Customer Support':
-        router.push('/customersupportpage');
+        router.push('/CustomersupportPage');
         break;
         case 'Design journal':
           router.push('/Designjournal');

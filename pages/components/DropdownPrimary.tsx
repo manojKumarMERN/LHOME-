@@ -89,7 +89,7 @@ const DropDownMenuPrimary: React.FC<DropDownProps> = ({ options, cities }) => {
         router.push('/visitus');
         break;
       case 'Customer Support':
-        router.push('/customersupportpage');
+        router.push('/CustomersupportPage');
         break;
       
       default:
