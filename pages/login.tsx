@@ -23,7 +23,7 @@ const Login = ({toggleForm , otpForm , setOtpForm , select , onSelect , setNumbe
         validationSchema: LoginSchema,
         onSubmit: async (values) => {
           try {
-            const response = await AxiosService.post('/signin', { number: values.number });
+            const response = await AxiosService.post('/user/generate-otp', { number: values.number });
             setNumber(values.number)      
             setOtpForm(!otpForm);
           } catch (error) {

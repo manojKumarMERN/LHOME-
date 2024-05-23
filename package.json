@@ -24,6 +24,7 @@
     "@mui/x-date-pickers": "^6.18.4",
     "@popperjs/core": "^2.11.8",
     "@react-icons/all-files": "^4.1.0",
+    "@reduxjs/toolkit": "^2.2.5",
     "@remix-run/express": "^2.1.0",
     "@remix-run/node": "^2.1.0",
     "@remix-run/react": "^2.1.0",

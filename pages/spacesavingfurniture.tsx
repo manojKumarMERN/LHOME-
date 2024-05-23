@@ -14,6 +14,7 @@ import Ideas from "./components/MeetDesigner/ideas";
 import { simpleCallInitAPI } from "../services/ApicallInit";
 import DynamicIterableComponent from "./components/IterableComponent/DynamicIterableComponent";
 import FurnitureFilter from "./components/furnitureFilter/furbitureFilter";
+import { AxiosService } from '../services/ApiService';
 
 
 const SpacesavingfurniturePage: React.FC = () => {
@@ -67,15 +68,26 @@ const SpacesavingfurniturePage: React.FC = () => {
         }, 1000);
     }, [handleResize]);
 
+ 
     React.useEffect(() => {
-        let api = simpleCallInitAPI(`${assetpath}/assets/spacesavefurniture.json`);
-        api.then((data: any) => {
-            setData(data.data.spacesavingfurniture);
-        });
+        const fetchData = async () => {
+            try {
+                const response = await AxiosService.get('/products/category/spacesavingfurniture');
+                setData(response.data.products);
+                console.log(response.data);
+            } catch (error) {
+                console.error('Error fetching Spacesavingfurniture data:', error);
+            }
+        };
+    
+        fetchData();
+    
         window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResized);
-    }, [handleResize, handleResized, assetpath])
-
+    
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [handleResize]);
 
     const page = React.useRef(null);
     const [prevPosition, setPrev] = React.useState(0);

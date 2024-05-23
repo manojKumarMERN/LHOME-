@@ -1,10 +1,12 @@
 .wallimageContainer {
   position: relative;
 }
-
+.imglinear {
+  background: linear-gradient(45deg, black, transparent)
+}
 .wallimage {
   width: 100%;
-
+  opacity: 0.7;
   @media (max-width:576px) {
     height: 75vw;
   }

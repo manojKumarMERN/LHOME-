@@ -28,7 +28,7 @@ const WallBanner: React.FC = () => {
 
         <React.Fragment>
 
-            <div >
+            <div  className={css.imglinear}>
                 {wallbanner.map((datas: any, index: number) => (
                     <div key={`${datas.name}_${index}_${index}`} className={css.wallContainer}>
                         <img src={datas.wallbanner} alt="bannerImage" className={css.wallimage} />

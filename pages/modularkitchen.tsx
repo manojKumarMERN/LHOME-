@@ -14,6 +14,7 @@ import DynamicIterableComponent from "./components/IterableComponent/DynamicIter
 import MeetDesigner from "./components/MeetDesigner/MeetDesigner";
 import Link from "next/link.js";
 import Ideas from "./components/MeetDesigner/ideas";
+import { AxiosService } from '../services/ApiService';
 
 
 const ModularKitchenPage: React.FC = () => {
@@ -72,26 +73,41 @@ const ModularKitchenPage: React.FC = () => {
   }, [handleResize]);
 
 
+
   React.useEffect(() => {
-    let api = simpleCallInitAPI(`${assetpath}/assets/ushapedKitchen.json`);
-    api.then((data: any) => {
-      setData(data.data.Row1);
-    });
-    let response = simpleCallInitAPI(`${assetpath}/assets/straightKitchen.json`);
-    response.then((data: any) => {
-      setData1(data.data.Row1);
-    });
-    let response1 = simpleCallInitAPI(`${assetpath}/assets/LshapedKitchen.json`);
-    response1.then((data: any) => {
-      setData2(data.data.Row1);
-    });
-    let response2 = simpleCallInitAPI(`${assetpath}/assets/IslandKitchen.json`);
-    response2.then((data: any) => {
-      setData3(data.data.Row1);
-    });
+    const fetchData = async () => {
+        try {
+            const response = await AxiosService.get('/products/category/ushapedkitchen');
+            setData(response.data.products);
+            console.log(response.data);
+
+            const response1 = await AxiosService.get('/products/category/strightkitchen');
+            setData1(response1.data.products);
+            console.log(response1.data);
+
+            const response2 = await AxiosService.get('/products/category/lshapekitchen');
+            setData2(response2.data.products);
+            console.log(response2.data);
+
+            const response3 = await AxiosService.get('/products/category/islandkitchen');
+            setData3(response3.data.products);
+            console.log(response3.data);
+
+        } catch (error) {
+            console.error('Error fetching Modular Kitchen data:', error);
+        }
+    };
+
+    fetchData();
+
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResized);
-  }, [handleResize, handleResized, assetpath]);
+
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+}, [handleResize]);
+
+
 
   const [activePage, setActivePage] = React.useState<string | null>('unset');
   const handleClick = (pageName: string) => {

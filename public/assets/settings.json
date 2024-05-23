@@ -1765,6 +1765,12 @@
         "image":"/assets/designJournal/banner-7.jpg",
         "name":"Elevate your space with Walls that do more than enclose"
       }
+    ],
+    "wishlist":[
+      {
+        "image":"/assets/icons/wish.png",
+        "name":"Elevate your space with Walls that do more than enclose"
+      }
     ]
   } 
 }

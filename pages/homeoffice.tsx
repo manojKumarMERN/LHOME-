@@ -13,6 +13,7 @@ import FAQPage from "./components/Faq/FAQPage";
 import Guranted from "./components/Guranted/Guranted";
 import Footer from "./components/Footer/Footer";
 import DynamicIterableComponent from "./components/IterableComponent/DynamicIterableComponent";
+import { AxiosService } from '../services/ApiService';
 
 
 const HomeOffice: React.FC = () => {
@@ -72,12 +73,26 @@ const HomeOffice: React.FC = () => {
     return () => window.removeEventListener('resize', handleResized);
   }, [handleResize, handleResized,assetpath]);
 
+ 
   React.useEffect(() => {
-    let api = simpleCallInitAPI(`${assetpath}/assets/homeoffice.json`);
-    api.then((data:any)=>{
-      setHomeoffice(data.data.homeOffice);
-    });     
-},[assetpath]);
+    const fetchData = async () => {
+        try {
+            const response = await AxiosService.get('/products/category/homeoffice');
+            setHomeoffice(response.data.products);
+            console.log(response.data);
+        } catch (error) {
+            console.error('Error fetching Homeoffice data:', error);
+        }
+    };
+
+    fetchData();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+}, [handleResize]);
 
 
 

@@ -10,6 +10,8 @@ interface CustomHeaderWithDropdownProps {
 }
 
 const CustomHeaderWithDropdown: React.FC<CustomHeaderWithDropdownProps> = ({ label, value, onSelectionChange }) => {
+  console.log(label)
+  console.log(value)
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState<string | null>(null);
  
@@ -26,9 +28,9 @@ const CustomHeaderWithDropdown: React.FC<CustomHeaderWithDropdownProps> = ({ lab
   if(label == "ROLE"){
     val.push("All")
     value.forEach((item) => {
-      if (val.includes(item.role)) {
+      if (val.includes(item.title)) {
       } else {
-        val.push(item.role)
+        val.push(item.title)
       }
     })
   }else if(label == "LOCATION"){
@@ -61,7 +63,7 @@ const CustomHeaderWithDropdown: React.FC<CustomHeaderWithDropdownProps> = ({ lab
           {val.map((item, index) => (
             <DropdownItem key={index} onClick={() => handleSelection(item)}>
               {item}
-              {/* {label === 'ROLE' ? item.role : label === 'LOCATION' ? item.location : item.department} */}
+              {label === 'TITLE' ? item.role : label === 'LOCATION' ? item.location : item.department}
             </DropdownItem>
           )
           )}

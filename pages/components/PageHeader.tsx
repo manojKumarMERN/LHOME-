@@ -15,7 +15,10 @@ import { useRouter } from "next/router";
 import DrawerMenu from "./DrawerMenu";
 import DropDownMenuPrimary from "./DropdownPrimary";
 import { useMediaQuery } from "@mui/material";
-
+import WishListIcon from "./wishlist/wishlisticon";
+import WishlistIcon from "./wishlist/wishlisticon";
+import {useSelector} from 'react-redux';
+import { RootState } from "../../store";
 
 interface pageheaderproperties {
   screenwidth: number;
@@ -54,6 +57,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
   const [chatBoxShow, setChatBoxShow] = React.useState(false);
   const [receivedData, setReceivedData] = React.useState('');
   const [isAuth, setAuth] = React.useState(false);
+  // const isLoggedIn  = useSelector((state: RootState) => state.auth.isLoggedIn);
 
   React.useEffect(() => {
     function getsettings() {
@@ -169,6 +173,10 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
         case 'Customer Support':
           router.push('/CustomersupportPage');
           break;
+
+        case '<WishlistIcon />':
+          router.push('wishlistpage');
+          break;
       }
     } else {
       console.error('Type:', typeof (e));
@@ -192,20 +200,24 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
     Cookies.remove('userId');
     setAuth(false)
   }
+  const handleWishlistClick = () => {
+    router.push('/wishlistpage')
+
+  };
 
   //useMediaQuery
   const isSmallScreen = useMediaQuery("(max-width: 554px)");
   const isMediumScreen = useMediaQuery("(min-width: 555px) and (max-width: 1257px)");
 
   const isSmallScreen2 = useMediaQuery("(max-width: 450px)");
-
+// console.log(isLoggedIn)
   return (
     <React.Fragment>
       <div className={`stickly transition-all duration-500`}>
         <div className={hidden ? `${css.headerHidden}` : `${css.headerOuter}`}>
           <div className={hidden ? "flex justify-center" : css.headerLeft}>
             <div id="logo" className={`${css.lhomelogoholder}`}>
-              <div className={isSmallScreen2? `${css.lhomelogo}`:''}>
+              <div className={isSmallScreen2 ? `${css.lhomelogo}` : ''}>
                 {/* <div ref={logo} className={`${css.lhomelogomask}`} /> */}
                 <Link href="/"><img src={homeLogo} alt='homeLogo' key={"UniqueKey"} /></Link>
               </div>
@@ -361,10 +373,19 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                     <div id="dropdownOptions" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_6}`}>
                       <DropDownMenu
                         options={menuoptions}
-                      
+
                       />
                     </div>
                   ) : null}
+
+                  {menuoptionsstring.indexOf("<WishlistIcon />") < 0 ?
+                    <Link href={{ pathname: '/wishlistpage' }}> <div id="wishlistpage" rel="largeoptions" className={`${css.wishlisticon} ${css.customWidthpx_6}`} >
+                      <WishlistIcon onClick={handleWishlistClick} /></div>
+                    </Link>
+                    : ''
+                  }
+
+
 
 
                   {isAuth ? <button className={css.userLoginRegister} onClick={handleLogout}> Logout </button> : <div className={css.userLoginRegisterHolder}>
@@ -378,7 +399,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                       <LoginRegisterPage setShow={setShow} currentPage={undefined} />
                     </Modal>
                   </div>}
-                  
+
                 </div>
               </div>
             </div>)}

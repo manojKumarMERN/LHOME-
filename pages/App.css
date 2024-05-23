@@ -84,9 +84,9 @@ font-family: "Montserrat" !important;
 .ChatBox_Popup div[class="modal-dialog"] {
   position: absolute !important;
   width: 20vw;
-  bottom: 40%;
+  /* bottom: 40%; */
   right: 1%;
-
+  top: 23%;
   @media(min-width:2000px) {
     bottom: 34%
   }

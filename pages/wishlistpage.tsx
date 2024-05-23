@@ -1,18 +1,14 @@
 import * as React from "react";
 import * as config from "../next.config";
+import "react-multi-carousel/lib/styles.css";
 import PageHeader from "./components/PageHeader";
-import css from "../styles/wall.module.scss";
-import Footer from "./components/Footer/Footer";
-import Warranty from "./components/warranty/Warranty";
-import { simpleCallInitAPI } from "../services/ApicallInit";
-import WallBanner from "./components/Wall/Wall";
-import AdminLoginPage from "./components/Admin/adminlogin";
+import css from "../styles/wishlistpage.module.scss";
+import { simpleCallInitAPI } from '../services/ApicallInit';
 
-const Wall: React.FC = () => {
-    const living = React.useRef(null);
-    const [wallpoints, setPoints] = React.useState([]);
-    const [wallheading, setHeadings] = React.useState();
-    const [summary, setsummary] = React.useState();
+import { useRouter } from 'next/router';
+
+const Wishlistpage: React.FC = () => {
+
     const [screenwidth, setWidth] = React.useState(window.innerWidth);
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     let hgtt = 0;
@@ -25,7 +21,7 @@ const Wall: React.FC = () => {
         hgtt = window.innerHeight - 160;
     }
     const [screenheight, setHeight] = React.useState(hgtt);
-
+    const [wishlistimage, setwishlistImage] = React.useState("");
 
     const handleResize = React.useCallback(() => {
         setWidth(window.innerWidth);
@@ -63,36 +59,48 @@ const Wall: React.FC = () => {
     }, [handleResize]);
 
     React.useEffect(() => {
-        let api = simpleCallInitAPI(`${assetpath}/assets/designJournal.json`);
+        let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
         api.then((data: any) => {
-            let colorplay = [];
-            // console.log(data.data.desginJournalRows.Walls.points)
-            // data.data.desginJournalRows.Colors.points.forEach((datas: any) => {
-            //     let lc: any = {};
-            //     lc.points = `${assetpath}${datas.points}`;
-            //     // lc.points = datas.points;
-            //     colorplay.push(lc);
-            // });
-            setPoints(data.data.desginJournalRows.Walls.points);
-            setHeadings(data.data.desginJournalRows.Walls.boldHeading);
-            setsummary(data.data.desginJournalRows.Walls.summary);
-        }); 
+            setwishlistImage(`${assetpath}${data.data.settings.wishlist.image}`);
+           
+        })
+        .catch(error => {
+            console.log(error);
+        });
+     }, [assetpath]);
+    
+    React.useEffect(() => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResized);
-    }, [handleResize, handleResized, assetpath]);
+    }, [handleResize, handleResized]);
 
+    React.useEffect(() => {
+        setTimeout(() => {
+            handleResize();
+        }, 500);
+    }, [handleResize]);
+
+    const routechanged = (e) => {
+        setTimeout(() => {
+            handleResize();
+        }, 1000);
+    }
+
+    const router = useRouter();
+    const { City } = router.query;
+
+    // console.log(City);
     const page = React.useRef(null);
     const [prevPosition, setPrev] = React.useState(0);
     const [hidden, setHidden] = React.useState(false)
 
     const pageheaderMonitor = () => {
-        if (page.current.scrollTop > prevPosition) {
+        if (page?.current?.scrollTop > prevPosition) {
             setPrev(page.current.scrollTop)
             setHidden(true)
         } else {
             setHidden(false)
             setPrev(page.current.scrollTop)
-
         }
     }
 
@@ -100,30 +108,30 @@ const Wall: React.FC = () => {
         <React.Fragment>
             <div className="animate-fade-in">
                 <div className={css.lhomePage}>
+
                     <div className={hidden ? "hidden" : ""}>
                         <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
                     </div>
-                    <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
-                        <div><WallBanner /></div>
-                            <div className={css.points}>
-                                <div className={css.boldheading}>{wallheading}</div><br />
-                                <div>{wallpoints.map((datas: any, index: number) => (
-                                    <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
-                                     <span className={css.heading1}>{datas.heading} </span>  {datas.discription}<br /><br />
-                                    </div>
-                                ))}
-                                </div>
-                                <div className={css.heading}>{summary}</div>
+
+                    <div className={css.wishlistInnerLayer}>
+                        <div className={css.wishlistInnerContent}>
+                            <div className={css.wishlistTextIcons}>
+                                {wishlistimage ?
+                                    <img loading="lazy" className={css.wishlisticonChanges} src={wishlistimage} alt="wishlist" />
+                                    :
+                                    ''
+                                }
                             </div>
-                        <div>
-                            <AdminLoginPage/>
-                            </div>
-                        <div><Warranty /></div>
-                        <div><Footer /></div>
+                            <div className={css.wishlistHeader}>No Design Found</div>
+                            <div className={css.wishlistSubText}> Browse Designs</div>
+                        </div>
+
+
                     </div>
+
                 </div>
             </div>
         </React.Fragment>
     )
 }
-export default Wall;
+export default Wishlistpage;

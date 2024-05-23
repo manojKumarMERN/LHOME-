@@ -1,0 +1,32 @@
+// wishlisticon.module.scss
+
+.button {
+   background: none;
+   border: none;
+   cursor: pointer;
+   outline: none;
+   position: relative; // Ensure positioning for the badge
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 24px; // Adjust font size as needed
+ }
+ 
+ .customWishlistIcon {
+   margin-left: 20px;
+ }
+ 
+ .countBadge {
+   background-color: #e74c3c;
+   color: #fff;
+   border-radius: 50%;
+   padding: 2px 5px;
+   font-size: 6px;
+   position: absolute;
+   top: 45px;
+   right: 105px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+ 

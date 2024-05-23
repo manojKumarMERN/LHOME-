@@ -9,23 +9,15 @@ import { useRouter } from "next/router.js";
 import Footer from "./components/Footer/Footer";
 
 interface JobDetails {
-  details: {
-    header: string;
-    joblocation: string;
-    'Job Description': string;
-    'Job Requirement': {
-      'Postiton Title': string;
-      Experience: string;
-      Qualification: string;
-      'Job type': string;
-      Salary: string;
-      Location: string;
-    };
-  };
-}
-
-interface JobOfferProps {
-  value: JobDetails[];
+  id: string; 
+  title: string;
+  location: string;
+  description: string;
+  department: string;
+  experience: string;
+  qualification: string;
+  job_type: string;
+  salary: string;
 }
 
 const JoinOfferPage: React.FC = () => {
@@ -104,25 +96,16 @@ const JoinOfferPage: React.FC = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResized);
   }, [handleResize, handleResized, assetpath]);
-  const [activePage, setActivePage] = React.useState<string | null>('U-Shaped');
-  const handleClick = (pageName: string) => {
-    setActivePage(pageName);
-
-  };
 
   const router = useRouter();
-  const { jobDetails } = router.query
+  const { jobDetails } = router.query;
   const [details, setDetails] = React.useState<JobDetails[]>([]);
-
 
   React.useEffect(() => {
     if (jobDetails) {
-
       try {
         const parsedDetails = JSON.parse(jobDetails as string) as JobDetails[];
-
         setDetails(parsedDetails);
-
       } catch (error) {
         console.error("Failed to parse jobDetails:", error);
       }
@@ -135,11 +118,12 @@ const JoinOfferPage: React.FC = () => {
         <div className={css.lhomePage}>
           <div className={css.LhomeBottom}>
             <div>
-
               <div className={css.lhomelogo}>
                 <img src="/assets/images/LhomeLogo.jpg" alt="logo Lhome" key={"unique one"} />
               </div>
-              <JobOffer value={details} />
+              {details.map((job, index) => (
+                <JobOffer key={index} id={job.id} value={[job]} />
+              ))}
             </div>
             <Footer />
           </div>
@@ -148,4 +132,5 @@ const JoinOfferPage: React.FC = () => {
     </React.Fragment>
   )
 }
+
 export default JoinOfferPage;
