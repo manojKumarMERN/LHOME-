@@ -1,3 +1,4 @@
+
 import { configureStore } from '@reduxjs/toolkit'
 // import cart from './apps/cart'
 import auth from './apps/auth'
@@ -34,3 +35,19 @@ export const store = configureStore({
 
 export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof store.getState>
+
+// store/index.ts
+// import { configureStore } from '@reduxjs/toolkit';
+// import authReducer from './authslice'; // Adjust the path according to your project structure
+
+// const store = configureStore({
+//   reducer: {
+//     auth: authReducer,
+//     // other reducers...
+//   },
+// });
+
+// export type RootState = ReturnType<typeof store.getState>;
+// export type AppDispatch = typeof store.dispatch;
+
+// export default store;

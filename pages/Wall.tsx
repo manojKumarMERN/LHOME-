@@ -115,9 +115,7 @@ const Wall: React.FC = () => {
                                 </div>
                                 <div className={css.heading}>{summary}</div>
                             </div>
-                        <div>
-                            <AdminLoginPage/>
-                            </div>
+                       
                         <div><Warranty /></div>
                         <div><Footer /></div>
                     </div>

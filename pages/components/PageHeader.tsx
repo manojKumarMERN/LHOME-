@@ -17,8 +17,9 @@ import DropDownMenuPrimary from "./DropdownPrimary";
 import { useMediaQuery } from "@mui/material";
 import WishListIcon from "./wishlist/wishlisticon";
 import WishlistIcon from "./wishlist/wishlisticon";
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from "../../store";
+import { AxiosService } from '../../services/ApiService';
 
 interface pageheaderproperties {
   screenwidth: number;
@@ -57,7 +58,8 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
   const [chatBoxShow, setChatBoxShow] = React.useState(false);
   const [receivedData, setReceivedData] = React.useState('');
   const [isAuth, setAuth] = React.useState(false);
-  // const isLoggedIn  = useSelector((state: RootState) => state.auth.isLoggedIn);
+  // const auth  = useSelector((state: RootState) => state.auth.isLoggedIn);
+  const isLoggedIn = useSelector((state: RootState) => state.auth?.isLoggedIn);
 
   React.useEffect(() => {
     function getsettings() {
@@ -204,13 +206,33 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
     router.push('/wishlistpage')
 
   };
+  const [wishlistCount, setWishlistCount] = React.useState(0);
+
+  React.useEffect(() => {
+    const fetchWishlistCount = async () => {
+      try {
+        const response = await AxiosService.get('/products/wishlist');
+        console.log('Wishlist items:', response.data.cartItems); // Log the response data
+        setWishlistCount(response.data.cartItems.length); // Update wishlist count
+      } catch (error) {
+        console.error('Error fetching wishlist count:', error);
+      }
+    };
+
+    fetchWishlistCount();
+  }, []);
+  console.log(wishlistCount);
+
+  const handleClick = () => {
+    // setCount(count + 1); // Increment count when the button is clicked
+  };
 
   //useMediaQuery
   const isSmallScreen = useMediaQuery("(max-width: 554px)");
   const isMediumScreen = useMediaQuery("(min-width: 555px) and (max-width: 1257px)");
 
   const isSmallScreen2 = useMediaQuery("(max-width: 450px)");
-// console.log(isLoggedIn)
+  // console.log(isLoggedIn)
   return (
     <React.Fragment>
       <div className={`stickly transition-all duration-500`}>
@@ -380,7 +402,8 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
 
                   {menuoptionsstring.indexOf("<WishlistIcon />") < 0 ?
                     <Link href={{ pathname: '/wishlistpage' }}> <div id="wishlistpage" rel="largeoptions" className={`${css.wishlisticon} ${css.customWidthpx_6}`} >
-                      <WishlistIcon onClick={handleWishlistClick} /></div>
+                      <WishlistIcon onClick={handleClick} wishlistCount={wishlistCount} />
+                    </div>
                     </Link>
                     : ''
                   }
