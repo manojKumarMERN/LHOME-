@@ -177,7 +177,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
           break;
 
         case '<WishlistIcon />':
-          router.push('wishlistpage');
+          router.push('/wishlistpage');
           break;
       }
     } else {

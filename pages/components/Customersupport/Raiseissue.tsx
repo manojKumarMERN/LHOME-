@@ -5,34 +5,37 @@ import Image from "next/image";
 import { AxiosService } from "../../../services/ApiService";
 import { getUserId } from "../../../services/sessionProvider";
 import { useRouter } from "next/router";
+import { getToken } from '../../../services/sessionProvider';
 
 const RaiseIssue = () => {
-    const [issue , setIssue ] = React.useState<string>('');
+    const [description , setDescription ] = React.useState<string>('');
     const [error , setError ] = React.useState<string>('');
     const [success , setSuccess ] = React.useState<string>('');
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        if(issue=='' || issue == ' '){
+        if(description=='' || description == ' '){
             setError(`You can't submit empty value as issue`);
-        }else if(issue.length <=20){
+        }else if(description.length <=20){
             setError(`Issue can't be this much short. Please elaborate your issue`);
-        }else if(!getUserId()){
+        }else if(!getToken()){
             setError('You are not authenticated please login and continue')
         }
         else{
             setError('');
         }
-        if(issue.length>20 && error =='' && getUserId()){
-            const response = await AxiosService.post('/postissue' , {
-                userId : getUserId(),
-                issue
+        if(description.length>20 && error =='' && getToken()){
+            const response = await AxiosService.post('/user/complaint/register' , {
+                userId : getToken(),
+                description
             })
-            if( response && response.status == 200){
-                setIssue('');
+            if( response && response.status == 201){
+                setDescription('');
                 setSuccess(`Issue successfully posted we'll get back you soon with a solution..`);
                 setTimeout(()=>{
                     setSuccess('');
+                 console.log(response)
+
                 }, 3000)
             }
             
@@ -50,7 +53,7 @@ const RaiseIssue = () => {
                     </div>
                     <form onSubmit={handleSubmit}>
                     <div className={css.customertext}>
-                        <textarea className={css.texthere} value={issue} placeholder="texthere..." onChange={(e)=>setIssue(e.target.value)}></textarea>
+                        <textarea className={css.texthere} value={description} placeholder="texthere..." onChange={(e)=>setDescription(e.target.value)}></textarea>
                     </div>
                     <span className="text-red-500">{error}</span>
                     <span className="text-green-500">{success}</span>

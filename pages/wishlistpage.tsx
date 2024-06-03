@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import * as config from "../next.config";
@@ -11,9 +11,9 @@ import { BsHeartFill } from "react-icons/bs";
 import { toast } from 'react-toastify';
 
 const Wishlistpage: React.FC = () => {
-  const [screenwidth, setWidth] = useState(0);
-  const [screenheight, setHeight] = useState(0);
-  const [wishlistItems, setWishlistItems] = useState<any[]>([]);
+  const [screenwidth, setWidth] =React.useState(0);
+  const [screenheight, setHeight] = React.useState(0);
+  const [wishlistItems, setWishlistItems] = React.useState<any[]>([]);
 
   const router = useRouter();
 
@@ -42,7 +42,7 @@ const Wishlistpage: React.FC = () => {
     setHeight(hgtt);
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -62,7 +62,7 @@ const Wishlistpage: React.FC = () => {
     }
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     fetchWishlistItems();
   }, []);
 

@@ -6,22 +6,25 @@ import { AxiosService } from "../../../services/ApiService";
 import { getUserId } from "../../../services/sessionProvider";
 import Image from "next/image";
 import { format } from 'date-fns';
+import { getToken } from '../../../services/sessionProvider'; 
+
 
 const MyIssue = () => {
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     const [Customersupport, setCustomersupport] = React.useState([]);
 
-        const userId = getUserId();
+        const userId = getToken();
         if(userId){
-            AxiosService.post('/fetchList', { userId: getUserId()})
+            AxiosService.get('/user/complaint/1/messages')
                 .then((response) => {
                     const issues = response.data.data.map((item: any) => {
                         return {
-                            issue: item.issue,
+                            issue: item.text,
                             createdAt: item.createdAt
                         };
                     });
                     setCustomersupport(issues);
+                    console.log(response.data)
                 })
                 .catch((error) => {
                     console.error("Error fetching user data:", error);
