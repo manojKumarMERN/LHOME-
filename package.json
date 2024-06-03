@@ -21,6 +21,7 @@
     "@headlessui/react": "^1.7.17",
     "@mui/icons-material": "^5.14.9",
     "@mui/material": "^5.14.10",
+    "@mui/x-data-grid": "^7.6.1",
     "@mui/x-date-pickers": "^6.18.4",
     "@popperjs/core": "^2.11.8",
     "@react-icons/all-files": "^4.1.0",
