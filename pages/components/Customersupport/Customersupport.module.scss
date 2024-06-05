@@ -13,7 +13,7 @@
     line-height: normal;
 }
 .referearn_socialicon{
-    width: 70px;
+    width: 30px;
     margin: 0% 2% 2%;
 }
 .content {
@@ -52,8 +52,8 @@
 }
 
 .texthere {
-    width: 700px;
-    height: 300px;
+    width: 850px;
+    height: 230px;
     flex-shrink: 0;
     border-radius: 16px;
     background: #F5F5F5;
@@ -62,7 +62,7 @@
     resize: none;
     @media (min-width:2000px) {
         width: 60vw;
-        height: 40vh;
+        // height: 40vh;
         font-size: 1vw;
     }
 }
@@ -89,7 +89,7 @@
 
 .dummycontainer {
     width: 56%;
-    height: 900px;
+    // height: 900px;
     margin: 0% auto;
     font-family: 'Montserrat', sans-serif;
     @media (min-width:2000px) {
@@ -110,14 +110,14 @@
 
 .category {
     margin: 2%;
-    padding: 3%;
+    // padding: 3%;
 }
 
 .divisionchild {
     display: flex;
     width: 75%;
-    height: 20%;
-    margin: 1% auto 3%;
+    // height: 20%;
+    margin: 1% auto 2%;
     border-radius: 16px;
     background: #F5F5F5;
 }

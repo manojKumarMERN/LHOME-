@@ -1,0 +1,32 @@
+.usertable {
+    width: 100%;
+    margin: 0 auto;
+  
+    th, td {
+      text-align: center;
+      vertical-align: middle;
+    }
+  
+    th {
+      background-color: #f1f1f1;
+    }
+  
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+      padding: 0.5rem 1rem;
+      margin-left: 2px;
+    }
+  
+    .dataTables_length,
+    .dataTables_info {
+      margin: 1rem 0;
+    }
+  
+    .dataTables_filter {
+      margin-bottom: 1rem;
+    }
+  
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+      background-color: #f1f1f1;
+    }
+  }
+  

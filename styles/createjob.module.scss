@@ -1,0 +1,314 @@
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+    border-radius: 17px;
+    padding: 15px;
+}
+.row1 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    // margin: 0 -16px;
+    gap: 20px;
+    border-radius: 17px;
+    // padding: 15px;
+}
+.col-25 {
+    -ms-flex: 25%;
+    flex: 25%;
+}
+
+.col-30 {
+    -ms-flex: 30%;
+    flex: 20%;
+    margin-left: 15px;
+}
+
+.forminput1 {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #F5F5F5;
+
+    @media (max-width:410px) {
+        width: 85%;
+    }
+}
+
+.BiSolidDownArrow {
+    position: absolute;
+    top: 43px;
+    right: 26px;
+}
+
+.vr {
+    border: 1px solid #000;
+    height: 100px;
+
+    @media (max-width:800px) {
+        border: 0px solid #000;
+        height: 0px;
+    }
+}
+
+.padding {
+    padding-left: 50px;
+
+    @media (max-width:400px) {
+        padding-left: unset;
+    }
+}
+
+.secondhead {
+    color: #222;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.col-50 {
+    -ms-flex: 50%;
+    flex: 50%;
+}
+
+.col-75 {
+    -ms-flex: 75%;
+    flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+    padding: 0 16px;
+
+    @media (max-width:800px) {
+        padding: unset;
+    }
+}
+
+.container {
+    background-color: white;
+    padding: 3% 20px 5%;
+    border-radius: 30px;
+    margin-top: 30px;
+}
+
+.forminput {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #F5F5F5;
+    color: black;
+
+    @media (max-width:410px) {
+        width: 85%;
+    }
+}
+
+.formlabel {
+    margin-bottom: 10px;
+    display: block;
+    color: #4E4E4E;
+    font-family: 'Montserrat';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.formhead {
+    color: #2552A4;
+    font-family: 'Montserrat';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+}
+
+.formtxt {
+    color: #222;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.formbtn {
+    color: rgb(253, 3, 3);
+    font-size: 15px;
+    border-radius: 16px;
+    font-weight: 700px;
+    // padding: 5px;
+    border: 2px solid #F44336;
+    width: 200px;
+    height: 52px;
+    text-align: center;
+    font-family: 'Montserrat';
+
+    @media (max-width:400px) {
+        width: unset;
+        height: unset;
+        padding: 10px 16px;
+    }
+}
+
+.jobLeftarrow {
+    display: flex;
+}
+
+.jobLeftarrow p {
+    color: #2552A4;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0;
+}
+
+.jobLeftarrow a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.overallContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.jobHead {
+    font-size: 60px;
+    color: #F44336;
+    font-family: "Montserrat";
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.Error_style {
+    border: 0.1vw solid #F44336;
+}
+
+.jobpara {
+    color: #737373;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+
+.jobApplybtn2 {
+    margin-top: 50px;
+}
+
+.jobApplybtn {
+    background-color: #F44336 !important;
+    border-color: #F44336 !important;
+    padding: 1.2% 8%;
+    color: #fff;
+    align-items: center;
+    font-size: 16px;
+    font-family: "Montserrat";
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.jobApplybtn:hover {
+    background-color: #F44336;
+    border-color: #F44336;
+}
+
+.formhead1 {
+    color: #4E4E4E;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @media (max-width:400px) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+}
+
+.highmade {
+    display: flex;
+    align-items: center;
+
+    height: 41%
+}
+
+.para {
+    text-align: right;
+    color: #222;
+    font-family: 'Montserrat';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+
+    @media (max-width:527px) {
+        text-align: left;
+        line-height: 20px;
+        margin-top: 20px;
+    }
+}
+
+.para_top {
+    text-align: center;
+    color: #222;
+    font-family: 'Montserrat';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.flex_box {
+    display: flex;
+    justify-content: center;
+}
+
+.rightside {
+    margin-right: 3%;
+}
+
+.form-check {
+    padding-left: unset !important;
+}
+
+.form-switch {
+    padding-left: unset !important;
+}
+
+@media (max-width: 800px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col-25 {
+        margin-bottom: 20px;
+    }
+}
+.joblist{
+    align-items: center;
+}

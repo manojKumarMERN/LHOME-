@@ -1,167 +1,94 @@
-import * as React from "react";
-import css from "../Designinterior/Interior.module.scss";
-import * as config from "../../../next.config.js";
-import { simpleCallInitAPI } from '../../../services/ApicallInit';
-import { TbArrowWaveRightDown } from 'react-icons/tb';
-const Interior: React.FC = () => {
-    let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
-    const [Steps3Discover, setSteps3Discover] = React.useState([]);
-    const [Steps3Design, setSteps3Design] = React.useState([]);
-    const [Steps3Movein, setSteps3Movein] = React.useState([]);
-    const [Arrow, setArrow] = React.useState([]);
+import React, { useState, useEffect } from "react";
+import css2 from './Steps3.module.scss';
 
-    React.useEffect(() => {
-        let api1 = simpleCallInitAPI(`${assetpath}/assets/steps3.json`);
-        api1.then((data: any) => {
-            let lcategories = [];
-            data.data.categories.discover.forEach((cats: any) => {
-                let lc: any = {};
-                lc.image = `${assetpath}${cats.image}`;
-                lc.text = cats.text;
-                lc.head = cats.head;
+import css from "styled-jsx/css";
 
-                lcategories.push(lc);
-            });
-            setSteps3Discover(lcategories);
-        })
-            .catch(error => {
-                console.log(error);
-            });
+const Autoplay: React.FC<{ living: any }> = ({ living }) => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const sliderData = [
+        {
+            url: "/assets/referandearn/Lhome - refer & earn vector-01.png",
+            title: "Refer",
+            description: "Tell your friends about us",
+        },
+        {
+            url: "/assets/referandearn/Lhome - refer & earn vector-02.png",
+            title: "Relax",
+            description: "Your friend books us",
+        },
+        {
+            url: "/assets/referandearn/Lhome - refer & earn vector-03.png",
+            title: "Rejoice",
+            description: "Your friends pay us half, we pay you full",
+        }
+    ];
 
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setActiveIndex((prevIndex) => (prevIndex + 1) % sliderData.length);
+        }, 4000); // Change slide every 3 seconds
 
-        let api2 = simpleCallInitAPI(`${assetpath}/assets/steps3.json`);
-        api2.then((data: any) => {
-            let lcategories = [];
-            data.data.categories.design.forEach((cats: any) => {
-                let lc: any = {};
-                lc.image = `${assetpath}${cats.image}`;
-                lc.text = cats.text;
-                lc.head = cats.head;
-                lcategories.push(lc);
-            });
-            setSteps3Design(lcategories);
-        })
-            .catch(error => {
-                console.log(error);
-            });
+        return () => clearInterval(intervalId); // Cleanup on unmount
+    }, []); // Run effect only once when component mounts
 
-
-        let api3 = simpleCallInitAPI(`${assetpath}/assets/steps3.json`);
-        api3.then((data: any) => {
-            let lcategories = [];
-            data.data.categories.movein.forEach((cats: any) => {
-                let lc: any = {};
-                lc.image = `${assetpath}${cats.image}`;
-                lc.text = cats.text;
-                lc.head = cats.head;
-                lcategories.push(lc);
-            });
-            setSteps3Movein(lcategories);
-        })
-            .catch(error => {
-                console.log(error);
-            });
-
-        let api4 = simpleCallInitAPI(`${assetpath}/assets/steps3.json`);
-        api4.then((data: any) => {
-            let lcategories = [];
-            data.data.categories.arrow.forEach((cats: any) => {
-                let lc: any = {};
-                lc.image1 = `${assetpath}${cats.image}`;
-                lcategories.push(lc);
-            });
-            setArrow(lcategories);
-        })
-            .catch(error => {
-                console.log(error);
-            });
-
-    }, [assetpath]);
+    const handleButtonClick = (index: number) => {
+        setActiveIndex(index);
+    };
 
     return (
-        <React.Fragment>
-            <div className={css.interiorcategory}>
-                <div className={css.interiorcategoryOuterLayer}>
-                    <div className={css.interiortitle}>Refer and Earn in <span className={css.Steps3titleRed}> 3 easy steps</span></div>
-                    <div className={css.interiorcategoryinterLayer}>
-
-                        <div className={css.interiorfilmrole}>
-                            {Steps3Discover.map((cats: any, index: number) =>
-                                <div key={`${cats.category}${index}${index}`}
-                                    className={css.division1}>
-                                    <div className={css.box_text}>1</div>
-                                    <div className={"pe-3 " + css.divisionchild}>
-                                        <div className={css.category}>
-                                            <div className={css.interiorname}>{cats.head}</div>
-                                            <div className={css.interiortext}>{cats.text}</div>
-                                        </div>
-                                        <div className={css.interiorimage}>
-                                            <img key={`${cats.category}_${index}`} loading="lazy"
-                                                src={cats.image} alt={cats.head} />
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                        {Arrow.map((cats: any, index: number) =>
-                            <div className={css.arrowimage} key={index}>
-                                {/* <img key={`${cats.category}_${index}`} loading="lazy"
-                                    src={cats.image1} alt={cats.head} /> */}
-                                <TbArrowWaveRightDown />
+        <div ref={living} className={css2.living}>
+            <div className={css2.bottomcarousel}>
+                <div className={css2.gridContainer}>
+                    <div className={css2.imageColumn}>
+                        {sliderData.map((slide, index) => (
+                            <div
+                                key={index}
+                                className={`${css2.slideContainer} ${index === activeIndex ? css2.activeSlide : ""}`}
+                            >
+                                {index === activeIndex && (
+                                    <img
+                                        className={css2.maskgroupimage}
+                                        src={slide.url}
+                                        alt="lhome"
+                                    />
+                                )}
                             </div>
-                        )}
-                        <div className={css.interiorfilmrole}>
-                            {Steps3Design.map((cats: any, index: number) =>
-                                <div key={`${cats.category}${index}${index}`}
-                                    className={css.division2}>
-                                    <div className={css.box_text}>2</div>
-                                    <div className={"pe-3 " + css.divisionchild}>
-                                        <div className={css.category}>
-                                            <div className={css.interiorname}>{cats.head}</div>
-                                            <div className={css.interiortext}>{cats.text}</div>
-                                        </div>
-                                        <div className={css.interiorimage}>
-                                            <img key={`${cats.category}_${index}`} loading="lazy"
-                                                src={cats.image} alt={cats.head} />
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-
-                        {Arrow.map((cats: any, index: number) =>
-                            <div className={css.arrowimage1} key={index}>
-                                {/* <img key={`${cats.category}_${index}`} loading="lazy"
-                                    src={cats.image1} alt={cats.head} /> */}
-                                <TbArrowWaveRightDown />
-                            </div>
-                        )}
-
-                        <div className={css.interiorfilmrole}>
-
-                            {Steps3Movein.map((cats: any, index: number) =>
-                                <div key={`${cats.category}${index}${index}`}
-                                    className={css.division3}>
-                                    <div className={css.box_text}>3</div>
-                                    <div className={"pe-3 " + css.divisionchild}>
-                                        <div className={css.category}>
-                                            <div className={css.interiorname}>{cats.head}</div>
-                                            <div className={css.interiortext}>{cats.text}</div>
-                                        </div>
-                                        <div className={css.interiorimage}>
-                                            <img key={`${cats.category}_${index}`} loading="lazy"
-                                                src={cats.image} alt={cats.head} />
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-
+                        ))}
                     </div>
+                    <div className={css2.textColumn}>
+                        <div className={css2.activeText}>
+                            <h3 className={css2.referandearnhead}>Refer and Earn in 3 easy steps</h3>
+                            <div className={css2.buttonsContainer}>
+                                <button
+                                    className={`${css2.button} ${css2.button1} ${activeIndex === 0 ? css2.activeButton : ""}`}
+                                    onClick={() => handleButtonClick(0)}
+                                >
+                                    1
+                                </button>
+                                <button
+                                    className={`${css2.button} ${css2.button2} ${activeIndex === 1 ? css2.activeButton : ""}`}
+                                    onClick={() => handleButtonClick(1)}
+                                >
+                                    2
+                                </button>
+                                <button
+                                    className={`${css2.button} ${css2.button3} ${activeIndex === 2 ? css2.activeButton : ""}`}
+                                    onClick={() => handleButtonClick(2)}
+                                >
+                                    3
+                                </button>
+                            </div>
+                            <div className={css2.textGrid}>
+                                <h3 className={css2.referandearntitle}>{sliderData[activeIndex].title}</h3>
+                                <label className={css2.referandearndec}>{sliderData[activeIndex].description}</label>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </React.Fragment>
-    )
-}
+        </div>
+    );
+};
 
-export default Interior;
+export default Autoplay;

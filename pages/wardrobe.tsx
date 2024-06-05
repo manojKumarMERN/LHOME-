@@ -14,6 +14,7 @@ import { simpleCallInitAPI } from "../services/ApicallInit";
 import DynamicIterableComponent from "./components/IterableComponent/DynamicIterableComponent";
 import Ideas from "./components/MeetDesigner/ideas";
 import MeetDesigner from "./components/MeetDesigner/MeetDesigner";
+import { AxiosService } from '../services/ApiService';
 
 
 
@@ -70,6 +71,36 @@ const WardrobePage: React.FC = () => {
             handleResize();
         }, 1000);
     }, [handleResize]);
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await AxiosService.get('/products/category/ushapedwar');
+                setData(response.data.products);
+                console.log(response.data);
+    
+                const response1 = await AxiosService.get('/products/category/strightwar');
+                setData1(response1.data.products);
+                console.log(response1.data);
+    
+                const response2 = await AxiosService.get('/products/category/lshapedwar');
+                setData2(response2.data.products);
+                console.log(response2.data);
+    
+            } catch (error) {
+                console.error('Error fetching wardrobe data:', error);
+            }
+        };
+    
+        fetchData();
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [handleResize]);
+    
 
     React.useEffect(() => {
         let api = simpleCallInitAPI(`${assetpath}/assets/ushapedwar.json`);
@@ -170,15 +201,15 @@ const WardrobePage: React.FC = () => {
                          <>
                             <div>
                                 <Ideas color="blue" prop="U-Shaped Wardrobe" space="wardrobe"/>
-                                <DynamicIterableComponent data={data}  categoryId='10'/>
+                                <DynamicIterableComponent data={data} categoryId='10' />
                             </div>
                             <div>
                                 <MeetDesigner colour='red' prop="Straight Wardrobe" container="meetContainer1" />
-                                <DynamicIterableComponent data={data1} categoryId='11' />
+                                <DynamicIterableComponent data={data1} categoryId='11'  />
                             </div>
                             <div>
                                 <MeetDesigner colour='blue' prop="Island Wardrobe" container="meetContainer2" />
-                                <DynamicIterableComponent data={data2} categoryId='12' />
+                                <DynamicIterableComponent data={data2} categoryId='12'  />
                             </div>
                         </>
                         }
@@ -186,7 +217,7 @@ const WardrobePage: React.FC = () => {
                         {activePage == 'U-Shaped' &&
                             <div>
                                 <Ideas color='blue' prop="U-Shaped Wardrobe" space="wardrobe"/>
-                                <DynamicIterableComponent data={data}  categoryId='10'/>
+                                <DynamicIterableComponent data={data} categoryId='10' />
                             </div>
                         }
 
@@ -200,7 +231,7 @@ const WardrobePage: React.FC = () => {
                         {activePage == 'L-Shaped' &&
                             <div className="mb-5 ">
                                 <Ideas color='blue' prop="L-Shaped Wardrobe" space="wardrobe"/>
-                                <DynamicIterableComponent data={data2} categoryId='12' />
+                                <DynamicIterableComponent data={data2} categoryId='12'  />
                             </div>
                         }
 
@@ -212,7 +243,7 @@ const WardrobePage: React.FC = () => {
                         <div><Footer /></div>
                     </div>
                 </div>
-            </div>
+            </div>  
 
         </React.Fragment>
     )

@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Warranty from "./components/warranty/Warranty";
 import { simpleCallInitAPI } from "../services/ApicallInit";
 import WallBanner from "./components/Wall/Wall";
+import AdminLoginPage from "./components/Admin/adminlogin";
 
 const Wall: React.FC = () => {
     const living = React.useRef(null);
@@ -114,7 +115,8 @@ const Wall: React.FC = () => {
                                 </div>
                                 <div className={css.heading}>{summary}</div>
                             </div>
-                        
+                        <div>
+                            </div>
                         <div><Warranty /></div>
                         <div><Footer /></div>
                     </div>

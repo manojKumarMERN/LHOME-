@@ -17,7 +17,15 @@ import { useRouter } from 'next/router';
 import * as config from "./../next.config.js";
 import PageHeader from "./components/PageHeader";
 import Image from 'next/image';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
+import Modal from 'react-bootstrap/Modal';
+import { useEffect } from 'react';
+import LoginRegisterPage from './loginRegisterPage';
+import { AiFillCloseCircle } from 'react-icons/ai'
+import Cookies from 'js-cookie';
+import css1 from '../styles/PageHeader.module.scss';
+
+
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 20,
@@ -66,7 +74,7 @@ const QontoStepIconRoot = styled('div')<{ ownerState: { active?: boolean } }>(
       borderRadius: "50%",
       border: 'red',
     },
-    
+
     '& .QontoStepIcon-circle': {
       width: '2vw',
       height: '2vw',
@@ -78,7 +86,7 @@ const QontoStepIconRoot = styled('div')<{ ownerState: { active?: boolean } }>(
         width: '20px',
         height: '20px',
       },
-      '& .QontoStepIcon-completedIcon':{
+      '& .QontoStepIcon-completedIcon': {
         width: '25px',
         height: '25px'
       }
@@ -113,48 +121,69 @@ interface homeproperties {
 }
 const GetfreeEstimate: React.FC<homeproperties> = ({ screenwidth, screenheight }) => {
 
+  const [show, setShow] = React.useState(false);
+  const [chatBoxShow, setChatBoxShow] = React.useState(false);
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState({});
   let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
-  const [BHK , setBHK] = React.useState('');
+  const [BHK, setBHK] = React.useState('');
 
   const [hidden, setHidden] = React.useState(false);
 
+  const router = useRouter();
+
+  useEffect(() => {
+    const userId = Cookies.get('userId');
+    const token = Cookies.get('token');
+
+    if (userId && token) {
+      // Redirect to the "getQuote" page
+      router.push('/getQuote');
+    }
+  }, []);
 
   const handleNext = () => {
-    if(BHK !=""){
+    if (BHK != "") {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    } 
-    else{
+    }
+    else {
       toast.error('Please select any of the choices to go further');
 
-    } 
+    }
   };
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
     setBHK('');
   };
-  const router = useRouter();
+  // const router = useRouter();
   const handleComplete = () => {
     router.push('/getQuote');
   };
 
-// console.log(BHK);
+  // console.log(BHK);
 
+  const handlePopup = () => {
+    setShow(true);
+  }
+  const handleClose = () => setShow(false);
+  const handleCloseBox = () => setChatBoxShow(false);
+  const handleChatBox = () => {
+    setChatBoxShow(true);
+  }
 
   const getStepContent = (step) => {
     switch (step) {
       case 0:
         return (
           <Typography>
-            <FirststepGetfree setBHK={setBHK}/>
+            <FirststepGetfree setBHK={setBHK} />
           </Typography>
         );
       case 1:
         return (
           <Typography>
-            <SecondstepGetfree BHK={BHK}/>
+            <SecondstepGetfree BHK={BHK} />
           </Typography>
         );
       case 2:
@@ -167,9 +196,9 @@ const GetfreeEstimate: React.FC<homeproperties> = ({ screenwidth, screenheight }
 
   return (
     <div className={css.lhomePage}>
-                <div className={css.Img_content}>
-                    <Image src={require("../public/assets/images/LhomeLogo.jpg")} className={css.Img_content_img} alt="Logo_Image"/>
-                </div>
+      <div className={css.Img_content}>
+        <Image src={require("../public/assets/images/LhomeLogo.jpg")} className={css.Img_content_img} alt="Logo_Image" />
+      </div>
       <Box className={css.mutli_step}>
 
         <Stepper alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
@@ -186,7 +215,7 @@ const GetfreeEstimate: React.FC<homeproperties> = ({ screenwidth, screenheight }
             {getStepContent(activeStep)}
           </div>
 
-          <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2  , marginBottom: "4%"}}>
+          <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2, marginBottom: "4%" }}>
             {isLastStep ? (
               <Button
                 disabled={activeStep === 0}
@@ -195,23 +224,37 @@ const GetfreeEstimate: React.FC<homeproperties> = ({ screenwidth, screenheight }
               >
                 Back
               </Button>) : ''}
-            {isLastStep ? (
-              <Button
-                variant="contained"
-                onClick={handleComplete}
-                className={css.GetfreeEstimate_Button}
-              >
-                Get Quote
-              </Button>
-            ) : (
-              <Button
-                variant="contained"
-                onClick={handleNext}
-                className={css.GetfreeEstimate_Button}
-              >
-                Next
-              </Button>
-            )}
+            <Box>
+              {isLastStep ? (
+                <>
+                  <Button
+                    variant="contained"
+                    // onClick={handleComplete}
+                    onClick={handlePopup}
+                    className={css.GetfreeEstimate_Button}
+                  >
+                    Get Quote
+                  </Button>
+                  <Modal show={show} onHide={handleClose} className={css1.Modal_Popup}>
+                    <Modal.Header>
+                      <AiFillCloseCircle onClick={handleClose} />
+                    </Modal.Header>
+                    {/* <LoginRegisterPage setShow={setShow} /> */}
+                    {/* // Inside the component where you render LoginRegisterPage */}
+                    <LoginRegisterPage currentPage="getEstimate" setShow={setShow} />
+
+                  </Modal>
+                </>
+              ) : (
+                <Button
+                  variant="contained"
+                  onClick={handleNext}
+                  className={css.GetfreeEstimate_Button}
+                >
+                  Next
+                </Button>
+              )}
+            </Box>
           </Box>
           <div className='w-[100vw] h-[10vh]'></div>
         </div>

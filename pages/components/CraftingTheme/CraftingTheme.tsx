@@ -3,6 +3,7 @@ import css from "./CraftingTheme.module.scss";
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
 import Link from "next/link";
+import { FaArrowRight } from 'react-icons/fa';
 
 
 const CraftingThemeBanner: React.FC = () => {
@@ -27,7 +28,7 @@ const CraftingThemeBanner: React.FC = () => {
 
         <React.Fragment>
 
-            <div>
+            <div className={css.imglinear}>  
                 {craftingthemebanner.map((datas: any, index: number) => (
                     <div key={`${datas.toptext}_${index}_${index}`} className={css.craftingthemeContainer}>
                         <img src={datas.craftingthemebanner} alt="bannerImage" className={css.craftingthemeimage} />
@@ -36,7 +37,11 @@ const CraftingThemeBanner: React.FC = () => {
                         <h4 className={css.craftingtheme_tagline}>Crafting a theme for  </h4> <h2 className={css.craftingtheme_tagline1}>a dream house </h2>
                        <Link href={{pathname: '/Unlockartistry'}}>
                         <button className={css.bannerbtn} >
-                        To know more about Space
+                        <div className={css.iconpar}>
+                                        <div className={css.btnicon}>To know more about Space </div>
+                                        <div className={css.circle}><FaArrowRight /></div>
+                                    </div> 
+                        
                       </button></Link>
                         </div>
                        

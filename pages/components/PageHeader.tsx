@@ -15,7 +15,11 @@ import { useRouter } from "next/router";
 import DrawerMenu from "./DrawerMenu";
 import DropDownMenuPrimary from "./DropdownPrimary";
 import { useMediaQuery } from "@mui/material";
-
+import WishListIcon from "./wishlist/wishlisticon";
+import WishlistIcon from "./wishlist/wishlisticon";
+import { useSelector } from 'react-redux';
+import { RootState } from "../../store";
+import { AxiosService } from '../../services/ApiService';
 
 interface pageheaderproperties {
   screenwidth: number;
@@ -54,6 +58,8 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
   const [chatBoxShow, setChatBoxShow] = React.useState(false);
   const [receivedData, setReceivedData] = React.useState('');
   const [isAuth, setAuth] = React.useState(false);
+  // const auth  = useSelector((state: RootState) => state.auth.isLoggedIn);
+  const isLoggedIn = useSelector((state: RootState) => state.auth?.isLoggedIn);
 
   React.useEffect(() => {
     function getsettings() {
@@ -146,8 +152,8 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
         case 'Customer stories':
           router.push('/customstories')
           break;
-        case 'Unknown':
-          router.push('/unknow');
+        case 'Design journal':
+          router.push('/Designjournal');
           break;
         case 'Partner With LHome':
           router.push('/partnership');
@@ -168,6 +174,10 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
 
         case 'Customer Support':
           router.push('/CustomersupportPage');
+          break;
+
+        case '<WishlistIcon />':
+          router.push('/wishlistpage');
           break;
       }
     } else {
@@ -192,22 +202,46 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
     Cookies.remove('userId');
     setAuth(false)
   }
+  const handleWishlistClick = () => {
+    router.push('/wishlistpage')
+
+  };
+  const [wishlistCount, setWishlistCount] = React.useState(0);
+
+  React.useEffect(() => {
+    const fetchWishlistCount = async () => {
+      try {
+        const response = await AxiosService.get('/products/wishlist');
+        console.log('Wishlist items:', response.data.cartItems); // Log the response data
+        setWishlistCount(response.data.cartItems.length); // Update wishlist count
+      } catch (error) {
+        console.error('Error fetching wishlist count:', error);
+      }
+    };
+
+    fetchWishlistCount();
+  }, []);
+  console.log(wishlistCount);
+
+  const handleClick = () => {
+    // setCount(count + 1); // Increment count when the button is clicked
+  };
 
   //useMediaQuery
   const isSmallScreen = useMediaQuery("(max-width: 554px)");
   const isMediumScreen = useMediaQuery("(min-width: 555px) and (max-width: 1257px)");
 
   const isSmallScreen2 = useMediaQuery("(max-width: 450px)");
-
+  // console.log(isLoggedIn)
   return (
     <React.Fragment>
       <div className={`stickly transition-all duration-500`}>
         <div className={hidden ? `${css.headerHidden}` : `${css.headerOuter}`}>
           <div className={hidden ? "flex justify-center" : css.headerLeft}>
             <div id="logo" className={`${css.lhomelogoholder}`}>
-              <div className={isSmallScreen2? `${css.lhomelogo}`:''}>
+              <div className={isSmallScreen2 ? `${css.lhomelogo}` : ''}>
                 {/* <div ref={logo} className={`${css.lhomelogomask}`} /> */}
-                <img src={homeLogo} alt='homeLogo' key={"UniqueKey"} />
+                <Link href="/"><img src={homeLogo} alt='homeLogo' key={"UniqueKey"} /></Link>
               </div>
             </div>
           </div>
@@ -345,7 +379,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                     </Link>
                     : ''
                   }
-                  {menuoptionsstring.indexOf("Customer stories,") < 0 ?
+                  {menuoptionsstring.indexOf("Customer stories,Design journal") < 0 ?
                     <div id="others" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_6} + d-flex`}>
                       <div>Other</div>
                       <div className={css.otherDropDown}>
@@ -361,10 +395,20 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                     <div id="dropdownOptions" rel="largeoptions" className={`${css.largeMenuBand} ${css.customWidthpx_6}`}>
                       <DropDownMenu
                         options={menuoptions}
-                      
+
                       />
                     </div>
                   ) : null}
+
+                  {menuoptionsstring.indexOf("<WishlistIcon />") < 0 ?
+                    <Link href={{ pathname: '/wishlistpage' }}> <div id="wishlistpage" rel="largeoptions" className={`${css.wishlisticon} ${css.customWidthpx_6}`} >
+                      <WishlistIcon onClick={handleClick} wishlistCount={wishlistCount} />
+                    </div>
+                    </Link>
+                    : ''
+                  }
+
+
 
 
                   {isAuth ? <button className={css.userLoginRegister} onClick={handleLogout}> Logout </button> : <div className={css.userLoginRegisterHolder}>
@@ -375,10 +419,10 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
                       <Modal.Header  >
                         <AiFillCloseCircle onClick={handleClose} />
                       </Modal.Header>
-                      <LoginRegisterPage setShow={setShow} />
+                      <LoginRegisterPage setShow={setShow} currentPage={undefined} />
                     </Modal>
                   </div>}
-                  
+
                 </div>
               </div>
             </div>)}

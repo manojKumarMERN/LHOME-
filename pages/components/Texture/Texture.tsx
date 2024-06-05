@@ -3,6 +3,7 @@ import css from "./Texture.module.scss";
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
 import Link from "next/link";
+import { FaArrowRight } from 'react-icons/fa';
 
 
 const TextureBanner: React.FC = () => {
@@ -35,7 +36,11 @@ const TextureBanner: React.FC = () => {
                             <h4 className={css.texture_tagline}>Incorporating a variety of </h4> <h2 className={css.texture_tagline1}>Textures and Materials for  </h2><h2 className={css.texture_tagline1} >visual interest and tactile appeal</h2>
                        <Link href={{pathname: '/Wall'}}>        
                             <button className={css.bannerbtn} >
-                        To know more about Walls
+                            <div className={css.iconpar}>
+                                        <div className={css.btnicon}> To know more about Walls</div>
+                                        <div className={css.circle}><FaArrowRight /></div>
+                                    </div> 
+                       
                       </button></Link>
                         </div>
                     </div>

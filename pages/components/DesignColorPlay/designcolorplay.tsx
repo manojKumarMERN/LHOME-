@@ -84,20 +84,20 @@ const DesignColorPlay: React.FC = ({ }) => {
         <React.Fragment>
 
             <div className={css.row1}>
-                <div className={css.rowimg}>
+                <div className={css.rowimg} style={{ width: '115%' }}>
                     <img src={colorplayRowimg} />
                 </div>
 
                 <div className="w-[100%]">
                     <div className={css.points}>
-                        <h2 dangerouslySetInnerHTML={{ __html: colorplayRowmainhead }}></h2>
+                       <div className={css.mainhead} dangerouslySetInnerHTML={{ __html: colorplayRowmainhead }}></div>
                         {/* {colorplayRowmainhead} */}
                         <p className={css.subhead}>{colorplayRowhead}</p>
                         <div className={css.sam}>
                             <div>{colorplaypoints.map((datas: any, index: number) => (
                                 <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
                                     <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
-                                    
+
                                 </div>
                             ))}
 
@@ -115,15 +115,17 @@ const DesignColorPlay: React.FC = ({ }) => {
                 </div>
                 <div className="w-[100%]">
                     <div className={css.points}>
-                        <h2 dangerouslySetInnerHTML={{ __html: craftRowmainhead }}></h2>
+                        <p className={css.mainhead} dangerouslySetInnerHTML={{ __html: craftRowmainhead }}></p>
                         <p className={css.subhead}>{craftRowhead}</p>
-                        <div>{Craftingpoints.map((datas: any, index: number) => (
-                            <div key={`${datas.heading}_${index}_${index}`}  className={css.heading}>
-                        <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
+                        <div className={css.sam}>
+                            <div>{Craftingpoints.map((datas: any, index: number) => (
+                                <div key={`${datas.heading}_${index}_${index}`} className={css.heading}>
+                                    <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
 
+                                </div>
+
+                            ))}
                             </div>
-
-                        ))}
                         </div>
                     </div>
                     <span > <Link className={css.readmore} href={{ pathname: '/CraftingTheme' }}>Read More</Link></span>
@@ -133,20 +135,22 @@ const DesignColorPlay: React.FC = ({ }) => {
 
 
             <div className={css.row1}>
-                <div className={css.rowimg}>
+                <div className={css.rowimg} style={{ width: '115%' }}>
                     <img src={unlockartistryRowimg} />
                 </div>
                 <div className="w-[100%]">
                     <div className={css.points}>
-                        <h2 dangerouslySetInnerHTML={{ __html: unlockartistryRowmainhead }}></h2>
+                        <p className={css.mainhead} dangerouslySetInnerHTML={{ __html: unlockartistryRowmainhead }}></p>
                         <p className={css.subhead}>{unlockartistryRowhead}</p>
-                        <div>{unlockartistrypoints.map((datas: any, index: number) => (
-                            <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
-                        <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
+                        <div className={css.sam}>
+                            <div>{unlockartistrypoints.map((datas: any, index: number) => (
+                                <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
+                                    <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
 
+                                </div>
+
+                            ))}
                             </div>
-
-                        ))}
                         </div>
                     </div>
                     <span > <Link className={css.readmore} href={{ pathname: 'Unlockartistry' }}>Read More</Link></span>
@@ -156,19 +160,21 @@ const DesignColorPlay: React.FC = ({ }) => {
 
             <div className={css.rowChange}>
                 <div className={css.rowimg}>
-                    <img src={artistrylightRowimg}/>
+                    <img src={artistrylightRowimg} />
                 </div>
                 <div className="w-[100%]">
                     <div className={css.points}>
-                        <h2 dangerouslySetInnerHTML={{ __html: artistrylightRowmainhead }}></h2>
+                    <p className={css.mainhead} dangerouslySetInnerHTML={{ __html: artistrylightRowmainhead }}></p>
                         <p className={css.subhead}>{artistrylightRowhead}</p>
-                        <div>{artistrylightpoints.map((datas: any, index: number) => (
-                            <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
-                        <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
-                               
-                            </div>
+                        <div className={css.sam}>
+                            <div>{artistrylightpoints.map((datas: any, index: number) => (
+                                <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
+                                    <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
 
-                        ))}
+                                </div>
+
+                            ))}
+                            </div>
                         </div>
                     </div>
                     <span > <Link className={css.readmore} href={{ pathname: '/Artistrylight' }}>Read More</Link></span>
@@ -179,24 +185,25 @@ const DesignColorPlay: React.FC = ({ }) => {
 
 
             <div className={css.row1}>
-                <div className={css.rowimg} style={{width:'155%'}}>
-                    <img src={textureRowimg}  />
+                <div className={css.rowimg} style={{ width: '145%' }}>
+                    <img src={textureRowimg} />
                 </div>
 
                 <div>
 
                     <div className={css.points}>
-                        <h2 dangerouslySetInnerHTML={{ __html: textureRowmainhead }}></h2>
+                        <p className={css.mainhead} dangerouslySetInnerHTML={{ __html: textureRowmainhead }}></p>
                         <p className={css.subhead}>{textureRowhead}</p>
-                        <div>{texturepoints.map((datas: any, index: number) => (
-                            <div key={`${datas.heading}_${index}_${index}`}  >
-                                <b className={css.heading1}>{datas.heading} </b>
-                                <p className={css.description_p}>{datas.discription}
-                                </p>
+                        <div className={css.sam}>
+                            <div>{texturepoints.map((datas: any, index: number) => (
+                                <div key={`${datas.heading}_${index}_${index}`}  >
+                                    <b className={css.heading1}>{datas.heading} </b>
+                                    <p className={css.description_p}>{datas.discription}
+                                    </p>
+                                </div>
+
+                            ))}
                             </div>
-
-                        ))}
-
                         </div>
                     </div>
                     <span> <Link className={css.readmore} href={{ pathname: '/Texture' }}>Read More</Link></span>
@@ -211,15 +218,17 @@ const DesignColorPlay: React.FC = ({ }) => {
                 </div>
                 <div className="w-[100%]">
                     <div className={css.points}>
-                    <h2 dangerouslySetInnerHTML={{ __html: wallRowmainhead }}></h2>
-                    <p className={css.subhead}>{wallRowhead}</p>
+                        <p className={css.mainhead} dangerouslySetInnerHTML={{ __html: wallRowmainhead }}></p>
+                        <p className={css.subhead}>{wallRowhead}</p>
+                        <div className={css.sam}>
                         <div>{wallpoints.map((datas: any, index: number) => (
                             <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
-                            <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
+                                <span className={css.heading1}>{datas.heading} </span>  {datas.discription}
 
                             </div>
 
                         ))}
+                        </div>
                         </div>
                     </div>
                     <span > <Link className={css.readmore} href={{ pathname: '/Wall' }}>Read More</Link></span>

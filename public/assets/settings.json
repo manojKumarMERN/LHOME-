@@ -1272,13 +1272,13 @@
     ],
     "homeofficebaner": [
       {
-        "image": "/assets/homeOffice/homeoffice.png", 
+        "image": "https://res.cloudinary.com/dcnmvejbo/image/upload/v1714715031/lhome/homeoffice/homeoffice_m8ha2v.png", 
         "name": "Copy Design your own Kitchen with our experts!"
       }
     ],
     "bathroombaner": [
       {
-        "image": "/assets/Bathroom/bathroombanner.svg",
+        "image": "https://res.cloudinary.com/dcnmvejbo/image/upload/v1714645316/lhome/bathroom/bathroombanner_vqrfui.svg",
         "name": "Copy Design your own Kitchen with our experts!"
       }
     ],
@@ -1642,19 +1642,19 @@
     ],
     "bedroombanner": [
       {
-        "image": "/assets/Bedroom/bedroombanner.jpg",
+        "image": "https://res.cloudinary.com/dcnmvejbo/image/upload/v1714387571/lhome/bedroom/bedroombanner_gklzm1.jpg",
         "name": " Design your own Bedroom with our experts!"
       }
     ],
     "livingRoomBanner": [
       {
-        "image": "/assets/LivingRoom/LivingroomBanner.jpg",
+        "image": "https://res.cloudinary.com/dcnmvejbo/image/upload/v1714646408/lhome/livingroom/LivingroomBanner_zpes0v.jpg",
         "name": "Copy Design your own Kitchen with our experts!"
       }
     ],
     "banerfurniture": [
       {
-        "image": "/assets/Spacefurniture/spacebanner.jpg",
+        "image": "https://res.cloudinary.com/dcnmvejbo/image/upload/v1714731812/lhome/spacesavingfurniture/spacebanner_zsizju.jpg",
         "name": "Copy Design your own Spacesaving Furniture with our experts!"
       }
     ],
@@ -1763,6 +1763,12 @@
     "wallbanner":[
       {
         "image":"/assets/designJournal/banner-7.jpg",
+        "name":"Elevate your space with Walls that do more than enclose"
+      }
+    ],
+    "wishlist":[
+      {
+        "image":"/assets/icons/wish.png",
         "name":"Elevate your space with Walls that do more than enclose"
       }
     ]

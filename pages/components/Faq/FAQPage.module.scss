@@ -55,7 +55,7 @@
     font-weight: 400;
     background: #ffff;
     color: #000;
-    width: 96%;
+    width: 94%;
     height: 60px;
     margin-left: 30px;
     align-items: center !important;
@@ -67,7 +67,7 @@
 .faqIcon {
     color: #222222;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     margin-top: 3px;
     @media (min-width:2000px) {
         font-size: 0.6vw;
@@ -84,7 +84,7 @@
   
   .faqAnswer {
     max-height: 0;
-    overflow: hidden;
+    // overflow: hidden;
     transform-origin: top;
     transform: scaleY(0);
     opacity: 0;

@@ -29,11 +29,12 @@ const Registerpage = ({toggleForm , setShow}) => {
             email: '',
             pincode: '',
             checkforwhatsapp: false,
+            referralCode:'',
         },
         validationSchema: SignupSchema,
         onSubmit: async (values) => {
             try {
-              const response = await AxiosService.post('/register',  values );
+              const response = await AxiosService.put('/user',  values );
               if(response.status == 201){
                 toast.success('User details registered successfully')
                 toggleForm();

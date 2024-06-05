@@ -13,11 +13,13 @@ import Guranted from "./components/Guranted/Guranted";
 import Footer from "./components/Footer/Footer";
 import DynamicIterableComponent from "./components/IterableComponent/DynamicIterableComponent";
 import BathroomBaner from "./components/bathroom/bathroombanner";
+import { AxiosService } from '../services/ApiService';
 
 
 const HomeOffice: React.FC = () => {
 
   const [homeOffice, setHomeoffice] = React.useState([])
+  const [bathRoom, setBathRoom] = React.useState([]);
 
   const living = React.useRef(null);
   const [screenwidth, setWidth] = React.useState(window.innerWidth);
@@ -75,11 +77,24 @@ const HomeOffice: React.FC = () => {
   }, [handleResize, handleResized])
 
   React.useEffect(() => {
-    let api = simpleCallInitAPI(`${assetpath}/assets/bathroom.json`);
-    api.then((data: any) => {
-      setHomeoffice(data.data.bathroom);
-    });
-  }, [assetpath]);
+    const fetchData = async () => {
+        try {
+            const response = await AxiosService.get('/products/category/bathroom');
+            setBathRoom(response.data.products);
+            console.log(response.data);
+        } catch (error) {
+            console.error('Error fetching Bathroom data:', error);
+        }
+    };
+
+    fetchData();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+}, [handleResize]);
 
   const page = React.useRef(null);
   const [prevPosition, setPrev] = React.useState(0);
@@ -128,7 +143,7 @@ const HomeOffice: React.FC = () => {
                 <div><Ideas prop="Bath Room" color="red" space="bathroom"/></div>
               </div>
             </div>
-            <div className="mt-[-5%]"><DynamicIterableComponent data={homeOffice} categoryId='15'/></div>
+            <div className="mt-[-5%]"><DynamicIterableComponent data={bathRoom} categoryId='15'/></div>
             <div className="mb-[-50px]"><Autoplay living={living} /></div>
             <div><ReferNowPage /></div>
             <div><Warranty /></div>

@@ -3,6 +3,7 @@ import css from "./designjournal.module.scss";
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
 import Link from "next/link";
+import { FaArrowRight } from 'react-icons/fa';
 
 
 const DesignJorunaalBanner: React.FC = () => {
@@ -32,11 +33,14 @@ const DesignJorunaalBanner: React.FC = () => {
                     <div key={`${datas.toptext}_${index}_${index}`} className={css.designjournalContainer}>
                         <img src={datas.designjournalbanner} alt="bannerImage" className={css.designjournalimage} />
                         <div className={css.designjournalbannercontent}>
-                            <h4 className={css.designjournal_tagline1}>Best Guide </h4> <h2 className={css.designjournal_tagline1}>For Interiors </h2>
-                       <Link href={{pathname: '/Colorplay'}}>
-                            <button className={css.bannerbtn} >
-                        To know more about Colors                   
-                      </button></Link>
+                            <p className={css.designjournal_tagline1}>Best Guide </p> <p className={css.designjournal_tagline1}>For Interiors </p>
+                            <Link href={{ pathname: '/Colorplay' }}>
+                                <button className={css.bannerbtn} >
+                                    <div className={css.iconpar}>
+                                        <div className={css.btnicon}> To know more about Colors </div>
+                                        <div className={css.circle}><FaArrowRight /></div>
+                                    </div>
+                                </button></Link>
                         </div>
                     </div>
                 ))}

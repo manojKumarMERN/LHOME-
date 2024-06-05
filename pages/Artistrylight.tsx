@@ -103,10 +103,10 @@ const ArtistryLight: React.FC = () => {
                                 <div className={css.boldheading}>{lightheading}</div><br />
                                 <div>{lightpoints.map((datas: any, index: number) => (
                                     <div key={`${datas.heading}_${index}_${index}`} className={css.heading} >
-                                     <span className={css.heading1}>{datas.heading} </span>  {datas.discription}<br /><br />
+                                     <span className={css.heading1}>{datas.heading} </span> <br/><br/> {datas.discription}<br /><br />
                                     </div>
                                 ))}
-                                </div>
+                                </div>  
                                 <div className={css.heading}>{summary}</div>
                             </div>
                        

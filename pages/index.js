@@ -1,25 +1,15 @@
 import Head from 'next/head';
-import dynamic from "next/dynamic";
-import * as React from "react";
-import "@fontsource/montserrat"; // Defaults to weight 400
-import "@fontsource/montserrat/700.css"; // Specify weight
-import "@fontsource/montserrat/400-italic.css"
-// import "@fontsource/montserrat/200.css"; // Specify weight
-// import "@fontsource/montserrat/400.css"; // Specify weight
-// import "@fontsource/montserrat/500.css"; // Specify weight
-
-
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  HashRouter,
-  Switch
-} from "react-router-dom";
+import dynamic from 'next/dynamic';
+import * as React from 'react';
+import { useRouter } from 'next/router';
 import ClientOnly from './components/ClientOnly';
-const HomePage = dynamic(() => import("./components/NewHomePage"), { ssr: false });
+import AdminLoginPage from './components/Admin/login'; // Import AdminLoginPage component
+
+const HomePage = dynamic(() => import('./components/NewHomePage'), { ssr: false });
 
 function App() {
+  const router = useRouter(); // Initialize router
+
   const [screenwidth, setWidth] = React.useState(window.innerWidth);
   let hgtt = 0;
   if (window.innerWidth < 600) {
@@ -31,10 +21,6 @@ function App() {
     hgtt = window.innerHeight - 160;
   }
   const [screenheight, setHeight] = React.useState(hgtt);
-  const toggleNavigation = (e) => {
-    setisNavOpen(!isNavOpen);
-  };
-
 
   const handleResize = React.useCallback(() => {
     setWidth(window.innerWidth);
@@ -71,7 +57,6 @@ function App() {
     }, 1000);
   }, [handleResize]);
 
-
   React.useEffect(() => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResized);
@@ -87,8 +72,16 @@ function App() {
     setTimeout(() => {
       handleResize();
     }, 1000);
-  }
+  };
 
+  // Render AdminLoginPage component if URL is /admin/login, otherwise render HomePage
+  const renderPage = () => {
+    if (router.pathname === '/admin/adminlogin') {
+      return <AdminLoginPage />;
+    } else {
+      return <HomePage routeChanged={routechanged} screenwidth={screenwidth} screenheight={screenheight} />;
+    }
+  };
 
   return (
     <ClientOnly>
@@ -99,13 +92,7 @@ function App() {
             <meta name="description" content="" />
             <link rel="icon" href="/assets/icons/favicon.png" />
           </Head>
-          <div>
-            <HashRouter>
-              <Routes>
-                <Route path="/" element={<HomePage routeChanged={routechanged} screenwidth={screenwidth} screenheight={screenheight} />} />
-              </Routes>
-            </HashRouter>
-          </div>
+          {renderPage()}
         </div>
       </div>
     </ClientOnly>

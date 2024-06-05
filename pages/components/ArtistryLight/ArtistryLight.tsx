@@ -3,7 +3,7 @@ import css from "./ArtistryLight.module.scss";
 import * as config from "../../../next.config.js";
 import { simpleCallInitAPI } from '../../../services/ApicallInit';
 import Link from "next/link";
-
+import { FaArrowRight } from 'react-icons/fa';
 
 const ArtistryLightBanner: React.FC = () => {
     const [artistrylightbanner, setArtistryLightBanner] = useState([]);
@@ -32,10 +32,14 @@ const ArtistryLightBanner: React.FC = () => {
                     <div key={`${datas.name}_${index}_${index}`} className={css.artistrylightContainer}>
                         <img src={datas.artistrylightbanner} alt="bannerImage" className={css.artistrylightimage} />
                         <div className={css.artistrylightbannercontent}>
-                            <h4 className={css.artistrylight_tagline}>Transforming spaces </h4> <h2 className={css.artistrylight_tagline1}>with the artistry of light </h2>
+                            <h2 className={css.artistrylight_tagline}>Transforming spaces </h2> <h2 className={css.artistrylight_tagline1}>with the artistry of light </h2>
                        <Link href={{pathname: '/Texture'}}>
                             <button className={css.bannerbtn} >
-                        To know more about Texture and Materials
+                            <div className={css.iconpar}>
+                                        <div className={css.btnicon}>To know more about Texture and Materials </div>
+                                        <div className={css.circle}><FaArrowRight /></div>
+                                    </div>
+                 
                       </button></Link>
                         </div>
                     </div>

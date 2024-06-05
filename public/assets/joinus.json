@@ -45,7 +45,7 @@
                     "Community Manager",
                     "Sales Manager",
                     "Analyst-SCM",
-                    "junior Graphic Designer"
+                    "Junior Graphic Designer"
                 ]
             }
         },
@@ -95,7 +95,7 @@
                     "Community Manager",
                     "Sales Manager",
                     "Analyst-SCM",
-                    "junior Graphic Designer"
+                    "Junior Graphic Designer"
                 ]
             }
         },
@@ -145,7 +145,7 @@
                     "Community Manager",
                     "Sales Manager",
                     "Analyst-SCM",
-                    "junior Graphic Designer"
+                    "Junior Graphic Designer"
                 ]
             }
         },
@@ -201,14 +201,14 @@
                     "Community Manager",
                     "Sales Manager",
                     "Analyst-SCM",
-                    "junior Graphic Designer"
+                    "Junior Graphic Designer"
                 ]
             }
         },
         {
             "role": "Sales Manager",
             "location": "coimbatore",
-            "department": "Sales ",
+            "department": "Sales",
             
 
             "details": {
@@ -251,7 +251,7 @@
                     "Community Manager",
                     "Sales Manager",
                     "Analyst-SCM",
-                    "junior Graphic Designer"
+                    "Junior Graphic Designer"
                 ]
             }
         },
@@ -301,23 +301,23 @@
                     "Community Manager",
                     "Sales Manager",
                     "Analyst-SCM",
-                    "junior Graphic Designer"
+                    "Junior Graphic Designer"
                 ]
             }
         },
         {
-            "role": "junior Graphic Designer",
-            "location": "coimbatore",
+            "role": "Junior Graphic Designer",
+            "location": "rajapalayam",
             "department": "Brand",
             
 
             "details": {
-                "header": "junior Graphic Designer",
+                "header": "Junior Graphic Designer",
                 "joblocation": "Brand | Coimbatore, Tamil Nadu",
                 "Job Description": "A Supply Chain Analyst analyzes data and methods to predict and improve a company’s delivery of products and services to its customers. An organization’s supply chain needs to run smoothly and efficiently to ensure a profit, making the supply chain analyst an essential role.Analysts use data to support their recommendations for optimizing the methods within the company in terms of production, supplies, and transportation. Depending on the size and type of organization, they typically report to a manager or director of supply chain management, and may sometimes report directly to a general manager"
             },
             "Job Requirement": {
-                "Postiton Title": "junior Graphic Designer",
+                "Postiton Title": "Junior Graphic Designer",
                 "Experience": "5 and more years",
                 "Qualification": "Any related degree",
                 "Job type": "full time",
@@ -351,7 +351,213 @@
                     "Community Manager",
                     "Sales Manager",
                     "Analyst-SCM",
-                    "junior Graphic Designer"
+                    "Junior Graphic Designer"
+                ]
+            }
+        },
+        {
+            "role": "Senior Graphic Designer",
+            "location": "rajapalayam",
+            "department": "Brand",
+            
+
+            "details": {
+                "header": "Senior Graphic Designer",
+                "joblocation": "Brand | Coimbatore, Tamil Nadu",
+                "Job Description": "The goal of an engineer’s career is solving real problems for social and ecological betterment. At the University of Engineering and Technology (UTEC) in Lima, Peru, this vision is promoted from the earliest stages of a student’s engineering career to enable them to embrace their creativity while developing meaningful solutions for ecosystems in need. In this article, an educational methodology is presented that uses a project-based collaborative learning approach with the aim of evaluating, selecting and developing community-oriented engineering solutions in the Base of the Pyramid (BoP). Communication strategies and evaluation of projects based on co-design methods implemented among engineering students and isolated rural communities in the highlands of Peru are discussed. In conclusion, the process to select a community is analyzed and the most important criteria are determined. In addition, we highlight the importance of defining elements to understand the context (community and place) and to establish future objectives (group and projects) during the exploration period that will help facilitate the decision to select a community."
+            },
+            "Job Requirement": {
+                "Postiton Title": "Senior Graphic Designer",
+                "Experience": "5 and more years",
+                "Qualification": "Any related degree",
+                "Job type": "full time",
+                "Salary": "4 lakh per annum",
+                "Location": "Coimbatore, Tamilnadu"
+            },
+            "btn1Name": "Apply Now",
+            "btn2Name": "Share",
+            "Job Apply": {
+                "name": "Apply for this job",
+                "labelCV": "Resume/CV *",
+                "btnCV": "Select Resume",
+                "btnLabel": "Upload in either DOC, DOCX or PDF file format (file size not more than 1MB)",
+                "firstName": "First name*:",
+                "lastName": "last name*:",
+                "mail": "Email*:",
+                "mob": "Mobile Number*:",
+                "questionHeader": "Mandatory Questions",
+                "CCtc": "Current CTC *",
+                "ECtc": "Expected CTC *",
+                "PLocation": "Preferred Location *",
+                "radioBtnLabel": "Are you currently serving your notice period? *",
+                "portLabel": "Portfolio (if available)",
+                "filBtnLabel": "Select File",
+                "subtnLabel": "Submit",
+                "sltDep": "Select department*:",
+                "dropDowndep": [
+                    "Executive-Shift Incharge",
+                    "Senior Executive-Relationship Management",
+                    "Senior Graphic Designer",
+                    "Community Manager",
+                    "Sales Manager",
+                    "Analyst-SCM",
+                    "Junior Graphic Designer"
+                ]
+            }
+        },
+        {
+            "role": "Community Manager",
+            "location": "rajapalayam",
+            "department": "Design",
+            
+
+            "details": {
+                "header": "Community Manager",
+                "joblocation": "Design | Coimbatore, Tamil Nadu",
+                "Job Description": "The goal of an engineer’s career is solving real problems for social and ecological betterment. At the University of Engineering and Technology (UTEC) in Lima, Peru, this vision is promoted from the earliest stages of a student’s engineering career to enable them to embrace their creativity while developing meaningful solutions for ecosystems in need. In this article, an educational methodology is presented that uses a project-based collaborative learning approach with the aim of evaluating, selecting and developing community-oriented engineering solutions in the Base of the Pyramid (BoP). Communication strategies and evaluation of projects based on co-design methods implemented among engineering students and isolated rural communities in the highlands of Peru are discussed. In conclusion, the process to select a community is analyzed and the most important criteria are determined. In addition, we highlight the importance of defining elements to understand the context (community and place) and to establish future objectives (group and projects) during the exploration period that will help facilitate the decision to select a community."
+            },
+            "Job Requirement": {
+                "Postiton Title": "Community Manager",
+                "Experience": "5 and more years",
+                "Qualification": "Any related degree",
+                "softskills": [
+                    "Auto Cad",
+                    "Civil 3d",
+                    "Autodesk Revit",
+                    "Rhino 3d"
+                ],
+                "Job type": "full time",
+                "Salary": "4 lakh per annum",
+                "Location": "Coimbatore, Tamilnadu"
+            },
+            "btn1Name": "Apply Now",
+            "btn2Name": "Share",
+            "Job Apply": {
+                "name": "Apply for this job",
+                "labelCV": "Resume/CV *",
+                "btnCV": "Select Resume",
+                "btnLabel": "Upload in either DOC, DOCX or PDF file format (file size not more than 1MB)",
+                "firstName": "First name*:",
+                "lastName": "last name*:",
+                "mail": "Email*:",
+                "mob": "Mobile Number*:",
+                "questionHeader": "Mandatory Questions",
+                "CCtc": "Current CTC *",
+                "ECtc": "Expected CTC *",
+                "PLocation": "Preferred Location *",
+                "radioBtnLabel": "Are you currently serving your notice period? *",
+                "portLabel": "Portfolio (if available)",
+                "filBtnLabel": "Select File",
+                "subtnLabel": "Submit",
+                "sltDep": "Select department*:",
+                "dropDowndep": [
+                    "Executive-Shift Incharge",
+                    "Senior Executive-Relationship Management",
+                    "Senior Graphic Designer",
+                    "Community Manager",
+                    "Sales Manager",
+                    "Analyst-SCM",
+                    "Junior Graphic Designer"
+                ]
+            }
+        },
+        {
+            "role": "Sales Manager",
+            "location": "rajapalayam",
+            "department": "Sales",
+            
+
+            "details": {
+                "header": "Sales Manager",
+                "joblocation": "Sales | Coimbatore, Tamil Nadu",
+                "Job Description": "The goal of an engineer’s career is solving real problems for social and ecological betterment. At the University of Engineering and Technology (UTEC) in Lima, Peru, this vision is promoted from the earliest stages of a student’s engineering career to enable them to embrace their creativity while developing meaningful solutions for ecosystems in need. In this article, an educational methodology is presented that uses a project-based collaborative learning approach with the aim of evaluating, selecting and developing community-oriented engineering solutions in the Base of the Pyramid (BoP). Communication strategies and evaluation of projects based on co-design methods implemented among engineering students and isolated rural communities in the highlands of Peru are discussed. In conclusion, the process to select a community is analyzed and the most important criteria are determined. In addition, we highlight the importance of defining elements to understand the context (community and place) and to establish future objectives (group and projects) during the exploration period that will help facilitate the decision to select a community."
+            },
+            "Job Requirement": {
+                "Postiton Title": "Sales Manager",
+                "Experience": "5 and more years",
+                "Qualification": "Any related degree",
+                "Job type": "full time",
+                "Salary": "4 lakh per annum",
+                "Location": "Coimbatore, Tamilnadu"
+            },
+            "btn1Name": "Apply Now",
+            "btn2Name": "Share",
+            "Job Apply": {
+                "name": "Apply for this job",
+                "labelCV": "Resume/CV *",
+                "btnCV": "Select Resume",
+                "btnLabel": "Upload in either DOC, DOCX or PDF file format (file size not more than 1MB)",
+                "firstName": "First name*:",
+                "lastName": "last name*:",
+                "mail": "Email*:",
+                "mob": "Mobile Number*:",
+                "questionHeader": "Mandatory Questions",
+                "CCtc": "Current CTC *",
+                "ECtc": "Expected CTC *",
+                "PLocation": "Preferred Location *",
+                "radioBtnLabel": "Are you currently serving your notice period? *",
+                "portLabel": "Portfolio (if available)",
+                "filBtnLabel": "Select File",
+                "subtnLabel": "Submit",
+                "sltDep": "Select department*:",
+                "dropDowndep": [
+                    "Executive-Shift Incharge",
+                    "Senior Executive-Relationship Management",
+                    "Senior Graphic Designer",
+                    "Community Manager",
+                    "Sales Manager",
+                    "Analyst-SCM",
+                    "Junior Graphic Designer"
+                ]
+            }
+        },
+        {
+            "role": "Sales Manager",
+            "location": "rajapalayam",
+            "department": "Sales",
+            
+
+            "details": {
+                "header": "Sales Manager",
+                "joblocation": "Sales | Coimbatore, Tamil Nadu",
+                "Job Description": "The goal of an engineer’s career is solving real problems for social and ecological betterment. At the University of Engineering and Technology (UTEC) in Lima, Peru, this vision is promoted from the earliest stages of a student’s engineering career to enable them to embrace their creativity while developing meaningful solutions for ecosystems in need. In this article, an educational methodology is presented that uses a project-based collaborative learning approach with the aim of evaluating, selecting and developing community-oriented engineering solutions in the Base of the Pyramid (BoP). Communication strategies and evaluation of projects based on co-design methods implemented among engineering students and isolated rural communities in the highlands of Peru are discussed. In conclusion, the process to select a community is analyzed and the most important criteria are determined. In addition, we highlight the importance of defining elements to understand the context (community and place) and to establish future objectives (group and projects) during the exploration period that will help facilitate the decision to select a community."
+            },
+            "Job Requirement": {
+                "Postiton Title": "Sales Manager",
+                "Experience": "5 and more years",
+                "Qualification": "Any related degree",
+                "Job type": "full time",
+                "Salary": "4 lakh per annum",
+                "Location": "Coimbatore, Tamilnadu"
+            },
+            "btn1Name": "Apply Now",
+            "btn2Name": "Share",
+            "Job Apply": {
+                "name": "Apply for this job",
+                "labelCV": "Resume/CV *",
+                "btnCV": "Select Resume",
+                "btnLabel": "Upload in either DOC, DOCX or PDF file format (file size not more than 1MB)",
+                "firstName": "First name*:",
+                "lastName": "last name*:",
+                "mail": "Email*:",
+                "mob": "Mobile Number*:",
+                "questionHeader": "Mandatory Questions",
+                "CCtc": "Current CTC *",
+                "ECtc": "Expected CTC *",
+                "PLocation": "Preferred Location *",
+                "radioBtnLabel": "Are you currently serving your notice period? *",
+                "portLabel": "Portfolio (if available)",
+                "filBtnLabel": "Select File",
+                "subtnLabel": "Submit",
+                "sltDep": "Select department*:",
+                "dropDowndep": [
+                    "Executive-Shift Incharge",
+                    "Senior Executive-Relationship Management",
+                    "Senior Graphic Designer",
+                    "Community Manager",
+                    "Sales Manager",
+                    "Analyst-SCM",
+                    "Junior Graphic Designer"
                 ]
             }
         }

@@ -13,6 +13,7 @@ import DynamicIterableComponent from "./components/IterableComponent/DynamicIter
 import Link from "next/link.js";
 import Ideas from "./components/MeetDesigner/ideas";
 import LivingRoomBanner from "./components/LivingRoom/LivingBanner";
+import { AxiosService } from '../services/ApiService';
 
 const ModularKitchenPage: React.FC = () => {
     const living = React.useRef(null);
@@ -68,11 +69,24 @@ const ModularKitchenPage: React.FC = () => {
     }, [handleResize]);
 
     React.useEffect(() => {
-        let api = simpleCallInitAPI(`${assetpath}/assets/livingroom.json`);
-        api.then((data: any) => {
-            setLivingRoom(data.data.livingRoom);
-        });
-    }, [assetpath]);
+        const fetchData = async () => {
+            try {
+                const response = await AxiosService.get('/products/category/livingroom');
+                setLivingRoom(response.data.products);
+                console.log(response.data);
+            } catch (error) {
+                console.error('Error fetching Livingroom data:', error);
+            }
+        };
+    
+        fetchData();
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [handleResize]);
 
     const page = React.useRef(null);
     const [prevPosition, setPrev] = React.useState(0);

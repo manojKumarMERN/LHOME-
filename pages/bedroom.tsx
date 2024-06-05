@@ -9,17 +9,18 @@ import ReferNowPage from "./components/ReferNow/ReferNowPage";
 import Warranty from "./components/warranty/Warranty";
 import Guranted from "./components/Guranted/Guranted";
 import FAQPage from "./components/Faq/FAQPage";
-import Link from "next/link.js";
+import Link from "next/link";
 import Ideas from "./components/MeetDesigner/ideas";
-import { simpleCallInitAPI } from "../services/ApicallInit";
+import { AxiosService } from '../services/ApiService';
 import DynamicIterableComponent from "./components/IterableComponent/DynamicIterableComponent";
 import DesignColorPlay from "./components/DesignColorPlay/designcolorplay";
 
 const ModularKitchenPage: React.FC = () => {
     const living = React.useRef(null);
-    const [bedroom, setbedroom] = React.useState([]);
-    const [screenwidth, setWidth] = React.useState(window.innerWidth);
-    let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
+    const [bedroom, setBedroom] = React.useState([]);
+    const [screenwidth, setScreenWidth] = React.useState(window.innerWidth);
+    const assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
+
     let hgtt = 0;
     if (window.innerWidth < 600) {
         hgtt = window.innerHeight - 210;
@@ -29,11 +30,10 @@ const ModularKitchenPage: React.FC = () => {
     } else {
         hgtt = window.innerHeight - 160;
     }
-    const [screenheight, setHeight] = React.useState(hgtt);
-
+    const [screenheight, setScreenHeight] = React.useState(hgtt);
 
     const handleResize = React.useCallback(() => {
-        setWidth(window.innerWidth);
+        setScreenWidth(window.innerWidth);
         let hgtt = 0;
         if (window.innerWidth < 600) {
             hgtt = window.innerHeight - 210;
@@ -58,70 +58,77 @@ const ModularKitchenPage: React.FC = () => {
         } else {
             hgtt = window.innerHeight - 160;
         }
-        setHeight(hgtt);
+        setScreenHeight(hgtt);
     }, []);
 
-    const handleResized = React.useCallback(() => {
-        setTimeout(() => {
-            handleResize();
-        }, 1000);
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await AxiosService.get('/products/category/bedroom');
+                setBedroom(response.data.products);
+                console.log(response.data);
+            } catch (error) {
+                console.error('Error fetching bedroom data:', error);
+            }
+        };
+    
+        fetchData();
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, [handleResize]);
 
-    React.useEffect(() => {
-        let api = simpleCallInitAPI(`${assetpath}/assets/bedroom.json`);
-        api.then((data: any) => {
-            setbedroom(data.data.Bedroom);
-        });
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResized);
-    }, [ handleResize, handleResized,assetpath]);
-
     const page = React.useRef(null);
-    const [prevPosition, setPrev] = React.useState(0);
-    const [hidden, setHidden] = React.useState(false)
+    const [prevPosition, setPrevPosition] = React.useState(0);
+    const [hidden, setHidden] = React.useState(false);
 
     const pageheaderMonitor = () => {
         if (page.current.scrollTop > prevPosition) {
-            setPrev(page.current.scrollTop)
-            setHidden(true)
+            setPrevPosition(page.current.scrollTop);
+            setHidden(true);
         } else {
-            setHidden(false)
-            setPrev(page.current.scrollTop)
-
+            setHidden(false);
+            setPrevPosition(page.current.scrollTop);
         }
-    }
+    };
 
     return (
         <React.Fragment>
             <div className="animate-fade-in">
                 <div className={css.lhomePage}>
-                <div className={hidden ? "hidden" : ""}>
+                    <div className={hidden ? "hidden" : ""}>
                         <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false} />
                     </div>
-
                     <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
                         <div><BedroomBanner /></div>
-
                         <div className={css.bedroom_bgclr}>
-                <div className={css.bedroom_filter_home}>
-                <div className="pt-4">
-                  <span className={css.bedroom_filter_link_span1}><Link href={{ pathname: "/" }} className={css.bedroom_filter_link}>home</Link></span>
-                  <span className={css.bedroom_filter_slash}>/</span>
-                  <span className={css.bedroom_filter_link_span2}><Link href={{ pathname: "/bedroom" }} className={css.bedroom_filter_link}>bedroom</Link></span>
-                </div>
-                <div className={css.bedroom_filter_header_content}>Bed Room</div>
-                <div className="row ">
-                <div className="col-lg-3 "> </div>
-
-                <div className={"col-lg-6 px-[15px] " + css.bedroom_filter_content}><p className={css.bedroom_filter_additional_content}>Transform your bedroom into a tranquil retreat with sophisticated design elements that blend comfort and style, 
-                creating a personalized haven for relaxation and rejuvenation.</p>
-                  </div>
-                  <div className="col-lg-3 "></div>
-                  
-                  </div>
-                  <div><Ideas prop = "Bed Room" color="red" space="bedroom"/></div>
-                  </div>
-                  </div>
+                            <div className={css.bedroom_filter_home}>
+                                <div className="pt-4">
+                                    <span className={css.bedroom_filter_link_span1}>
+                                        <Link href={{ pathname: "/" }} className={css.bedroom_filter_link}>home</Link>
+                                    </span>
+                                    <span className={css.bedroom_filter_slash}>/</span>
+                                    <span className={css.bedroom_filter_link_span2}>
+                                        <Link href={{ pathname: "/bedroom" }} className={css.bedroom_filter_link}>bedroom</Link>
+                                    </span>
+                                </div>
+                                <div className={css.bedroom_filter_header_content}>Bed Room</div>
+                                <div className="row">
+                                    <div className="col-lg-3"></div>
+                                    <div className={"col-lg-6 px-[15px] " + css.bedroom_filter_content}>
+                                        <p className={css.bedroom_filter_additional_content}>
+                                            Transform your bedroom into a tranquil retreat with sophisticated design elements that blend comfort and style, 
+                                            creating a personalized haven for relaxation and rejuvenation.
+                                        </p>
+                                    </div>
+                                    <div className="col-lg-3"></div>
+                                </div>
+                                <div><Ideas prop="Bed Room" color="red" space="bedroom" /></div>
+                            </div>
+                        </div>
                         <div className="mt-[-5%]"><DynamicIterableComponent data={bedroom} categoryId='13'/></div>
                         <div className="mb-[-50px]"><Autoplay living={living} /></div>
                         <div><ReferNowPage /></div>
@@ -131,9 +138,9 @@ const ModularKitchenPage: React.FC = () => {
                         <div><Footer /></div>
                     </div>
                 </div>
-
             </div>
         </React.Fragment>
-    )
-}
+    );
+};
+
 export default ModularKitchenPage;

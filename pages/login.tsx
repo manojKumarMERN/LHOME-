@@ -1,10 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import css from '../styles/loginRegister.module.scss';
 import ReactFlagsSelect from "react-flags-select";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { AxiosService } from '../services/ApiService';
+import { AxiosService } from '../services/ApiService'; 
 
 const LoginSchema = Yup.object().shape({
     number: Yup.string()
@@ -12,9 +13,8 @@ const LoginSchema = Yup.object().shape({
         .required('Phone number is required'),
 });
 
-
-
-const Login = ({toggleForm , otpForm , setOtpForm , select , onSelect , setNumber}) => {
+const Login = ({ toggleForm, otpForm, setOtpForm, select, onSelect, setNumber }) => {
+    const router = useRouter();
 
     const formik = useFormik({
         initialValues: {
@@ -22,17 +22,31 @@ const Login = ({toggleForm , otpForm , setOtpForm , select , onSelect , setNumbe
         },
         validationSchema: LoginSchema,
         onSubmit: async (values) => {
+          console.log('Submitting form with values:', values); // Debug log
           try {
-            const response = await AxiosService.post('/signin', { number: values.number });
-            setNumber(values.number)      
-            setOtpForm(!otpForm);
+            // Make API call to check user role
+            const roleResponse = await AxiosService.post('/user/generate-otp', { number: values.number });
+            console.log('Role response:', roleResponse.data); // Debug log
+
+            if (roleResponse.data.role === 'admin') {
+              // Redirect to admin login page
+              router.push('/adminlogin');
+              console.log(roleResponse.data)
+            } else {
+              // Generate OTP for customer
+              const response = await AxiosService.post('/user/generate-otp', { number: values.number });
+              console.log('OTP generation response:', response.data); // Debug log
+              setNumber(values.number);
+              setOtpForm(!otpForm);
+            }
           } catch (error) {
             console.error('Error:', error);
-      
+
             if (error.response) {
-      
               if (error.response.status === 400 && error.response.data === 'user not registered') {
                 formik.setFieldError('number', 'Phone number is not registered');
+              } else {
+                console.error('Response error data:', error.response.data); // Additional debug log
               }
             } else if (error.request) {
               console.error('No response received:', error.request);
@@ -41,13 +55,12 @@ const Login = ({toggleForm , otpForm , setOtpForm , select , onSelect , setNumbe
             }
           }
         },
-      });
-      
+    });
 
     const handleClick = (e) => {
         e.preventDefault();
+        console.log('Login button clicked'); // Debug log
         formik.handleSubmit();
-        // setOtpForm(!otpForm);
     };
 
     const handleNumberChange = (e) => {
@@ -58,22 +71,29 @@ const Login = ({toggleForm , otpForm , setOtpForm , select , onSelect , setNumbe
     return (
         <div className={css.mainContent}>
             <h2>Login</h2>
-            <p>Enter your register mobile number</p>
+            <p>Enter your registered mobile number</p>
             <div className={css.inputAndbtn}>
                 <div className={css.dropdown_login_icon}>
                     <ReactFlagsSelect
                         selected={select}
                         onSelect={onSelect}
                         fullWidth={false}
-                        countries={["", "IN", "fi", "GB", "IE", "IT", "NL", "SE"]}
+                        countries={["IN", "FI", "GB", "IE", "IT", "NL", "SE"]}
                         className={css.number_dropdown}
                     />
                 </div>
-
-                <input type='text' inputMode='text' className={css.LRInput} placeholder='Enter your mobile number' name='number' onChange={handleNumberChange} onBlur={formik.handleBlur}
-                    value={formik.values.number} />
+                <input 
+                    type='text' 
+                    inputMode='numeric' 
+                    className={css.LRInput} 
+                    placeholder='Enter your mobile number' 
+                    name='number' 
+                    onChange={handleNumberChange} 
+                    onBlur={formik.handleBlur}
+                    value={formik.values.number} 
+                />
                 {formik.touched.number && formik.errors.number ? (
-                    <span className='text-red-500'>{formik.errors.number}</span>
+                    <span className={css.errorText}>{formik.errors.number}</span>
                 ) : null}
                 <button type="button" className={css.LoginButton} onClick={handleClick}>LOGIN</button>
             </div>
@@ -81,9 +101,104 @@ const Login = ({toggleForm , otpForm , setOtpForm , select , onSelect , setNumbe
             <div className={css.mainVal}>
                 <Image src={require("../public/assets/icons/Gicon.png")} className={css.G_icon} alt='g_icon' />
             </div>
-            <p style={{ marginTop: 'unset' }}>First time user? <span className={css.signupbtn} onClick={toggleForm} style={{ fontWeight: 'bold', cursor: 'pointer' }}>Sign up</span> here</p>
+            <p style={{ marginTop: 'unset' }}>
+                First time user? 
+                <span className={css.signupbtn} onClick={toggleForm} style={{ fontWeight: 'bold', cursor: 'pointer' }}>
+                    Sign up
+                </span> here
+            </p>
         </div>
-    )
+    );
 }
 
-export default Login
+export default Login;
+
+// import React from 'react';
+// import Image from 'next/image';
+// import css from '../styles/loginRegister.module.scss';
+// import ReactFlagsSelect from "react-flags-select";
+// import { useFormik } from 'formik';
+// import * as Yup from 'yup';
+// import { AxiosService } from '../services/ApiService'; 
+
+// const LoginSchema = Yup.object().shape({
+//     number: Yup.string()
+//         .matches(/^\d{10}$/, 'Phone number must be 10 digits')
+//         .required('Phone number is required'),
+// });
+
+
+
+// const Login = ({toggleForm , otpForm , setOtpForm , select , onSelect , setNumber}) => {
+
+//     const formik = useFormik({
+//         initialValues: {
+//           number: '',
+//         },
+//         validationSchema: LoginSchema,
+//         onSubmit: async (values) => {
+//           try {
+//             const response = await AxiosService.post('/user/generate-otp', { number: values.number });
+//             setNumber(values.number)      
+//             setOtpForm(!otpForm);
+//           } catch (error) {
+//             console.error('Error:', error);
+      
+//             if (error.response) {
+      
+//               if (error.response.status === 400 && error.response.data === 'user not registered') {
+//                 formik.setFieldError('number', 'Phone number is not registered');
+//               }
+//             } else if (error.request) {
+//               console.error('No response received:', error.request);
+//             } else {
+//               console.error('Error setting up the request:', error.message);
+//             }
+//           }
+//         },
+//       });
+      
+
+//     const handleClick = (e) => {
+//         e.preventDefault();
+//         formik.handleSubmit();
+//         // setOtpForm(!otpForm); 
+//     };
+
+//     const handleNumberChange = (e) => {
+//         const numericValue = e.target.value.replace(/\D/g, '');
+//         formik.setFieldValue(e.target.name, numericValue);
+//     };
+
+//     return (
+//         <div className={css.mainContent}>
+//             <h2>Login</h2>
+//             <p>Enter your register mobile number</p>
+//             <div className={css.inputAndbtn}>
+//                 <div className={css.dropdown_login_icon}>
+//                     <ReactFlagsSelect
+//                         selected={select}
+//                         onSelect={onSelect}
+//                         fullWidth={false}
+//                         countries={["", "IN", "fi", "GB", "IE", "IT", "NL", "SE"]}
+//                         className={css.number_dropdown}
+//                     />
+//                 </div>
+
+//                 <input type='text' inputMode='text' className={css.LRInput} placeholder='Enter your mobile number' name='number' onChange={handleNumberChange} onBlur={formik.handleBlur}
+//                     value={formik.values.number} />
+//                 {formik.touched.number && formik.errors.number ? (
+//                     <span className='text-red-500'>{formik.errors.number}</span>
+//                 ) : null}
+//                 <button type="button" className={css.LoginButton} onClick={handleClick}>LOGIN</button>
+//             </div>
+//             <p>Or Login With</p>
+//             <div className={css.mainVal}>
+//                 <Image src={require("../public/assets/icons/Gicon.png")} className={css.G_icon} alt='g_icon' />
+//             </div>
+//             <p style={{ marginTop: 'unset' }}>First time user? <span className={css.signupbtn} onClick={toggleForm} style={{ fontWeight: 'bold', cursor: 'pointer' }}>Sign up</span> here</p>
+//         </div>
+//     )
+// }
+
+// export default Login

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import css from "./joinusTable.module.scss";
-import {BiSolidDownArrow} from 'react-icons/bi'; 
+import { BiSolidDownArrow } from 'react-icons/bi';
 
 interface CustomHeaderWithDropdownProps {
   label: string;
@@ -9,30 +9,64 @@ interface CustomHeaderWithDropdownProps {
   onSelectionChange: (selectedValue: string) => void;
 }
 
-const CustomHeaderWithDropdown: React.FC<CustomHeaderWithDropdownProps> = ({ label,value,onSelectionChange}) => {
+const CustomHeaderWithDropdown: React.FC<CustomHeaderWithDropdownProps> = ({ label, value, onSelectionChange }) => {
+  console.log(label)
+  console.log(value)
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState<string | null>(null); 
+  const [selectedValue, setSelectedValue] = useState<string | null>(null);
+ 
+  
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
-  }; 
+  };
   const handleSelection = (selectedItem: any) => {
     setSelectedValue(selectedItem);
     onSelectionChange(selectedItem); // Notify the parent component about the selection
   };
+  let val = []
+
+  if(label == "ROLE"){
+    val.push("All")
+    value.forEach((item) => {
+      if (val.includes(item.title)) {
+      } else {
+        val.push(item.title)
+      }
+    })
+  }else if(label == "LOCATION"){
+    value.forEach((item) => {
+      if (val.includes(item.location)) {
+      } else {
+        val.push(item.location)
+      }
+    })
+  }else{
+    val.push("All")
+    value.forEach((item) => {
+      if (val.includes(item.department)) {
+      } else {
+        val.push(item.department)
+      }
+    })
+  }
+
+ 
 
 
   return (
     <div>
       <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown} className={css.dropdown}>
         <DropdownToggle caret>
-          {label}<BiSolidDownArrow className={css.arrow}/>
+          {label}<BiSolidDownArrow className={css.arrow} />
         </DropdownToggle>
         <DropdownMenu>
-        {value.map((item, index) => (
-            <DropdownItem key={index}  onClick={() => handleSelection(label === 'ROLE' ? item.role : label === 'LOCATION' ? item.location : item.department)}>
-                {label === 'ROLE' ? item.role : label === 'LOCATION' ? item.location : item.department}
-                </DropdownItem>
-          ))}
+          {val.map((item, index) => (
+            <DropdownItem key={index} onClick={() => handleSelection(item)}>
+              {item}
+              {label === 'TITLE' ? item.role : label === 'LOCATION' ? item.location : item.department}
+            </DropdownItem>
+          )
+          )}
         </DropdownMenu>
       </Dropdown>
     </div>

@@ -19,13 +19,13 @@ const FAQPage: React.FC = () => {
         let process = [];
 
         if (window.location.pathname === '/designgallery/') {
-          process = data.data.FAQs.designGallery;
+          process = data.data.FAQs.designgallery;
         } 
         else if (window.location.pathname === '/modularkitchen/') {
           process = data.data.FAQs.modularKitchen;
-        }
+        } 
         else if (window.location.pathname === '/wardrobe/') {
-          process = data.data.FAQs.wardrobe;
+          process = data.data.FAQs.wardrope;
         }
         else if (window.location.pathname === '/bathroom/'){
           process = data.data.FAQs.bathroom;

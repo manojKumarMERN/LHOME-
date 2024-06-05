@@ -93,7 +93,7 @@ const ReferAndEarn: React.FC = () => {
 
                     <div ref={page} onScroll={pageheaderMonitor} className={hidden ? css.LhomeBottom1 : css.LhomeBottom}>
                         <div className={css.referBanner}><ReferBaner /></div>
-                        <div className={css.step3}><Steps3 /></div>
+                        <div className={css.step3}><Steps3 living={undefined} /></div>
                         <div className={css.terms}><TermsAndCondition /></div>
                         <div><Warranty /></div>
                         <div><Footer /></div>

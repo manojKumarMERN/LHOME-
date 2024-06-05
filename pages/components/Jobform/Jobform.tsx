@@ -20,27 +20,29 @@ const jobApplicationSchema = Yup.object().shape({
     firstname: Yup.string().required('First Name is required'),
     lastname: Yup.string().required('Last Name is required'),
     email: Yup.string().required('Phone number is required').email('Invalid email address').required('Email is required'),
-    phno: Yup.string().required('Phone number is required').matches(/^[0-9]+$/, 'Phone number must contain only digits').min(10, 'Phone number must be exactly 10 digits').max(10, 'Phone number cannot exceed 10 digits'),
+    phnoe: Yup.string().required('Phone number is required').matches(/^[0-9]+$/, 'Phone number must contain only digits').min(10, 'Phone number must be exactly 10 digits').max(10, 'Phone number cannot exceed 10 digits'),
     currentctc: Yup.string().required('current CTC is required').matches(/^\d+(\.\d{1,2})?$/, 'Please provide a valid CTC in LPA (e.g. 2 or 5) '),
     expectedctc: Yup.string().required('Execpted CTC is required').matches(/^\d+(\.\d{1,2})?$/, 'Please provide a valid CTC in LPA (e.g. 2 or 5)'),
     location: Yup.string().required('Loaction is required'),
     nperiod: Yup.boolean().oneOf([true, false], 'You must accept WhatsApp opt-in'),
     resume: Yup.mixed().required('Please upload your resume'),
-    portfolio : Yup.mixed().optional()
+    portfolio: Yup.string().optional()
+
+    // portfolio : Yup.mixed().optional()
 });
 const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, selectCat }) => {
     const [isselected, setSlected] = React.useState(selectCat);
     const [value, setValue] = React.useState(false);
     const [ResumeButton, setButton] = React.useState<string>('Upload Resume');
-    const [PortfolioButton, setPortfolioButton] = React.useState<string>('Select File');
+    // const [PortfolioButton, setPortfolioButton] = React.useState<string>('Select File');
     const router = useRouter();
 
-    const handleClickPortfolio = () => {
-        const fileInput = document.getElementById('Select_File');
-        if (fileInput) {
-            fileInput.click();
-        }
-    };
+    // const handleClickPortfolio = () => {
+    //     const fileInput = document.getElementById('Select_File');
+    //     if (fileInput) {
+    //         fileInput.click();
+    //     }
+    // };
     const handleResume = () => {
         const fileInput = document.getElementById('Select_Resume');
         if (fileInput) {
@@ -51,13 +53,13 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
         formik.setFieldValue('resume', event.target.files[0]);
         setButton(event.target.files[0].name);
     };
-    const handleSelectPortfolio = (event) => {
-        const selectedFile = event.target.files[0];
-        if (selectedFile) {
-            formik.setFieldValue('portfolio', selectedFile);
-            setPortfolioButton(selectedFile.name);
-        }
-    };
+    // const handleSelectPortfolio = (event) => {
+    //     const selectedFile = event.target.files[0];
+    //     if (selectedFile) {
+    //         formik.setFieldValue('portfolio', selectedFile);
+    //         setPortfolioButton(selectedFile.name);
+    //     }
+    // };
     //yup form validation
 
     const formik = useFormik({
@@ -65,13 +67,13 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
             firstname: '',
             lastname: '',
             email: '',
-            phno: '',
+            phnoe: '',
             currentctc: '',
             expectedctc: '',
             location: '',
             nperiod: '',
             resume: '',
-            portfolio:''
+            portfolio: ''
         },
         validationSchema: jobApplicationSchema,
         onSubmit: async (values) => {
@@ -80,25 +82,26 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
                 formData.append('firstname', values.firstname);
                 formData.append('lastname', values.lastname);
                 formData.append('email', values.email);
-                formData.append('phno', values.phno);
+                formData.append('phnoe', values.phnoe);
                 formData.append('currentctc', values.currentctc);
                 formData.append('expectedctc', values.expectedctc);
                 formData.append('location', values.location);
-                formData.append('nperiod', value?'1':'0');
+                formData.append('nperiod', value ? '1' : '0');
                 formData.append('resume', values.resume);
                 formData.append('portfolio', values.portfolio);
-                const response = await AxiosService.post('/jobApplication', formData, {
-                  headers: {
-                    'Content-Type': 'multipart/form-data',
-                  },
+                
+                const response = await AxiosService.post('/jobs/3/apply', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
                 });
-                if(response.status == 201){
+                if (response.status == 201) {
                     toast.success('Thank you for appplying , Our HR Team will contact you soon')
-                    setTimeout(()=>{
+                    setTimeout(() => {
                         router.push('/joinuspage')
                     }, 2000)
                 }
-            
+
 
             } catch (error) {
                 console.error('Error:', error.message);
@@ -167,11 +170,11 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
                                 </div>
                                 <div className={css["col-50"]}>
                                     <label className={css["formlabel"]}>Mobile*:</label>
-                                    <input type="text" id="zip" name="phno" className={css.forminput}
+                                    <input type="text" id="zip" name="phnoe" className={css.forminput}
                                         onChange={handleChange}
                                         onBlur={handleBlur}
-                                        value={values.phno} />
-                                    {formik.touched.phno && formik.errors.phno ? <span className='text-red-500'>{formik.errors.phno}</span> : null}
+                                        value={values.phnoe} />
+                                    {formik.touched.phnoe && formik.errors.phnoe ? <span className='text-red-500'>{formik.errors.phnoe}</span> : null}
                                 </div>
                             </div>
                             {isselected ?
@@ -224,7 +227,20 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
                                         <Switch isOn={value} onColor="#048811" handleToggle={() => setValue(!value)}
                                         /></div>
                                 </div>
+
                                 <div className={css["vr"]}></div>
+                                <div className={css["col-30"]}>
+                                    <label className={css["formlabel"]}>Portfolio (if available)</label>
+
+                                    <input type="text" id="state" name="portfolio" className={css.forminput}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        value={values.portfolio} />
+
+                                </div>
+                            </div>
+
+                            {/* <div className={css["vr"]}></div>
                                 <div className={css["col-30"]}>
                                     <div className={css["rightside"]}>
                                         <div className={css.formhead1} >Portfolio (if available)
@@ -238,7 +254,7 @@ const ApplyForJobForm: React.FC<ApplyForJobFormProps> = ({ header, joblocation, 
                                         <p className={css.para}>Upload in either DOC, DOCX, PDF or EML file format (file size not more than 1MB)</p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className={css.flex_box}>
                                 <button className={`${css.jobApplybtn} ${css.jobApplybtn2}`} type="submit" >Submit</button>
                             </div>
