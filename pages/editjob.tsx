@@ -28,11 +28,11 @@ const columns = [
 ];
 
 export default function JobTable() {
-  const [data, setData] = useState([]);
-  const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
-  const [selectedJob, setSelectedJob] = useState(null);
-  const [formValues, setFormValues] = useState({
+  const [data, setData] = React.useState([]);
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] =React. useState(10);
+  const [selectedJob, setSelectedJob] = React.useState(null);
+  const [formValues, setFormValues] = React.useState({
     title: '',
     location: '',
     department: '',
@@ -44,7 +44,7 @@ export default function JobTable() {
     vacancies: '',
   });
 
-  useEffect(() => {
+  React.useEffect(() => {
     fetchData();
   }, []);
 

@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
 import { AxiosService } from '../services/ApiService';
+import { getToken } from '../services/sessionProvider';
 
 const IssuesTable = () => {
-  const [issues, setIssues] = useState([]);
-  const [selectedIssue, setSelectedIssue] = useState(null);
-  const [solution, setSolution] = useState('');
-  const [open, setOpen] = useState(false);
+  const [issues, setIssues] = React.useState([]);
+  const [replyIssues, setReplayIssues] = React.useState([]);
+  const [selectedIssue, setSelectedIssue] =React. useState(null);
+  const [solution, setSolution] = React.useState('');
+  const [open, setOpen] = React.useState(false);
 
-  useEffect(() => {
+  React. useEffect(() => {
     const fetchIssues = async () => {
       try {
         const response = await AxiosService.get('/user/complaints');
@@ -33,10 +35,39 @@ const IssuesTable = () => {
   };
 
   const handleSubmitSolution = async () => {
-    // Submit the solution to the API (implementation needed)
-    console.log(`Submitting solution for issue ${selectedIssue.id}: ${solution}`);
+    const customerId = selectedIssue.id;
+  
+    try {
+    
+      const token = await getToken();
+  
+      const response = await AxiosService.post('/user/complaint/message',{ complaintId:customerId, text:solution },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+  
+      setReplayIssues(response.data.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error fetching issues:', error);
+    }
+  
+    // console.log(`Submitting solution for issue ${selectedIssue.id}: ${text}`);
     handleClose();
   };
+  
+  const updateSelectedIssue = (newId) => {
+    setSelectedIssue((prevState) => ({
+      ...prevState,
+      id: newId,
+    }));
+  };
+  
+  
+  
 
   const sortedIssues = issues.sort((a, b) => a.id - b.id);
 
