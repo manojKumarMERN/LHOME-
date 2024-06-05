@@ -20,6 +20,7 @@ import WishlistIcon from "./wishlist/wishlisticon";
 import { useSelector } from 'react-redux';
 import { RootState } from "../../store";
 import { AxiosService } from '../../services/ApiService';
+import { AUTH_TOKEN } from "../../lib/constants";
 
 interface pageheaderproperties {
   screenwidth: number;
@@ -198,9 +199,11 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
   };
 
   const handleLogout = () => {
-    Cookies.remove('token');
-    Cookies.remove('userId');
+    // Cookies.remove('token');
+    // Cookies.remove('userId');
+    Cookies.remove(AUTH_TOKEN);
     setAuth(false)
+    router.push('/')
   }
   const handleWishlistClick = () => {
     router.push('/wishlistpage')

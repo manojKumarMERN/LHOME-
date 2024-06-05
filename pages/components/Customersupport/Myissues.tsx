@@ -67,25 +67,54 @@ const IssuesTable = () => {
     handleClose();
   };
 
+  const handleStatusChange = async (newStatus) => {
+    if (selectedIssue) {
+      const updatedIssue = { ...selectedIssue, status: newStatus };
+
+      try {
+        const token = await getToken();
+
+        await AxiosService.put(
+          `/user/complaint/status/${selectedIssue.id}`,
+          { status: newStatus },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        setIssues((prevIssues) =>
+          prevIssues.map((issue) =>
+            issue.id === selectedIssue.id ? updatedIssue : issue
+          )
+        );
+        setSelectedIssue(updatedIssue);
+      } catch (error) {
+        console.error('Error updating status:', error);
+      }
+    }
+  };
+
   const data = {
     columns: [
       {
         label: 'Complaint ID',
         field: 'customerId',
         sort: 'asc',
-        width: 150,
+        // width: 150,
       },
       {
         label: 'Status',
         field: 'status',
         sort: 'asc',
-        width: 150,
+        // width: 150,
       },
       {
         label: 'Actions',
         field: 'actions',
         sort: 'asc',
-        width: 150,
+        // width: 150,
       },
     ],
     rows: issues.map((issue) => ({
@@ -116,9 +145,23 @@ const IssuesTable = () => {
         <DialogContent>
           {selectedIssue && (
             <div>
-              <p><strong>ID:</strong> {selectedIssue.id}</p>
+              {/* <p><strong>ID:</strong> {selectedIssue.id}</p> */}
               <p><strong>Title:</strong> {selectedIssue.title}</p>
-              <p><strong>Status:</strong> {selectedIssue.status}</p>
+              <div>
+                <p><strong>Status:</strong></p>
+                <Button
+                  variant="contained"
+                  onClick={() => handleStatusChange('Open')}
+                >
+                  Open
+                </Button>
+                <Button
+                  variant="contained"
+                  onClick={() => handleStatusChange('Close')}
+                >
+                  Close
+                </Button>
+              </div>
               <TextField
                 label="Solution"
                 fullWidth
@@ -126,6 +169,7 @@ const IssuesTable = () => {
                 rows={4}
                 value={solution}
                 onChange={(e) => setSolution(e.target.value)}
+                disabled={selectedIssue.status !== 'Open'}
               />
             </div>
           )}
