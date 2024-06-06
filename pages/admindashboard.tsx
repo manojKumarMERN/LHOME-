@@ -15,6 +15,8 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import PeopleIcon from '@mui/icons-material/People';
 import { ListItemButton, ListItemIcon, ListItemText, Container, Grid, Paper } from '@mui/material';
 import UserTable from './userlist'; // Import UserTable component
+import JobTable from './editjob';
+import IssuesTable from './issuesreply';
 import Link from 'next/link';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -114,9 +116,9 @@ export default function DashboardPage() {
       case 'Users':
         return <UserTable />;
       case 'Job':
-        return <Typography variant="h4">Job</Typography>;
+        return <JobTable />;
       case 'Issues':
-        return <Typography variant="h4">Issues</Typography>;
+        return <IssuesTable />;
       default:
         return <Typography variant="h4">Hi</Typography>;
     }

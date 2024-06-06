@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
+import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
 import { AxiosService } from '../services/ApiService';
 import { getToken } from '../services/sessionProvider';
 
 const IssuesTable = () => {
-  const [issues, setIssues] = React.useState([]);
-  const [replyIssues, setReplayIssues] = React.useState([]);
-  const [selectedIssue, setSelectedIssue] =React. useState(null);
-  const [solution, setSolution] = React.useState('');
-  const [open, setOpen] = React.useState(false);
+  const [issues, setIssues] = useState([]);
+  const [replyIssues, setReplyIssues] = useState([]);
+  const [selectedIssue, setSelectedIssue] = useState(null);
+  const [solution, setSolution] = useState('');
+  const [open, setOpen] = useState(false);
 
-  React. useEffect(() => {
+  useEffect(() => {
     const fetchIssues = async () => {
       try {
         const response = await AxiosService.get('/user/complaints');
@@ -36,38 +36,67 @@ const IssuesTable = () => {
 
   const handleSubmitSolution = async () => {
     const customerId = selectedIssue.id;
-  
+
     try {
-    
       const token = await getToken();
-  
-      const response = await AxiosService.post('/user/complaint/message',{ complaintId:customerId, text:solution },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-  
-      setReplayIssues(response.data.data);
+
+      const response = await AxiosService.post('/user/complaint/message', { complaintId: customerId, text: solution }, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      setReplyIssues(response.data.data);
       console.log(response.data);
     } catch (error) {
-      console.error('Error fetching issues:', error);
+      console.error('Error submitting solution:', error);
     }
-  
-    // console.log(`Submitting solution for issue ${selectedIssue.id}: ${text}`);
+
     handleClose();
   };
-  
+
   const updateSelectedIssue = (newId) => {
     setSelectedIssue((prevState) => ({
       ...prevState,
       id: newId,
     }));
   };
-  
-  
-  
+
+  const handleStatusChange = async (newStatus) => {
+    if (selectedIssue) {
+      const updatedIssue = { ...selectedIssue, status: newStatus };
+
+      try {
+        const token = await getToken();
+
+        await AxiosService.put(
+          `/user/complaint/status/${selectedIssue.id}`,
+          { status: newStatus },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        setIssues((prevIssues) =>
+          prevIssues.map((issue) =>
+            issue.id === selectedIssue.id ? updatedIssue : issue
+          )
+        );
+        setSelectedIssue(updatedIssue);
+      } catch (error) {
+        console.error('Error updating status:', error);
+      }
+    }
+  };
+
+  const getStatusStyle = (status) => {
+    return {
+      color: status === 'open' ? 'red' : 'green',
+      fontWeight: 'bold',
+    };
+  };
 
   const sortedIssues = issues.sort((a, b) => a.id - b.id);
 
@@ -78,16 +107,20 @@ const IssuesTable = () => {
           <TableHead>
             <TableRow>
               <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>Complaint ID</TableCell>
-              <TableCell sx={{ padding: '8px', width: '30%' , textAlign: 'center' }}>Status</TableCell>
-              <TableCell sx={{ padding: '8px', width: '40%' , textAlign: 'center' }}>Actions</TableCell>
+              <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>Status</TableCell>
+              <TableCell sx={{ padding: '8px', width: '40%', textAlign: 'center' }}>Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {sortedIssues.map((issue) => (
               <TableRow key={issue.id}>
-                <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center'  }}>{issue.customerId}</TableCell>
-                <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center'  }}>{issue.status}</TableCell>
-                <TableCell sx={{ padding: '8px', width: '40%', textAlign: 'center'  }}>
+                <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>{issue.customerId}</TableCell>
+                <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>
+                  <span style={getStatusStyle(issue.status)}>
+                    {issue.status}
+                  </span>
+                </TableCell>
+                <TableCell sx={{ padding: '8px', width: '40%', textAlign: 'center' }}>
                   <Button variant="contained" color="primary" onClick={() => handleOpen(issue)}>
                     View & Solve
                   </Button>
@@ -98,7 +131,6 @@ const IssuesTable = () => {
         </Table>
       </TableContainer>
 
-
       <Dialog open={open} onClose={handleClose} sx={{ '& .MuiDialog-paper': { width: '80%', maxHeight: '80%' } }}>
         <DialogTitle>Issue Details</DialogTitle>
         <DialogContent>
@@ -106,7 +138,25 @@ const IssuesTable = () => {
             <div>
               <p><strong>ID:</strong> {selectedIssue.id}</p>
               <p><strong>Title:</strong> {selectedIssue.title}</p>
-              <p><strong>Status:</strong> {selectedIssue.status}</p>
+              <div>
+                <p><strong>Status:</strong></p>
+                <Box sx={{ display: 'flex', gap: 4 }}>
+                  <Button
+                    variant="contained"
+                    onClick={() => handleStatusChange('Open')}
+                    style={{ backgroundColor: selectedIssue.status === 'Open' ? 'red' : '' }}
+                  >
+                    Open
+                  </Button>
+                  <Button
+                    variant="contained"
+                    onClick={() => handleStatusChange('Close')}
+                    style={{ backgroundColor: selectedIssue.status === 'Close' ? 'green' : '' }}
+                  >
+                    Close
+                  </Button>
+                </Box>
+              </div>
               <TextField
                 label="Solution"
                 fullWidth
@@ -129,8 +179,6 @@ const IssuesTable = () => {
 };
 
 export default IssuesTable;
-
-
 
 // import React, { useEffect, useState } from 'react';
 // import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
