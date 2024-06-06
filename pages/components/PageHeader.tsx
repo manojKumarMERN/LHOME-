@@ -224,7 +224,6 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
 
     fetchWishlistCount();
   }, []);
-  console.log(wishlistCount);
 
   const handleClick = () => {
     // setCount(count + 1); // Increment count when the button is clicked
@@ -235,7 +234,6 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
   const isMediumScreen = useMediaQuery("(min-width: 555px) and (max-width: 1257px)");
 
   const isSmallScreen2 = useMediaQuery("(max-width: 450px)");
-  // console.log(isLoggedIn)
   return (
     <React.Fragment>
       <div className={`stickly transition-all duration-500`}>

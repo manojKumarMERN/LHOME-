@@ -64,7 +64,7 @@ function OtpLoginform({ setShow, number, redirectToGetQuote }) {
         } else if (isFromGetFreeEstimate) {
           router.push('/getQuote');
         } else {
-          router.push('/');
+          router.push('/userdashboard');
         }
       } else {
         setOtpError(response.data.message || 'Failed to authenticate. Please try again.');

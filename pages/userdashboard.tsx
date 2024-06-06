@@ -16,13 +16,14 @@ import PeopleIcon from '@mui/icons-material/People';
 import { ListItemButton, ListItemIcon, ListItemText, Container, Grid, Paper, Button } from '@mui/material';
 import UserTable from './userlist';
 import JobTable from './editjob';
-import IssuesTable from './issuesreply';
+import UserWishlist from './userwishlist'
 import PageHeader from './components/PageHeader';
 import Footer from './components/Footer/Footer';
 import css from '../styles/wall.module.scss';
 import { useRouter } from 'next/router';
-import JobEditForm from './admineditjob';
+import UserProfile from './edituserprofile'
 import * as config from '../next.config';
+import { BsHeart, BsHeartFill } from "react-icons/bs";
 
 const drawerWidth = 240;
 
@@ -78,19 +79,16 @@ const defaultTheme = createTheme();
 
 const menuItems = [
   { name: 'Dashboard', icon: <DashboardIcon />, value: 'Dashboard' },
-  { name: 'Users', icon: <PeopleIcon />, value: 'Users' },
-  { name: 'Job', icon: <PeopleIcon />, value: 'Job' },
-  { name: 'Issues', icon: <DashboardIcon />, value: 'Issues' },
-  { name: '', value: 'EditJob' },
+  { name: 'Edit profile', icon: <PeopleIcon />, value: 'Profile' },
+  { name: 'Whislist', icon: <BsHeart />, value: 'Whislist' },
+ 
 
 ];
 
 const componentMapping = {
   Dashboard: <Typography variant="h4">Hi</Typography>,
-  Users: <UserTable />,
-  Job: <JobTable />,
-  Issues: <IssuesTable />,
-  EditJob: <JobEditForm />, // Add JobEditForm here
+  Profile: <UserProfile />,
+  Whislist: <UserWishlist />,
 };
 
 export default function DashboardPage() {

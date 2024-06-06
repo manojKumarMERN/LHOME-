@@ -1,31 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
-import css from "../styles/visitus.module.scss";
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { AxiosService } from '../services/ApiService';
-import css1 from '../styles/createjob.module.scss';
-import { Box } from '@mui/material'; 
 import { useRouter } from 'next/router';
+import css from "../styles/livingroom.module.scss";
 
 const columns = [
-  { id: 'id', headerName: 'ID', minWidth: 90 },
   { id: 'title', headerName: 'Title', minWidth: 170 },
   { id: 'experience', headerName: 'Experience', minWidth: 150 },
   { id: 'location', headerName: 'Location', minWidth: 150 },
-  { id: 'description', headerName: 'Description', minWidth: 150 },
-  { id: 'vacancies', headerName: 'Vacancies', minWidth: 90 },
-  { id: 'salary', headerName: 'Salary', minWidth: 150 },
-  { id: 'department', headerName: 'Department', minWidth: 150 },
   { id: 'qualification', headerName: 'Qualification', minWidth: 150 },
-  { id: 'job_type', headerName: 'Job Type', minWidth: 150 },
   { id: 'edit_job', headerName: 'Edit Job', minWidth: 150 },
 ];
 
@@ -34,18 +25,6 @@ export default function JobTable() {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  const [selectedJob, setSelectedJob] = useState(null);
-  const [formValues, setFormValues] = useState({
-    title: '',
-    location: '',
-    department: '',
-    description: '',
-    experience: '',
-    qualification: '',
-    job_type: '',
-    salary: '',
-    vacancies: '',
-  });
 
   useEffect(() => {
     fetchData();
@@ -74,133 +53,82 @@ export default function JobTable() {
     setPage(0);
   };
 
-  const handleEditClick = (job) => {
-    setSelectedJob(job);
-    setFormValues(job);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await AxiosService.patch(`/jobs/${selectedJob.id}`, formValues);
-      if (response.status === 200) {
-        console.log('Job updated successfully!');
-        fetchData();
-      } else {
-        console.error('Unexpected response status:', response.status);
-      }
-    } catch (error) {
-      console.error('Error updating job:', error);
-    }
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
+  const handleEditClick = (jobId) => {
+    router.push(`/admineditjob?id=${jobId}`);
   };
 
   return (
+    <div className="animate-fade-in">
+    <div className={css.lhomePage}>
     <div>
-      <div className="animate-fade-in">
-        <div className={css.lhomePage}>
-          <Paper sx={{ width: '100%', overflow: 'hidden', fontFamily: 'Montserrat' }}>
-            {/* <h2 className={css1.joblist} style={{ textAlign: 'center', fontSize: '30px', color: '#EF5350' }}>Job List</h2> */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h2 style={{ textAlign: 'center', fontSize: '30px', color: '#EF5350' }}>Job List</h2>
-          <Button variant="contained" onClick={() => router.push('/createjob')}>
+      <Paper sx={{ width: '100%', overflow: 'hidden', fontFamily: 'Montserrat' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px' }}>
+          <h2 style={{ fontSize: '30px', color: '#EF5350' }}>Job List</h2>
+          <Button 
+            variant="contained" 
+            onClick={() => router.push('/createjob')}
+            sx={{ 
+              backgroundColor: '#4CAF50', 
+              color: 'white', 
+              '&:hover': {
+                backgroundColor: '#45a049',
+              },
+              padding: '10px 20px',
+              fontSize: '16px'
+            }}
+          >
             Create Job
           </Button>
         </div>
-            <TableContainer sx={{ maxHeight: 440 }}>
-              <Table stickyHeader aria-label="sticky table">
-                <TableHead>
-                  <TableRow>
-                    {columns.map((column) => (
-                      <TableCell
-                        key={column.id}
-                        style={{ minWidth: column.minWidth }}
-                      >
-                        {column.headerName}
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {data && data.map((job) => (
-                    <TableRow
-                      key={job.id}
-                      hover
-                      style={{ cursor: 'pointer' }}
-                    >
-                      {columns.map((column) => (
-                        <TableCell key={column.id}>
-                          {column.id === 'edit_job' ? (
-                            <Button
-                              variant="contained"
-                              onClick={() => handleEditClick(job)}
-                            >
-                              Edit
-                            </Button>
-                          ) : (
-                            job[column.id]
-                          )}
-                        </TableCell>
-                      ))}
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
-            <TablePagination
-              rowsPerPageOptions={[10, 25, 100]}
-              component="div"
-              count={data.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-            />
-          </Paper>
-
-          {selectedJob && (
-            <form onSubmit={handleSubmit}>
-              <Box
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  width: '100%',
-                  color: '#4D6797',
-                  fontSize: '20px'
-                }}
-              >
-                <h1 style={{ textAlign: 'center', fontSize: '30px', color: '#EF5350' }}>Edit Job</h1>
-                {Object.keys(formValues).map((key) => (
-                  <div key={key} style={{ marginBottom: '16px', width: '100%', maxWidth: '500px' }}>
-                    <label>{key.charAt(0).toUpperCase() + key.slice(1)}</label>
-                    <TextField
-                      type="text"
-                      name={key}
-                      value={formValues[key]}
-                      onChange={handleInputChange}
-                      fullWidth
-                    />
-                  </div>
+        <TableContainer sx={{ maxHeight: 440 }}>
+          <Table stickyHeader aria-label="sticky table">
+            <TableHead>
+              <TableRow>
+                {columns.map((column) => (
+                  <TableCell key={column.id} style={{ minWidth: column.minWidth }}>
+                    {column.headerName}
+                  </TableCell>
                 ))}
-                <div style={{ marginTop: '16px' }}>
-                  <Button variant="contained" type="submit">Submit</Button>
-                </div>
-              </Box>
-            </form>
-          )}
-        </div>
-      </div>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((job) => (
+                <TableRow key={job.id} hover>
+                  {columns.map((column) => (
+                    <TableCell key={column.id}>
+                      {column.id === 'edit_job' ? (
+                        <Button
+                          variant="contained"
+                          onClick={() => handleEditClick(job.id)}
+                        >
+                          Edit
+                        </Button>
+                      ) : (
+                        job[column.id]
+                      )}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <TablePagination
+          rowsPerPageOptions={[10, 25, 100]}
+          component="div"
+          count={data.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      </Paper>
+    </div>
+    </div>
     </div>
   );
 }
+
 
 // import React, { useState, useEffect } from 'react';
 // import Paper from '@mui/material/Paper';

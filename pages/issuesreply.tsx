@@ -3,9 +3,10 @@ import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, 
 import { AxiosService } from '../services/ApiService';
 import { getToken } from '../services/sessionProvider';
 
-const IssuesTable = () => {
+const IssuesTable = (complaintId) => {
   const [issues, setIssues] = useState([]);
   const [replyIssues, setReplyIssues] = useState([]);
+  const [messages, setMessages] = useState([]);
   const [selectedIssue, setSelectedIssue] = useState(null);
   const [solution, setSolution] = useState('');
   const [open, setOpen] = useState(false);
@@ -61,6 +62,19 @@ const IssuesTable = () => {
       id: newId,
     }));
   };
+
+  useEffect(() => {
+    const fetchMessages = async () => {
+      try {
+        const response = await AxiosService.get(`/user/complaint/${complaintId}/messages`);
+        setMessages(response.data.messages);
+        console.log(response)
+      } catch (error) {
+        console.error('Error fetching messages:', error);
+      }
+    };
+    fetchMessages();
+  }, [complaintId]);
 
   const handleStatusChange = async (newStatus) => {
     if (selectedIssue) {
@@ -132,158 +146,75 @@ const IssuesTable = () => {
       </TableContainer>
 
       <Dialog open={open} onClose={handleClose} sx={{ '& .MuiDialog-paper': { width: '80%', maxHeight: '80%' } }}>
-        <DialogTitle>Issue Details</DialogTitle>
-        <DialogContent>
-          {selectedIssue && (
-            <div>
-              <p><strong>ID:</strong> {selectedIssue.id}</p>
-              <p><strong>Title:</strong> {selectedIssue.title}</p>
-              <div>
-                <p><strong>Status:</strong></p>
-                <Box sx={{ display: 'flex', gap: 4 }}>
-                  <Button
-                    variant="contained"
-                    onClick={() => handleStatusChange('Open')}
-                    style={{ backgroundColor: selectedIssue.status === 'Open' ? 'red' : '' }}
-                  >
-                    Open
-                  </Button>
-                  <Button
-                    variant="contained"
-                    onClick={() => handleStatusChange('Close')}
-                    style={{ backgroundColor: selectedIssue.status === 'Close' ? 'green' : '' }}
-                  >
-                    Close
-                  </Button>
-                </Box>
-              </div>
-              <TextField
-                label="Solution"
-                fullWidth
-                multiline
-                rows={4}
-                value={solution}
-                onChange={(e) => setSolution(e.target.value)}
-              />
-            </div>
-          )}
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleSubmitSolution} color="primary">
-            Submit
-          </Button>
-        </DialogActions>
-      </Dialog>
+  <DialogTitle>Chat Conversation</DialogTitle>
+  <DialogContent>
+    {selectedIssue && (
+      <div>
+        {/* <div className='text-right'> */}
+          <p><strong>Status:
+          <Box sx={{ display: 'flex', gap: 4 }}>
+            <Button
+              variant="contained"
+              onClick={() => handleStatusChange('Open')}
+              style={{ backgroundColor: selectedIssue.status === 'Open' ? 'red' : '' }}
+            >
+              Open
+            </Button>
+            <Button
+              variant="contained"
+              onClick={() => handleStatusChange('Close')}
+              style={{ backgroundColor: selectedIssue.status === 'Close' ? 'green' : '' }}
+            >
+              Close
+            </Button>
+          </Box>
+          </strong></p>
+        {/* </div> */}
+        <p><strong>ID:</strong> {selectedIssue.id}</p>
+        <p><strong>Title:</strong> {selectedIssue.title}</p>
+       
+       <Box mb={2} sx={{ display: 'flex', flexDirection: 'column' }}>
+  {selectedIssue && Array.isArray(selectedIssue.messages) && selectedIssue.messages.map((message) => (
+    <Box
+      key={message.id}
+      sx={{
+        border: '1px solid #ccc',
+        borderRadius: '4px',
+        padding: '16px',
+        marginLeft: message.sender === 'admin' ? 'auto' : 0, // Align admin messages to the right
+        marginRight: message.sender === 'customer' ? 'auto' : 0, // Align customer messages to the left
+        textAlign: message.sender === 'admin' ? 'right' : 'left', // Set text alignment based on sender
+        backgroundColor: message.sender === 'admin' ? '#f0f0f0' : '#e0f7fa', // Set background color based on sender
+      }}
+    >
+      {message.text}
+    </Box>
+  ))}
+</Box>
+
+
+
+      </div>
+    )}
+  </DialogContent>
+  <DialogActions sx={{ justifyContent: 'flex-end' }}>
+    <TextField
+      label="Message"
+      fullWidth
+      multiline
+      rows={1}
+      value={solution}
+      onChange={(e) => setSolution(e.target.value)}
+    />
+    <Button onClick={handleSubmitSolution} variant="contained" color="primary">
+      Submit
+    </Button>
+  </DialogActions>
+</Dialog>
+
+
     </div>
   );
 };
 
 export default IssuesTable;
-
-// import React, { useEffect, useState } from 'react';
-// import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
-//   Paper, Button, Dialog, DialogActions, DialogContent, DialogTitle,
-//   TextField} from '@mui/material';
-// import { AxiosService } from '../services/ApiService';
-
-// const IssuesTable = () => {
-//   const [issues, setIssues] = React.useState([]);
-//   const [selectedIssue, setSelectedIssue] = React.useState(null);
-//   const [solution, setSolution] = React.useState('');
-//   const [open, setOpen] = React.useState(false);
-
-//   React.useEffect(() => {
-//     const fetchIssues = async () => {
-//       try {
-//         const response = await AxiosService.get('/user/complaints');
-//         setIssues(response.data.data);
-//         console.log(response.data)
-//       } catch (error) {
-//         console.error('Error fetching issues:', error);
-//       }
-//     };
-//     fetchIssues();
-//   }, []);
-
-//   const handleOpen = (issue) => {
-//     setSelectedIssue(issue);
-//     setOpen(true);
-//   };
-
-//   const handleClose = () => {
-//     setOpen(false);
-//     setSelectedIssue(null);
-//     setSolution('');
-//   };
-
-//   const handleSubmitSolution = async () => {
-//     // Submit the solution to the API (implementation needed)
-//     console.log(`Submitting solution for issue ${selectedIssue.id}: ${solution}`);
-//     handleClose();
-//   };
-
-//   return (
-//     <div>
-//       <TableContainer component={Paper}>
-//         <Table>
-//           <TableHead>
-//             <TableRow>
-//               <TableCell>ID</TableCell>
-//               <TableCell>Complaint ID</TableCell>
-//               <TableCell>Status</TableCell>
-//               <TableCell>Actions</TableCell>
-//             </TableRow>
-//           </TableHead>
-//           <TableBody>
-//             {issues.map((issue) => (
-//               <TableRow key={issue.id}>
-//                 <TableCell>{issue.id}</TableCell>
-//                 <TableCell>{issue.customerId}</TableCell>
-//                 {/* <TableCell>{issue.title}</TableCell> */}
-//                 <TableCell>{issue.status}</TableCell>
-//                 {/* <TableCell>{new Date(issue.createdAt).toLocaleString()}</TableCell>
-//                 <TableCell>{new Date(issue.updatedAt).toLocaleString()}</TableCell> */}
-//                 <TableCell>
-//                   <Button variant="contained" color="primary" onClick={() => handleOpen(issue)}>
-//                     View & Solve
-//                   </Button>
-//                 </TableCell>
-//               </TableRow>
-//             ))}
-//           </TableBody>
-//         </Table>
-//       </TableContainer>
-
-//       <Dialog open={open} onClose={handleClose}>
-//         <DialogTitle>Issue Details</DialogTitle>
-//         <DialogContent>
-//           {selectedIssue && (
-//             <div>
-//               <p><strong>ID:</strong> {selectedIssue.id}</p>
-//               <p><strong>Title:</strong> {selectedIssue.title}</p>
-//               <p><strong>Status:</strong> {selectedIssue.status}</p>
-//               {/* <p><strong>Created At:</strong> {new Date(selectedIssue.createdAt).toLocaleString()}</p>
-//               <p><strong>Updated At:</strong> {new Date(selectedIssue.updatedAt).toLocaleString()}</p> */}
-//               <TextField
-//                 label="Solution"
-//                 fullWidth
-//                 multiline
-//                 rows={4}
-//                 value={solution}
-//                 onChange={(e) => setSolution(e.target.value)}
-//               />
-//             </div>
-//           )}
-//         </DialogContent>
-//         <DialogActions>
-         
-//           <Button onClick={handleSubmitSolution} color="primary">
-//             Submit
-//           </Button>
-//         </DialogActions>
-//       </Dialog>
-//     </div>
-//   );
-// };
-
-// export default IssuesTable;
