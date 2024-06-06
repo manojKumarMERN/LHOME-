@@ -118,9 +118,9 @@ const JoinOfferPage: React.FC = () => {
         <div className={css.lhomePage}>
           <div className={css.LhomeBottom}>
             <div>
-              <div className={css.lhomelogo}>
+              {/* <div className={css.lhomelogo}>
                 <img src="/assets/images/LhomeLogo.jpg" alt="logo Lhome" key={"unique one"} />
-              </div>
+              </div> */}
               {details.map((job, index) => (
                 <JobOffer key={index} id={job.id} value={[job]} />
               ))}

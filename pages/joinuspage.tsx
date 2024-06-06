@@ -15,7 +15,7 @@ const JoinusPage: React.FC = () => {
     const [screenwidth, setWidth] = React.useState(window.innerWidth);
     const [LivingRoom, setLivingRoom] = React.useState([]);
 
-    let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
+   let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     let hgtt = 0;
     if (window.innerWidth < 600) {
         hgtt = window.innerHeight - 210;
@@ -26,7 +26,7 @@ const JoinusPage: React.FC = () => {
         hgtt = window.innerHeight - 160;
     }
     const [screenheight, setHeight] = React.useState(hgtt);
-
+ 
 
     const handleResize = React.useCallback(() => {
         setWidth(window.innerWidth);
@@ -78,9 +78,10 @@ const JoinusPage: React.FC = () => {
         <React.Fragment>
             <div className="animate-fade-in">
                 <div className={css.lhomePage}>
+                <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={false}/>
+
                     <div className="d-flex justify-content-center w-[100%]">
                     <div className="r w-[13%]">
-                    <PageHeader screenwidth={screenwidth} screenheight={screenheight} assetpath={assetpath} hidden={true}/>
                     {/* <Image src={require("../public/assets/images/LhomeLogo.jpg")} alt="Logo" style={{width:"15%"}} /> */}
                     </div></div>
                     

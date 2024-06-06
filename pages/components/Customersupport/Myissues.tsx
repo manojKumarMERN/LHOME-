@@ -6,6 +6,9 @@ import {
   DialogContent,
   DialogTitle,
   TextField,
+  TableContainer,
+  Paper,
+  Box
 } from '@mui/material';
 import { MDBDataTable } from 'mdbreact';
 import { AxiosService } from '../../../services/ApiService';
@@ -13,7 +16,8 @@ import { getToken } from '../../../services/sessionProvider';
 
 const IssuesTable = () => {
   const [issues, setIssues] = useState([]);
-  const [replyIssues, setReplayIssues] = useState([]);
+  const [replyIssues, setReplyIssues] = useState([]);
+  const [replyComplaint, setComplaint] = useState([]);
   const [selectedIssue, setSelectedIssue] = useState(null);
   const [solution, setSolution] = useState('');
   const [open, setOpen] = useState(false);
@@ -31,9 +35,27 @@ const IssuesTable = () => {
     fetchIssues();
   }, []);
 
-  const handleOpen = (issue) => {
+  const handleOpen = async (issue) => {
     setSelectedIssue(issue);
     setOpen(true);
+    setReplyIssues([]); // Reset reply issues when a new dialog is opened
+    setSolution(''); // Reset solution input when a new dialog is opened
+    
+    try {
+      const token = await getToken();
+      const response = await AxiosService.get(`/user/complaint/message/${issue.id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      
+console.log(response)
+      // const complaintMessages = response.data.data.messages;
+      // setReplyIssues(complaintMessages.filter(msg => msg.complaintId === issue.id));
+      console.log();
+    } catch (error) {
+      console.error('Error fetching complaint messages:', error);
+    }
   };
 
   const handleClose = () => {
@@ -42,30 +64,26 @@ const IssuesTable = () => {
     setSolution('');
   };
 
-  const handleSubmitSolution = async () => {
-    const customerId = selectedIssue.id;
+  // const handleSubmitSolution = async () => {
+  //   const complaintId = selectedIssue.id;
 
-    try {
-      const token = await getToken();
+  //   try {
+  //     const token = await getToken();
 
-      const response = await AxiosService.post(
-        '/user/complaint/message',
-        { complaintId: customerId, text: solution },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+  //     const response = await AxiosService.post('/user/complaint/message', { complaintId, text: solution }, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     });
 
-      setReplayIssues(response.data.data);
-      console.log(response.data);
-    } catch (error) {
-      console.error('Error fetching issues:', error);
-    }
+  //     setReplyIssues(prev => [...prev, { complaintId, text: solution, sender: 'admin' }]);
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     console.error('Error submitting solution:', error);
+  //   }
 
-    handleClose();
-  };
+  //   handleClose();
+  // };
 
   const handleStatusChange = async (newStatus) => {
     if (selectedIssue) {
@@ -96,30 +114,44 @@ const IssuesTable = () => {
     }
   };
 
+  const getStatusStyle = (status) => {
+    return {
+      color: status === 'open' ? 'red' : 'green',
+      fontWeight: 'bold',
+    };
+  };
+
   const data = {
     columns: [
+      {
+        label: 'Title',
+        field: 'title',
+        sort: 'asc',
+      },
       {
         label: 'Complaint ID',
         field: 'customerId',
         sort: 'asc',
-        // width: 150,
       },
       {
         label: 'Status',
         field: 'status',
         sort: 'asc',
-        // width: 150,
       },
       {
         label: 'Actions',
         field: 'actions',
         sort: 'asc',
-        // width: 150,
       },
     ],
     rows: issues.map((issue) => ({
+      title: issue.title,
       customerId: issue.customerId,
-      status: issue.status,
+      status: (
+        <span style={getStatusStyle(issue.status)}>
+          {issue.status}
+        </span>
+      ),
       actions: (
         <Button
           variant="contained"
@@ -134,7 +166,9 @@ const IssuesTable = () => {
 
   return (
     <div>
-      <MDBDataTable striped bordered small data={data} />
+      <TableContainer component={Paper}>
+        <MDBDataTable striped bordered small data={data} />
+      </TableContainer>
 
       <Dialog
         open={open}
@@ -145,23 +179,51 @@ const IssuesTable = () => {
         <DialogContent>
           {selectedIssue && (
             <div>
-              {/* <p><strong>ID:</strong> {selectedIssue.id}</p> */}
               <p><strong>Title:</strong> {selectedIssue.title}</p>
               <div>
                 <p><strong>Status:</strong></p>
-                <Button
-                  variant="contained"
-                  onClick={() => handleStatusChange('Open')}
-                >
-                  Open
-                </Button>
-                <Button
-                  variant="contained"
-                  onClick={() => handleStatusChange('Close')}
-                >
-                  Close
-                </Button>
+                <Box sx={{ display: 'flex', gap: 4 }}>
+                  <Button
+                    variant="contained"
+                    onClick={() => handleStatusChange('Open')}
+                    style={{ backgroundColor: selectedIssue.status === 'Open' ? 'red' : '' }}
+                  >
+                    Open
+                  </Button>
+                  <Button
+                    variant="contained"
+                    onClick={() => handleStatusChange('Close')}
+                    style={{ backgroundColor: selectedIssue.status === 'Close' ? 'green' : '' }}
+                  >
+                    Close
+                  </Button>
+                </Box>
               </div>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '10px',
+                  marginTop: '10px',
+                  maxHeight: '300px',
+                  overflowY: 'auto',
+                }}
+              >
+                {replyIssues.map((message, index) => (
+                  <Box
+                    key={index}
+                    sx={{
+                      padding: '10px',
+                      backgroundColor: message.sender === 'admin' ? '#e0f7fa' : '#ffecb3',
+                      alignSelf: message.sender === 'admin' ? 'flex-start' : 'flex-end',
+                      borderRadius: '10px',
+                      maxWidth: '70%',
+                    }}
+                  >
+                    {message.text}
+                  </Box>
+                ))}
+              </Box>
               <TextField
                 label="Solution"
                 fullWidth
@@ -175,7 +237,7 @@ const IssuesTable = () => {
           )}
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleSubmitSolution} color="primary">
+          <Button  color="primary">
             Submit
           </Button>
         </DialogActions>
@@ -185,7 +247,6 @@ const IssuesTable = () => {
 };
 
 export default IssuesTable;
-
 
 
 // import React, { useEffect, useState } from 'react';

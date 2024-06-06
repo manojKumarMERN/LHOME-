@@ -34,8 +34,6 @@ const Login = ({ toggleForm, otpForm, setOtpForm, select, onSelect, setNumber })
               console.log(roleResponse.data)
             } else {
               // Generate OTP for customer
-              const response = await AxiosService.post('/user/generate-otp', { number: values.number });
-              console.log('OTP generation response:', response.data); // Debug log
               setNumber(values.number);
               setOtpForm(!otpForm);
             }
