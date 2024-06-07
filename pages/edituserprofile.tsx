@@ -11,35 +11,32 @@ export default function UserProfile() {
   const { id } = router.query;
   const [formValues, setFormValues] = useState({
     name: "",
-  email: "",
-  number: "",
-  pincode: "",
-  
+    email: "",
+    phone: "",
+    pincode: "",
   });
 
   useEffect(() => {
-   
- 
-
-  const userDetails = async () => {
-    try {
+    const userDetails = async () => {
+      try {
         const token = await getToken();
         const response = await AxiosService.get('/user', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-      if (response.status === 200) {
-        setFormValues(response.data.customer);
-      } else {
-        console.error('Unexpected response status:', response.status);
+        if (response.status === 200) {
+          const { name, email, phone, pincode } = response.data.customer;
+          setFormValues({ name, email, phone, pincode });
+        } else {
+          console.error('Unexpected response status:', response.status);
+        }
+      } catch (error) {
+        console.error('Error fetching user details:', error);
       }
-    } catch (error) {
-      console.error('Error fetching job details:', error);
-    }
-  };
-  userDetails();
-}, []);
+    };
+    userDetails();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -73,22 +70,50 @@ export default function UserProfile() {
             alignItems: 'center',
             width: '100%',
             color: '#4D6797',
-            fontSize: '20px'
+            fontSize: '20px',
           }}
         >
           <h1 style={{ textAlign: 'center', fontSize: '30px', color: '#EF5350' }}>Edit Profile</h1>
-          {Object.keys(formValues).map((key) => (
-            <div key={key} style={{ marginBottom: '16px', width: '100%', maxWidth: '500px' }}>
-              <label>{key.charAt(0).toUpperCase() + key.slice(1)}</label>
-              <TextField
-                type="text"
-                name={key}
-                value={formValues[key]}
-                onChange={handleInputChange}
-                fullWidth
-              />
-            </div>
-          ))}
+          <div style={{ marginBottom: '16px', width: '100%', maxWidth: '500px' }}>
+            <label>Name</label>
+            <TextField
+              type="text"
+              name="name"
+              value={formValues.name}
+              onChange={handleInputChange}
+              fullWidth
+            />
+          </div>
+          <div style={{ marginBottom: '16px', width: '100%', maxWidth: '500px' }}>
+            <label>Email</label>
+            <TextField
+              type="text"
+              name="email"
+              value={formValues.email}
+              onChange={handleInputChange}
+              fullWidth
+            />
+          </div>
+          <div style={{ marginBottom: '16px', width: '100%', maxWidth: '500px' }}>
+            <label>Number</label>
+            <TextField
+              type="text"
+              name="phone"
+              value={formValues.phone}
+              onChange={handleInputChange}
+              fullWidth
+            />
+          </div>
+          <div style={{ marginBottom: '16px', width: '100%', maxWidth: '500px' }}>
+            <label>Pincode</label>
+            <TextField
+              type="text"
+              name="pincode"
+              value={formValues.pincode}
+              onChange={handleInputChange}
+              fullWidth
+            />
+          </div>
           <div style={{ marginTop: '16px' }}>
             <Button variant="contained" type="submit">Submit</Button>
           </div>
