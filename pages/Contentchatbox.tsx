@@ -28,7 +28,6 @@ const userEntrySchema = Yup.object().shape({
 
 const Contentchatbox = (props: ChildProps) => {
     const productsArray = Products.products || [];
-    // console.log(productsArray);
 
     const userId = getUserId();
     const district: string[] = [
@@ -95,7 +94,6 @@ const Contentchatbox = (props: ChildProps) => {
         onSubmit: async(values) => {
             try{
           const response = await AxiosService.post('/chatbot' , values);
-          console.log(response);
           if(response.status == 200){
             setIsDefault(true);
             setInput("Hi")
@@ -179,7 +177,6 @@ const Contentchatbox = (props: ChildProps) => {
           // setIsDefault(false)
         }
         
-        console.log(isDefault)
     }, [isDefault, setIsDefault]);
 
 
@@ -188,7 +185,6 @@ const Contentchatbox = (props: ChildProps) => {
         //     return;
         // }
         setProcessingResponse(true);
-        console.log(messages)
         let response;
         if (messages.length % 3 === 0 &&  selectedOption== "") {
             response = { sender: 'Bot', text: 'would you like to take a look at our products ?', checkbox1: `Yes`, checkbox2: 'No' };

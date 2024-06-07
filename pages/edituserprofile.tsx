@@ -46,8 +46,7 @@ export default function UserProfile() {
     try {
       const response = await AxiosService.patch(`/user`, formValues);
       if (response.status === 200) {
-        console.log('Profile updated successfully!');
-        router.push('/userdashboard'); // Redirect to job list page after update
+        router.push('/userdashboard'); 
       } else {
         console.error('Unexpected response status:', response.status);
       }

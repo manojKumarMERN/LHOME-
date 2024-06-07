@@ -161,7 +161,6 @@ const GetfreeEstimate: React.FC<homeproperties> = ({ screenwidth, screenheight }
     router.push('/getQuote');
   };
 
-  // console.log(BHK);
 
   const handlePopup = () => {
     setShow(true);

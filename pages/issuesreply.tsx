@@ -16,7 +16,6 @@ const IssuesTable = (complaintId) => {
       try {
         const response = await AxiosService.get('/user/complaints');
         setIssues(response.data.data);
-        console.log(response.data);
       } catch (error) {
         console.error('Error fetching issues:', error);
       }
@@ -48,7 +47,6 @@ const IssuesTable = (complaintId) => {
       });
 
       setReplyIssues(response.data.data);
-      console.log(response.data);
     } catch (error) {
       console.error('Error submitting solution:', error);
     }

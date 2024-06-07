@@ -66,7 +66,6 @@ const ModularKitchenPage: React.FC = () => {
             try {
                 const response = await AxiosService.get('/products/category/bedroom');
                 setBedroom(response.data.products);
-                console.log(response.data);
             } catch (error) {
                 console.error('Error fetching bedroom data:', error);
             }

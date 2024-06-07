@@ -65,13 +65,7 @@ const CraftingTheme: React.FC = () => {
         let api = simpleCallInitAPI(`${assetpath}/assets/designJournal.json`);
         api.then((data: any) => {
             let colorplay = [];
-            // console.log(data.data.desginJournalRows.Theme.points)
-            // data.data.desginJournalRows.Colors.points.forEach((datas: any) => {
-            //     let lc: any = {};
-            //     lc.points = `${assetpath}${datas.points}`;
-            //     // lc.points = datas.points;
-            //     colorplay.push(lc);
-            // });
+            
             setPoints(data.data.desginJournalRows.Theme.points);
             setHeadings(data.data.desginJournalRows.Theme.boldHeading);
             setsummary(data.data.desginJournalRows.Theme.summary);

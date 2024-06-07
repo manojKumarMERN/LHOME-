@@ -35,21 +35,7 @@ const AdminLoginPage: React.FC = () => {
       return;
     }
 
-    // try {
-    //   const response = await AxiosService.post('/login', {
-    //     username: username,
-    //     password: password,
-    //   });
-
-    //   if (response.status === 200) {
-    //     toast.success('Logged in successfully');
-    //     router.push('/');
-    //   }
-    // } catch (err) {
-    //   console.error(err);
-    //   setUsernameError('');
-    //   setPasswordError('Failed to authenticate. Please try again.');
-    // }
+   
   };
 
   return (

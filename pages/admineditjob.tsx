@@ -44,7 +44,6 @@ export default function JobEditForm() {
     try {
       const response = await AxiosService.patch(`/jobs/${id}`, formValues);
       if (response.status === 200) {
-        console.log('Job updated successfully!');
         router.push('/editjob'); // Redirect to job list page after update
       } else {
         console.error('Unexpected response status:', response.status);
