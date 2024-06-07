@@ -64,12 +64,21 @@ const IssuesTable = (complaintId) => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await AxiosService.get(`/user/complaint/${complaintId}/messages`);
+        const token = await getToken();
+
+        const response = await AxiosService.get(`/user/complaint/${complaintId}/messages`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        console.log('Response:', response); // Log the full response to inspect its structure
         setMessages(response.data.messages);
       } catch (error) {
         console.error('Error fetching messages:', error);
       }
     };
+
     fetchMessages();
   }, [complaintId]);
 
@@ -111,6 +120,8 @@ const IssuesTable = (complaintId) => {
 
   const sortedIssues = issues.sort((a, b) => a.id - b.id);
 
+
+
   return (
     <div>
       <TableContainer component={Paper}>
@@ -143,71 +154,62 @@ const IssuesTable = (complaintId) => {
       </TableContainer>
 
       <Dialog open={open} onClose={handleClose} sx={{ '& .MuiDialog-paper': { width: '80%', maxHeight: '80%' } }}>
-  <DialogTitle>Chat Conversation</DialogTitle>
-  <DialogContent>
-    {selectedIssue && (
-      <div>
-        {/* <div className='text-right'> */}
-          <p><strong>Status:
-          <Box sx={{ display: 'flex', gap: 4 }}>
-            <Button
-              variant="contained"
-              onClick={() => handleStatusChange('Open')}
-              style={{ backgroundColor: selectedIssue.status === 'Open' ? 'red' : '' }}
-            >
-              Open
-            </Button>
-            <Button
-              variant="contained"
-              onClick={() => handleStatusChange('Close')}
-              style={{ backgroundColor: selectedIssue.status === 'Close' ? 'green' : '' }}
-            >
-              Close
-            </Button>
-          </Box>
-          </strong></p>
-        {/* </div> */}
-        <p><strong>ID:</strong> {selectedIssue.id}</p>
-        <p><strong>Title:</strong> {selectedIssue.title}</p>
-       
-       <Box mb={2} sx={{ display: 'flex', flexDirection: 'column' }}>
-  {selectedIssue && Array.isArray(selectedIssue.messages) && selectedIssue.messages.map((message) => (
-    <Box
-      key={message.id}
-      sx={{
-        border: '1px solid #ccc',
-        borderRadius: '4px',
-        padding: '16px',
-        marginLeft: message.sender === 'admin' ? 'auto' : 0, // Align admin messages to the right
-        marginRight: message.sender === 'customer' ? 'auto' : 0, // Align customer messages to the left
-        textAlign: message.sender === 'admin' ? 'right' : 'left', // Set text alignment based on sender
-        backgroundColor: message.sender === 'admin' ? '#f0f0f0' : '#e0f7fa', // Set background color based on sender
-      }}
-    >
-      {message.text}
-    </Box>
-  ))}
-</Box>
+        <DialogTitle>Chat Conversation</DialogTitle>
+        <DialogContent>
+          {selectedIssue && (
+            <div>
+              {/* <div className='text-right'> */}
+              <p><strong>Status:
+                <Box sx={{ display: 'flex', gap: 4 }}>
+                  <Button
+                    variant="contained"
+                    onClick={() => handleStatusChange('Open')}
+                    style={{ backgroundColor: selectedIssue.status === 'Open' ? 'red' : '' }}
+                  >
+                    Open
+                  </Button>
+                  <Button
+                    variant="contained"
+                    onClick={() => handleStatusChange('Close')}
+                    style={{ backgroundColor: selectedIssue.status === 'Close' ? 'green' : '' }}
+                  >
+                    Close
+                  </Button>
+                </Box>
+              </strong></p>
+              {/* </div> */}
+              {/* <p><strong>ID:</strong> {selectedIssue.id}</p> */}
+              {/* <p><strong>Title:</strong> {selectedIssue.title}</p> */}
+              <div className='border-1 h-[250px] w-[100%]'>
+                {selectedIssue && Array.isArray(selectedIssue.messages) && selectedIssue.messages.map((message) => (
+                  <div>
+                    {message.text}
+
+                  </div>
+
+                ))}
+              </div>
 
 
 
-      </div>
-    )}
-  </DialogContent>
-  <DialogActions sx={{ justifyContent: 'flex-end' }}>
-    <TextField
-      label="Message"
-      fullWidth
-      multiline
-      rows={1}
-      value={solution}
-      onChange={(e) => setSolution(e.target.value)}
-    />
-    <Button onClick={handleSubmitSolution} variant="contained" color="primary">
-      Submit
-    </Button>
-  </DialogActions>
-</Dialog>
+
+            </div>
+          )}
+        </DialogContent>
+        <DialogActions sx={{ justifyContent: 'flex-end' }}>
+          <TextField
+            label="Message"
+            fullWidth
+            multiline
+            rows={1}
+            value={solution}
+            onChange={(e) => setSolution(e.target.value)}
+          />
+          <Button onClick={handleSubmitSolution} variant="contained" color="primary">
+            Submit
+          </Button>
+        </DialogActions>
+      </Dialog>
 
 
     </div>
