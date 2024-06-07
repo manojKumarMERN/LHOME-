@@ -3,13 +3,14 @@ import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, 
 import { AxiosService } from '../services/ApiService';
 import { getToken } from '../services/sessionProvider';
 
-const IssuesTable = (complaintId) => {
+const IssuesTable = () => {
   const [issues, setIssues] = useState([]);
   const [replyIssues, setReplyIssues] = useState([]);
   const [messages, setMessages] = useState([]);
   const [selectedIssue, setSelectedIssue] = useState(null);
   const [solution, setSolution] = useState('');
   const [open, setOpen] = useState(false);
+  const [complaintId, setComplaintId] = useState(null);
 
   useEffect(() => {
     const fetchIssues = async () => {
@@ -24,7 +25,9 @@ const IssuesTable = (complaintId) => {
   }, []);
 
   const handleOpen = (issue) => {
+    console.log(issue)
     setSelectedIssue(issue);
+    setComplaintId(issue.id);
     setOpen(true);
   };
 
@@ -72,7 +75,7 @@ const IssuesTable = (complaintId) => {
           },
         });
 
-        console.log('Response:', response); // Log the full response to inspect its structure
+       // Log the full response to inspect its structure
         setMessages(response.data.messages);
       } catch (error) {
         console.error('Error fetching messages:', error);
@@ -121,7 +124,7 @@ const IssuesTable = (complaintId) => {
   const sortedIssues = issues.sort((a, b) => a.id - b.id);
 
 
-
+console.log(messages);
   return (
     <div>
       <TableContainer component={Paper}>
@@ -181,12 +184,19 @@ const IssuesTable = (complaintId) => {
               {/* <p><strong>ID:</strong> {selectedIssue.id}</p> */}
               {/* <p><strong>Title:</strong> {selectedIssue.title}</p> */}
               <div className='border-1 h-[250px] w-[100%]'>
-                {selectedIssue && Array.isArray(selectedIssue.messages) && selectedIssue.messages.map((message) => (
-                  <div>
+                {messages.map((message, index) => (
+                  <div 
+                  key={index}
+                  style={{
+                    backgroundColor: message.sender === 'admin' ? 'red' : 'white',
+                    color: message.sender === 'admin' ? 'white' : 'black',
+                    padding: '8px',
+                    borderRadius: '4px',
+                    marginBottom: '8px'
+                  }}
+                  >
                     {message.text}
-
                   </div>
-
                 ))}
               </div>
 
