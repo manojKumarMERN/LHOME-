@@ -3,95 +3,130 @@ import css from '../styles/detailsOfimg.module.scss';
 import * as config from "../next.config.js";
 import { simpleCallInitAPI } from '../services/ApicallInit';
 import { BsHeart, BsHeartFill } from 'react-icons/bs';
-import {FaFacebookF,FaInstagram,FaTwitter,FaTelegramPlane,FaWhatsapp,FaLinkedinIn,FaYoutube} from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { useRouter } from 'next/router';
-import { getUserId } from '../services/sessionProvider';
+import { getUserId, getToken } from '../services/sessionProvider';
 import { toast } from 'react-toastify';
 import { AxiosService } from '../services/ApiService';
 
-interface properties {
+interface Properties {
     data: any;
     selectedItem: any;
-    index : any;
-    categoryId : any;
+    index: any;
+    categoryId: any;
     handleImageClick: (item: any, index: number) => void;
 }
 
-
-const DetailsOfimg: React.FC<properties> = ({ data, selectedItem , index , categoryId, handleImageClick }) => {
-
-    // console.log(data);
-    
+const DetailsOfimg: React.FC<Properties> = ({ data, selectedItem, index, categoryId, handleImageClick }) => {
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     const [socialMediaList, setSocialMediaList] = React.useState([]);
-    const [ liked , setLiked ] = React.useState(false);
+    const [likedStatus, setLikedStatus] = React.useState<{ [key: number]: boolean }>({});
     const router = useRouter();
 
-    const handlelike = async() => {        
-        try {
-            if(getUserId()){
-                const resp = await AxiosService.post(`/wish/${index}`, {loginId: getUserId() , categoryId })
-
-            if(resp?.status === 200){
-                const response = await AxiosService.post('/wishes', {
-                    loginId: getUserId(),
-                    categoryId 
-                  });
-                  response?.data?.wishlist.find(wish=>wish.index == index) ? setLiked(true) : setLiked(false);
-                  
-             }        
-            }else {
-                toast('please login to use');
-             } 
-
-        } catch (error) {
-            console.log(error)
+    const handleLike = async (id: number) => {
+        const auth = getToken();
+        if (!auth) {
+            toast('Please login to use this feature');
+            return;
         }
-    }
+
+        try {
+            const token = getToken();
+            if (!token) {
+                toast('Unauthorized. Please login again.');
+                return;
+            }
+
+            const liked = likedStatus[id] || false;
+            let response;
+            if (liked) {
+                response = await AxiosService.delete(`/products/wishlist/${id}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+            } else {
+                response = await AxiosService.put(`/products/wishlist/${id}`, {}, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+            }
+
+            if (response.status === 200) {
+                setLikedStatus(prevLikedStatus => ({
+                    ...prevLikedStatus,
+                    [id]: !liked,
+                }));
+                toast(liked ? 'Product unliked successfully' : 'Product liked successfully');
+            } else {
+                toast('Failed to change like status. Please try again.');
+            }
+        } catch (error) {
+            console.error('Request failed:', error);
+            toast('Failed to change like status. Please try again.');
+        }
+    };
 
     React.useEffect(() => {
-        let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
-        api.then((data: any) => {
-            let socialMediaIcons = [];
-            data.data.settings.socialMediaIcons.forEach((datas: any) => {
-                let lc: any = {};
-                lc.image = `${assetpath}${datas.iconsList1}`;
-                socialMediaIcons.push(lc);
-            });
-
-            setSocialMediaList(socialMediaIcons);
-
-        })
-            .catch(error => {
-                console.log(error);
-            });
-            const fetchLikes =async () => {
-                if(getUserId()){
-                const response = await AxiosService.post('/wishes', {
-                    loginId: getUserId(),
-                    categoryId 
-                  });
-                  response?.data?.wishlist.find(wish=>wish.index == index) ? setLiked(true) : setLiked(false);
-                }
+        const fetchSocialMediaIcons = async () => {
+            try {
+                const api = await simpleCallInitAPI(`${assetpath}/assets/settings.json`);
+                const socialMediaIcons = api.data.settings.socialMediaIcons.map((datas: any) => ({
+                    image: `${assetpath}${datas.iconsList1}`
+                }));
+                setSocialMediaList(socialMediaIcons);
+            } catch (error) {
+                console.error(error);
             }
-            fetchLikes()
-    }, [assetpath]);
+        };
 
-    const handleRedirect = () =>{
-        if(getUserId()){
-            router.push('/Bookfreedesign')
-        }else{
-            toast('you have to login to access this page')
+        const fetchWishlist = async () => {
+            try {
+                const token = getToken();
+                if (!token) {
+                    toast('Unauthorized. Please login again.');
+                    return;
+                }
+
+                const response = await AxiosService.get(`/products/wishlist`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+
+                const wishlistItems = Array.isArray(response.data?.cartItems) ? response.data.cartItems : [];
+                const likedStatusMap: { [key: number]: boolean } = {};
+                wishlistItems.forEach(item => {
+                    likedStatusMap[item.product.id] = true;
+                });
+                setLikedStatus(likedStatusMap);
+            } catch (error) {
+                console.error('Error:', error.message);
+            }
+        };
+
+        fetchSocialMediaIcons();
+        fetchWishlist();
+    }, [assetpath, categoryId]);
+
+    const handleRedirect = () => {
+        if (getUserId()) {
+            router.push('/Bookfreedesign');
+        } else {
+            toast('You have to login to access this page');
         }
-    }
+    };
+
     const [inputValue, setInputValue] = React.useState("");
 
     React.useEffect(() => {
         const currentURL = window.location.href;
         setInputValue(currentURL);
     }, []);
-    const handleSocialMediaClick = (socialMediaURL) => {
+
+    const handleSocialMediaClick = (socialMediaURL: string) => {
         window.open(socialMediaURL);
     };
 
@@ -121,12 +156,13 @@ const DetailsOfimg: React.FC<properties> = ({ data, selectedItem , index , categ
                         </div>
                         <div className={css.btndivision}>
                             <button className={css.bookBtn} onClick={handleRedirect}>BOOK FREE DESIGN SESSION</button>
-                            <button className={css.wishBtn} onClick={handlelike}>
-                                { (liked) ?
-                                    <div className={css.wishBtn_content}><BsHeartFill style={{color:'white'}} className={css.Bs_heart} />WISHED</div> :
-                                <div className={css.wishBtn_content}><BsHeart className={css.Bs_heart} />WISHLIST</div>
-                                }
-                                </button>
+                            <button className={css.wishBtn} onClick={() => handleLike(selectedItem.id)}>
+                                {likedStatus[selectedItem.id] ? (
+                                    <div className={css.wishBtn_content}><BsHeartFill style={{ color: 'white' }} className={css.Bs_heart} />WISHED</div>
+                                ) : (
+                                    <div className={css.wishBtn_content}><BsHeart className={css.Bs_heart} />WISHLIST</div>
+                                )}
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -144,14 +180,9 @@ const DetailsOfimg: React.FC<properties> = ({ data, selectedItem , index , categ
                         ))}
                     </div>
                 </div>
-
-                <div>
-
-                </div>
             </div>
         </React.Fragment>
-    )
-
-}
+    );
+};
 
 export default DetailsOfimg;
