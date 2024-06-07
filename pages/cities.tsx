@@ -86,7 +86,6 @@ const Citiespage: React.FC = () => {
     const router = useRouter();
     const { City } = router.query;
 
-    // console.log(City);
     const page = React.useRef(null);
     const [prevPosition, setPrev] = React.useState(0);
     const [hidden, setHidden] = React.useState(false)

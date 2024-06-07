@@ -64,14 +64,7 @@ const Texture: React.FC = () => {
     React.useEffect(() => {
         let api1 = simpleCallInitAPI(`${assetpath}/assets/designJournal.json`);
         api1.then((data: any) => {
-            // let texture = [];
-            // console.log(data.data.desginJournalRows.Texture)
-            // data.data.desginJournalRows.Colors.map((datas: any) => {
-            //     let lc: any = {};
-            //     lc.boldHeading = `${assetpath}${datas.boldHeading}`;
-            //     lc.points = datas.points;
-            //     texture.push(lc);
-            // });
+           
 
             setPoints(data.data.desginJournalRows.Texture.points);
             setHeadings(data.data.desginJournalRows.Texture.boldHeading);
@@ -82,7 +75,6 @@ const Texture: React.FC = () => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResized);
     }, [handleResize, handleResized, assetpath]);
-    // console.log(textureheading);
 
     const page = React.useRef(null);
     const [prevPosition, setPrev] = React.useState(0);

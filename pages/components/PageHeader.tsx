@@ -120,7 +120,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
   const router = useRouter();
 
   const handleNav = (e) => {
-    console.log('Event:', e);
+    
     if (typeof e === 'string') {
       switch (e) {
         case 'Home':
@@ -215,8 +215,7 @@ const PageHeader: React.FC<pageheaderproperties> = ({ screenwidth, screenheight,
     const fetchWishlistCount = async () => {
       try {
         const response = await AxiosService.get('/products/wishlist');
-        console.log('Wishlist items:', response.data.cartItems); // Log the response data
-        setWishlistCount(response.data.cartItems.length); // Update wishlist count
+        setWishlistCount(response.data.cartItems.length); 
       } catch (error) {
         console.error('Error fetching wishlist count:', error);
       }

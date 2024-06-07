@@ -34,7 +34,6 @@ const RaiseIssue = () => {
                 setSuccess(`Issue successfully posted we'll get back you soon with a solution..`);
                 setTimeout(()=>{
                     setSuccess('');
-                 console.log(response)
 
                 }, 3000)
             }

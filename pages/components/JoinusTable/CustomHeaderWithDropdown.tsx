@@ -10,8 +10,7 @@ interface CustomHeaderWithDropdownProps {
 }
 
 const CustomHeaderWithDropdown: React.FC<CustomHeaderWithDropdownProps> = ({ label, value, onSelectionChange }) => {
-  console.log(label)
-  console.log(value)
+ 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState<string | null>(null);
  

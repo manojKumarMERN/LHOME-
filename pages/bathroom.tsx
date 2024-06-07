@@ -81,7 +81,6 @@ const HomeOffice: React.FC = () => {
         try {
             const response = await AxiosService.get('/products/category/bathroom');
             setBathRoom(response.data.products);
-            console.log(response.data);
         } catch (error) {
             console.error('Error fetching Bathroom data:', error);
         }

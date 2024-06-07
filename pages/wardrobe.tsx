@@ -77,15 +77,12 @@ const WardrobePage: React.FC = () => {
             try {
                 const response = await AxiosService.get('/products/category/ushapedwar');
                 setData(response.data.products);
-                console.log(response.data);
     
                 const response1 = await AxiosService.get('/products/category/strightwar');
                 setData1(response1.data.products);
-                console.log(response1.data);
     
                 const response2 = await AxiosService.get('/products/category/lshapedwar');
                 setData2(response2.data.products);
-                console.log(response2.data);
     
             } catch (error) {
                 console.error('Error fetching wardrobe data:', error);

@@ -37,7 +37,6 @@ const DropDownMenu: React.FC<DropDownProps> = ({ options }) => {
   }
 
   const handleNav = (option: string) => {
-    console.log("Navigating to:", option);
     switch (option) {
       case 'Home':
         router.push('/');
