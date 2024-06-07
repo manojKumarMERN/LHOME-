@@ -13,16 +13,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PeopleIcon from '@mui/icons-material/People';
-import { ListItemButton, ListItemIcon, ListItemText, Container, Grid, Paper, Button } from '@mui/material';
-import UserTable from './userlist';
-import JobTable from './editjob';
-import IssuesTable from './issuesreply';
+import { ListItemButton, ListItemIcon, ListItemText, Container, Grid, Paper } from '@mui/material';
 import PageHeader from './components/PageHeader';
 import Footer from './components/Footer/Footer';
 import css from '../styles/wall.module.scss';
 import { useRouter } from 'next/router';
-import JobEditForm from './admineditjob';
 import * as config from '../next.config';
+import UserTable from './userlist';
+import JobTable from './editjob';
+import IssuesTable from './issuesreply';
+import JobEditForm from './admineditjob';
 
 const drawerWidth = 240;
 
@@ -81,8 +81,7 @@ const menuItems = [
   { name: 'Users', icon: <PeopleIcon />, value: 'Users' },
   { name: 'Job', icon: <PeopleIcon />, value: 'Job' },
   { name: 'Issues', icon: <DashboardIcon />, value: 'Issues' },
-  { name: '', value: 'EditJob' },
-
+  // { name: 'EditJob', value: 'EditJob' },
 ];
 
 const componentMapping = {
@@ -90,10 +89,10 @@ const componentMapping = {
   Users: <UserTable />,
   Job: <JobTable />,
   Issues: <IssuesTable />,
-  EditJob: <JobEditForm />, // Add JobEditForm here
+  // EditJob: <JobEditForm />, // This will be imported in the main JobEditForm file
 };
 
-export default function DashboardPage() {
+const DashboardLayout = ({ children }) => {
   const [open, setOpen] = useState(true);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -127,10 +126,6 @@ export default function DashboardPage() {
   }, [handleResize]);
 
   const assetPath = config.assetPrefix ? `${config.assetPrefix}` : ``;
-
-  const renderContent = () => {
-    return componentMapping[selectedMenuItem] || <UserTable />;
-  };
 
   return (
     <div className="animate-fade-in">
@@ -179,7 +174,7 @@ export default function DashboardPage() {
                 <Grid container spacing={3}>
                   <Grid item xs={12}>
                     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                      {renderContent()}
+                      {children}
                     </Paper>
                   </Grid>
                 </Grid>
@@ -191,7 +186,7 @@ export default function DashboardPage() {
       </div>
     </div>
   );
-}
+};
 
 function getHeight(width: number): number {
   if (width < 600) {
@@ -218,3 +213,5 @@ function getHeight(width: number): number {
   }
   return window.innerHeight - 160;
 }
+
+export default DashboardLayout;
