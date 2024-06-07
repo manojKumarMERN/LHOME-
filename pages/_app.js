@@ -38,14 +38,15 @@ const App = ({ Component, pageProps }) => {
     console.log('Data received from child:', data);
     // setReceivedData(data);
   };
-  return <SafeHydrate><Provider store={store}><Component {...pageProps} />      <div className={'chat_Box'}>
+  return <SafeHydrate><Provider store={store}><Component {...pageProps} />      
+  {/* <div className={'chat_Box'}> */}
     <Head>
       <title>LHome</title>
       <meta name="description" content="" />
       <link rel="icon" href="/assets/icons/favicon.png" />
     </Head>
-    <HiOutlineChatAlt2 className={'Chat'} onClick={handleChatBox} />
-    <Modal show={chatBoxShow} onHide={handleCloseBox} className={'ChatBox_Popup'}>
+    {/* <HiOutlineChatAlt2 className={'Chat'} onClick={handleChatBox} /> */}
+    {/* <Modal show={chatBoxShow} onHide={handleCloseBox} className={'ChatBox_Popup'}>
       <Modal.Header >
         <div className={'white_bg'}>
           <Image src={require("../public/assets/images/LhomeLogo.jpg")} alt="homeLogo" className={'round_image'} />
@@ -55,8 +56,9 @@ const App = ({ Component, pageProps }) => {
         <BsChevronDown onClick={handleCloseBox} className={'bs_fonts'} />
       </Modal.Header>
       <Contentchatbox onDataReceived={handleChildData} />
-    </Modal>
-  </div></Provider>
+    </Modal> */}
+  {/* </div> */}
+  </Provider>
   <ToastContainer />
   </SafeHydrate>
 }
