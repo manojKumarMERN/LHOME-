@@ -50,8 +50,8 @@ const IssuesTable = () => {
       });
       
 console.log(response)
-      // const complaintMessages = response.data.data.messages;
-      // setReplyIssues(complaintMessages.filter(msg => msg.complaintId === issue.id));
+      const complaintMessages = response.data.data.messages;
+      setReplyIssues(complaintMessages.filter(msg => msg.complaintId === issue.id));
       console.log();
     } catch (error) {
       console.error('Error fetching complaint messages:', error);
@@ -64,27 +64,7 @@ console.log(response)
     setSolution('');
   };
 
-  // const handleSubmitSolution = async () => {
-  //   const complaintId = selectedIssue.id;
-
-  //   try {
-  //     const token = await getToken();
-
-  //     const response = await AxiosService.post('/user/complaint/message', { complaintId, text: solution }, {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     });
-
-  //     setReplyIssues(prev => [...prev, { complaintId, text: solution, sender: 'admin' }]);
-  //     console.log(response.data);
-  //   } catch (error) {
-  //     console.error('Error submitting solution:', error);
-  //   }
-
-  //   handleClose();
-  // };
-
+  
   const handleStatusChange = async (newStatus) => {
     if (selectedIssue) {
       const updatedIssue = { ...selectedIssue, status: newStatus };
