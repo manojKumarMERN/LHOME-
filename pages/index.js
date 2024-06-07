@@ -4,6 +4,8 @@ import * as React from 'react';
 import { useRouter } from 'next/router';
 import ClientOnly from './components/ClientOnly';
 import AdminLoginPage from './components/Admin/login'; // Import AdminLoginPage component
+import Script from 'next/script';
+
 
 const HomePage = dynamic(() => import('./components/NewHomePage'), { ssr: false });
 
@@ -93,6 +95,10 @@ function App() {
             <link rel="icon" href="/assets/icons/favicon.png" />
           </Head>
           {renderPage()}
+          <Script
+            src="https://embed.tawk.to/6662bd7d9a809f19fb3aeba3/1hvor8d4d"
+            strategy="afterInteractive"
+          />
         </div>
       </div>
     </ClientOnly>
