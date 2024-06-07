@@ -126,7 +126,9 @@ const DashboardLayout = ({ children }) => {
   }, [handleResize]);
 
   const assetPath = config.assetPrefix ? `${config.assetPrefix}` : ``;
-
+  const renderContent = () => {
+    return componentMapping[selectedMenuItem] || <UserTable />;
+  };
   return (
     <div className="animate-fade-in">
       <div className={css.lhomePage}>
@@ -174,7 +176,7 @@ const DashboardLayout = ({ children }) => {
                 <Grid container spacing={3}>
                   <Grid item xs={12}>
                     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                      {children}
+                    {renderContent()}, {children}
                     </Paper>
                   </Grid>
                 </Grid>
