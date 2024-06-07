@@ -1,9 +1,6 @@
-
 import * as React from "react";
 import css from './StylishHomeProducts.module.scss';
 import * as config from "../../../next.config.js";
-import { simpleCallInitAPI } from '../../../services/ApicallInit';
-import { useRef } from 'react';
 import Carousel from "react-multi-carousel";
 import CustomLeftArrow from "./CustomLeftArrow";
 import CustomRightArrow from "./CustomRightArrow";
@@ -12,11 +9,11 @@ import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { FaRegShareFromSquare } from 'react-icons/fa6';
 import { FaAngleRight } from 'react-icons/fa6';
 import Link from "next/link";
-import Modal from 'react-bootstrap/Modal'
+import Modal from 'react-bootstrap/Modal';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import DetailsOfimg from '../../DetailsOfimg';
 import { AxiosService } from "../../../services/ApiService";
-import { getUserId } from "../../../services/sessionProvider";
+import { getUserId, getToken } from "../../../services/sessionProvider";
 import { toast } from "react-toastify";
 import Share from "../../Share";
 
@@ -28,103 +25,86 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
 
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     const [stylishHomeProducts, setStylishHomeProducts] = React.useState([]);
-    const [wishlistimage, setWishListImage] = React.useState("");
-    const [wishlistalt, setWishListAlt] = React.useState("");
     const [compactFurniture, setCompactFurniture] = React.useState([]);
-    const [shareiconimage, setShareIconImage] = React.useState("");
-    const [sharealt, setShareAlt] = React.useState("");
-    const [res, setRes] = React.useState([]);
-    const [res1, setRes1] = React.useState([]);
     const [show, setShow] = React.useState(false);
+    const [likedStatus, setLikedStatus] = React.useState<{ [key: number]: boolean }>(() => {
+        const storedLikedStatus = localStorage.getItem('likedStatusStylishHomeProducts');
+        return storedLikedStatus ? JSON.parse(storedLikedStatus) : {};
+    });
+    const [shareShow, setShareShow] = React.useState(false);
+    const [selectedItem, setSelectedItem] = React.useState(null);
+    const [selectedIndex, setSelectedIndex] = React.useState(null);
+    const [categoryId, setCategory] = React.useState(null);
 
     React.useEffect(() => {
-        let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
-        api.then((data: any) => {
-            let lstylishHomeProducts = [];
-            data.data.settings.stylishHomeProducts.forEach((datas: any) => {
-                let lc: any = {};
-                lc.image = `${assetpath}${datas.image}`;
-                lc.name = datas.name;
-                lc.subname = datas.subname;
-                lc.size = datas.size;
-                lc.para = datas.para
-                lstylishHomeProducts.push(lc);
-            });
-            setStylishHomeProducts(lstylishHomeProducts);
-            setWishListImage(`${assetpath}${data.data.settings.wishlistimage}`);
-            setWishListAlt(`${assetpath}${data.data.settings.wishlistAlt}`);
-            setShareIconImage(`${assetpath}${data.data.settings.shareiconimage}`);
-            setShareAlt(`${assetpath}${data.data.settings.shareAlt}`);
-            let lcompactFurniture = [];
-            data.data.settings.compactFurniture.forEach((datas: any) => {
-                let lc: any = {};
-                lc.image = `${assetpath}${datas.image}`;
-                lc.name = datas.name;
-                lc.subname = datas.subname;
-                lc.size = datas.size;
-                lc.para = datas.para
-                lcompactFurniture.push(lc);
-            });
-            setCompactFurniture(lcompactFurniture);
-        })
-            .catch(error => {
-                console.log(error);
-            });
-        let fetchData = async () => {
+        const fetchData = async () => {
             try {
-                const response = await AxiosService.post('/wishes', {
-                    loginId: getUserId(),
-                    categoryId: '4'
-                });
-                setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);
-                const response1 = await AxiosService.post('/wishes', {
-                    loginId: getUserId(),
-                    categoryId: '5'
-                });
-                setRes1(Array.isArray(response1.data?.wishlist) ? response1.data?.wishlist : []);
+                const response = await AxiosService.get('/products/listfive');
+                setCompactFurniture(response.data.productsByProductCode.spacesavingfurniture);
+                setStylishHomeProducts(response.data.productsByProductCode.livingroom);
             } catch (error) {
-                console.error('Error:', error.message);
+                console.error('Error fetching data:', error);
             }
         };
-
         fetchData();
-    }, [assetpath, show]);
+    }, []);
 
-    const handlelike = async (index, categoryId) => {
+    const handleLike = async (index: number, id: number) => {
+        const auth = getToken();
+        if (!auth) {
+            toast('Please login to use this feature');
+            return;
+        }
+
         try {
-            if (getUserId()) {
-                const resp = await AxiosService.post(`/wish/${index}`, { loginId: getUserId(), categoryId: categoryId })
-
-                if (resp?.status === 200) {
-                    const response = await AxiosService.post('/wishes', {
-                        loginId: getUserId(),
-                        categoryId: categoryId
-                    });
-                    categoryId == '4' ? setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []) : setRes1(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);
-                }
-            } else {
-                toast('please login to use')
+            const token = getToken();
+            if (!token) {
+                toast('Unauthorized. Please login again.');
+                return;
             }
 
-        } catch (error) {
-            console.log(error)
-        }
-    }
+            const liked = likedStatus[id] || false;
+            let response;
+            if (liked) {
+                response = await AxiosService.delete(`/products/wishlist/${id}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+            } else {
+                response = await AxiosService.put(`/products/wishlist/${id}`, {}, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+            }
 
-    const updatedstylishHomeProducts = stylishHomeProducts.map((element, index) => {
-        const matchingItem = res.find(item => item.index == index);
-        if (matchingItem) {
-            return { ...element, liked: true };
+            if (response.status === 200) {
+                const newLikedStatus = {
+                    ...likedStatus,
+                    [id]: !liked,
+                };
+                setLikedStatus(newLikedStatus);
+                localStorage.setItem('likedStatusStylishHomeProducts', JSON.stringify(newLikedStatus));
+                toast(liked ? 'Product unliked successfully' : 'Product liked successfully');
+            } else {
+                toast('Failed to change like status. Please try again.');
+            }
+        } catch (error) {
+            console.error('Request failed:', error);
+            toast('Failed to change like status. Please try again.');
         }
-        return element;
-    });
-    const updatedcompactFurniture = compactFurniture.map((element, index) => {
-        const matchingItem = res1.find(item => item.index == index);
-        if (matchingItem) {
-            return { ...element, liked: true };
-        }
-        return element;
-    });
+    };
+
+    const updatedStylishHomeProducts = stylishHomeProducts.map((element, index) => ({
+        ...element,
+        liked: likedStatus[element.id] || false,
+    }));
+
+    const updatedCompactFurniture = compactFurniture.map((element, index) => ({
+        ...element,
+        liked: likedStatus[element.id] || false,
+    }));
 
     const responsive = {
         desktop: {
@@ -142,12 +122,7 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
             items: 1,
             slidesToSlide: 1,
         },
-
     };
-    const [selectedItem, setSelectedItem] = React.useState(null);
-    const [selectedIndex, setSelectedIndex] = React.useState(null);
-    const [categoryId, setCategory] = React.useState(null);
-
 
     const handlePopup = (datas, index, categoryId) => {
         setSelectedItem(datas);
@@ -156,21 +131,23 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
         setShow(true);
     };
 
-
     const handleClose = () => {
         setShow(false);
-    }
-    const [shareShow, setShareShow] = React.useState(false);
-    const handleShareShow =()=>{
+    };
+
+    const handleShareShow = () => {
         setShareShow(true);
-    }
-    const handleShareClose = () =>{
+    };
+
+    const handleShareClose = () => {
         setShareShow(false);
-    }
+    };
+
     const handleImageClick = (item: any, index: number) => {
         setSelectedItem(item);
         setSelectedIndex(index);
     };
+
     return (
         <React.Fragment>
             <div className={css.mainhighlights}>
@@ -186,7 +163,6 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                         </div>
                         <div className={css.carousel_design}>
                             <Carousel
-
                                 responsive={responsive}
                                 autoPlay={false}
                                 swipeable={true}
@@ -194,14 +170,11 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                                 showDots={false}
                                 infinite={true}
                                 partialVisible={true}
-                                dotListClass={
-                                    "custom-dot-list-style "
-                                }
+                                dotListClass={"custom-dot-list-style "}
                                 customLeftArrow={<CustomLeftArrow onClick={() => { }} />}
                                 customRightArrow={<CustomRightArrow onClick={() => { }} />}
                             >
-
-                                {updatedstylishHomeProducts.map((datas: any, index: number) => (
+                                {updatedStylishHomeProducts.map((datas: any, index: number) => (
                                     <div
                                         key={`${datas.subname}_${index}_${index}`}
                                         className={css.customdivision}
@@ -220,14 +193,12 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                                                         {datas.name}
                                                         <div className={css.image_bottom_icons}>
                                                             <span className={css.wishlistholder}>
-                                                                <div onClick={() => handlelike(index, '4')}>
-                                                                    {
-                                                                        datas?.liked ? <BsHeartFill style={{ color: 'red' }} /> : <BsHeart />
-                                                                    }
+                                                                <div onClick={() => handleLike(index, datas.id)}>
+                                                                    {datas.liked ? <BsHeartFill style={{ color: 'red' }} /> : <BsHeart />}
                                                                 </div>
-                                                            </span>
+                                                                </span>
                                                             <span className={css.shareholder}>
-                                                                <FaRegShareFromSquare onClick={handleShareShow}/>
+                                                                <FaRegShareFromSquare onClick={handleShareShow} />
                                                             </span>
                                                         </div>
                                                     </div>
@@ -254,7 +225,6 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                             </div>
                             <div className={css.carousel_design}>
                                 <Carousel
-
                                     responsive={responsive}
                                     autoPlay={false}
                                     swipeable={true}
@@ -262,14 +232,11 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                                     showDots={false}
                                     infinite={true}
                                     partialVisible={true}
-                                    dotListClass={
-                                        "custom-dot-list-style "
-                                    }
+                                    dotListClass={"custom-dot-list-style "}
                                     customLeftArrow={<CustomLeftArrow onClick={() => { }} />}
                                     customRightArrow={<CustomRightArrow onClick={() => { }} />}
                                 >
-
-                                    {updatedcompactFurniture.map((datas: any, index: number) => (
+                                    {updatedCompactFurniture.map((datas: any, index: number) => (
                                         <div
                                             key={`${datas.subname}_${index}_${index}`}
                                             className={css.customdivision}
@@ -288,14 +255,12 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                                                             {datas.name}
                                                             <div className={css.image_bottom_icons}>
                                                                 <span className={css.wishlistholder}>
-                                                                    <div onClick={() => handlelike(index, '5')}>
-                                                                        {
-                                                                            datas?.liked ? <BsHeartFill style={{ color: 'red' }} /> : <BsHeart />
-                                                                        }
+                                                                    <div onClick={() => handleLike(index, datas.id)}>
+                                                                        {datas.liked ? <BsHeartFill style={{ color: 'red' }} /> : <BsHeart />}
                                                                     </div>
                                                                 </span>
                                                                 <span className={css.shareholder}>
-                                                                    <FaRegShareFromSquare onClick={handleShareShow}/>
+                                                                    <FaRegShareFromSquare onClick={handleShareShow} />
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -317,13 +282,13 @@ const HightLights: React.FC<propproperty> = ({ Citie }) => {
                 <Modal.Header >
                     <AiFillCloseCircle onClick={handleClose} />
                 </Modal.Header>
-                <DetailsOfimg data={stylishHomeProducts || compactFurniture} selectedItem={selectedItem} index={selectedIndex} categoryId={categoryId} handleImageClick={handleImageClick}/>
+                <DetailsOfimg data={stylishHomeProducts || compactFurniture} selectedItem={selectedItem} index={selectedIndex} categoryId={categoryId} handleImageClick={handleImageClick} />
             </Modal>
             <Modal show={shareShow} onHide={handleShareClose} className={css.share_Modal}>
                 <Modal.Header >
                     Share<AiFillCloseCircle onClick={handleShareClose} />
                 </Modal.Header>
-                <Share/>
+                <Share />
             </Modal>
         </React.Fragment>
     )

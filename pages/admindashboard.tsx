@@ -85,7 +85,7 @@ const menuItems = [
 ];
 
 const componentMapping = {
-  Dashboard: <Typography variant="h4">Hi</Typography>,
+  Dashboard: <Typography variant="h4"></Typography>,
   Users: <UserTable />,
   Job: <JobTable />,
   Issues: <IssuesTable />,
@@ -176,7 +176,7 @@ const DashboardLayout = ({ children }) => {
                 <Grid container spacing={3}>
                   <Grid item xs={12}>
                     <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                    {renderContent()}, {children}
+                    {renderContent()} {children}
                     </Paper>
                   </Grid>
                 </Grid>

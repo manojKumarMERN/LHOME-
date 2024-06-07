@@ -1,26 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  TextField,
-  TableContainer,
-  Paper,
-  Box
-} from '@mui/material';
-import { MDBDataTable } from 'mdbreact';
+import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
 import { AxiosService } from '../../../services/ApiService';
 import { getToken } from '../../../services/sessionProvider';
 
 const IssuesTable = () => {
   const [issues, setIssues] = useState([]);
   const [replyIssues, setReplyIssues] = useState([]);
-  const [replyComplaint, setComplaint] = useState([]);
+  const [messages, setMessages] = useState([]);
   const [selectedIssue, setSelectedIssue] = useState(null);
   const [solution, setSolution] = useState('');
   const [open, setOpen] = useState(false);
+  const [complaintId, setComplaintId] = useState(null);
 
   useEffect(() => {
     const fetchIssues = async () => {
@@ -34,25 +24,11 @@ const IssuesTable = () => {
     fetchIssues();
   }, []);
 
-  const handleOpen = async (issue) => {
+  const handleOpen = (issue) => {
+    console.log(issue)
     setSelectedIssue(issue);
+    setComplaintId(issue.id);
     setOpen(true);
-    setReplyIssues([]); // Reset reply issues when a new dialog is opened
-    setSolution(''); // Reset solution input when a new dialog is opened
-    
-    try {
-      const token = await getToken();
-      const response = await AxiosService.get(`/user/complaint/message/${issue.id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      
-      const complaintMessages = response.data.data.messages;
-      setReplyIssues(complaintMessages.filter(msg => msg.complaintId === issue.id));
-    } catch (error) {
-      console.error('Error fetching complaint messages:', error);
-    }
   };
 
   const handleClose = () => {
@@ -61,7 +37,54 @@ const IssuesTable = () => {
     setSolution('');
   };
 
-  
+  const handleSubmitSolution = async () => {
+    const customerId = selectedIssue.id;
+
+    try {
+      const token = await getToken();
+
+      const response = await AxiosService.post('/user/complaint/message', { complaintId: customerId, text: solution }, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      setReplyIssues(response.data.data);
+    } catch (error) {
+      console.error('Error submitting solution:', error);
+    }
+
+    handleClose();
+  };
+
+  const updateSelectedIssue = (newId) => {
+    setSelectedIssue((prevState) => ({
+      ...prevState,
+      id: newId,
+    }));
+  };
+
+  useEffect(() => {
+    const fetchMessages = async () => {
+      try {
+        const token = await getToken();
+
+        const response = await AxiosService.get(`/user/complaint/${complaintId}/messages`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+       // Log the full response to inspect its structure
+        setMessages(response.data.messages);
+      } catch (error) {
+        console.error('Error fetching messages:', error);
+      }
+    };
+
+    fetchMessages();
+  }, [complaintId]);
+
   const handleStatusChange = async (newStatus) => {
     if (selectedIssue) {
       const updatedIssue = { ...selectedIssue, status: newStatus };
@@ -98,67 +121,48 @@ const IssuesTable = () => {
     };
   };
 
-  const data = {
-    columns: [
-      {
-        label: 'Title',
-        field: 'title',
-        sort: 'asc',
-      },
-      {
-        label: 'Complaint ID',
-        field: 'customerId',
-        sort: 'asc',
-      },
-      {
-        label: 'Status',
-        field: 'status',
-        sort: 'asc',
-      },
-      {
-        label: 'Actions',
-        field: 'actions',
-        sort: 'asc',
-      },
-    ],
-    rows: issues.map((issue) => ({
-      title: issue.title,
-      customerId: issue.customerId,
-      status: (
-        <span style={getStatusStyle(issue.status)}>
-          {issue.status}
-        </span>
-      ),
-      actions: (
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => handleOpen(issue)}
-        >
-          Reply
-        </Button>
-      ),
-    })),
-  };
+  const sortedIssues = issues.sort((a, b) => a.id - b.id);
 
+
+console.log(messages);
   return (
     <div>
       <TableContainer component={Paper}>
-        <MDBDataTable striped bordered small data={data} />
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>Complaint ID</TableCell>
+              <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>Status</TableCell>
+              <TableCell sx={{ padding: '8px', width: '40%', textAlign: 'center' }}>Actions</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {sortedIssues.map((issue) => (
+              <TableRow key={issue.id}>
+                <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>{issue.customerId}</TableCell>
+                <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>
+                  <span style={getStatusStyle(issue.status)}>
+                    {issue.status}
+                  </span>
+                </TableCell>
+                <TableCell sx={{ padding: '8px', width: '40%', textAlign: 'center' }}>
+                  <Button variant="contained" color="primary" onClick={() => handleOpen(issue)}>
+                    Reply
+                  </Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </TableContainer>
 
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        sx={{ '& .MuiDialog-paper': { width: '80%', maxHeight: '80%' } }}
-      >
-        <DialogTitle>Issue Details</DialogTitle>
+      <Dialog open={open} onClose={handleClose} sx={{ '& .MuiDialog-paper': { width: '80%', maxHeight: '80%' } }}>
+        <DialogTitle>Chat Conversation</DialogTitle>
         <DialogContent>
           {selectedIssue && (
             <div>
-              <p><strong>Title:</strong> {selectedIssue.title}</p>
-              <div>
-                <p><strong>Status:</strong></p>
+              {/* <div className='text-right'> */}
+              <p><strong>Status:
                 <Box sx={{ display: 'flex', gap: 4 }}>
                   <Button
                     variant="contained"
@@ -175,62 +179,56 @@ const IssuesTable = () => {
                     Close
                   </Button>
                 </Box>
-              </div>
-              <Box
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '10px',
-                  marginTop: '10px',
-                  maxHeight: '300px',
-                  overflowY: 'auto',
-                }}
-              >
-                {replyIssues.map((message, index) => (
-                  <Box
-                    key={index}
-                    sx={{
-                      padding: '10px',
-                      backgroundColor: message.sender === 'admin' ? '#e0f7fa' : '#ffecb3',
-                      alignSelf: message.sender === 'admin' ? 'flex-start' : 'flex-end',
-                      borderRadius: '10px',
-                      maxWidth: '70%',
-                    }}
-                  >
-                    {message.text}
-                  </Box>
+              </strong></p>
+              {/* </div> */}
+              {/* <p><strong>ID:</strong> {selectedIssue.id}</p> */}
+              {/* <p><strong>Title:</strong> {selectedIssue.title}</p> */}
+              <div className='border-1 h-[250px] w-[100%]'>
+                {messages.map((message, index) => (
+                  <div 
+                  key={index}
+                  style={{
+                    backgroundColor: message.sender === 'admin' ? 'red' : 'white',
+                    color: message.sender === 'admin' ? 'white' : 'black',
+                    padding: '8px',
+                    borderRadius: '4px',
+                    marginBottom: '8px',
+                    textAlign: message.sender === 'admin' ? 'left' : 'right',
+                    marginLeft: message.sender === 'admin' ? '0' : 'auto',
+                    marginRight: message.sender === 'admin' ? 'auto' : '0',
+                    maxWidth: '60%' // Optional: to keep the messages within a reasonable width
+                  }}
+                >
+                  {message.text}
+                </div>
+                
                 ))}
-              </Box>
-              <TextField
-                label="Solution"
-                fullWidth
-                multiline
-                rows={4}
-                value={solution}
-                onChange={(e) => setSolution(e.target.value)}
-                disabled={selectedIssue.status !== 'Open'}
-              />
+              </div>
+
+
+
+
             </div>
           )}
         </DialogContent>
-          
-        <DialogActions>
-        <TextField
-                label="Message"
-                fullWidth
-                multiline
-                rows={1}
-                value={solution}
-                onChange={(e) => setSolution(e.target.value)}
-              />
-          <Button  color="primary">
+        <DialogActions sx={{ justifyContent: 'flex-end' }}>
+          <TextField
+            label="Message"
+            fullWidth
+            multiline
+            rows={1}
+            value={solution}
+            onChange={(e) => setSolution(e.target.value)}
+          />
+          <Button onClick={handleSubmitSolution} variant="contained" color="primary">
             Submit
           </Button>
         </DialogActions>
       </Dialog>
+
+
     </div>
   );
 };
 
 export default IssuesTable;
-
