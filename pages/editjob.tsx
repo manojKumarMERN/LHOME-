@@ -38,7 +38,7 @@ export default function JobTable() {
         setData(sortedData);
       } else {
         console.error('Unexpected response status:', response.status);
-      }
+      } 
     } catch (error) {
       console.error('Error fetching job data:', error);
     }
@@ -71,7 +71,7 @@ export default function JobTable() {
               backgroundColor: '#4CAF50', 
               color: 'white', 
               '&:hover': {
-                backgroundColor: '#45a049',
+                backgroundColor: '#45a049', 
               },
               padding: '10px 20px',
               fontSize: '16px'
