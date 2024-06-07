@@ -1,158 +1,143 @@
 import * as React from "react";
 import css from './HighLights.module.scss';
 import * as config from "../../../next.config.js";
-import { simpleCallInitAPI } from '../../../services/ApicallInit';
 import TopPicksForKitchen from "./topics";
 import Wardrobes from "./wardrobes";
 import CustomLeftArrow from "./CustomLeftArrow";
 import CustomRightArrow from "./CustomRightArrow";
 import Carousel from "react-multi-carousel";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
-import { FaRegShareFromSquare } from 'react-icons/fa6'
+import { FaRegShareFromSquare } from 'react-icons/fa6';
 import { useRouter } from 'next/router';
-import Modal from 'react-bootstrap/Modal'
+import Modal from 'react-bootstrap/Modal';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import DetailsOfimg from '../../DetailsOfimg';
-import { AxiosService } from '../../../services/ApiService'
-import { getUserId } from "../../../services/sessionProvider";
+import { AxiosService } from '../../../services/ApiService';
+import { getUserId, getToken } from "../../../services/sessionProvider";
 import { toast } from "react-toastify";
 import Share from "../../Share";
-
 
 const StylishHomeProducts: React.FC = () => {
     let assetpath = config.assetPrefix ? `${config.assetPrefix}` : ``;
     const [trendings, setTrendings] = React.useState([]);
-    const [wishlistimage, setWishListImage] = React.useState("");
-    const [wishlistalt, setWishListAlt] = React.useState("");
-    const [res , setRes] = React.useState([]);
-
-    const [shareiconimage, setShareIconImage] = React.useState("");
-    const [sharealt, setShareAlt] = React.useState("");
+    const [likedStatus, setLikedStatus] = React.useState<{ [key: number]: boolean }>({});
     const [show, setShow] = React.useState(false);
-
-
-    React.useEffect(() => {
-        let api = simpleCallInitAPI(`${assetpath}/assets/settings.json`);
-        api.then((data: any) => {
-            let ltrendings = [];
-            data.data.settings.trendings.forEach((datas: any) => {
-                let lc: any = {};
-                lc.image = `${assetpath}${datas.image}`;
-                lc.name = datas.name;
-                lc.subname = datas.subname;
-                lc.size = datas.size;
-                lc.para = datas.para
-                ltrendings.push(lc);
-            });
-            setTrendings(ltrendings);
-            setWishListImage(`${assetpath}${data.data.settings.wishlistimage}`);
-            setWishListAlt(`${assetpath}${data.data.settings.wishlistAlt}`);
-            setShareIconImage(`${assetpath}${data.data.settings.shareiconimage}`);
-            setShareAlt(`${assetpath}${data.data.settings.shareAlt}`);
-        })
-            .catch(error => {
-                console.log(error);
-            });
-            let fetchData = async () => {
-                try {
-                        const response = await AxiosService.post('/wishes', {
-                          loginId: getUserId(),
-                          categoryId : '1'
-                        });
-                        setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);
-
-                } catch (error) {
-                  console.error('Error:', error.message);
-                }
-              };
-          
-              fetchData();
-    }, [assetpath , show]);
-
-    
-
+    const [shareShow, setShareShow] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
     const [selectedIndex, setSelectedIndex] = React.useState(null);
 
+    const router = useRouter();
 
-    const handlePopup = (datas , index) => {
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await AxiosService.get('/products/listfive');
+                setTrendings(response.data.productsByProductCode.homeoffice);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+
+        // Retrieve liked status from local storage
+        const storedLikedStatus = localStorage.getItem('likedStatus');
+        if (storedLikedStatus) {
+            setLikedStatus(JSON.parse(storedLikedStatus));
+        }
+
+        // Check login status and fetch liked status if logged in
+        const token = getToken();
+        if (token) {
+            fetchLikedStatus();
+        } else {
+            // If not logged in, set all liked statuses to false
+            setLikedStatus({});
+        }
+    }, []);
+
+    const fetchLikedStatus = async () => {
+        try {
+            const response = await AxiosService.get('/liked-status'); // Endpoint to fetch liked status
+            setLikedStatus(response.data.likedStatus);
+        } catch (error) {
+            console.error('Error fetching liked status:', error);
+            // Handle error
+        }
+    };
+
+    const handlePopup = (datas, index) => {
         setSelectedItem(datas);
-        setSelectedIndex(index)
+        setSelectedIndex(index);
         setShow(true);
     };
 
+    const handleClose = () => setShow(false);
+    const handleShareShow = () => setShareShow(true);
+    const handleShareClose = () => setShareShow(false);
 
-    const handleClose = () => {
-        setShow(false);
-    }
-    const [shareShow, setShareShow] = React.useState(false);
-    const handleShareShow =()=>{
-        setShareShow(true);
-    }
-    const handleShareClose = () =>{
-        setShareShow(false);
-    }
-    const handleImageClick = (item: any, index: number) => {
-        setSelectedItem(item);
-        setSelectedIndex(index);
+    const handleLike = async (id) => {
+        const auth = getToken();
+        if (!auth) {
+            toast('Please login to use this feature');
+            return;
+        }
+
+        try {
+            const token = getToken();
+            if (!token) {
+                toast('Unauthorized. Please login again.');
+                return;
+            }
+
+            const liked = likedStatus[id] || false;
+            let response;
+            if (liked) {
+                response = await AxiosService.delete(`/products/wishlist/${id}`, {
+                    headers: { Authorization: `Bearer ${token}` },
+                });
+            } else {
+                response = await AxiosService.put(`/products/wishlist/${id}`, {}, {
+                    headers: { Authorization: `Bearer ${token}` },
+                });
+            }
+
+            if (response.status === 200) {
+                const newLikedStatus = {
+                    ...likedStatus,
+                    [id]: !liked,
+                };
+                setLikedStatus(newLikedStatus);
+                // Save liked status to local storage
+                localStorage.setItem('likedStatus', JSON.stringify(newLikedStatus));
+                toast(liked ? 'Product unliked successfully' : 'Product liked successfully');
+            } else {
+                toast('Failed to change like status. Please try again.');
+            }
+        } catch (error) {
+            console.error('Request failed:', error);
+            toast('Failed to change like status. Please try again.');
+        }
     };
 
+    const updatedTrendings = Array.isArray(trendings) ? trendings.map((element) => {
+        return { ...element, liked: likedStatus[element.id] || false };
+    }) : [];
 
     const responsive = {
-        desktop: {
-            breakpoint: { max: 4000, min: 1024 },
-            items: 3,
-            slidesToSlide: 1,
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 650 },
-            items: 2,
-            slidesToSlide: 1,
-        },
-        mobile: {
-            breakpoint: { max: 650, min: 350 },
-            items: 1,
-            slidesToSlide: 1,
-        },
-
+        desktop: { breakpoint: { max: 4000, min: 1024 }, items: 3, slidesToSlide: 1 },
+        tablet: { breakpoint: { max: 1024, min: 650 }, items: 2, slidesToSlide: 1 },
+        mobile: { breakpoint: { max: 650, min: 350 }, items: 1, slidesToSlide: 1 },
     };
-    const router = useRouter();
 
-    const handlelike = async(index) => {        
-        try {
-            if(getUserId()){
-                const resp = await AxiosService.post(`/wish/${index}`, {loginId: getUserId() , categoryId : '1'})
-            
-
-            if(resp?.status === 200){
-                const response = await AxiosService.post('/wishes', {
-                    loginId: getUserId(),
-                    categoryId : '1'
-                  });
-                  setRes(Array.isArray(response.data?.wishlist) ? response.data?.wishlist : []);   
-             }        
-            }else {
-                toast('please login to use');
-             } 
-
-        } catch (error) {
-            console.log(error)
-        }
+    function handleImageClick(item: any, index: number): void {
+        throw new Error("Function not implemented.");
     }
 
-    const updatedTrendings = trendings.map((element, index) => {
-        const matchingItem = res.find(item => item.index == index);
-        if (matchingItem) {
-          return { ...element, liked: true };
-        }
-        return element;
-      });
-  
     return (
         <React.Fragment>
             <div className={css.mainhighlights}>
                 <div className={css.highlights}>
-
                     <div className={css.listingOuterLayer}>
                         <div className={css.trendingtitle}>Trending</div>
                         <div className={css.carousel_design}>
@@ -164,19 +149,12 @@ const StylishHomeProducts: React.FC = () => {
                                 showDots={false}
                                 infinite={true}
                                 partialVisible={true}
-                                dotListClass={
-                                    "custom-dot-list-style "
-                                }
+                                dotListClass={"custom-dot-list-style"}
                                 customLeftArrow={<CustomLeftArrow onClick={() => { }} />}
                                 customRightArrow={<CustomRightArrow onClick={() => { }} />}
                             >
-
-                                {updatedTrendings?.map((datas: any, index: number) => (
-                                    <div
-                                        key={`${datas.subname}_${index}_${index}`}
-                                        className={css.customdivision}
-                                        
-                                    >
+                                {updatedTrendings?.map((datas, index) => (
+                                    <div key={`${datas.subname}_${index}_${index}`} className={css.customdivision}>
                                         <div className={css.customdivisionchild}>
                                             <div className={css.customimage}>
                                                 <img
@@ -184,21 +162,20 @@ const StylishHomeProducts: React.FC = () => {
                                                     loading="lazy"
                                                     src={datas.image}
                                                     alt={datas.subname}
-                                                    onClick={() => handlePopup(datas , index)}
+                                                    onClick={() => handlePopup(datas, index)}
                                                 />
                                                 <div className={css.customlist}>
                                                     <div className={css.customname}>
                                                         {datas.name}
                                                         <div className={css.image_bottom_icons}>
                                                             <span className={css.wishlistholder}>
-                                                            <div onClick={()=>handlelike(index)}>
-                                                            {
-                                                                    datas?.liked ? <BsHeartFill style={{color: '#F44336'}} /> : <BsHeart /> 
-                                                            }
-                                                        </div>
+                                                                <div onClick={() => handleLike(datas
+                                                                    .id)}>
+                                                                    {datas.liked ? <BsHeartFill style={{ color: '#F44336' }} /> : <BsHeart />}
+                                                                </div>
                                                             </span>
                                                             <span className={css.shareholder}>
-                                                                <FaRegShareFromSquare onClick={handleShareShow}/>
+                                                                <FaRegShareFromSquare onClick={handleShareShow} />
                                                             </span>
                                                         </div>
                                                     </div>
@@ -212,26 +189,25 @@ const StylishHomeProducts: React.FC = () => {
                                 ))}
                             </Carousel>
                             <Modal show={show} onHide={handleClose} className={css.Modal_Popup}>
-                                <Modal.Header >
+                                <Modal.Header>
                                     <AiFillCloseCircle onClick={handleClose} />
                                 </Modal.Header>
-                                <DetailsOfimg data={trendings} selectedItem={selectedItem} index={selectedIndex} categoryId = '1' handleImageClick={handleImageClick}/>
+                                <DetailsOfimg data={trendings} selectedItem={selectedItem} index={selectedIndex} categoryId='1' handleImageClick={handleImageClick} />
                             </Modal>
                             <Modal show={shareShow} onHide={handleShareClose} className={css.share_Modal}>
-                                <Modal.Header >
+                                <Modal.Header>
                                     Share<AiFillCloseCircle onClick={handleShareClose} />
                                 </Modal.Header>
-                                <Share/>
+                                <Share />
                             </Modal>
                         </div>
                     </div>
-
                     <div><TopPicksForKitchen Citie="" Currentpage={router.pathname} /></div>
                     <div><Wardrobes Citie="" Currentpage={router.pathname} /></div>
                 </div>
             </div>
         </React.Fragment>
-    )
-}
+    );
+};
 
 export default StylishHomeProducts;

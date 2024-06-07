@@ -81,7 +81,7 @@ const Bookfreedesign: React.FC<homeproperties> = ({ screenwidth, screenheight })
          if (activeStep == 2 && (nearestcentre == "" || meetingdate == "" || meetingtime == "")) {
             toast.error('Please enter necessary details to go further');
          } else{
-        const response = await AxiosService.post('/bookingsession' , {
+        const response = await AxiosService.put('/user/book-design' , {
             floorplan, location, own, planning, looking, budget, Possession, nearestcentre, meetingdate, meetingtime
         })
         if(response.status == 201){
