@@ -114,6 +114,35 @@ const IssuesTable = () => {
     }
   };
 
+  const handleCloseStatus = async () => {
+    if (selectedIssue) {
+      try {
+        const token = await getToken();
+
+        await AxiosService.patch(
+          `/user/complaint/${selectedIssue.id}/status`,
+          { status: 'Close' },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        const updatedIssue = { ...selectedIssue, status: 'Close' };
+
+        setIssues((prevIssues) =>
+          prevIssues.map((issue) =>
+            issue.id === selectedIssue.id ? updatedIssue : issue
+          )
+        );
+        setSelectedIssue(updatedIssue);
+      } catch (error) {
+        console.error('Error closing status:', error);
+      }
+    }
+  };
+
   const getStatusStyle = (status) => {
     return {
       color: status === 'open' ? 'red' : 'green',
@@ -123,15 +152,19 @@ const IssuesTable = () => {
 
   const sortedIssues = issues.sort((a, b) => a.id - b.id);
 
-
-console.log(messages);
+  console.log(messages);
   return (
     <div>
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>Complaint ID</TableCell>
+              <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>Customer ID</TableCell>
+              {/* <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>Complaint ID</TableCell> */}
+              <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>Customer Name</TableCell>
+              <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>Customer EmailID</TableCell>
+              <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>Customer Number</TableCell>
+              <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>Title</TableCell>
               <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>Status</TableCell>
               <TableCell sx={{ padding: '8px', width: '40%', textAlign: 'center' }}>Actions</TableCell>
             </TableRow>
@@ -139,7 +172,12 @@ console.log(messages);
           <TableBody>
             {sortedIssues.map((issue) => (
               <TableRow key={issue.id}>
-                <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>{issue.customerId}</TableCell>
+                <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>{issue.id}</TableCell>
+                {/* <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>{issue.customerId}</TableCell> */}
+                <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>{issue.Customer.name}</TableCell>
+                <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>{issue.Customer.email}</TableCell>
+                <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>{issue.Customer.phone}</TableCell>
+                <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>{issue.title}</TableCell>
                 <TableCell sx={{ padding: '8px', width: '30%', textAlign: 'center' }}>
                   <span style={getStatusStyle(issue.status)}>
                     {issue.status}
@@ -161,7 +199,6 @@ console.log(messages);
         <DialogContent>
           {selectedIssue && (
             <div>
-              {/* <div className='text-right'> */}
               <p><strong>Status:
                 <Box sx={{ display: 'flex', gap: 4 }}>
                   <Button
@@ -173,36 +210,34 @@ console.log(messages);
                   </Button>
                   <Button
                     variant="contained"
-                    onClick={() => handleStatusChange('Close')}
+                    onClick={handleCloseStatus}
                     style={{ backgroundColor: selectedIssue.status === 'Close' ? 'green' : '' }}
                   >
                     Close
                   </Button>
                 </Box>
               </strong></p>
-              {/* </div> */}
-              {/* <p><strong>ID:</strong> {selectedIssue.id}</p> */}
-              {/* <p><strong>Title:</strong> {selectedIssue.title}</p> */}
               <div className='border-1 h-[250px] w-[100%]'>
                 {messages.map((message, index) => (
                   <div 
                   key={index}
                   style={{
-                    backgroundColor: message.sender === 'admin' ? 'red' : 'white',
-                    color: message.sender === 'admin' ? 'white' : 'black',
+                    backgroundColor: message.sender === 'admin' ? 'red' : 'green',
+                    color: message.sender === 'admin' ? 'white' : 'white',
                     padding: '8px',
                     borderRadius: '4px',
-                    marginBottom: '8px'
+                    marginBottom: '8px',
+                    textAlign: message.sender === 'admin' ? 'left' : 'right',
+                    marginLeft: message.sender === 'admin' ? '0' : 'auto',
+                    marginRight: message.sender === 'admin' ? 'auto' : '0',
+                    maxWidth: '60%' // Optional: to keep the messages within a reasonable width
                   }}
-                  >
-                    {message.text}
-                  </div>
+                >
+                  {message.text}
+                </div>
+                
                 ))}
               </div>
-
-
-
-
             </div>
           )}
         </DialogContent>
@@ -220,8 +255,6 @@ console.log(messages);
           </Button>
         </DialogActions>
       </Dialog>
-
-
     </div>
   );
 };

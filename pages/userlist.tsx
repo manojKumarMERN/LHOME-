@@ -14,6 +14,8 @@ const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
   { id: 'email', label: 'Email', minWidth: 170 },
   { id: 'phone', label: 'Phone', minWidth: 170 },
+  { id: 'cartCount', label: 'Card Count', minWidth: 170 },
+  { id: 'complaintCount', label: 'Complaint Count', minWidth: 170 },
 ];
 
 export default function UserTable() {
